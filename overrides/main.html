@@ -1,0 +1,559 @@
+{% extends "base.html" %}
+
+{% block content %}
+<!-- Enhanced scroll progress bar with gradient animation -->
+<div class="scroll-progress">
+    <div class="progress-gradient"></div>
+</div>
+
+<!-- Modern page loader with logo animation -->
+<div class="page-loader" id="pageLoader">
+    <div class="loader-container">
+        <div class="loading-spinner"></div>
+        <div class="loading-text">Loading...</div>
+        <div class="loading-dots">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+</div>
+
+<!-- Floating action button for scroll to top -->
+<button class="scroll-to-top" id="scrollToTop" aria-label="Scroll to top">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <polyline points="18,15 12,9 6,15"></polyline>
+    </svg>
+</button>
+
+<!-- Enhanced content with animations -->
+<div class="content-container">
+    {{ super() }}
+</div>
+
+<!-- Particle system for hero sections -->
+{% if page.title == "Isaac ROS Jetbot NanoOWL" %}
+<div class="particles-container" id="particles"></div>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Advanced page loader with staggered animations
+        setTimeout(function() {
+            const loader = document.getElementById('pageLoader');
+            if (loader) {
+                loader.classList.add('fade-out');
+                setTimeout(() => loader.remove(), 800);
+            }
+
+            // Initialize particles for hero section
+            initParticles();
+
+            // Add entrance animations to content
+            animateContentEntrance();
+        }, 1200);
+
+        // Initialize scroll to top button
+        initScrollToTop();
+    });
+
+    function initParticles() {
+        const canvas = document.createElement('canvas');
+        const container = document.getElementById('particles');
+        if (!container) return;
+
+        container.appendChild(canvas);
+        const ctx = canvas.getContext('2d');
+
+        function resizeCanvas() {
+            canvas.width = container.offsetWidth;
+            canvas.height = container.offsetHeight;
+        }
+
+        resizeCanvas();
+        window.addEventListener('resize', resizeCanvas);
+
+        const particles = [];
+        const particleCount = 50;
+
+        for (let i = 0; i < particleCount; i++) {
+            particles.push({
+                x: Math.random() * canvas.width,
+                y: Math.random() * canvas.height,
+                vx: (Math.random() - 0.5) * 0.5,
+                vy: (Math.random() - 0.5) * 0.5,
+                size: Math.random() * 3 + 1,
+                opacity: Math.random() * 0.5 + 0.2
+            });
+        }
+
+        function animate() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+            particles.forEach(particle => {
+                particle.x += particle.vx;
+                particle.y += particle.vy;
+
+                if (particle.x < 0 || particle.x > canvas.width) particle.vx *= -1;
+                if (particle.y < 0 || particle.y > canvas.height) particle.vy *= -1;
+
+                ctx.beginPath();
+                ctx.arc(particle.x, particle.y, particle.size, 0, Math.PI * 2);
+                ctx.fillStyle = `rgba(var(--md-primary-fg-color--rgb), ${particle.opacity})`;
+                ctx.fill();
+            });
+
+            requestAnimationFrame(animate);
+        }
+
+        animate();
+    }
+
+    function animateContentEntrance() {
+        const elements = document.querySelectorAll('.md-content h1, .md-content h2, .md-content p, .md-content .highlight');
+        elements.forEach((el, index) => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+
+            setTimeout(() => {
+                el.style.opacity = '1';
+                el.style.transform = 'translateY(0)';
+            }, index * 100 + 200);
+        });
+    }
+
+    function initScrollToTop() {
+        const scrollBtn = document.getElementById('scrollToTop');
+
+        scrollBtn.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                scrollBtn.classList.add('visible');
+            } else {
+                scrollBtn.classList.remove('visible');
+            }
+        });
+    }
+</script>
+{% endif %}
+{% endblock %}
+
+{% block styles %}
+{{ super() }}
+<style>
+    :root {
+        --primary-gradient: linear-gradient(135deg, var(--md-primary-fg-color), var(--md-accent-fg-color));
+        --glass-bg: rgba(255, 255, 255, 0.1);
+        --glass-border: rgba(255, 255, 255, 0.2);
+        --shadow-elevation-1: 0 2px 8px rgba(0, 0, 0, 0.1);
+        --shadow-elevation-2: 0 4px 16px rgba(0, 0, 0, 0.12);
+        --shadow-elevation-3: 0 8px 32px rgba(0, 0, 0, 0.15);
+    }
+
+    /* Enhanced scroll progress bar */
+    .scroll-progress {
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 4px;
+        width: 100%;
+        background: rgba(var(--md-default-fg-color--rgb), 0.1);
+        z-index: 1001;
+        overflow: hidden;
+    }
+
+    .progress-gradient {
+        height: 100%;
+        width: 0%;
+        background: var(--primary-gradient);
+        transition: width 0.1s ease;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .progress-gradient::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+        animation: shimmer 2s infinite;
+    }
+
+    @keyframes shimmer {
+        0% { transform: translateX(-100%); }
+        100% { transform: translateX(100%); }
+    }
+
+    /* Modern page loader */
+    .page-loader {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(135deg, var(--md-default-bg-color), rgba(var(--md-primary-fg-color--rgb), 0.05));
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 9999;
+        transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+
+    .page-loader.fade-out {
+        opacity: 0;
+        transform: scale(1.1);
+    }
+
+    .loader-container {
+        text-align: center;
+        transform: translateY(-20px);
+    }
+
+    .loading-spinner {
+        width: 50px;
+        height: 50px;
+        border: 3px solid transparent;
+        border-top: 3px solid var(--md-primary-fg-color);
+        border-right: 3px solid var(--md-accent-fg-color);
+        border-radius: 50%;
+        animation: spin 1.2s cubic-bezier(0.68, -0.55, 0.265, 1.55) infinite;
+        margin: 0 auto 20px;
+        position: relative;
+    }
+
+    .loading-spinner::after {
+        content: '';
+        position: absolute;
+        top: 5px;
+        left: 5px;
+        right: 5px;
+        bottom: 5px;
+        border: 2px solid transparent;
+        border-top: 2px solid rgba(var(--md-primary-fg-color--rgb), 0.3);
+        border-radius: 50%;
+        animation: spin 2s linear infinite reverse;
+    }
+
+    @keyframes spin {
+        0% { transform: rotate(0deg) scale(1); }
+        50% { transform: rotate(180deg) scale(1.1); }
+        100% { transform: rotate(360deg) scale(1); }
+    }
+
+    .loading-text {
+        font-size: 16px;
+        font-weight: 500;
+        color: var(--md-default-fg-color);
+        margin-bottom: 15px;
+        opacity: 0.8;
+        animation: pulse 2s ease-in-out infinite;
+    }
+
+    .loading-dots {
+        display: flex;
+        justify-content: center;
+        gap: 5px;
+    }
+
+    .loading-dots span {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: var(--md-primary-fg-color);
+        animation: dot-bounce 1.4s ease-in-out infinite both;
+    }
+
+    .loading-dots span:nth-child(1) { animation-delay: -0.32s; }
+    .loading-dots span:nth-child(2) { animation-delay: -0.16s; }
+    .loading-dots span:nth-child(3) { animation-delay: 0s; }
+
+    @keyframes dot-bounce {
+        0%, 80%, 100% { transform: scale(0.8); opacity: 0.5; }
+        40% { transform: scale(1.2); opacity: 1; }
+    }
+
+    @keyframes pulse {
+        0%, 100% { opacity: 0.8; }
+        50% { opacity: 1; }
+    }
+
+    /* Enhanced header with glassmorphism */
+    .md-header {
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        border-bottom: 1px solid transparent;
+    }
+
+    .md-header.scrolled {
+        background: rgba(var(--md-default-bg-color--rgb), 0.85);
+        backdrop-filter: blur(20px) saturate(180%);
+        border-bottom: 1px solid var(--glass-border);
+        box-shadow: var(--shadow-elevation-2);
+    }
+
+    /* Scroll to top button */
+    .scroll-to-top {
+        position: fixed;
+        bottom: 30px;
+        right: 30px;
+        width: 56px;
+        height: 56px;
+        border-radius: 50%;
+        background: var(--primary-gradient);
+        border: none;
+        color: white;
+        cursor: pointer;
+        z-index: 1000;
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(20px) scale(0.8);
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        box-shadow: var(--shadow-elevation-2);
+    }
+
+    .scroll-to-top:hover {
+        transform: translateY(-2px) scale(1);
+        box-shadow: var(--shadow-elevation-3);
+    }
+
+    .scroll-to-top.visible {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0) scale(1);
+    }
+
+    .scroll-to-top:active {
+        transform: scale(0.95);
+    }
+
+    /* Enhanced content animations */
+    .content-container {
+        position: relative;
+        z-index: 1;
+    }
+
+    /* Particles container */
+    .particles-container {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        pointer-events: none;
+        z-index: 0;
+        overflow: hidden;
+    }
+
+    .particles-container canvas {
+        width: 100%;
+        height: 100%;
+        opacity: 0.3;
+    }
+
+    /* Enhanced Mermaid styling */
+    .mermaid {
+        text-align: center;
+        margin: 3em 0;
+        padding: 2em;
+        background: var(--glass-bg);
+        backdrop-filter: blur(10px);
+        border-radius: 16px;
+        border: 1px solid var(--glass-border);
+        box-shadow: var(--shadow-elevation-1);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .mermaid:hover {
+        transform: translateY(-2px);
+        box-shadow: var(--shadow-elevation-2);
+    }
+
+    /* Enhanced code blocks */
+    .md-typeset .highlight {
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: var(--shadow-elevation-1);
+        border: 1px solid var(--glass-border);
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .md-typeset .highlight:hover {
+        transform: translateY(-1px);
+        box-shadow: var(--shadow-elevation-2);
+    }
+
+    /* Enhanced tables */
+    .md-typeset table:not([class]) {
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: var(--shadow-elevation-1);
+        border: 1px solid var(--glass-border);
+    }
+
+    /* Smooth scrolling for all elements */
+    html {
+        scroll-behavior: smooth;
+    }
+
+    /* Enhanced focus states for accessibility */
+    .scroll-to-top:focus {
+        outline: 2px solid var(--md-accent-fg-color);
+        outline-offset: 2px;
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+        .scroll-to-top {
+            bottom: 20px;
+            right: 20px;
+            width: 48px;
+            height: 48px;
+        }
+
+        .loading-text {
+            font-size: 14px;
+        }
+
+        .loader-container {
+            transform: translateY(-10px);
+        }
+    }
+
+    /* Dark mode enhancements */
+    [data-md-color-scheme="slate"] {
+        --glass-bg: rgba(0, 0, 0, 0.2);
+        --glass-border: rgba(255, 255, 255, 0.1);
+    }
+
+    /* Print styles */
+    @media print {
+        .scroll-progress,
+        .page-loader,
+        .scroll-to-top,
+        .particles-container {
+            display: none !important;
+        }
+    }
+</style>
+{% endblock %}
+
+{% block scripts %}
+{{ super() }}
+<!-- Enhanced Mermaid.js with better configuration -->
+<script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        // Enhanced Mermaid initialization
+        if (window.mermaid) {
+            mermaid.initialize({
+                startOnLoad: true,
+                theme: document.documentElement.getAttribute('data-md-color-scheme') === 'slate' ? 'dark' : 'default',
+                themeVariables: {
+                    primaryColor: getComputedStyle(document.documentElement).getPropertyValue('--md-primary-fg-color'),
+                    primaryTextColor: getComputedStyle(document.documentElement).getPropertyValue('--md-default-fg-color'),
+                    fontFamily: getComputedStyle(document.documentElement).getPropertyValue('--md-text-font-family')
+                }
+            });
+        }
+
+        // Enhanced scroll progress with easing
+        let ticking = false;
+
+        function updateScrollProgress() {
+            const scrolled = window.pageYOffset;
+            const maxHeight = document.documentElement.scrollHeight - window.innerHeight;
+            const progress = Math.min((scrolled / maxHeight) * 100, 100);
+
+            const progressBar = document.querySelector('.progress-gradient');
+            if (progressBar) {
+                progressBar.style.width = progress + '%';
+            }
+
+            // Enhanced header scroll effect
+            const header = document.querySelector('.md-header');
+            const scrollThreshold = 50;
+
+            if (scrolled > scrollThreshold) {
+                header?.classList.add('scrolled');
+            } else {
+                header?.classList.remove('scrolled');
+            }
+
+            ticking = false;
+        }
+
+        function requestScrollUpdate() {
+            if (!ticking) {
+                requestAnimationFrame(updateScrollProgress);
+                ticking = true;
+            }
+        }
+
+        window.addEventListener('scroll', requestScrollUpdate, { passive: true });
+        window.addEventListener('resize', requestScrollUpdate, { passive: true });
+
+        // Initial call
+        updateScrollProgress();
+
+        // Enhanced intersection observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate-in');
+                }
+            });
+        }, observerOptions);
+
+        // Observe elements for animation
+        document.querySelectorAll('.md-content > *').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Enhanced keyboard navigation
+        document.addEventListener('keydown', function(e) {
+            // ESC key to close any overlays
+            if (e.key === 'Escape') {
+                document.querySelectorAll('.overlay, .modal').forEach(el => {
+                    el.classList.remove('active');
+                });
+            }
+
+            // Ctrl/Cmd + Home to scroll to top
+            if ((e.ctrlKey || e.metaKey) && e.key === 'Home') {
+                e.preventDefault();
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
+        });
+    });
+
+    // Utility function for smooth animations
+    function easeOutCubic(t) {
+        return 1 - Math.pow(1 - t, 3);
+    }
+
+    // Theme change handler for Mermaid
+    const observer = new MutationObserver(function(mutations) {
+        mutations.forEach(function(mutation) {
+            if (mutation.type === 'attributes' && mutation.attributeName === 'data-md-color-scheme') {
+                if (window.mermaid) {
+                    location.reload(); // Reload to apply new theme to Mermaid diagrams
+                }
+            }
+        });
+    });
+
+    observer.observe(document.documentElement, {
+        attributes: true,
+        attributeFilter: ['data-md-color-scheme']
+    });
+</script>
+{% endblock %}

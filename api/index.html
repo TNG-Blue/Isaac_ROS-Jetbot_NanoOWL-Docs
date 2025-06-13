@@ -1,0 +1,1308 @@
+<!DOCTYPE html><html class="no-js" lang="en"><head><meta charset="utf-8"><meta content="width=device-width,initial-scale=1" name="viewport"><meta content="Advanced Robotics Platform with Jetson Orin Nano Super, Docker, Kubernetes, and micro-ROS" name="description"><meta content="TNG Blue Team" name="author"><link href="https://TNG-Blue.github.io/Isaac_ROS-Jetbot_NanoOWL/api/" rel="canonical"><link href="../software/" rel="prev"><link href="cudavision/" rel="next"><link href="../assets/images/favicon.png" rel="icon"><meta content="mkdocs-1.6.1, mkdocs-material-9.6.14" name="generator"><title>Overview - Isaac ROS Jetbot NanoOWL</title><link href="../assets/stylesheets/main.342714a4.min.css" rel="stylesheet"><link href="../assets/stylesheets/palette.06af60db.min.css" rel="stylesheet"><style>
+    :root {
+        --primary-gradient: linear-gradient(135deg, var(--md-primary-fg-color), var(--md-accent-fg-color));
+        --glass-bg: rgba(255, 255, 255, 0.1);
+        --glass-border: rgba(255, 255, 255, 0.2);
+        --shadow-elevation-1: 0 2px 8px rgba(0, 0, 0, 0.1);
+        --shadow-elevation-2: 0 4px 16px rgba(0, 0, 0, 0.12);
+        --shadow-elevation-3: 0 8px 32px rgba(0, 0, 0, 0.15);
+    }
+
+    /* Enhanced scroll progress bar */
+    .scroll-progress {
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 4px;
+        width: 100%;
+        background: rgba(var(--md-default-fg-color--rgb), 0.1);
+        z-index: 1001;
+        overflow: hidden;
+    }
+
+    .progress-gradient {
+        height: 100%;
+        width: 0%;
+        background: var(--primary-gradient);
+        transition: width 0.1s ease;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .progress-gradient::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+        animation: shimmer 2s infinite;
+    }
+
+    @keyframes shimmer {
+        0% { transform: translateX(-100%); }
+        100% { transform: translateX(100%); }
+    }
+
+    /* Modern page loader */
+    .page-loader {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(135deg, var(--md-default-bg-color), rgba(var(--md-primary-fg-color--rgb), 0.05));
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 9999;
+        transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+
+    .page-loader.fade-out {
+        opacity: 0;
+        transform: scale(1.1);
+    }
+
+    .loader-container {
+        text-align: center;
+        transform: translateY(-20px);
+    }
+
+    .loading-spinner {
+        width: 50px;
+        height: 50px;
+        border: 3px solid transparent;
+        border-top: 3px solid var(--md-primary-fg-color);
+        border-right: 3px solid var(--md-accent-fg-color);
+        border-radius: 50%;
+        animation: spin 1.2s cubic-bezier(0.68, -0.55, 0.265, 1.55) infinite;
+        margin: 0 auto 20px;
+        position: relative;
+    }
+
+    .loading-spinner::after {
+        content: '';
+        position: absolute;
+        top: 5px;
+        left: 5px;
+        right: 5px;
+        bottom: 5px;
+        border: 2px solid transparent;
+        border-top: 2px solid rgba(var(--md-primary-fg-color--rgb), 0.3);
+        border-radius: 50%;
+        animation: spin 2s linear infinite reverse;
+    }
+
+    @keyframes spin {
+        0% { transform: rotate(0deg) scale(1); }
+        50% { transform: rotate(180deg) scale(1.1); }
+        100% { transform: rotate(360deg) scale(1); }
+    }
+
+    .loading-text {
+        font-size: 16px;
+        font-weight: 500;
+        color: var(--md-default-fg-color);
+        margin-bottom: 15px;
+        opacity: 0.8;
+        animation: pulse 2s ease-in-out infinite;
+    }
+
+    .loading-dots {
+        display: flex;
+        justify-content: center;
+        gap: 5px;
+    }
+
+    .loading-dots span {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: var(--md-primary-fg-color);
+        animation: dot-bounce 1.4s ease-in-out infinite both;
+    }
+
+    .loading-dots span:nth-child(1) { animation-delay: -0.32s; }
+    .loading-dots span:nth-child(2) { animation-delay: -0.16s; }
+    .loading-dots span:nth-child(3) { animation-delay: 0s; }
+
+    @keyframes dot-bounce {
+        0%, 80%, 100% { transform: scale(0.8); opacity: 0.5; }
+        40% { transform: scale(1.2); opacity: 1; }
+    }
+
+    @keyframes pulse {
+        0%, 100% { opacity: 0.8; }
+        50% { opacity: 1; }
+    }
+
+    /* Enhanced header with glassmorphism */
+    .md-header {
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        border-bottom: 1px solid transparent;
+    }
+
+    .md-header.scrolled {
+        background: rgba(var(--md-default-bg-color--rgb), 0.85);
+        backdrop-filter: blur(20px) saturate(180%);
+        border-bottom: 1px solid var(--glass-border);
+        box-shadow: var(--shadow-elevation-2);
+    }
+
+    /* Scroll to top button */
+    .scroll-to-top {
+        position: fixed;
+        bottom: 30px;
+        right: 30px;
+        width: 56px;
+        height: 56px;
+        border-radius: 50%;
+        background: var(--primary-gradient);
+        border: none;
+        color: white;
+        cursor: pointer;
+        z-index: 1000;
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(20px) scale(0.8);
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        box-shadow: var(--shadow-elevation-2);
+    }
+
+    .scroll-to-top:hover {
+        transform: translateY(-2px) scale(1);
+        box-shadow: var(--shadow-elevation-3);
+    }
+
+    .scroll-to-top.visible {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0) scale(1);
+    }
+
+    .scroll-to-top:active {
+        transform: scale(0.95);
+    }
+
+    /* Enhanced content animations */
+    .content-container {
+        position: relative;
+        z-index: 1;
+    }
+
+    /* Particles container */
+    .particles-container {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        pointer-events: none;
+        z-index: 0;
+        overflow: hidden;
+    }
+
+    .particles-container canvas {
+        width: 100%;
+        height: 100%;
+        opacity: 0.3;
+    }
+
+    /* Enhanced Mermaid styling */
+    .mermaid {
+        text-align: center;
+        margin: 3em 0;
+        padding: 2em;
+        background: var(--glass-bg);
+        backdrop-filter: blur(10px);
+        border-radius: 16px;
+        border: 1px solid var(--glass-border);
+        box-shadow: var(--shadow-elevation-1);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .mermaid:hover {
+        transform: translateY(-2px);
+        box-shadow: var(--shadow-elevation-2);
+    }
+
+    /* Enhanced code blocks */
+    .md-typeset .highlight {
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: var(--shadow-elevation-1);
+        border: 1px solid var(--glass-border);
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .md-typeset .highlight:hover {
+        transform: translateY(-1px);
+        box-shadow: var(--shadow-elevation-2);
+    }
+
+    /* Enhanced tables */
+    .md-typeset table:not([class]) {
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: var(--shadow-elevation-1);
+        border: 1px solid var(--glass-border);
+    }
+
+    /* Smooth scrolling for all elements */
+    html {
+        scroll-behavior: smooth;
+    }
+
+    /* Enhanced focus states for accessibility */
+    .scroll-to-top:focus {
+        outline: 2px solid var(--md-accent-fg-color);
+        outline-offset: 2px;
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+        .scroll-to-top {
+            bottom: 20px;
+            right: 20px;
+            width: 48px;
+            height: 48px;
+        }
+
+        .loading-text {
+            font-size: 14px;
+        }
+
+        .loader-container {
+            transform: translateY(-10px);
+        }
+    }
+
+    /* Dark mode enhancements */
+    [data-md-color-scheme="slate"] {
+        --glass-bg: rgba(0, 0, 0, 0.2);
+        --glass-border: rgba(255, 255, 255, 0.1);
+    }
+
+    /* Print styles */
+    @media print {
+        .scroll-progress,
+        .page-loader,
+        .scroll-to-top,
+        .particles-container {
+            display: none !important;
+        }
+    }
+</style><link crossorigin href="https://fonts.gstatic.com" rel="preconnect"><link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback" rel="stylesheet"><style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style><link href="../assets/css/styles.css" rel="stylesheet"><link href="../assets/css/animations.css" rel="stylesheet"><script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script> <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+    html.glightbox-open { overflow: initial; height: 100%; }
+    .gslide-title { margin-top: 0px; user-select: text; }
+    .gslide-desc { color: #666; user-select: text; }
+    .gslide-image img { background: white; }
+    .gscrollbar-fixer { padding-right: 15px; }
+    .gdesc-inner { font-size: 0.75rem; }
+    body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+    body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../assets/javascripts/glightbox.min.js"></script></head><body data-md-color-accent="indigo" data-md-color-primary="indigo" data-md-color-scheme="default" dir="ltr"><input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"><input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"><label class="md-overlay" for="__drawer"></label><div data-md-component="skip"><a class="md-skip" href="#api-reference"> Skip to content </a></div><div data-md-component="announce"></div><header class="md-header md-header--shadow md-header--lifted" data-md-component="header"><nav aria-label="Header" class="md-header__inner md-grid"><a aria-label="Isaac ROS Jetbot NanoOWL" class="md-header__button md-logo" data-md-component="logo" href=".." title="Isaac ROS Jetbot NanoOWL"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg></a><label class="md-header__button md-icon" for="__drawer"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg></label><div class="md-header__title" data-md-component="header-title"><div class="md-header__ellipsis"><div class="md-header__topic"><span class="md-ellipsis"> Isaac ROS Jetbot NanoOWL </span></div><div class="md-header__topic" data-md-component="header-topic"><span class="md-ellipsis"> Overview </span></div></div></div><form class="md-header__option" data-md-component="palette"><input aria-label="Switch to light mode" class="md-option" data-md-color-accent="indigo" data-md-color-media="(prefers-color-scheme)" data-md-color-primary="indigo" data-md-color-scheme="default" id="__palette_0" name="__palette" type="radio"><label class="md-header__button md-icon" for="__palette_1" hidden title="Switch to light mode"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m14.3 16-.7-2h-3.2l-.7 2H7.8L11 7h2l3.2 9zM20 8.69V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12zm-9.15 3.96h2.3L12 9z"></path></svg></label><input aria-label="Switch to dark mode" class="md-option" data-md-color-accent="indigo" data-md-color-media="(prefers-color-scheme: light)" data-md-color-primary="indigo" data-md-color-scheme="default" id="__palette_1" name="__palette" type="radio"><label class="md-header__button md-icon" for="__palette_2" hidden title="Switch to dark mode"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"></path></svg></label><input aria-label="Switch to system preference" class="md-option" data-md-color-accent="indigo" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-primary="black" data-md-color-scheme="slate" id="__palette_2" name="__palette" type="radio"><label class="md-header__button md-icon" for="__palette_0" hidden title="Switch to system preference"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"></path></svg></label></form><script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script><label class="md-header__button md-icon" for="__search"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg></label><div class="md-search" data-md-component="search" role="dialog"><label class="md-search__overlay" for="__search"></label><div class="md-search__inner" role="search"><form class="md-search__form" name="search"><input aria-label="Search" autocapitalize="off" autocomplete="off" autocorrect="off" class="md-search__input" data-md-component="search-query" name="query" placeholder="Search" required spellcheck="false" type="text"><label class="md-search__icon md-icon" for="__search"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg></label><nav aria-label="Search" class="md-search__options"><a aria-label="Share" class="md-search__icon md-icon" data-clipboard data-clipboard-text data-md-component="search-share" href="javascript:void(0)" tabindex="-1" title="Share"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"></path></svg></a><button aria-label="Clear" class="md-search__icon md-icon" tabindex="-1" title="Clear" type="reset"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg></button></nav><div class="md-search__suggest" data-md-component="search-suggest"></div></form><div class="md-search__output"><div class="md-search__scrollwrap" data-md-scrollfix tabindex="0"><div class="md-search-result" data-md-component="search-result"><div class="md-search-result__meta"> Initializing search </div><ol class="md-search-result__list" role="presentation"></ol></div></div></div></div></div><div class="md-header__source"><a class="md-source" data-md-component="source" href="https://github.com/TNG-Blue/Isaac_ROS-Jetbot_NanoOWL" title="Go to repository"><div class="md-source__icon md-icon"><svg viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><!-- Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"></path></svg></div><div class="md-source__repository"> Isaac_ROS-Jetbot_NanoOWL </div></a></div></nav><nav aria-label="Tabs" class="md-tabs" data-md-component="tabs"><div class="md-grid"><ul class="md-tabs__list"><li class="md-tabs__item"><a class="md-tabs__link" href=".."> Home </a></li><li class="md-tabs__item"><a class="md-tabs__link" href="../getting_started/"> Getting Started </a></li><li class="md-tabs__item"><a class="md-tabs__link" href="../software/"> Software </a></li><li class="md-tabs__item md-tabs__item--active"><a class="md-tabs__link" href="./"> API Reference </a></li><li class="md-tabs__item"><a class="md-tabs__link" href="../tutorials/"> Tutorials </a></li></ul></div></nav></header><div class="md-container" data-md-component="container"><main class="md-main" data-md-component="main"><div class="md-main__inner md-grid"><div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation"><div class="md-sidebar__scrollwrap"><div class="md-sidebar__inner"><nav aria-label="Navigation" class="md-nav md-nav--primary md-nav--lifted" data-md-level="0"><label class="md-nav__title" for="__drawer"><a aria-label="Isaac ROS Jetbot NanoOWL" class="md-nav__button md-logo" data-md-component="logo" href=".." title="Isaac ROS Jetbot NanoOWL"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg></a> Isaac ROS Jetbot NanoOWL </label><div class="md-nav__source"><a class="md-source" data-md-component="source" href="https://github.com/TNG-Blue/Isaac_ROS-Jetbot_NanoOWL" title="Go to repository"><div class="md-source__icon md-icon"><svg viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><!-- Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"></path></svg></div><div class="md-source__repository"> Isaac_ROS-Jetbot_NanoOWL </div></a></div><ul class="md-nav__list" data-md-scrollfix><li class="md-nav__item"><a class="md-nav__link" href=".."><span class="md-ellipsis"> Home </span></a></li><li class="md-nav__item md-nav__item--nested"><input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_2" type="checkbox"><div class="md-nav__link md-nav__container"><a class="md-nav__link" href="../getting_started/"><span class="md-ellipsis"> Getting Started </span></a><label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0"><span class="md-nav__icon md-icon"></span></label></div><nav aria-expanded="false" aria-labelledby="__nav_2_label" class="md-nav" data-md-level="1"><label class="md-nav__title" for="__nav_2"><span class="md-nav__icon md-icon"></span> Getting Started </label><ul class="md-nav__list" data-md-scrollfix><li class="md-nav__item"><a class="md-nav__link" href="../getting_started/installation/"><span class="md-ellipsis"> Installation </span></a></li></ul></nav></li><li class="md-nav__item md-nav__item--nested"><input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_3" type="checkbox"><div class="md-nav__link md-nav__container"><a class="md-nav__link" href="../software/"><span class="md-ellipsis"> Software </span></a></div><nav aria-expanded="false" aria-labelledby="__nav_3_label" class="md-nav" data-md-level="1"><label class="md-nav__title" for="__nav_3"><span class="md-nav__icon md-icon"></span> Software </label><ul class="md-nav__list" data-md-scrollfix></ul></nav></li><li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested"><input checked class="md-nav__toggle md-toggle" id="__nav_4" type="checkbox"><div class="md-nav__link md-nav__container"><a class="md-nav__link md-nav__link--active" href="./"><span class="md-ellipsis"> API Reference </span></a><label class="md-nav__link md-nav__link--active" for="__nav_4" id="__nav_4_label" tabindex><span class="md-nav__icon md-icon"></span></label></div><nav aria-expanded="true" aria-labelledby="__nav_4_label" class="md-nav" data-md-level="1"><label class="md-nav__title" for="__nav_4"><span class="md-nav__icon md-icon"></span> API Reference </label><ul class="md-nav__list" data-md-scrollfix><li class="md-nav__item"><a class="md-nav__link" href="cudavision/"><span class="md-ellipsis"> CudaVision </span></a></li></ul></nav></li><li class="md-nav__item md-nav__item--nested"><input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_5" type="checkbox"><div class="md-nav__link md-nav__container"><a class="md-nav__link" href="../tutorials/"><span class="md-ellipsis"> Tutorials </span></a></div><nav aria-expanded="false" aria-labelledby="__nav_5_label" class="md-nav" data-md-level="1"><label class="md-nav__title" for="__nav_5"><span class="md-nav__icon md-icon"></span> Tutorials </label><ul class="md-nav__list" data-md-scrollfix></ul></nav></li></ul></nav></div></div></div><div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc"><div class="md-sidebar__scrollwrap"><div class="md-sidebar__inner"><nav aria-label="Page contents" class="md-nav md-nav--secondary"><label class="md-nav__title" for="__toc"><span class="md-nav__icon md-icon"></span> Page contents </label><ul class="md-nav__list" data-md-component="toc" data-md-scrollfix><li class="md-nav__item"><a class="md-nav__link" href="#api-architecture"><span class="md-ellipsis"> 🏗️ API Architecture </span></a></li><li class="md-nav__item"><a class="md-nav__link" href="#quick-start"><span class="md-ellipsis"> 🎯 Quick Start </span></a></li><li class="md-nav__item"><a class="md-nav__link" href="#ros-2-topics-services"><span class="md-ellipsis"> 📡 ROS 2 Topics &amp; Services </span></a><nav aria-label="📡 ROS 2 Topics & Services" class="md-nav"><ul class="md-nav__list"><li class="md-nav__item"><a class="md-nav__link" href="#published-topics"><span class="md-ellipsis"> 📤 Published Topics </span></a></li><li class="md-nav__item"><a class="md-nav__link" href="#subscribed-topics"><span class="md-ellipsis"> 📥 Subscribed Topics </span></a></li><li class="md-nav__item"><a class="md-nav__link" href="#services"><span class="md-ellipsis"> 🔧 Services </span></a></li><li class="md-nav__item"><a class="md-nav__link" href="#actions"><span class="md-ellipsis"> 🎯 Actions </span></a></li></ul></nav></li><li class="md-nav__item"><a class="md-nav__link" href="#grpc-services"><span class="md-ellipsis"> 🚀 gRPC Services </span></a><nav aria-label="🚀 gRPC Services" class="md-nav"><ul class="md-nav__list"><li class="md-nav__item"><a class="md-nav__link" href="#service-definitions"><span class="md-ellipsis"> 📋 Service Definitions </span></a></li></ul></nav></li><li class="md-nav__item"><a class="md-nav__link" href="#sdk-libraries"><span class="md-ellipsis"> 📚 SDK Libraries </span></a><nav aria-label="📚 SDK Libraries" class="md-nav"><ul class="md-nav__list"><li class="md-nav__item"><a class="md-nav__link" href="#python-sdk"><span class="md-ellipsis"> 🐍 Python SDK </span></a></li></ul></nav></li><li class="md-nav__item"><a class="md-nav__link" href="#versioning-changelog"><span class="md-ellipsis"> 🔄 Versioning &amp; Changelog </span></a><nav aria-label="🔄 Versioning & Changelog" class="md-nav"><ul class="md-nav__list"><li class="md-nav__item"><a class="md-nav__link" href="#api-versioning"><span class="md-ellipsis"> 📋 API Versioning </span></a></li></ul></nav></li><li class="md-nav__item"><a class="md-nav__link" href="#examples-tutorials"><span class="md-ellipsis"> 🎓 Examples &amp; Tutorials </span></a><nav aria-label="🎓 Examples & Tutorials" class="md-nav"><ul class="md-nav__list"><li class="md-nav__item"><a class="md-nav__link" href="#quick-start-examples"><span class="md-ellipsis"> 🚀 Quick Start Examples </span></a></li><li class="md-nav__item"><a class="md-nav__link" href="#advanced-tutorials"><span class="md-ellipsis"> 📚 Advanced Tutorials </span></a></li></ul></nav></li><li class="md-nav__item"><a class="md-nav__link" href="#support-community"><span class="md-ellipsis"> 🆘 Support &amp; Community </span></a><nav aria-label="🆘 Support & Community" class="md-nav"><ul class="md-nav__list"><li class="md-nav__item"><a class="md-nav__link" href="#getting-help"><span class="md-ellipsis"> 💬 Getting Help </span></a></li><li class="md-nav__item"><a class="md-nav__link" href="#contributing"><span class="md-ellipsis"> 🤝 Contributing </span></a></li></ul></nav></li><li class="md-nav__item"><a class="md-nav__link" href="#interactive-api-explorer"><span class="md-ellipsis"> 📱 Interactive API Explorer </span></a></li></ul></nav></div></div></div><div class="md-content" data-md-component="content"><article class="md-content__inner md-typeset"><div class="scroll-progress"><div class="progress-gradient"></div></div><div class="page-loader" id="pageLoader"><div class="loader-container"><div class="loading-spinner"></div><div class="loading-text">Loading...</div><div class="loading-dots"><span></span><span></span><span></span></div></div></div><button aria-label="Scroll to top" class="scroll-to-top" id="scrollToTop"><svg fill="none" height="24" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="24"><polyline points="18,15 12,9 6,15"></polyline></svg></button><div class="content-container"><a class="md-content__button md-icon" href="https://github.com/TNG-Blue/Isaac_ROS-Jetbot_NanoOWL/edit/master/docs/api/index.md" title="Edit this page"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"></path></svg></a><a class="md-content__button md-icon" href="https://github.com/TNG-Blue/Isaac_ROS-Jetbot_NanoOWL/raw/master/docs/api/index.md" title="View source of this page"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17 18c.56 0 1 .44 1 1s-.44 1-1 1-1-.44-1-1 .44-1 1-1m0-3c-2.73 0-5.06 1.66-6 4 .94 2.34 3.27 4 6 4s5.06-1.66 6-4c-.94-2.34-3.27-4-6-4m0 6.5a2.5 2.5 0 0 1-2.5-2.5 2.5 2.5 0 0 1 2.5-2.5 2.5 2.5 0 0 1 2.5 2.5 2.5 2.5 0 0 1-2.5 2.5M9.27 20H6V4h7v5h5v4.07c.7.08 1.36.25 2 .49V8l-6-6H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h4.5a8.2 8.2 0 0 1-1.23-2"></path></svg></a><h1 id="api-reference">📚 API Reference<a class="headerlink" href="#api-reference" title="Anchor link to this section">¶</a></h1><p>Welcome to the comprehensive API documentation for Isaac ROS Jetbot NanoOWL. This section provides detailed information about all available APIs, services, interfaces, and the integrated <strong>CudaVision</strong> high-performance image processing library.</p><div class="admonition info"><p class="admonition-title">🎯 API Overview</p></div><p>Isaac ROS Jetbot NanoOWL provides <strong>multiple API layers</strong> for different use cases: <strong>ROS 2 interfaces</strong>, <strong>REST APIs</strong>, <strong>WebSocket connections</strong>, <strong>gRPC services</strong> for high-performance applications, and <strong>CudaVision</strong> for GPU-accelerated image processing with 15-20x performance improvements.</p><h2 id="api-architecture">🏗️ API Architecture<a class="headerlink" href="#api-architecture" title="Anchor link to this section">¶</a></h2><div class="api-architecture"><div class="api-layer"><h3>🚀 CudaVision Processing Layer</h3><p>GPU-accelerated image processing with 15-20x performance boost</p><ul><li>Professional camera enhancement</li><li>Real-time background removal</li><li>Advanced noise reduction</li><li>RAW sensor processing</li></ul></div><div class="api-layer"><h3>🤖 ROS 2 Interface Layer</h3><p>Native robotics communication via ROS 2 topics and services</p><ul><li>Real-time sensor data</li><li>Navigation commands</li><li>Perception results</li><li>Motor control</li></ul></div><div class="api-layer"><h3>⚡ WebSocket Layer</h3><p>Real-time bidirectional communication for live updates</p><ul><li>Live video streaming</li><li>Telemetry data</li><li>System notifications</li><li>Remote debugging</li></ul></div><div class="api-layer"><h3>🚀 gRPC Layer</h3><p>High-performance binary protocol for enterprise applications</p><ul><li>Bulk data transfer</li><li>Service mesh integration</li><li>Multi-language support</li><li>Advanced streaming</li></ul></div></div><h2 id="quick-start">🎯 Quick Start<a class="headerlink" href="#quick-start" title="Anchor link to this section">¶</a></h2><h2 id="ros-2-topics-services">📡 ROS 2 Topics &amp; Services<a class="headerlink" href="#ros-2-topics-services" title="Anchor link to this section">¶</a></h2><h3 id="published-topics">📤 Published Topics<a class="headerlink" href="#published-topics" title="Anchor link to this section">¶</a></h3><table><thead><tr><th>Topic</th><th>Message Type</th><th>Frequency</th><th>Description</th></tr></thead><tbody><tr><td><code>/camera/image_raw</code></td><td><code>sensor_msgs/Image</code></td><td>30 Hz</td><td>Raw RGB camera feed</td></tr><tr><td><code>/camera/depth/image</code></td><td><code>sensor_msgs/Image</code></td><td>30 Hz</td><td>Depth camera data</td></tr><tr><td><code>/robot_pose</code></td><td><code>geometry_msgs/PoseStamped</code></td><td>50 Hz</td><td>Current robot pose</td></tr><tr><td><code>/detected_objects</code></td><td><code>vision_msgs/Detection2DArray</code></td><td>15 Hz</td><td>Object detection results</td></tr><tr><td><code>/map</code></td><td><code>nav_msgs/OccupancyGrid</code></td><td>1 Hz</td><td>SLAM-generated map</td></tr><tr><td><code>/scan</code></td><td><code>sensor_msgs/LaserScan</code></td><td>20 Hz</td><td>LiDAR scan data</td></tr><tr><td><code>/odom</code></td><td><code>nav_msgs/Odometry</code></td><td>50 Hz</td><td>Odometry information</td></tr><tr><td><code>/imu/data</code></td><td><code>sensor_msgs/Imu</code></td><td>100 Hz</td><td>IMU sensor data</td></tr></tbody></table><h3 id="subscribed-topics">📥 Subscribed Topics<a class="headerlink" href="#subscribed-topics" title="Anchor link to this section">¶</a></h3><table><thead><tr><th>Topic</th><th>Message Type</th><th>Description</th></tr></thead><tbody><tr><td><code>/cmd_vel</code></td><td><code>geometry_msgs/Twist</code></td><td>Velocity commands for robot movement</td></tr><tr><td><code>/move_base_simple/goal</code></td><td><code>geometry_msgs/PoseStamped</code></td><td>Navigation goal position</td></tr><tr><td><code>/initialpose</code></td><td><code>geometry_msgs/PoseWithCovarianceStamped</code></td><td>Initial pose estimation</td></tr><tr><td><code>/clicked_point</code></td><td><code>geometry_msgs/PointStamped</code></td><td>Point clicked in visualization</td></tr></tbody></table><h3 id="services">🔧 Services<a class="headerlink" href="#services" title="Anchor link to this section">¶</a></h3><table><thead><tr><th>Service</th><th>Service Type</th><th>Description</th></tr></thead><tbody><tr><td><code>/robot/emergency_stop</code></td><td><code>std_srvs/Trigger</code></td><td>Emergency stop service</td></tr><tr><td><code>/robot/reset</code></td><td><code>std_srvs/Trigger</code></td><td>Reset robot to initial state</td></tr><tr><td><code>/perception/detect_objects</code></td><td><code>isaac_ros_msgs/DetectObjects</code></td><td>On-demand object detection</td></tr><tr><td><code>/navigation/clear_costmaps</code></td><td><code>nav2_msgs/ClearEntireCostmap</code></td><td>Clear navigation costmaps</td></tr><tr><td><code>/system/get_parameters</code></td><td><code>rcl_interfaces/GetParameters</code></td><td>Get ROS parameters</td></tr><tr><td><code>/system/set_parameters</code></td><td><code>rcl_interfaces/SetParameters</code></td><td>Set ROS parameters</td></tr></tbody></table><h3 id="actions">🎯 Actions<a class="headerlink" href="#actions" title="Anchor link to this section">¶</a></h3><table><thead><tr><th>Action</th><th>Action Type</th><th>Description</th></tr></thead><tbody><tr><td><code>/navigate_to_pose</code></td><td><code>nav2_msgs/NavigateToPose</code></td><td>Navigate to specific pose</td></tr><tr><td><code>/follow_waypoints</code></td><td><code>nav2_msgs/FollowWaypoints</code></td><td>Follow sequence of waypoints</td></tr><tr><td><code>/spin</code></td><td><code>nav2_msgs/Spin</code></td><td>Rotate robot in place</td></tr><tr><td><code>/backup</code></td><td><code>nav2_msgs/BackUp</code></td><td>Move robot backwards</td></tr></tbody></table><h2 id="grpc-services">🚀 gRPC Services<a class="headerlink" href="#grpc-services" title="Anchor link to this section">¶</a></h2><p>High-performance binary communication for enterprise applications.</p><h3 id="service-definitions">📋 Service Definitions<a class="headerlink" href="#service-definitions" title="Anchor link to this section">¶</a></h3><div class="tabbed-set tabbed-alternate" data-tabs="1:1"><input checked id="service-definitions-robot-control-service" name="__tabbed_1" type="radio"><div class="tabbed-labels"><label for="service-definitions-robot-control-service">Robot Control Service</label></div><div class="tabbed-content"><div class="tabbed-block"></div></div></div><div class="language-protobuf highlight"><table class="highlighttable"><tr><th class="filename" colspan="2"><span class="filename">Protocol Buffer</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-0-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-0-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-0-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-0-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-0-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-0-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-0-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-0-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-0-10">10</a></span>
+<span class="normal"><a href="#__codelineno-0-11">11</a></span>
+<span class="normal"><a href="#__codelineno-0-12">12</a></span>
+<span class="normal"><a href="#__codelineno-0-13">13</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="kd">service</span><span class="w"> </span><span class="n">RobotControl</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="w">    </span><span class="k">rpc</span><span class="w"> </span><span class="n">GetStatus</span><span class="p">(</span><span class="n">StatusRequest</span><span class="p">)</span><span class="w"> </span><span class="k">returns</span><span class="w"> </span><span class="p">(</span><span class="n">StatusResponse</span><span class="p">);</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="w">    </span><span class="k">rpc</span><span class="w"> </span><span class="n">Move</span><span class="p">(</span><span class="n">MoveRequest</span><span class="p">)</span><span class="w"> </span><span class="k">returns</span><span class="w"> </span><span class="p">(</span><span class="n">MoveResponse</span><span class="p">);</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="w">    </span><span class="k">rpc</span><span class="w"> </span><span class="n">EmergencyStop</span><span class="p">(</span><span class="n">EmptyRequest</span><span class="p">)</span><span class="w"> </span><span class="k">returns</span><span class="w"> </span><span class="p">(</span><span class="n">StatusResponse</span><span class="p">);</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5"></a><span class="w">    </span><span class="k">rpc</span><span class="w"> </span><span class="n">GetPose</span><span class="p">(</span><span class="n">EmptyRequest</span><span class="p">)</span><span class="w"> </span><span class="k">returns</span><span class="w"> </span><span class="p">(</span><span class="n">PoseResponse</span><span class="p">);</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6"></a><span class="p">}</span>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7"></a>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8"></a><span class="kd">message</span><span class="w"> </span><span class="nc">MoveRequest</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9"></a><span class="w">    </span><span class="kt">float</span><span class="w"> </span><span class="na">linear_x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10"></a><span class="w">    </span><span class="kt">float</span><span class="w"> </span><span class="na">linear_y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span>
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11"></a><span class="w">    </span><span class="kt">float</span><span class="w"> </span><span class="na">angular_z</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">3</span><span class="p">;</span>
+</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12"></a><span class="w">    </span><span class="kt">float</span><span class="w"> </span><span class="na">duration</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">4</span><span class="p">;</span>
+</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13"></a><span class="p">}</span>
+</span></code></pre></div></td></tr></table></div><div class="tabbed-set tabbed-alternate" data-tabs="2:1"><input checked id="service-definitions-perception-service" name="__tabbed_2" type="radio"><div class="tabbed-labels"><label for="service-definitions-perception-service">Perception Service</label></div><div class="tabbed-content"><div class="tabbed-block"></div></div></div><div class="language-protobuf highlight"><table class="highlighttable"><tr><th class="filename" colspan="2"><span class="filename">Protocol Buffer</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-1-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-1-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-1-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-1-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-1-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-1-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-1-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-1-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-1-10">10</a></span>
+<span class="normal"><a href="#__codelineno-1-11">11</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="kd">service</span><span class="w"> </span><span class="n">Perception</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2"></a><span class="w">    </span><span class="k">rpc</span><span class="w"> </span><span class="n">DetectObjects</span><span class="p">(</span><span class="n">ImageRequest</span><span class="p">)</span><span class="w"> </span><span class="k">returns</span><span class="w"> </span><span class="p">(</span><span class="n">DetectionResponse</span><span class="p">);</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3"></a><span class="w">    </span><span class="k">rpc</span><span class="w"> </span><span class="n">GetCameraFeed</span><span class="p">(</span><span class="n">CameraRequest</span><span class="p">)</span><span class="w"> </span><span class="k">returns</span><span class="w"> </span><span class="p">(</span><span class="n">stream</span><span class="w"> </span><span class="n">ImageFrame</span><span class="p">);</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4"></a><span class="w">    </span><span class="k">rpc</span><span class="w"> </span><span class="n">TrainModel</span><span class="p">(</span><span class="n">TrainingRequest</span><span class="p">)</span><span class="w"> </span><span class="k">returns</span><span class="w"> </span><span class="p">(</span><span class="n">stream</span><span class="w"> </span><span class="n">TrainingStatus</span><span class="p">);</span>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5"></a><span class="p">}</span>
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6"></a>
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7"></a><span class="kd">message</span><span class="w"> </span><span class="nc">DetectionResponse</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8"></a><span class="w">    </span><span class="k">repeated</span><span class="w"> </span><span class="n">Detection</span><span class="w"> </span><span class="na">detections</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9"></a><span class="w">    </span><span class="kt">float</span><span class="w"> </span><span class="na">processing_time</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span>
+</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10"></a><span class="w">    </span><span class="kt">string</span><span class="w"> </span><span class="na">model_version</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">3</span><span class="p">;</span>
+</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11"></a><span class="p">}</span>
+</span></code></pre></div></td></tr></table></div><div class="tabbed-set tabbed-alternate" data-tabs="3:1"><input checked id="service-definitions-navigation-service" name="__tabbed_3" type="radio"><div class="tabbed-labels"><label for="service-definitions-navigation-service">Navigation Service</label></div><div class="tabbed-content"><div class="tabbed-block"></div></div></div><div class="language-protobuf highlight"><table class="highlighttable"><tr><th class="filename" colspan="2"><span class="filename">Protocol Buffer</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-2-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-2-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-2-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-2-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-2-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-2-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-2-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-2-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-2-10">10</a></span>
+<span class="normal"><a href="#__codelineno-2-11">11</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="kd">service</span><span class="w"> </span><span class="n">Navigation</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2"></a><span class="w">    </span><span class="k">rpc</span><span class="w"> </span><span class="n">NavigateTo</span><span class="p">(</span><span class="n">NavigationRequest</span><span class="p">)</span><span class="w"> </span><span class="k">returns</span><span class="w"> </span><span class="p">(</span><span class="n">NavigationResponse</span><span class="p">);</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3"></a><span class="w">    </span><span class="k">rpc</span><span class="w"> </span><span class="n">GetMap</span><span class="p">(</span><span class="n">MapRequest</span><span class="p">)</span><span class="w"> </span><span class="k">returns</span><span class="w"> </span><span class="p">(</span><span class="n">MapResponse</span><span class="p">);</span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4"></a><span class="w">    </span><span class="k">rpc</span><span class="w"> </span><span class="n">PlanPath</span><span class="p">(</span><span class="n">PathRequest</span><span class="p">)</span><span class="w"> </span><span class="k">returns</span><span class="w"> </span><span class="p">(</span><span class="n">PathResponse</span><span class="p">);</span>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5"></a><span class="p">}</span>
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6"></a>
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7"></a><span class="kd">message</span><span class="w"> </span><span class="nc">NavigationRequest</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8"></a><span class="w">    </span><span class="n">Pose</span><span class="w"> </span><span class="na">target_pose</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9"></a><span class="w">    </span><span class="kt">bool</span><span class="w"> </span><span class="na">use_obstacle_avoidance</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span>
+</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10"></a><span class="w">    </span><span class="kt">float</span><span class="w"> </span><span class="na">max_speed</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">3</span><span class="p">;</span>
+</span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11"></a><span class="p">}</span>
+</span></code></pre></div></td></tr></table></div><h2 id="sdk-libraries">📚 SDK Libraries<a class="headerlink" href="#sdk-libraries" title="Anchor link to this section">¶</a></h2><p>Official client libraries for easy integration:</p><h3 id="python-sdk">🐍 Python SDK<a class="headerlink" href="#python-sdk" title="Anchor link to this section">¶</a></h3><div class="language-bash highlight"><table class="highlighttable"><tr><th class="filename" colspan="2"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1"></a>pip<span class="w"> </span>install<span class="w"> </span>isaac-ros-jetbot-sdk
+</span></code></pre></div></td></tr></table></div><div class="language-python highlight"><table class="highlighttable"><tr><th class="filename" colspan="2"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-4-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-4-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-4-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-4-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-4-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-4-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-4-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-4-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-4-10">10</a></span>
+<span class="normal"><a href="#__codelineno-4-11">11</a></span>
+<span class="normal"><a href="#__codelineno-4-12">12</a></span>
+<span class="normal"><a href="#__codelineno-4-13">13</a></span>
+<span class="normal"><a href="#__codelineno-4-14">14</a></span>
+<span class="normal"><a href="#__codelineno-4-15">15</a></span>
+<span class="normal"><a href="#__codelineno-4-16">16</a></span>
+<span class="normal"><a href="#__codelineno-4-17">17</a></span>
+<span class="normal"><a href="#__codelineno-4-18">18</a></span>
+<span class="normal"><a href="#__codelineno-4-19">19</a></span>
+<span class="normal"><a href="#__codelineno-4-20">20</a></span>
+<span class="normal"><a href="#__codelineno-4-21">21</a></span>
+<span class="normal"><a href="#__codelineno-4-22">22</a></span>
+<span class="normal"><a href="#__codelineno-4-23">23</a></span>
+<span class="normal"><a href="#__codelineno-4-24">24</a></span>
+<span class="normal"><a href="#__codelineno-4-25">25</a></span>
+<span class="normal"><a href="#__codelineno-4-26">26</a></span>
+<span class="normal"><a href="#__codelineno-4-27">27</a></span>
+<span class="normal"><a href="#__codelineno-4-28">28</a></span>
+<span class="normal"><a href="#__codelineno-4-29">29</a></span>
+<span class="normal"><a href="#__codelineno-4-30">30</a></span>
+<span class="normal"><a href="#__codelineno-4-31">31</a></span>
+<span class="normal"><a href="#__codelineno-4-32">32</a></span>
+<span class="normal"><a href="#__codelineno-4-33">33</a></span>
+<span class="normal"><a href="#__codelineno-4-34">34</a></span>
+<span class="normal"><a href="#__codelineno-4-35">35</a></span>
+<span class="normal"><a href="#__codelineno-4-36">36</a></span>
+<span class="normal"><a href="#__codelineno-4-37">37</a></span>
+<span class="normal"><a href="#__codelineno-4-38">38</a></span>
+<span class="normal"><a href="#__codelineno-4-39">39</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">isaac_ros_jetbot</span><span class="w"> </span><span class="kn">import</span> <span class="n">JetbotClient</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2"></a><span class="kn">import</span><span class="w"> </span><span class="nn">cudavision</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">cv</span>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3"></a>
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4"></a><span class="c1"># Initialize client with CudaVision support</span>
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5"></a><span class="n">client</span> <span class="o">=</span> <span class="n">JetbotClient</span><span class="p">(</span><span class="s1">'http://localhost:8080'</span><span class="p">)</span>
+</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6"></a><span class="n">client</span><span class="o">.</span><span class="n">authenticate</span><span class="p">(</span><span class="s1">'your-api-key'</span><span class="p">)</span>
+</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7"></a>
+</span><span id="__span-4-8"><a id="__codelineno-4-8" name="__codelineno-4-8"></a><span class="c1"># Get robot status</span>
+</span><span id="__span-4-9"><a id="__codelineno-4-9" name="__codelineno-4-9"></a><span class="n">status</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">robot</span><span class="o">.</span><span class="n">get_status</span><span class="p">()</span>
+</span><span id="__span-4-10"><a id="__codelineno-4-10" name="__codelineno-4-10"></a><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Battery: </span><span class="si">{</span><span class="n">status</span><span class="o">.</span><span class="n">battery_level</span><span class="si">}</span><span class="s2">%"</span><span class="p">)</span>
+</span><span id="__span-4-11"><a id="__codelineno-4-11" name="__codelineno-4-11"></a>
+</span><span id="__span-4-12"><a id="__codelineno-4-12" name="__codelineno-4-12"></a><span class="c1"># Enhanced camera processing with CudaVision</span>
+</span><span id="__span-4-13"><a id="__codelineno-4-13" name="__codelineno-4-13"></a><span class="n">camera_feed</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">perception</span><span class="o">.</span><span class="n">get_camera_feed</span><span class="p">()</span>
+</span><span id="__span-4-14"><a id="__codelineno-4-14" name="__codelineno-4-14"></a><span class="n">enhanced_image</span> <span class="o">=</span> <span class="n">cv</span><span class="o">.</span><span class="n">auto_enhance_image</span><span class="p">(</span><span class="n">camera_feed</span><span class="p">)</span>
+</span><span id="__span-4-15"><a id="__codelineno-4-15" name="__codelineno-4-15"></a>
+</span><span id="__span-4-16"><a id="__codelineno-4-16" name="__codelineno-4-16"></a><span class="c1"># Real-time background removal</span>
+</span><span id="__span-4-17"><a id="__codelineno-4-17" name="__codelineno-4-17"></a><span class="n">no_bg_image</span> <span class="o">=</span> <span class="n">cv</span><span class="o">.</span><span class="n">remove_background</span><span class="p">(</span>
+</span><span id="__span-4-18"><a id="__codelineno-4-18" name="__codelineno-4-18"></a>    <span class="n">camera_feed</span><span class="p">,</span> 
+</span><span id="__span-4-19"><a id="__codelineno-4-19" name="__codelineno-4-19"></a>    <span class="n">background_color</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span>  <span class="c1"># Green screen</span>
+</span><span id="__span-4-20"><a id="__codelineno-4-20" name="__codelineno-4-20"></a>    <span class="n">threshold</span><span class="o">=</span><span class="mi">25</span>
+</span><span id="__span-4-21"><a id="__codelineno-4-21" name="__codelineno-4-21"></a><span class="p">)</span>
+</span><span id="__span-4-22"><a id="__codelineno-4-22" name="__codelineno-4-22"></a>
+</span><span id="__span-4-23"><a id="__codelineno-4-23" name="__codelineno-4-23"></a><span class="c1"># Professional image enhancement</span>
+</span><span id="__span-4-24"><a id="__codelineno-4-24" name="__codelineno-4-24"></a><span class="k">with</span> <span class="n">cv</span><span class="o">.</span><span class="n">CudaVisionCore</span><span class="p">()</span> <span class="k">as</span> <span class="n">processor</span><span class="p">:</span>
+</span><span id="__span-4-25"><a id="__codelineno-4-25" name="__codelineno-4-25"></a>    <span class="n">result</span> <span class="o">=</span> <span class="n">processor</span><span class="o">.</span><span class="n">enhance_image</span><span class="p">(</span><span class="n">camera_feed</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s1">'professional'</span><span class="p">)</span>
+</span><span id="__span-4-26"><a id="__codelineno-4-26" name="__codelineno-4-26"></a>    <span class="n">stats</span> <span class="o">=</span> <span class="n">processor</span><span class="o">.</span><span class="n">get_performance_stats</span><span class="p">()</span>
+</span><span id="__span-4-27"><a id="__codelineno-4-27" name="__codelineno-4-27"></a>    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"GPU processing time: </span><span class="si">{</span><span class="n">stats</span><span class="p">[</span><span class="s1">'processing_time_ms'</span><span class="p">]</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">ms"</span><span class="p">)</span>
+</span><span id="__span-4-28"><a id="__codelineno-4-28" name="__codelineno-4-28"></a>
+</span><span id="__span-4-29"><a id="__codelineno-4-29" name="__codelineno-4-29"></a><span class="c1"># Move robot</span>
+</span><span id="__span-4-30"><a id="__codelineno-4-30" name="__codelineno-4-30"></a><span class="n">client</span><span class="o">.</span><span class="n">robot</span><span class="o">.</span><span class="n">move</span><span class="p">(</span><span class="n">linear_x</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">angular_z</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">duration</span><span class="o">=</span><span class="mf">3.0</span><span class="p">)</span>
+</span><span id="__span-4-31"><a id="__codelineno-4-31" name="__codelineno-4-31"></a><span class="err">```</span> <span class="p">{</span><span class="n">status</span><span class="o">.</span><span class="n">battery_level</span><span class="p">}</span><span class="o">%</span><span class="s2">")</span>
+</span><span id="__span-4-32"><a id="__codelineno-4-32" name="__codelineno-4-32"></a>
+</span><span id="__span-4-33"><a id="__codelineno-4-33" name="__codelineno-4-33"></a><span class="c1"># Move robot</span>
+</span><span id="__span-4-34"><a id="__codelineno-4-34" name="__codelineno-4-34"></a><span class="n">client</span><span class="o">.</span><span class="n">robot</span><span class="o">.</span><span class="n">move</span><span class="p">(</span><span class="n">linear_x</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">angular_z</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">duration</span><span class="o">=</span><span class="mf">3.0</span><span class="p">)</span>
+</span><span id="__span-4-35"><a id="__codelineno-4-35" name="__codelineno-4-35"></a>
+</span><span id="__span-4-36"><a id="__codelineno-4-36" name="__codelineno-4-36"></a><span class="c1"># Detect objects</span>
+</span><span id="__span-4-37"><a id="__codelineno-4-37" name="__codelineno-4-37"></a><span class="n">detections</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">perception</span><span class="o">.</span><span class="n">detect_objects</span><span class="p">()</span>
+</span><span id="__span-4-38"><a id="__codelineno-4-38" name="__codelineno-4-38"></a><span class="k">for</span> <span class="n">detection</span> <span class="ow">in</span> <span class="n">detections</span><span class="p">:</span>
+</span><span id="__span-4-39"><a id="__codelineno-4-39" name="__codelineno-4-39"></a>    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Found </span><span class="si">{</span><span class="n">detection</span><span class="o">.</span><span class="n">class_name</span><span class="si">}</span><span class="s2"> with confidence </span><span class="si">{</span><span class="n">detection</span><span class="o">.</span><span class="n">confidence</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+</span></code></pre></div></td></tr></table></div><h2 id="versioning-changelog">🔄 Versioning &amp; Changelog<a class="headerlink" href="#versioning-changelog" title="Anchor link to this section">¶</a></h2><h3 id="api-versioning">📋 API Versioning<a class="headerlink" href="#api-versioning" title="Anchor link to this section">¶</a></h3><ul><li><strong>Current Version</strong>: <code>v1.2.0</code></li><li><strong>Versioning Scheme</strong>: Semantic versioning (Major.Minor.Patch)</li><li><strong>Backward Compatibility</strong>: Maintained for at least 2 major versions</li><li><strong>Deprecation Notice</strong>: 6 months advance notice for breaking changes</li></ul><h2 id="examples-tutorials">🎓 Examples &amp; Tutorials<a class="headerlink" href="#examples-tutorials" title="Anchor link to this section">¶</a></h2><h3 id="quick-start-examples">🚀 Quick Start Examples<a class="headerlink" href="#quick-start-examples" title="Anchor link to this section">¶</a></h3><ul><li><strong><a href="examples/basic-control.md">🤖 Basic Robot Control</a></strong> - Move robot and read sensors</li><li><strong><a href="examples/cudavision-basics.md">🎨 CudaVision Image Processing</a></strong> - GPU-accelerated image enhancement</li><li><strong><a href="examples/object-detection.md">👁️ Object Detection</a></strong> - Implement real-time detection with enhancement</li><li><strong><a href="examples/background-removal.md">🎬 Background Removal</a></strong> - Real-time chroma key processing</li><li><strong><a href="examples/navigation.md">🧭 Autonomous Navigation</a></strong> - Create navigation missions</li><li></li></ul><h3 id="advanced-tutorials">📚 Advanced Tutorials<a class="headerlink" href="#advanced-tutorials" title="Anchor link to this section">¶</a></h3><ul><li><strong><a href="tutorials/custom-services.md">🔧 Custom Service Development</a></strong> - Extend the API</li><li><strong><a href="tutorials/ai-models.md">🧠 AI Model Integration</a></strong> - Deploy custom models with CudaVision preprocessing</li><li><strong><a href="tutorials/photography-enhancement.md">🎨 Professional Photography</a></strong> - Advanced camera processing</li><li><strong><a href="tutorials/video-processing.md">🎬 Real-time Video Processing</a></strong> - Live video enhancement</li><li><strong><a href="tutorials/fleet-management.md">🤖 Multi-Robot Fleet</a></strong> - Manage robot swarms</li><li><strong><a href="tutorials/cloud-deployment.md">☁️ Cloud Integration</a></strong> - Scale to the cloud</li><li><strong><a href="tutorials/gpu-optimization.md">⚡ GPU Optimization</a></strong> - Maximize CudaVision performance</li></ul><h2 id="support-community">🆘 Support &amp; Community<a class="headerlink" href="#support-community" title="Anchor link to this section">¶</a></h2><h3 id="getting-help">💬 Getting Help<a class="headerlink" href="#getting-help" title="Anchor link to this section">¶</a></h3><ul><li><strong>📖 Documentation</strong>: <a href="https://docs.isaac-ros-jetbot.com">Full API Documentation</a></li><li><strong>💬 Discord</strong>: <a href="https://discord.gg/isaac-ros">Isaac ROS Community</a></li><li><strong>🐛 Bug Reports</strong>: <a href="https://github.com/TNG-Blue/Isaac_ROS-Jetbot_NanoOWL/issues">GitHub Issues</a></li><li><strong>📧 Email Support</strong>: <a href="mailto:api-support@isaac-ros.com">api-support@isaac-ros.com</a></li></ul><h3 id="contributing">🤝 Contributing<a class="headerlink" href="#contributing" title="Anchor link to this section">¶</a></h3><p>We welcome contributions to improve the API:</p><ol><li><strong>📋 Report Issues</strong>: Found a bug? Report it on GitHub</li><li><strong>💡 Feature Requests</strong>: Suggest new API features</li><li><strong>📝 Documentation</strong>: Help improve API documentation</li><li><strong>🧪 Testing</strong>: Contribute test cases and examples</li></ol><hr><h2 id="interactive-api-explorer">📱 Interactive API Explorer<a class="headerlink" href="#interactive-api-explorer" title="Anchor link to this section">¶</a></h2><div class="api-explorer"><div class="explorer-header"><h3>🧪 Try the API</h3><p>Test API endpoints directly from your browser with live CudaVision demos</p></div><div class="explorer-actions"><a class="btn btn-primary" href="/api/explorer">🚀 Open API Explorer</a><a class="btn btn-gpu" href="/api/cudavision-demo">🎨 CudaVision Live Demo</a><a class="btn btn-secondary" href="/api/swagger">📋 View Swagger UI</a><a class="btn btn-secondary" href="/api/postman">📫 Download Postman Collection</a></div><div class="demo-features"><h4>🎨 Live CudaVision Demos:</h4><ul><li>Real-time background removal with webcam</li><li>Professional image enhancement comparison</li><li>GPU performance benchmarking</li><li>Noise reduction before/after visualization</li></ul></div></div><div class="admonition tip"><p class="admonition-title">🎯 Ready to Start?</p></div><p>Choose your preferred method to get started with the Isaac ROS Jetbot NanoOWL API:</p><div class="language-text highlight"><table class="highlighttable"><tr><th class="filename" colspan="2"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code>- **🐍 Python Developers**: Install the Python SDK and follow our [Python tutorial](examples/python-quickstart.md)
+- **🎨 CudaVision Users**: Try the [GPU Image Processing guide](examples/cudavision-quickstart.md)
+- **🧪 API Testing**: Try the [interactive API explorer](/api/explorer) right in your browser
+- **🎬 Real-time Video**: Explore [CudaVision live demos](/api/cudavision-demo) with your webcam
+</code></pre></div></td></tr></table></div><p><strong>Happy Coding!</strong> 🚀 Build amazing robotics applications with Isaac ROS Jetbot NanoOWL APIs and experience 15-20x performance improvements with CudaVision GPU acceleration.</p></div></article></div><script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script><script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script></div><button class="md-top md-icon" data-md-component="top" hidden type="button"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"></path></svg> Back to top </button></main><footer class="md-footer isaac-footer"><nav aria-label="footer.title" class="md-footer__inner md-grid"><a aria-label="Previous: Overview" class="md-footer__link md-footer__link--prev isaac-nav-link" href="../software/"><div class="md-footer__button md-icon"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg></div><div class="md-footer__title"><div class="md-ellipsis"><span class="md-footer__direction"> Previous </span><span class="isaac-nav-title">Overview</span></div></div></a><a aria-label="Next: CudaVision" class="md-footer__link md-footer__link--next isaac-nav-link" href="cudavision/"><div class="md-footer__title"><div class="md-ellipsis"><span class="md-footer__direction"> Next </span><span class="isaac-nav-title">CudaVision</span></div></div><div class="md-footer__button md-icon"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"></path></svg></div></a></nav><div class="md-footer-meta md-typeset isaac-footer-content"><div class="md-footer-meta__inner md-grid"><div class="md-footer-copyright isaac-copyright"><div class="md-footer-copyright__highlight isaac-copyright-text"> Copyright © 2025 TNG Blue Team </div><div class="isaac-footer-grid"><div class="isaac-footer-section isaac-footer-primary"><div class="isaac-footer-logo"><h4 class="isaac-footer-title"><span class="isaac-logo-icon">🤖</span> Isaac ROS Jetbot NanoOWL </h4></div><p class="isaac-footer-description"> Advanced AI-powered autonomous robotics platform featuring dual Jetson Orin Nano Super processors, real-time object detection with NanoOWL, and distributed computing architecture for next-generation robotic applications. </p><div class="isaac-footer-badges"><span class="isaac-badge isaac-badge-primary">40 TOPS AI</span><span class="isaac-badge isaac-badge-secondary">Real-time SLAM</span><span class="isaac-badge isaac-badge-accent">Open Source</span></div></div><div class="isaac-footer-section"><h4 class="isaac-footer-heading">Quick Start</h4><ul class="isaac-footer-links"><li><a class="isaac-footer-link" href="/getting_started/"><span class="isaac-link-icon">🚀</span>Getting Started </a></li><li><a class="isaac-footer-link" href="/getting_started/installation/"><span class="isaac-link-icon">💾</span>Installation Guide </a></li><li><a class="isaac-footer-link" href="/tutorials/"><span class="isaac-link-icon">📚</span>Tutorials </a></li><li><a class="isaac-footer-link" href="/examples/"><span class="isaac-link-icon">🎯</span>Examples </a></li><li><a class="isaac-footer-link" href="/api/"><span class="isaac-link-icon">⚙️</span>API Reference </a></li></ul></div><div class="isaac-footer-section"><h4 class="isaac-footer-heading">Community</h4><ul class="isaac-footer-links"><li><a class="isaac-footer-link" href="https://github.com/TNG-Blue/Isaac_ROS-Jetbot_NanoOWL" rel="noopener" target="_blank"><span class="isaac-link-icon">💻</span>GitHub Repository </a></li><li><a class="isaac-footer-link" href="https://discord.gg/isaac-ros" rel="noopener" target="_blank"><span class="isaac-link-icon">💬</span>Discord Community </a></li><li><a class="isaac-footer-link" href="/development/contributing/"><span class="isaac-link-icon">🤝</span>Contributing </a></li><li><a class="isaac-footer-link" href="/development/roadmap/"><span class="isaac-link-icon">🗺️</span>Roadmap </a></li><li><a class="isaac-footer-link" href="mailto:support@isaac-ros-jetbot.com"><span class="isaac-link-icon">📧</span>Support </a></li></ul></div><div class="isaac-footer-section"><h4 class="isaac-footer-heading">Resources</h4><ul class="isaac-footer-links"><li><a class="isaac-footer-link" href="https://docs.nvidia.com/isaac-ros/" rel="noopener" target="_blank"><span class="isaac-link-icon">📖</span>Isaac ROS Docs </a></li><li><a class="isaac-footer-link" href="https://developer.nvidia.com/jetson" rel="noopener" target="_blank"><span class="isaac-link-icon">🖥️</span>Jetson Platform </a></li><li><a class="isaac-footer-link" href="https://github.com/NVIDIA-AI-IOT/nanoowl" rel="noopener" target="_blank"><span class="isaac-link-icon">👁️</span>NanoOWL </a></li><li><a class="isaac-footer-link" href="/reference/changelog/"><span class="isaac-link-icon">📋</span>Changelog </a></li><li><a class="isaac-footer-link" href="/reference/hardware/"><span class="isaac-link-icon">🔧</span>Hardware Specs </a></li></ul></div></div><div class="isaac-social-section"><h4 class="isaac-social-heading">Connect With Us</h4><div class="isaac-social-grid"><a class="isaac-social-link" href="https://github.com/TNG-Blue/Isaac_ROS-Jetbot_NanoOWL" rel="noopener noreferrer" target="_blank" title="GitHub Repository"><svg class="isaac-social-icon" height="24" viewbox="0 0 24 24" width="24"><path d="M12,2A10,10 0 0,0 2,12C2,16.42 4.87,20.17 8.84,21.5C9.34,21.58 9.5,21.27 9.5,21C9.5,20.77 9.5,20.14 9.5,19.31C6.73,19.91 6.14,17.97 6.14,17.97C5.68,16.81 5.03,16.5 5.03,16.5C4.12,15.88 5.1,15.9 5.1,15.9C6.1,15.97 6.63,16.93 6.63,16.93C7.5,18.45 8.97,18 9.54,17.76C9.63,17.11 9.89,16.67 10.17,16.42C7.95,16.17 5.62,15.31 5.62,11.5C5.62,10.39 6,9.5 6.65,8.79C6.55,8.54 6.2,7.5 6.75,6.15C6.75,6.15 7.59,5.88 9.5,7.17C10.29,6.95 11.15,6.84 12,6.84C12.85,6.84 13.71,6.95 14.5,7.17C16.41,5.88 17.25,6.15 17.25,6.15C17.8,7.5 17.45,8.54 17.35,8.79C18,9.5 18.38,10.39 18.38,11.5C18.38,15.32 16.04,16.16 13.81,16.41C14.17,16.72 14.5,17.33 14.5,18.26C14.5,19.6 14.5,20.68 14.5,21C14.5,21.27 14.66,21.59 15.17,21.5C19.14,20.16 22,16.42 22,12A10,10 0 0,0 12,2Z" fill="currentColor"></path></svg><span class="isaac-social-label">GitHub Repository</span></a><a class="isaac-social-link" href="https://hub.docker.com/r/tngblue/" rel="noopener noreferrer" target="_blank" title="Docker Hub"><svg class="isaac-social-icon" height="24" viewbox="0 0 24 24" width="24"><path d="M13.983 11.078h2.119a.186.186 0 00.186-.185V9.006a.186.186 0 00-.186-.186h-2.119a.185.185 0 00-.185.185v1.888c0 .102.083.185.185.185m-2.954-5.43h2.118a.186.186 0 00.186-.186V3.574a.186.186 0 00-.186-.185h-2.118a.185.185 0 00-.185.185v1.888c0 .102.082.185.185.186" fill="currentColor"></path></svg><span class="isaac-social-label">Docker Hub</span></a></div></div><div class="isaac-footer-bottom"><div class="isaac-footer-legal"><div class="isaac-legal-links"><a class="isaac-legal-link" href="/legal/privacy/">Privacy Policy</a><a class="isaac-legal-link" href="/legal/terms/">Terms of Service</a><a class="isaac-legal-link" href="/legal/license/">License</a><a class="isaac-legal-link" href="/security/">Security</a></div><div class="isaac-version-info"><span class="isaac-version">v2.0.0</span><span class="isaac-build">Build 2025.06.09</span></div></div><div class="isaac-footer-attribution"><p class="isaac-attribution-text"> Built with ❤️ by the TNG Blue team using <a href="https://squidfunk.github.io/mkdocs-material/" rel="noopener" target="_blank">Material for MkDocs</a></p><div class="isaac-powered-by"><span class="isaac-tech-badge">🔋 Powered by</span><a class="isaac-tech-link" href="https://developer.nvidia.com/isaac-ros" rel="noopener" target="_blank">NVIDIA Isaac ROS</a><span class="isaac-tech-separator">•</span><a class="isaac-tech-link" href="https://www.ros.org/" rel="noopener" target="_blank">ROS 2</a><span class="isaac-tech-separator">•</span><a class="isaac-tech-link" href="https://kubernetes.io/" rel="noopener" target="_blank">Kubernetes</a></div></div></div></div></div></div></footer><style>
+/* ===== ISAAC FOOTER STYLES ===== */
+.isaac-footer {
+    background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+    color: #e2e8f0;
+    margin-top: 4rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.isaac-footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, #3b82f6, transparent);
+}
+
+/* Navigation Links Enhancement */
+.isaac-nav-link {
+    background: rgba(59, 130, 246, 0.1);
+    border-radius: 12px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    border: 1px solid rgba(59, 130, 246, 0.2);
+}
+
+.isaac-nav-link:hover {
+    background: rgba(59, 130, 246, 0.2);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(59, 130, 246, 0.25);
+}
+
+.isaac-nav-title {
+    font-weight: 600;
+    color: #60a5fa;
+}
+
+/* Footer Content Styling */
+.isaac-footer-content {
+    padding: 3rem 0 2rem;
+}
+
+.isaac-copyright {
+    width: 100%;
+}
+
+.isaac-copyright-text {
+    text-align: center;
+    font-size: 0.875rem;
+    color: #94a3b8;
+    margin-bottom: 2rem;
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Enhanced Footer Grid */
+.isaac-footer-grid {
+    display: grid;
+    grid-template-columns: 1fr 200px 200px 200px;
+    gap: 3rem;
+    margin: 3rem 0;
+    padding: 2rem 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.isaac-footer-section {
+    min-height: 200px;
+}
+
+.isaac-footer-primary {
+    grid-column: 1;
+}
+
+/* Project Information Styling */
+.isaac-footer-logo {
+    margin-bottom: 1.5rem;
+}
+
+.isaac-footer-title {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #f1f5f9;
+    margin: 0;
+    line-height: 1.2;
+}
+
+.isaac-logo-icon {
+    font-size: 2rem;
+    background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.isaac-footer-description {
+    color: #cbd5e1;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+    font-size: 0.95rem;
+}
+
+/* Badge Styling */
+.isaac-footer-badges {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    margin-bottom: 1rem;
+}
+
+.isaac-badge {
+    padding: 0.25rem 0.75rem;
+    border-radius: 9999px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.025em;
+}
+
+.isaac-badge-primary {
+    background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+    color: white;
+}
+
+.isaac-badge-secondary {
+    background: linear-gradient(135deg, #8b5cf6, #7c3aed);
+    color: white;
+}
+
+.isaac-badge-accent {
+    background: linear-gradient(135deg, #10b981, #059669);
+    color: white;
+}
+
+/* Section Headings */
+.isaac-footer-heading {
+    color: #f8fafc;
+    font-weight: 700;
+    font-size: 1.125rem;
+    margin-bottom: 1.25rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid #3b82f6;
+    position: relative;
+}
+
+.isaac-footer-heading::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 30px;
+    height: 2px;
+    background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+}
+
+/* Footer Links */
+.isaac-footer-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.isaac-footer-link {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #cbd5e1;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    padding: 0.5rem 0.75rem;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.isaac-footer-link::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 0;
+    background: linear-gradient(90deg, rgba(59, 130, 246, 0.1), rgba(139, 92, 246, 0.1));
+    transition: width 0.3s ease;
+}
+
+.isaac-footer-link:hover {
+    color: #f1f5f9;
+    transform: translateX(4px);
+}
+
+.isaac-footer-link:hover::before {
+    width: 100%;
+}
+
+.isaac-link-icon {
+    font-size: 1rem;
+    opacity: 0.8;
+    transition: transform 0.3s ease;
+}
+
+.isaac-footer-link:hover .isaac-link-icon {
+    transform: scale(1.2);
+}
+
+/* Social Media Section */
+.isaac-social-section {
+    margin: 3rem 0 2rem;
+    padding: 2rem 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    text-align: center;
+}
+
+.isaac-social-heading {
+    color: #f8fafc;
+    font-weight: 700;
+    font-size: 1.25rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.isaac-social-grid {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.isaac-social-link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 1rem;
+    background: rgba(59, 130, 246, 0.1);
+    border: 1px solid rgba(59, 130, 246, 0.2);
+    border-radius: 12px;
+    color: #cbd5e1;
+    text-decoration: none;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    min-width: 80px;
+    position: relative;
+    overflow: hidden;
+}
+
+.isaac-social-link::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(59, 130, 246, 0.2), rgba(139, 92, 246, 0.2));
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.isaac-social-link:hover {
+    color: #f1f5f9;
+    transform: translateY(-4px);
+    box-shadow: 0 12px 30px rgba(59, 130, 246, 0.3);
+    border-color: rgba(59, 130, 246, 0.5);
+}
+
+.isaac-social-link:hover::before {
+    opacity: 1;
+}
+
+.isaac-social-icon {
+    width: 28px;
+    height: 28px;
+    transition: transform 0.3s ease;
+    position: relative;
+    z-index: 1;
+}
+
+.isaac-social-link:hover .isaac-social-icon {
+    transform: scale(1.2) rotate(5deg);
+}
+
+.isaac-social-label {
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.025em;
+    position: relative;
+    z-index: 1;
+}
+
+/* Footer Bottom Section */
+.isaac-footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 2rem 0 1rem;
+    margin-top: 2rem;
+}
+
+.isaac-footer-legal {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.isaac-legal-links {
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.isaac-legal-link {
+    color: #94a3b8;
+    text-decoration: none;
+    font-size: 0.875rem;
+    transition: color 0.3s ease;
+}
+
+.isaac-legal-link:hover {
+    color: #60a5fa;
+}
+
+.isaac-version-info {
+    display: flex;
+    gap: 1rem;
+    font-size: 0.75rem;
+    color: #64748b;
+}
+
+.isaac-version,
+.isaac-build {
+    padding: 0.25rem 0.5rem;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 4px;
+    font-family: 'JetBrains Mono', 'Fira Code', monospace;
+}
+
+/* Attribution Section */
+.isaac-footer-attribution {
+    text-align: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    padding-top: 1.5rem;
+}
+
+.isaac-attribution-text {
+    color: #94a3b8;
+    font-size: 0.875rem;
+    margin-bottom: 1rem;
+}
+
+.isaac-attribution-text a {
+    color: #60a5fa;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.isaac-attribution-text a:hover {
+    color: #93c5fd;
+}
+
+.isaac-powered-by {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+    font-size: 0.8rem;
+}
+
+.isaac-tech-badge {
+    background: linear-gradient(135deg, #f59e0b, #d97706);
+    color: white;
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    font-weight: 600;
+}
+
+.isaac-tech-link {
+    color: #60a5fa;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    position: relative;
+}
+
+.isaac-tech-link:hover {
+    color: #93c5fd;
+    background: rgba(96, 165, 250, 0.1);
+    transform: translateY(-1px);
+}
+
+.isaac-tech-separator {
+    color: #64748b;
+    font-weight: 300;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .isaac-footer-grid {
+        grid-template-columns: 1fr 180px 180px 180px;
+        gap: 2rem;
+    }
+}
+
+@media (max-width: 992px) {
+    .isaac-footer-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+    }
+
+    .isaac-footer-primary {
+        grid-column: 1 / -1;
+    }
+}
+
+@media (max-width: 768px) {
+    .isaac-footer {
+        margin-top: 2rem;
+    }
+
+    .isaac-footer-content {
+        padding: 2rem 0 1rem;
+    }
+
+    .isaac-footer-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        margin: 2rem 0;
+    }
+
+    .isaac-footer-title {
+        font-size: 1.25rem;
+        flex-direction: column;
+        text-align: center;
+        gap: 0.5rem;
+    }
+
+    .isaac-logo-icon {
+        font-size: 1.75rem;
+    }
+
+    .isaac-footer-description {
+        text-align: center;
+        font-size: 0.9rem;
+    }
+
+    .isaac-footer-badges {
+        justify-content: center;
+    }
+
+    .isaac-footer-heading {
+        text-align: center;
+        font-size: 1rem;
+    }
+
+    .isaac-footer-links {
+        align-items: center;
+    }
+
+    .isaac-footer-legal {
+        flex-direction: column;
+        text-align: center;
+        gap: 1rem;
+    }
+
+    .isaac-legal-links {
+        justify-content: center;
+        gap: 1rem;
+    }
+
+    .isaac-social-grid {
+        gap: 0.75rem;
+    }
+
+    .isaac-social-link {
+        min-width: 70px;
+        padding: 0.75rem;
+    }
+
+    .isaac-powered-by {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .isaac-footer-content {
+        padding: 1.5rem 0 1rem;
+    }
+
+    .isaac-footer-grid {
+        margin: 1.5rem 0;
+        gap: 1.5rem;
+    }
+
+    .isaac-footer-title {
+        font-size: 1.125rem;
+    }
+
+    .isaac-footer-description {
+        font-size: 0.85rem;
+        line-height: 1.5;
+    }
+
+    .isaac-footer-badges {
+        gap: 0.25rem;
+    }
+
+    .isaac-badge {
+        font-size: 0.6875rem;
+        padding: 0.2rem 0.5rem;
+    }
+
+    .isaac-footer-link {
+        font-size: 0.85rem;
+        padding: 0.375rem 0.5rem;
+    }
+
+    .isaac-link-icon {
+        font-size: 0.875rem;
+    }
+
+    .isaac-social-grid {
+        gap: 0.5rem;
+    }
+
+    .isaac-social-link {
+        min-width: 60px;
+        padding: 0.5rem;
+    }
+
+    .isaac-social-icon {
+        width: 24px;
+        height: 24px;
+    }
+
+    .isaac-social-label {
+        font-size: 0.6875rem;
+    }
+
+    .isaac-legal-links {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .isaac-version-info {
+        justify-content: center;
+        gap: 0.5rem;
+    }
+
+    .isaac-attribution-text {
+        font-size: 0.8rem;
+    }
+
+    .isaac-powered-by {
+        font-size: 0.75rem;
+    }
+}
+
+/* Dark Mode Enhancements */
+[data-md-color-scheme="slate"] .isaac-footer {
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+}
+
+[data-md-color-scheme="slate"] .isaac-nav-link {
+    background: rgba(59, 130, 246, 0.15);
+    border-color: rgba(59, 130, 246, 0.3);
+}
+
+[data-md-color-scheme="slate"] .isaac-nav-link:hover {
+    background: rgba(59, 130, 246, 0.25);
+}
+
+[data-md-color-scheme="slate"] .isaac-copyright-text {
+    background: rgba(255, 255, 255, 0.03);
+    border-color: rgba(255, 255, 255, 0.08);
+}
+
+[data-md-color-scheme="slate"] .isaac-footer-link {
+    color: #94a3b8;
+}
+
+[data-md-color-scheme="slate"] .isaac-footer-link:hover {
+    color: #e2e8f0;
+}
+
+[data-md-color-scheme="slate"] .isaac-social-link {
+    background: rgba(59, 130, 246, 0.08);
+    border-color: rgba(59, 130, 246, 0.15);
+}
+
+[data-md-color-scheme="slate"] .isaac-social-link:hover {
+    background: rgba(59, 130, 246, 0.2);
+    border-color: rgba(59, 130, 246, 0.4);
+}
+
+/* Animation Enhancements */
+@keyframes isaacGlow {
+    0%, 100% {
+        box-shadow: 0 0 5px rgba(59, 130, 246, 0.3);
+    }
+    50% {
+        box-shadow: 0 0 20px rgba(59, 130, 246, 0.6), 0 0 30px rgba(139, 92, 246, 0.3);
+    }
+}
+
+.isaac-footer-title:hover .isaac-logo-icon {
+    animation: isaacGlow 2s ease-in-out infinite;
+}
+
+@keyframes isaacFloat {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-3px);
+    }
+}
+
+.isaac-social-link:hover {
+    animation: isaacFloat 2s ease-in-out infinite;
+}
+
+/* Accessibility Enhancements */
+@media (prefers-reduced-motion: reduce) {
+    .isaac-footer *,
+    .isaac-footer *::before,
+    .isaac-footer *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+
+    .isaac-nav-link:hover,
+    .isaac-footer-link:hover,
+    .isaac-social-link:hover {
+        transform: none !important;
+    }
+}
+
+/* High Contrast Mode */
+@media (prefers-contrast: high) {
+    .isaac-footer {
+        background: #000000;
+        color: #ffffff;
+    }
+
+    .isaac-footer-link,
+    .isaac-social-link {
+        border: 2px solid #ffffff;
+    }
+
+    .isaac-footer-link:hover,
+    .isaac-social-link:hover {
+        background: #ffffff;
+        color: #000000;
+    }
+}
+
+/* Print Styles */
+@media print {
+    .isaac-footer {
+        background: none !important;
+        color: #000000 !important;
+        box-shadow: none !important;
+    }
+
+    .isaac-social-section,
+    .isaac-footer-badges {
+        display: none !important;
+    }
+
+    .isaac-footer-link,
+    .isaac-tech-link {
+        color: #000000 !important;
+        text-decoration: underline !important;
+    }
+}
+
+/* Loading State */
+.isaac-footer.loading {
+    opacity: 0.7;
+    pointer-events: none;
+}
+
+.isaac-footer.loading * {
+    animation: pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.5;
+    }
+}
+
+/* Focus States for Better Accessibility */
+.isaac-footer-link:focus,
+.isaac-social-link:focus,
+.isaac-tech-link:focus,
+.isaac-legal-link:focus {
+    outline: 2px solid #3b82f6;
+    outline-offset: 2px;
+    border-radius: 4px;
+}
+
+/* Custom Scrollbar for Footer Content */
+.isaac-footer-section::-webkit-scrollbar {
+    width: 6px;
+}
+
+.isaac-footer-section::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 3px;
+}
+
+.isaac-footer-section::-webkit-scrollbar-thumb {
+    background: rgba(59, 130, 246, 0.6);
+    border-radius: 3px;
+}
+
+.isaac-footer-section::-webkit-scrollbar-thumb:hover {
+    background: rgba(59, 130, 246, 0.8);
+}
+</style></div><div class="md-dialog" data-md-component="dialog"><div class="md-dialog__inner md-typeset"></div></div><script id="__config" type="application/json">{"base": "..", "features": ["announce.dismiss", "content.action.edit", "content.action.view", "content.code.annotate", "content.code.copy", "content.code.select", "content.tabs.link", "content.tooltips", "navigation.expand", "navigation.footer", "navigation.indexes", "navigation.instant", "navigation.instant.prefetch", "navigation.path", "navigation.sections", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "navigation.tracking", "search.highlight", "search.share", "search.suggest", "toc.follow"], "search": "../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script><script src="../assets/javascripts/bundle.13a4f30d.min.js"></script><script src="../assets/js/navigation-fix.js"></script><script src="../assets/js/mathjax.js"></script><script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script><script src="../assets/js/custom.js"></script><script src="../assets/js/animations.js"></script><script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script><script>
+    document.addEventListener('DOMContentLoaded', function () {
+        // Enhanced Mermaid initialization
+        if (window.mermaid) {
+            mermaid.initialize({
+                startOnLoad: true,
+                theme: document.documentElement.getAttribute('data-md-color-scheme') === 'slate' ? 'dark' : 'default',
+                themeVariables: {
+                    primaryColor: getComputedStyle(document.documentElement).getPropertyValue('--md-primary-fg-color'),
+                    primaryTextColor: getComputedStyle(document.documentElement).getPropertyValue('--md-default-fg-color'),
+                    fontFamily: getComputedStyle(document.documentElement).getPropertyValue('--md-text-font-family')
+                }
+            });
+        }
+
+        // Enhanced scroll progress with easing
+        let ticking = false;
+
+        function updateScrollProgress() {
+            const scrolled = window.pageYOffset;
+            const maxHeight = document.documentElement.scrollHeight - window.innerHeight;
+            const progress = Math.min((scrolled / maxHeight) * 100, 100);
+
+            const progressBar = document.querySelector('.progress-gradient');
+            if (progressBar) {
+                progressBar.style.width = progress + '%';
+            }
+
+            // Enhanced header scroll effect
+            const header = document.querySelector('.md-header');
+            const scrollThreshold = 50;
+
+            if (scrolled > scrollThreshold) {
+                header?.classList.add('scrolled');
+            } else {
+                header?.classList.remove('scrolled');
+            }
+
+            ticking = false;
+        }
+
+        function requestScrollUpdate() {
+            if (!ticking) {
+                requestAnimationFrame(updateScrollProgress);
+                ticking = true;
+            }
+        }
+
+        window.addEventListener('scroll', requestScrollUpdate, { passive: true });
+        window.addEventListener('resize', requestScrollUpdate, { passive: true });
+
+        // Initial call
+        updateScrollProgress();
+
+        // Enhanced intersection observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate-in');
+                }
+            });
+        }, observerOptions);
+
+        // Observe elements for animation
+        document.querySelectorAll('.md-content > *').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Enhanced keyboard navigation
+        document.addEventListener('keydown', function(e) {
+            // ESC key to close any overlays
+            if (e.key === 'Escape') {
+                document.querySelectorAll('.overlay, .modal').forEach(el => {
+                    el.classList.remove('active');
+                });
+            }
+
+            // Ctrl/Cmd + Home to scroll to top
+            if ((e.ctrlKey || e.metaKey) && e.key === 'Home') {
+                e.preventDefault();
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
+        });
+    });
+
+    // Utility function for smooth animations
+    function easeOutCubic(t) {
+        return 1 - Math.pow(1 - t, 3);
+    }
+
+    // Theme change handler for Mermaid
+    const observer = new MutationObserver(function(mutations) {
+        mutations.forEach(function(mutation) {
+            if (mutation.type === 'attributes' && mutation.attributeName === 'data-md-color-scheme') {
+                if (window.mermaid) {
+                    location.reload(); // Reload to apply new theme to Mermaid diagrams
+                }
+            }
+        });
+    });
+
+    observer.observe(document.documentElement, {
+        attributes: true,
+        attributeFilter: ['data-md-color-scheme']
+    });
+</script><script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(() => { lightbox.reload() });
+</script></body></html>
