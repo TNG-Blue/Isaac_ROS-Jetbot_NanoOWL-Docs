@@ -1,4 +1,4 @@
-<!DOCTYPE html><html class="no-js" lang="en"><head><meta charset="utf-8"><meta content="width=device-width,initial-scale=1" name="viewport"><meta content="Advanced Robotics Platform with Jetson Orin Nano Super, Docker, Kubernetes, and micro-ROS" name="description"><meta content="TNG Blue Team" name="author"><link href="https://TNG-Blue.github.io/Isaac_ROS-Jetbot_NanoOWL/getting_started/" rel="canonical"><link href=".." rel="prev"><link href="installation/" rel="next"><link href="../assets/images/favicon.png" rel="icon"><meta content="mkdocs-1.6.1, mkdocs-material-9.6.14" name="generator"><title>Overview - Isaac ROS Jetbot NanoOWL</title><link href="../assets/stylesheets/main.342714a4.min.css" rel="stylesheet"><link href="../assets/stylesheets/palette.06af60db.min.css" rel="stylesheet"><style>
+<!DOCTYPE html><html class="no-js" lang="en"><head><meta charset="utf-8"><meta content="width=device-width,initial-scale=1" name="viewport"><meta content="Advanced Robotics Platform with Jetson Orin Nano Super, Docker, Kubernetes, and micro-ROS" name="description"><meta content="TNG Blue Team" name="author"><link href="https://TNG-Blue.github.io/Isaac_ROS-Jetbot_NanoOWL/getting_started/" rel="canonical"><link href=".." rel="prev"><link href="installation/" rel="next"><link href="../assets/images/favicon.png" rel="icon"><meta content="mkdocs-1.6.1, mkdocs-material-9.6.19" name="generator"><title>Overview - Isaac ROS Jetbot NanoOWL</title><link href="../assets/stylesheets/main.7e37652d.min.css" rel="stylesheet"><link href="../assets/stylesheets/palette.06af60db.min.css" rel="stylesheet"><style>
     :root {
         --primary-gradient: linear-gradient(135deg, var(--md-primary-fg-color), var(--md-accent-fg-color));
         --glass-bg: rgba(255, 255, 255, 0.1);
@@ -294,16 +294,17 @@
             display: none !important;
         }
     }
-</style><link crossorigin href="https://fonts.gstatic.com" rel="preconnect"><link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback" rel="stylesheet"><style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style><link href="../assets/css/styles.css" rel="stylesheet"><link href="../assets/css/animations.css" rel="stylesheet"><script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script> <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
-    html.glightbox-open { overflow: initial; height: 100%; }
-    .gslide-title { margin-top: 0px; user-select: text; }
-    .gslide-desc { color: #666; user-select: text; }
-    .gslide-image img { background: white; }
-    .gscrollbar-fixer { padding-right: 15px; }
-    .gdesc-inner { font-size: 0.75rem; }
-    body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
-    body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
-    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../assets/javascripts/glightbox.min.js"></script></head><body data-md-color-accent="indigo" data-md-color-primary="indigo" data-md-color-scheme="default" dir="ltr"><input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"><input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"><label class="md-overlay" for="__drawer"></label><div data-md-component="skip"><a class="md-skip" href="#getting-started"> Skip to content </a></div><div data-md-component="announce"></div><header class="md-header md-header--shadow md-header--lifted" data-md-component="header"><nav aria-label="Header" class="md-header__inner md-grid"><a aria-label="Isaac ROS Jetbot NanoOWL" class="md-header__button md-logo" data-md-component="logo" href=".." title="Isaac ROS Jetbot NanoOWL"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg></a><label class="md-header__button md-icon" for="__drawer"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg></label><div class="md-header__title" data-md-component="header-title"><div class="md-header__ellipsis"><div class="md-header__topic"><span class="md-ellipsis"> Isaac ROS Jetbot NanoOWL </span></div><div class="md-header__topic" data-md-component="header-topic"><span class="md-ellipsis"> Overview </span></div></div></div><form class="md-header__option" data-md-component="palette"><input aria-label="Switch to light mode" class="md-option" data-md-color-accent="indigo" data-md-color-media="(prefers-color-scheme)" data-md-color-primary="indigo" data-md-color-scheme="default" id="__palette_0" name="__palette" type="radio"><label class="md-header__button md-icon" for="__palette_1" hidden title="Switch to light mode"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m14.3 16-.7-2h-3.2l-.7 2H7.8L11 7h2l3.2 9zM20 8.69V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12zm-9.15 3.96h2.3L12 9z"></path></svg></label><input aria-label="Switch to dark mode" class="md-option" data-md-color-accent="indigo" data-md-color-media="(prefers-color-scheme: light)" data-md-color-primary="indigo" data-md-color-scheme="default" id="__palette_1" name="__palette" type="radio"><label class="md-header__button md-icon" for="__palette_2" hidden title="Switch to dark mode"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"></path></svg></label><input aria-label="Switch to system preference" class="md-option" data-md-color-accent="indigo" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-primary="black" data-md-color-scheme="slate" id="__palette_2" name="__palette" type="radio"><label class="md-header__button md-icon" for="__palette_0" hidden title="Switch to system preference"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"></path></svg></label></form><script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script><label class="md-header__button md-icon" for="__search"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg></label><div class="md-search" data-md-component="search" role="dialog"><label class="md-search__overlay" for="__search"></label><div class="md-search__inner" role="search"><form class="md-search__form" name="search"><input aria-label="Search" autocapitalize="off" autocomplete="off" autocorrect="off" class="md-search__input" data-md-component="search-query" name="query" placeholder="Search" required spellcheck="false" type="text"><label class="md-search__icon md-icon" for="__search"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg></label><nav aria-label="Search" class="md-search__options"><a aria-label="Share" class="md-search__icon md-icon" data-clipboard data-clipboard-text data-md-component="search-share" href="javascript:void(0)" tabindex="-1" title="Share"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"></path></svg></a><button aria-label="Clear" class="md-search__icon md-icon" tabindex="-1" title="Clear" type="reset"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg></button></nav><div class="md-search__suggest" data-md-component="search-suggest"></div></form><div class="md-search__output"><div class="md-search__scrollwrap" data-md-scrollfix tabindex="0"><div class="md-search-result" data-md-component="search-result"><div class="md-search-result__meta"> Initializing search </div><ol class="md-search-result__list" role="presentation"></ol></div></div></div></div></div><div class="md-header__source"><a class="md-source" data-md-component="source" href="https://github.com/TNG-Blue/Isaac_ROS-Jetbot_NanoOWL" title="Go to repository"><div class="md-source__icon md-icon"><svg viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><!-- Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"></path></svg></div><div class="md-source__repository"> Isaac_ROS-Jetbot_NanoOWL </div></a></div></nav><nav aria-label="Tabs" class="md-tabs" data-md-component="tabs"><div class="md-grid"><ul class="md-tabs__list"><li class="md-tabs__item"><a class="md-tabs__link" href=".."> Home </a></li><li class="md-tabs__item md-tabs__item--active"><a class="md-tabs__link" href="./"> Getting Started </a></li><li class="md-tabs__item"><a class="md-tabs__link" href="../software/"> Software </a></li><li class="md-tabs__item"><a class="md-tabs__link" href="../api/"> API Reference </a></li><li class="md-tabs__item"><a class="md-tabs__link" href="../tutorials/"> Tutorials </a></li></ul></div></nav></header><div class="md-container" data-md-component="container"><main class="md-main" data-md-component="main"><div class="md-main__inner md-grid"><div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation"><div class="md-sidebar__scrollwrap"><div class="md-sidebar__inner"><nav aria-label="Navigation" class="md-nav md-nav--primary md-nav--lifted" data-md-level="0"><label class="md-nav__title" for="__drawer"><a aria-label="Isaac ROS Jetbot NanoOWL" class="md-nav__button md-logo" data-md-component="logo" href=".." title="Isaac ROS Jetbot NanoOWL"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg></a> Isaac ROS Jetbot NanoOWL </label><div class="md-nav__source"><a class="md-source" data-md-component="source" href="https://github.com/TNG-Blue/Isaac_ROS-Jetbot_NanoOWL" title="Go to repository"><div class="md-source__icon md-icon"><svg viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><!-- Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"></path></svg></div><div class="md-source__repository"> Isaac_ROS-Jetbot_NanoOWL </div></a></div><ul class="md-nav__list" data-md-scrollfix><li class="md-nav__item"><a class="md-nav__link" href=".."><span class="md-ellipsis"> Home </span></a></li><li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested"><input checked class="md-nav__toggle md-toggle" id="__nav_2" type="checkbox"><div class="md-nav__link md-nav__container"><a class="md-nav__link md-nav__link--active" href="./"><span class="md-ellipsis"> Getting Started </span></a><label class="md-nav__link md-nav__link--active" for="__nav_2" id="__nav_2_label" tabindex><span class="md-nav__icon md-icon"></span></label></div><nav aria-expanded="true" aria-labelledby="__nav_2_label" class="md-nav" data-md-level="1"><label class="md-nav__title" for="__nav_2"><span class="md-nav__icon md-icon"></span> Getting Started </label><ul class="md-nav__list" data-md-scrollfix><li class="md-nav__item"><a class="md-nav__link" href="installation/"><span class="md-ellipsis"> Installation </span></a></li></ul></nav></li><li class="md-nav__item md-nav__item--nested"><input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_3" type="checkbox"><div class="md-nav__link md-nav__container"><a class="md-nav__link" href="../software/"><span class="md-ellipsis"> Software </span></a></div><nav aria-expanded="false" aria-labelledby="__nav_3_label" class="md-nav" data-md-level="1"><label class="md-nav__title" for="__nav_3"><span class="md-nav__icon md-icon"></span> Software </label><ul class="md-nav__list" data-md-scrollfix></ul></nav></li><li class="md-nav__item md-nav__item--nested"><input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_4" type="checkbox"><div class="md-nav__link md-nav__container"><a class="md-nav__link" href="../api/"><span class="md-ellipsis"> API Reference </span></a><label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0"><span class="md-nav__icon md-icon"></span></label></div><nav aria-expanded="false" aria-labelledby="__nav_4_label" class="md-nav" data-md-level="1"><label class="md-nav__title" for="__nav_4"><span class="md-nav__icon md-icon"></span> API Reference </label><ul class="md-nav__list" data-md-scrollfix><li class="md-nav__item"><a class="md-nav__link" href="../api/cudavision/"><span class="md-ellipsis"> CudaVision </span></a></li></ul></nav></li><li class="md-nav__item md-nav__item--nested"><input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_5" type="checkbox"><div class="md-nav__link md-nav__container"><a class="md-nav__link" href="../tutorials/"><span class="md-ellipsis"> Tutorials </span></a></div><nav aria-expanded="false" aria-labelledby="__nav_5_label" class="md-nav" data-md-level="1"><label class="md-nav__title" for="__nav_5"><span class="md-nav__icon md-icon"></span> Tutorials </label><ul class="md-nav__list" data-md-scrollfix></ul></nav></li></ul></nav></div></div></div><div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc"><div class="md-sidebar__scrollwrap"><div class="md-sidebar__inner"><nav aria-label="Page contents" class="md-nav md-nav--secondary"><label class="md-nav__title" for="__toc"><span class="md-nav__icon md-icon"></span> Page contents </label><ul class="md-nav__list" data-md-component="toc" data-md-scrollfix><li class="md-nav__item"><a class="md-nav__link" href="#overview"><span class="md-ellipsis"> 📋 Overview </span></a></li><li class="md-nav__item"><a class="md-nav__link" href="#prerequisites"><span class="md-ellipsis"> ✅ Prerequisites </span></a><nav aria-label="✅ Prerequisites" class="md-nav"><ul class="md-nav__list"><li class="md-nav__item"><a class="md-nav__link" href="#development-environment"><span class="md-ellipsis"> 🖥️ Development Environment </span></a></li></ul></nav></li><li class="md-nav__item"><a class="md-nav__link" href="#setup-workflow"><span class="md-ellipsis"> 🗺️ Setup Workflow </span></a></li><li class="md-nav__item"><a class="md-nav__link" href="#time-estimates"><span class="md-ellipsis"> ⏱️ Time Estimates </span></a></li><li class="md-nav__item"><a class="md-nav__link" href="#learning-objectives"><span class="md-ellipsis"> 🎯 Learning Objectives </span></a><nav aria-label="🎯 Learning Objectives" class="md-nav"><ul class="md-nav__list"><li class="md-nav__item"><a class="md-nav__link" href="#hardware-skills"><span class="md-ellipsis"> 🏗️ Hardware Skills </span></a></li><li class="md-nav__item"><a class="md-nav__link" href="#software-skills"><span class="md-ellipsis"> 💻 Software Skills </span></a></li><li class="md-nav__item"><a class="md-nav__link" href="#robotics-skills"><span class="md-ellipsis"> 🤖 Robotics Skills </span></a></li></ul></nav></li><li class="md-nav__item"><a class="md-nav__link" href="#safety-guidelines"><span class="md-ellipsis"> 🛡️ Safety Guidelines </span></a><nav aria-label="🛡️ Safety Guidelines" class="md-nav"><ul class="md-nav__list"><li class="md-nav__item"><a class="md-nav__link" href="#electrical-safety"><span class="md-ellipsis"> ⚡ Electrical Safety </span></a></li><li class="md-nav__item"><a class="md-nav__link" href="#mechanical-safety"><span class="md-ellipsis"> 🔧 Mechanical Safety </span></a></li><li class="md-nav__item"><a class="md-nav__link" href="#cyber-security"><span class="md-ellipsis"> 🖥️ Cyber Security </span></a></li></ul></nav></li><li class="md-nav__item"><a class="md-nav__link" href="#support-community"><span class="md-ellipsis"> 📞 Support &amp; Community </span></a><nav aria-label="📞 Support & Community" class="md-nav"><ul class="md-nav__list"><li class="md-nav__item"><a class="md-nav__link" href="#getting-help"><span class="md-ellipsis"> 🆘 Getting Help </span></a></li><li class="md-nav__item"><a class="md-nav__link" href="#support-tiers"><span class="md-ellipsis"> 🏷️ Support Tiers </span></a></li></ul></nav></li><li class="md-nav__item"><a class="md-nav__link" href="#whats-next"><span class="md-ellipsis"> 🎉 What's Next? </span></a></li></ul></nav></div></div></div><div class="md-content" data-md-component="content"><article class="md-content__inner md-typeset"><div class="scroll-progress"><div class="progress-gradient"></div></div><div class="page-loader" id="pageLoader"><div class="loader-container"><div class="loading-spinner"></div><div class="loading-text">Loading...</div><div class="loading-dots"><span></span><span></span><span></span></div></div></div><button aria-label="Scroll to top" class="scroll-to-top" id="scrollToTop"><svg fill="none" height="24" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="24"><polyline points="18,15 12,9 6,15"></polyline></svg></button><div class="content-container"><a class="md-content__button md-icon" href="https://github.com/TNG-Blue/Isaac_ROS-Jetbot_NanoOWL/edit/master/docs/getting_started/index.md" title="Edit this page"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"></path></svg></a><a class="md-content__button md-icon" href="https://github.com/TNG-Blue/Isaac_ROS-Jetbot_NanoOWL/raw/master/docs/getting_started/index.md" title="View source of this page"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17 18c.56 0 1 .44 1 1s-.44 1-1 1-1-.44-1-1 .44-1 1-1m0-3c-2.73 0-5.06 1.66-6 4 .94 2.34 3.27 4 6 4s5.06-1.66 6-4c-.94-2.34-3.27-4-6-4m0 6.5a2.5 2.5 0 0 1-2.5-2.5 2.5 2.5 0 0 1 2.5-2.5 2.5 2.5 0 0 1 2.5 2.5 2.5 2.5 0 0 1-2.5 2.5M9.27 20H6V4h7v5h5v4.07c.7.08 1.36.25 2 .49V8l-6-6H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h4.5a8.2 8.2 0 0 1-1.23-2"></path></svg></a><h1 id="getting-started">🚀 Getting Started<a class="headerlink" href="#getting-started" title="Anchor link to this section">¶</a></h1><p>Welcome to Isaac ROS Jetbot NanoOWL! This comprehensive guide will take you from zero to autonomous robot in just a few hours.</p><div class="admonition tip"><p class="admonition-title">🎯 Quick Navigation</p></div><p><strong>New to robotics?</strong> → Start with <a href="#prerequisites">Prerequisites</a><br><strong>Experienced developer?</strong> → Jump to <a href="installation/">Installation</a><br><strong>Want to see it working?</strong> → Go to <a href="first_run.md">First Run</a></p><h2 id="overview">📋 Overview<a class="headerlink" href="#overview" title="Anchor link to this section">¶</a></h2><div class="overview-grid"><div class="overview-card"><div class="card-icon">🔧</div><h3>Hardware Assembly</h3><p>Build your robot with dual Jetson Orin Nano Super, BLDC motors, and Portenta H7 microcontroller</p><div class="card-meta"><span class="time-badge">⏱️ 3-4 hours</span><span class="difficulty-badge">🟡 Intermediate</span></div><a class="card-link" href="hardware_setup/">Assembly Guide →</a></div><div class="overview-card"><div class="card-icon">💾</div><h3>Software Installation</h3><p>Install Isaac ROS, configure Docker containers, and deploy to Kubernetes cluster</p><div class="card-meta"><span class="time-badge">⏱️ 2-3 hours</span><span class="difficulty-badge">🟠 Advanced</span></div><a class="card-link" href="installation/">Install Guide →</a></div><div class="overview-card"><div class="card-icon">🐳</div><h3>Container Setup</h3><p>Configure multi-container architecture with perception, navigation, and control services</p><div class="card-meta"><span class="time-badge">⏱️ 1-2 hours</span><span class="difficulty-badge">🟠 Advanced</span></div><a class="card-link" href="docker_setup/">Docker Guide →</a></div><div class="overview-card"><div class="card-icon">🚀</div><h3>First Mission</h3><p>Launch autonomous navigation, object detection, and run your first demo mission</p><div class="card-meta"><span class="time-badge">⏱️ 30 minutes</span><span class="difficulty-badge">🟢 Easy</span></div><a class="card-link" href="first_run/">Launch Demo →</a></div></div><h2 id="prerequisites">✅ Prerequisites<a class="headerlink" href="#prerequisites" title="Anchor link to this section">¶</a></h2><h3 id="development-environment">🖥️ <strong>Development Environment</strong><a class="headerlink" href="#development-environment" title="Anchor link to this section">¶</a></h3><div class="tabbed-set tabbed-alternate" data-tabs="1:1"><input checked id="development-environment--host-pc-requirements" name="__tabbed_1" type="radio"><div class="tabbed-labels"><label for="development-environment--host-pc-requirements">💻 Host PC Requirements</label></div><div class="tabbed-content"><div class="tabbed-block"></div></div></div><table><thead><tr><th>Component</th><th>Minimum</th><th>Recommended</th></tr></thead><tbody><tr><td><strong>OS</strong></td><td>Ubuntu 20.04 LTS</td><td>Ubuntu 22.04 LTS</td></tr><tr><td><strong>CPU</strong></td><td>4-core Intel/AMD</td><td>8-core Intel/AMD</td></tr><tr><td><strong>RAM</strong></td><td>16GB</td><td>32GB+</td></tr><tr><td><strong>Storage</strong></td><td>100GB free</td><td>500GB+ SSD</td></tr><tr><td><strong>GPU</strong></td><td>Optional</td><td>NVIDIA RTX series</td></tr><tr><td><strong>Network</strong></td><td>Gigabit Ethernet</td><td>Gigabit + WiFi 6</td></tr></tbody></table><div class="tabbed-set tabbed-alternate" data-tabs="2:1"><input checked id="development-environment--jetson-requirements" name="__tabbed_2" type="radio"><div class="tabbed-labels"><label for="development-environment--jetson-requirements">🤖 Jetson Requirements</label></div><div class="tabbed-content"><div class="tabbed-block"></div></div></div><div class="language-bash highlight"><table class="highlighttable"><tr><th class="filename" colspan="2"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span>
+</style><link crossorigin href="https://fonts.gstatic.com" rel="preconnect"><link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"><style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style><link href="../assets/css/styles.css" rel="stylesheet"><link href="../assets/css/animations.css" rel="stylesheet"><script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script><link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"><script src="../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
+            html.glightbox-open { overflow: initial; height: 100%; }
+            .gslide-title { margin-top: 0px; user-select: text; }
+            .gslide-desc { color: #666; user-select: text; }
+            .gslide-image img { background: white; }
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
+        </style></head><body data-md-color-accent="indigo" data-md-color-primary="indigo" data-md-color-scheme="default" dir="ltr"><input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"><input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"><label class="md-overlay" for="__drawer"></label><div data-md-component="skip"><a class="md-skip" href="#getting-started"> Skip to content </a></div><div data-md-component="announce"></div><header class="md-header md-header--shadow md-header--lifted" data-md-component="header"><nav aria-label="Header" class="md-header__inner md-grid"><a aria-label="Isaac ROS Jetbot NanoOWL" class="md-header__button md-logo" data-md-component="logo" href=".." title="Isaac ROS Jetbot NanoOWL"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg></a><label class="md-header__button md-icon" for="__drawer"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg></label><div class="md-header__title" data-md-component="header-title"><div class="md-header__ellipsis"><div class="md-header__topic"><span class="md-ellipsis"> Isaac ROS Jetbot NanoOWL </span></div><div class="md-header__topic" data-md-component="header-topic"><span class="md-ellipsis"> Overview </span></div></div></div><form class="md-header__option" data-md-component="palette"><input aria-label="Switch to light mode" class="md-option" data-md-color-accent="indigo" data-md-color-media="(prefers-color-scheme)" data-md-color-primary="indigo" data-md-color-scheme="default" id="__palette_0" name="__palette" type="radio"><label class="md-header__button md-icon" for="__palette_1" hidden title="Switch to light mode"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m14.3 16-.7-2h-3.2l-.7 2H7.8L11 7h2l3.2 9zM20 8.69V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12zm-9.15 3.96h2.3L12 9z"></path></svg></label><input aria-label="Switch to dark mode" class="md-option" data-md-color-accent="indigo" data-md-color-media="(prefers-color-scheme: light)" data-md-color-primary="indigo" data-md-color-scheme="default" id="__palette_1" name="__palette" type="radio"><label class="md-header__button md-icon" for="__palette_2" hidden title="Switch to dark mode"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"></path></svg></label><input aria-label="Switch to system preference" class="md-option" data-md-color-accent="indigo" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-primary="black" data-md-color-scheme="slate" id="__palette_2" name="__palette" type="radio"><label class="md-header__button md-icon" for="__palette_0" hidden title="Switch to system preference"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"></path></svg></label></form><script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script><label class="md-header__button md-icon" for="__search"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg></label><div class="md-search" data-md-component="search" role="dialog"><label class="md-search__overlay" for="__search"></label><div class="md-search__inner" role="search"><form class="md-search__form" name="search"><input aria-label="Search" autocapitalize="off" autocomplete="off" autocorrect="off" class="md-search__input" data-md-component="search-query" name="query" placeholder="Search" required spellcheck="false" type="text"><label class="md-search__icon md-icon" for="__search"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg></label><nav aria-label="Search" class="md-search__options"><a aria-label="Share" class="md-search__icon md-icon" data-clipboard data-clipboard-text data-md-component="search-share" href="javascript:void(0)" tabindex="-1" title="Share"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"></path></svg></a><button aria-label="Clear" class="md-search__icon md-icon" tabindex="-1" title="Clear" type="reset"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg></button></nav><div class="md-search__suggest" data-md-component="search-suggest"></div></form><div class="md-search__output"><div class="md-search__scrollwrap" data-md-scrollfix tabindex="0"><div class="md-search-result" data-md-component="search-result"><div class="md-search-result__meta"> Initializing search </div><ol class="md-search-result__list" role="presentation"></ol></div></div></div></div></div><div class="md-header__source"><a class="md-source" data-md-component="source" href="https://github.com/TNG-Blue/Isaac_ROS-Jetbot_NanoOWL" title="Go to repository"><div class="md-source__icon md-icon"><svg viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><!-- Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4" fill="currentColor"></path></svg></div><div class="md-source__repository"> Isaac_ROS-Jetbot_NanoOWL </div></a></div></nav><nav aria-label="Tabs" class="md-tabs" data-md-component="tabs"><div class="md-grid"><ul class="md-tabs__list"><li class="md-tabs__item"><a class="md-tabs__link" href=".."> Home </a></li><li class="md-tabs__item md-tabs__item--active"><a class="md-tabs__link" href="./"> Getting Started </a></li><li class="md-tabs__item"><a class="md-tabs__link" href="../software/"> Software </a></li><li class="md-tabs__item"><a class="md-tabs__link" href="../api/"> API Reference </a></li><li class="md-tabs__item"><a class="md-tabs__link" href="../tutorials/"> Tutorials </a></li></ul></div></nav></header><div class="md-container" data-md-component="container"><main class="md-main" data-md-component="main"><div class="md-main__inner md-grid"><div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation"><div class="md-sidebar__scrollwrap"><div class="md-sidebar__inner"><nav aria-label="Navigation" class="md-nav md-nav--primary md-nav--lifted" data-md-level="0"><label class="md-nav__title" for="__drawer"><a aria-label="Isaac ROS Jetbot NanoOWL" class="md-nav__button md-logo" data-md-component="logo" href=".." title="Isaac ROS Jetbot NanoOWL"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg></a> Isaac ROS Jetbot NanoOWL </label><div class="md-nav__source"><a class="md-source" data-md-component="source" href="https://github.com/TNG-Blue/Isaac_ROS-Jetbot_NanoOWL" title="Go to repository"><div class="md-source__icon md-icon"><svg viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><!-- Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4" fill="currentColor"></path></svg></div><div class="md-source__repository"> Isaac_ROS-Jetbot_NanoOWL </div></a></div><ul class="md-nav__list" data-md-scrollfix><li class="md-nav__item"><a class="md-nav__link" href=".."><span class="md-ellipsis"> Home </span></a></li><li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested"><input checked class="md-nav__toggle md-toggle" id="__nav_2" type="checkbox"><div class="md-nav__link md-nav__container"><a class="md-nav__link md-nav__link--active" href="./"><span class="md-ellipsis"> Getting Started </span></a><label class="md-nav__link md-nav__link--active" for="__nav_2" id="__nav_2_label" tabindex><span class="md-nav__icon md-icon"></span></label></div><nav aria-expanded="true" aria-labelledby="__nav_2_label" class="md-nav" data-md-level="1"><label class="md-nav__title" for="__nav_2"><span class="md-nav__icon md-icon"></span> Getting Started </label><ul class="md-nav__list" data-md-scrollfix><li class="md-nav__item"><a class="md-nav__link" href="installation/"><span class="md-ellipsis"> Installation </span></a></li></ul></nav></li><li class="md-nav__item md-nav__item--nested"><input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_3" type="checkbox"><div class="md-nav__link md-nav__container"><a class="md-nav__link" href="../software/"><span class="md-ellipsis"> Software </span></a></div><nav aria-expanded="false" aria-labelledby="__nav_3_label" class="md-nav" data-md-level="1"><label class="md-nav__title" for="__nav_3"><span class="md-nav__icon md-icon"></span> Software </label><ul class="md-nav__list" data-md-scrollfix></ul></nav></li><li class="md-nav__item md-nav__item--nested"><input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_4" type="checkbox"><div class="md-nav__link md-nav__container"><a class="md-nav__link" href="../api/"><span class="md-ellipsis"> API Reference </span></a><label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0"><span class="md-nav__icon md-icon"></span></label></div><nav aria-expanded="false" aria-labelledby="__nav_4_label" class="md-nav" data-md-level="1"><label class="md-nav__title" for="__nav_4"><span class="md-nav__icon md-icon"></span> API Reference </label><ul class="md-nav__list" data-md-scrollfix><li class="md-nav__item"><a class="md-nav__link" href="../api/cudavision/"><span class="md-ellipsis"> CudaVision </span></a></li></ul></nav></li><li class="md-nav__item md-nav__item--nested"><input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_5" type="checkbox"><div class="md-nav__link md-nav__container"><a class="md-nav__link" href="../tutorials/"><span class="md-ellipsis"> Tutorials </span></a></div><nav aria-expanded="false" aria-labelledby="__nav_5_label" class="md-nav" data-md-level="1"><label class="md-nav__title" for="__nav_5"><span class="md-nav__icon md-icon"></span> Tutorials </label><ul class="md-nav__list" data-md-scrollfix></ul></nav></li></ul></nav></div></div></div><div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc"><div class="md-sidebar__scrollwrap"><div class="md-sidebar__inner"><nav aria-label="Page contents" class="md-nav md-nav--secondary"><label class="md-nav__title" for="__toc"><span class="md-nav__icon md-icon"></span> Page contents </label><ul class="md-nav__list" data-md-component="toc" data-md-scrollfix><li class="md-nav__item"><a class="md-nav__link" href="#overview"><span class="md-ellipsis"> 📋 Overview </span></a></li><li class="md-nav__item"><a class="md-nav__link" href="#prerequisites"><span class="md-ellipsis"> ✅ Prerequisites </span></a><nav aria-label="✅ Prerequisites" class="md-nav"><ul class="md-nav__list"><li class="md-nav__item"><a class="md-nav__link" href="#development-environment"><span class="md-ellipsis"> 🖥️ Development Environment </span></a></li></ul></nav></li><li class="md-nav__item"><a class="md-nav__link" href="#setup-workflow"><span class="md-ellipsis"> 🗺️ Setup Workflow </span></a></li><li class="md-nav__item"><a class="md-nav__link" href="#time-estimates"><span class="md-ellipsis"> ⏱️ Time Estimates </span></a></li><li class="md-nav__item"><a class="md-nav__link" href="#learning-objectives"><span class="md-ellipsis"> 🎯 Learning Objectives </span></a><nav aria-label="🎯 Learning Objectives" class="md-nav"><ul class="md-nav__list"><li class="md-nav__item"><a class="md-nav__link" href="#hardware-skills"><span class="md-ellipsis"> 🏗️ Hardware Skills </span></a></li><li class="md-nav__item"><a class="md-nav__link" href="#software-skills"><span class="md-ellipsis"> 💻 Software Skills </span></a></li><li class="md-nav__item"><a class="md-nav__link" href="#robotics-skills"><span class="md-ellipsis"> 🤖 Robotics Skills </span></a></li></ul></nav></li><li class="md-nav__item"><a class="md-nav__link" href="#safety-guidelines"><span class="md-ellipsis"> 🛡️ Safety Guidelines </span></a><nav aria-label="🛡️ Safety Guidelines" class="md-nav"><ul class="md-nav__list"><li class="md-nav__item"><a class="md-nav__link" href="#electrical-safety"><span class="md-ellipsis"> ⚡ Electrical Safety </span></a></li><li class="md-nav__item"><a class="md-nav__link" href="#mechanical-safety"><span class="md-ellipsis"> 🔧 Mechanical Safety </span></a></li><li class="md-nav__item"><a class="md-nav__link" href="#cyber-security"><span class="md-ellipsis"> 🖥️ Cyber Security </span></a></li><li class="md-nav__item"><a class="md-nav__link" href="#support-tiers"><span class="md-ellipsis"> 🏷️ Support Tiers </span></a></li></ul></nav></li><li class="md-nav__item"><a class="md-nav__link" href="#whats-next"><span class="md-ellipsis"> 🎉 What's Next? </span></a></li></ul></nav></div></div></div><div class="md-content" data-md-component="content"><article class="md-content__inner md-typeset"><div class="scroll-progress"><div class="progress-gradient"></div></div><div class="page-loader" id="pageLoader"><div class="loader-container"><div class="loading-spinner"></div><div class="loading-text">Loading...</div><div class="loading-dots"><span></span><span></span><span></span></div></div></div><button aria-label="Scroll to top" class="scroll-to-top" id="scrollToTop"><svg fill="none" height="24" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" width="24"><polyline points="18,15 12,9 6,15"></polyline></svg></button><div class="content-container"><a class="md-content__button md-icon" href="https://github.com/TNG-Blue/Isaac_ROS-Jetbot_NanoOWL/edit/master/docs/getting_started/index.md" rel="edit" title="Edit this page"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"></path></svg></a><a class="md-content__button md-icon" href="https://github.com/TNG-Blue/Isaac_ROS-Jetbot_NanoOWL/raw/master/docs/getting_started/index.md" title="View source of this page"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17 18c.56 0 1 .44 1 1s-.44 1-1 1-1-.44-1-1 .44-1 1-1m0-3c-2.73 0-5.06 1.66-6 4 .94 2.34 3.27 4 6 4s5.06-1.66 6-4c-.94-2.34-3.27-4-6-4m0 6.5a2.5 2.5 0 0 1-2.5-2.5 2.5 2.5 0 0 1 2.5-2.5 2.5 2.5 0 0 1 2.5 2.5 2.5 2.5 0 0 1-2.5 2.5M9.27 20H6V4h7v5h5v4.07c.7.08 1.36.25 2 .49V8l-6-6H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h4.5a8.2 8.2 0 0 1-1.23-2"></path></svg></a><h1 id="getting-started">🚀 Getting Started<a class="headerlink" href="#getting-started" title="Anchor link to this section">¶</a></h1><p>Welcome to Isaac ROS Jetbot NanoOWL! This comprehensive guide will take you from zero to autonomous robot in just a few hours.</p><div class="admonition tip"><p class="admonition-title">🎯 Quick Navigation</p></div><p><strong>New to robotics?</strong> → Start with <a href="#prerequisites">Prerequisites</a><br><strong>Experienced developer?</strong> → Jump to <a href="installation/">Installation</a><br><strong>Want to see it working?</strong> → Go to <a href="first_run.md">First Run</a></p><h2 id="overview">📋 Overview<a class="headerlink" href="#overview" title="Anchor link to this section">¶</a></h2><div class="overview-grid"><div class="overview-card"><div class="card-icon">🔧</div><h3>Hardware Assembly</h3><p>Build your robot with dual Jetson Orin Nano Super, BLDC motors, and Portenta H7 microcontroller</p><div class="card-meta"><span class="time-badge">⏱️ 3-4 hours</span><span class="difficulty-badge">🟡 Intermediate</span></div><a class="card-link" href="hardware_setup/">Assembly Guide →</a></div><div class="overview-card"><div class="card-icon">💾</div><h3>Software Installation</h3><p>Install Isaac ROS, configure Docker containers, and deploy to Kubernetes cluster</p><div class="card-meta"><span class="time-badge">⏱️ 2-3 hours</span><span class="difficulty-badge">🟠 Advanced</span></div><a class="card-link" href="installation/">Install Guide →</a></div><div class="overview-card"><div class="card-icon">🐳</div><h3>Container Setup</h3><p>Configure multi-container architecture with perception, navigation, and control services</p><div class="card-meta"><span class="time-badge">⏱️ 1-2 hours</span><span class="difficulty-badge">🟠 Advanced</span></div><a class="card-link" href="docker_setup/">Docker Guide →</a></div><div class="overview-card"><div class="card-icon">🚀</div><h3>First Mission</h3><p>Launch autonomous navigation, object detection, and run your first demo mission</p><div class="card-meta"><span class="time-badge">⏱️ 30 minutes</span><span class="difficulty-badge">🟢 Easy</span></div><a class="card-link" href="first_run/">Launch Demo →</a></div></div><h2 id="prerequisites">✅ Prerequisites<a class="headerlink" href="#prerequisites" title="Anchor link to this section">¶</a></h2><h3 id="development-environment">🖥️ <strong>Development Environment</strong><a class="headerlink" href="#development-environment" title="Anchor link to this section">¶</a></h3><div class="tabbed-set tabbed-alternate" data-tabs="1:1"><input checked id="development-environment--host-pc-requirements" name="__tabbed_1" type="radio"><div class="tabbed-labels"><label for="development-environment--host-pc-requirements">💻 Host PC Requirements</label></div><div class="tabbed-content"><div class="tabbed-block"></div></div></div><table><thead><tr><th>Component</th><th>Minimum</th><th>Recommended</th></tr></thead><tbody><tr><td><strong>OS</strong></td><td>Ubuntu 20.04 LTS</td><td>Ubuntu 22.04 LTS</td></tr><tr><td><strong>CPU</strong></td><td>4-core Intel/AMD</td><td>8-core Intel/AMD</td></tr><tr><td><strong>RAM</strong></td><td>16GB</td><td>32GB+</td></tr><tr><td><strong>Storage</strong></td><td>100GB free</td><td>500GB+ SSD</td></tr><tr><td><strong>GPU</strong></td><td>Optional</td><td>NVIDIA RTX series</td></tr><tr><td><strong>Network</strong></td><td>Gigabit Ethernet</td><td>Gigabit + WiFi 6</td></tr></tbody></table><div class="tabbed-set tabbed-alternate" data-tabs="2:1"><input checked id="development-environment--jetson-requirements" name="__tabbed_2" type="radio"><div class="tabbed-labels"><label for="development-environment--jetson-requirements">🤖 Jetson Requirements</label></div><div class="tabbed-content"><div class="tabbed-block"></div></div></div><div class="language-bash highlight"><table class="highlighttable"><tbody><tr><th class="filename" colspan="2"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span>
 <span class="normal"><a href="#__codelineno-0-2">2</a></span>
 <span class="normal"><a href="#__codelineno-0-3">3</a></span>
 <span class="normal"><a href="#__codelineno-0-4">4</a></span>
@@ -314,7 +315,7 @@
 </span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4"></a>-<span class="w"> </span>19V/65W<span class="w"> </span>USB-C<span class="w"> </span>Power<span class="w"> </span>Delivery
 </span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5"></a>-<span class="w"> </span>Gigabit<span class="w"> </span>Ethernet<span class="w"> </span>connection
 </span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6"></a>-<span class="w"> </span>JetPack<span class="w"> </span><span class="m">5</span>.1+<span class="w"> </span><span class="o">(</span>L4T<span class="w"> </span>R35.2+<span class="o">)</span>
-</span></code></pre></div></td></tr></table></div><div class="tabbed-set tabbed-alternate" data-tabs="3:1"><input checked id="development-environment--tools--software" name="__tabbed_3" type="radio"><div class="tabbed-labels"><label for="development-environment--tools--software">🛠️ Tools &amp; Software</label></div><div class="tabbed-content"><div class="tabbed-block"></div></div></div><div class="language-bash highlight"><table class="highlighttable"><tr><th class="filename" colspan="2"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1"> 1</a></span>
+</span></code></pre></div></td></tr></tbody></table></div><div class="tabbed-set tabbed-alternate" data-tabs="3:1"><input checked id="development-environment--tools--software" name="__tabbed_3" type="radio"><div class="tabbed-labels"><label for="development-environment--tools--software">🛠️ Tools &amp; Software</label></div><div class="tabbed-content"><div class="tabbed-block"></div></div></div><div class="language-bash highlight"><table class="highlighttable"><tbody><tr><th class="filename" colspan="2"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-1-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-1-3"> 3</a></span>
 <span class="normal"><a href="#__codelineno-1-4"> 4</a></span>
@@ -449,7 +450,7 @@
 </span><span id="__span-1-66"><a id="__codelineno-1-66" name="__codelineno-1-66"></a>-<span class="w"> </span>**🧠<span class="w"> </span>Computer<span class="w"> </span>vision**:<span class="w"> </span>Image<span class="w"> </span>processing,<span class="w"> </span>deep<span class="w"> </span>learning
 </span><span id="__span-1-67"><a id="__codelineno-1-67" name="__codelineno-1-67"></a>-<span class="w"> </span>**📡<span class="w"> </span>Networking**:<span class="w"> </span>TCP/IP,<span class="w"> </span>CAN<span class="w"> </span>bus,<span class="w"> </span>real-time<span class="w"> </span>communication
 </span><span id="__span-1-68"><a id="__codelineno-1-68" name="__codelineno-1-68"></a>-<span class="w"> </span>**⚙️<span class="w"> </span>Control<span class="w"> </span>systems**:<span class="w"> </span>PID<span class="w"> </span>controllers,<span class="w"> </span>kinematics
-</span></code></pre></div></td></tr></table></div><h2 id="setup-workflow">🗺️ Setup Workflow<a class="headerlink" href="#setup-workflow" title="Anchor link to this section">¶</a></h2><pre class="mermaid"><code>graph TD
+</span></code></pre></div></td></tr></tbody></table></div><h2 id="setup-workflow">🗺️ Setup Workflow<a class="headerlink" href="#setup-workflow" title="Anchor link to this section">¶</a></h2><pre class="mermaid"><code>graph TD
     A[📋 Prerequisites Check] --&gt; B[🛒 Hardware Procurement]
     B --&gt; C[🔧 Mechanical Assembly]
     C --&gt; D[⚡ Power System Setup]
@@ -463,199 +464,367 @@
 
     style A fill:#e8f5e8
     style K fill:#ffeb3b
-    style J fill:#f3e5f5</code></pre><h2 id="time-estimates">⏱️ <strong>Time Estimates</strong><a class="headerlink" href="#time-estimates" title="Anchor link to this section">¶</a></h2><table><thead><tr><th>Phase</th><th>Beginner</th><th>Intermediate</th><th>Advanced</th></tr></thead><tbody><tr><td>🛒 <strong>Procurement</strong></td><td>1-2 weeks</td><td>3-5 days</td><td>1-2 days</td></tr><tr><td>🔧 <strong>Assembly</strong></td><td>6-8 hours</td><td>4-6 hours</td><td>3-4 hours</td></tr><tr><td>💾 <strong>Software</strong></td><td>4-6 hours</td><td>2-4 hours</td><td>1-2 hours</td></tr><tr><td>🔌 <strong>Integration</strong></td><td>3-4 hours</td><td>2-3 hours</td><td>1-2 hours</td></tr><tr><td>✅ <strong>Testing</strong></td><td>2-3 hours</td><td>1-2 hours</td><td>30-60 min</td></tr><tr><td><strong>🎯 Total</strong></td><td><strong>2-3 days</strong></td><td><strong>1-2 days</strong></td><td><strong>6-10 hours</strong></td></tr></tbody></table><h2 id="learning-objectives">🎯 <strong>Learning Objectives</strong><a class="headerlink" href="#learning-objectives" title="Anchor link to this section">¶</a></h2><p>By completing this guide, you will be able to:</p><h3 id="hardware-skills">🏗️ <strong>Hardware Skills</strong><a class="headerlink" href="#hardware-skills" title="Anchor link to this section">¶</a></h3><ul><li>✅ Assemble a professional robotics platform</li><li>✅ Configure distributed computing systems</li><li>✅ Implement safety and power management</li><li>✅ Debug hardware connectivity issues</li></ul><h3 id="software-skills">💻 <strong>Software Skills</strong><a class="headerlink" href="#software-skills" title="Anchor link to this section">¶</a></h3><ul><li>✅ Deploy containerized robotics applications</li><li>✅ Configure ROS 2 multi-machine networks</li><li>✅ Implement AI/ML perception pipelines</li><li>✅ Monitor and troubleshoot distributed systems</li></ul><h3 id="robotics-skills">🤖 <strong>Robotics Skills</strong><a class="headerlink" href="#robotics-skills" title="Anchor link to this section">¶</a></h3><ul><li>✅ Understand SLAM and autonomous navigation</li><li>✅ Implement real-time object detection</li><li>✅ Configure motor control and kinematics</li><li>✅ Design multi-robot coordination systems</li></ul><h2 id="safety-guidelines">🛡️ <strong>Safety Guidelines</strong><a class="headerlink" href="#safety-guidelines" title="Anchor link to this section">¶</a></h2><div class="admonition danger"><p class="admonition-title">⚠️ Critical Safety Information</p></div><p><strong>Read this section completely before starting any work!</strong></p><h3 id="electrical-safety">⚡ <strong>Electrical Safety</strong><a class="headerlink" href="#electrical-safety" title="Anchor link to this section">¶</a></h3><ul><li><strong>Power Off</strong>: Always disconnect power before making connections</li><li><strong>ESD Protection</strong>: Use anti-static wrist straps when handling electronics</li><li><strong>Voltage Verification</strong>: Double-check all voltage levels with multimeter</li><li><strong>Emergency Stop</strong>: Ensure accessible emergency cutoffs at all times</li><li><strong>Fire Safety</strong>: Keep appropriate fire extinguisher nearby</li></ul><h3 id="mechanical-safety">🔧 <strong>Mechanical Safety</strong><a class="headerlink" href="#mechanical-safety" title="Anchor link to this section">¶</a></h3><ul><li><strong>Tool Inspection</strong>: Check tools for damage before use</li><li><strong>Torque Specs</strong>: Follow manufacturer specifications for critical joints</li><li><strong>Moving Parts</strong>: Keep fingers clear of motors and actuators</li><li><strong>Weight Limits</strong>: Respect payload and structural limitations</li><li><strong>Workspace</strong>: Maintain clean, organized work environment</li></ul><h3 id="cyber-security">🖥️ <strong>Cyber Security</strong><a class="headerlink" href="#cyber-security" title="Anchor link to this section">¶</a></h3><ul><li><strong>Network Isolation</strong>: Use dedicated networks for development</li><li><strong>Access Control</strong>: Implement proper authentication mechanisms</li><li><strong>Data Protection</strong>: Secure sensitive configuration files</li><li><strong>Update Management</strong>: Keep all software components updated</li><li><strong>Monitoring</strong>: Log and monitor all system activities</li></ul><h2 id="support-community">📞 <strong>Support &amp; Community</strong><a class="headerlink" href="#support-community" title="Anchor link to this section">¶</a></h2><h3 id="getting-help">🆘 <strong>Getting Help</strong><a class="headerlink" href="#getting-help" title="Anchor link to this section">¶</a></h3><div class="tabbed-set tabbed-alternate" data-tabs="4:1"><input checked id="getting-help--real-time-support" name="__tabbed_4" type="radio"><div class="tabbed-labels"><label for="getting-help--real-time-support">💬 Real-time Support</label></div><div class="tabbed-content"><div class="tabbed-block"></div></div></div><ul><li><strong>Discord</strong>: <a href="https://discord.gg/isaac-ros">Isaac ROS Community</a></li><li><strong>Telegram</strong>: <a href="https://t.me/tng_blue_robotics">TNG Blue Robotics</a></li><li><strong>IRC</strong>: <code>#isaac-ros</code> on Libera.Chat</li></ul><div class="tabbed-set tabbed-alternate" data-tabs="5:1"><input checked id="getting-help--documentation" name="__tabbed_5" type="radio"><div class="tabbed-labels"><label for="getting-help--documentation">📝 Documentation</label></div><div class="tabbed-content"><div class="tabbed-block"></div></div></div><ul><li><strong>GitHub Issues</strong>: <a href="https://github.com/TNG-Blue/Isaac_ROS-Jetbot_NanoOWL/issues">Bug Reports &amp; Feature Requests</a></li><li><strong>Wiki</strong>: <a href="https://github.com/TNG-Blue/Isaac_ROS-Jetbot_NanoOWL/wiki">Community Knowledge Base</a></li><li><strong>API Docs</strong>: <a href="../api/">Developer Reference</a></li></ul><div class="tabbed-set tabbed-alternate" data-tabs="6:1"><input checked id="getting-help--learning-resources" name="__tabbed_6" type="radio"><div class="tabbed-labels"><label for="getting-help--learning-resources">🎓 Learning Resources</label></div><div class="tabbed-content"><div class="tabbed-block"></div></div></div><ul><li><strong>Video Tutorials</strong>: <a href="https://youtube.com/@tng-blue">YouTube Channel</a></li><li><strong>Webinars</strong>: <a href="https://tng-blue.com/webinars">Live Training Sessions</a></li><li><strong>Blog</strong>: <a href="https://blog.tng-blue.com">Technical Articles</a></li></ul><h3 id="support-tiers">🏷️ <strong>Support Tiers</strong><a class="headerlink" href="#support-tiers" title="Anchor link to this section">¶</a></h3><table><thead><tr><th>Tier</th><th>Response Time</th><th>Channels</th><th>Cost</th></tr></thead><tbody><tr><td>🆓 <strong>Community</strong></td><td>Best effort</td><td>Discord, GitHub</td><td>Free</td></tr><tr><td>💼 <strong>Professional</strong></td><td>24-48 hours</td><td>Email, Priority Discord</td><td>$99/month</td></tr><tr><td>🏢 <strong>Enterprise</strong></td><td>4-8 hours</td><td>Phone, Dedicated Slack</td><td>Custom</td></tr></tbody></table><h2 id="whats-next">🎉 <strong>What's Next?</strong><a class="headerlink" href="#whats-next" title="Anchor link to this section">¶</a></h2><p>Choose your path based on your experience level:</p><div class="next-steps"><div class="step-path"><h3>🟢 New to Robotics</h3><p>Start with comprehensive hardware assembly</p><a class="btn btn-primary" href="hardware_setup/">🔧 Hardware Setup</a></div><div class="step-path"><h3>🟡 Some Experience</h3><p>Jump to software installation and configuration</p><a class="btn btn-primary" href="installation/">💾 Installation</a></div><div class="step-path"><h3>🟠 Advanced User</h3><p>Go straight to container deployment</p><a class="btn btn-primary" href="docker_setup/">🐳 Docker Setup</a></div></div><hr><div class="admonition success"><p class="admonition-title">🎯 Ready to Begin</p></div><p>You're all set to start building your Isaac ROS Jetbot NanoOWL! Remember:</p><div class="language-text highlight"><table class="highlighttable"><tr><th class="filename" colspan="2"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+    style J fill:#f3e5f5</code></pre><h2 id="time-estimates">⏱️ <strong>Time Estimates</strong><a class="headerlink" href="#time-estimates" title="Anchor link to this section">¶</a></h2><table><thead><tr><th>Phase</th><th>Beginner</th><th>Intermediate</th><th>Advanced</th></tr></thead><tbody><tr><td>🛒 <strong>Procurement</strong></td><td>1-2 weeks</td><td>3-5 days</td><td>1-2 days</td></tr><tr><td>🔧 <strong>Assembly</strong></td><td>6-8 hours</td><td>4-6 hours</td><td>3-4 hours</td></tr><tr><td>💾 <strong>Software</strong></td><td>4-6 hours</td><td>2-4 hours</td><td>1-2 hours</td></tr><tr><td>🔌 <strong>Integration</strong></td><td>3-4 hours</td><td>2-3 hours</td><td>1-2 hours</td></tr><tr><td>✅ <strong>Testing</strong></td><td>2-3 hours</td><td>1-2 hours</td><td>30-60 min</td></tr><tr><td><strong>🎯 Total</strong></td><td><strong>2-3 days</strong></td><td><strong>1-2 days</strong></td><td><strong>6-10 hours</strong></td></tr></tbody></table><h2 id="learning-objectives">🎯 <strong>Learning Objectives</strong><a class="headerlink" href="#learning-objectives" title="Anchor link to this section">¶</a></h2><p>By completing this guide, you will be able to:</p><h3 id="hardware-skills">🏗️ <strong>Hardware Skills</strong><a class="headerlink" href="#hardware-skills" title="Anchor link to this section">¶</a></h3><ul><li>✅ Assemble a professional robotics platform</li><li>✅ Configure distributed computing systems</li><li>✅ Implement safety and power management</li><li>✅ Debug hardware connectivity issues</li></ul><h3 id="software-skills">💻 <strong>Software Skills</strong><a class="headerlink" href="#software-skills" title="Anchor link to this section">¶</a></h3><ul><li>✅ Deploy containerized robotics applications</li><li>✅ Configure ROS 2 multi-machine networks</li><li>✅ Implement AI/ML perception pipelines</li><li>✅ Monitor and troubleshoot distributed systems</li></ul><h3 id="robotics-skills">🤖 <strong>Robotics Skills</strong><a class="headerlink" href="#robotics-skills" title="Anchor link to this section">¶</a></h3><ul><li>✅ Understand SLAM and autonomous navigation</li><li>✅ Implement real-time object detection</li><li>✅ Configure motor control and kinematics</li><li>✅ Design multi-robot coordination systems</li></ul><h2 id="safety-guidelines">🛡️ <strong>Safety Guidelines</strong><a class="headerlink" href="#safety-guidelines" title="Anchor link to this section">¶</a></h2><div class="admonition danger"><p class="admonition-title">⚠️ Critical Safety Information</p></div><p><strong>Read this section completely before starting any work!</strong></p><h3 id="electrical-safety">⚡ <strong>Electrical Safety</strong><a class="headerlink" href="#electrical-safety" title="Anchor link to this section">¶</a></h3><ul><li><strong>Power Off</strong>: Always disconnect power before making connections</li><li><strong>ESD Protection</strong>: Use anti-static wrist straps when handling electronics</li><li><strong>Voltage Verification</strong>: Double-check all voltage levels with multimeter</li><li><strong>Emergency Stop</strong>: Ensure accessible emergency cutoffs at all times</li><li><strong>Fire Safety</strong>: Keep appropriate fire extinguisher nearby</li></ul><h3 id="mechanical-safety">🔧 <strong>Mechanical Safety</strong><a class="headerlink" href="#mechanical-safety" title="Anchor link to this section">¶</a></h3><ul><li><strong>Tool Inspection</strong>: Check tools for damage before use</li><li><strong>Torque Specs</strong>: Follow manufacturer specifications for critical joints</li><li><strong>Moving Parts</strong>: Keep fingers clear of motors and actuators</li><li><strong>Weight Limits</strong>: Respect payload and structural limitations</li><li><strong>Workspace</strong>: Maintain clean, organized work environment</li></ul><h3 id="cyber-security">🖥️ <strong>Cyber Security</strong><a class="headerlink" href="#cyber-security" title="Anchor link to this section">¶</a></h3><ul><li><strong>Network Isolation</strong>: Use dedicated networks for development</li><li><strong>Access Control</strong>: Implement proper authentication mechanisms</li><li><strong>Data Protection</strong>: Secure sensitive configuration files</li><li><strong>Update Management</strong>: Keep all software components updated</li><li><strong>Monitoring</strong>: Log and monitor all system activities</li></ul><h3 id="support-tiers">🏷️ <strong>Support Tiers</strong><a class="headerlink" href="#support-tiers" title="Anchor link to this section">¶</a></h3><table><thead><tr><th>Tier</th><th>Response Time</th><th>Channels</th><th>Cost</th></tr></thead><tbody><tr><td>🆓 <strong>Community</strong></td><td>Best effort</td><td>Discord, GitHub</td><td>Free</td></tr><tr><td>💼 <strong>Professional</strong></td><td>24-48 hours</td><td>Email, Priority Discord</td><td>$99/month</td></tr><tr><td>🏢 <strong>Enterprise</strong></td><td>4-8 hours</td><td>Phone, Dedicated Slack</td><td>Custom</td></tr></tbody></table><h2 id="whats-next">🎉 <strong>What's Next?</strong><a class="headerlink" href="#whats-next" title="Anchor link to this section">¶</a></h2><p>Choose your path based on your experience level:</p><div class="next-steps"><div class="step-path"><h3>🟢 New to Robotics</h3><p>Start with comprehensive hardware assembly</p><a class="btn btn-primary" href="hardware_setup/">🔧 Hardware Setup</a></div><div class="step-path"><h3>🟡 Some Experience</h3><p>Jump to software installation and configuration</p><a class="btn btn-primary" href="installation/">💾 Installation</a></div><div class="step-path"><h3>🟠 Advanced User</h3><p>Go straight to container deployment</p><a class="btn btn-primary" href="docker_setup/">🐳 Docker Setup</a></div></div><hr><div class="admonition success"><p class="admonition-title">🎯 Ready to Begin</p></div><p>You're all set to start building your Isaac ROS Jetbot NanoOWL! Remember:</p><div class="language-text highlight"><table class="highlighttable"><tbody><tr><th class="filename" colspan="2"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
 <span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code>- 📚 **Take your time** - Quality over speed
 - 🛡️ **Safety first** - Follow all safety guidelines  
 - 💬 **Ask questions** - Our community is here to help
 - 🎉 **Have fun** - You're building the future of robotics!
-</code></pre></div></td></tr></table></div><p><strong>Next Step</strong>: <a href="hardware_setup.md">🔧 Hardware Setup</a> →</p></div></article></div><script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script><script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script></div><button class="md-top md-icon" data-md-component="top" hidden type="button"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"></path></svg> Back to top </button></main><footer class="md-footer isaac-footer"><nav aria-label="footer.title" class="md-footer__inner md-grid"><a aria-label="Previous: Home" class="md-footer__link md-footer__link--prev isaac-nav-link" href=".."><div class="md-footer__button md-icon"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg></div><div class="md-footer__title"><div class="md-ellipsis"><span class="md-footer__direction"> Previous </span><span class="isaac-nav-title">Home</span></div></div></a><a aria-label="Next: Installation" class="md-footer__link md-footer__link--next isaac-nav-link" href="installation/"><div class="md-footer__title"><div class="md-ellipsis"><span class="md-footer__direction"> Next </span><span class="isaac-nav-title">Installation</span></div></div><div class="md-footer__button md-icon"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"></path></svg></div></a></nav><div class="md-footer-meta md-typeset isaac-footer-content"><div class="md-footer-meta__inner md-grid"><div class="md-footer-copyright isaac-copyright"><div class="md-footer-copyright__highlight isaac-copyright-text"> Copyright © 2025 TNG Blue Team </div><div class="isaac-footer-grid"><div class="isaac-footer-section isaac-footer-primary"><div class="isaac-footer-logo"><h4 class="isaac-footer-title"><span class="isaac-logo-icon">🤖</span> Isaac ROS Jetbot NanoOWL </h4></div><p class="isaac-footer-description"> Advanced AI-powered autonomous robotics platform featuring dual Jetson Orin Nano Super processors, real-time object detection with NanoOWL, and distributed computing architecture for next-generation robotic applications. </p><div class="isaac-footer-badges"><span class="isaac-badge isaac-badge-primary">40 TOPS AI</span><span class="isaac-badge isaac-badge-secondary">Real-time SLAM</span><span class="isaac-badge isaac-badge-accent">Open Source</span></div></div><div class="isaac-footer-section"><h4 class="isaac-footer-heading">Quick Start</h4><ul class="isaac-footer-links"><li><a class="isaac-footer-link" href="/getting_started/"><span class="isaac-link-icon">🚀</span>Getting Started </a></li><li><a class="isaac-footer-link" href="/getting_started/installation/"><span class="isaac-link-icon">💾</span>Installation Guide </a></li><li><a class="isaac-footer-link" href="/tutorials/"><span class="isaac-link-icon">📚</span>Tutorials </a></li><li><a class="isaac-footer-link" href="/examples/"><span class="isaac-link-icon">🎯</span>Examples </a></li><li><a class="isaac-footer-link" href="/api/"><span class="isaac-link-icon">⚙️</span>API Reference </a></li></ul></div><div class="isaac-footer-section"><h4 class="isaac-footer-heading">Community</h4><ul class="isaac-footer-links"><li><a class="isaac-footer-link" href="https://github.com/TNG-Blue/Isaac_ROS-Jetbot_NanoOWL" rel="noopener" target="_blank"><span class="isaac-link-icon">💻</span>GitHub Repository </a></li><li><a class="isaac-footer-link" href="https://discord.gg/isaac-ros" rel="noopener" target="_blank"><span class="isaac-link-icon">💬</span>Discord Community </a></li><li><a class="isaac-footer-link" href="/development/contributing/"><span class="isaac-link-icon">🤝</span>Contributing </a></li><li><a class="isaac-footer-link" href="/development/roadmap/"><span class="isaac-link-icon">🗺️</span>Roadmap </a></li><li><a class="isaac-footer-link" href="mailto:support@isaac-ros-jetbot.com"><span class="isaac-link-icon">📧</span>Support </a></li></ul></div><div class="isaac-footer-section"><h4 class="isaac-footer-heading">Resources</h4><ul class="isaac-footer-links"><li><a class="isaac-footer-link" href="https://docs.nvidia.com/isaac-ros/" rel="noopener" target="_blank"><span class="isaac-link-icon">📖</span>Isaac ROS Docs </a></li><li><a class="isaac-footer-link" href="https://developer.nvidia.com/jetson" rel="noopener" target="_blank"><span class="isaac-link-icon">🖥️</span>Jetson Platform </a></li><li><a class="isaac-footer-link" href="https://github.com/NVIDIA-AI-IOT/nanoowl" rel="noopener" target="_blank"><span class="isaac-link-icon">👁️</span>NanoOWL </a></li><li><a class="isaac-footer-link" href="/reference/changelog/"><span class="isaac-link-icon">📋</span>Changelog </a></li><li><a class="isaac-footer-link" href="/reference/hardware/"><span class="isaac-link-icon">🔧</span>Hardware Specs </a></li></ul></div></div><div class="isaac-social-section"><h4 class="isaac-social-heading">Connect With Us</h4><div class="isaac-social-grid"><a class="isaac-social-link" href="https://github.com/TNG-Blue/Isaac_ROS-Jetbot_NanoOWL" rel="noopener noreferrer" target="_blank" title="GitHub Repository"><svg class="isaac-social-icon" height="24" viewbox="0 0 24 24" width="24"><path d="M12,2A10,10 0 0,0 2,12C2,16.42 4.87,20.17 8.84,21.5C9.34,21.58 9.5,21.27 9.5,21C9.5,20.77 9.5,20.14 9.5,19.31C6.73,19.91 6.14,17.97 6.14,17.97C5.68,16.81 5.03,16.5 5.03,16.5C4.12,15.88 5.1,15.9 5.1,15.9C6.1,15.97 6.63,16.93 6.63,16.93C7.5,18.45 8.97,18 9.54,17.76C9.63,17.11 9.89,16.67 10.17,16.42C7.95,16.17 5.62,15.31 5.62,11.5C5.62,10.39 6,9.5 6.65,8.79C6.55,8.54 6.2,7.5 6.75,6.15C6.75,6.15 7.59,5.88 9.5,7.17C10.29,6.95 11.15,6.84 12,6.84C12.85,6.84 13.71,6.95 14.5,7.17C16.41,5.88 17.25,6.15 17.25,6.15C17.8,7.5 17.45,8.54 17.35,8.79C18,9.5 18.38,10.39 18.38,11.5C18.38,15.32 16.04,16.16 13.81,16.41C14.17,16.72 14.5,17.33 14.5,18.26C14.5,19.6 14.5,20.68 14.5,21C14.5,21.27 14.66,21.59 15.17,21.5C19.14,20.16 22,16.42 22,12A10,10 0 0,0 12,2Z" fill="currentColor"></path></svg><span class="isaac-social-label">GitHub Repository</span></a><a class="isaac-social-link" href="https://hub.docker.com/r/tngblue/" rel="noopener noreferrer" target="_blank" title="Docker Hub"><svg class="isaac-social-icon" height="24" viewbox="0 0 24 24" width="24"><path d="M13.983 11.078h2.119a.186.186 0 00.186-.185V9.006a.186.186 0 00-.186-.186h-2.119a.185.185 0 00-.185.185v1.888c0 .102.083.185.185.185m-2.954-5.43h2.118a.186.186 0 00.186-.186V3.574a.186.186 0 00-.186-.185h-2.118a.185.185 0 00-.185.185v1.888c0 .102.082.185.185.186" fill="currentColor"></path></svg><span class="isaac-social-label">Docker Hub</span></a></div></div><div class="isaac-footer-bottom"><div class="isaac-footer-legal"><div class="isaac-legal-links"><a class="isaac-legal-link" href="/legal/privacy/">Privacy Policy</a><a class="isaac-legal-link" href="/legal/terms/">Terms of Service</a><a class="isaac-legal-link" href="/legal/license/">License</a><a class="isaac-legal-link" href="/security/">Security</a></div><div class="isaac-version-info"><span class="isaac-version">v2.0.0</span><span class="isaac-build">Build 2025.06.09</span></div></div><div class="isaac-footer-attribution"><p class="isaac-attribution-text"> Built with ❤️ by the TNG Blue team using <a href="https://squidfunk.github.io/mkdocs-material/" rel="noopener" target="_blank">Material for MkDocs</a></p><div class="isaac-powered-by"><span class="isaac-tech-badge">🔋 Powered by</span><a class="isaac-tech-link" href="https://developer.nvidia.com/isaac-ros" rel="noopener" target="_blank">NVIDIA Isaac ROS</a><span class="isaac-tech-separator">•</span><a class="isaac-tech-link" href="https://www.ros.org/" rel="noopener" target="_blank">ROS 2</a><span class="isaac-tech-separator">•</span><a class="isaac-tech-link" href="https://kubernetes.io/" rel="noopener" target="_blank">Kubernetes</a></div></div></div></div></div></div></footer><style>
-/* ===== ISAAC FOOTER STYLES ===== */
-.isaac-footer {
-    background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
-    color: #e2e8f0;
-    margin-top: 4rem;
+</code></pre></div></td></tr></tbody></table></div><p><strong>Next Step</strong>: <a href="hardware_setup.md">🔧 Hardware Setup</a> →</p></div></article></div><script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script><script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script></div><button class="md-top md-icon" data-md-component="top" hidden type="button"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"></path></svg> Back to top </button></main><footer class="isaac-footer-v2"><div class="footer-bg-animation"><div class="floating-shape shape-1"></div><div class="floating-shape shape-2"></div><div class="floating-shape shape-3"></div></div><nav aria-label="footer.title" class="footer-nav"><div class="nav-container"><a aria-label="Previous: Home" class="nav-link nav-link--prev" href=".."><div class="nav-icon"><svg fill="none" height="20" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" width="20"><polyline points="15,18 9,12 15,6"></polyline></svg></div><div class="nav-content"><span class="nav-label">Previous</span><span class="nav-title">Home</span></div></a><a aria-label="Next: Installation" class="nav-link nav-link--next" href="installation/"><div class="nav-content"><span class="nav-label">Next</span><span class="nav-title">Installation</span></div><div class="nav-icon"><svg fill="none" height="20" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" width="20"><polyline points="9,18 15,12 9,6"></polyline></svg></div></a></div></nav><div class="footer-main"><div class="footer-container"><div class="footer-copyright"><div class="copyright-text"> Copyright © 2025 TNG Blue Team </div></div><div class="footer-grid"><div class="footer-section footer-primary"><div class="footer-brand"><div class="brand-logo"><div class="logo-icon">🤖</div><h4 class="brand-title">Isaac ROS Jetbot NanoOWL</h4></div><p class="brand-description"> Advanced AI-powered autonomous robotics platform featuring dual Jetson Orin Nano Super processors, real-time object detection with NanoOWL, and distributed computing architecture for next-generation robotic applications. </p><div class="tech-badges"><span class="tech-badge tech-badge--ai">40 TOPS AI</span><span class="tech-badge tech-badge--slam">Real-time SLAM</span><span class="tech-badge tech-badge--open">Open Source</span></div></div></div><div class="footer-section"><h4 class="section-title"><span class="title-icon">🚀</span> Quick Start </h4><ul class="link-list"><li><a class="footer-link" href="/getting_started/"><span class="link-icon">📖</span><span class="link-text">Getting Started</span></a></li><li><a class="footer-link" href="/getting_started/installation/"><span class="link-icon">💾</span><span class="link-text">Installation Guide</span></a></li><li><a class="footer-link" href="/tutorials/"><span class="link-icon">📚</span><span class="link-text">Tutorials</span></a></li><li><a class="footer-link" href="/examples/"><span class="link-icon">🎯</span><span class="link-text">Examples</span></a></li><li><a class="footer-link" href="/api/"><span class="link-icon">⚙️</span><span class="link-text">API Reference</span></a></li></ul></div><div class="footer-section"><h4 class="section-title"><span class="title-icon">👥</span> Community </h4><ul class="link-list"><li><a class="footer-link" href="https://github.com/TNG-Blue/Isaac_ROS-Jetbot_NanoOWL" rel="noopener" target="_blank"><span class="link-icon">💻</span><span class="link-text">GitHub Repository</span><span class="external-icon">↗</span></a></li><li><a class="footer-link" href="https://discord.gg/isaac-ros" rel="noopener" target="_blank"><span class="link-icon">💬</span><span class="link-text">Discord Community</span><span class="external-icon">↗</span></a></li><li><a class="footer-link" href="/development/contributing/"><span class="link-icon">🤝</span><span class="link-text">Contributing</span></a></li><li><a class="footer-link" href="/development/roadmap/"><span class="link-icon">🗺️</span><span class="link-text">Roadmap</span></a></li><li><a class="footer-link" href="mailto:support@isaac-ros-jetbot.com"><span class="link-icon">📧</span><span class="link-text">Support</span></a></li></ul></div><div class="footer-section"><h4 class="section-title"><span class="title-icon">📋</span> Resources </h4><ul class="link-list"><li><a class="footer-link" href="https://docs.nvidia.com/isaac-ros/" rel="noopener" target="_blank"><span class="link-icon">📖</span><span class="link-text">Isaac ROS Docs</span><span class="external-icon">↗</span></a></li><li><a class="footer-link" href="https://developer.nvidia.com/jetson" rel="noopener" target="_blank"><span class="link-icon">🖥️</span><span class="link-text">Jetson Platform</span><span class="external-icon">↗</span></a></li><li><a class="footer-link" href="https://github.com/NVIDIA-AI-IOT/nanoowl" rel="noopener" target="_blank"><span class="link-icon">👁️</span><span class="link-text">NanoOWL</span><span class="external-icon">↗</span></a></li><li><a class="footer-link" href="/reference/changelog/"><span class="link-icon">📋</span><span class="link-text">Changelog</span></a></li><li><a class="footer-link" href="/reference/hardware/"><span class="link-icon">🔧</span><span class="link-text">Hardware Specs</span></a></li></ul></div></div><div class="social-section"><h4 class="social-title">Connect With Us</h4><div class="social-links"><a class="social-link" href="https://github.com/TNG-Blue/Isaac_ROS-Jetbot_NanoOWL" rel="noopener noreferrer" target="_blank" title="GitHub Repository"><div class="social-icon"><svg height="24" viewBox="0 0 24 24" width="24"><path d="M12,2A10,10 0 0,0 2,12C2,16.42 4.87,20.17 8.84,21.5C9.34,21.58 9.5,21.27 9.5,21C9.5,20.77 9.5,20.14 9.5,19.31C6.73,19.91 6.14,17.97 6.14,17.97C5.68,16.81 5.03,16.5 5.03,16.5C4.12,15.88 5.1,15.9 5.1,15.9C6.1,15.97 6.63,16.93 6.63,16.93C7.5,18.45 8.97,18 9.54,17.76C9.63,17.11 9.89,16.67 10.17,16.42C7.95,16.17 5.62,15.31 5.62,11.5C5.62,10.39 6,9.5 6.65,8.79C6.55,8.54 6.2,7.5 6.75,6.15C6.75,6.15 7.59,5.88 9.5,7.17C10.29,6.95 11.15,6.84 12,6.84C12.85,6.84 13.71,6.95 14.5,7.17C16.41,5.88 17.25,6.15 17.25,6.15C17.8,7.5 17.45,8.54 17.35,8.79C18,9.5 18.38,10.39 18.38,11.5C18.38,15.32 16.04,16.16 13.81,16.41C14.17,16.72 14.5,17.33 14.5,18.26C14.5,19.6 14.5,20.68 14.5,21C14.5,21.27 14.66,21.59 15.17,21.5C19.14,20.16 22,16.42 22,12A10,10 0 0,0 12,2Z" fill="currentColor"></path></svg></div><span class="social-label">GitHub Repository</span></a><a class="social-link" href="https://hub.docker.com/r/tngblue/" rel="noopener noreferrer" target="_blank" title="Docker Hub"><div class="social-icon"><div class="social-placeholder">F</div></div><span class="social-label">Docker Hub</span></a></div></div><div class="footer-bottom"><div class="footer-legal"><div class="legal-links"><a class="legal-link" href="/legal/privacy/">Privacy Policy</a><a class="legal-link" href="/legal/terms/">Terms of Service</a><a class="legal-link" href="/legal/license/">License</a><a class="legal-link" href="/security/">Security</a></div><div class="version-info"><span class="version-badge">v2.0.0</span><span class="build-badge">Build 2025.06.09</span></div></div><div class="footer-attribution"><p class="attribution-text"> Built with ❤️ by the TNG Blue team using <a href="https://squidfunk.github.io/mkdocs-material/" rel="noopener" target="_blank">Material for MkDocs</a></p><div class="powered-by"><span class="power-label">⚡ Powered by</span><a class="tech-link" href="https://developer.nvidia.com/isaac-ros" rel="noopener" target="_blank">NVIDIA Isaac ROS</a><span class="separator">•</span><a class="tech-link" href="https://www.ros.org/" rel="noopener" target="_blank">ROS 2</a><span class="separator">•</span><a class="tech-link" href="https://kubernetes.io/" rel="noopener" target="_blank">Kubernetes</a></div></div></div></div></div></footer><style>
+/* ===== ENHANCED FOOTER STYLES V2 ===== */
+.isaac-footer-v2 {
+    --footer-bg-primary: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%);
+    --footer-bg-secondary: rgba(15, 23, 42, 0.95);
+    --footer-text-primary: #f8fafc;
+    --footer-text-secondary: #cbd5e1;
+    --footer-text-muted: #94a3b8;
+    --footer-accent: #3b82f6;
+    --footer-accent-secondary: #8b5cf6;
+    --footer-border: rgba(255, 255, 255, 0.1);
+    --footer-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3);
+
+    background: var(--footer-bg-primary);
+    color: var(--footer-text-primary);
     position: relative;
+    overflow: hidden;
+    margin-top: 4rem;
+    backdrop-filter: blur(20px);
+}
+
+/* Animated background elements */
+.footer-bg-animation {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    pointer-events: none;
     overflow: hidden;
 }
 
-.isaac-footer::before {
+.floating-shape {
+    position: absolute;
+    background: linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(139, 92, 246, 0.1));
+    border-radius: 50%;
+    animation: float 6s ease-in-out infinite;
+}
+
+.shape-1 {
+    width: 120px;
+    height: 120px;
+    top: 10%;
+    right: 5%;
+    animation-delay: 0s;
+}
+
+.shape-2 {
+    width: 80px;
+    height: 80px;
+    bottom: 30%;
+    left: 8%;
+    animation-delay: 2s;
+}
+
+.shape-3 {
+    width: 60px;
+    height: 60px;
+    top: 60%;
+    right: 20%;
+    animation-delay: 4s;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0px) rotate(0deg); opacity: 0.3; }
+    50% { transform: translateY(-20px) rotate(180deg); opacity: 0.6; }
+}
+
+/* Top border gradient */
+.isaac-footer-v2::before {
     content: '';
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
-    height: 1px;
-    background: linear-gradient(90deg, transparent, #3b82f6, transparent);
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--footer-accent), var(--footer-accent-secondary), transparent);
+    animation: shimmer 3s linear infinite;
 }
 
-/* Navigation Links Enhancement */
-.isaac-nav-link {
-    background: rgba(59, 130, 246, 0.1);
-    border-radius: 12px;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    border: 1px solid rgba(59, 130, 246, 0.2);
+@keyframes shimmer {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
 }
 
-.isaac-nav-link:hover {
-    background: rgba(59, 130, 246, 0.2);
-    transform: translateY(-2px);
-    box-shadow: 0 8px 25px rgba(59, 130, 246, 0.25);
-}
-
-.isaac-nav-title {
-    font-weight: 600;
-    color: #60a5fa;
-}
-
-/* Footer Content Styling */
-.isaac-footer-content {
-    padding: 3rem 0 2rem;
-}
-
-.isaac-copyright {
-    width: 100%;
-}
-
-.isaac-copyright-text {
-    text-align: center;
-    font-size: 0.875rem;
-    color: #94a3b8;
-    margin-bottom: 2rem;
-    padding: 1rem;
-    background: rgba(255, 255, 255, 0.05);
-    border-radius: 8px;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-/* Enhanced Footer Grid */
-.isaac-footer-grid {
-    display: grid;
-    grid-template-columns: 1fr 200px 200px 200px;
-    gap: 3rem;
-    margin: 3rem 0;
+/* Navigation section */
+.footer-nav {
     padding: 2rem 0;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 1px solid var(--footer-border);
+    position: relative;
+    z-index: 2;
 }
 
-.isaac-footer-section {
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+}
+
+.nav-link {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.5rem 2rem;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--footer-border);
+    border-radius: 16px;
+    color: var(--footer-text-primary);
+    text-decoration: none;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+    min-width: 200px;
+    backdrop-filter: blur(10px);
+}
+
+.nav-link::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(59, 130, 246, 0.1), transparent);
+    transition: left 0.6s ease;
+}
+
+.nav-link:hover::before {
+    left: 100%;
+}
+
+.nav-link:hover {
+    transform: translateY(-4px);
+    border-color: var(--footer-accent);
+    background: rgba(59, 130, 246, 0.15);
+    box-shadow: 0 12px 40px rgba(59, 130, 246, 0.25);
+}
+
+.nav-link--prev {
+    text-align: left;
+}
+
+.nav-link--next {
+    text-align: right;
+    flex-direction: row-reverse;
+}
+
+.nav-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background: var(--footer-accent);
+    border-radius: 10px;
+    transition: all 0.3s ease;
+}
+
+.nav-link:hover .nav-icon {
+    transform: scale(1.1);
+    background: var(--footer-accent-secondary);
+}
+
+.nav-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.nav-label {
+    font-size: 0.875rem;
+    color: var(--footer-text-muted);
+    margin-bottom: 0.25rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-weight: 500;
+}
+
+.nav-title {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: var(--footer-text-primary);
+    line-height: 1.3;
+}
+
+/* Main footer content */
+.footer-main {
+    position: relative;
+    z-index: 2;
+    padding: 4rem 0 2rem;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+/* Copyright */
+.footer-copyright {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.copyright-text {
+    font-size: 0.875rem;
+    color: var(--footer-text-muted);
+    padding: 1rem 2rem;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    border: 1px solid var(--footer-border);
+    display: inline-block;
+    backdrop-filter: blur(10px);
+}
+
+/* Footer grid */
+.footer-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 4rem;
+    margin-bottom: 3rem;
+    align-items: start;
+}
+
+.footer-section {
     min-height: 200px;
 }
 
-.isaac-footer-primary {
-    grid-column: 1;
+/* Brand section */
+.footer-brand {
+    max-width: 100%;
 }
 
-/* Project Information Styling */
-.isaac-footer-logo {
+.brand-logo {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
     margin-bottom: 1.5rem;
 }
 
-.isaac-footer-title {
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: #f1f5f9;
+.logo-icon {
+    font-size: 3rem;
+    background: linear-gradient(135deg, var(--footer-accent), var(--footer-accent-secondary));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: pulse 2s ease-in-out infinite;
+}
+
+.brand-title {
+    font-size: 1.75rem;
+    font-weight: 800;
+    color: var(--footer-text-primary);
     margin: 0;
     line-height: 1.2;
 }
 
-.isaac-logo-icon {
-    font-size: 2rem;
-    background: linear-gradient(135deg, #3b82f6, #8b5cf6);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+.brand-description {
+    color: var(--footer-text-secondary);
+    line-height: 1.7;
+    margin-bottom: 2rem;
+    font-size: 1rem;
 }
 
-.isaac-footer-description {
-    color: #cbd5e1;
-    line-height: 1.6;
-    margin-bottom: 1.5rem;
-    font-size: 0.95rem;
-}
-
-/* Badge Styling */
-.isaac-footer-badges {
+/* Tech badges */
+.tech-badges {
     display: flex;
-    gap: 0.5rem;
+    gap: 0.75rem;
     flex-wrap: wrap;
-    margin-bottom: 1rem;
 }
 
-.isaac-badge {
-    padding: 0.25rem 0.75rem;
-    border-radius: 9999px;
+.tech-badge {
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
     font-size: 0.75rem;
-    font-weight: 600;
+    font-weight: 700;
     text-transform: uppercase;
-    letter-spacing: 0.025em;
+    letter-spacing: 0.05em;
+    transition: all 0.3s ease;
+    cursor: default;
 }
 
-.isaac-badge-primary {
+.tech-badge--ai {
     background: linear-gradient(135deg, #3b82f6, #1d4ed8);
     color: white;
 }
 
-.isaac-badge-secondary {
+.tech-badge--slam {
     background: linear-gradient(135deg, #8b5cf6, #7c3aed);
     color: white;
 }
 
-.isaac-badge-accent {
+.tech-badge--open {
     background: linear-gradient(135deg, #10b981, #059669);
     color: white;
 }
 
-/* Section Headings */
-.isaac-footer-heading {
-    color: #f8fafc;
+.tech-badge:hover {
+    transform: translateY(-2px) scale(1.05);
+}
+
+/* Section titles */
+.section-title {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-size: 1.25rem;
     font-weight: 700;
-    font-size: 1.125rem;
-    margin-bottom: 1.25rem;
-    padding-bottom: 0.5rem;
-    border-bottom: 2px solid #3b82f6;
+    color: var(--footer-text-primary);
+    margin-bottom: 2rem;
     position: relative;
 }
 
-.isaac-footer-heading::after {
+.section-title::after {
     content: '';
     position: absolute;
-    bottom: -2px;
+    bottom: -8px;
     left: 0;
-    width: 30px;
-    height: 2px;
-    background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+    width: 40px;
+    height: 3px;
+    background: linear-gradient(90deg, var(--footer-accent), var(--footer-accent-secondary));
+    border-radius: 2px;
 }
 
-/* Footer Links */
-.isaac-footer-links {
+.title-icon {
+    font-size: 1.25rem;
+}
+
+/* Link lists */
+.link-list {
     list-style: none;
     padding: 0;
     margin: 0;
     display: flex;
     flex-direction: column;
-    gap: 0.75rem;
+    gap: 1rem;
 }
 
-.isaac-footer-link {
+.footer-link {
     display: flex;
     align-items: center;
-    gap: 0.5rem;
-    color: #cbd5e1;
+    gap: 0.75rem;
+    color: var(--footer-text-secondary);
     text-decoration: none;
-    transition: all 0.3s ease;
-    padding: 0.5rem 0.75rem;
-    border-radius: 6px;
-    font-size: 0.9rem;
+    padding: 0.75rem 1rem;
+    border-radius: 10px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     position: relative;
     overflow: hidden;
 }
 
-.isaac-footer-link::before {
+.footer-link::before {
     content: '';
     position: absolute;
     left: 0;
@@ -664,551 +833,575 @@
     width: 0;
     background: linear-gradient(90deg, rgba(59, 130, 246, 0.1), rgba(139, 92, 246, 0.1));
     transition: width 0.3s ease;
+    border-radius: 10px;
 }
 
-.isaac-footer-link:hover {
-    color: #f1f5f9;
-    transform: translateX(4px);
-}
-
-.isaac-footer-link:hover::before {
+.footer-link:hover::before {
     width: 100%;
 }
 
-.isaac-link-icon {
-    font-size: 1rem;
+.footer-link:hover {
+    color: var(--footer-text-primary);
+    transform: translateX(8px);
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.link-icon {
+    font-size: 1.125rem;
     opacity: 0.8;
-    transition: transform 0.3s ease;
+    transition: all 0.3s ease;
 }
 
-.isaac-footer-link:hover .isaac-link-icon {
+.footer-link:hover .link-icon {
     transform: scale(1.2);
+    opacity: 1;
 }
 
-/* Social Media Section */
-.isaac-social-section {
-    margin: 3rem 0 2rem;
-    padding: 2rem 0;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
+.link-text {
+    font-weight: 500;
+}
+
+.external-icon {
+    margin-left: auto;
+    font-size: 1rem;
+    opacity: 0.6;
+    transition: all 0.3s ease;
+}
+
+.footer-link:hover .external-icon {
+    opacity: 1;
+    transform: translate(2px, -2px);
+}
+
+/* Social section */
+.social-section {
+    margin: 3rem 0;
+    padding: 3rem 0;
+    border-top: 1px solid var(--footer-border);
+    border-bottom: 1px solid var(--footer-border);
     text-align: center;
 }
 
-.isaac-social-heading {
-    color: #f8fafc;
+.social-title {
+    font-size: 1.5rem;
     font-weight: 700;
-    font-size: 1.25rem;
-    margin-bottom: 1.5rem;
-    text-align: center;
+    color: var(--footer-text-primary);
+    margin-bottom: 2rem;
 }
 
-.isaac-social-grid {
+.social-links {
     display: flex;
     justify-content: center;
-    gap: 1rem;
+    gap: 1.5rem;
     flex-wrap: wrap;
 }
 
-.isaac-social-link {
+.social-link {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 0.5rem;
-    padding: 1rem;
-    background: rgba(59, 130, 246, 0.1);
-    border: 1px solid rgba(59, 130, 246, 0.2);
-    border-radius: 12px;
-    color: #cbd5e1;
+    gap: 0.75rem;
+    padding: 1.5rem;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--footer-border);
+    border-radius: 16px;
+    color: var(--footer-text-secondary);
     text-decoration: none;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    min-width: 80px;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    min-width: 100px;
     position: relative;
     overflow: hidden;
+    backdrop-filter: blur(10px);
 }
 
-.isaac-social-link::before {
+.social-link::before {
     content: '';
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(135deg, rgba(59, 130, 246, 0.2), rgba(139, 92, 246, 0.2));
+    background: linear-gradient(135deg, rgba(59, 130, 246, 0.15), rgba(139, 92, 246, 0.15));
     opacity: 0;
-    transition: opacity 0.3s ease;
+    transition: opacity 0.4s ease;
 }
 
-.isaac-social-link:hover {
-    color: #f1f5f9;
-    transform: translateY(-4px);
-    box-shadow: 0 12px 30px rgba(59, 130, 246, 0.3);
-    border-color: rgba(59, 130, 246, 0.5);
-}
-
-.isaac-social-link:hover::before {
+.social-link:hover::before {
     opacity: 1;
 }
 
-.isaac-social-icon {
-    width: 28px;
-    height: 28px;
-    transition: transform 0.3s ease;
+.social-link:hover {
+    color: var(--footer-text-primary);
+    transform: translateY(-6px) scale(1.02);
+    border-color: var(--footer-accent);
+    box-shadow: 0 12px 40px rgba(59, 130, 246, 0.3);
+}
+
+.social-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    transition: all 0.3s ease;
     position: relative;
     z-index: 1;
 }
 
-.isaac-social-link:hover .isaac-social-icon {
+.social-icon svg {
+    width: 24px;
+    height: 24px;
+}
+
+.social-placeholder {
+    width: 24px;
+    height: 24px;
+    background: var(--footer-accent);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    color: white;
+}
+
+.social-link:hover .social-icon {
     transform: scale(1.2) rotate(5deg);
 }
 
-.isaac-social-label {
-    font-size: 0.75rem;
+.social-label {
+    font-size: 0.875rem;
     font-weight: 600;
     text-transform: uppercase;
-    letter-spacing: 0.025em;
+    letter-spacing: 0.05em;
     position: relative;
     z-index: 1;
 }
 
-/* Footer Bottom Section */
-.isaac-footer-bottom {
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-    padding: 2rem 0 1rem;
-    margin-top: 2rem;
+/* Footer bottom */
+.footer-bottom {
+    border-top: 1px solid var(--footer-border);
+    padding: 2.5rem 0 1.5rem;
 }
 
-.isaac-footer-legal {
+.footer-legal {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 1.5rem;
+    margin-bottom: 2rem;
     flex-wrap: wrap;
-    gap: 1rem;
+    gap: 1.5rem;
 }
 
-.isaac-legal-links {
+.legal-links {
     display: flex;
     gap: 2rem;
     flex-wrap: wrap;
 }
 
-.isaac-legal-link {
-    color: #94a3b8;
+.legal-link {
+    color: var(--footer-text-muted);
     text-decoration: none;
     font-size: 0.875rem;
-    transition: color 0.3s ease;
-}
-
-.isaac-legal-link:hover {
-    color: #60a5fa;
-}
-
-.isaac-version-info {
-    display: flex;
-    gap: 1rem;
-    font-size: 0.75rem;
-    color: #64748b;
-}
-
-.isaac-version,
-.isaac-build {
-    padding: 0.25rem 0.5rem;
-    background: rgba(255, 255, 255, 0.05);
-    border-radius: 4px;
-    font-family: 'JetBrains Mono', 'Fira Code', monospace;
-}
-
-/* Attribution Section */
-.isaac-footer-attribution {
-    text-align: center;
-    border-top: 1px solid rgba(255, 255, 255, 0.05);
-    padding-top: 1.5rem;
-}
-
-.isaac-attribution-text {
-    color: #94a3b8;
-    font-size: 0.875rem;
-    margin-bottom: 1rem;
-}
-
-.isaac-attribution-text a {
-    color: #60a5fa;
-    text-decoration: none;
-    transition: color 0.3s ease;
-}
-
-.isaac-attribution-text a:hover {
-    color: #93c5fd;
-}
-
-.isaac-powered-by {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 0.75rem;
-    flex-wrap: wrap;
-    font-size: 0.8rem;
-}
-
-.isaac-tech-badge {
-    background: linear-gradient(135deg, #f59e0b, #d97706);
-    color: white;
-    padding: 0.25rem 0.5rem;
-    border-radius: 4px;
-    font-weight: 600;
-}
-
-.isaac-tech-link {
-    color: #60a5fa;
-    text-decoration: none;
-    font-weight: 600;
+    font-weight: 500;
     transition: all 0.3s ease;
-    padding: 0.25rem 0.5rem;
-    border-radius: 4px;
     position: relative;
 }
 
-.isaac-tech-link:hover {
-    color: #93c5fd;
-    background: rgba(96, 165, 250, 0.1);
-    transform: translateY(-1px);
+.legal-link::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--footer-accent);
+    transition: width 0.3s ease;
 }
 
-.isaac-tech-separator {
-    color: #64748b;
+.legal-link:hover::after {
+    width: 100%;
+}
+
+.legal-link:hover {
+    color: var(--footer-accent);
+}
+
+.version-info {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.version-badge,
+.build-badge {
+    padding: 0.375rem 0.75rem;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    font-family: 'JetBrains Mono', 'Fira Code', Consolas, monospace;
+    border: 1px solid var(--footer-border);
+    transition: all 0.3s ease;
+}
+
+.version-badge {
+    background: linear-gradient(135deg, var(--footer-accent), var(--footer-accent-secondary));
+    color: white;
+    border: none;
+}
+
+.build-badge:hover,
+.version-badge:hover {
+    transform: scale(1.05);
+}
+
+/* Attribution */
+.footer-attribution {
+    text-align: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    padding-top: 2rem;
+}
+
+.attribution-text {
+    color: var(--footer-text-muted);
+    font-size: 0.875rem;
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+}
+
+.attribution-text a {
+    color: var(--footer-accent);
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.attribution-text a:hover {
+    color: var(--footer-accent-secondary);
+    text-decoration: underline;
+}
+
+.powered-by {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    font-size: 0.875rem;
+}
+
+.power-label {
+    background: linear-gradient(135deg, #f59e0b, #d97706);
+    color: white;
+    padding: 0.375rem 0.75rem;
+    border-radius: 15px;
+    font-weight: 700;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.tech-link {
+    color: var(--footer-accent);
+    text-decoration: none;
+    font-weight: 600;
+    padding: 0.375rem 0.75rem;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.tech-link:hover {
+    color: var(--footer-text-primary);
+    background: rgba(59, 130, 246, 0.15);
+    transform: translateY(-2px);
+}
+
+.separator {
+    color: var(--footer-text-muted);
     font-weight: 300;
+    opacity: 0.6;
 }
 
-/* Responsive Design */
-@media (max-width: 1200px) {
-    .isaac-footer-grid {
-        grid-template-columns: 1fr 180px 180px 180px;
-        gap: 2rem;
-    }
-}
-
-@media (max-width: 992px) {
-    .isaac-footer-grid {
+/* Responsive design */
+@media (max-width: 1024px) {
+    .footer-grid {
         grid-template-columns: 1fr 1fr;
-        gap: 2rem;
+        gap: 3rem;
     }
 
-    .isaac-footer-primary {
+    .footer-primary {
         grid-column: 1 / -1;
+    }
+
+    .nav-container {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .nav-link {
+        min-width: auto;
     }
 }
 
 @media (max-width: 768px) {
-    .isaac-footer {
+    .isaac-footer-v2 {
         margin-top: 2rem;
     }
 
-    .isaac-footer-content {
-        padding: 2rem 0 1rem;
+    .footer-main {
+        padding: 3rem 0 1.5rem;
     }
 
-    .isaac-footer-grid {
+    .footer-container {
+        padding: 0 1rem;
+    }
+
+    .footer-grid {
         grid-template-columns: 1fr;
-        gap: 2rem;
-        margin: 2rem 0;
+        gap: 2.5rem;
     }
 
-    .isaac-footer-title {
-        font-size: 1.25rem;
+    .nav-container {
+        padding: 0 1rem;
+    }
+
+    .brand-logo {
         flex-direction: column;
         text-align: center;
-        gap: 0.5rem;
+        gap: 0.75rem;
     }
 
-    .isaac-logo-icon {
-        font-size: 1.75rem;
+    .logo-icon {
+        font-size: 2.5rem;
     }
 
-    .isaac-footer-description {
+    .brand-title {
+        font-size: 1.5rem;
+    }
+
+    .brand-description {
         text-align: center;
         font-size: 0.9rem;
     }
 
-    .isaac-footer-badges {
+    .tech-badges {
         justify-content: center;
     }
 
-    .isaac-footer-heading {
+    .section-title {
+        justify-content: center;
         text-align: center;
-        font-size: 1rem;
+        font-size: 1.125rem;
     }
 
-    .isaac-footer-links {
+    .link-list {
         align-items: center;
     }
 
-    .isaac-footer-legal {
+    .footer-legal {
         flex-direction: column;
         text-align: center;
-        gap: 1rem;
+        gap: 1.5rem;
     }
 
-    .isaac-legal-links {
+    .legal-links {
         justify-content: center;
+        gap: 1.5rem;
+    }
+
+    .social-links {
         gap: 1rem;
     }
 
-    .isaac-social-grid {
-        gap: 0.75rem;
+    .social-link {
+        min-width: 80px;
+        padding: 1rem;
     }
 
-    .isaac-social-link {
-        min-width: 70px;
-        padding: 0.75rem;
-    }
-
-    .isaac-powered-by {
+    .powered-by {
         flex-direction: column;
-        gap: 0.5rem;
+        gap: 0.75rem;
     }
 }
 
 @media (max-width: 480px) {
-    .isaac-footer-content {
-        padding: 1.5rem 0 1rem;
+    .footer-main {
+        padding: 2rem 0 1rem;
     }
 
-    .isaac-footer-grid {
-        margin: 1.5rem 0;
-        gap: 1.5rem;
+    .footer-container {
+        padding: 0 1rem;
     }
 
-    .isaac-footer-title {
-        font-size: 1.125rem;
+    .footer-grid {
+        gap: 2rem;
     }
 
-    .isaac-footer-description {
+    .nav-link {
+        padding: 1rem 1.5rem;
+        text-align: center;
+    }
+
+    .nav-link--next {
+        flex-direction: row;
+    }
+
+    .brand-title {
+        font-size: 1.25rem;
+    }
+
+    .brand-description {
         font-size: 0.85rem;
         line-height: 1.5;
     }
 
-    .isaac-footer-badges {
-        gap: 0.25rem;
-    }
-
-    .isaac-badge {
+    .tech-badge {
         font-size: 0.6875rem;
-        padding: 0.2rem 0.5rem;
+        padding: 0.375rem 0.75rem;
     }
 
-    .isaac-footer-link {
-        font-size: 0.85rem;
-        padding: 0.375rem 0.5rem;
-    }
-
-    .isaac-link-icon {
+    .footer-link {
         font-size: 0.875rem;
+        padding: 0.6rem 0.75rem;
     }
 
-    .isaac-social-grid {
-        gap: 0.5rem;
+    .social-links {
+        gap: 0.75rem;
     }
 
-    .isaac-social-link {
-        min-width: 60px;
-        padding: 0.5rem;
+    .social-link {
+        min-width: 70px;
+        padding: 0.75rem;
     }
 
-    .isaac-social-icon {
-        width: 24px;
-        height: 24px;
+    .social-icon {
+        width: 32px;
+        height: 32px;
     }
 
-    .isaac-social-label {
-        font-size: 0.6875rem;
+    .social-icon svg {
+        width: 20px;
+        height: 20px;
     }
 
-    .isaac-legal-links {
+    .social-label {
+        font-size: 0.75rem;
+    }
+
+    .legal-links {
         flex-direction: column;
-        gap: 0.5rem;
+        gap: 0.75rem;
     }
 
-    .isaac-version-info {
+    .version-info {
         justify-content: center;
-        gap: 0.5rem;
+        gap: 0.75rem;
     }
 
-    .isaac-attribution-text {
+    .attribution-text {
         font-size: 0.8rem;
     }
 
-    .isaac-powered-by {
-        font-size: 0.75rem;
+    .powered-by {
+        font-size: 0.8rem;
     }
 }
 
-/* Dark Mode Enhancements */
-[data-md-color-scheme="slate"] .isaac-footer {
-    background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+/* Dark mode enhancements */
+[data-md-color-scheme="slate"] .isaac-footer-v2 {
+    --footer-bg-primary: linear-gradient(135deg, #020617 0%, #0f172a 50%, #1e293b 100%);
+    --footer-bg-secondary: rgba(2, 6, 23, 0.98);
+    --footer-border: rgba(255, 255, 255, 0.08);
 }
 
-[data-md-color-scheme="slate"] .isaac-nav-link {
-    background: rgba(59, 130, 246, 0.15);
-    border-color: rgba(59, 130, 246, 0.3);
-}
-
-[data-md-color-scheme="slate"] .isaac-nav-link:hover {
-    background: rgba(59, 130, 246, 0.25);
-}
-
-[data-md-color-scheme="slate"] .isaac-copyright-text {
-    background: rgba(255, 255, 255, 0.03);
-    border-color: rgba(255, 255, 255, 0.08);
-}
-
-[data-md-color-scheme="slate"] .isaac-footer-link {
-    color: #94a3b8;
-}
-
-[data-md-color-scheme="slate"] .isaac-footer-link:hover {
-    color: #e2e8f0;
-}
-
-[data-md-color-scheme="slate"] .isaac-social-link {
-    background: rgba(59, 130, 246, 0.08);
-    border-color: rgba(59, 130, 246, 0.15);
-}
-
-[data-md-color-scheme="slate"] .isaac-social-link:hover {
-    background: rgba(59, 130, 246, 0.2);
-    border-color: rgba(59, 130, 246, 0.4);
-}
-
-/* Animation Enhancements */
-@keyframes isaacGlow {
-    0%, 100% {
-        box-shadow: 0 0 5px rgba(59, 130, 246, 0.3);
-    }
-    50% {
-        box-shadow: 0 0 20px rgba(59, 130, 246, 0.6), 0 0 30px rgba(139, 92, 246, 0.3);
-    }
-}
-
-.isaac-footer-title:hover .isaac-logo-icon {
-    animation: isaacGlow 2s ease-in-out infinite;
-}
-
-@keyframes isaacFloat {
-    0%, 100% {
-        transform: translateY(0px);
-    }
-    50% {
-        transform: translateY(-3px);
-    }
-}
-
-.isaac-social-link:hover {
-    animation: isaacFloat 2s ease-in-out infinite;
-}
-
-/* Accessibility Enhancements */
-@media (prefers-reduced-motion: reduce) {
-    .isaac-footer *,
-    .isaac-footer *::before,
-    .isaac-footer *::after {
-        animation-duration: 0.01ms !important;
-        animation-iteration-count: 1 !important;
-        transition-duration: 0.01ms !important;
-    }
-
-    .isaac-nav-link:hover,
-    .isaac-footer-link:hover,
-    .isaac-social-link:hover {
-        transform: none !important;
-    }
-}
-
-/* High Contrast Mode */
+/* High contrast mode */
 @media (prefers-contrast: high) {
-    .isaac-footer {
+    .isaac-footer-v2 {
         background: #000000;
         color: #ffffff;
+        border-top: 3px solid #ffffff;
     }
 
-    .isaac-footer-link,
-    .isaac-social-link {
+    .footer-link,
+    .social-link,
+    .nav-link {
         border: 2px solid #ffffff;
     }
 
-    .isaac-footer-link:hover,
-    .isaac-social-link:hover {
+    .footer-link:hover,
+    .social-link:hover,
+    .nav-link:hover {
         background: #ffffff;
         color: #000000;
     }
 }
 
-/* Print Styles */
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+    .isaac-footer-v2 *,
+    .isaac-footer-v2 *::before,
+    .isaac-footer-v2 *::after {
+        animation: none !important;
+        transition: none !important;
+    }
+
+    .nav-link:hover,
+    .footer-link:hover,
+    .social-link:hover {
+        transform: none !important;
+    }
+}
+
+/* Print styles */
 @media print {
-    .isaac-footer {
+    .isaac-footer-v2 {
         background: none !important;
         color: #000000 !important;
         box-shadow: none !important;
     }
 
-    .isaac-social-section,
-    .isaac-footer-badges {
+    .footer-bg-animation,
+    .social-section,
+    .tech-badges {
         display: none !important;
     }
 
-    .isaac-footer-link,
-    .isaac-tech-link {
+    .footer-link,
+    .tech-link,
+    .attribution-text a {
         color: #000000 !important;
         text-decoration: underline !important;
     }
 }
 
-/* Loading State */
-.isaac-footer.loading {
+/* Focus states */
+.nav-link:focus,
+.footer-link:focus,
+.social-link:focus,
+.tech-link:focus,
+.legal-link:focus {
+    outline: 2px solid var(--footer-accent);
+    outline-offset: 2px;
+    border-radius: 8px;
+}
+
+/* Loading state */
+.isaac-footer-v2.loading {
     opacity: 0.7;
     pointer-events: none;
 }
 
-.isaac-footer.loading * {
+.isaac-footer-v2.loading * {
     animation: pulse 1.5s ease-in-out infinite;
 }
 
 @keyframes pulse {
-    0%, 100% {
-        opacity: 1;
-    }
-    50% {
-        opacity: 0.5;
-    }
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
 }
-
-/* Focus States for Better Accessibility */
-.isaac-footer-link:focus,
-.isaac-social-link:focus,
-.isaac-tech-link:focus,
-.isaac-legal-link:focus {
-    outline: 2px solid #3b82f6;
-    outline-offset: 2px;
-    border-radius: 4px;
-}
-
-/* Custom Scrollbar for Footer Content */
-.isaac-footer-section::-webkit-scrollbar {
-    width: 6px;
-}
-
-.isaac-footer-section::-webkit-scrollbar-track {
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 3px;
-}
-
-.isaac-footer-section::-webkit-scrollbar-thumb {
-    background: rgba(59, 130, 246, 0.6);
-    border-radius: 3px;
-}
-
-.isaac-footer-section::-webkit-scrollbar-thumb:hover {
-    background: rgba(59, 130, 246, 0.8);
-}
-</style></div><div class="md-dialog" data-md-component="dialog"><div class="md-dialog__inner md-typeset"></div></div><script id="__config" type="application/json">{"base": "..", "features": ["announce.dismiss", "content.action.edit", "content.action.view", "content.code.annotate", "content.code.copy", "content.code.select", "content.tabs.link", "content.tooltips", "navigation.expand", "navigation.footer", "navigation.indexes", "navigation.instant", "navigation.instant.prefetch", "navigation.path", "navigation.sections", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "navigation.tracking", "search.highlight", "search.share", "search.suggest", "toc.follow"], "search": "../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script><script src="../assets/javascripts/bundle.13a4f30d.min.js"></script><script src="../assets/js/navigation-fix.js"></script><script src="../assets/js/mathjax.js"></script><script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script><script src="../assets/js/custom.js"></script><script src="../assets/js/animations.js"></script><script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script><script>
+</style></div><div class="md-dialog" data-md-component="dialog"><div class="md-dialog__inner md-typeset"></div></div><script id="__config" type="application/json">{"base": "..", "features": ["announce.dismiss", "content.action.edit", "content.action.view", "content.code.annotate", "content.code.copy", "content.code.select", "content.tabs.link", "content.tooltips", "navigation.expand", "navigation.footer", "navigation.indexes", "navigation.instant", "navigation.instant.prefetch", "navigation.path", "navigation.sections", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "navigation.tracking", "search.highlight", "search.share", "search.suggest", "toc.follow"], "search": "../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script><script src="../assets/javascripts/bundle.92b07e13.min.js"></script><script src="../assets/js/navigation-fix.js"></script><script src="../assets/js/mathjax.js"></script><script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script><script src="../assets/js/custom.js"></script><script src="../assets/js/animations.js"></script><script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script><script>
     document.addEventListener('DOMContentLoaded', function () {
         // Enhanced Mermaid initialization
         if (window.mermaid) {
@@ -1319,5 +1512,5 @@
         attributeFilter: ['data-md-color-scheme']
     });
 </script><script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
-document$.subscribe(() => { lightbox.reload() });
+document$.subscribe(()=>{ lightbox.reload(); });
 </script></body></html>
