@@ -1,0 +1,1885 @@
+<!DOCTYPE html><html class="no-js" lang="en"><head><meta charset="utf-8"><meta content="width=device-width,initial-scale=1" name="viewport"><meta content="Advanced Robotics Platform with Jetson Orin Nano Super, Docker, Kubernetes, and micro-ROS" name="description"><meta content="TNG Blue Team" name="author"><link href="https://TNG-Blue.github.io/Isaac_ROS-Jetbot_NanoOWL/system-architecture/FHSS-LoRa-System/" rel="canonical"><link href="../../assets/images/favicon.png" rel="icon"><meta content="mkdocs-1.6.1, mkdocs-material-9.6.23" name="generator"><title>Triple-Band LoRa + DMA + FHSS System Documentation - Isaac ROS Jetbot NanoOWL</title><link href="../../assets/stylesheets/main.84d31ad4.min.css" rel="stylesheet"><link href="../../assets/stylesheets/palette.06af60db.min.css" rel="stylesheet"><style>
+    :root {
+        --primary-gradient: linear-gradient(135deg, var(--md-primary-fg-color), var(--md-accent-fg-color));
+        --glass-bg: rgba(255, 255, 255, 0.1);
+        --glass-border: rgba(255, 255, 255, 0.2);
+        --shadow-elevation-1: 0 2px 8px rgba(0, 0, 0, 0.1);
+        --shadow-elevation-2: 0 4px 16px rgba(0, 0, 0, 0.12);
+        --shadow-elevation-3: 0 8px 32px rgba(0, 0, 0, 0.15);
+    }
+
+    /* Enhanced scroll progress bar */
+    .scroll-progress {
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 4px;
+        width: 100%;
+        background: rgba(var(--md-default-fg-color--rgb), 0.1);
+        z-index: 1001;
+        overflow: hidden;
+    }
+
+    .progress-gradient {
+        height: 100%;
+        width: 0%;
+        background: var(--primary-gradient);
+        transition: width 0.1s ease;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .progress-gradient::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+        animation: shimmer 2s infinite;
+    }
+
+    @keyframes shimmer {
+        0% { transform: translateX(-100%); }
+        100% { transform: translateX(100%); }
+    }
+
+    /* Modern page loader */
+    .page-loader {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(135deg, var(--md-default-bg-color), rgba(var(--md-primary-fg-color--rgb), 0.05));
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 9999;
+        transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+
+    .page-loader.fade-out {
+        opacity: 0;
+        transform: scale(1.1);
+    }
+
+    .loader-container {
+        text-align: center;
+        transform: translateY(-20px);
+    }
+
+    .loading-spinner {
+        width: 50px;
+        height: 50px;
+        border: 3px solid transparent;
+        border-top: 3px solid var(--md-primary-fg-color);
+        border-right: 3px solid var(--md-accent-fg-color);
+        border-radius: 50%;
+        animation: spin 1.2s cubic-bezier(0.68, -0.55, 0.265, 1.55) infinite;
+        margin: 0 auto 20px;
+        position: relative;
+    }
+
+    .loading-spinner::after {
+        content: '';
+        position: absolute;
+        top: 5px;
+        left: 5px;
+        right: 5px;
+        bottom: 5px;
+        border: 2px solid transparent;
+        border-top: 2px solid rgba(var(--md-primary-fg-color--rgb), 0.3);
+        border-radius: 50%;
+        animation: spin 2s linear infinite reverse;
+    }
+
+    @keyframes spin {
+        0% { transform: rotate(0deg) scale(1); }
+        50% { transform: rotate(180deg) scale(1.1); }
+        100% { transform: rotate(360deg) scale(1); }
+    }
+
+    .loading-text {
+        font-size: 16px;
+        font-weight: 500;
+        color: var(--md-default-fg-color);
+        margin-bottom: 15px;
+        opacity: 0.8;
+        animation: pulse 2s ease-in-out infinite;
+    }
+
+    .loading-dots {
+        display: flex;
+        justify-content: center;
+        gap: 5px;
+    }
+
+    .loading-dots span {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: var(--md-primary-fg-color);
+        animation: dot-bounce 1.4s ease-in-out infinite both;
+    }
+
+    .loading-dots span:nth-child(1) { animation-delay: -0.32s; }
+    .loading-dots span:nth-child(2) { animation-delay: -0.16s; }
+    .loading-dots span:nth-child(3) { animation-delay: 0s; }
+
+    @keyframes dot-bounce {
+        0%, 80%, 100% { transform: scale(0.8); opacity: 0.5; }
+        40% { transform: scale(1.2); opacity: 1; }
+    }
+
+    @keyframes pulse {
+        0%, 100% { opacity: 0.8; }
+        50% { opacity: 1; }
+    }
+
+    /* Enhanced header with glassmorphism */
+    .md-header {
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        border-bottom: 1px solid transparent;
+    }
+
+    .md-header.scrolled {
+        background: rgba(var(--md-default-bg-color--rgb), 0.85);
+        backdrop-filter: blur(20px) saturate(180%);
+        border-bottom: 1px solid var(--glass-border);
+        box-shadow: var(--shadow-elevation-2);
+    }
+
+    /* Scroll to top button */
+    .scroll-to-top {
+        position: fixed;
+        bottom: 30px;
+        right: 30px;
+        width: 56px;
+        height: 56px;
+        border-radius: 50%;
+        background: var(--primary-gradient);
+        border: none;
+        color: white;
+        cursor: pointer;
+        z-index: 1000;
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(20px) scale(0.8);
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        box-shadow: var(--shadow-elevation-2);
+    }
+
+    .scroll-to-top:hover {
+        transform: translateY(-2px) scale(1);
+        box-shadow: var(--shadow-elevation-3);
+    }
+
+    .scroll-to-top.visible {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0) scale(1);
+    }
+
+    .scroll-to-top:active {
+        transform: scale(0.95);
+    }
+
+    /* Enhanced content animations */
+    .content-container {
+        position: relative;
+        z-index: 1;
+    }
+
+    /* Particles container */
+    .particles-container {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        pointer-events: none;
+        z-index: 0;
+        overflow: hidden;
+    }
+
+    .particles-container canvas {
+        width: 100%;
+        height: 100%;
+        opacity: 0.3;
+    }
+
+    /* Enhanced Mermaid styling */
+    .mermaid {
+        text-align: center;
+        margin: 3em 0;
+        padding: 2em;
+        background: var(--glass-bg);
+        backdrop-filter: blur(10px);
+        border-radius: 16px;
+        border: 1px solid var(--glass-border);
+        box-shadow: var(--shadow-elevation-1);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .mermaid:hover {
+        transform: translateY(-2px);
+        box-shadow: var(--shadow-elevation-2);
+    }
+
+    /* Enhanced code blocks */
+    .md-typeset .highlight {
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: var(--shadow-elevation-1);
+        border: 1px solid var(--glass-border);
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .md-typeset .highlight:hover {
+        transform: translateY(-1px);
+        box-shadow: var(--shadow-elevation-2);
+    }
+
+    /* Enhanced tables */
+    .md-typeset table:not([class]) {
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: var(--shadow-elevation-1);
+        border: 1px solid var(--glass-border);
+    }
+
+    /* Smooth scrolling for all elements */
+    html {
+        scroll-behavior: smooth;
+    }
+
+    /* Enhanced focus states for accessibility */
+    .scroll-to-top:focus {
+        outline: 2px solid var(--md-accent-fg-color);
+        outline-offset: 2px;
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+        .scroll-to-top {
+            bottom: 20px;
+            right: 20px;
+            width: 48px;
+            height: 48px;
+        }
+
+        .loading-text {
+            font-size: 14px;
+        }
+
+        .loader-container {
+            transform: translateY(-10px);
+        }
+    }
+
+    /* Dark mode enhancements */
+    [data-md-color-scheme="slate"] {
+        --glass-bg: rgba(0, 0, 0, 0.2);
+        --glass-border: rgba(255, 255, 255, 0.1);
+    }
+
+    /* Print styles */
+    @media print {
+        .scroll-progress,
+        .page-loader,
+        .scroll-to-top,
+        .particles-container {
+            display: none !important;
+        }
+    }
+</style><link crossorigin href="https://fonts.gstatic.com" rel="preconnect"><link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"><style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style><link href="../../assets/css/styles.css" rel="stylesheet"><link href="../../assets/css/animations.css" rel="stylesheet"><script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script><link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"><script src="../../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
+            html.glightbox-open { overflow: initial; height: 100%; }
+            .gslide-title { margin-top: 0px; user-select: text; }
+            .gslide-desc { color: #666; user-select: text; }
+            .gslide-image img { background: white; }
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
+        </style></head><body data-md-color-accent="indigo" data-md-color-primary="indigo" data-md-color-scheme="default" dir="ltr"><input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"><input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"><label class="md-overlay" for="__drawer"></label><div data-md-component="skip"><a class="md-skip" href="#triple-band-lora-dma-fhss-system-documentation"> Skip to content </a></div><div data-md-component="announce"></div><header class="md-header md-header--shadow md-header--lifted" data-md-component="header"><nav aria-label="Header" class="md-header__inner md-grid"><a aria-label="Isaac ROS Jetbot NanoOWL" class="md-header__button md-logo" data-md-component="logo" href="../.." title="Isaac ROS Jetbot NanoOWL"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg></a><label class="md-header__button md-icon" for="__drawer"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg></label><div class="md-header__title" data-md-component="header-title"><div class="md-header__ellipsis"><div class="md-header__topic"><span class="md-ellipsis"> Isaac ROS Jetbot NanoOWL </span></div><div class="md-header__topic" data-md-component="header-topic"><span class="md-ellipsis"> Triple-Band LoRa + DMA + FHSS System Documentation </span></div></div></div><form class="md-header__option" data-md-component="palette"><input aria-label="Switch to light mode" class="md-option" data-md-color-accent="indigo" data-md-color-media="(prefers-color-scheme)" data-md-color-primary="indigo" data-md-color-scheme="default" id="__palette_0" name="__palette" type="radio"><label class="md-header__button md-icon" for="__palette_1" hidden title="Switch to light mode"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m14.3 16-.7-2h-3.2l-.7 2H7.8L11 7h2l3.2 9zM20 8.69V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12zm-9.15 3.96h2.3L12 9z"></path></svg></label><input aria-label="Switch to dark mode" class="md-option" data-md-color-accent="indigo" data-md-color-media="(prefers-color-scheme: light)" data-md-color-primary="indigo" data-md-color-scheme="default" id="__palette_1" name="__palette" type="radio"><label class="md-header__button md-icon" for="__palette_2" hidden title="Switch to dark mode"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"></path></svg></label><input aria-label="Switch to system preference" class="md-option" data-md-color-accent="indigo" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-primary="black" data-md-color-scheme="slate" id="__palette_2" name="__palette" type="radio"><label class="md-header__button md-icon" for="__palette_0" hidden title="Switch to system preference"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"></path></svg></label></form><script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script><label class="md-header__button md-icon" for="__search"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg></label><div class="md-search" data-md-component="search" role="dialog"><label class="md-search__overlay" for="__search"></label><div class="md-search__inner" role="search"><form class="md-search__form" name="search"><input aria-label="Search" autocapitalize="off" autocomplete="off" autocorrect="off" class="md-search__input" data-md-component="search-query" name="query" placeholder="Search" required spellcheck="false" type="text"><label class="md-search__icon md-icon" for="__search"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg></label><nav aria-label="Search" class="md-search__options"><a aria-label="Share" class="md-search__icon md-icon" data-clipboard data-clipboard-text data-md-component="search-share" href="javascript:void(0)" tabindex="-1" title="Share"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"></path></svg></a><button aria-label="Clear" class="md-search__icon md-icon" tabindex="-1" title="Clear" type="reset"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg></button></nav><div class="md-search__suggest" data-md-component="search-suggest"></div></form><div class="md-search__output"><div class="md-search__scrollwrap" data-md-scrollfix tabindex="0"><div class="md-search-result" data-md-component="search-result"><div class="md-search-result__meta"> Initializing search </div><ol class="md-search-result__list" role="presentation"></ol></div></div></div></div></div><div class="md-header__source"><a class="md-source" data-md-component="source" href="https://github.com/TNG-Blue/Isaac_ROS-Jetbot_NanoOWL" title="Go to repository"><div class="md-source__icon md-icon"><svg viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><!-- Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"></path></svg></div><div class="md-source__repository"> Isaac_ROS-Jetbot_NanoOWL </div></a></div></nav><nav aria-label="Tabs" class="md-tabs" data-md-component="tabs"><div class="md-grid"><ul class="md-tabs__list"><li class="md-tabs__item"><a class="md-tabs__link" href="../.."> Home </a></li><li class="md-tabs__item"><a class="md-tabs__link" href="../../getting_started/"> Getting Started </a></li><li class="md-tabs__item"><a class="md-tabs__link" href="../../software/"> Software </a></li><li class="md-tabs__item"><a class="md-tabs__link" href="../../api/"> API Reference </a></li><li class="md-tabs__item"><a class="md-tabs__link" href="../../tutorials/"> Tutorials </a></li></ul></div></nav></header><div class="md-container" data-md-component="container"><main class="md-main" data-md-component="main"><div class="md-main__inner md-grid"><div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation"><div class="md-sidebar__scrollwrap"><div class="md-sidebar__inner"><nav aria-label="Navigation" class="md-nav md-nav--primary md-nav--lifted" data-md-level="0"><label class="md-nav__title" for="__drawer"><a aria-label="Isaac ROS Jetbot NanoOWL" class="md-nav__button md-logo" data-md-component="logo" href="../.." title="Isaac ROS Jetbot NanoOWL"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg></a> Isaac ROS Jetbot NanoOWL </label><div class="md-nav__source"><a class="md-source" data-md-component="source" href="https://github.com/TNG-Blue/Isaac_ROS-Jetbot_NanoOWL" title="Go to repository"><div class="md-source__icon md-icon"><svg viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><!-- Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"></path></svg></div><div class="md-source__repository"> Isaac_ROS-Jetbot_NanoOWL </div></a></div><ul class="md-nav__list" data-md-scrollfix><li class="md-nav__item"><a class="md-nav__link" href="../.."><span class="md-ellipsis"> Home </span></a></li><li class="md-nav__item md-nav__item--nested"><input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_2" type="checkbox"><div class="md-nav__link md-nav__container"><a class="md-nav__link" href="../../getting_started/"><span class="md-ellipsis"> Getting Started </span></a><label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0"><span class="md-nav__icon md-icon"></span></label></div><nav aria-expanded="false" aria-labelledby="__nav_2_label" class="md-nav" data-md-level="1"><label class="md-nav__title" for="__nav_2"><span class="md-nav__icon md-icon"></span> Getting Started </label><ul class="md-nav__list" data-md-scrollfix><li class="md-nav__item"><a class="md-nav__link" href="../../getting_started/installation/"><span class="md-ellipsis"> Installation </span></a></li></ul></nav></li><li class="md-nav__item md-nav__item--nested"><input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_3" type="checkbox"><div class="md-nav__link md-nav__container"><a class="md-nav__link" href="../../software/"><span class="md-ellipsis"> Software </span></a></div><nav aria-expanded="false" aria-labelledby="__nav_3_label" class="md-nav" data-md-level="1"><label class="md-nav__title" for="__nav_3"><span class="md-nav__icon md-icon"></span> Software </label><ul class="md-nav__list" data-md-scrollfix></ul></nav></li><li class="md-nav__item md-nav__item--nested"><input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_4" type="checkbox"><div class="md-nav__link md-nav__container"><a class="md-nav__link" href="../../api/"><span class="md-ellipsis"> API Reference </span></a><label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0"><span class="md-nav__icon md-icon"></span></label></div><nav aria-expanded="false" aria-labelledby="__nav_4_label" class="md-nav" data-md-level="1"><label class="md-nav__title" for="__nav_4"><span class="md-nav__icon md-icon"></span> API Reference </label><ul class="md-nav__list" data-md-scrollfix><li class="md-nav__item"><a class="md-nav__link" href="../../api/cudavision/"><span class="md-ellipsis"> CudaVision </span></a></li></ul></nav></li><li class="md-nav__item md-nav__item--nested"><input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_5" type="checkbox"><div class="md-nav__link md-nav__container"><a class="md-nav__link" href="../../tutorials/"><span class="md-ellipsis"> Tutorials </span></a></div><nav aria-expanded="false" aria-labelledby="__nav_5_label" class="md-nav" data-md-level="1"><label class="md-nav__title" for="__nav_5"><span class="md-nav__icon md-icon"></span> Tutorials </label><ul class="md-nav__list" data-md-scrollfix></ul></nav></li></ul></nav></div></div></div><div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc"><div class="md-sidebar__scrollwrap"><div class="md-sidebar__inner"><nav aria-label="Page contents" class="md-nav md-nav--secondary"><label class="md-nav__title" for="__toc"><span class="md-nav__icon md-icon"></span> Page contents </label><ul class="md-nav__list" data-md-component="toc" data-md-scrollfix><li class="md-nav__item"><a class="md-nav__link" href="#table-of-contents"><span class="md-ellipsis"> 📋 Table of Contents </span></a></li><li class="md-nav__item"><a class="md-nav__link" href="#overview"><span class="md-ellipsis"> 🎯 Overview </span></a><nav aria-label="🎯 Overview" class="md-nav"><ul class="md-nav__list"><li class="md-nav__item"><a class="md-nav__link" href="#key-features"><span class="md-ellipsis"> Key Features </span></a></li></ul></nav></li><li class="md-nav__item"><a class="md-nav__link" href="#system-architecture"><span class="md-ellipsis"> 🏗️ System Architecture </span></a><nav aria-label="🏗️ System Architecture" class="md-nav"><ul class="md-nav__list"><li class="md-nav__item"><a class="md-nav__link" href="#high-level-block-diagram"><span class="md-ellipsis"> High-Level Block Diagram </span></a></li><li class="md-nav__item"><a class="md-nav__link" href="#triple-band-communication-flow"><span class="md-ellipsis"> Triple-Band Communication Flow </span></a></li><li class="md-nav__item"><a class="md-nav__link" href="#frequency-band-coordination"><span class="md-ellipsis"> Frequency Band Coordination </span></a></li><li class="md-nav__item"><a class="md-nav__link" href="#multi-band-diversity-architecture"><span class="md-ellipsis"> Multi-Band Diversity Architecture </span></a></li></ul></nav></li><li class="md-nav__item"><a class="md-nav__link" href="#hardware-configuration"><span class="md-ellipsis"> 🔌 Hardware Configuration </span></a><nav aria-label="🔌 Hardware Configuration" class="md-nav"><ul class="md-nav__list"><li class="md-nav__item"><a class="md-nav__link" href="#module-specifications"><span class="md-ellipsis"> Module Specifications </span></a></li><li class="md-nav__item"><a class="md-nav__link" href="#gpio-pin-mapping"><span class="md-ellipsis"> GPIO Pin Mapping </span></a></li><li class="md-nav__item"><a class="md-nav__link" href="#connection-diagram"><span class="md-ellipsis"> Connection Diagram </span></a></li></ul></nav></li><li class="md-nav__item"><a class="md-nav__link" href="#fhss-implementation"><span class="md-ellipsis"> 🎯 FHSS Implementation </span></a><nav aria-label="🎯 FHSS Implementation" class="md-nav"><ul class="md-nav__list"><li class="md-nav__item"><a class="md-nav__link" href="#frequency-band-allocation"><span class="md-ellipsis"> Frequency Band Allocation </span></a></li><li class="md-nav__item"><a class="md-nav__link" href="#fhss-configuration-parameters"><span class="md-ellipsis"> FHSS Configuration Parameters </span></a></li><li class="md-nav__item"><a class="md-nav__link" href="#hopping-pattern-strategy"><span class="md-ellipsis"> Hopping Pattern Strategy </span></a></li><li class="md-nav__item"><a class="md-nav__link" href="#multi-band-coordination"><span class="md-ellipsis"> Multi-Band Coordination </span></a></li></ul></nav></li><li class="md-nav__item"><a class="md-nav__link" href="#dma-configuration"><span class="md-ellipsis"> ⚡ DMA Configuration </span></a><nav aria-label="⚡ DMA Configuration" class="md-nav"><ul class="md-nav__list"><li class="md-nav__item"><a class="md-nav__link" href="#dma-channel-allocation-strategy"><span class="md-ellipsis"> DMA Channel Allocation Strategy </span></a></li><li class="md-nav__item"><a class="md-nav__link" href="#performance-optimization"><span class="md-ellipsis"> Performance Optimization </span></a></li></ul></nav></li><li class="md-nav__item"><a class="md-nav__link" href="#api-reference"><span class="md-ellipsis"> 📚 API Reference </span></a><nav aria-label="📚 API Reference" class="md-nav"><ul class="md-nav__list"><li class="md-nav__item"><a class="md-nav__link" href="#core1121-xf-functions"><span class="md-ellipsis"> Core1121-XF Functions </span></a></li><li class="md-nav__item"><a class="md-nav__link" href="#core1262-xf-functions"><span class="md-ellipsis"> Core1262-XF Functions </span></a></li><li class="md-nav__item"><a class="md-nav__link" href="#multi-band-control"><span class="md-ellipsis"> Multi-Band Control </span></a></li></ul></nav></li><li class="md-nav__item"><a class="md-nav__link" href="#usage-examples"><span class="md-ellipsis"> 💡 Usage Examples </span></a><nav aria-label="💡 Usage Examples" class="md-nav"><ul class="md-nav__list"><li class="md-nav__item"><a class="md-nav__link" href="#single-band-operation"><span class="md-ellipsis"> Single Band Operation </span></a></li><li class="md-nav__item"><a class="md-nav__link" href="#dual-band-operation-same-module"><span class="md-ellipsis"> Dual Band Operation (Same Module) </span></a></li><li class="md-nav__item"><a class="md-nav__link" href="#triple-band-diversity"><span class="md-ellipsis"> Triple Band Diversity </span></a></li><li class="md-nav__item"><a class="md-nav__link" href="#band-selection-strategy"><span class="md-ellipsis"> Band Selection Strategy </span></a></li></ul></nav></li><li class="md-nav__item"><a class="md-nav__link" href="#performance-metrics"><span class="md-ellipsis"> 📊 Performance Metrics </span></a><nav aria-label="📊 Performance Metrics" class="md-nav"><ul class="md-nav__list"><li class="md-nav__item"><a class="md-nav__link" href="#range-comparison"><span class="md-ellipsis"> Range Comparison </span></a></li><li class="md-nav__item"><a class="md-nav__link" href="#data-rate-vs-range-trade-off"><span class="md-ellipsis"> Data Rate vs Range Trade-off </span></a></li><li class="md-nav__item"><a class="md-nav__link" href="#power-consumption"><span class="md-ellipsis"> Power Consumption </span></a></li></ul></nav></li><li class="md-nav__item"><a class="md-nav__link" href="#troubleshooting"><span class="md-ellipsis"> 🔧 Troubleshooting </span></a><nav aria-label="🔧 Troubleshooting" class="md-nav"><ul class="md-nav__list"><li class="md-nav__item"><a class="md-nav__link" href="#band-selection-issues"><span class="md-ellipsis"> Band Selection Issues </span></a></li><li class="md-nav__item"><a class="md-nav__link" href="#common-issues-solutions"><span class="md-ellipsis"> Common Issues &amp; Solutions </span></a></li></ul></nav></li><li class="md-nav__item"><a class="md-nav__link" href="#technical-references"><span class="md-ellipsis"> 📖 Technical References </span></a><nav aria-label="📖 Technical References" class="md-nav"><ul class="md-nav__list"><li class="md-nav__item"><a class="md-nav__link" href="#official-documentation"><span class="md-ellipsis"> Official Documentation </span></a></li><li class="md-nav__item"><a class="md-nav__link" href="#regulatory-compliance"><span class="md-ellipsis"> Regulatory Compliance </span></a></li></ul></nav></li><li class="md-nav__item"><a class="md-nav__link" href="#application-scenarios"><span class="md-ellipsis"> 🎯 Application Scenarios </span></a><nav aria-label="🎯 Application Scenarios" class="md-nav"><ul class="md-nav__list"><li class="md-nav__item"><a class="md-nav__link" href="#uav-command-control"><span class="md-ellipsis"> UAV Command &amp; Control </span></a></li><li class="md-nav__item"><a class="md-nav__link" href="#long-range-telemetry"><span class="md-ellipsis"> Long-Range Telemetry </span></a></li><li class="md-nav__item"><a class="md-nav__link" href="#multi-path-diversity-system"><span class="md-ellipsis"> Multi-Path Diversity System </span></a></li><li class="md-nav__item"><a class="md-nav__link" href="#adaptive-band-switching"><span class="md-ellipsis"> Adaptive Band Switching </span></a></li></ul></nav></li><li class="md-nav__item"><a class="md-nav__link" href="#frequency-planning-guide"><span class="md-ellipsis"> 🌐 Frequency Planning Guide </span></a><nav aria-label="🌐 Frequency Planning Guide" class="md-nav"><ul class="md-nav__list"><li class="md-nav__item"><a class="md-nav__link" href="#24-ghz-ism-band-worldwide"><span class="md-ellipsis"> 2.4 GHz ISM Band (Worldwide) </span></a></li><li class="md-nav__item"><a class="md-nav__link" href="#s-band-19-21-ghz"><span class="md-ellipsis"> S-Band (1.9-2.1 GHz) </span></a></li><li class="md-nav__item"><a class="md-nav__link" href="#sub-ghz-bands-regional"><span class="md-ellipsis"> Sub-GHz Bands (Regional) </span></a></li></ul></nav></li><li class="md-nav__item"><a class="md-nav__link" href="#security-considerations"><span class="md-ellipsis"> 🔐 Security Considerations </span></a><nav aria-label="🔐 Security Considerations" class="md-nav"><ul class="md-nav__list"><li class="md-nav__item"><a class="md-nav__link" href="#fhss-as-security-layer"><span class="md-ellipsis"> FHSS as Security Layer </span></a></li></ul></nav></li><li class="md-nav__item"><a class="md-nav__link" href="#advanced-configuration"><span class="md-ellipsis"> 🎛️ Advanced Configuration </span></a><nav aria-label="🎛️ Advanced Configuration" class="md-nav"><ul class="md-nav__list"><li class="md-nav__item"><a class="md-nav__link" href="#spreading-factor-optimization"><span class="md-ellipsis"> Spreading Factor Optimization </span></a></li><li class="md-nav__item"><a class="md-nav__link" href="#bandwidth-selection"><span class="md-ellipsis"> Bandwidth Selection </span></a></li><li class="md-nav__item"><a class="md-nav__link" href="#power-management-strategy"><span class="md-ellipsis"> Power Management Strategy </span></a></li></ul></nav></li><li class="md-nav__item"><a class="md-nav__link" href="#testing-validation"><span class="md-ellipsis"> 📈 Testing &amp; Validation </span></a><nav aria-label="📈 Testing &amp; Validation" class="md-nav"><ul class="md-nav__list"><li class="md-nav__item"><a class="md-nav__link" href="#range-testing-procedure"><span class="md-ellipsis"> Range Testing Procedure </span></a></li><li class="md-nav__item"><a class="md-nav__link" href="#performance-metrics-to-track"><span class="md-ellipsis"> Performance Metrics to Track </span></a></li><li class="md-nav__item"><a class="md-nav__link" href="#recommended-test-equipment"><span class="md-ellipsis"> Recommended Test Equipment </span></a></li></ul></nav></li><li class="md-nav__item"><a class="md-nav__link" href="#future-enhancements"><span class="md-ellipsis"> 🚀 Future Enhancements </span></a><nav aria-label="🚀 Future Enhancements" class="md-nav"><ul class="md-nav__list"><li class="md-nav__item"><a class="md-nav__link" href="#possible-upgrades"><span class="md-ellipsis"> Possible Upgrades </span></a></li></ul></nav></li><li class="md-nav__item"><a class="md-nav__link" href="#quick-reference"><span class="md-ellipsis"> 📋 Quick Reference </span></a><nav aria-label="📋 Quick Reference" class="md-nav"><ul class="md-nav__list"><li class="md-nav__item"><a class="md-nav__link" href="#command-cheat-sheet"><span class="md-ellipsis"> Command Cheat Sheet </span></a></li><li class="md-nav__item"><a class="md-nav__link" href="#frequency-quick-reference"><span class="md-ellipsis"> Frequency Quick Reference </span></a></li><li class="md-nav__item"><a class="md-nav__link" href="#troubleshooting-quick-fixes"><span class="md-ellipsis"> Troubleshooting Quick Fixes </span></a></li></ul></nav></li><li class="md-nav__item"><a class="md-nav__link" href="#support-community"><span class="md-ellipsis"> 📞 Support &amp; Community </span></a><nav aria-label="📞 Support &amp; Community" class="md-nav"><ul class="md-nav__list"><li class="md-nav__item"><a class="md-nav__link" href="#getting-help"><span class="md-ellipsis"> Getting Help </span></a></li><li class="md-nav__item"><a class="md-nav__link" href="#contributing"><span class="md-ellipsis"> Contributing </span></a></li><li class="md-nav__item"><a class="md-nav__link" href="#version-history"><span class="md-ellipsis"> Version History </span></a></li></ul></nav></li><li class="md-nav__item"><a class="md-nav__link" href="#acknowledgments"><span class="md-ellipsis"> 🏆 Acknowledgments </span></a></li><li class="md-nav__item"><a class="md-nav__link" href="#license"><span class="md-ellipsis"> 📄 License </span></a><nav aria-label="📄 License" class="md-nav"><ul class="md-nav__list"><li class="md-nav__item"><a class="md-nav__link" href="#regulatory-notice"><span class="md-ellipsis"> Regulatory Notice </span></a></li></ul></nav></li></ul></nav></div></div></div><div class="md-content" data-md-component="content"><article class="md-content__inner md-typeset"><div class="scroll-progress"><div class="progress-gradient"></div></div><div class="page-loader" id="pageLoader"><div class="loader-container"><div class="loading-spinner"></div><div class="loading-text">Loading...</div><div class="loading-dots"><span></span><span></span><span></span></div></div></div><button aria-label="Scroll to top" class="scroll-to-top" id="scrollToTop"><svg fill="none" height="24" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" width="24"><polyline points="18,15 12,9 6,15"></polyline></svg></button><div class="content-container"><a class="md-content__button md-icon" href="https://github.com/TNG-Blue/Isaac_ROS-Jetbot_NanoOWL/edit/master/docs/system-architecture/FHSS-LoRa-System.md" rel="edit" title="Edit this page"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"></path></svg></a><a class="md-content__button md-icon" href="https://github.com/TNG-Blue/Isaac_ROS-Jetbot_NanoOWL/raw/master/docs/system-architecture/FHSS-LoRa-System.md" title="View source of this page"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17 18c.56 0 1 .44 1 1s-.44 1-1 1-1-.44-1-1 .44-1 1-1m0-3c-2.73 0-5.06 1.66-6 4 .94 2.34 3.27 4 6 4s5.06-1.66 6-4c-.94-2.34-3.27-4-6-4m0 6.5a2.5 2.5 0 0 1-2.5-2.5 2.5 2.5 0 0 1 2.5-2.5 2.5 2.5 0 0 1 2.5 2.5 2.5 2.5 0 0 1-2.5 2.5M9.27 20H6V4h7v5h5v4.07c.7.08 1.36.25 2 .49V8l-6-6H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h4.5a8.2 8.2 0 0 1-1.23-2"></path></svg></a><h1 id="triple-band-lora-dma-fhss-system-documentation">Triple-Band LoRa + DMA + FHSS System Documentation<a class="headerlink" href="#triple-band-lora-dma-fhss-system-documentation" title="Anchor link to this section">¶</a></h1><h2 id="table-of-contents">📋 Table of Contents<a class="headerlink" href="#table-of-contents" title="Anchor link to this section">¶</a></h2><ol><li><a href="#overview">Overview</a></li><li><a href="#system-architecture">System Architecture</a></li><li><a href="#hardware-configuration">Hardware Configuration</a></li><li><a href="#fhss-implementation">FHSS Implementation</a></li><li><a href="#frequency-band-allocation">Frequency Band Allocation</a></li><li><a href="#dma-configuration">DMA Configuration</a></li><li><a href="#api-reference">API Reference</a></li><li><a href="#usage-examples">Usage Examples</a></li><li><a href="#performance-metrics">Performance Metrics</a></li><li><a href="#troubleshooting">Troubleshooting</a></li></ol><hr><h2 id="overview">🎯 Overview<a class="headerlink" href="#overview" title="Anchor link to this section">¶</a></h2><p>This system implements an <strong>advanced triple-band LoRa communication platform</strong> using Waveshare modules with cutting-edge features:</p><ul><li><strong>Waveshare Core1121-XF</strong> (LR1121 chip) - Multi-band transceiver</li><li><strong>Waveshare Core1262-XF</strong> (SX1262 chip) - Sub-GHz transceiver</li><li><strong>DMA-accelerated SPI transfers</strong> for maximum throughput</li><li><strong>Frequency Hopping Spread Spectrum (FHSS)</strong> across all bands</li><li><strong>Independent hopping patterns</strong> per band to avoid collision</li><li><strong>Real-time frequency tracking</strong> and statistics</li></ul><h3 id="key-features">Key Features<a class="headerlink" href="#key-features" title="Anchor link to this section">¶</a></h3><p>✨ <strong>Triple-band operation:</strong> - 2.4 GHz ISM band (Core1121-XF) - S-band 1.9-2.1 GHz (Core1121-XF) - Sub-GHz 150-960 MHz (Core1262-XF)</p><p>⚡ <strong>Advanced capabilities:</strong> - FHSS with 50+ channels per band - DMA reduces CPU load by ~70% - Military-grade anti-jamming - Up to 22 dBm transmit power (LR1121) - -127 dBm receiver sensitivity - LR-FHSS support for ultra-reliable links</p><p>🛡️ <strong>Robust features:</strong> - Multi-path diversity across 3 frequency bands - Frequency-agile operation - Interference mitigation - Extended range capability</p><hr><h2 id="system-architecture">🏗️ System Architecture<a class="headerlink" href="#system-architecture" title="Anchor link to this section">¶</a></h2><h3 id="high-level-block-diagram">High-Level Block Diagram<a class="headerlink" href="#high-level-block-diagram" title="Anchor link to this section">¶</a></h3><pre class="mermaid"><code>graph TB
+    subgraph "Raspberry Pi Pico2W"
+        CPU[RP2350 CPU]
+
+        subgraph "Core1121 Control"
+            DMA1[DMA TX/RX 1]
+            SPI0[SPI0 @ 8MHz]
+            FHSS1[FHSS Engine&lt;br/&gt;2.4 GHz]
+            FHSS2[FHSS Engine&lt;br/&gt;S-band]
+        end
+
+        subgraph "Core1262 Control"
+            DMA2[DMA TX/RX 2]
+            SPI1[SPI1 @ 8MHz]
+            FHSS3[FHSS Engine&lt;br/&gt;Sub-GHz]
+        end
+    end
+
+    subgraph "Core1121-XF Module"
+        LR1121[LR1121 Chip&lt;br/&gt;3rd Gen LoRa]
+        RF_SW[RF Switch]
+        ANT1[Antenna 1&lt;br/&gt;2.4 GHz]
+        ANT2[Antenna 2&lt;br/&gt;S-band]
+    end
+
+    subgraph "Core1262-XF Module"
+        SX1262[SX1262 Chip&lt;br/&gt;2nd Gen LoRa]
+        ANT3[Antenna 3&lt;br/&gt;Sub-GHz]
+    end
+
+    CPU --&gt; FHSS1
+    CPU --&gt; FHSS2
+    CPU --&gt; FHSS3
+
+    FHSS1 --&gt; DMA1
+    FHSS2 --&gt; DMA1
+    DMA1 --&gt; SPI0
+    SPI0 --&gt; LR1121
+
+    FHSS3 --&gt; DMA2
+    DMA2 --&gt; SPI1
+    SPI1 --&gt; SX1262
+
+    LR1121 --&gt; RF_SW
+    RF_SW --&gt; ANT1
+    RF_SW --&gt; ANT2
+    SX1262 --&gt; ANT3
+
+    style CPU fill:#ff6b6b
+    style FHSS1 fill:#4ecdc4
+    style FHSS2 fill:#95e1d3
+    style FHSS3 fill:#f38181
+    style LR1121 fill:#aa96da
+    style SX1262 fill:#fcbad3</code></pre><h3 id="triple-band-communication-flow">Triple-Band Communication Flow<a class="headerlink" href="#triple-band-communication-flow" title="Anchor link to this section">¶</a></h3><pre class="mermaid"><code>sequenceDiagram
+    participant App as Application
+    participant Band1 as 2.4 GHz Handler
+    participant Band2 as S-Band Handler
+    participant Band3 as Sub-GHz Handler
+    participant Radio1 as Core1121-XF
+    participant Radio2 as Core1262-XF
+
+    App-&gt;&gt;Band1: Send Data (High Speed)
+    Band1-&gt;&gt;Radio1: TX @ 2.4 GHz
+    Radio1--&gt;&gt;Radio1: FHSS Hop (2400-2500MHz)
+
+    App-&gt;&gt;Band2: Send Data (Medium Range)
+    Band2-&gt;&gt;Radio1: Switch to S-band
+    Radio1--&gt;&gt;Radio1: FHSS Hop (1900-2100MHz)
+    Band2-&gt;&gt;Radio1: TX @ S-band
+
+    App-&gt;&gt;Band3: Send Data (Long Range)
+    Band3-&gt;&gt;Radio2: TX @ Sub-GHz
+    Radio2--&gt;&gt;Radio2: FHSS Hop (868/915MHz)
+
+    Note over Band1,Band3: All bands operate independently
+    Note over Radio1,Radio2: Simultaneous multi-band possible</code></pre><h3 id="frequency-band-coordination">Frequency Band Coordination<a class="headerlink" href="#frequency-band-coordination" title="Anchor link to this section">¶</a></h3><pre class="mermaid"><code>stateDiagram-v2
+    [*] --&gt; Initialize
+
+    state Core1121_Control {
+        [*] --&gt; Band_2_4GHz
+        Band_2_4GHz --&gt; Band_S: Switch Band
+        Band_S --&gt; Band_2_4GHz: Switch Band
+
+        state Band_2_4GHz {
+            [*] --&gt; Ch2400
+            Ch2400 --&gt; Ch2425: FHSS Hop
+            Ch2425 --&gt; Ch2450: FHSS Hop
+            Ch2450 --&gt; Ch2475: FHSS Hop
+            Ch2475 --&gt; Ch2500: FHSS Hop
+            Ch2500 --&gt; Ch2400: Loop
+        }
+
+        state Band_S {
+            [*] --&gt; Ch1900
+            Ch1900 --&gt; Ch1950: FHSS Hop
+            Ch1950 --&gt; Ch2000: FHSS Hop
+            Ch2000 --&gt; Ch2050: FHSS Hop
+            Ch2050 --&gt; Ch2100: FHSS Hop
+            Ch2100 --&gt; Ch1900: Loop
+        }
+    }
+
+    state Core1262_Control {
+        [*] --&gt; Sub_GHz_Band
+
+        state Sub_GHz_Band {
+            [*] --&gt; Ch868
+            Ch868 --&gt; Ch868_3: FHSS Hop
+            Ch868_3 --&gt; Ch868_6: FHSS Hop
+            Ch868_6 --&gt; Ch868_9: FHSS Hop
+            Ch868_9 --&gt; Ch868: Loop
+        }
+    }
+
+    Initialize --&gt; Core1121_Control
+    Initialize --&gt; Core1262_Control</code></pre><h3 id="multi-band-diversity-architecture">Multi-Band Diversity Architecture<a class="headerlink" href="#multi-band-diversity-architecture" title="Anchor link to this section">¶</a></h3><pre class="mermaid"><code>graph LR
+    subgraph "Transmitter Side"
+        TX_Data[Data to Send]
+        Splitter[Data Splitter]
+        TX1[TX 2.4 GHz]
+        TX2[TX S-band]
+        TX3[TX Sub-GHz]
+    end
+
+    subgraph "Channel Propagation"
+        Path1[Path 1&lt;br/&gt;2.4 GHz&lt;br/&gt;High Speed]
+        Path2[Path 2&lt;br/&gt;S-band&lt;br/&gt;Medium Range]
+        Path3[Path 3&lt;br/&gt;Sub-GHz&lt;br/&gt;Long Range]
+    end
+
+    subgraph "Receiver Side"
+        RX1[RX 2.4 GHz]
+        RX2[RX S-band]
+        RX3[RX Sub-GHz]
+        Combiner[Data Combiner]
+        RX_Data[Received Data]
+    end
+
+    TX_Data --&gt; Splitter
+    Splitter --&gt; TX1
+    Splitter --&gt; TX2
+    Splitter --&gt; TX3
+
+    TX1 --&gt; Path1
+    TX2 --&gt; Path2
+    TX3 --&gt; Path3
+
+    Path1 --&gt; RX1
+    Path2 --&gt; RX2
+    Path3 --&gt; RX3
+
+    RX1 --&gt; Combiner
+    RX2 --&gt; Combiner
+    RX3 --&gt; Combiner
+    Combiner --&gt; RX_Data
+
+    style Path1 fill:#ffd93d
+    style Path2 fill:#6bcf7f
+    style Path3 fill:#4d96ff</code></pre><hr><h2 id="hardware-configuration">🔌 Hardware Configuration<a class="headerlink" href="#hardware-configuration" title="Anchor link to this section">¶</a></h2><h3 id="module-specifications">Module Specifications<a class="headerlink" href="#module-specifications" title="Anchor link to this section">¶</a></h3><h4 id="core1121-xf-waveshare">Core1121-XF (Waveshare)<a class="headerlink" href="#core1121-xf-waveshare" title="Anchor link to this section">¶</a></h4><table><thead><tr><th>Parameter</th><th>Specification</th></tr></thead><tbody><tr><td>Chip</td><td>Semtech LR1121 (3<sup>rd</sup> Gen)</td></tr><tr><td>Frequency Bands</td><td>Sub-GHz (150-960 MHz)<br>S-band (1.9-2.1 GHz)<br>2.4 GHz ISM</td></tr><tr><td>TX Power</td><td>Up to +22 dBm</td></tr><tr><td>RX Sensitivity</td><td>-127 dBm @ SF12 BW125</td></tr><tr><td>Modulation</td><td>LoRa, (G)FSK, LR-FHSS, GMSK</td></tr><tr><td>Interface</td><td>SPI (up to 16 MHz)</td></tr><tr><td>Special Features</td><td>GNSS scanner, WiFi scanner</td></tr></tbody></table><h4 id="core1262-xf-waveshare">Core1262-XF (Waveshare)<a class="headerlink" href="#core1262-xf-waveshare" title="Anchor link to this section">¶</a></h4><table><thead><tr><th>Parameter</th><th>Specification</th></tr></thead><tbody><tr><td>Chip</td><td>Semtech SX1262 (2<sup>nd</sup> Gen)</td></tr><tr><td>Frequency Range</td><td>150-960 MHz (Sub-GHz)</td></tr><tr><td>TX Power</td><td>Up to +22 dBm</td></tr><tr><td>RX Sensitivity</td><td>-148 dBm @ SF12 BW125</td></tr><tr><td>Modulation</td><td>LoRa, (G)FSK</td></tr><tr><td>Interface</td><td>SPI (up to 16 MHz)</td></tr><tr><td>Variants</td><td>HF (850-930 MHz)<br>LF (410-490 MHz)</td></tr></tbody></table><h3 id="gpio-pin-mapping">GPIO Pin Mapping<a class="headerlink" href="#gpio-pin-mapping" title="Anchor link to this section">¶</a></h3><h4 id="core1121-xf-spi0">Core1121-XF (SPI0)<a class="headerlink" href="#core1121-xf-spi0" title="Anchor link to this section">¶</a></h4><table><thead><tr><th>Function</th><th>GPIO</th><th>Description</th></tr></thead><tbody><tr><td>MISO</td><td>16</td><td>SPI0 RX</td></tr><tr><td>CS</td><td>17</td><td>Chip Select (Active Low)</td></tr><tr><td>SCK</td><td>18</td><td>SPI0 Clock (8 MHz)</td></tr><tr><td>MOSI</td><td>19</td><td>SPI0 TX</td></tr><tr><td>RST</td><td>20</td><td>Hardware Reset</td></tr><tr><td>BUSY</td><td>21</td><td>Busy Status Input</td></tr><tr><td>DIO1</td><td>22</td><td>Interrupt Output</td></tr><tr><td>DIO2</td><td>26</td><td>RF Switch Control</td></tr><tr><td>DIO3</td><td>27</td><td>Band Select</td></tr></tbody></table><h4 id="core1262-xf-spi1">Core1262-XF (SPI1)<a class="headerlink" href="#core1262-xf-spi1" title="Anchor link to this section">¶</a></h4><table><thead><tr><th>Function</th><th>GPIO</th><th>Description</th></tr></thead><tbody><tr><td>MISO</td><td>12</td><td>SPI1 RX</td></tr><tr><td>CS</td><td>13</td><td>Chip Select (Active Low)</td></tr><tr><td>SCK</td><td>10</td><td>SPI1 Clock (8 MHz)</td></tr><tr><td>MOSI</td><td>11</td><td>SPI1 TX</td></tr><tr><td>RST</td><td>14</td><td>Hardware Reset</td></tr><tr><td>BUSY</td><td>15</td><td>Busy Status Input</td></tr><tr><td>DIO1</td><td>9</td><td>Interrupt Output</td></tr><tr><td>DIO2</td><td>8</td><td>RF Switch Control</td></tr></tbody></table><h3 id="connection-diagram">Connection Diagram<a class="headerlink" href="#connection-diagram" title="Anchor link to this section">¶</a></h3><pre class="mermaid"><code>graph TB
+    subgraph "Pico2W GPIO"
+        SPI0_Group[SPI0: 16,17,18,19,20,21,22,26,27]
+        SPI1_Group[SPI1: 8,9,10,11,12,13,14,15]
+    end
+
+    subgraph "Core1121-XF"
+        LR1121_Pins[LR1121&lt;br/&gt;Multi-band]
+        RF_Switch_1[RF Switch]
+        Ant_2_4[2.4 GHz Ant]
+        Ant_S[S-band Ant]
+    end
+
+    subgraph "Core1262-XF"
+        SX1262_Pins[SX1262&lt;br/&gt;Sub-GHz]
+        RF_Switch_2[RF Switch]
+        Ant_Sub[Sub-GHz Ant]
+    end
+
+    SPI0_Group --&gt; LR1121_Pins
+    LR1121_Pins --&gt; RF_Switch_1
+    RF_Switch_1 --&gt; Ant_2_4
+    RF_Switch_1 --&gt; Ant_S
+
+    SPI1_Group --&gt; SX1262_Pins
+    SX1262_Pins --&gt; RF_Switch_2
+    RF_Switch_2 --&gt; Ant_Sub
+
+    style LR1121_Pins fill:#aa96da
+    style SX1262_Pins fill:#fcbad3</code></pre><hr><h2 id="fhss-implementation">🎯 FHSS Implementation<a class="headerlink" href="#fhss-implementation" title="Anchor link to this section">¶</a></h2><h3 id="frequency-band-allocation">Frequency Band Allocation<a class="headerlink" href="#frequency-band-allocation" title="Anchor link to this section">¶</a></h3><pre class="mermaid"><code>gantt
+    title Triple-Band FHSS Frequency Allocation
+    dateFormat X
+    axisFormat %s MHz
+
+    section Core1121 (2.4 GHz)
+    Ch 0-50 (2400-2500 MHz) :0, 100
+
+    section Core1121 (S-band)
+    Ch 0-40 (1900-2100 MHz) :100, 200
+
+    section Core1262 (Sub-GHz EU)
+    Ch 0-8 (863-870 MHz) :300, 7
+
+    section Core1262 (Sub-GHz US)
+    Ch 0-63 (902-928 MHz) :310, 26</code></pre><h3 id="fhss-configuration-parameters">FHSS Configuration Parameters<a class="headerlink" href="#fhss-configuration-parameters" title="Anchor link to this section">¶</a></h3><h4 id="band-1-24-ghz-core1121-xf">Band 1: 2.4 GHz (Core1121-XF)<a class="headerlink" href="#band-1-24-ghz-core1121-xf" title="Anchor link to this section">¶</a></h4><table><thead><tr><th>Parameter</th><th>Value</th><th>Unit</th></tr></thead><tbody><tr><td>Base Frequency</td><td>2400.0</td><td>MHz</td></tr><tr><td>Max Frequency</td><td>2500.0</td><td>MHz</td></tr><tr><td>Channel Step</td><td>2.0</td><td>MHz</td></tr><tr><td>Number of Channels</td><td>50</td><td>-</td></tr><tr><td>Dwell Time</td><td>100</td><td>ms</td></tr><tr><td>Typical Use Case</td><td>High-speed data, short range</td><td></td></tr></tbody></table><h4 id="band-2-s-band-core1121-xf">Band 2: S-band (Core1121-XF)<a class="headerlink" href="#band-2-s-band-core1121-xf" title="Anchor link to this section">¶</a></h4><table><thead><tr><th>Parameter</th><th>Value</th><th>Unit</th></tr></thead><tbody><tr><td>Base Frequency</td><td>1900.0</td><td>MHz</td></tr><tr><td>Max Frequency</td><td>2100.0</td><td>MHz</td></tr><tr><td>Channel Step</td><td>5.0</td><td>MHz</td></tr><tr><td>Number of Channels</td><td>40</td><td>-</td></tr><tr><td>Dwell Time</td><td>150</td><td>ms</td></tr><tr><td>Typical Use Case</td><td>Medium range, balanced</td><td></td></tr></tbody></table><h4 id="band-3-sub-ghz-eu868-core1262-xf">Band 3: Sub-GHz EU868 (Core1262-XF)<a class="headerlink" href="#band-3-sub-ghz-eu868-core1262-xf" title="Anchor link to this section">¶</a></h4><table><thead><tr><th>Parameter</th><th>Value</th><th>Unit</th></tr></thead><tbody><tr><td>Base Frequency</td><td>863.0</td><td>MHz</td></tr><tr><td>Max Frequency</td><td>870.0</td><td>MHz</td></tr><tr><td>Channel Step</td><td>200</td><td>kHz</td></tr><tr><td>Number of Channels</td><td>35</td><td>-</td></tr><tr><td>Dwell Time</td><td>200</td><td>ms</td></tr><tr><td>Typical Use Case</td><td>Long range, obstacles</td><td></td></tr></tbody></table><h4 id="band-3-sub-ghz-us915-core1262-xf">Band 3: Sub-GHz US915 (Core1262-XF)<a class="headerlink" href="#band-3-sub-ghz-us915-core1262-xf" title="Anchor link to this section">¶</a></h4><table><thead><tr><th>Parameter</th><th>Value</th><th>Unit</th></tr></thead><tbody><tr><td>Base Frequency</td><td>902.0</td><td>MHz</td></tr><tr><td>Max Frequency</td><td>928.0</td><td>MHz</td></tr><tr><td>Channel Step</td><td>200</td><td>kHz</td></tr><tr><td>Number of Channels</td><td>130</td><td>-</td></tr><tr><td>Dwell Time</td><td>200</td><td>ms</td></tr><tr><td>Typical Use Case</td><td>Long range, FCC compliant</td><td></td></tr></tbody></table><h3 id="hopping-pattern-strategy">Hopping Pattern Strategy<a class="headerlink" href="#hopping-pattern-strategy" title="Anchor link to this section">¶</a></h3><pre class="mermaid"><code>graph TD
+    A[Start FHSS] --&gt; B{Select Band}
+    B --&gt;|2.4 GHz| C1[Pattern 1&lt;br/&gt;Fast Hopping]
+    B --&gt;|S-band| C2[Pattern 2&lt;br/&gt;Medium Hopping]
+    B --&gt;|Sub-GHz| C3[Pattern 3&lt;br/&gt;Slow Hopping]
+
+    C1 --&gt; D1[50 channels&lt;br/&gt;100ms dwell]
+    C2 --&gt; D2[40 channels&lt;br/&gt;150ms dwell]
+    C3 --&gt; D3[35-130 channels&lt;br/&gt;200ms dwell]
+
+    D1 --&gt; E[Pseudo-random&lt;br/&gt;Sequence]
+    D2 --&gt; E
+    D3 --&gt; E
+
+    E --&gt; F{Collision&lt;br/&gt;Detected?}
+    F --&gt;|No| G[Continue Pattern]
+    F --&gt;|Yes| H[Shift Pattern&lt;br/&gt;by Offset]
+    H --&gt; G
+    G --&gt; I{Dwell Time&lt;br/&gt;Expired?}
+    I --&gt;|No| G
+    I --&gt;|Yes| J[Hop to Next&lt;br/&gt;Channel]
+    J --&gt; E</code></pre><h3 id="multi-band-coordination">Multi-Band Coordination<a class="headerlink" href="#multi-band-coordination" title="Anchor link to this section">¶</a></h3><p><strong>Key Principles:</strong> 1. <strong>Independent operation</strong> - Each band has its own FHSS engine 2. <strong>No frequency overlap</strong> - Bands are well separated 3. <strong>Synchronized patterns</strong> - All transceivers use same time base 4. <strong>Adaptive dwell</strong> - Longer dwell for lower frequencies (better penetration)</p><p><strong>Pattern Examples:</strong></p><p><strong>2.4 GHz Pattern (Fast):</strong></p><div class="language-text highlight"><table class="highlighttable"><tbody><tr><th class="filename" colspan="2"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span>
+<span class="normal"><a href="#__codelineno-0-2">2</a></span>
+<span class="normal"><a href="#__codelineno-0-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a>Idx:  0,  1,  2,  3,  4,  5,  6,  7...
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2"></a>Ch:   0, 13, 26, 39,  2, 15, 28, 41...
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3"></a>Freq: 2400, 2426, 2452, 2478, 2404, 2430...
+</span></code></pre></div></td></tr></tbody></table></div><p></p><p><strong>S-band Pattern (Medium):</strong></p><div class="language-text highlight"><table class="highlighttable"><tbody><tr><th class="filename" colspan="2"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span>
+<span class="normal"><a href="#__codelineno-1-2">2</a></span>
+<span class="normal"><a href="#__codelineno-1-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1"></a>Idx:  0,  1,  2,  3,  4,  5,  6,  7...
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2"></a>Ch:   0,  8, 16, 24, 32,  4, 12, 20...
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3"></a>Freq: 1900, 1940, 1980, 2020, 2060, 1920...
+</span></code></pre></div></td></tr></tbody></table></div><p></p><p><strong>Sub-GHz Pattern (Slow):</strong></p><div class="language-text highlight"><table class="highlighttable"><tbody><tr><th class="filename" colspan="2"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1">1</a></span>
+<span class="normal"><a href="#__codelineno-2-2">2</a></span>
+<span class="normal"><a href="#__codelineno-2-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1"></a>Idx:  0,  1,  2,  3,  4,  5,  6,  7...
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2"></a>Ch:   0,  7, 14, 21, 28,  3, 10, 17...
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3"></a>Freq: 868.0, 869.4, 870.8, 872.2, 873.6, 868.6...
+</span></code></pre></div></td></tr></tbody></table></div><p></p><hr><h2 id="dma-configuration">⚡ DMA Configuration<a class="headerlink" href="#dma-configuration" title="Anchor link to this section">¶</a></h2><h3 id="dma-channel-allocation-strategy">DMA Channel Allocation Strategy<a class="headerlink" href="#dma-channel-allocation-strategy" title="Anchor link to this section">¶</a></h3><pre class="mermaid"><code>graph TB
+    subgraph "DMA Controller (12 channels available)"
+        CH0[Ch 0: Core1121 TX]
+        CH1[Ch 1: Core1121 RX]
+        CH2[Ch 2: Core1262 TX]
+        CH3[Ch 3: Core1262 RX]
+        CH4[Ch 4-11: Reserved]
+    end
+
+    subgraph "Memory Buffers"
+        BUF1[Core1121 TX Buffer&lt;br/&gt;512 bytes aligned]
+        BUF2[Core1121 RX Buffer&lt;br/&gt;512 bytes aligned]
+        BUF3[Core1262 TX Buffer&lt;br/&gt;512 bytes aligned]
+        BUF4[Core1262 RX Buffer&lt;br/&gt;512 bytes aligned]
+    end
+
+    subgraph "SPI Hardware"
+        SPI0_DR[SPI0 Data Register]
+        SPI1_DR[SPI1 Data Register]
+    end
+
+    BUF1 --&gt; CH0
+    CH0 --&gt; SPI0_DR
+    SPI0_DR --&gt; CH1
+    CH1 --&gt; BUF2
+
+    BUF3 --&gt; CH2
+    CH2 --&gt; SPI1_DR
+    SPI1_DR --&gt; CH3
+    CH3 --&gt; BUF4
+
+    style CH0 fill:#ff6b6b
+    style CH1 fill:#4ecdc4
+    style CH2 fill:#ff6b6b
+    style CH3 fill:#4ecdc4</code></pre><h3 id="performance-optimization">Performance Optimization<a class="headerlink" href="#performance-optimization" title="Anchor link to this section">¶</a></h3><table><thead><tr><th>Operation</th><th>Without DMA</th><th>With DMA</th><th>Improvement</th></tr></thead><tbody><tr><td>256-byte TX @ 8MHz</td><td>~320 µs</td><td>~95 µs</td><td><strong>3.4x faster</strong></td></tr><tr><td>CPU Utilization</td><td>100%</td><td>~30%</td><td><strong>70% freed</strong></td></tr><tr><td>Multi-band TX</td><td>Sequential</td><td>Parallel prep</td><td><strong>2x throughput</strong></td></tr><tr><td>Latency (avg)</td><td>850 µs</td><td>250 µs</td><td><strong>3.4x lower</strong></td></tr></tbody></table><hr><h2 id="api-reference">📚 API Reference<a class="headerlink" href="#api-reference" title="Anchor link to this section">¶</a></h2><h3 id="core1121-xf-functions">Core1121-XF Functions<a class="headerlink" href="#core1121-xf-functions" title="Anchor link to this section">¶</a></h3><h4 id="lr1121_init"><code>lr1121_init()</code><a class="headerlink" href="#lr1121_init" title="Anchor link to this section">¶</a></h4><p></p><div class="language-c highlight"><table class="highlighttable"><tbody><tr><th class="filename" colspan="2"><span class="filename">C</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1">1</a></span>
+<span class="normal"><a href="#__codelineno-3-2">2</a></span>
+<span class="normal"><a href="#__codelineno-3-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="kt">void</span><span class="w"> </span><span class="nf">lr1121_init</span><span class="p">(</span><span class="n">lr1121_t</span><span class="o">*</span><span class="w"> </span><span class="n">dev</span><span class="p">,</span><span class="w"> </span><span class="n">spi_inst_t</span><span class="o">*</span><span class="w"> </span><span class="n">spi</span><span class="p">,</span><span class="w"> </span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2"></a><span class="w">                 </span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">cs</span><span class="p">,</span><span class="w"> </span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">rst</span><span class="p">,</span><span class="w"> </span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">busy</span><span class="p">,</span><span class="w"> </span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3"></a><span class="w">                 </span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">dio1</span><span class="p">,</span><span class="w"> </span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">dio2</span><span class="p">,</span><span class="w"> </span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">dio3</span><span class="p">);</span>
+</span></code></pre></div></td></tr></tbody></table></div> Initializes LR1121 chip with DMA support for triple-band operation.<p></p><h4 id="lr1121_set_band"><code>lr1121_set_band()</code><a class="headerlink" href="#lr1121_set_band" title="Anchor link to this section">¶</a></h4><p></p><div class="language-c highlight"><table class="highlighttable"><tbody><tr><th class="filename" colspan="2"><span class="filename">C</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="kt">void</span><span class="w"> </span><span class="nf">lr1121_set_band</span><span class="p">(</span><span class="n">lr1121_t</span><span class="o">*</span><span class="w"> </span><span class="n">dev</span><span class="p">,</span><span class="w"> </span><span class="n">lr1121_band_t</span><span class="w"> </span><span class="n">band</span><span class="p">);</span>
+</span></code></pre></div></td></tr></tbody></table></div> Switches between 2.4 GHz, S-band, or Sub-GHz (150-960 MHz).<p></p><p><strong>Parameters:</strong> - <code>LR1121_BAND_2_4GHZ</code> - 2.4 GHz ISM band - <code>LR1121_BAND_S</code> - S-band (1.9-2.1 GHz) - <code>LR1121_BAND_SUBGHZ</code> - Sub-GHz (150-960 MHz)</p><h4 id="lr1121_send_fhss"><code>lr1121_send_fhss()</code><a class="headerlink" href="#lr1121_send_fhss" title="Anchor link to this section">¶</a></h4><p></p><div class="language-c highlight"><table class="highlighttable"><tbody><tr><th class="filename" colspan="2"><span class="filename">C</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-5-1">1</a></span>
+<span class="normal"><a href="#__codelineno-5-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1"></a><span class="kt">void</span><span class="w"> </span><span class="nf">lr1121_send_fhss</span><span class="p">(</span><span class="n">lr1121_t</span><span class="o">*</span><span class="w"> </span><span class="n">dev</span><span class="p">,</span><span class="w"> </span><span class="kt">uint8_t</span><span class="o">*</span><span class="w"> </span><span class="n">data</span><span class="p">,</span><span class="w"> </span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2"></a><span class="w">                      </span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">len</span><span class="p">,</span><span class="w"> </span><span class="n">lr1121_band_t</span><span class="w"> </span><span class="n">band</span><span class="p">);</span>
+</span></code></pre></div></td></tr></tbody></table></div> Transmits data with FHSS on specified band.<p></p><h3 id="core1262-xf-functions">Core1262-XF Functions<a class="headerlink" href="#core1262-xf-functions" title="Anchor link to this section">¶</a></h3><h4 id="sx1262_init"><code>sx1262_init()</code><a class="headerlink" href="#sx1262_init" title="Anchor link to this section">¶</a></h4><p></p><div class="language-c highlight"><table class="highlighttable"><tbody><tr><th class="filename" colspan="2"><span class="filename">C</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-6-1">1</a></span>
+<span class="normal"><a href="#__codelineno-6-2">2</a></span>
+<span class="normal"><a href="#__codelineno-6-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1"></a><span class="kt">void</span><span class="w"> </span><span class="nf">sx1262_init</span><span class="p">(</span><span class="n">sx1262_t</span><span class="o">*</span><span class="w"> </span><span class="n">dev</span><span class="p">,</span><span class="w"> </span><span class="n">spi_inst_t</span><span class="o">*</span><span class="w"> </span><span class="n">spi</span><span class="p">,</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2"></a><span class="w">                 </span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">cs</span><span class="p">,</span><span class="w"> </span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">rst</span><span class="p">,</span><span class="w"> </span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">busy</span><span class="p">,</span>
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3"></a><span class="w">                 </span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">dio1</span><span class="p">,</span><span class="w"> </span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">dio2</span><span class="p">);</span>
+</span></code></pre></div></td></tr></tbody></table></div> Initializes SX1262 chip for Sub-GHz operation.<p></p><h4 id="sx1262_set_frequency"><code>sx1262_set_frequency()</code><a class="headerlink" href="#sx1262_set_frequency" title="Anchor link to this section">¶</a></h4><p></p><div class="language-c highlight"><table class="highlighttable"><tbody><tr><th class="filename" colspan="2"><span class="filename">C</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-7-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1"></a><span class="kt">void</span><span class="w"> </span><span class="nf">sx1262_set_frequency</span><span class="p">(</span><span class="n">sx1262_t</span><span class="o">*</span><span class="w"> </span><span class="n">dev</span><span class="p">,</span><span class="w"> </span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">freq_hz</span><span class="p">);</span>
+</span></code></pre></div></td></tr></tbody></table></div> Sets operating frequency (150-960 MHz range).<p></p><h4 id="sx1262_send_fhss"><code>sx1262_send_fhss()</code><a class="headerlink" href="#sx1262_send_fhss" title="Anchor link to this section">¶</a></h4><p></p><div class="language-c highlight"><table class="highlighttable"><tbody><tr><th class="filename" colspan="2"><span class="filename">C</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-8-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1"></a><span class="kt">void</span><span class="w"> </span><span class="nf">sx1262_send_fhss</span><span class="p">(</span><span class="n">sx1262_t</span><span class="o">*</span><span class="w"> </span><span class="n">dev</span><span class="p">,</span><span class="w"> </span><span class="kt">uint8_t</span><span class="o">*</span><span class="w"> </span><span class="n">data</span><span class="p">,</span><span class="w"> </span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">len</span><span class="p">);</span>
+</span></code></pre></div></td></tr></tbody></table></div> Transmits data with Sub-GHz FHSS.<p></p><h3 id="multi-band-control">Multi-Band Control<a class="headerlink" href="#multi-band-control" title="Anchor link to this section">¶</a></h3><h4 id="multiband_init"><code>multiband_init()</code><a class="headerlink" href="#multiband_init" title="Anchor link to this section">¶</a></h4><p></p><div class="language-c highlight"><table class="highlighttable"><tbody><tr><th class="filename" colspan="2"><span class="filename">C</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-9-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1"></a><span class="kt">void</span><span class="w"> </span><span class="nf">multiband_init</span><span class="p">(</span><span class="n">multiband_t</span><span class="o">*</span><span class="w"> </span><span class="n">system</span><span class="p">);</span>
+</span></code></pre></div></td></tr></tbody></table></div> Initializes all three bands with coordinated FHSS.<p></p><h4 id="multiband_send_diversity"><code>multiband_send_diversity()</code><a class="headerlink" href="#multiband_send_diversity" title="Anchor link to this section">¶</a></h4><p></p><div class="language-c highlight"><table class="highlighttable"><tbody><tr><th class="filename" colspan="2"><span class="filename">C</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-10-1">1</a></span>
+<span class="normal"><a href="#__codelineno-10-2">2</a></span>
+<span class="normal"><a href="#__codelineno-10-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1"></a><span class="kt">void</span><span class="w"> </span><span class="nf">multiband_send_diversity</span><span class="p">(</span><span class="n">multiband_t</span><span class="o">*</span><span class="w"> </span><span class="n">system</span><span class="p">,</span><span class="w"> </span>
+</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2"></a><span class="w">                             </span><span class="kt">uint8_t</span><span class="o">*</span><span class="w"> </span><span class="n">data</span><span class="p">,</span><span class="w"> </span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">len</span><span class="p">,</span>
+</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3"></a><span class="w">                             </span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">band_mask</span><span class="p">);</span>
+</span></code></pre></div></td></tr></tbody></table></div> Sends data across multiple bands simultaneously for diversity.<p></p><p><strong>Band Mask:</strong> - <code>BAND_2_4GHZ</code> - Bit 0 - <code>BAND_S</code> - Bit 1 - <code>BAND_SUBGHZ</code> - Bit 2</p><hr><h2 id="usage-examples">💡 Usage Examples<a class="headerlink" href="#usage-examples" title="Anchor link to this section">¶</a></h2><h3 id="single-band-operation">Single Band Operation<a class="headerlink" href="#single-band-operation" title="Anchor link to this section">¶</a></h3><div class="language-c highlight"><table class="highlighttable"><tbody><tr><th class="filename" colspan="2"><span class="filename">C</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-11-1">1</a></span>
+<span class="normal"><a href="#__codelineno-11-2">2</a></span>
+<span class="normal"><a href="#__codelineno-11-3">3</a></span>
+<span class="normal"><a href="#__codelineno-11-4">4</a></span>
+<span class="normal"><a href="#__codelineno-11-5">5</a></span>
+<span class="normal"><a href="#__codelineno-11-6">6</a></span>
+<span class="normal"><a href="#__codelineno-11-7">7</a></span>
+<span class="normal"><a href="#__codelineno-11-8">8</a></span>
+<span class="normal"><a href="#__codelineno-11-9">9</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1"></a><span class="c1">// Initialize Core1121 for 2.4 GHz</span>
+</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2"></a><span class="n">lr1121_init</span><span class="p">(</span><span class="o">&amp;</span><span class="n">core1121</span><span class="p">,</span><span class="w"> </span><span class="n">spi0</span><span class="p">,</span><span class="w"> </span><span class="n">CS</span><span class="p">,</span><span class="w"> </span><span class="n">RST</span><span class="p">,</span><span class="w"> </span><span class="n">BUSY</span><span class="p">,</span><span class="w"> </span><span class="n">DIO1</span><span class="p">,</span><span class="w"> </span><span class="n">DIO2</span><span class="p">,</span><span class="w"> </span><span class="n">DIO3</span><span class="p">);</span>
+</span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3"></a><span class="n">lr1121_set_band</span><span class="p">(</span><span class="o">&amp;</span><span class="n">core1121</span><span class="p">,</span><span class="w"> </span><span class="n">LR1121_BAND_2_4GHZ</span><span class="p">);</span>
+</span><span id="__span-11-4"><a id="__codelineno-11-4" name="__codelineno-11-4"></a><span class="n">fhss_init</span><span class="p">(</span><span class="o">&amp;</span><span class="n">core1121</span><span class="p">.</span><span class="n">fhss</span><span class="p">,</span><span class="w"> </span><span class="mi">2400000000UL</span><span class="p">,</span><span class="w"> </span><span class="n">pattern_2g4</span><span class="p">);</span>
+</span><span id="__span-11-5"><a id="__codelineno-11-5" name="__codelineno-11-5"></a>
+</span><span id="__span-11-6"><a id="__codelineno-11-6" name="__codelineno-11-6"></a><span class="c1">// Send data</span>
+</span><span id="__span-11-7"><a id="__codelineno-11-7" name="__codelineno-11-7"></a><span class="kt">char</span><span class="w"> </span><span class="n">msg</span><span class="p">[]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"Hello 2.4GHz!"</span><span class="p">;</span>
+</span><span id="__span-11-8"><a id="__codelineno-11-8" name="__codelineno-11-8"></a><span class="n">lr1121_send_fhss</span><span class="p">(</span><span class="o">&amp;</span><span class="n">core1121</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="kt">uint8_t</span><span class="o">*</span><span class="p">)</span><span class="n">msg</span><span class="p">,</span><span class="w"> </span><span class="n">strlen</span><span class="p">(</span><span class="n">msg</span><span class="p">),</span><span class="w"> </span>
+</span><span id="__span-11-9"><a id="__codelineno-11-9" name="__codelineno-11-9"></a><span class="w">                 </span><span class="n">LR1121_BAND_2_4GHZ</span><span class="p">);</span>
+</span></code></pre></div></td></tr></tbody></table></div><h3 id="dual-band-operation-same-module">Dual Band Operation (Same Module)<a class="headerlink" href="#dual-band-operation-same-module" title="Anchor link to this section">¶</a></h3><div class="language-c highlight"><table class="highlighttable"><tbody><tr><th class="filename" colspan="2"><span class="filename">C</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-12-1">1</a></span>
+<span class="normal"><a href="#__codelineno-12-2">2</a></span>
+<span class="normal"><a href="#__codelineno-12-3">3</a></span>
+<span class="normal"><a href="#__codelineno-12-4">4</a></span>
+<span class="normal"><a href="#__codelineno-12-5">5</a></span>
+<span class="normal"><a href="#__codelineno-12-6">6</a></span>
+<span class="normal"><a href="#__codelineno-12-7">7</a></span>
+<span class="normal"><a href="#__codelineno-12-8">8</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1"></a><span class="c1">// Core1121 can switch between bands</span>
+</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2"></a><span class="n">lr1121_set_band</span><span class="p">(</span><span class="o">&amp;</span><span class="n">core1121</span><span class="p">,</span><span class="w"> </span><span class="n">LR1121_BAND_2_4GHZ</span><span class="p">);</span>
+</span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3"></a><span class="n">lr1121_send_fhss</span><span class="p">(</span><span class="o">&amp;</span><span class="n">core1121</span><span class="p">,</span><span class="w"> </span><span class="n">data1</span><span class="p">,</span><span class="w"> </span><span class="n">len1</span><span class="p">,</span><span class="w"> </span><span class="n">LR1121_BAND_2_4GHZ</span><span class="p">);</span>
+</span><span id="__span-12-4"><a id="__codelineno-12-4" name="__codelineno-12-4"></a>
+</span><span id="__span-12-5"><a id="__codelineno-12-5" name="__codelineno-12-5"></a><span class="n">sleep_ms</span><span class="p">(</span><span class="mi">10</span><span class="p">);</span><span class="w"> </span><span class="c1">// Brief pause for RF switch</span>
+</span><span id="__span-12-6"><a id="__codelineno-12-6" name="__codelineno-12-6"></a>
+</span><span id="__span-12-7"><a id="__codelineno-12-7" name="__codelineno-12-7"></a><span class="n">lr1121_set_band</span><span class="p">(</span><span class="o">&amp;</span><span class="n">core1121</span><span class="p">,</span><span class="w"> </span><span class="n">LR1121_BAND_S</span><span class="p">);</span>
+</span><span id="__span-12-8"><a id="__codelineno-12-8" name="__codelineno-12-8"></a><span class="n">lr1121_send_fhss</span><span class="p">(</span><span class="o">&amp;</span><span class="n">core1121</span><span class="p">,</span><span class="w"> </span><span class="n">data2</span><span class="p">,</span><span class="w"> </span><span class="n">len2</span><span class="p">,</span><span class="w"> </span><span class="n">LR1121_BAND_S</span><span class="p">);</span>
+</span></code></pre></div></td></tr></tbody></table></div><h3 id="triple-band-diversity">Triple Band Diversity<a class="headerlink" href="#triple-band-diversity" title="Anchor link to this section">¶</a></h3><div class="language-c highlight"><table class="highlighttable"><tbody><tr><th class="filename" colspan="2"><span class="filename">C</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-13-1">1</a></span>
+<span class="normal"><a href="#__codelineno-13-2">2</a></span>
+<span class="normal"><a href="#__codelineno-13-3">3</a></span>
+<span class="normal"><a href="#__codelineno-13-4">4</a></span>
+<span class="normal"><a href="#__codelineno-13-5">5</a></span>
+<span class="normal"><a href="#__codelineno-13-6">6</a></span>
+<span class="normal"><a href="#__codelineno-13-7">7</a></span>
+<span class="normal"><a href="#__codelineno-13-8">8</a></span>
+<span class="normal"><a href="#__codelineno-13-9">9</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1"></a><span class="c1">// Initialize all modules</span>
+</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2"></a><span class="n">multiband_t</span><span class="w"> </span><span class="n">system</span><span class="p">;</span>
+</span><span id="__span-13-3"><a id="__codelineno-13-3" name="__codelineno-13-3"></a><span class="n">multiband_init</span><span class="p">(</span><span class="o">&amp;</span><span class="n">system</span><span class="p">);</span>
+</span><span id="__span-13-4"><a id="__codelineno-13-4" name="__codelineno-13-4"></a>
+</span><span id="__span-13-5"><a id="__codelineno-13-5" name="__codelineno-13-5"></a><span class="c1">// Send across all three bands</span>
+</span><span id="__span-13-6"><a id="__codelineno-13-6" name="__codelineno-13-6"></a><span class="kt">uint8_t</span><span class="w"> </span><span class="n">mask</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">BAND_2_4GHZ</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">BAND_S</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">BAND_SUBGHZ</span><span class="p">;</span>
+</span><span id="__span-13-7"><a id="__codelineno-13-7" name="__codelineno-13-7"></a><span class="n">multiband_send_diversity</span><span class="p">(</span><span class="o">&amp;</span><span class="n">system</span><span class="p">,</span><span class="w"> </span><span class="n">critical_data</span><span class="p">,</span><span class="w"> </span><span class="n">len</span><span class="p">,</span><span class="w"> </span><span class="n">mask</span><span class="p">);</span>
+</span><span id="__span-13-8"><a id="__codelineno-13-8" name="__codelineno-13-8"></a>
+</span><span id="__span-13-9"><a id="__codelineno-13-9" name="__codelineno-13-9"></a><span class="c1">// Receiver gets best of 3 copies</span>
+</span></code></pre></div></td></tr></tbody></table></div><h3 id="band-selection-strategy">Band Selection Strategy<a class="headerlink" href="#band-selection-strategy" title="Anchor link to this section">¶</a></h3><div class="language-c highlight"><table class="highlighttable"><tbody><tr><th class="filename" colspan="2"><span class="filename">C</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-14-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-14-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-14-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-14-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-14-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-14-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-14-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-14-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-14-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-14-10">10</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1"></a><span class="c1">// Adaptive band selection based on conditions</span>
+</span><span id="__span-14-2"><a id="__codelineno-14-2" name="__codelineno-14-2"></a><span class="kt">uint8_t</span><span class="w"> </span><span class="nf">select_best_band</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">range_m</span><span class="p">,</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="n">obstacles</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-14-3"><a id="__codelineno-14-3" name="__codelineno-14-3"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">range_m</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">500</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="o">!</span><span class="n">obstacles</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-14-4"><a id="__codelineno-14-4" name="__codelineno-14-4"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">BAND_2_4GHZ</span><span class="p">;</span><span class="w">  </span><span class="c1">// High speed, line of sight</span>
+</span><span id="__span-14-5"><a id="__codelineno-14-5" name="__codelineno-14-5"></a><span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">range_m</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">2000</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-14-6"><a id="__codelineno-14-6" name="__codelineno-14-6"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">BAND_S</span><span class="p">;</span><span class="w">        </span><span class="c1">// Medium range</span>
+</span><span id="__span-14-7"><a id="__codelineno-14-7" name="__codelineno-14-7"></a><span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-14-8"><a id="__codelineno-14-8" name="__codelineno-14-8"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">BAND_SUBGHZ</span><span class="p">;</span><span class="w">   </span><span class="c1">// Maximum range, penetration</span>
+</span><span id="__span-14-9"><a id="__codelineno-14-9" name="__codelineno-14-9"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-14-10"><a id="__codelineno-14-10" name="__codelineno-14-10"></a><span class="p">}</span>
+</span></code></pre></div></td></tr></tbody></table></div><hr><h2 id="performance-metrics">📊 Performance Metrics<a class="headerlink" href="#performance-metrics" title="Anchor link to this section">¶</a></h2><h3 id="range-comparison">Range Comparison<a class="headerlink" href="#range-comparison" title="Anchor link to this section">¶</a></h3><table><thead><tr><th>Band</th><th>Frequency</th><th>Line of Sight</th><th>Urban</th><th>Indoor</th></tr></thead><tbody><tr><td>2.4 GHz</td><td>2.4-2.5 GHz</td><td>500m</td><td>150m</td><td>50m</td></tr><tr><td>S-band</td><td>1.9-2.1 GHz</td><td>2km</td><td>600m</td><td>100m</td></tr><tr><td>Sub-GHz</td><td>868/915 MHz</td><td>15km</td><td>5km</td><td>500m</td></tr></tbody></table><h3 id="data-rate-vs-range-trade-off">Data Rate vs Range Trade-off<a class="headerlink" href="#data-rate-vs-range-trade-off" title="Anchor link to this section">¶</a></h3><pre class="mermaid"><code>graph LR
+    A[2.4 GHz] --&gt;|High Speed&lt;br/&gt;203 kbps| B[Short Range&lt;br/&gt;500m]
+    C[S-band] --&gt;|Medium Speed&lt;br/&gt;100 kbps| D[Medium Range&lt;br/&gt;2km]
+    E[Sub-GHz] --&gt;|Long Range&lt;br/&gt;SF12 0.3kbps| F[Extended Range&lt;br/&gt;15km]
+
+    style A fill:#ffd93d
+    style C fill:#6bcf7f
+    style E fill:#4d96ff</code></pre><h3 id="power-consumption">Power Consumption<a class="headerlink" href="#power-consumption" title="Anchor link to this section">¶</a></h3><table><thead><tr><th>Mode</th><th>Core1121-XF</th><th>Core1262-XF</th></tr></thead><tbody><tr><td>TX @ +22dBm</td><td>140 mA</td><td>120 mA</td></tr><tr><td>TX @ +13dBm</td><td>85 mA</td><td>80 mA</td></tr><tr><td>RX Continuous</td><td>40 mA</td><td>35 mA</td></tr><tr><td>Standby</td><td>2 mA</td><td>1.6 mA</td></tr><tr><td>Sleep</td><td>600 µA</td><td>450 µA</td></tr></tbody></table><hr><h2 id="troubleshooting">🔧 Troubleshooting<a class="headerlink" href="#troubleshooting" title="Anchor link to this section">¶</a></h2><h3 id="band-selection-issues">Band Selection Issues<a class="headerlink" href="#band-selection-issues" title="Anchor link to this section">¶</a></h3><pre class="mermaid"><code>graph TD
+    A[Communication Failed] --&gt; B{Which Band?}
+    B --&gt;|2.4 GHz| C{Interference?}
+    B --&gt;|S-band| D{Licensed?}
+    B --&gt;|Sub-GHz| E{Region OK?}
+
+    C --&gt;|Yes| F[Change Channel]
+    C --&gt;|No| G[Check Range]
+
+    D --&gt;|No License| H[Switch to 2.4/Sub-GHz]
+    D --&gt;|Licensed| I[Check Power Limits]
+
+    E --&gt;|Wrong Region| J[Reconfigure for&lt;br/&gt;EU868 or US915]
+    E --&gt;|Correct| K[Check Antenna]
+
+    style H fill:#ff6b6b
+    style J fill:#ff6b6b</code></pre><h3 id="common-issues-solutions">Common Issues &amp; Solutions<a class="headerlink" href="#common-issues-solutions" title="Anchor link to this section">¶</a></h3><h4 id="module-not-responding">Module Not Responding<a class="headerlink" href="#module-not-responding" title="Anchor link to this section">¶</a></h4><p><strong>Symptoms:</strong> No SPI communication</p><p><strong>Solutions:</strong> 1. Verify power supply (3.3V, sufficient current) 2. Check BUSY signal before commands 3. Ensure proper reset sequence 4. Verify SPI pin connections 5. Check SPI clock speed (≤16 MHz for LR1121)</p><h4 id="poor-range">Poor Range<a class="headerlink" href="#poor-range" title="Anchor link to this section">¶</a></h4><p><strong>Symptoms:</strong> Shorter range than expected</p><p><strong>Solutions:</strong> 1. <strong>2.4 GHz:</strong> Check for WiFi/Bluetooth interference 2. <strong>S-band:</strong> Verify antenna tuning for 1.9-2.1 GHz 3. <strong>Sub-GHz:</strong> Use correct regional frequency 4. Increase TX power (up to +22 dBm) 5. Try different spreading factor (higher SF = longer range)</p><h4 id="fhss-desync">FHSS Desync<a class="headerlink" href="#fhss-desync" title="Anchor link to this section">¶</a></h4><p><strong>Symptoms:</strong> Intermittent packet loss</p><p><strong>Solutions:</strong> 1. Synchronize system clocks 2. Increase dwell time 3. Send sync packets periodically 4. Use longer preambles 5. Implement ACK/retry mechanism</p><hr><h2 id="technical-references">📖 Technical References<a class="headerlink" href="#technical-references" title="Anchor link to this section">¶</a></h2><h3 id="official-documentation">Official Documentation<a class="headerlink" href="#official-documentation" title="Anchor link to this section">¶</a></h3><ul><li><a href="https://www.semtech.com/products/wireless-rf/lora-connect/lr1121">LR1121 Datasheet</a></li><li><a href="https://www.semtech.com/products/wireless-rf/lora-core/sx1262">SX1262 Datasheet</a></li><li><a href="https://www.waveshare.com/core1121-xf.htm">Waveshare Core1121-XF</a></li><li><a href="https://www.waveshare.com/wiki/Core1262-XF">Waveshare Core1262-XF</a></li><li><a href="https://datasheets.raspberrypi.com/rp2350/rp2350-datasheet.pdf">RP2350 Datasheet</a></li></ul><h3 id="regulatory-compliance">Regulatory Compliance<a class="headerlink" href="#regulatory-compliance" title="Anchor link to this section">¶</a></h3><ul><li><strong>2.4 GHz:</strong> ISM band, worldwide license-free</li><li><strong>S-band (1.9-2.1 GHz):</strong> Check local regulations, may require license</li><li><strong>Sub-GHz:</strong><ul><li>EU: ETSI EN300.220 (863-870 MHz)</li><li>US: FCC Part 15.247 (902-928 MHz)</li><li>Other regions: Verify local regulations</li></ul></li></ul><hr><h2 id="application-scenarios">🎯 Application Scenarios<a class="headerlink" href="#application-scenarios" title="Anchor link to this section">¶</a></h2><h3 id="uav-command-control">UAV Command &amp; Control<a class="headerlink" href="#uav-command-control" title="Anchor link to this section">¶</a></h3><ul><li><strong>Uplink (Ground → UAV):</strong> Sub-GHz for reliability</li><li><strong>Downlink (UAV → Ground):</strong> 2.4 GHz for high-speed telemetry</li><li><strong>Emergency:</strong> S-band as backup with medium characteristics</li></ul><h3 id="long-range-telemetry">Long-Range Telemetry<a class="headerlink" href="#long-range-telemetry" title="Anchor link to this section">¶</a></h3><ul><li><strong>Primary:</strong> Sub-GHz with FHSS (15km range)</li><li><strong>Backup:</strong> S-band for medium-distance redundancy</li><li><strong>High-speed bursts:</strong> 2.4 GHz for firmware updates</li></ul><h3 id="multi-path-diversity-system">Multi-Path Diversity System<a class="headerlink" href="#multi-path-diversity-system" title="Anchor link to this section">¶</a></h3><ul><li><strong>Transmit:</strong> Same data on all 3 bands simultaneously</li><li><strong>Receive:</strong> Best packet selection or voting algorithm</li><li><strong>Result:</strong> 99.9%+ reliability even with interference</li></ul><h3 id="adaptive-band-switching">Adaptive Band Switching<a class="headerlink" href="#adaptive-band-switching" title="Anchor link to this section">¶</a></h3><div class="language-c highlight"><table class="highlighttable"><tbody><tr><th class="filename" colspan="2"><span class="filename">C</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-15-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-15-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-15-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-15-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-15-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-15-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-15-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-15-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-15-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-15-10">10</a></span>
+<span class="normal"><a href="#__codelineno-15-11">11</a></span>
+<span class="normal"><a href="#__codelineno-15-12">12</a></span>
+<span class="normal"><a href="#__codelineno-15-13">13</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1"></a><span class="c1">// Pseudo-code for intelligent band selection</span>
+</span><span id="__span-15-2"><a id="__codelineno-15-2" name="__codelineno-15-2"></a><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">distance</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">500</span><span class="n">m</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">line_of_sight</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-15-3"><a id="__codelineno-15-3" name="__codelineno-15-3"></a><span class="w">    </span><span class="n">use_band</span><span class="p">(</span><span class="n">BAND_2_4GHZ</span><span class="p">);</span><span class="w">  </span><span class="c1">// Fast data rate</span>
+</span><span id="__span-15-4"><a id="__codelineno-15-4" name="__codelineno-15-4"></a><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">distance</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">2000</span><span class="n">m</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-15-5"><a id="__codelineno-15-5" name="__codelineno-15-5"></a><span class="w">    </span><span class="n">use_band</span><span class="p">(</span><span class="n">BAND_S</span><span class="p">);</span><span class="w">        </span><span class="c1">// Balanced</span>
+</span><span id="__span-15-6"><a id="__codelineno-15-6" name="__codelineno-15-6"></a><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-15-7"><a id="__codelineno-15-7" name="__codelineno-15-7"></a><span class="w">    </span><span class="n">use_band</span><span class="p">(</span><span class="n">BAND_SUBGHZ</span><span class="p">);</span><span class="w">   </span><span class="c1">// Maximum range</span>
+</span><span id="__span-15-8"><a id="__codelineno-15-8" name="__codelineno-15-8"></a><span class="p">}</span>
+</span><span id="__span-15-9"><a id="__codelineno-15-9" name="__codelineno-15-9"></a>
+</span><span id="__span-15-10"><a id="__codelineno-15-10" name="__codelineno-15-10"></a><span class="c1">// Fallback on interference</span>
+</span><span id="__span-15-11"><a id="__codelineno-15-11" name="__codelineno-15-11"></a><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">packet_loss</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">10</span><span class="o">%</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-15-12"><a id="__codelineno-15-12" name="__codelineno-15-12"></a><span class="w">    </span><span class="n">switch_to_next_band</span><span class="p">();</span>
+</span><span id="__span-15-13"><a id="__codelineno-15-13" name="__codelineno-15-13"></a><span class="p">}</span>
+</span></code></pre></div></td></tr></tbody></table></div><hr><h2 id="frequency-planning-guide">🌐 Frequency Planning Guide<a class="headerlink" href="#frequency-planning-guide" title="Anchor link to this section">¶</a></h2><h3 id="24-ghz-ism-band-worldwide">2.4 GHz ISM Band (Worldwide)<a class="headerlink" href="#24-ghz-ism-band-worldwide" title="Anchor link to this section">¶</a></h3><div class="language-text highlight"><table class="highlighttable"><tbody><tr><th class="filename" colspan="2"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-16-1">1</a></span>
+<span class="normal"><a href="#__codelineno-16-2">2</a></span>
+<span class="normal"><a href="#__codelineno-16-3">3</a></span>
+<span class="normal"><a href="#__codelineno-16-4">4</a></span>
+<span class="normal"><a href="#__codelineno-16-5">5</a></span>
+<span class="normal"><a href="#__codelineno-16-6">6</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1"></a>2400 ├─────────────────────────────────────┤ 2500 MHz
+</span><span id="__span-16-2"><a id="__codelineno-16-2" name="__codelineno-16-2"></a>     │  WiFi Ch 1-13                       │
+</span><span id="__span-16-3"><a id="__codelineno-16-3" name="__codelineno-16-3"></a>     │  ├──┬──┬──┬──┬──┬──┬──┬──┬──┬──┬──┤ │
+</span><span id="__span-16-4"><a id="__codelineno-16-4" name="__codelineno-16-4"></a>     │  Bluetooth Classic &amp; BLE            │
+</span><span id="__span-16-5"><a id="__codelineno-16-5" name="__codelineno-16-5"></a>     │                                     │
+</span><span id="__span-16-6"><a id="__codelineno-16-6" name="__codelineno-16-6"></a>     └─ LoRa FHSS (50 channels @ 2MHz)  ───┘
+</span></code></pre></div></td></tr></tbody></table></div><p><strong>Recommendations:</strong> - Avoid WiFi channels 1, 6, 11 (most congested) - Use upper portion (2475-2500 MHz) for less interference - Monitor RSSI and hop away from busy channels</p><h3 id="s-band-19-21-ghz">S-Band (1.9-2.1 GHz)<a class="headerlink" href="#s-band-19-21-ghz" title="Anchor link to this section">¶</a></h3><div class="language-text highlight"><table class="highlighttable"><tbody><tr><th class="filename" colspan="2"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-17-1">1</a></span>
+<span class="normal"><a href="#__codelineno-17-2">2</a></span>
+<span class="normal"><a href="#__codelineno-17-3">3</a></span>
+<span class="normal"><a href="#__codelineno-17-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1"></a>1900 ├─────────────────────────────┤ 2100 MHz
+</span><span id="__span-17-2"><a id="__codelineno-17-2" name="__codelineno-17-2"></a>     │  LTE Band 2/25 (1850-1990)  │
+</span><span id="__span-17-3"><a id="__codelineno-17-3" name="__codelineno-17-3"></a>     │                             │
+</span><span id="__span-17-4"><a id="__codelineno-17-4" name="__codelineno-17-4"></a>     └─ LoRa FHSS (40 ch @ 5MHz) ──┘
+</span></code></pre></div></td></tr></tbody></table></div><p><strong>⚠️ Important:</strong> - Check local regulations - may overlap with cellular bands - Some regions require licensing - Excellent for medium-range with low congestion</p><h3 id="sub-ghz-bands-regional">Sub-GHz Bands (Regional)<a class="headerlink" href="#sub-ghz-bands-regional" title="Anchor link to this section">¶</a></h3><p><strong>Europe (EU868):</strong></p><div class="language-text highlight"><table class="highlighttable"><tbody><tr><th class="filename" colspan="2"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-18-1">1</a></span>
+<span class="normal"><a href="#__codelineno-18-2">2</a></span>
+<span class="normal"><a href="#__codelineno-18-3">3</a></span>
+<span class="normal"><a href="#__codelineno-18-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1"></a>863 ├──┬──┬──┬──┬──┬──┬──┤ 870 MHz
+</span><span id="__span-18-2"><a id="__codelineno-18-2" name="__codelineno-18-2"></a>    │  8 channels @ 125kHz    │
+</span><span id="__span-18-3"><a id="__codelineno-18-3" name="__codelineno-18-3"></a>    │  Duty cycle: 1%         │
+</span><span id="__span-18-4"><a id="__codelineno-18-4" name="__codelineno-18-4"></a>    └─────────────────────────┘
+</span></code></pre></div></td></tr></tbody></table></div><p></p><p><strong>United States (US915):</strong></p><div class="language-text highlight"><table class="highlighttable"><tbody><tr><th class="filename" colspan="2"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-19-1">1</a></span>
+<span class="normal"><a href="#__codelineno-19-2">2</a></span>
+<span class="normal"><a href="#__codelineno-19-3">3</a></span>
+<span class="normal"><a href="#__codelineno-19-4">4</a></span>
+<span class="normal"><a href="#__codelineno-19-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1"></a>902 ├────────────────────────────┤ 928 MHz
+</span><span id="__span-19-2"><a id="__codelineno-19-2" name="__codelineno-19-2"></a>    │  64 uplink @ 125kHz        │
+</span><span id="__span-19-3"><a id="__codelineno-19-3" name="__codelineno-19-3"></a>    │  8 uplink @ 500kHz         │
+</span><span id="__span-19-4"><a id="__codelineno-19-4" name="__codelineno-19-4"></a>    │  8 downlink @ 500kHz       │
+</span><span id="__span-19-5"><a id="__codelineno-19-5" name="__codelineno-19-5"></a>    └────────────────────────────┘
+</span></code></pre></div></td></tr></tbody></table></div><p></p><p><strong>Asia-Pacific (AS923):</strong></p><div class="language-text highlight"><table class="highlighttable"><tbody><tr><th class="filename" colspan="2"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-20-1">1</a></span>
+<span class="normal"><a href="#__codelineno-20-2">2</a></span>
+<span class="normal"><a href="#__codelineno-20-3">3</a></span>
+<span class="normal"><a href="#__codelineno-20-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1"></a>915 ├──────────┤ 928 MHz
+</span><span id="__span-20-2"><a id="__codelineno-20-2" name="__codelineno-20-2"></a>    │ Varies by country │
+</span><span id="__span-20-3"><a id="__codelineno-20-3" name="__codelineno-20-3"></a>    │ Check local regs  │
+</span><span id="__span-20-4"><a id="__codelineno-20-4" name="__codelineno-20-4"></a>    └───────────────────┘
+</span></code></pre></div></td></tr></tbody></table></div><p></p><hr><h2 id="security-considerations">🔐 Security Considerations<a class="headerlink" href="#security-considerations" title="Anchor link to this section">¶</a></h2><h3 id="fhss-as-security-layer">FHSS as Security Layer<a class="headerlink" href="#fhss-as-security-layer" title="Anchor link to this section">¶</a></h3><pre class="mermaid"><code>graph LR
+    A[Plain Data] --&gt; B[Encryption Layer]
+    B --&gt; C[FHSS Layer]
+    C --&gt; D[Physical Layer]
+
+    D --&gt; E[Eavesdropper]
+    E --&gt; F{Know Pattern?}
+    F --&gt;|No| G[Cannot Decode]
+    F --&gt;|Yes| H{Know Encryption?}
+    H --&gt;|No| G
+    H --&gt;|Yes| I[Can Decode]
+
+    style G fill:#6bcf7f
+    style I fill:#ff6b6b</code></pre><p><strong>Security Benefits:</strong> 1. <strong>Pattern obscurity:</strong> 50+ channels make scanning difficult 2. <strong>Timing sensitivity:</strong> Must sync to exact hop schedule 3. <strong>Multi-band confusion:</strong> 3 independent patterns 4. <strong>Low probability of intercept (LPI)</strong> 5. <strong>Anti-jamming protection</strong></p><p><strong>Additional Recommendations:</strong> - Encrypt payload with AES-128/256 - Use unique hopping patterns per deployment - Implement challenge-response authentication - Randomize pattern start index - Add message authentication codes (MAC)</p><hr><h2 id="advanced-configuration">🎛️ Advanced Configuration<a class="headerlink" href="#advanced-configuration" title="Anchor link to this section">¶</a></h2><h3 id="spreading-factor-optimization">Spreading Factor Optimization<a class="headerlink" href="#spreading-factor-optimization" title="Anchor link to this section">¶</a></h3><table><thead><tr><th>SF</th><th>Sensitivity</th><th>Air Time (100 bytes)</th><th>Range Multiplier</th><th>Use Case</th></tr></thead><tbody><tr><td>SF5</td><td>-112 dBm</td><td>20 ms</td><td>1x (baseline)</td><td>High speed, short range</td></tr><tr><td>SF7</td><td>-120 dBm</td><td>80 ms</td><td>2x</td><td>Balanced</td></tr><tr><td>SF9</td><td>-126 dBm</td><td>320 ms</td><td>4x</td><td>Long range</td></tr><tr><td>SF12</td><td>-137 dBm</td><td>2560 ms</td><td>8x</td><td>Maximum range</td></tr></tbody></table><h3 id="bandwidth-selection">Bandwidth Selection<a class="headerlink" href="#bandwidth-selection" title="Anchor link to this section">¶</a></h3><table><thead><tr><th>BW</th><th>Data Rate</th><th>Range</th><th>Interference Immunity</th></tr></thead><tbody><tr><td>125 kHz</td><td>Low</td><td>Maximum</td><td>High</td></tr><tr><td>250 kHz</td><td>Medium</td><td>Good</td><td>Medium</td></tr><tr><td>500 kHz</td><td>High</td><td>Limited</td><td>Low</td></tr><tr><td>1625 kHz</td><td>Very High (2.4GHz)</td><td>Short</td><td>Very Low</td></tr></tbody></table><h3 id="power-management-strategy">Power Management Strategy<a class="headerlink" href="#power-management-strategy" title="Anchor link to this section">¶</a></h3><pre class="mermaid"><code>stateDiagram-v2
+    [*] --&gt; Active_TX
+    Active_TX --&gt; Brief_RX: TX Complete
+    Brief_RX --&gt; Evaluate: Listen 100ms
+    Evaluate --&gt; Active_TX: Traffic Detected
+    Evaluate --&gt; Standby: No Traffic
+    Standby --&gt; Sleep: Timeout 5s
+    Sleep --&gt; Active_RX: Wake Timer
+    Active_RX --&gt; Active_TX: Data Ready
+    Active_RX --&gt; Sleep: Nothing to Send</code></pre><p><strong>Power Saving Tips:</strong> 1. Use sleep mode between transmissions 2. Reduce TX power when close range 3. Use lower SF for shorter air time 4. Disable unused bands 5. Implement duty cycling</p><hr><h2 id="testing-validation">📈 Testing &amp; Validation<a class="headerlink" href="#testing-validation" title="Anchor link to this section">¶</a></h2><h3 id="range-testing-procedure">Range Testing Procedure<a class="headerlink" href="#range-testing-procedure" title="Anchor link to this section">¶</a></h3><ol><li><p><strong>Initial Setup:</strong></p><ul><li>Start at close range (10m)</li><li>Verify communication on all bands</li><li>Record RSSI and SNR</li></ul></li><li><p><strong>Progressive Distance:</strong></p><ul><li>Move in 50m increments</li><li>Test each band at each distance</li><li>Log packet success rate</li></ul></li><li><p><strong>Obstacle Testing:</strong></p><ul><li>Test through buildings</li><li>Test through foliage</li><li>Compare band performance</li></ul></li><li><p><strong>Interference Testing:</strong></p><ul><li>Introduce WiFi/Bluetooth devices</li><li>Monitor packet loss</li><li>Verify FHSS effectiveness</li></ul></li></ol><h3 id="performance-metrics-to-track">Performance Metrics to Track<a class="headerlink" href="#performance-metrics-to-track" title="Anchor link to this section">¶</a></h3><pre class="mermaid"><code>graph TD
+    A[Performance Monitoring] --&gt; B[RSSI]
+    A --&gt; C[SNR]
+    A --&gt; D[PER]
+    A --&gt; E[Throughput]
+
+    B --&gt; F[Signal Strength&lt;br/&gt;-30 to -120 dBm]
+    C --&gt; G[Signal Quality&lt;br/&gt;-20 to +10 dB]
+    D --&gt; H[Packet Error Rate&lt;br/&gt;0-100%]
+    E --&gt; I[Effective Data Rate&lt;br/&gt;kbps]
+
+    F --&gt; J{Good?}
+    G --&gt; J
+    H --&gt; J
+    I --&gt; J
+
+    J --&gt;|Yes| K[Maintain Settings]
+    J --&gt;|No| L[Adjust Parameters]
+
+    L --&gt; M[Increase TX Power]
+    L --&gt; N[Higher SF]
+    L --&gt; O[Switch Band]
+    L --&gt; P[Slower Hop Rate]</code></pre><h3 id="recommended-test-equipment">Recommended Test Equipment<a class="headerlink" href="#recommended-test-equipment" title="Anchor link to this section">¶</a></h3><ul><li>Spectrum analyzer (optional but helpful)</li><li>GPS for location tracking</li><li>Power meter for consumption testing</li><li>RSSI/SNR logger application</li><li>Distance measuring tool</li></ul><hr><h2 id="future-enhancements">🚀 Future Enhancements<a class="headerlink" href="#future-enhancements" title="Anchor link to this section">¶</a></h2><h3 id="possible-upgrades">Possible Upgrades<a class="headerlink" href="#possible-upgrades" title="Anchor link to this section">¶</a></h3><ol><li><p><strong>AI-Powered Band Selection</strong></p><ul><li>Machine learning for optimal band choice</li><li>Predictive interference avoidance</li><li>Automatic parameter tuning</li></ul></li><li><p><strong>Advanced Error Correction</strong></p><ul><li>Forward error correction (FEC)</li><li>Automatic repeat request (ARQ)</li><li>Packet redundancy across bands</li></ul></li><li><p><strong>Mesh Network Support</strong></p><ul><li>Multi-hop relay capability</li><li>Dynamic routing</li><li>Self-healing network</li></ul></li><li><p><strong>Enhanced Security</strong></p><ul><li>Hardware encryption acceleration</li><li>Quantum-resistant algorithms</li><li>Secure boot and firmware updates</li></ul></li><li><p><strong>GNSS Integration (LR1121)</strong></p><ul><li>Position tracking</li><li>Time synchronization</li><li>Geofencing capabilities</li></ul></li></ol><hr><h2 id="quick-reference">📋 Quick Reference<a class="headerlink" href="#quick-reference" title="Anchor link to this section">¶</a></h2><h3 id="command-cheat-sheet">Command Cheat Sheet<a class="headerlink" href="#command-cheat-sheet" title="Anchor link to this section">¶</a></h3><div class="language-c highlight"><table class="highlighttable"><tbody><tr><th class="filename" colspan="2"><span class="filename">C</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-21-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-21-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-21-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-21-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-21-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-21-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-21-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-21-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-21-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-21-10">10</a></span>
+<span class="normal"><a href="#__codelineno-21-11">11</a></span>
+<span class="normal"><a href="#__codelineno-21-12">12</a></span>
+<span class="normal"><a href="#__codelineno-21-13">13</a></span>
+<span class="normal"><a href="#__codelineno-21-14">14</a></span>
+<span class="normal"><a href="#__codelineno-21-15">15</a></span>
+<span class="normal"><a href="#__codelineno-21-16">16</a></span>
+<span class="normal"><a href="#__codelineno-21-17">17</a></span>
+<span class="normal"><a href="#__codelineno-21-18">18</a></span>
+<span class="normal"><a href="#__codelineno-21-19">19</a></span>
+<span class="normal"><a href="#__codelineno-21-20">20</a></span>
+<span class="normal"><a href="#__codelineno-21-21">21</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-21-1"><a id="__codelineno-21-1" name="__codelineno-21-1"></a><span class="c1">// Initialization</span>
+</span><span id="__span-21-2"><a id="__codelineno-21-2" name="__codelineno-21-2"></a><span class="n">lr1121_init</span><span class="p">(</span><span class="o">&amp;</span><span class="n">dev1</span><span class="p">,</span><span class="w"> </span><span class="n">spi0</span><span class="p">,</span><span class="w"> </span><span class="p">...);</span>
+</span><span id="__span-21-3"><a id="__codelineno-21-3" name="__codelineno-21-3"></a><span class="n">sx1262_init</span><span class="p">(</span><span class="o">&amp;</span><span class="n">dev2</span><span class="p">,</span><span class="w"> </span><span class="n">spi1</span><span class="p">,</span><span class="w"> </span><span class="p">...);</span>
+</span><span id="__span-21-4"><a id="__codelineno-21-4" name="__codelineno-21-4"></a><span class="n">fhss_init</span><span class="p">(</span><span class="o">&amp;</span><span class="n">dev1</span><span class="p">.</span><span class="n">fhss</span><span class="p">,</span><span class="w"> </span><span class="n">base_freq</span><span class="p">,</span><span class="w"> </span><span class="n">pattern</span><span class="p">);</span>
+</span><span id="__span-21-5"><a id="__codelineno-21-5" name="__codelineno-21-5"></a>
+</span><span id="__span-21-6"><a id="__codelineno-21-6" name="__codelineno-21-6"></a><span class="c1">// Band switching (LR1121 only)</span>
+</span><span id="__span-21-7"><a id="__codelineno-21-7" name="__codelineno-21-7"></a><span class="n">lr1121_set_band</span><span class="p">(</span><span class="o">&amp;</span><span class="n">dev1</span><span class="p">,</span><span class="w"> </span><span class="n">LR1121_BAND_2_4GHZ</span><span class="p">);</span>
+</span><span id="__span-21-8"><a id="__codelineno-21-8" name="__codelineno-21-8"></a><span class="n">lr1121_set_band</span><span class="p">(</span><span class="o">&amp;</span><span class="n">dev1</span><span class="p">,</span><span class="w"> </span><span class="n">LR1121_BAND_S</span><span class="p">);</span>
+</span><span id="__span-21-9"><a id="__codelineno-21-9" name="__codelineno-21-9"></a>
+</span><span id="__span-21-10"><a id="__codelineno-21-10" name="__codelineno-21-10"></a><span class="c1">// Transmission</span>
+</span><span id="__span-21-11"><a id="__codelineno-21-11" name="__codelineno-21-11"></a><span class="n">lr1121_send_fhss</span><span class="p">(</span><span class="o">&amp;</span><span class="n">dev1</span><span class="p">,</span><span class="w"> </span><span class="n">data</span><span class="p">,</span><span class="w"> </span><span class="n">len</span><span class="p">,</span><span class="w"> </span><span class="n">band</span><span class="p">);</span>
+</span><span id="__span-21-12"><a id="__codelineno-21-12" name="__codelineno-21-12"></a><span class="n">sx1262_send_fhss</span><span class="p">(</span><span class="o">&amp;</span><span class="n">dev2</span><span class="p">,</span><span class="w"> </span><span class="n">data</span><span class="p">,</span><span class="w"> </span><span class="n">len</span><span class="p">);</span>
+</span><span id="__span-21-13"><a id="__codelineno-21-13" name="__codelineno-21-13"></a>
+</span><span id="__span-21-14"><a id="__codelineno-21-14" name="__codelineno-21-14"></a><span class="c1">// Reception</span>
+</span><span id="__span-21-15"><a id="__codelineno-21-15" name="__codelineno-21-15"></a><span class="n">lr1121_receive_fhss</span><span class="p">(</span><span class="o">&amp;</span><span class="n">dev1</span><span class="p">,</span><span class="w"> </span><span class="n">buffer</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">len</span><span class="p">,</span><span class="w"> </span><span class="n">timeout</span><span class="p">);</span>
+</span><span id="__span-21-16"><a id="__codelineno-21-16" name="__codelineno-21-16"></a><span class="n">sx1262_receive_fhss</span><span class="p">(</span><span class="o">&amp;</span><span class="n">dev2</span><span class="p">,</span><span class="w"> </span><span class="n">buffer</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">len</span><span class="p">,</span><span class="w"> </span><span class="n">timeout</span><span class="p">);</span>
+</span><span id="__span-21-17"><a id="__codelineno-21-17" name="__codelineno-21-17"></a>
+</span><span id="__span-21-18"><a id="__codelineno-21-18" name="__codelineno-21-18"></a><span class="c1">// FHSS control</span>
+</span><span id="__span-21-19"><a id="__codelineno-21-19" name="__codelineno-21-19"></a><span class="n">fhss_hop</span><span class="p">(</span><span class="o">&amp;</span><span class="n">dev1</span><span class="p">.</span><span class="n">fhss</span><span class="p">);</span><span class="w">                    </span><span class="c1">// Manual hop</span>
+</span><span id="__span-21-20"><a id="__codelineno-21-20" name="__codelineno-21-20"></a><span class="n">fhss_sync</span><span class="p">(</span><span class="o">&amp;</span><span class="n">dev1</span><span class="p">.</span><span class="n">fhss</span><span class="p">,</span><span class="w"> </span><span class="n">target_index</span><span class="p">);</span><span class="w">     </span><span class="c1">// Sync to index</span>
+</span><span id="__span-21-21"><a id="__codelineno-21-21" name="__codelineno-21-21"></a><span class="n">fhss_get_current_freq</span><span class="p">(</span><span class="o">&amp;</span><span class="n">dev1</span><span class="p">.</span><span class="n">fhss</span><span class="p">);</span><span class="w">       </span><span class="c1">// Get current freq</span>
+</span></code></pre></div></td></tr></tbody></table></div><h3 id="frequency-quick-reference">Frequency Quick Reference<a class="headerlink" href="#frequency-quick-reference" title="Anchor link to this section">¶</a></h3><table><thead><tr><th>Band</th><th>Frequency</th><th>Channels</th><th>Step</th><th>Best For</th></tr></thead><tbody><tr><td>2.4 GHz</td><td>2.4-2.5 GHz</td><td>50</td><td>2 MHz</td><td>Speed</td></tr><tr><td>S-band</td><td>1.9-2.1 GHz</td><td>40</td><td>5 MHz</td><td>Balance</td></tr><tr><td>EU868</td><td>863-870 MHz</td><td>35</td><td>200 kHz</td><td>Range (EU)</td></tr><tr><td>US915</td><td>902-928 MHz</td><td>130</td><td>200 kHz</td><td>Range (US)</td></tr></tbody></table><h3 id="troubleshooting-quick-fixes">Troubleshooting Quick Fixes<a class="headerlink" href="#troubleshooting-quick-fixes" title="Anchor link to this section">¶</a></h3><table><thead><tr><th>Problem</th><th>Quick Fix</th></tr></thead><tbody><tr><td>No communication</td><td>Check power, reset modules</td></tr><tr><td>Poor range</td><td>Increase TX power, higher SF</td></tr><tr><td>Interference</td><td>Switch bands, adjust FHSS</td></tr><tr><td>High latency</td><td>Lower SF, wider bandwidth</td></tr><tr><td>Desync</td><td>Reset both sides, sync pattern</td></tr></tbody></table><hr><h2 id="support-community">📞 Support &amp; Community<a class="headerlink" href="#support-community" title="Anchor link to this section">¶</a></h2><h3 id="getting-help">Getting Help<a class="headerlink" href="#getting-help" title="Anchor link to this section">¶</a></h3><ul><li><strong>GitHub Issues:</strong> [Project repository issues page]</li><li><strong>Forum:</strong> [Community forum link]</li><li><strong>Documentation:</strong> This file and official datasheets</li></ul><h3 id="contributing">Contributing<a class="headerlink" href="#contributing" title="Anchor link to this section">¶</a></h3><p>Contributions welcome! Please: 1. Fork the repository 2. Create feature branch 3. Test thoroughly across all bands 4. Submit pull request with documentation</p><h3 id="version-history">Version History<a class="headerlink" href="#version-history" title="Anchor link to this section">¶</a></h3><ul><li><strong>v1.0</strong> - Initial triple-band implementation</li><li><strong>v1.1</strong> - Added FHSS support</li><li><strong>v1.2</strong> - DMA optimization</li><li><strong>v2.0</strong> - Multi-band diversity</li></ul><hr><h2 id="acknowledgments">🏆 Acknowledgments<a class="headerlink" href="#acknowledgments" title="Anchor link to this section">¶</a></h2><ul><li><strong>Semtech</strong> - For excellent LoRa technology</li><li><strong>Waveshare</strong> - For well-designed modules</li><li><strong>Raspberry Pi Foundation</strong> - For Pico2W platform</li><li><strong>Community contributors</strong> - For testing and feedback</li></ul><hr><h2 id="license">📄 License<a class="headerlink" href="#license" title="Anchor link to this section">¶</a></h2><p>This documentation and associated code are provided for educational and research purposes.</p><h3 id="regulatory-notice">Regulatory Notice<a class="headerlink" href="#regulatory-notice" title="Anchor link to this section">¶</a></h3><p>Users are responsible for compliance with local radio frequency regulations. Operating frequencies, power levels, and duty cycles must conform to regional requirements.</p><hr><p><em>Last Updated: October 2025</em><br><em>Document Version: 2.0</em><br><em>System: Triple-Band FHSS LoRa with Core1121-XF and Core1262-XF</em></p></div></article></div><script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script><script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script></div><button class="md-top md-icon" data-md-component="top" hidden type="button"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"></path></svg> Back to top </button></main><footer class="isaac-footer-v2"><div class="footer-bg-animation"><div class="floating-shape shape-1"></div><div class="floating-shape shape-2"></div><div class="floating-shape shape-3"></div></div><div class="footer-main"><div class="footer-container"><div class="footer-copyright"><div class="copyright-text"> Copyright © 2025 TNG Blue Team </div></div><div class="footer-grid"><div class="footer-section footer-primary"><div class="footer-brand"><div class="brand-logo"><div class="logo-icon">🤖</div><h4 class="brand-title">Isaac ROS Jetbot NanoOWL</h4></div><p class="brand-description"> Advanced AI-powered autonomous robotics platform featuring dual Jetson Orin Nano Super processors, real-time object detection with NanoOWL, and distributed computing architecture for next-generation robotic applications. </p><div class="tech-badges"><span class="tech-badge tech-badge--ai">40 TOPS AI</span><span class="tech-badge tech-badge--slam">Real-time SLAM</span><span class="tech-badge tech-badge--open">Open Source</span></div></div></div><div class="footer-section"><h4 class="section-title"><span class="title-icon">🚀</span> Quick Start </h4><ul class="link-list"><li><a class="footer-link" href="/getting_started/"><span class="link-icon">📖</span><span class="link-text">Getting Started</span></a></li><li><a class="footer-link" href="/getting_started/installation/"><span class="link-icon">💾</span><span class="link-text">Installation Guide</span></a></li><li><a class="footer-link" href="/tutorials/"><span class="link-icon">📚</span><span class="link-text">Tutorials</span></a></li><li><a class="footer-link" href="/examples/"><span class="link-icon">🎯</span><span class="link-text">Examples</span></a></li><li><a class="footer-link" href="/api/"><span class="link-icon">⚙️</span><span class="link-text">API Reference</span></a></li></ul></div><div class="footer-section"><h4 class="section-title"><span class="title-icon">👥</span> Community </h4><ul class="link-list"><li><a class="footer-link" href="https://github.com/TNG-Blue/Isaac_ROS-Jetbot_NanoOWL" rel="noopener" target="_blank"><span class="link-icon">💻</span><span class="link-text">GitHub Repository</span><span class="external-icon">↗</span></a></li><li><a class="footer-link" href="https://discord.gg/isaac-ros" rel="noopener" target="_blank"><span class="link-icon">💬</span><span class="link-text">Discord Community</span><span class="external-icon">↗</span></a></li><li><a class="footer-link" href="/development/contributing/"><span class="link-icon">🤝</span><span class="link-text">Contributing</span></a></li><li><a class="footer-link" href="/development/roadmap/"><span class="link-icon">🗺️</span><span class="link-text">Roadmap</span></a></li><li><a class="footer-link" href="mailto:support@isaac-ros-jetbot.com"><span class="link-icon">📧</span><span class="link-text">Support</span></a></li></ul></div><div class="footer-section"><h4 class="section-title"><span class="title-icon">📋</span> Resources </h4><ul class="link-list"><li><a class="footer-link" href="https://docs.nvidia.com/isaac-ros/" rel="noopener" target="_blank"><span class="link-icon">📖</span><span class="link-text">Isaac ROS Docs</span><span class="external-icon">↗</span></a></li><li><a class="footer-link" href="https://developer.nvidia.com/jetson" rel="noopener" target="_blank"><span class="link-icon">🖥️</span><span class="link-text">Jetson Platform</span><span class="external-icon">↗</span></a></li><li><a class="footer-link" href="https://github.com/NVIDIA-AI-IOT/nanoowl" rel="noopener" target="_blank"><span class="link-icon">👁️</span><span class="link-text">NanoOWL</span><span class="external-icon">↗</span></a></li><li><a class="footer-link" href="/reference/changelog/"><span class="link-icon">📋</span><span class="link-text">Changelog</span></a></li><li><a class="footer-link" href="/reference/hardware/"><span class="link-icon">🔧</span><span class="link-text">Hardware Specs</span></a></li></ul></div></div><div class="social-section"><h4 class="social-title">Connect With Us</h4><div class="social-links"><a class="social-link" href="https://github.com/TNG-Blue/Isaac_ROS-Jetbot_NanoOWL" rel="noopener noreferrer" target="_blank" title="GitHub Repository"><div class="social-icon"><svg height="24" viewBox="0 0 24 24" width="24"><path d="M12,2A10,10 0 0,0 2,12C2,16.42 4.87,20.17 8.84,21.5C9.34,21.58 9.5,21.27 9.5,21C9.5,20.77 9.5,20.14 9.5,19.31C6.73,19.91 6.14,17.97 6.14,17.97C5.68,16.81 5.03,16.5 5.03,16.5C4.12,15.88 5.1,15.9 5.1,15.9C6.1,15.97 6.63,16.93 6.63,16.93C7.5,18.45 8.97,18 9.54,17.76C9.63,17.11 9.89,16.67 10.17,16.42C7.95,16.17 5.62,15.31 5.62,11.5C5.62,10.39 6,9.5 6.65,8.79C6.55,8.54 6.2,7.5 6.75,6.15C6.75,6.15 7.59,5.88 9.5,7.17C10.29,6.95 11.15,6.84 12,6.84C12.85,6.84 13.71,6.95 14.5,7.17C16.41,5.88 17.25,6.15 17.25,6.15C17.8,7.5 17.45,8.54 17.35,8.79C18,9.5 18.38,10.39 18.38,11.5C18.38,15.32 16.04,16.16 13.81,16.41C14.17,16.72 14.5,17.33 14.5,18.26C14.5,19.6 14.5,20.68 14.5,21C14.5,21.27 14.66,21.59 15.17,21.5C19.14,20.16 22,16.42 22,12A10,10 0 0,0 12,2Z" fill="currentColor"></path></svg></div><span class="social-label">GitHub Repository</span></a><a class="social-link" href="https://hub.docker.com/r/tngblue/" rel="noopener noreferrer" target="_blank" title="Docker Hub"><div class="social-icon"><div class="social-placeholder">F</div></div><span class="social-label">Docker Hub</span></a></div></div><div class="footer-bottom"><div class="footer-legal"><div class="legal-links"><a class="legal-link" href="/legal/privacy/">Privacy Policy</a><a class="legal-link" href="/legal/terms/">Terms of Service</a><a class="legal-link" href="/legal/license/">License</a><a class="legal-link" href="/security/">Security</a></div><div class="version-info"><span class="version-badge">v2.0.0</span><span class="build-badge">Build 2025.06.09</span></div></div><div class="footer-attribution"><p class="attribution-text"> Built with ❤️ by the TNG Blue team using <a href="https://squidfunk.github.io/mkdocs-material/" rel="noopener" target="_blank">Material for MkDocs</a></p><div class="powered-by"><span class="power-label">⚡ Powered by</span><a class="tech-link" href="https://developer.nvidia.com/isaac-ros" rel="noopener" target="_blank">NVIDIA Isaac ROS</a><span class="separator">•</span><a class="tech-link" href="https://www.ros.org/" rel="noopener" target="_blank">ROS 2</a><span class="separator">•</span><a class="tech-link" href="https://kubernetes.io/" rel="noopener" target="_blank">Kubernetes</a></div></div></div></div></div></footer><style>
+/* ===== ENHANCED FOOTER STYLES V2 ===== */
+.isaac-footer-v2 {
+    --footer-bg-primary: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%);
+    --footer-bg-secondary: rgba(15, 23, 42, 0.95);
+    --footer-text-primary: #f8fafc;
+    --footer-text-secondary: #cbd5e1;
+    --footer-text-muted: #94a3b8;
+    --footer-accent: #3b82f6;
+    --footer-accent-secondary: #8b5cf6;
+    --footer-border: rgba(255, 255, 255, 0.1);
+    --footer-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3);
+
+    background: var(--footer-bg-primary);
+    color: var(--footer-text-primary);
+    position: relative;
+    overflow: hidden;
+    margin-top: 4rem;
+    backdrop-filter: blur(20px);
+}
+
+/* Animated background elements */
+.footer-bg-animation {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.floating-shape {
+    position: absolute;
+    background: linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(139, 92, 246, 0.1));
+    border-radius: 50%;
+    animation: float 6s ease-in-out infinite;
+}
+
+.shape-1 {
+    width: 120px;
+    height: 120px;
+    top: 10%;
+    right: 5%;
+    animation-delay: 0s;
+}
+
+.shape-2 {
+    width: 80px;
+    height: 80px;
+    bottom: 30%;
+    left: 8%;
+    animation-delay: 2s;
+}
+
+.shape-3 {
+    width: 60px;
+    height: 60px;
+    top: 60%;
+    right: 20%;
+    animation-delay: 4s;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0px) rotate(0deg); opacity: 0.3; }
+    50% { transform: translateY(-20px) rotate(180deg); opacity: 0.6; }
+}
+
+/* Top border gradient */
+.isaac-footer-v2::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--footer-accent), var(--footer-accent-secondary), transparent);
+    animation: shimmer 3s linear infinite;
+}
+
+@keyframes shimmer {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+}
+
+/* Navigation section */
+.footer-nav {
+    padding: 2rem 0;
+    border-bottom: 1px solid var(--footer-border);
+    position: relative;
+    z-index: 2;
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+}
+
+.nav-link {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.5rem 2rem;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--footer-border);
+    border-radius: 16px;
+    color: var(--footer-text-primary);
+    text-decoration: none;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+    min-width: 200px;
+    backdrop-filter: blur(10px);
+}
+
+.nav-link::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(59, 130, 246, 0.1), transparent);
+    transition: left 0.6s ease;
+}
+
+.nav-link:hover::before {
+    left: 100%;
+}
+
+.nav-link:hover {
+    transform: translateY(-4px);
+    border-color: var(--footer-accent);
+    background: rgba(59, 130, 246, 0.15);
+    box-shadow: 0 12px 40px rgba(59, 130, 246, 0.25);
+}
+
+.nav-link--prev {
+    text-align: left;
+}
+
+.nav-link--next {
+    text-align: right;
+    flex-direction: row-reverse;
+}
+
+.nav-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background: var(--footer-accent);
+    border-radius: 10px;
+    transition: all 0.3s ease;
+}
+
+.nav-link:hover .nav-icon {
+    transform: scale(1.1);
+    background: var(--footer-accent-secondary);
+}
+
+.nav-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.nav-label {
+    font-size: 0.875rem;
+    color: var(--footer-text-muted);
+    margin-bottom: 0.25rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-weight: 500;
+}
+
+.nav-title {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: var(--footer-text-primary);
+    line-height: 1.3;
+}
+
+/* Main footer content */
+.footer-main {
+    position: relative;
+    z-index: 2;
+    padding: 4rem 0 2rem;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+/* Copyright */
+.footer-copyright {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.copyright-text {
+    font-size: 0.875rem;
+    color: var(--footer-text-muted);
+    padding: 1rem 2rem;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    border: 1px solid var(--footer-border);
+    display: inline-block;
+    backdrop-filter: blur(10px);
+}
+
+/* Footer grid */
+.footer-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 4rem;
+    margin-bottom: 3rem;
+    align-items: start;
+}
+
+.footer-section {
+    min-height: 200px;
+}
+
+/* Brand section */
+.footer-brand {
+    max-width: 100%;
+}
+
+.brand-logo {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.logo-icon {
+    font-size: 3rem;
+    background: linear-gradient(135deg, var(--footer-accent), var(--footer-accent-secondary));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: pulse 2s ease-in-out infinite;
+}
+
+.brand-title {
+    font-size: 1.75rem;
+    font-weight: 800;
+    color: var(--footer-text-primary);
+    margin: 0;
+    line-height: 1.2;
+}
+
+.brand-description {
+    color: var(--footer-text-secondary);
+    line-height: 1.7;
+    margin-bottom: 2rem;
+    font-size: 1rem;
+}
+
+/* Tech badges */
+.tech-badges {
+    display: flex;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+}
+
+.tech-badge {
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    transition: all 0.3s ease;
+    cursor: default;
+}
+
+.tech-badge--ai {
+    background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+    color: white;
+}
+
+.tech-badge--slam {
+    background: linear-gradient(135deg, #8b5cf6, #7c3aed);
+    color: white;
+}
+
+.tech-badge--open {
+    background: linear-gradient(135deg, #10b981, #059669);
+    color: white;
+}
+
+.tech-badge:hover {
+    transform: translateY(-2px) scale(1.05);
+}
+
+/* Section titles */
+.section-title {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--footer-text-primary);
+    margin-bottom: 2rem;
+    position: relative;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    width: 40px;
+    height: 3px;
+    background: linear-gradient(90deg, var(--footer-accent), var(--footer-accent-secondary));
+    border-radius: 2px;
+}
+
+.title-icon {
+    font-size: 1.25rem;
+}
+
+/* Link lists */
+.link-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.footer-link {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    color: var(--footer-text-secondary);
+    text-decoration: none;
+    padding: 0.75rem 1rem;
+    border-radius: 10px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.footer-link::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 0;
+    background: linear-gradient(90deg, rgba(59, 130, 246, 0.1), rgba(139, 92, 246, 0.1));
+    transition: width 0.3s ease;
+    border-radius: 10px;
+}
+
+.footer-link:hover::before {
+    width: 100%;
+}
+
+.footer-link:hover {
+    color: var(--footer-text-primary);
+    transform: translateX(8px);
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.link-icon {
+    font-size: 1.125rem;
+    opacity: 0.8;
+    transition: all 0.3s ease;
+}
+
+.footer-link:hover .link-icon {
+    transform: scale(1.2);
+    opacity: 1;
+}
+
+.link-text {
+    font-weight: 500;
+}
+
+.external-icon {
+    margin-left: auto;
+    font-size: 1rem;
+    opacity: 0.6;
+    transition: all 0.3s ease;
+}
+
+.footer-link:hover .external-icon {
+    opacity: 1;
+    transform: translate(2px, -2px);
+}
+
+/* Social section */
+.social-section {
+    margin: 3rem 0;
+    padding: 3rem 0;
+    border-top: 1px solid var(--footer-border);
+    border-bottom: 1px solid var(--footer-border);
+    text-align: center;
+}
+
+.social-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--footer-text-primary);
+    margin-bottom: 2rem;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.social-link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 1.5rem;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--footer-border);
+    border-radius: 16px;
+    color: var(--footer-text-secondary);
+    text-decoration: none;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    min-width: 100px;
+    position: relative;
+    overflow: hidden;
+    backdrop-filter: blur(10px);
+}
+
+.social-link::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(59, 130, 246, 0.15), rgba(139, 92, 246, 0.15));
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.social-link:hover::before {
+    opacity: 1;
+}
+
+.social-link:hover {
+    color: var(--footer-text-primary);
+    transform: translateY(-6px) scale(1.02);
+    border-color: var(--footer-accent);
+    box-shadow: 0 12px 40px rgba(59, 130, 246, 0.3);
+}
+
+.social-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    transition: all 0.3s ease;
+    position: relative;
+    z-index: 1;
+}
+
+.social-icon svg {
+    width: 24px;
+    height: 24px;
+}
+
+.social-placeholder {
+    width: 24px;
+    height: 24px;
+    background: var(--footer-accent);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    color: white;
+}
+
+.social-link:hover .social-icon {
+    transform: scale(1.2) rotate(5deg);
+}
+
+.social-label {
+    font-size: 0.875rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    position: relative;
+    z-index: 1;
+}
+
+/* Footer bottom */
+.footer-bottom {
+    border-top: 1px solid var(--footer-border);
+    padding: 2.5rem 0 1.5rem;
+}
+
+.footer-legal {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+}
+
+.legal-links {
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.legal-link {
+    color: var(--footer-text-muted);
+    text-decoration: none;
+    font-size: 0.875rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.legal-link::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--footer-accent);
+    transition: width 0.3s ease;
+}
+
+.legal-link:hover::after {
+    width: 100%;
+}
+
+.legal-link:hover {
+    color: var(--footer-accent);
+}
+
+.version-info {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.version-badge,
+.build-badge {
+    padding: 0.375rem 0.75rem;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    font-family: 'JetBrains Mono', 'Fira Code', Consolas, monospace;
+    border: 1px solid var(--footer-border);
+    transition: all 0.3s ease;
+}
+
+.version-badge {
+    background: linear-gradient(135deg, var(--footer-accent), var(--footer-accent-secondary));
+    color: white;
+    border: none;
+}
+
+.build-badge:hover,
+.version-badge:hover {
+    transform: scale(1.05);
+}
+
+/* Attribution */
+.footer-attribution {
+    text-align: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    padding-top: 2rem;
+}
+
+.attribution-text {
+    color: var(--footer-text-muted);
+    font-size: 0.875rem;
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+}
+
+.attribution-text a {
+    color: var(--footer-accent);
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.attribution-text a:hover {
+    color: var(--footer-accent-secondary);
+    text-decoration: underline;
+}
+
+.powered-by {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    font-size: 0.875rem;
+}
+
+.power-label {
+    background: linear-gradient(135deg, #f59e0b, #d97706);
+    color: white;
+    padding: 0.375rem 0.75rem;
+    border-radius: 15px;
+    font-weight: 700;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.tech-link {
+    color: var(--footer-accent);
+    text-decoration: none;
+    font-weight: 600;
+    padding: 0.375rem 0.75rem;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.tech-link:hover {
+    color: var(--footer-text-primary);
+    background: rgba(59, 130, 246, 0.15);
+    transform: translateY(-2px);
+}
+
+.separator {
+    color: var(--footer-text-muted);
+    font-weight: 300;
+    opacity: 0.6;
+}
+
+/* Responsive design */
+@media (max-width: 1024px) {
+    .footer-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 3rem;
+    }
+
+    .footer-primary {
+        grid-column: 1 / -1;
+    }
+
+    .nav-container {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .nav-link {
+        min-width: auto;
+    }
+}
+
+@media (max-width: 768px) {
+    .isaac-footer-v2 {
+        margin-top: 2rem;
+    }
+
+    .footer-main {
+        padding: 3rem 0 1.5rem;
+    }
+
+    .footer-container {
+        padding: 0 1rem;
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+    }
+
+    .nav-container {
+        padding: 0 1rem;
+    }
+
+    .brand-logo {
+        flex-direction: column;
+        text-align: center;
+        gap: 0.75rem;
+    }
+
+    .logo-icon {
+        font-size: 2.5rem;
+    }
+
+    .brand-title {
+        font-size: 1.5rem;
+    }
+
+    .brand-description {
+        text-align: center;
+        font-size: 0.9rem;
+    }
+
+    .tech-badges {
+        justify-content: center;
+    }
+
+    .section-title {
+        justify-content: center;
+        text-align: center;
+        font-size: 1.125rem;
+    }
+
+    .link-list {
+        align-items: center;
+    }
+
+    .footer-legal {
+        flex-direction: column;
+        text-align: center;
+        gap: 1.5rem;
+    }
+
+    .legal-links {
+        justify-content: center;
+        gap: 1.5rem;
+    }
+
+    .social-links {
+        gap: 1rem;
+    }
+
+    .social-link {
+        min-width: 80px;
+        padding: 1rem;
+    }
+
+    .powered-by {
+        flex-direction: column;
+        gap: 0.75rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .footer-main {
+        padding: 2rem 0 1rem;
+    }
+
+    .footer-container {
+        padding: 0 1rem;
+    }
+
+    .footer-grid {
+        gap: 2rem;
+    }
+
+    .nav-link {
+        padding: 1rem 1.5rem;
+        text-align: center;
+    }
+
+    .nav-link--next {
+        flex-direction: row;
+    }
+
+    .brand-title {
+        font-size: 1.25rem;
+    }
+
+    .brand-description {
+        font-size: 0.85rem;
+        line-height: 1.5;
+    }
+
+    .tech-badge {
+        font-size: 0.6875rem;
+        padding: 0.375rem 0.75rem;
+    }
+
+    .footer-link {
+        font-size: 0.875rem;
+        padding: 0.6rem 0.75rem;
+    }
+
+    .social-links {
+        gap: 0.75rem;
+    }
+
+    .social-link {
+        min-width: 70px;
+        padding: 0.75rem;
+    }
+
+    .social-icon {
+        width: 32px;
+        height: 32px;
+    }
+
+    .social-icon svg {
+        width: 20px;
+        height: 20px;
+    }
+
+    .social-label {
+        font-size: 0.75rem;
+    }
+
+    .legal-links {
+        flex-direction: column;
+        gap: 0.75rem;
+    }
+
+    .version-info {
+        justify-content: center;
+        gap: 0.75rem;
+    }
+
+    .attribution-text {
+        font-size: 0.8rem;
+    }
+
+    .powered-by {
+        font-size: 0.8rem;
+    }
+}
+
+/* Dark mode enhancements */
+[data-md-color-scheme="slate"] .isaac-footer-v2 {
+    --footer-bg-primary: linear-gradient(135deg, #020617 0%, #0f172a 50%, #1e293b 100%);
+    --footer-bg-secondary: rgba(2, 6, 23, 0.98);
+    --footer-border: rgba(255, 255, 255, 0.08);
+}
+
+/* High contrast mode */
+@media (prefers-contrast: high) {
+    .isaac-footer-v2 {
+        background: #000000;
+        color: #ffffff;
+        border-top: 3px solid #ffffff;
+    }
+
+    .footer-link,
+    .social-link,
+    .nav-link {
+        border: 2px solid #ffffff;
+    }
+
+    .footer-link:hover,
+    .social-link:hover,
+    .nav-link:hover {
+        background: #ffffff;
+        color: #000000;
+    }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+    .isaac-footer-v2 *,
+    .isaac-footer-v2 *::before,
+    .isaac-footer-v2 *::after {
+        animation: none !important;
+        transition: none !important;
+    }
+
+    .nav-link:hover,
+    .footer-link:hover,
+    .social-link:hover {
+        transform: none !important;
+    }
+}
+
+/* Print styles */
+@media print {
+    .isaac-footer-v2 {
+        background: none !important;
+        color: #000000 !important;
+        box-shadow: none !important;
+    }
+
+    .footer-bg-animation,
+    .social-section,
+    .tech-badges {
+        display: none !important;
+    }
+
+    .footer-link,
+    .tech-link,
+    .attribution-text a {
+        color: #000000 !important;
+        text-decoration: underline !important;
+    }
+}
+
+/* Focus states */
+.nav-link:focus,
+.footer-link:focus,
+.social-link:focus,
+.tech-link:focus,
+.legal-link:focus {
+    outline: 2px solid var(--footer-accent);
+    outline-offset: 2px;
+    border-radius: 8px;
+}
+
+/* Loading state */
+.isaac-footer-v2.loading {
+    opacity: 0.7;
+    pointer-events: none;
+}
+
+.isaac-footer-v2.loading * {
+    animation: pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+}
+</style></div><div class="md-dialog" data-md-component="dialog"><div class="md-dialog__inner md-typeset"></div></div><script id="__config" type="application/json">{"base": "../..", "features": ["announce.dismiss", "content.action.edit", "content.action.view", "content.code.annotate", "content.code.copy", "content.code.select", "content.tabs.link", "content.tooltips", "navigation.expand", "navigation.footer", "navigation.indexes", "navigation.instant", "navigation.instant.prefetch", "navigation.path", "navigation.sections", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "navigation.tracking", "search.highlight", "search.share", "search.suggest", "toc.follow"], "search": "../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script><script src="../../assets/javascripts/bundle.f55a23d4.min.js"></script><script src="../../assets/js/navigation-fix.js"></script><script src="../../assets/js/mathjax.js"></script><script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script><script src="../../assets/js/custom.js"></script><script src="../../assets/js/animations.js"></script><script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script><script>
+    document.addEventListener('DOMContentLoaded', function () {
+        // Enhanced Mermaid initialization
+        if (window.mermaid) {
+            mermaid.initialize({
+                startOnLoad: true,
+                theme: document.documentElement.getAttribute('data-md-color-scheme') === 'slate' ? 'dark' : 'default',
+                themeVariables: {
+                    primaryColor: getComputedStyle(document.documentElement).getPropertyValue('--md-primary-fg-color'),
+                    primaryTextColor: getComputedStyle(document.documentElement).getPropertyValue('--md-default-fg-color'),
+                    fontFamily: getComputedStyle(document.documentElement).getPropertyValue('--md-text-font-family')
+                }
+            });
+        }
+
+        // Enhanced scroll progress with easing
+        let ticking = false;
+
+        function updateScrollProgress() {
+            const scrolled = window.pageYOffset;
+            const maxHeight = document.documentElement.scrollHeight - window.innerHeight;
+            const progress = Math.min((scrolled / maxHeight) * 100, 100);
+
+            const progressBar = document.querySelector('.progress-gradient');
+            if (progressBar) {
+                progressBar.style.width = progress + '%';
+            }
+
+            // Enhanced header scroll effect
+            const header = document.querySelector('.md-header');
+            const scrollThreshold = 50;
+
+            if (scrolled > scrollThreshold) {
+                header?.classList.add('scrolled');
+            } else {
+                header?.classList.remove('scrolled');
+            }
+
+            ticking = false;
+        }
+
+        function requestScrollUpdate() {
+            if (!ticking) {
+                requestAnimationFrame(updateScrollProgress);
+                ticking = true;
+            }
+        }
+
+        window.addEventListener('scroll', requestScrollUpdate, { passive: true });
+        window.addEventListener('resize', requestScrollUpdate, { passive: true });
+
+        // Initial call
+        updateScrollProgress();
+
+        // Enhanced intersection observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate-in');
+                }
+            });
+        }, observerOptions);
+
+        // Observe elements for animation
+        document.querySelectorAll('.md-content > *').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Enhanced keyboard navigation
+        document.addEventListener('keydown', function(e) {
+            // ESC key to close any overlays
+            if (e.key === 'Escape') {
+                document.querySelectorAll('.overlay, .modal').forEach(el => {
+                    el.classList.remove('active');
+                });
+            }
+
+            // Ctrl/Cmd + Home to scroll to top
+            if ((e.ctrlKey || e.metaKey) && e.key === 'Home') {
+                e.preventDefault();
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
+        });
+    });
+
+    // Utility function for smooth animations
+    function easeOutCubic(t) {
+        return 1 - Math.pow(1 - t, 3);
+    }
+
+    // Theme change handler for Mermaid
+    const observer = new MutationObserver(function(mutations) {
+        mutations.forEach(function(mutation) {
+            if (mutation.type === 'attributes' && mutation.attributeName === 'data-md-color-scheme') {
+                if (window.mermaid) {
+                    location.reload(); // Reload to apply new theme to Mermaid diagrams
+                }
+            }
+        });
+    });
+
+    observer.observe(document.documentElement, {
+        attributes: true,
+        attributeFilter: ['data-md-color-scheme']
+    });
+</script><script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(()=>{ lightbox.reload(); });
+</script></body></html>
