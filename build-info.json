@@ -1,12 +1,14 @@
 {
-  "build_time": "2026-01-26T17:15:56Z",
+  "build_time": "2026-01-26T18:06:39Z",
   "source_repository": "TNG-Blue/Isaac_ROS-Jetbot_NanoOWL",
   "source_branch": "master",
-  "source_commit": "63d460b38d88db866856bfda9af32fb5df973c45",
+  "source_commit": "3cfc7aa41ffd2c6e00286ffcd78bb8ef4e8f3560",
   "commit_message": "",
-  "workflow_run_id": "21366886208",
-  "workflow_run_number": "8",
+  "workflow_run_id": "21368504739",
+  "workflow_run_number": "11",
   "python_version": "3.11",
   "mkdocs_version": "9.7.1",
-  "deployment_type": "manual"
+  "deployment_type": "manual",
+  "filtered_content": true,
+  "excluded_directories": ["flowcharts", "datasheet"]
 }
