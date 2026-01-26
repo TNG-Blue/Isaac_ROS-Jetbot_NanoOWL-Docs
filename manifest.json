@@ -1,0 +1,117 @@
+{
+  "name": "Isaac ROS Jetbot NanoOWL",
+  "short_name": "Jetbot NanoOWL",
+  "description": "Enterprise-grade autonomous robotics platform powered by NVIDIA Jetson Orin Nano Super",
+  "start_url": "/Isaac_ROS-Jetbot_NanoOWL/",
+  "scope": "/Isaac_ROS-Jetbot_NanoOWL/",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#0F1419",
+  "theme_color": "#76B900",
+  "icons": [
+    {
+      "src": "images/icon-72x72.png",
+      "sizes": "72x72",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "images/icon-96x96.png",
+      "sizes": "96x96",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "images/icon-128x128.png",
+      "sizes": "128x128",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "images/icon-144x144.png",
+      "sizes": "144x144",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "images/icon-152x152.png",
+      "sizes": "152x152",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "images/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "images/icon-384x384.png",
+      "sizes": "384x384",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "images/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["robotics", "ai", "education", "development"],
+  "lang": "en-US",
+  "dir": "ltr",
+  "screenshots": [
+    {
+      "src": "images/screenshot1.png",
+      "sizes": "1280x720",
+      "type": "image/png",
+      "label": "Dashboard Overview"
+    },
+    {
+      "src": "images/screenshot2.png",
+      "sizes": "1280x720",
+      "type": "image/png",
+      "label": "Object Detection in Action"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Getting Started",
+      "short_name": "Start",
+      "description": "Quick start guide",
+      "url": "/Isaac_ROS-Jetbot_NanoOWL/getting-started/",
+      "icons": [
+        {
+          "src": "images/icon-start.png",
+          "sizes": "96x96"
+        }
+      ]
+    },
+    {
+      "name": "Documentation",
+      "short_name": "Docs",
+      "description": "Technical documentation",
+      "url": "/Isaac_ROS-Jetbot_NanoOWL/documentation/",
+      "icons": [
+        {
+          "src": "images/icon-docs.png",
+          "sizes": "96x96"
+        }
+      ]
+    },
+    {
+      "name": "Tutorials",
+      "short_name": "Learn",
+      "description": "Step-by-step tutorials",
+      "url": "/Isaac_ROS-Jetbot_NanoOWL/tutorials/",
+      "icons": [
+        {
+          "src": "images/icon-tutorial.png",
+          "sizes": "96x96"
+        }
+      ]
+    }
+  ],
+  "prefer_related_applications": false
+}

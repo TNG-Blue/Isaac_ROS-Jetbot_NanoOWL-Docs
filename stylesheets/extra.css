@@ -1,0 +1,523 @@
+/* =============================================================================
+ * Isaac ROS Jetbot NanoOWL - Custom Styles
+ * Professional design inspired by Jetson AI Lab
+ * ============================================================================= */
+
+/* =============================================================================
+ * Color Scheme - NVIDIA Inspired
+ * ============================================================================= */
+:root {
+  /* NVIDIA Brand Colors */
+  --nvidia-green: #76B900;
+  --nvidia-dark-green: #5a8f00;
+  --nvidia-light-green: #8fd817;
+
+  /* Accent Colors */
+  --accent-blue: #00AED9;
+  --accent-purple: #8B5CF6;
+  --accent-orange: #FF6B35;
+
+  /* Neutral Colors */
+  --dark-bg: #0F1419;
+  --dark-surface: #1A1F2E;
+  --dark-card: #252A3A;
+  --light-bg: #FFFFFF;
+  --light-surface: #F8F9FA;
+  --light-card: #FFFFFF;
+
+  /* Text Colors */
+  --text-primary: #1F2937;
+  --text-secondary: #6B7280;
+  --text-light: #9CA3AF;
+
+  /* Border & Shadow */
+  --border-color: #E5E7EB;
+  --shadow-sm: 0 1px 3px rgba(0,0,0,0.05);
+  --shadow-md: 0 4px 6px rgba(0,0,0,0.07);
+  --shadow-lg: 0 10px 15px rgba(0,0,0,0.1);
+  --shadow-xl: 0 20px 25px rgba(0,0,0,0.15);
+}
+
+/* Dark Mode Colors */
+[data-md-color-scheme="slate"] {
+  --md-primary-fg-color: var(--nvidia-green);
+  --md-accent-fg-color: var(--nvidia-light-green);
+  --md-default-bg-color: var(--dark-bg);
+  --md-default-fg-color: #E5E7EB;
+  --md-code-bg-color: var(--dark-surface);
+  --md-code-fg-color: #F9FAFB;
+}
+
+/* Light Mode Colors */
+[data-md-color-scheme="default"] {
+  --md-primary-fg-color: var(--nvidia-green);
+  --md-accent-fg-color: var(--nvidia-dark-green);
+  --md-default-bg-color: var(--light-bg);
+  --md-default-fg-color: var(--text-primary);
+}
+
+/* =============================================================================
+ * Typography Enhancements
+ * ============================================================================= */
+.md-typeset {
+  font-size: 0.9rem;
+  line-height: 1.7;
+  color: var(--md-default-fg-color);
+}
+
+.md-typeset h1 {
+  font-weight: 800;
+  font-size: 2.5rem;
+  letter-spacing: -0.025em;
+  margin-bottom: 1.5rem;
+  background: linear-gradient(135deg, var(--nvidia-green) 0%, var(--accent-blue) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.md-typeset h2 {
+  font-weight: 700;
+  font-size: 2rem;
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid var(--nvidia-green);
+}
+
+.md-typeset h3 {
+  font-weight: 600;
+  font-size: 1.5rem;
+  margin-top: 2rem;
+  color: var(--nvidia-green);
+}
+
+.md-typeset h4 {
+  font-weight: 600;
+  font-size: 1.2rem;
+  margin-top: 1.5rem;
+}
+
+/* =============================================================================
+ * Header & Navigation
+ * ============================================================================= */
+.md-header {
+  background: linear-gradient(90deg, var(--dark-bg) 0%, var(--dark-surface) 100%);
+  box-shadow: var(--shadow-md);
+  backdrop-filter: blur(10px);
+}
+
+.md-tabs {
+  background: linear-gradient(90deg, var(--nvidia-green) 0%, var(--nvidia-dark-green) 100%);
+  box-shadow: var(--shadow-sm);
+}
+
+.md-tabs__link {
+  font-weight: 600;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  transition: all 0.3s ease;
+}
+
+.md-tabs__link:hover {
+  background: rgba(255, 255, 255, 0.1);
+  transform: translateY(-2px);
+}
+
+.md-tabs__link--active {
+  background: rgba(255, 255, 255, 0.2);
+  border-bottom: 3px solid white;
+}
+
+/* =============================================================================
+ * Hero Section (Homepage)
+ * ============================================================================= */
+.hero-section {
+  position: relative;
+  padding: 4rem 2rem;
+  margin: -2rem -2rem 3rem;
+  background: linear-gradient(135deg, var(--dark-bg) 0%, var(--nvidia-dark-green) 100%);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: var(--shadow-xl);
+}
+
+.hero-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%2376B900' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  opacity: 0.3;
+  z-index: 0;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  color: white;
+}
+
+.hero-title {
+  font-size: 3.5rem;
+  font-weight: 900;
+  margin-bottom: 1.5rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  animation: fadeInUp 0.8s ease-out;
+}
+
+.hero-subtitle {
+  font-size: 1.5rem;
+  font-weight: 400;
+  margin-bottom: 2rem;
+  opacity: 0.95;
+  animation: fadeInUp 0.8s ease-out 0.2s both;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  animation: fadeInUp 0.8s ease-out 0.4s both;
+}
+
+.hero-button {
+  display: inline-block;
+  padding: 1rem 2.5rem;
+  font-size: 1.1rem;
+  font-weight: 700;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  box-shadow: var(--shadow-md);
+}
+
+.hero-button-primary {
+  background: white;
+  color: var(--nvidia-green);
+}
+
+.hero-button-primary:hover {
+  background: var(--nvidia-light-green);
+  color: white;
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-lg);
+}
+
+.hero-button-secondary {
+  background: transparent;
+  color: white;
+  border: 2px solid white;
+}
+
+.hero-button-secondary:hover {
+  background: white;
+  color: var(--nvidia-green);
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-lg);
+}
+
+/* =============================================================================
+ * Cards & Grid Layout
+ * ============================================================================= */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin: 2rem 0;
+}
+
+.feature-card, .module-card {
+  background: var(--md-code-bg-color);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 2rem;
+  transition: all 0.3s ease;
+  box-shadow: var(--shadow-sm);
+  position: relative;
+  overflow: hidden;
+}
+
+.feature-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, var(--nvidia-green), var(--accent-blue));
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+.feature-card:hover, .module-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--nvidia-green);
+}
+
+.feature-card:hover::before {
+  transform: scaleX(1);
+}
+
+.card-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  display: block;
+}
+
+.card-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+  color: var(--nvidia-green);
+}
+
+.card-description {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--text-secondary);
+}
+
+/* =============================================================================
+ * Performance Stats
+ * ============================================================================= */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  margin: 2rem 0;
+}
+
+.stat-card {
+  background: linear-gradient(135deg, var(--nvidia-green) 0%, var(--nvidia-dark-green) 100%);
+  color: white;
+  border-radius: 12px;
+  padding: 2rem;
+  text-align: center;
+  box-shadow: var(--shadow-md);
+  transition: transform 0.3s ease;
+}
+
+.stat-card:hover {
+  transform: scale(1.05);
+  box-shadow: var(--shadow-xl);
+}
+
+.stat-value {
+  font-size: 3rem;
+  font-weight: 900;
+  margin-bottom: 0.5rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.stat-label {
+  font-size: 1rem;
+  font-weight: 600;
+  opacity: 0.95;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* =============================================================================
+ * Code Blocks
+ * ============================================================================= */
+.md-typeset pre {
+  border-radius: 8px;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--border-color);
+}
+
+.md-typeset code {
+  background: var(--md-code-bg-color);
+  padding: 0.2em 0.4em;
+  border-radius: 4px;
+  font-size: 0.9em;
+  border: 1px solid var(--border-color);
+}
+
+.highlight .filename {
+  background: var(--nvidia-green);
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 8px 8px 0 0;
+  font-weight: 600;
+  font-size: 0.85rem;
+}
+
+/* =============================================================================
+ * Admonitions (Callouts)
+ * ============================================================================= */
+.md-typeset .admonition {
+  border-radius: 8px;
+  box-shadow: var(--shadow-sm);
+  border-left: 4px solid;
+}
+
+.md-typeset .admonition.note {
+  border-left-color: var(--accent-blue);
+}
+
+.md-typeset .admonition.tip {
+  border-left-color: var(--nvidia-green);
+}
+
+.md-typeset .admonition.warning {
+  border-left-color: var(--accent-orange);
+}
+
+.md-typeset .admonition.danger {
+  border-left-color: #EF4444;
+}
+
+/* =============================================================================
+ * Tables
+ * ============================================================================= */
+.md-typeset table:not([class]) {
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--border-color);
+}
+
+.md-typeset table:not([class]) thead {
+  background: var(--nvidia-green);
+  color: white;
+}
+
+.md-typeset table:not([class]) th {
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-size: 0.85rem;
+}
+
+.md-typeset table:not([class]) tr:hover {
+  background: rgba(118, 185, 0, 0.05);
+}
+
+/* =============================================================================
+ * Buttons & Links
+ * ============================================================================= */
+.md-typeset a {
+  color: var(--nvidia-green);
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  border-bottom: 1px solid transparent;
+}
+
+.md-typeset a:hover {
+  color: var(--nvidia-dark-green);
+  border-bottom-color: var(--nvidia-green);
+}
+
+.md-button {
+  background: var(--nvidia-green);
+  color: white;
+  padding: 0.75rem 2rem;
+  border-radius: 8px;
+  font-weight: 700;
+  transition: all 0.3s ease;
+  box-shadow: var(--shadow-sm);
+}
+
+.md-button:hover {
+  background: var(--nvidia-dark-green);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.md-button--primary {
+  background: linear-gradient(90deg, var(--nvidia-green), var(--nvidia-dark-green));
+}
+
+/* =============================================================================
+ * Footer
+ * ============================================================================= */
+.md-footer {
+  background: var(--dark-bg);
+  color: #9CA3AF;
+}
+
+.md-footer-meta {
+  background: var(--dark-surface);
+}
+
+.md-footer__link {
+  color: var(--nvidia-light-green);
+}
+
+.md-footer__link:hover {
+  color: white;
+}
+
+/* =============================================================================
+ * Animations
+ * ============================================================================= */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+.animate-pulse {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* =============================================================================
+ * Responsive Design
+ * ============================================================================= */
+@media screen and (max-width: 768px) {
+  .hero-title {
+    font-size: 2.5rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1.2rem;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+  }
+
+  .card-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* =============================================================================
+ * Print Styles
+ * ============================================================================= */
+@media print {
+  .hero-section,
+  .md-header,
+  .md-tabs,
+  .md-sidebar,
+  .md-footer {
+    display: none;
+  }
+}

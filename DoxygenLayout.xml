@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Doxygen Layout Configuration for Isaac ROS Jetbot NanoOWL
+  Customizes the HTML documentation output structure and appearance
+  Last Updated: January 26, 2025
+-->
+<doxygenlayout version="1.0">
+
+  <!-- Navigation Tab Configuration -->
+  <navindex>
+    <tab type="mainpage" visible="yes" title="Main Page"/>
+    <tab type="pages" visible="yes" title="Pages"/>
+    <tab type="modules" visible="yes" title="Modules"/>
+    <tab type="namespaces" visible="yes" title="Namespaces">
+      <tab type="namespacelist" visible="yes" title="Namespace List"/>
+      <tab type="namespacemembers" visible="yes" title="Namespace Members"/>
+    </tab>
+    <tab type="classes" visible="yes" title="Classes">
+      <tab type="classlist" visible="yes" title="Class List"/>
+      <tab type="classindex" visible="yes" title="Class Index"/>
+      <tab type="hierarchy" visible="yes" title="Class Hierarchy"/>
+      <tab type="classmembers" visible="yes" title="Class Members"/>
+    </tab>
+    <tab type="files" visible="yes" title="Files">
+      <tab type="filelist" visible="yes" title="File List"/>
+      <tab type="globals" visible="yes" title="File Members"/>
+    </tab>
+    <tab type="examples" visible="yes" title="Examples"/>
+    <tab type="search" visible="yes" title=""/>
+  </navindex>
+
+  <!-- Class Layout Configuration -->
+  <class-layout>
+    <briefdescription visible="yes"/>
+    <detaileddescription visible="yes"/>
+    <includes visible="yes"/>
+    <inheritancegraph visible="yes"/>
+    <collaborationgraph visible="yes"/>
+    <defines visible="yes"/>
+    <typedefs visible="yes"/>
+    <enums visible="yes"/>
+    <functions visible="yes"/>
+    <variables visible="yes"/>
+    <friends visible="yes"/>
+    <related visible="yes"/>
+    <define visible="yes"/>
+    <prototype visible="yes"/>
+    <typecode visible="yes"/>
+    <reimplements visible="yes"/>
+    <reimplementedby visible="yes"/>
+    <examples visible="yes"/>
+    <sourcelink visible="yes"/>
+    <callgraph visible="yes"/>
+    <callergraph visible="yes"/>
+    <referencedby visible="yes"/>
+    <references visible="yes"/>
+    <inlineclasses visible="yes"/>
+    <inlinemembersection visible="yes"/>
+    <qualifiedname visible="yes"/>
+  </class-layout>
+
+  <!-- Namespace Layout Configuration -->
+  <namespace-layout>
+    <briefdescription visible="yes"/>
+    <detaileddescription visible="yes"/>
+    <defines visible="yes"/>
+    <typedefs visible="yes"/>
+    <enums visible="yes"/>
+    <functions visible="yes"/>
+    <variables visible="yes"/>
+    <classes visible="yes"/>
+    <inlineclasses visible="yes"/>
+    <inlinemembersection visible="yes"/>
+    <qualifiedname visible="yes"/>
+  </namespace-layout>
+
+  <!-- File Layout Configuration -->
+  <file-layout>
+    <briefdescription visible="yes"/>
+    <detaileddescription visible="yes"/>
+    <includes visible="yes"/>
+    <includegraph visible="yes"/>
+    <includedbygraph visible="yes"/>
+    <sourcelink visible="yes"/>
+    <defines visible="yes"/>
+    <typedefs visible="yes"/>
+    <enums visible="yes"/>
+    <functions visible="yes"/>
+    <variables visible="yes"/>
+    <inlineclasses visible="yes"/>
+    <inlinemembersection visible="yes"/>
+    <sourcelink visible="yes"/>
+    <qualifiedname visible="yes"/>
+  </file-layout>
+
+  <!-- Group Layout Configuration -->
+  <group-layout>
+    <briefdescription visible="yes"/>
+    <detaileddescription visible="yes"/>
+    <groupgraph visible="yes"/>
+    <modules visible="yes"/>
+    <classes visible="yes"/>
+    <defines visible="yes"/>
+    <typedefs visible="yes"/>
+    <enums visible="yes"/>
+    <enumvalues visible="yes"/>
+    <functions visible="yes"/>
+    <variables visible="yes"/>
+    <signals visible="yes"/>
+    <publicslots visible="yes"/>
+    <protectedslots visible="yes"/>
+    <privateslots visible="yes"/>
+    <events visible="yes"/>
+    <properties visible="yes"/>
+    <friends visible="yes"/>
+    <inlineclasses visible="yes"/>
+    <defines visible="yes"/>
+    <typedefs visible="yes"/>
+    <enums visible="yes"/>
+    <enumvalues visible="yes"/>
+    <functions visible="yes"/>
+    <variables visible="yes"/>
+    <signals visible="yes"/>
+    <publicslots visible="yes"/>
+    <protectedslots visible="yes"/>
+    <privateslots visible="yes"/>
+    <events visible="yes"/>
+    <properties visible="yes"/>
+    <friends visible="yes"/>
+    <inlineclasses visible="yes"/>
+    <qualifiedname visible="yes"/>
+  </group-layout>
+
+  <!-- Directory Layout Configuration -->
+  <dir-layout>
+    <briefdescription visible="yes"/>
+    <detaileddescription visible="yes"/>
+    <directorygraph visible="yes"/>
+    <subdirs visible="yes"/>
+    <files visible="yes"/>
+    <qualifiedname visible="yes"/>
+  </dir-layout>
+
+</doxygenlayout>
