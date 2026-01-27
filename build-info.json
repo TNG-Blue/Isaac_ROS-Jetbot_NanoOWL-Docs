@@ -1,14 +1,39 @@
 {
-  "build_time": "2026-01-27T09:29:21Z",
+  "build_time": "2026-01-27T09:57:31Z",
   "source_repository": "TNG-Blue/Isaac_ROS-Jetbot_NanoOWL",
   "source_branch": "master",
-  "source_commit": "32cad88563a00f8109231296369bc03468110059",
-  "commit_message": "",
-  "workflow_run_id": "21391769545",
-  "workflow_run_number": "14",
-  "python_version": "3.11",
+  "source_commit": "e70d68f34b80139761114d46e759f3629b636130",
+  "commit_message": "docs: restructure documentation and add OTA CI"
+""
+"- feat(ci): add OTA server CI/CD workflow"
+"  * Add automated build and test for OTA server"
+""
+"- docs: complete documentation restructure"
+"  * Add comprehensive getting-started guides (consolidated)"
+"  * Add about section with license information"
+"  * Add community guidelines"
+"  * Enhance architecture documentation (network, software)"
+"  * Add ROS2 object detection guide"
+"  * Update home pages (architecture, performance)"
+"  * Reorganize tutorials section"
+"  * Remove premium documentation template"
+""
+"- refactor(docs): consolidate getting-started content"
+"  * Merge individual guides into unified structure"
+"  * Remove fragmented setup files"
+""
+"- chore: update submodules"
+"  * Update Portenta_H7_CubeMX"
+"  * Update Android JetbotNanoOWL"
+""
+"- fix(ota): improve OTA server implementation\"",
+  "workflow_run_id": "21392632900",
+  "workflow_run_number": "15",
+  "python_version": "3.10",
   "mkdocs_version": "9.7.1",
-  "deployment_type": "manual",
+  "deployment_type": "automatic_push",
+  "trigger_event": "push",
+  "triggered_by": "TNG-Blue",
   "filtered_content": true,
   "excluded_directories": ["flowcharts", "datasheet"]
 }
