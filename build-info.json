@@ -1,34 +1,11 @@
 {
-  "build_time": "2026-01-27T09:57:31Z",
+  "build_time": "2026-02-03T17:13:28Z",
   "source_repository": "TNG-Blue/Isaac_ROS-Jetbot_NanoOWL",
   "source_branch": "master",
-  "source_commit": "e70d68f34b80139761114d46e759f3629b636130",
-  "commit_message": "docs: restructure documentation and add OTA CI"
-""
-"- feat(ci): add OTA server CI/CD workflow"
-"  * Add automated build and test for OTA server"
-""
-"- docs: complete documentation restructure"
-"  * Add comprehensive getting-started guides (consolidated)"
-"  * Add about section with license information"
-"  * Add community guidelines"
-"  * Enhance architecture documentation (network, software)"
-"  * Add ROS2 object detection guide"
-"  * Update home pages (architecture, performance)"
-"  * Reorganize tutorials section"
-"  * Remove premium documentation template"
-""
-"- refactor(docs): consolidate getting-started content"
-"  * Merge individual guides into unified structure"
-"  * Remove fragmented setup files"
-""
-"- chore: update submodules"
-"  * Update Portenta_H7_CubeMX"
-"  * Update Android JetbotNanoOWL"
-""
-"- fix(ota): improve OTA server implementation\"",
-  "workflow_run_id": "21392632900",
-  "workflow_run_number": "15",
+  "source_commit": "af866d68e28c5aeefeb317b1fb028d5a6678845a",
+  "commit_message": "Merge branch feature/autonomous-navigation",
+  "workflow_run_id": "21640023360",
+  "workflow_run_number": "16",
   "python_version": "3.10",
   "mkdocs_version": "9.7.1",
   "deployment_type": "automatic_push",
