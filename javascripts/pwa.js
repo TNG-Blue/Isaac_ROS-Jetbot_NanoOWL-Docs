@@ -30,7 +30,11 @@
    * =========================================================================== */
   if ('serviceWorker' in navigator) {
     window.addEventListener('load', () => {
-      navigator.serviceWorker.register('/Isaac_ROS-Jetbot_NanoOWL/sw.js')
+      // Get the base path dynamically
+      const basePath = document.querySelector('base')?.href || '/';
+      const swPath = new URL('javascripts/sw.js', basePath).pathname;
+
+      navigator.serviceWorker.register(swPath)
         .then(registration => {
           console.log('✅ Service Worker registered:', registration.scope);
 

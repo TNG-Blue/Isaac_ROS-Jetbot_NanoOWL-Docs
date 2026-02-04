@@ -1,11 +1,19 @@
 {
-  "build_time": "2026-02-03T17:13:28Z",
+  "build_time": "2026-02-04T19:12:35Z",
   "source_repository": "TNG-Blue/Isaac_ROS-Jetbot_NanoOWL",
   "source_branch": "master",
-  "source_commit": "af866d68e28c5aeefeb317b1fb028d5a6678845a",
-  "commit_message": "Merge branch feature/autonomous-navigation",
-  "workflow_run_id": "21640023360",
-  "workflow_run_number": "16",
+  "source_commit": "6bda4affe388db7eb30be89396aeeae99fcb5a3b",
+  "commit_message": "refactor(server-ota): restructure services and handlers for autonomous navigation"
+""
+"- Restructure handlers for improved request routing"
+"- Optimize application initialization in main.go"
+"- Update models for autonomous navigation integration"
+"- Enhance logger service for better diagnostics"
+"- Improve memory management utilities"
+""
+"Closes #3",
+  "workflow_run_id": "21684792723",
+  "workflow_run_number": "18",
   "python_version": "3.10",
   "mkdocs_version": "9.7.1",
   "deployment_type": "automatic_push",

@@ -26,17 +26,18 @@ const CACHE_NAME = 'jetbot-nanoowl-v1.0.0';
 const RUNTIME_CACHE = 'jetbot-runtime';
 
 // Resources to cache immediately
+const BASE_PATH = self.location.pathname.replace(/\/[^/]*$/, '') || '/';
 const PRE_CACHE_URLS = [
-  '/Isaac_ROS-Jetbot_NanoOWL/',
-  '/Isaac_ROS-Jetbot_NanoOWL/index.html',
-  '/Isaac_ROS-Jetbot_NanoOWL/getting-started/',
-  '/Isaac_ROS-Jetbot_NanoOWL/documentation/',
-  '/Isaac_ROS-Jetbot_NanoOWL/stylesheets/extra.css',
-  '/Isaac_ROS-Jetbot_NanoOWL/stylesheets/animations.css',
-  '/Isaac_ROS-Jetbot_NanoOWL/stylesheets/premium.css',
-  '/Isaac_ROS-Jetbot_NanoOWL/javascripts/extra.js',
-  '/Isaac_ROS-Jetbot_NanoOWL/javascripts/premium.js',
-  '/Isaac_ROS-Jetbot_NanoOWL/manifest.json',
+  BASE_PATH,
+  BASE_PATH + 'index.html',
+  BASE_PATH + 'getting-started/',
+  BASE_PATH + 'documentation/',
+  BASE_PATH + 'stylesheets/extra.css',
+  BASE_PATH + 'stylesheets/animations.css',
+  BASE_PATH + 'stylesheets/premium.css',
+  BASE_PATH + 'javascripts/extra.js',
+  BASE_PATH + 'javascripts/premium.js',
+  BASE_PATH + 'manifest.json',
 ];
 
 /* ===========================================================================

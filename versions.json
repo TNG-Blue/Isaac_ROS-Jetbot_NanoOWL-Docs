@@ -1,0 +1,13 @@
+[
+  {
+    "version": "stable",
+    "title": "Stable (v1.0.0)",
+    "aliases": ["latest"],
+    "url": "/"
+  },
+  {
+    "version": "dev",
+    "title": "Development (v1.1.0-dev)",
+    "url": "/dev/"
+  }
+]

@@ -2,8 +2,8 @@
   "name": "Isaac ROS Jetbot NanoOWL",
   "short_name": "Jetbot NanoOWL",
   "description": "Enterprise-grade autonomous robotics platform powered by NVIDIA Jetson Orin Nano Super",
-  "start_url": "/Isaac_ROS-Jetbot_NanoOWL/",
-  "scope": "/Isaac_ROS-Jetbot_NanoOWL/",
+  "start_url": "./",
+  "scope": "./",
   "display": "standalone",
   "orientation": "portrait-primary",
   "background_color": "#0F1419",
@@ -80,7 +80,7 @@
       "name": "Getting Started",
       "short_name": "Start",
       "description": "Quick start guide",
-      "url": "/Isaac_ROS-Jetbot_NanoOWL/getting-started/",
+      "url": "./getting-started/",
       "icons": [
         {
           "src": "images/icon-start.png",
@@ -92,7 +92,7 @@
       "name": "Documentation",
       "short_name": "Docs",
       "description": "Technical documentation",
-      "url": "/Isaac_ROS-Jetbot_NanoOWL/documentation/",
+      "url": "./documentation/",
       "icons": [
         {
           "src": "images/icon-docs.png",
@@ -104,7 +104,7 @@
       "name": "Tutorials",
       "short_name": "Learn",
       "description": "Step-by-step tutorials",
-      "url": "/Isaac_ROS-Jetbot_NanoOWL/tutorials/",
+      "url": "./tutorials/",
       "icons": [
         {
           "src": "images/icon-tutorial.png",
