@@ -1,24 +1,35 @@
 {
-  "build_time": "2026-02-07T09:29:35Z",
+  "build_time": "2026-02-07T17:38:59Z",
   "source_repository": "TNG-Blue/Isaac_ROS-Jetbot_NanoOWL",
   "source_branch": "master",
-  "source_commit": "f9141ae0fa07143a3fd7464c45651ff991a26889",
-  "commit_message": "Merge pull request #5 from TNG-Blue/feature/autonomous-navigation"
+  "source_commit": "42f4cb2dea3b2fe5d04b1296b5479b1a5d2d9bf8",
+  "commit_message": "Merge pull request #6 from TNG-Blue/feature/autonomous-navigation"
 ""
-"feat: add AI frameworks, specialized agents, K8s enhancements"
+"feat(lidar-ai): add complete autonomous navigation pipeline"
 ""
-"Major additions:"
-"- Lidar AI: BEVFusion, CenterPoint, PointPillars, V2XFusion frameworks"
-"- Claude agents: docs-ui, jetson, microcontroller, ros2-developer"
-"- Infrastructure: comprehensive docs, K8s deployment improvements"
-"- CUDA utilities: cuPCL, YUVToRGB, cuOSD, 3DSparseConvolution"
-"- Testing: pytest suites for all new components"
+"Custom Messages:"
+"- DetectionResult, GroundPlaneInfo, SafetyZoneStatus, TrackedObject(Array)"
 ""
-"Breaking changes:"
-"- Replaced legacy lidar detection pipeline"
-"- New ROS2 node architecture and launch files",
-  "workflow_run_id": "21777917029",
-  "workflow_run_number": "20",
+"Pipeline Components:"
+"- Preprocessing: pointcloud_preprocessor, ground_plane"
+"- Detection: detection_fusion (multi-detector merging)"
+"- Tracking: object_tracker (Kalman filter + Hungarian)"
+"- Mapping: pointcloud_accumulator (temporal accumulation)"
+"- Navigation: costmap_generator (Nav2 integration)"
+"- Safety: safety_zone (intrusion detection)"
+""
+"Launch Files:"
+"- Individual component launches"
+"- full_pipeline.launch.py for complete system"
+""
+"Build & Dependencies:"
+"- Update CMakeLists and package.xml"
+"- Sync all submodules to latest"
+"- Update IDE configuration"
+""
+"Complete autonomous navigation from sensors to Nav2 costmap.",
+  "workflow_run_id": "21784129351",
+  "workflow_run_number": "22",
   "python_version": "3.10",
   "mkdocs_version": "9.7.1",
   "deployment_type": "automatic_push",
