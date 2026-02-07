@@ -1,19 +1,24 @@
 {
-  "build_time": "2026-02-04T19:12:35Z",
+  "build_time": "2026-02-07T09:29:35Z",
   "source_repository": "TNG-Blue/Isaac_ROS-Jetbot_NanoOWL",
   "source_branch": "master",
-  "source_commit": "6bda4affe388db7eb30be89396aeeae99fcb5a3b",
-  "commit_message": "refactor(server-ota): restructure services and handlers for autonomous navigation"
+  "source_commit": "f9141ae0fa07143a3fd7464c45651ff991a26889",
+  "commit_message": "Merge pull request #5 from TNG-Blue/feature/autonomous-navigation"
 ""
-"- Restructure handlers for improved request routing"
-"- Optimize application initialization in main.go"
-"- Update models for autonomous navigation integration"
-"- Enhance logger service for better diagnostics"
-"- Improve memory management utilities"
+"feat: add AI frameworks, specialized agents, K8s enhancements"
 ""
-"Closes #3",
-  "workflow_run_id": "21684792723",
-  "workflow_run_number": "18",
+"Major additions:"
+"- Lidar AI: BEVFusion, CenterPoint, PointPillars, V2XFusion frameworks"
+"- Claude agents: docs-ui, jetson, microcontroller, ros2-developer"
+"- Infrastructure: comprehensive docs, K8s deployment improvements"
+"- CUDA utilities: cuPCL, YUVToRGB, cuOSD, 3DSparseConvolution"
+"- Testing: pytest suites for all new components"
+""
+"Breaking changes:"
+"- Replaced legacy lidar detection pipeline"
+"- New ROS2 node architecture and launch files",
+  "workflow_run_id": "21777917029",
+  "workflow_run_number": "20",
   "python_version": "3.10",
   "mkdocs_version": "9.7.1",
   "deployment_type": "automatic_push",

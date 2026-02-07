@@ -22,11 +22,19 @@
  * Offline support and caching strategies
  * ============================================================================= */
 
-const CACHE_NAME = 'jetbot-nanoowl-v1.0.0';
+const CACHE_NAME = 'jetbot-nanoowl-v1.0.1';
 const RUNTIME_CACHE = 'jetbot-runtime';
 
+// Get the base path dynamically
+const getBasePath = () => {
+  const path = self.location.pathname;
+  const match = path.match(/.*\//);
+  return match ? match[0] : '/';
+};
+
+const BASE_PATH = getBasePath();
+
 // Resources to cache immediately
-const BASE_PATH = self.location.pathname.replace(/\/[^/]*$/, '') || '/';
 const PRE_CACHE_URLS = [
   BASE_PATH,
   BASE_PATH + 'index.html',
@@ -38,7 +46,7 @@ const PRE_CACHE_URLS = [
   BASE_PATH + 'javascripts/extra.js',
   BASE_PATH + 'javascripts/premium.js',
   BASE_PATH + 'manifest.json',
-];
+].filter(url => url); // Remove any empty URLs
 
 /* ===========================================================================
  * Install Event - Pre-cache critical resources
@@ -120,7 +128,18 @@ self.addEventListener('fetch', event => {
           .catch(() => {
             // Offline fallback
             if (event.request.destination === 'document') {
-              return caches.match('/Isaac_ROS-Jetbot_NanoOWL/offline.html');
+              return caches.match(BASE_PATH + 'offline.html').then(response => {
+                return response || new Response(
+                  '<h1>You are offline</h1><p>Please check your internet connection.</p>',
+                  {
+                    status: 503,
+                    statusText: 'Service Unavailable',
+                    headers: new Headers({
+                      'Content-Type': 'text/html'
+                    })
+                  }
+                );
+              });
             }
           });
       })
@@ -190,8 +209,8 @@ function syncData() {
 self.addEventListener('push', event => {
   const options = {
     body: event.data ? event.data.text() : 'New update available!',
-    icon: '/Isaac_ROS-Jetbot_NanoOWL/images/icon-192x192.png',
-    badge: '/Isaac_ROS-Jetbot_NanoOWL/images/badge.png',
+    icon: BASE_PATH + 'images/icon-192x192.png',
+    badge: BASE_PATH + 'images/badge.png',
     vibrate: [200, 100, 200],
     data: {
       dateOfArrival: Date.now(),
@@ -201,12 +220,12 @@ self.addEventListener('push', event => {
       {
         action: 'explore',
         title: 'View Updates',
-        icon: '/Isaac_ROS-Jetbot_NanoOWL/images/checkmark.png'
+        icon: BASE_PATH + 'images/checkmark.png'
       },
       {
         action: 'close',
         title: 'Close',
-        icon: '/Isaac_ROS-Jetbot_NanoOWL/images/xmark.png'
+        icon: BASE_PATH + 'images/xmark.png'
       }
     ]
   };
@@ -221,7 +240,7 @@ self.addEventListener('notificationclick', event => {
 
   if (event.action === 'explore') {
     event.waitUntil(
-      clients.openWindow('/Isaac_ROS-Jetbot_NanoOWL/')
+      clients.openWindow(BASE_PATH)
     );
   }
 });

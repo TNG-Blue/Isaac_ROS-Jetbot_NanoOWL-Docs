@@ -406,13 +406,15 @@
     monitorPerformance();
 
     // Re-initialize on page navigation (for SPAs)
-    document$.subscribe(() => {
-      setTimeout(() => {
-        enhanceCodeBlocks();
-        animateStats();
-        handleExternalLinks();
-      }, 100);
-    });
+    if (typeof document$ !== 'undefined') {
+      document$.subscribe(() => {
+        setTimeout(() => {
+          enhanceCodeBlocks();
+          animateStats();
+          handleExternalLinks();
+        }, 100);
+      });
+    }
   }
 
   // Start initialization
