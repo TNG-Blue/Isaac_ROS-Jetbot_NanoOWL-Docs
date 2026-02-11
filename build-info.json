@@ -1,17 +1,15 @@
 {
-  "build_time": "2026-02-07T23:14:35Z",
+  "build_time": "2026-02-11T06:27:09Z",
   "source_repository": "TNG-Blue/Isaac_ROS-Jetbot_NanoOWL",
-  "source_branch": "master",
-  "source_commit": "61bb487fb36e482b6ac349f95f903f9c33d1d6ee",
-  "commit_message": "Merge pull request #8 from TNG-Blue/feature/autonomous-navigation"
-""
-"chore(github): add issue templates and improve workflows",
-  "workflow_run_id": "21788486734",
-  "workflow_run_number": "24",
+  "source_branch": "autonomous-navigation",
+  "source_commit": "a1bd971b94e2feee4135fe457d56151fac0f3291",
+  "commit_message": "",
+  "workflow_run_id": "21895004344",
+  "workflow_run_number": "25",
   "python_version": "3.10",
   "mkdocs_version": "9.7.1",
-  "deployment_type": "automatic_push",
-  "trigger_event": "push",
+  "deployment_type": "manual",
+  "trigger_event": "workflow_dispatch",
   "triggered_by": "TNG-Blue",
   "filtered_content": true,
   "excluded_directories": ["flowcharts", "datasheet"]
