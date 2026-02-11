@@ -1,16 +1,23 @@
 {
-  "build_time": "2026-02-11T06:38:45Z",
+  "build_time": "2026-02-11T21:05:09Z",
   "source_repository": "TNG-Blue/Isaac_ROS-Jetbot_NanoOWL",
   "source_branch": "master",
-  "source_commit": "4c75851e8d99b1b0e09b36ddd95e43de27772bde",
-  "commit_message": "",
-  "workflow_run_id": "21895259410",
-  "workflow_run_number": "26",
+  "source_commit": "fb9662db7259403853c8fafb3cc6e839b2ef90b4",
+  "commit_message": "Merge branch refs/heads/feature/autonomous-navigation"
+""
+"# Conflicts:"
+"#\t.idea/Isaac_ROS-Jetbot_NanoOWL.iml"
+"#\t.idea/modules/Jetbot_NanoOWL.iml"
+"#\tREADME.md",
+  "workflow_run_id": "21922953654",
+  "workflow_run_number": "27",
   "python_version": "3.10",
   "mkdocs_version": "9.7.1",
-  "deployment_type": "manual",
-  "trigger_event": "workflow_dispatch",
+  "deployment_type": "automatic_push",
+  "trigger_event": "push",
   "triggered_by": "TNG-Blue",
   "filtered_content": true,
-  "excluded_directories": ["flowcharts", "datasheet"]
+  "excluded_directories": ["flowcharts", "datasheet"],
+  "svg_count": 2,
+  "git_lfs_enabled": true
 }

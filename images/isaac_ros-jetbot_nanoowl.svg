@@ -1,3 +1,240 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:a6c7958010e07da03065dbe7e7659259e16d070e421bd4ae9a8f55732cda8df2
-size 11622
+<svg viewBox="0 0 1280 640" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Dark tech background gradient -->
+    <linearGradient id="darkBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#000000;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#0d1117;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#000000;stop-opacity:1" />
+    </linearGradient>
+    
+    <!-- NVIDIA Green gradients -->
+    <linearGradient id="nvidiaGlow" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#76b900;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#97d700;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#76b900;stop-opacity:1" />
+    </linearGradient>
+    
+    <radialGradient id="greenGlow">
+      <stop offset="0%" style="stop-color:#76b900;stop-opacity:0.6" />
+      <stop offset="100%" style="stop-color:#76b900;stop-opacity:0" />
+    </radialGradient>
+    
+    <radialGradient id="coreGlow">
+      <stop offset="0%" style="stop-color:#00ff88;stop-opacity:0.8" />
+      <stop offset="50%" style="stop-color:#76b900;stop-opacity:0.4" />
+      <stop offset="100%" style="stop-color:#76b900;stop-opacity:0" />
+    </radialGradient>
+    
+    <!-- Tech grid pattern -->
+    <pattern id="techGrid" width="50" height="50" patternUnits="userSpaceOnUse">
+      <path d="M 50 0 L 0 0 0 50" fill="none" stroke="#76b900" stroke-width="0.5" opacity="0.2"/>
+      <circle cx="0" cy="0" r="1" fill="#76b900" opacity="0.3"/>
+    </pattern>
+    
+    <!-- Hex pattern -->
+    <pattern id="hexPattern" width="60" height="52" patternUnits="userSpaceOnUse">
+      <path d="M 30 0 L 45 13 L 45 39 L 30 52 L 15 39 L 15 13 Z" fill="none" stroke="#76b900" stroke-width="0.8" opacity="0.15"/>
+    </pattern>
+    
+    <!-- Circuit lines -->
+    <pattern id="circuits" width="120" height="120" patternUnits="userSpaceOnUse">
+      <path d="M 0 30 L 40 30 L 40 60 L 80 60" stroke="#76b900" stroke-width="1.5" fill="none" opacity="0.25"/>
+      <path d="M 120 90 L 80 90 L 80 30 L 40 30" stroke="#76b900" stroke-width="1.5" fill="none" opacity="0.25"/>
+      <circle cx="40" cy="30" r="3" fill="#76b900" opacity="0.4"/>
+      <circle cx="40" cy="60" r="3" fill="#76b900" opacity="0.4"/>
+      <circle cx="80" cy="60" r="3" fill="#76b900" opacity="0.4"/>
+    </pattern>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="1280" height="640" fill="url(#darkBg)"/>
+  
+  <!-- Pattern overlays -->
+  <rect width="1280" height="640" fill="url(#techGrid)"/>
+  <rect width="1280" height="640" fill="url(#hexPattern)" opacity="0.6"/>
+  <rect width="1280" height="640" fill="url(#circuits)"/>
+  
+  <!-- Large glowing effects -->
+  <ellipse cx="640" cy="320" rx="500" ry="350" fill="url(#greenGlow)" opacity="0.15"/>
+  <ellipse cx="950" cy="200" rx="300" ry="250" fill="url(#coreGlow)" opacity="0.2"/>
+  
+  <!-- Core engine visualization -->
+  <g transform="translate(850, 250)">
+    <!-- Central processor core -->
+    <circle cx="100" cy="100" r="80" fill="#0a0e1a" stroke="url(#nvidiaGlow)" stroke-width="4"/>
+    <circle cx="100" cy="100" r="70" fill="none" stroke="#76b900" stroke-width="2" opacity="0.6" stroke-dasharray="5,5">
+      <animateTransform attributeName="transform" type="rotate" from="0 100 100" to="360 100 100" dur="20s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="100" cy="100" r="55" fill="none" stroke="#76b900" stroke-width="1.5" opacity="0.4" stroke-dasharray="3,3">
+      <animateTransform attributeName="transform" type="rotate" from="360 100 100" to="0 100 100" dur="15s" repeatCount="indefinite"/>
+    </circle>
+    
+    <!-- Core center -->
+    <circle cx="100" cy="100" r="25" fill="url(#coreGlow)"/>
+    <circle cx="100" cy="100" r="15" fill="#00ff88"/>
+    
+    <!-- Data nodes -->
+    <circle cx="100" cy="20" r="10" fill="#76b900"/>
+    <circle cx="180" cy="100" r="10" fill="#76b900"/>
+    <circle cx="100" cy="180" r="10" fill="#76b900"/>
+    <circle cx="20" cy="100" r="10" fill="#76b900"/>
+    
+    <!-- Connection lines -->
+    <line x1="100" y1="25" x2="100" y2="75" stroke="#76b900" stroke-width="2.5"/>
+    <line x1="175" y1="100" x2="125" y2="100" stroke="#76b900" stroke-width="2.5"/>
+    <line x1="100" y1="175" x2="100" y2="125" stroke="#76b900" stroke-width="2.5"/>
+    <line x1="25" y1="100" x2="75" y2="100" stroke="#76b900" stroke-width="2.5"/>
+    
+    <!-- Orbiting elements -->
+    <g opacity="0.7">
+      <circle cx="100" cy="20" r="4" fill="#00ff88">
+        <animateTransform attributeName="transform" type="rotate" from="0 100 100" to="360 100 100" dur="8s" repeatCount="indefinite"/>
+      </circle>
+    </g>
+  </g>
+  
+  <!-- Robot system diagram -->
+  <g transform="translate(50, 380)">
+    <!-- Jetbot representation -->
+    <rect x="0" y="0" width="90" height="80" rx="8" fill="#0a0e1a" stroke="#76b900" stroke-width="3"/>
+    <circle cx="25" cy="30" r="10" fill="#76b900" opacity="0.8"/>
+    <circle cx="65" cy="30" r="10" fill="#76b900" opacity="0.8"/>
+    <text x="45" y="65" font-family="monospace" font-size="14" fill="#76b900" text-anchor="middle" font-weight="bold">JETBOT</text>
+    
+    <!-- Arrow -->
+    <path d="M 100 40 L 140 40" stroke="#76b900" stroke-width="3" marker-end="url(#arrowhead)"/>
+    
+    <!-- Isaac ROS box -->
+    <rect x="150" y="0" width="120" height="80" rx="8" fill="#0a0e1a" stroke="url(#nvidiaGlow)" stroke-width="3"/>
+    <text x="210" y="35" font-family="monospace" font-size="16" fill="#76b900" text-anchor="middle" font-weight="bold">ISAAC</text>
+    <text x="210" y="55" font-family="monospace" font-size="16" fill="#76b900" text-anchor="middle" font-weight="bold">ROS 2</text>
+    
+    <!-- Arrow -->
+    <path d="M 280 40 L 320 40" stroke="#76b900" stroke-width="3" marker-end="url(#arrowhead)"/>
+    
+    <!-- NanoOWL box -->
+    <rect x="330" y="0" width="110" height="80" rx="8" fill="#0a0e1a" stroke="#76b900" stroke-width="3"/>
+    <text x="385" y="30" font-family="monospace" font-size="18" fill="#00ff88" text-anchor="middle" font-weight="bold">🦉</text>
+    <text x="385" y="55" font-family="monospace" font-size="14" fill="#76b900" text-anchor="middle" font-weight="bold">NanoOWL</text>
+    <text x="385" y="70" font-family="monospace" font-size="10" fill="#76b900" text-anchor="middle">AI Vision</text>
+  </g>
+  
+  <!-- Arrow marker definition -->
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#76b900" />
+    </marker>
+  </defs>
+  
+  <!-- Title section -->
+  <text x="60" y="100" font-family="'Segoe UI', 'Roboto', Arial, sans-serif" font-size="56" font-weight="900" fill="#ffffff" letter-spacing="2">
+    ISAAC ROS
+  </text>
+  
+  <text x="60" y="160" font-family="'Segoe UI', 'Roboto', Arial, sans-serif" font-size="62" font-weight="900" fill="url(#nvidiaGlow)" letter-spacing="1">
+    JETBOT
+  </text>
+  
+  <text x="60" y="220" font-family="'Segoe UI', 'Roboto', Arial, sans-serif" font-size="62" font-weight="900" fill="url(#nvidiaGlow)" letter-spacing="1">
+    NanoOWL
+  </text>
+  
+  <!-- CORE badge -->
+  <g transform="translate(60, 240)">
+    <rect x="0" y="0" width="200" height="50" rx="25" fill="url(#nvidiaGlow)"/>
+    <rect x="3" y="3" width="194" height="44" rx="22" fill="#000000"/>
+    <text x="100" y="33" font-family="'Segoe UI', Arial, sans-serif" font-size="24" fill="url(#nvidiaGlow)" text-anchor="middle" font-weight="900" letter-spacing="3">
+      ⚡ CORE
+    </text>
+  </g>
+  
+  <!-- Feature tags with tech style -->
+  <g transform="translate(60, 520)">
+    <!-- Tag 1 -->
+    <rect x="0" y="0" width="140" height="38" rx="4" fill="#0a0e1a" stroke="#76b900" stroke-width="2"/>
+    <text x="70" y="25" font-family="'Courier New', monospace" font-size="16" fill="#76b900" text-anchor="middle" font-weight="700">
+      ROS2
+    </text>
+    
+    <!-- Tag 2 -->
+    <rect x="155" y="0" width="140" height="38" rx="4" fill="#0a0e1a" stroke="#76b900" stroke-width="2"/>
+    <text x="225" y="25" font-family="'Courier New', monospace" font-size="16" fill="#76b900" text-anchor="middle" font-weight="700">
+      Python
+    </text>
+    
+    <!-- Tag 3 -->
+    <rect x="310" y="0" width="140" height="38" rx="4" fill="#0a0e1a" stroke="#76b900" stroke-width="2"/>
+    <text x="380" y="25" font-family="'Courier New', monospace" font-size="16" fill="#76b900" text-anchor="middle" font-weight="700">
+      CUDA
+    </text>
+    
+    <!-- Tag 4 -->
+    <rect x="465" y="0" width="140" height="38" rx="4" fill="#0a0e1a" stroke="#76b900" stroke-width="2"/>
+    <text x="535" y="25" font-family="'Courier New', monospace" font-size="16" fill="#76b900" text-anchor="middle" font-weight="700">
+      Real-time
+    </text>
+  </g>
+  
+  <!-- Version/Status indicator -->
+  <g transform="translate(60, 580)">
+    <rect x="0" y="0" width="160" height="35" rx="4" fill="url(#coreGlow)" opacity="0.3"/>
+    <text x="15" y="23" font-family="'Courier New', monospace" font-size="16" fill="#00ff88" font-weight="700">
+      ● PRODUCTION
+    </text>
+  </g>
+  
+  <!-- Technical specs corner -->
+  <g transform="translate(950, 480)">
+    <rect x="0" y="0" width="280" height="130" rx="8" fill="#0a0e1a" stroke="#76b900" stroke-width="2" opacity="0.9"/>
+    <text x="20" y="30" font-family="'Courier New', monospace" font-size="14" fill="#76b900" font-weight="600">
+      SYSTEM SPECS
+    </text>
+    <text x="20" y="55" font-family="'Courier New', monospace" font-size="12" fill="#97d700">
+      ▸ Vision AI Engine
+    </text>
+    <text x="20" y="75" font-family="'Courier New', monospace" font-size="12" fill="#97d700">
+      ▸ Object Detection
+    </text>
+    <text x="20" y="95" font-family="'Courier New', monospace" font-size="12" fill="#97d700">
+      ▸ Hardware Accelerated
+    </text>
+    <text x="20" y="115" font-family="'Courier New', monospace" font-size="12" fill="#97d700">
+      ▸ Autonomous Navigation
+    </text>
+  </g>
+  
+  <!-- Decorative data streams -->
+  <g opacity="0.3">
+    <rect x="700" y="50" width="2" height="40" fill="#76b900">
+      <animate attributeName="height" values="40;80;40" dur="2s" repeatCount="indefinite"/>
+      <animate attributeName="y" values="50;10;50" dur="2s" repeatCount="indefinite"/>
+    </rect>
+    <rect x="720" y="30" width="2" height="60" fill="#76b900">
+      <animate attributeName="height" values="60;100;60" dur="2.5s" repeatCount="indefinite"/>
+      <animate attributeName="y" values="30;-10;30" dur="2.5s" repeatCount="indefinite"/>
+    </rect>
+    <rect x="740" y="40" width="2" height="50" fill="#76b900">
+      <animate attributeName="height" values="50;90;50" dur="1.8s" repeatCount="indefinite"/>
+      <animate attributeName="y" values="40;0;40" dur="1.8s" repeatCount="indefinite"/>
+    </rect>
+  </g>
+  
+  <!-- Footer tech line -->
+  <line x1="60" y1="625" x2="1220" y2="625" stroke="url(#nvidiaGlow)" stroke-width="2" opacity="0.5"/>
+  
+  <!-- Glowing particles -->
+  <g opacity="0.6">
+    <circle cx="500" cy="150" r="3" fill="#00ff88">
+      <animate attributeName="opacity" values="0.3;1;0.3" dur="3s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="650" cy="480" r="2" fill="#76b900">
+      <animate attributeName="opacity" values="0.5;1;0.5" dur="2s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="780" cy="520" r="2.5" fill="#00ff88">
+      <animate attributeName="opacity" values="0.4;1;0.4" dur="2.5s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="820" cy="180" r="2" fill="#76b900">
+      <animate attributeName="opacity" values="0.6;1;0.6" dur="1.8s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+</svg>
