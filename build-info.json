@@ -1,13 +1,13 @@
 {
-  "build_time": "2026-09-15T03:07:42Z",
+  "build_time": "2026-09-17T14:05:39Z",
   "source_repository": "TNG-Blue/Isaac_ROS-Jetbot_NanoOWL",
   "source_branch": "master",
-  "source_commit": "1432658c41e403f79dffd3eec0cdc5e5468a7a0c",
-  "commit_message": "Merge pull request #55 from TNG-Blue/claude/jetson-orin-nano-readme-l1qvhw"
+  "source_commit": "b4b682e36252abc7a04ac2250a82523953e05e9b",
+  "commit_message": "Merge pull request #58 from TNG-Blue/claude/openmv-api-eth-shell-jsgkr9"
 ""
-"chore(submodule): update submodules to latest commit",
-  "workflow_run_id": "34923704011",
-  "workflow_run_number": "30",
+"fix(openmv): port RT1062 firmware to ml/csi API",
+  "workflow_run_id": "35231134169",
+  "workflow_run_number": "32",
   "python_version": "3.10",
   "mkdocs_version": "9.7.7",
   "deployment_type": "automatic_push",
