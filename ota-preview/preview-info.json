@@ -1,0 +1,9 @@
+{
+  "component": "Server_OTA web interface",
+  "server_version": "3.0.0",
+  "mode": "static-preview",
+  "live_api": false,
+  "demo_endpoints": ["/api/stats", "/api/health", "/api/firmware/list"],
+  "source_commit": "223ff71284a1ea2a69e9b1c82f8d52eb41bb1a15",
+  "build_time": "2026-09-20T13:36:42Z"
+}

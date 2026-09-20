@@ -1,13 +1,13 @@
 {
-  "build_time": "2026-09-17T14:05:39Z",
+  "build_time": "2026-09-20T13:37:53Z",
   "source_repository": "TNG-Blue/Isaac_ROS-Jetbot_NanoOWL",
   "source_branch": "master",
-  "source_commit": "b4b682e36252abc7a04ac2250a82523953e05e9b",
-  "commit_message": "Merge pull request #58 from TNG-Blue/claude/openmv-api-eth-shell-jsgkr9"
+  "source_commit": "223ff71284a1ea2a69e9b1c82f8d52eb41bb1a15",
+  "commit_message": "Merge pull request #62 from TNG-Blue/claude/isaac-ros-jetbot-push-ota-r8p040"
 ""
-"fix(openmv): port RT1062 firmware to ml/csi API",
-  "workflow_run_id": "35231134169",
-  "workflow_run_number": "32",
+"feat(docs): publish OTA web UI via dual build",
+  "workflow_run_id": "35514006543",
+  "workflow_run_number": "34",
   "python_version": "3.10",
   "mkdocs_version": "9.7.7",
   "deployment_type": "automatic_push",

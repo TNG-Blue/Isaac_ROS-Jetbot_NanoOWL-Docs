@@ -1,0 +1,666 @@
+<!--
+  ~  ════════════════════════════════════════════════════════════════════════════
+  ~  SPDX-License-Identifier: Apache-2.0
+  ~  Copyright (c) 2025 TNG-Blue
+  ~
+  ~  Licensed under the Apache License, Version 2.0 (the "License");
+  ~  you may not use this file except in compliance with the License.
+  ~  You may obtain a copy of the License at
+  ~
+  ~      http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~  Unless required by applicable law or agreed to in writing, software
+  ~  distributed under the License is distributed on an "AS IS" BASIS,
+  ~  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~  See the License for the specific language governing permissions and
+  ~  limitations under the License.
+  ~  ════════════════════════════════════════════════════════════════════════════
+  -->
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Professional OTA Server - Enterprise Grade Firmware Management">
+    <title>Professional OTA Server v3.0.0</title>
+
+    <!-- Font & Icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+
+    <!-- Animations -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+
+    <!-- Stylesheets -->
+    <link href="static/css/style.css" rel="stylesheet">
+</head>
+<body data-theme="dark">
+    <!-- Loading Screen -->
+    <div id="loadingScreen" class="loading-screen">
+        <div class="loading-container">
+            <div class="loading-logo">
+                <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="50" cy="50" r="45" fill="none" stroke="currentColor" stroke-width="2" opacity="0.2"/>
+                    <path d="M 50 10 A 40 40 0 0 1 88.66 22.55" fill="none" stroke="url(#gradient)" stroke-width="3" stroke-linecap="round"/>
+                    <defs>
+                        <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#6366f1;stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:#8b5cf6;stop-opacity:1" />
+                        </linearGradient>
+                    </defs>
+                </svg>
+            </div>
+            <div class="loading-text">Professional OTA Server</div>
+            <div class="loading-subtext">v3.0.0 - Enterprise Edition</div>
+        </div>
+    </div>
+
+    <!-- Background Effects -->
+    <div class="bg-effects">
+        <div class="bg-gradient"></div>
+        <div class="bg-particles"></div>
+        <div class="bg-grid"></div>
+    </div>
+
+    <!-- Top Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <div class="brand-icon">
+                    <i class="fas fa-microchip"></i>
+                </div>
+                <div class="brand-text">
+                    <span class="brand-title">OTA Server Pro</span>
+                    <span class="brand-version">v3.0.0</span>
+                </div>
+            </div>
+
+            <div class="nav-search">
+                <div class="search-box">
+                    <i class="fas fa-search"></i>
+                    <input type="text" placeholder="Search firmware..." id="navSearch">
+                </div>
+            </div>
+
+            <div class="nav-stats">
+                <div class="stat-badge" title="Total Firmware Files">
+                    <i class="fas fa-layer-group"></i>
+                    <span id="navTotalFiles">0</span>
+                </div>
+                <div class="stat-badge" title="Storage Used">
+                    <i class="fas fa-database"></i>
+                    <span id="navTotalSize">0 MB</span>
+                </div>
+                <div class="stat-badge" title="Total Downloads">
+                    <i class="fas fa-download"></i>
+                    <span id="navDownloads">0</span>
+                </div>
+                <div class="stat-badge status-online" title="Server Status">
+                    <div class="status-dot"></div>
+                    <span>Online</span>
+                </div>
+            </div>
+
+            <div class="nav-controls">
+                <button class="nav-btn" id="themeToggle" title="Toggle Theme">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <button class="nav-btn" id="notificationsBtn" title="Notifications">
+                    <i class="fas fa-bell"></i>
+                    <span class="notification-badge">0</span>
+                </button>
+                <button class="nav-btn" id="settingsBtn" title="Settings">
+                    <i class="fas fa-cog"></i>
+                </button>
+                <button class="nav-btn" id="helpBtn" title="Help">
+                    <i class="fas fa-question-circle"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Progress Bar -->
+        <div class="nav-progress-bar">
+            <div class="nav-progress-fill"></div>
+        </div>
+    </nav>
+
+    <!-- Breadcrumb Navigation -->
+    <div class="breadcrumb-bar">
+        <div class="breadcrumb-container">
+            <span class="breadcrumb-item">
+                <i class="fas fa-home"></i>
+                Dashboard
+            </span>
+            <i class="fas fa-chevron-right"></i>
+            <span class="breadcrumb-item active">Firmware Manager</span>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main class="main-container">
+        <!-- Hero Section with CTA -->
+        <section class="hero-section" data-aos="fade-up">
+            <div class="hero-wrapper">
+                <div class="hero-content">
+                    <h1 class="hero-title">
+                        <span class="title-gradient">Professional</span>
+                        <span class="title-main">OTA Management</span>
+                    </h1>
+                    <p class="hero-description">
+                        Advanced firmware deployment platform with real-time monitoring, secure transfers,
+                        and enterprise-grade reliability for IoT and embedded systems.
+                    </p>
+
+                    <div class="hero-features">
+                        <div class="feature-tag">
+                            <i class="fas fa-shield-alt"></i>
+                            Enterprise Security
+                        </div>
+                        <div class="feature-tag">
+                            <i class="fas fa-bolt"></i>
+                            High Performance
+                        </div>
+                        <div class="feature-tag">
+                            <i class="fas fa-sync-alt"></i>
+                            Real-time Sync
+                        </div>
+                    </div>
+
+                    <div class="hero-actions">
+                        <button class="btn btn-primary btn-large" id="uploadTrigger">
+                            <i class="fas fa-cloud-upload-alt"></i>
+                            Upload Firmware
+                        </button>
+                        <button class="btn btn-secondary btn-large" onclick="refreshDashboard()">
+                            <i class="fas fa-sync-alt"></i>
+                            Refresh Dashboard
+                        </button>
+                        <a href="/api/stats" class="btn btn-ghost btn-large" target="_blank">
+                            <i class="fas fa-chart-line"></i>
+                            View API Stats
+                        </a>
+                    </div>
+                </div>
+
+                <div class="hero-illustration">
+                    <div class="illustration-container">
+                        <div class="floating-card card-1">
+                            <i class="fas fa-chip"></i>
+                        </div>
+                        <div class="floating-card card-2">
+                            <i class="fas fa-cloud"></i>
+                        </div>
+                        <div class="floating-card card-3">
+                            <i class="fas fa-bolt"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Dashboard Stats -->
+        <section class="dashboard-section" data-aos="fade-up" data-aos-delay="100">
+            <div class="section-title">
+                <h2>System Overview</h2>
+                <p>Real-time server metrics and performance indicators</p>
+            </div>
+
+            <div class="stats-grid">
+                <div class="stat-card stat-card-primary">
+                    <div class="stat-icon">
+                        <i class="fas fa-layer-group"></i>
+                    </div>
+                    <div class="stat-content">
+                        <div class="stat-value" id="statsFiles">0</div>
+                        <div class="stat-label">Firmware Files</div>
+                        <div class="stat-footer">
+                            <small>Last 30 days</small>
+                        </div>
+                    </div>
+                    <div class="stat-chart">
+                        <canvas id="chart-files"></canvas>
+                    </div>
+                </div>
+
+                <div class="stat-card stat-card-secondary">
+                    <div class="stat-icon">
+                        <i class="fas fa-hdd"></i>
+                    </div>
+                    <div class="stat-content">
+                        <div class="stat-value" id="statsSize">0 MB</div>
+                        <div class="stat-label">Storage Used</div>
+                        <div class="stat-footer">
+                            <small id="storagePercent">0%</small>
+                        </div>
+                    </div>
+                    <div class="stat-bar">
+                        <div class="stat-bar-fill" id="storageBar" style="width: 0%"></div>
+                    </div>
+                </div>
+
+                <div class="stat-card stat-card-success">
+                    <div class="stat-icon">
+                        <i class="fas fa-download"></i>
+                    </div>
+                    <div class="stat-content">
+                        <div class="stat-value" id="statsDownloads">0</div>
+                        <div class="stat-label">Total Downloads</div>
+                        <div class="stat-footer">
+                            <small>All time</small>
+                        </div>
+                    </div>
+                    <div class="stat-trend">
+                        <i class="fas fa-arrow-up"></i>
+                        <span>+24%</span>
+                    </div>
+                </div>
+
+                <div class="stat-card stat-card-info">
+                    <div class="stat-icon">
+                        <i class="fas fa-heartbeat"></i>
+                    </div>
+                    <div class="stat-content">
+                        <div class="stat-value" id="serverUptime">99.9%</div>
+                        <div class="stat-label">Server Uptime</div>
+                        <div class="stat-footer">
+                            <small id="lastHealthCheck">Last check: Now</small>
+                        </div>
+                    </div>
+                    <div class="status-indicator">
+                        <span class="status-online">Operational</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Upload Section with Drag & Drop -->
+        <section class="upload-section" data-aos="fade-up" data-aos-delay="200">
+            <div class="section-card">
+                <div class="card-header">
+                    <div class="header-content">
+                        <div class="header-icon">
+                            <i class="fas fa-cloud-upload-alt"></i>
+                        </div>
+                        <div class="header-text">
+                            <h3>Upload Firmware</h3>
+                            <p>Drag files here or click to browse from your computer</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="upload-zone" id="uploadZone">
+                    <div class="upload-content">
+                        <div class="upload-icon">
+                            <i class="fas fa-cloud-upload-alt"></i>
+                        </div>
+                        <h4>Drop your firmware files here</h4>
+                        <p>or <span class="upload-link">click to select files</span></p>
+
+                        <div class="upload-specifications">
+                            <div class="spec-item">
+                                <i class="fas fa-file"></i>
+                                <span><strong>Formats:</strong> .bin, .hex, .elf, .img, .fw</span>
+                            </div>
+                            <div class="spec-item">
+                                <i class="fas fa-weight"></i>
+                                <span><strong>Max Size:</strong> 50 MB per file</span>
+                            </div>
+                            <div class="spec-item">
+                                <i class="fas fa-files"></i>
+                                <span><strong>Multiple:</strong> Upload up to 5 files</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <input type="file" id="fileInput" accept=".bin,.hex,.elf,.img,.fw" multiple hidden>
+
+                    <!-- Upload Progress -->
+                    <div class="upload-progress" id="uploadProgress" style="display: none;">
+                        <div class="progress-header">
+                            <span class="progress-title">Uploading Files</span>
+                            <span class="progress-percent" id="progressPercent">0%</span>
+                        </div>
+                        <div class="progress-container">
+                            <div class="progress-bar">
+                                <div class="progress-fill" id="progressFill"></div>
+                            </div>
+                        </div>
+                        <div class="progress-info">
+                            <span id="progressText">Initializing upload...</span>
+                            <span id="progressSpeed">0 MB/s</span>
+                        </div>
+                        <div class="file-list-upload" id="fileListUpload"></div>
+                    </div>
+                </div>
+
+                <div class="upload-hints">
+                    <div class="hint-item">
+                        <i class="fas fa-info-circle"></i>
+                        <span>Files are automatically scanned and validated before storage</span>
+                    </div>
+                    <div class="hint-item">
+                        <i class="fas fa-shield-alt"></i>
+                        <span>All transfers are secure and encrypted</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Firmware Management -->
+        <section class="files-section" data-aos="fade-up" data-aos-delay="300">
+            <div class="section-card">
+                <div class="card-header">
+                    <div class="header-content">
+                        <div class="header-icon">
+                            <i class="fas fa-folder-open"></i>
+                        </div>
+                        <div class="header-text">
+                            <h3>Firmware Library</h3>
+                            <p>Manage and deploy your firmware files</p>
+                        </div>
+                    </div>
+                    <div class="header-actions">
+                        <div class="view-controls">
+                            <button class="view-btn active" data-view="grid" title="Grid View">
+                                <i class="fas fa-th"></i>
+                            </button>
+                            <button class="view-btn" data-view="list" title="List View">
+                                <i class="fas fa-list"></i>
+                            </button>
+                            <button class="view-btn" data-view="table" title="Table View">
+                                <i class="fas fa-table"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Search & Filter Bar -->
+                <div class="filters-bar">
+                    <div class="search-container">
+                        <i class="fas fa-search"></i>
+                        <input type="text" id="searchInput" placeholder="Search by name, version, or device...">
+                        <button class="search-clear" id="searchClear">
+                            <i class="fas fa-times"></i>
+                        </button>
+                    </div>
+
+                    <div class="filter-controls">
+                        <select id="deviceFilter" class="filter-select">
+                            <option value="">All Devices</option>
+                            <option value="ESP32">ESP32</option>
+                            <option value="ESP8266">ESP8266</option>
+                            <option value="Arduino">Arduino</option>
+                            <option value="STM32">STM32</option>
+                            <option value="Generic">Generic</option>
+                        </select>
+
+                        <select id="sortBy" class="filter-select">
+                            <option value="date-desc">Newest First</option>
+                            <option value="date-asc">Oldest First</option>
+                            <option value="name-asc">Name A-Z</option>
+                            <option value="name-desc">Name Z-A</option>
+                            <option value="size-desc">Largest First</option>
+                            <option value="size-asc">Smallest First</option>
+                        </select>
+
+                        <button class="btn btn-ghost" id="advancedFilter">
+                            <i class="fas fa-sliders-h"></i>
+                            Advanced
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Files Container -->
+                <div class="files-container">
+                    <!-- Grid View -->
+                    <div id="filesGrid" class="files-grid"></div>
+
+                    <!-- List View -->
+                    <div id="filesList" class="files-list" style="display: none;"></div>
+
+                    <!-- Table View -->
+                    <div id="filesTable" class="files-table" style="display: none;">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Filename</th>
+                                    <th>Version</th>
+                                    <th>Device</th>
+                                    <th>Size</th>
+                                    <th>Modified</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody id="tableBody">
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- Empty State -->
+                    <div id="emptyState" class="empty-state" style="display: none;">
+                        <div class="empty-icon">
+                            <i class="fas fa-inbox"></i>
+                        </div>
+                        <h3>No firmware files yet</h3>
+                        <p>Upload your first firmware file to get started with OTA updates</p>
+                        <button class="btn btn-primary" id="uploadTrigger2">
+                            <i class="fas fa-plus"></i>
+                            Upload First File
+                        </button>
+                    </div>
+
+                    <!-- Loading State -->
+                    <div id="loadingState" class="loading-state">
+                        <div class="spinner"></div>
+                        <p>Loading firmware files...</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Quick Actions Section -->
+        <section class="quick-actions-section" data-aos="fade-up" data-aos-delay="400">
+            <div class="section-title">
+                <h2>System Management</h2>
+            </div>
+
+            <div class="quick-actions-grid">
+                <div class="action-card">
+                    <div class="action-icon">
+                        <i class="fas fa-download"></i>
+                    </div>
+                    <h4>Download All</h4>
+                    <p>Export all firmware files as ZIP</p>
+                    <button class="btn btn-secondary btn-small" id="downloadAllBtn">
+                        <i class="fas fa-download"></i>
+                        Export
+                    </button>
+                </div>
+
+                <div class="action-card">
+                    <div class="action-icon">
+                        <i class="fas fa-trash-alt"></i>
+                    </div>
+                    <h4>Cleanup</h4>
+                    <p>Remove old or unused files</p>
+                    <button class="btn btn-warning btn-small" id="cleanupBtn">
+                        <i class="fas fa-broom"></i>
+                        Clean
+                    </button>
+                </div>
+
+                <div class="action-card">
+                    <div class="action-icon">
+                        <i class="fas fa-history"></i>
+                    </div>
+                    <h4>View Logs</h4>
+                    <p>Check activity and error logs</p>
+                    <button class="btn btn-secondary btn-small" id="logsBtn">
+                        <i class="fas fa-file-alt"></i>
+                        Logs
+                    </button>
+                </div>
+
+                <div class="action-card">
+                    <div class="action-icon">
+                        <i class="fas fa-cogs"></i>
+                    </div>
+                    <h4>Server Config</h4>
+                    <p>Configure server settings</p>
+                    <button class="btn btn-secondary btn-small" id="configBtn">
+                        <i class="fas fa-cog"></i>
+                        Config
+                    </button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Notifications Container -->
+    <div id="notifications" class="notifications-container"></div>
+
+    <!-- Settings Modal -->
+    <div id="settingsModal" class="modal">
+        <div class="modal-overlay"></div>
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Settings & Preferences</h3>
+                <button class="modal-close">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="settings-tabs">
+                    <button class="tab-btn active" data-tab="appearance">
+                        <i class="fas fa-palette"></i> Appearance
+                    </button>
+                    <button class="tab-btn" data-tab="upload">
+                        <i class="fas fa-cloud-upload-alt"></i> Upload
+                    </button>
+                    <button class="tab-btn" data-tab="security">
+                        <i class="fas fa-shield-alt"></i> Security
+                    </button>
+                    <button class="tab-btn" data-tab="about">
+                        <i class="fas fa-info-circle"></i> About
+                    </button>
+                </div>
+
+                <div class="settings-content">
+                    <div class="tab-content active" id="appearance-tab">
+                        <div class="setting-item">
+                            <label>Theme</label>
+                            <div class="radio-group">
+                                <label class="radio">
+                                    <input type="radio" name="theme" value="dark" checked>
+                                    <span>Dark</span>
+                                </label>
+                                <label class="radio">
+                                    <input type="radio" name="theme" value="light">
+                                    <span>Light</span>
+                                </label>
+                                <label class="radio">
+                                    <input type="radio" name="theme" value="auto">
+                                    <span>Auto</span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="setting-item">
+                            <label>Animations</label>
+                            <input type="checkbox" class="toggle-checkbox" id="animationsToggle" checked>
+                        </div>
+                    </div>
+
+                    <div class="tab-content" id="upload-tab">
+                        <div class="setting-item">
+                            <label>Auto-refresh after upload</label>
+                            <input type="checkbox" class="toggle-checkbox" id="autoRefreshToggle" checked>
+                        </div>
+                        <div class="setting-item">
+                            <label>Show notifications</label>
+                            <input type="checkbox" class="toggle-checkbox" id="uploadNotificationsToggle" checked>
+                        </div>
+                    </div>
+
+                    <div class="tab-content" id="security-tab">
+                        <div class="alert alert-info">
+                            <i class="fas fa-info-circle"></i>
+                            <span>All uploads are validated and scanned</span>
+                        </div>
+                    </div>
+
+                    <div class="tab-content" id="about-tab">
+                        <div class="about-content">
+                            <p><strong>Professional OTA Server</strong></p>
+                            <p>Version: 3.0.0 - Enterprise Edition</p>
+                            <p>Built for embedded systems and IoT devices</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- File Details Modal -->
+    <div id="fileModal" class="modal modal-large">
+        <div class="modal-overlay"></div>
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="fileModalTitle">File Details</h3>
+                <button class="modal-close">&times;</button>
+            </div>
+            <div class="modal-body" id="fileModalBody">
+                <!-- Dynamic content -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <div class="footer-branding">
+                    <h4>Professional OTA Server</h4>
+                    <p>Enterprise firmware management solution</p>
+                </div>
+                <div class="footer-links">
+                    <a href="#" class="footer-link">
+                        <i class="fas fa-file"></i> Documentation
+                    </a>
+                    <a href="#" class="footer-link">
+                        <i class="fas fa-code"></i> API Reference
+                    </a>
+                    <a href="#" class="footer-link">
+                        <i class="fas fa-headset"></i> Support
+                    </a>
+                    <a href="#" class="footer-link">
+                        <i class="fas fa-github"></i> GitHub
+                    </a>
+                </div>
+            </div>
+            <div class="footer-stats">
+                <div class="footer-stat">
+                    <span class="stat-value">v3.0.0</span>
+                    <span class="stat-label">Version</span>
+                </div>
+                <div class="footer-stat">
+                    <span class="stat-value" id="footerUptime">99.9%</span>
+                    <span class="stat-label">Uptime</span>
+                </div>
+                <div class="footer-stat">
+                    <span class="stat-value" id="footerStatus">Online</span>
+                    <span class="stat-label">Status</span>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2025 TNG-Blue. Professional OTA Server. Built with ❤️ for embedded systems.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>window.OTA_PREVIEW_MODE = true;</script>
+    <script src="static/js/preview-demo.js"></script>
+    <script src="static/js/script.js"></script>
+</body>
+</html>
