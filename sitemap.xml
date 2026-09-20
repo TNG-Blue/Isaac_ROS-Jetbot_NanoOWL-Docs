@@ -289,6 +289,22 @@
          <lastmod>2026-09-20</lastmod>
     </url>
     <url>
+         <loc>https://TNG-Blue.github.io/Isaac_ROS-Jetbot_NanoOWL/server-ota/</loc>
+         <lastmod>2026-09-20</lastmod>
+    </url>
+    <url>
+         <loc>https://TNG-Blue.github.io/Isaac_ROS-Jetbot_NanoOWL/server-ota/api/</loc>
+         <lastmod>2026-09-20</lastmod>
+    </url>
+    <url>
+         <loc>https://TNG-Blue.github.io/Isaac_ROS-Jetbot_NanoOWL/server-ota/architecture/</loc>
+         <lastmod>2026-09-20</lastmod>
+    </url>
+    <url>
+         <loc>https://TNG-Blue.github.io/Isaac_ROS-Jetbot_NanoOWL/server-ota/deployment/</loc>
+         <lastmod>2026-09-20</lastmod>
+    </url>
+    <url>
          <loc>https://TNG-Blue.github.io/Isaac_ROS-Jetbot_NanoOWL/tutorials/</loc>
          <lastmod>2026-09-20</lastmod>
     </url>

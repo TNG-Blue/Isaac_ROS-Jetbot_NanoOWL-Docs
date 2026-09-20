@@ -1,13 +1,13 @@
 {
-  "build_time": "2026-09-20T13:37:53Z",
+  "build_time": "2026-09-20T13:54:25Z",
   "source_repository": "TNG-Blue/Isaac_ROS-Jetbot_NanoOWL",
   "source_branch": "master",
-  "source_commit": "223ff71284a1ea2a69e9b1c82f8d52eb41bb1a15",
-  "commit_message": "Merge pull request #62 from TNG-Blue/claude/isaac-ros-jetbot-push-ota-r8p040"
+  "source_commit": "356b6c8e8e793033f0baec0e787ce6830f75cc22",
+  "commit_message": "Merge pull request #63 from TNG-Blue/claude/isaac-ros-jetbot-push-ota-r8p040"
 ""
-"feat(docs): publish OTA web UI via dual build",
-  "workflow_run_id": "35514006543",
-  "workflow_run_number": "34",
+"feat(docs): publish OTA web UI via dual build and add Server OTA section",
+  "workflow_run_id": "35514804436",
+  "workflow_run_number": "36",
   "python_version": "3.10",
   "mkdocs_version": "9.7.7",
   "deployment_type": "automatic_push",

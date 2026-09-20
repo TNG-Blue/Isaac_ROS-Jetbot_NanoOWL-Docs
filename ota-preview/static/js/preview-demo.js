@@ -39,6 +39,13 @@
      /api/firmware/list    -> [{size, mod_time, name, version, device_type,
                                description}]            (models.FirmwareInfo)
 
+   The payload SHAPES match the handlers exactly. Two health values are
+   illustrative rather than reproductions: the current server returns
+   goroutines = 0 (the struct feeding it is never populated) and
+   timestamp = 0 (services.GetUnixTime is a TODO stub). The firmware entries,
+   by contrast, carry exactly the version, device_type and description the
+   server's own metadata derivation would produce for those file names.
+
    Write paths (upload / download / delete) have no static equivalent, so they
    are replaced by an explanatory notification instead of a failing request.
    ════════════════════════════════════════════════════════════════════════════ */
@@ -64,46 +71,51 @@
         return new Date(Date.now() - days * DAY_MS).toISOString();
     }
 
+    // File names, versions, device types and descriptions below are exactly what
+    // services.ListFirmwareFiles() would derive for these files: extractVersion()
+    // reads the text after "_v" up to the next "." or "_", detectDeviceType()
+    // matches esp32/esp8266/arduino/stm32 in the name (otherwise "Generic"), and
+    // generateDescription() returns "Firmware for <device type>".
     const DEMO_FILES = [
         {
-            name: 'jetson_orin_nano_super_perception_v2.4.1.img',
+            name: 'jetson_orin_nano_super_perception_v241.img',
             size: 268435456,
             mod_time: daysAgo(2),
-            version: '2.4.1',
-            device_type: 'jetson-orin-nano-super',
-            description: 'Isaac ROS perception stack (NanoOWL + TensorRT 10.3, sm_87)'
+            version: 'v241',
+            device_type: 'Generic',
+            description: 'Firmware for Generic'
         },
         {
-            name: 'stm32f407_motor_control_v1.8.3.bin',
+            name: 'stm32f407_motor_control_v183.bin',
             size: 262144,
             mod_time: daysAgo(6),
-            version: '1.8.3',
-            device_type: 'stm32f407',
-            description: 'Closed-loop wheel controller (encoder feedback, 1 kHz loop)'
+            version: 'v183',
+            device_type: 'STM32',
+            description: 'Firmware for STM32'
         },
         {
-            name: 'openmv_rt1062_vision_v1.2.0.bin',
+            name: 'openmv_rt1062_vision_v120.bin',
             size: 1572864,
             mod_time: daysAgo(11),
-            version: '1.2.0',
-            device_type: 'openmv-rt1062',
-            description: 'OpenMV RT1062 vision bridge firmware (CSI + ml API)'
+            version: 'v120',
+            device_type: 'Generic',
+            description: 'Firmware for Generic'
         },
         {
-            name: 'portenta_h7_flight_control_v0.9.5.bin',
+            name: 'esp32_sensor_bridge_v210.bin',
+            size: 1048576,
+            mod_time: daysAgo(15),
+            version: 'v210',
+            device_type: 'ESP32',
+            description: 'Firmware for ESP32'
+        },
+        {
+            name: 'arduino_portenta_h7_flight_v095.bin',
             size: 786432,
             mod_time: daysAgo(19),
-            version: '0.9.5',
-            device_type: 'portenta-h7',
-            description: 'JetOwl flight-control firmware (attitude estimator + mixer)'
-        },
-        {
-            name: 'jetson_orin_nano_super_perception_v2.3.7.img',
-            size: 264241152,
-            mod_time: daysAgo(34),
-            version: '2.3.7',
-            device_type: 'jetson-orin-nano-super',
-            description: 'Previous perception release kept for rollback'
+            version: 'v095',
+            device_type: 'Arduino',
+            description: 'Firmware for Arduino'
         }
     ];
 
