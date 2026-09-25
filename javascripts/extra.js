@@ -18,406 +18,299 @@
  */
 
 /* =============================================================================
- * Isaac ROS Jetbot NanoOWL - Custom JavaScript
- * Interactive features and enhancements
+ * Isaac ROS Jetbot NanoOWL - Documentation site behaviour
+ *
+ * Material for MkDocs runs with `navigation.instant`: pages are swapped in over
+ * XHR and scripts are NOT re-executed. Everything that touches page content is
+ * therefore registered on Material's `document$` observable, which emits once for
+ * the first load and again after every instant navigation. Each enhancer is
+ * idempotent (marks what it has processed) so a second emission never duplicates
+ * labels, listeners or icons.
+ *
+ * Global behaviour (keyboard shortcuts, progress bar) is installed exactly once.
  * ============================================================================= */
 
-(function() {
+(function () {
   'use strict';
 
-  /* ===========================================================================
-   * Scroll-based Animations
-   * =========================================================================== */
-  function initScrollAnimations() {
-    const observerOptions = {
-      threshold: 0.1,
-      rootMargin: '0px 0px -50px 0px'
-    };
+  var REDUCED_MOTION = window.matchMedia &&
+    window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-        }
-      });
-    }, observerOptions);
-
-    // Observe elements with scroll-fade-in class
-    document.querySelectorAll('.scroll-fade-in').forEach(el => {
-      observer.observe(el);
-    });
-  }
-
-  /* ===========================================================================
-   * Smooth Scroll for Anchor Links
-   * =========================================================================== */
-  function initSmoothScroll() {
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function(e) {
-        const href = this.getAttribute('href');
-        if (href === '#' || href === '#!') return;
-
-        const target = document.querySelector(href);
-        if (target) {
-          e.preventDefault();
-          target.scrollIntoView({
-            behavior: 'smooth',
-            block: 'start'
-          });
-
-          // Update URL without jumping
-          if (history.pushState) {
-            history.pushState(null, null, href);
-          }
-        }
-      });
-    });
-  }
-
-  /* ===========================================================================
-   * Back to Top Button
-   * =========================================================================== */
-  function initBackToTop() {
-    const backToTopBtn = document.querySelector('.md-top');
-    if (!backToTopBtn) return;
-
-    window.addEventListener('scroll', () => {
-      if (window.pageYOffset > 300) {
-        backToTopBtn.style.opacity = '1';
-        backToTopBtn.style.visibility = 'visible';
-      } else {
-        backToTopBtn.style.opacity = '0';
-        backToTopBtn.style.visibility = 'hidden';
-      }
-    });
-  }
-
-  /* ===========================================================================
-   * Code Block Copy Enhancement
-   * =========================================================================== */
-  function enhanceCodeBlocks() {
-    document.querySelectorAll('.highlight').forEach(block => {
-      // Add language label
-      const codeElement = block.querySelector('code[class*="language-"]');
-      if (codeElement) {
-        const language = codeElement.className.match(/language-(\w+)/);
-        if (language && language[1]) {
-          const label = document.createElement('div');
-          label.className = 'code-language-label';
-          label.textContent = language[1].toUpperCase();
-          label.style.cssText = `
-            position: absolute;
-            top: 0.5rem;
-            right: 3rem;
-            background: rgba(118, 185, 0, 0.8);
-            color: white;
-            padding: 0.25rem 0.75rem;
-            border-radius: 4px;
-            font-size: 0.7rem;
-            font-weight: 600;
-            letter-spacing: 0.05em;
-          `;
-          block.style.position = 'relative';
-          block.insertBefore(label, block.firstChild);
-        }
-      }
-    });
-
-    // Enhanced copy button feedback
-    document.querySelectorAll('.md-clipboard').forEach(btn => {
-      btn.addEventListener('click', () => {
-        const originalTitle = btn.getAttribute('title');
-        btn.setAttribute('title', 'Copied!');
-        btn.style.color = '#76B900';
-
-        setTimeout(() => {
-          btn.setAttribute('title', originalTitle);
-          btn.style.color = '';
-        }, 2000);
-      });
-    });
-  }
-
-  /* ===========================================================================
-   * Table of Contents Highlighting
-   * =========================================================================== */
-  function initTocHighlight() {
-    const tocLinks = document.querySelectorAll('.md-nav__link');
-    const headings = document.querySelectorAll('h1, h2, h3, h4, h5, h6');
-
-    if (!tocLinks.length || !headings.length) return;
-
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          const id = entry.target.getAttribute('id');
-          if (!id) return;
-
-          tocLinks.forEach(link => {
-            link.classList.remove('active');
-            if (link.getAttribute('href') === `#${id}`) {
-              link.classList.add('active');
-            }
-          });
-        }
-      });
-    }, {
-      rootMargin: '-80px 0px -80% 0px'
-    });
-
-    headings.forEach(heading => {
-      if (heading.id) {
-        observer.observe(heading);
-      }
-    });
-  }
-
-  /* ===========================================================================
-   * Search Enhancement
-   * =========================================================================== */
-  function enhanceSearch() {
-    const searchInput = document.querySelector('.md-search__input');
-    if (!searchInput) return;
-
-    // Add search keyboard shortcut (Ctrl/Cmd + K)
-    document.addEventListener('keydown', (e) => {
-      if ((e.ctrlKey || e.metaKey) && e.key === 'k') {
-        e.preventDefault();
-        searchInput.focus();
-      }
-
-      // ESC to close search
-      if (e.key === 'Escape' && document.activeElement === searchInput) {
-        searchInput.blur();
-      }
-    });
-
-    // Search analytics (if needed)
-    searchInput.addEventListener('search', (e) => {
-      const query = e.target.value;
-      if (query && window.gtag) {
-        gtag('event', 'search', {
-          search_term: query
-        });
-      }
-    });
-  }
-
-  /* ===========================================================================
-   * Performance Stats Animation
-   * =========================================================================== */
-  function animateStats() {
-    const stats = document.querySelectorAll('.stat-value');
-    if (!stats.length) return;
-
-    const animateValue = (element, start, end, duration) => {
-      const startTime = performance.now();
-      const endValue = parseFloat(end);
-
-      const step = (currentTime) => {
-        const elapsed = currentTime - startTime;
-        const progress = Math.min(elapsed / duration, 1);
-
-        const current = start + (endValue - start) * easeOutQuad(progress);
-        element.textContent = formatNumber(current, end);
-
-        if (progress < 1) {
-          requestAnimationFrame(step);
-        }
-      };
-
-      requestAnimationFrame(step);
-    };
-
-    const easeOutQuad = (t) => t * (2 - t);
-
-    const formatNumber = (num, original) => {
-      if (original.includes('+')) {
-        return Math.round(num) + '+';
-      }
-      if (original.includes('%')) {
-        return num.toFixed(1) + '%';
-      }
-      if (original.includes('ms')) {
-        return Math.round(num) + 'ms';
-      }
-      if (original.includes('W')) {
-        return Math.round(num) + 'W';
-      }
-      return Math.round(num);
-    };
-
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting && !entry.target.classList.contains('animated')) {
-          entry.target.classList.add('animated');
-          const endValue = entry.target.textContent;
-          animateValue(entry.target, 0, endValue, 2000);
-        }
-      });
-    }, { threshold: 0.5 });
-
-    stats.forEach(stat => observer.observe(stat));
-  }
-
-  /* ===========================================================================
-   * External Links
-   * =========================================================================== */
-  function handleExternalLinks() {
-    document.querySelectorAll('a[href^="http"]').forEach(link => {
-      if (!link.hostname.includes(window.location.hostname)) {
-        link.setAttribute('target', '_blank');
-        link.setAttribute('rel', 'noopener noreferrer');
-
-        // Add external link icon
-        if (!link.querySelector('.external-icon')) {
-          const icon = document.createElement('span');
-          icon.className = 'external-icon';
-          icon.innerHTML = ' ↗';
-          icon.style.cssText = 'font-size: 0.8em; opacity: 0.6;';
-          link.appendChild(icon);
-        }
-      }
-    });
-  }
-
-  /* ===========================================================================
-   * Dark Mode Toggle Enhancement
-   * =========================================================================== */
-  function enhanceDarkMode() {
-    const toggle = document.querySelector('[data-md-component="palette"]');
-    if (!toggle) return;
-
-    // Save preference
-    toggle.addEventListener('change', (e) => {
-      const scheme = e.target.value;
-      localStorage.setItem('color-scheme', scheme);
-
-      // Analytics
-      if (window.gtag) {
-        gtag('event', 'theme_change', {
-          theme: scheme
-        });
-      }
-    });
-
-    // Apply saved preference on load
-    const savedScheme = localStorage.getItem('color-scheme');
-    if (savedScheme) {
-      const input = document.querySelector(`input[value="${savedScheme}"]`);
-      if (input) input.checked = true;
+  /* ---------------------------------------------------------------------------
+   * Site root
+   * The site is served from a sub-path (…/Isaac_ROS-Jetbot_NanoOWL-Docs/), so
+   * hard-coded "/getting-started/" URLs break. Material writes the relative path
+   * to the site root into <script id="__config">; resolve against it.
+   * ------------------------------------------------------------------------- */
+  function siteRoot() {
+    try {
+      var cfg = JSON.parse(document.getElementById('__config').textContent);
+      return new URL(cfg.base || '.', window.location.href);
+    } catch (e) {
+      return new URL('.', window.location.href);
     }
   }
 
-  /* ===========================================================================
-   * Print Optimization
-   * =========================================================================== */
-  function initPrintOptimization() {
-    window.addEventListener('beforeprint', () => {
-      // Expand all collapsed sections
-      document.querySelectorAll('details').forEach(details => {
-        details.setAttribute('open', '');
+  function go(path) {
+    window.location.href = new URL(path, siteRoot()).href;
+  }
+
+  /* ---------------------------------------------------------------------------
+   * Retire the old service worker
+   * Earlier builds shipped a cache-first service worker (javascripts/sw.js) that
+   * could keep serving stale pages after a deploy. It is gone; unregister any copy
+   * a browser may still hold and drop its caches.
+   * ------------------------------------------------------------------------- */
+  function retireServiceWorker() {
+    if (!('serviceWorker' in navigator)) return;
+    navigator.serviceWorker.getRegistrations().then(function (regs) {
+      regs.forEach(function (reg) {
+        var sw = reg.active || reg.waiting || reg.installing;
+        if (sw && /\/javascripts\/sw\.js$/.test(sw.scriptURL)) reg.unregister();
       });
+    }).catch(function () {});
+    if (window.caches && caches.keys) {
+      caches.keys().then(function (keys) {
+        keys.filter(function (k) { return /^jetbot-/.test(k); })
+          .forEach(function (k) { caches.delete(k); });
+      }).catch(function () {});
+    }
+  }
 
-      // Show all code blocks
-      document.querySelectorAll('.highlight').forEach(block => {
-        block.style.maxHeight = 'none';
+  /* ---------------------------------------------------------------------------
+   * External links open in a new tab (content area only)
+   * ------------------------------------------------------------------------- */
+  function markExternalLinks(root) {
+    root.querySelectorAll('.md-content a[href^="http"]').forEach(function (a) {
+      if (a.dataset.extChecked) return;
+      a.dataset.extChecked = '1';
+      if (a.hostname === window.location.hostname) return;
+      a.setAttribute('target', '_blank');
+      a.setAttribute('rel', 'noopener noreferrer');
+      if (!a.matches('.md-button, .md-content__button, .hero-button, .btn-premium') &&
+          !a.querySelector('img, svg')) {
+        a.classList.add('external-link');
+      }
+    });
+  }
+
+  /* ---------------------------------------------------------------------------
+   * Count-up animation for headline numbers
+   *
+   * Only the FIRST number in the label is animated and only when the rest of
+   * the label contains no digits, so "35+", "<20 ms" and "98.5%" animate while
+   * ranges such as "10-15 W" stay static. The original text is always restored
+   * verbatim at the end, and screen readers get the final value via aria-label.
+   * ------------------------------------------------------------------------- */
+  var NUMBER_RE = /^(\D*?)(\d+(?:\.\d+)?)(\D*)$/;
+
+  function countUp(el) {
+    var original = el.dataset.countOriginal || el.textContent.trim();
+    el.dataset.countOriginal = original;
+    var m = NUMBER_RE.exec(original);
+    if (!m || REDUCED_MOTION) { el.textContent = original; return; }
+
+    var prefix = m[1], target = parseFloat(m[2]), suffix = m[3];
+    var decimals = (m[2].split('.')[1] || '').length;
+    var duration = 1200;
+    var t0 = null;
+    el.setAttribute('aria-label', original);
+
+    function frame(now) {
+      if (t0 === null) t0 = now;
+      var p = Math.min((now - t0) / duration, 1);
+      var eased = 1 - Math.pow(1 - p, 3);          // ease-out cubic
+      el.textContent = prefix + (target * eased).toFixed(decimals) + suffix;
+      if (p < 1) requestAnimationFrame(frame);
+      else el.textContent = original;
+    }
+    requestAnimationFrame(frame);
+  }
+
+  function animateCounters(root) {
+    var els = root.querySelectorAll('.stat-value, .stat-number');
+    if (!els.length) return;
+    if (!('IntersectionObserver' in window)) return;
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (!entry.isIntersecting) return;
+        io.unobserve(entry.target);
+        countUp(entry.target);
       });
+    }, { threshold: 0.6 });
+    els.forEach(function (el) {
+      if (el.dataset.countBound) return;
+      el.dataset.countBound = '1';
+      io.observe(el);
     });
   }
 
-  /* ===========================================================================
-   * Keyboard Navigation
-   * =========================================================================== */
-  function initKeyboardNav() {
-    document.addEventListener('keydown', (e) => {
-      // Only if not in input/textarea
-      if (['INPUT', 'TEXTAREA'].includes(document.activeElement.tagName)) {
-        return;
-      }
-
-      // Left arrow - previous page
-      if (e.key === 'ArrowLeft') {
-        const prevLink = document.querySelector('.md-footer__link--prev');
-        if (prevLink) prevLink.click();
-      }
-
-      // Right arrow - next page
-      if (e.key === 'ArrowRight') {
-        const nextLink = document.querySelector('.md-footer__link--next');
-        if (nextLink) nextLink.click();
-      }
-    });
-  }
-
-  /* ===========================================================================
-   * Performance Monitoring
-   * =========================================================================== */
-  function monitorPerformance() {
-    if (!window.performance || !window.gtag) return;
-
-    window.addEventListener('load', () => {
-      setTimeout(() => {
-        const perfData = performance.timing;
-        const pageLoadTime = perfData.loadEventEnd - perfData.navigationStart;
-        const dnsTime = perfData.domainLookupEnd - perfData.domainLookupStart;
-        const tcpTime = perfData.connectEnd - perfData.connectStart;
-        const renderTime = perfData.domComplete - perfData.domLoading;
-
-        gtag('event', 'timing_complete', {
-          name: 'page_load',
-          value: pageLoadTime,
-          event_category: 'Performance'
-        });
-
-        console.log('📊 Performance Metrics:', {
-          pageLoadTime: `${pageLoadTime}ms`,
-          dnsTime: `${dnsTime}ms`,
-          tcpTime: `${tcpTime}ms`,
-          renderTime: `${renderTime}ms`
-        });
-      }, 0);
-    });
-  }
-
-  /* ===========================================================================
-   * Initialize All Features
-   * =========================================================================== */
-  function init() {
-    // Wait for DOM to be ready
-    if (document.readyState === 'loading') {
-      document.addEventListener('DOMContentLoaded', init);
+  /* ---------------------------------------------------------------------------
+   * Reveal timeline entries as they scroll into view
+   * ------------------------------------------------------------------------- */
+  function revealTimeline(root) {
+    var items = root.querySelectorAll('.timeline-item:not(.is-visible)');
+    if (!items.length) return;
+    if (REDUCED_MOTION || !('IntersectionObserver' in window)) {
+      items.forEach(function (it) { it.classList.add('is-visible'); });
       return;
     }
-
-    console.log('🤖 Isaac ROS Jetbot NanoOWL - Documentation Initialized');
-
-    initScrollAnimations();
-    initSmoothScroll();
-    initBackToTop();
-    enhanceCodeBlocks();
-    initTocHighlight();
-    enhanceSearch();
-    animateStats();
-    handleExternalLinks();
-    enhanceDarkMode();
-    initPrintOptimization();
-    initKeyboardNav();
-    monitorPerformance();
-
-    // Re-initialize on page navigation (for SPAs)
-    if (typeof document$ !== 'undefined') {
-      document$.subscribe(() => {
-        setTimeout(() => {
-          enhanceCodeBlocks();
-          animateStats();
-          handleExternalLinks();
-        }, 100);
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add('is-visible');
+        io.unobserve(entry.target);
       });
+    }, { threshold: 0.15 });
+    items.forEach(function (it) {
+      it.classList.add('will-reveal');
+      io.observe(it);
+    });
+  }
+
+  /* ---------------------------------------------------------------------------
+   * Reading progress bar (single element, rAF-throttled)
+   * ------------------------------------------------------------------------- */
+  var progressFill = null;
+  var progressQueued = false;
+
+  function updateProgress() {
+    progressQueued = false;
+    if (!progressFill) return;
+    var doc = document.documentElement;
+    var max = doc.scrollHeight - window.innerHeight;
+    var pct = max > 0 ? Math.min(100, (window.scrollY / max) * 100) : 0;
+    progressFill.style.transform = 'scaleX(' + (pct / 100) + ')';
+  }
+
+  function installProgressBar() {
+    var bar = document.createElement('div');
+    bar.className = 'reading-progress';
+    bar.setAttribute('aria-hidden', 'true');
+    bar.innerHTML = '<div class="reading-progress__fill"></div>';
+    document.body.appendChild(bar);
+    progressFill = bar.firstChild;
+    window.addEventListener('scroll', function () {
+      if (!progressQueued) {
+        progressQueued = true;
+        requestAnimationFrame(updateProgress);
+      }
+    }, { passive: true });
+    window.addEventListener('resize', updateProgress, { passive: true });
+  }
+
+  /* ---------------------------------------------------------------------------
+   * Keyboard shortcuts
+   * Material already owns / s f (search) and n p (next / previous page); these
+   * add ? d h g and never fire while typing or with a modifier held.
+   * ------------------------------------------------------------------------- */
+  var SHORTCUTS = [
+    ['?', 'Show this help'],
+    ['/', 'Focus search (Material)'],
+    ['n / p', 'Next / previous page (Material)'],
+    ['d', 'Cycle colour scheme'],
+    ['h', 'Go to home'],
+    ['g', 'Go to Getting Started'],
+    ['Esc', 'Close this dialog']
+  ];
+
+  function closeHelp() {
+    var dlg = document.querySelector('.shortcut-dialog');
+    if (dlg) dlg.remove();
+  }
+
+  function openHelp() {
+    if (document.querySelector('.shortcut-dialog')) return;
+    var wrap = document.createElement('div');
+    wrap.className = 'shortcut-dialog';
+    wrap.innerHTML =
+      '<div class="shortcut-dialog__backdrop" data-close></div>' +
+      '<div class="shortcut-dialog__panel" role="dialog" aria-modal="true" aria-labelledby="shortcut-title">' +
+      '<h3 id="shortcut-title">Keyboard shortcuts</h3><table></table>' +
+      '<button type="button" class="md-button" data-close>Close</button></div>';
+    var table = wrap.querySelector('table');
+    SHORTCUTS.forEach(function (row) {
+      var tr = document.createElement('tr');
+      var k = document.createElement('td');
+      var kbd = document.createElement('kbd');
+      kbd.textContent = row[0];
+      k.appendChild(kbd);
+      var d = document.createElement('td');
+      d.textContent = row[1];
+      tr.appendChild(k);
+      tr.appendChild(d);
+      table.appendChild(tr);
+    });
+    wrap.addEventListener('click', function (e) {
+      if (e.target.hasAttribute('data-close')) closeHelp();
+    });
+    document.body.appendChild(wrap);
+    wrap.querySelector('button').focus();
+  }
+
+  function cycleScheme() {
+    // The visible palette toggle is the one that switches to the next scheme.
+    // Clicking it focuses the palette's radio input; give focus back to the page
+    // so the next shortcut is not swallowed.
+    var next = document.querySelector('form[data-md-component="palette"] label:not([hidden])');
+    if (!next) return;
+    next.click();
+    if (document.activeElement && document.activeElement.blur) document.activeElement.blur();
+  }
+
+  function isTyping(t) {
+    if (!t) return false;
+    if (t.isContentEditable || t.tagName === 'TEXTAREA' || t.tagName === 'SELECT') return true;
+    if (t.tagName === 'INPUT') {
+      return !/^(radio|checkbox|button|submit|reset|range|color)$/i.test(t.type);
+    }
+    return false;
+  }
+
+  function installShortcuts() {
+    document.addEventListener('keydown', function (e) {
+      if (e.ctrlKey || e.metaKey || e.altKey) return;
+      if (isTyping(e.target)) return;
+      if (e.key === 'Escape') { closeHelp(); return; }
+      var action = {
+        '?': openHelp,
+        'd': cycleScheme,
+        'h': function () { go('./'); },
+        'g': function () { go('getting-started/'); }
+      }[e.key];
+      if (action) {
+        e.preventDefault();
+        action();
+      }
+    });
+  }
+
+  /* ---------------------------------------------------------------------------
+   * Wiring
+   * ------------------------------------------------------------------------- */
+  function onPage() {
+    closeHelp();
+    markExternalLinks(document);
+    animateCounters(document);
+    revealTimeline(document);
+    updateProgress();
+  }
+
+  function init() {
+    retireServiceWorker();
+    installProgressBar();
+    installShortcuts();
+    if (typeof window.document$ !== 'undefined') {
+      // Emits for the initial page and after each instant navigation
+      window.document$.subscribe(onPage);
+    } else {
+      onPage();
     }
   }
 
-  // Start initialization
-  init();
-
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
 })();

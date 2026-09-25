@@ -18,525 +18,509 @@
  */
 
 /* =============================================================================
- * Isaac ROS Jetbot NanoOWL - Custom Styles
- * Professional design inspired by Jetson AI Lab
+ * Isaac ROS Jetbot NanoOWL - Base theme
+ *
+ * Sizing rule: Material sets the root font size to 20-24 px depending on the
+ * viewport (html { font-size: 125% | 137.5% | 150% }) and the article text to
+ * 0.8rem. Component sizes below are therefore given in `em` relative to the
+ * article text, never in `rem` - a `3rem` headline is 60-72 px and overflows the
+ * cards it lives in.
  * ============================================================================= */
 
-/* =============================================================================
- * Color Scheme - NVIDIA Inspired
- * ============================================================================= */
+/* -----------------------------------------------------------------------------
+ * Design tokens
+ * `theme.palette.primary: custom` means Material ships no primary colour at all,
+ * so the full set of --md-primary-* variables has to be defined here.
+ * --------------------------------------------------------------------------- */
 :root {
-  /* NVIDIA Brand Colors */
   --nvidia-green: #76B900;
   --nvidia-dark-green: #5a8f00;
   --nvidia-light-green: #8fd817;
-
-  /* Accent Colors */
   --accent-blue: #00AED9;
-  --accent-purple: #8B5CF6;
-  --accent-orange: #FF6B35;
 
-  /* Neutral Colors */
-  --dark-bg: #0F1419;
-  --dark-surface: #1A1F2E;
-  --dark-card: #252A3A;
-  --light-bg: #FFFFFF;
-  --light-surface: #F8F9FA;
-  --light-card: #FFFFFF;
+  --md-primary-fg-color: #76B900;
+  --md-primary-fg-color--light: #8fd817;
+  --md-primary-fg-color--dark: #5a8f00;
+  --md-primary-bg-color: #ffffff;
+  --md-primary-bg-color--light: rgba(255, 255, 255, 0.7);
 
-  /* Text Colors */
-  --text-primary: #1F2937;
-  --text-secondary: #6B7280;
-  --text-light: #9CA3AF;
+  --brand-surface: #f6f8f4;
+  --brand-card: #ffffff;
+  --brand-border: rgba(0, 0, 0, 0.09);
+  --brand-muted: #5b6472;
+  --brand-link: #4a7a00;          /* 4.9:1 on white - #76B900 alone is 2.3:1 */
+  --brand-shadow: 0 1px 2px rgba(0, 0, 0, 0.06), 0 4px 12px rgba(0, 0, 0, 0.05);
+  --brand-shadow-hover: 0 6px 24px rgba(90, 143, 0, 0.18);
+  --brand-radius: 0.6rem;
 
-  /* Border & Shadow */
-  --border-color: #E5E7EB;
-  --shadow-sm: 0 1px 3px rgba(0,0,0,0.05);
-  --shadow-md: 0 4px 6px rgba(0,0,0,0.07);
-  --shadow-lg: 0 10px 15px rgba(0,0,0,0.1);
-  --shadow-xl: 0 20px 25px rgba(0,0,0,0.15);
+  /* Legacy names still referenced by inline styles in a few pages */
+  --text-secondary: var(--brand-muted);
 }
 
-/* Dark Mode Colors */
-[data-md-color-scheme="slate"] {
-  --md-primary-fg-color: var(--nvidia-green);
-  --md-accent-fg-color: var(--nvidia-light-green);
-  --md-default-bg-color: var(--dark-bg);
-  --md-default-fg-color: #E5E7EB;
-  --md-code-bg-color: var(--dark-surface);
-  --md-code-fg-color: #F9FAFB;
-}
-
-/* Light Mode Colors */
 [data-md-color-scheme="default"] {
-  --md-primary-fg-color: var(--nvidia-green);
-  --md-accent-fg-color: var(--nvidia-dark-green);
-  --md-default-bg-color: var(--light-bg);
-  --md-default-fg-color: var(--text-primary);
+  --md-accent-fg-color: #5a8f00;
+  --md-typeset-a-color: var(--brand-link);
 }
 
-/* =============================================================================
- * Typography Enhancements
- * ============================================================================= */
-.md-typeset {
-  font-size: 0.9rem;
-  line-height: 1.7;
-  color: var(--md-default-fg-color);
+[data-md-color-scheme="slate"] {
+  --md-hue: 215;
+  --md-accent-fg-color: #8fd817;
+  --md-typeset-a-color: #9bdc2a;
+  --md-default-bg-color: #11151c;
+  --md-code-bg-color: #1a1f29;
+
+  --brand-surface: #171c25;
+  --brand-card: #1a1f29;
+  --brand-border: rgba(255, 255, 255, 0.09);
+  --brand-muted: #a3acb9;
+  --brand-link: #9bdc2a;
+  --brand-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+  --brand-shadow-hover: 0 6px 24px rgba(118, 185, 0, 0.18);
 }
 
-.md-typeset h1 {
-  font-weight: 800;
-  font-size: 2.5rem;
-  letter-spacing: -0.025em;
-  margin-bottom: 1.5rem;
-  background: linear-gradient(135deg, var(--nvidia-green) 0%, var(--accent-blue) 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-.md-typeset h2 {
-  font-weight: 700;
-  font-size: 2rem;
-  margin-top: 2.5rem;
-  margin-bottom: 1rem;
-  padding-bottom: 0.5rem;
-  border-bottom: 2px solid var(--nvidia-green);
-}
-
-.md-typeset h3 {
-  font-weight: 600;
-  font-size: 1.5rem;
-  margin-top: 2rem;
-  color: var(--nvidia-green);
-}
-
-.md-typeset h4 {
-  font-weight: 600;
-  font-size: 1.2rem;
-  margin-top: 1.5rem;
-}
-
-/* =============================================================================
- * Header & Navigation
- * ============================================================================= */
+/* -----------------------------------------------------------------------------
+ * Header and tabs
+ * --------------------------------------------------------------------------- */
 .md-header {
-  background: linear-gradient(90deg, var(--dark-bg) 0%, var(--dark-surface) 100%);
-  box-shadow: var(--shadow-md);
-  backdrop-filter: blur(10px);
+  background: linear-gradient(90deg, #0f1419 0%, #1a1f2e 100%);
+  color: #fff;
 }
 
 .md-tabs {
   background: linear-gradient(90deg, var(--nvidia-green) 0%, var(--nvidia-dark-green) 100%);
-  box-shadow: var(--shadow-sm);
+  color: #fff;
 }
 
 .md-tabs__link {
   font-weight: 600;
-  font-size: 0.85rem;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  transition: all 0.3s ease;
+  opacity: 0.85;
 }
 
+.md-tabs__link--active,
 .md-tabs__link:hover {
-  background: rgba(255, 255, 255, 0.1);
-  transform: translateY(-2px);
+  opacity: 1;
 }
 
-.md-tabs__link--active {
-  background: rgba(255, 255, 255, 0.2);
-  border-bottom: 3px solid white;
+/* -----------------------------------------------------------------------------
+ * Typography
+ * --------------------------------------------------------------------------- */
+.md-typeset h1 {
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: var(--md-default-fg-color);
 }
 
-/* =============================================================================
- * Hero Section (Homepage)
- * ============================================================================= */
-.hero-section {
-  position: relative;
-  padding: 4rem 2rem;
-  margin: -2rem -2rem 3rem;
-  background: linear-gradient(135deg, var(--dark-bg) 0%, var(--nvidia-dark-green) 100%);
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: var(--shadow-xl);
-}
-
-.hero-section::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%2376B900' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-  opacity: 0.3;
-  z-index: 0;
-}
-
-.hero-content {
-  position: relative;
-  z-index: 1;
-  text-align: center;
-  color: white;
-}
-
-.hero-title {
-  font-size: 3.5rem;
-  font-weight: 900;
-  margin-bottom: 1.5rem;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-  animation: fadeInUp 0.8s ease-out;
-}
-
-.hero-subtitle {
-  font-size: 1.5rem;
-  font-weight: 400;
-  margin-bottom: 2rem;
-  opacity: 0.95;
-  animation: fadeInUp 0.8s ease-out 0.2s both;
-}
-
-.hero-buttons {
-  display: flex;
-  gap: 1rem;
-  justify-content: center;
-  flex-wrap: wrap;
-  animation: fadeInUp 0.8s ease-out 0.4s both;
-}
-
-.hero-button {
-  display: inline-block;
-  padding: 1rem 2.5rem;
-  font-size: 1.1rem;
+.md-typeset h2 {
   font-weight: 700;
-  text-decoration: none;
-  border-radius: 8px;
-  transition: all 0.3s ease;
-  box-shadow: var(--shadow-md);
+  padding-bottom: 0.3em;
+  border-bottom: 2px solid var(--nvidia-green);
 }
 
-.hero-button-primary {
-  background: white;
-  color: var(--nvidia-green);
+.md-typeset h3 {
+  font-weight: 650;
+  color: var(--md-typeset-a-color);
 }
 
-.hero-button-primary:hover {
-  background: var(--nvidia-light-green);
-  color: white;
-  transform: translateY(-3px);
-  box-shadow: var(--shadow-lg);
+/* Inline code only - styling `code` globally also hit code blocks and pushed
+ * their text out of line with the line numbers. */
+.md-typeset :not(pre) > code {
+  border: 1px solid var(--brand-border);
+  border-radius: 0.25em;
 }
 
-.hero-button-secondary {
-  background: transparent;
-  color: white;
-  border: 2px solid white;
-}
-
-.hero-button-secondary:hover {
-  background: white;
-  color: var(--nvidia-green);
-  transform: translateY(-3px);
-  box-shadow: var(--shadow-lg);
-}
-
-/* =============================================================================
- * Cards & Grid Layout
- * ============================================================================= */
-.card-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 1.5rem;
-  margin: 2rem 0;
-}
-
-.feature-card, .module-card {
-  background: var(--md-code-bg-color);
-  border: 1px solid var(--border-color);
-  border-radius: 12px;
-  padding: 2rem;
-  transition: all 0.3s ease;
-  box-shadow: var(--shadow-sm);
-  position: relative;
-  overflow: hidden;
-}
-
-.feature-card::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 4px;
-  background: linear-gradient(90deg, var(--nvidia-green), var(--accent-blue));
-  transform: scaleX(0);
-  transition: transform 0.3s ease;
-}
-
-.feature-card:hover, .module-card:hover {
-  transform: translateY(-8px);
-  box-shadow: var(--shadow-lg);
-  border-color: var(--nvidia-green);
-}
-
-.feature-card:hover::before {
-  transform: scaleX(1);
-}
-
-.card-icon {
-  font-size: 3rem;
-  margin-bottom: 1rem;
-  display: block;
-}
-
-.card-title {
-  font-size: 1.5rem;
-  font-weight: 700;
-  margin-bottom: 0.75rem;
-  color: var(--nvidia-green);
-}
-
-.card-description {
-  font-size: 0.95rem;
-  line-height: 1.6;
-  color: var(--text-secondary);
-}
-
-/* =============================================================================
- * Performance Stats
- * ============================================================================= */
-.stats-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 1.5rem;
-  margin: 2rem 0;
-}
-
-.stat-card {
-  background: linear-gradient(135deg, var(--nvidia-green) 0%, var(--nvidia-dark-green) 100%);
-  color: white;
-  border-radius: 12px;
-  padding: 2rem;
-  text-align: center;
-  box-shadow: var(--shadow-md);
-  transition: transform 0.3s ease;
-}
-
-.stat-card:hover {
-  transform: scale(1.05);
-  box-shadow: var(--shadow-xl);
-}
-
-.stat-value {
-  font-size: 3rem;
-  font-weight: 900;
-  margin-bottom: 0.5rem;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
-}
-
-.stat-label {
-  font-size: 1rem;
-  font-weight: 600;
-  opacity: 0.95;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-}
-
-/* =============================================================================
- * Code Blocks
- * ============================================================================= */
+.md-typeset .highlight pre,
 .md-typeset pre {
-  border-radius: 8px;
-  box-shadow: var(--shadow-sm);
-  border: 1px solid var(--border-color);
+  border-radius: 0.4em;
 }
 
-.md-typeset code {
-  background: var(--md-code-bg-color);
-  padding: 0.2em 0.4em;
-  border-radius: 4px;
-  font-size: 0.9em;
-  border: 1px solid var(--border-color);
+/* Links - no underline shift, visible focus */
+.md-typeset a:focus-visible,
+.md-typeset .md-button:focus-visible {
+  outline: 2px solid var(--md-accent-fg-color);
+  outline-offset: 2px;
 }
 
-.highlight .filename {
-  background: var(--nvidia-green);
-  color: white;
-  padding: 0.5rem 1rem;
-  border-radius: 8px 8px 0 0;
-  font-weight: 600;
-  font-size: 0.85rem;
+.md-typeset a.external-link::after {
+  content: "\2197";            /* ↗ */
+  display: inline-block;
+  margin-left: 0.15em;
+  font-size: 0.75em;
+  opacity: 0.6;
 }
 
-/* =============================================================================
- * Admonitions (Callouts)
- * ============================================================================= */
-.md-typeset .admonition {
-  border-radius: 8px;
-  box-shadow: var(--shadow-sm);
-  border-left: 4px solid;
-}
-
-.md-typeset .admonition.note {
-  border-left-color: var(--accent-blue);
-}
-
-.md-typeset .admonition.tip {
-  border-left-color: var(--nvidia-green);
-}
-
-.md-typeset .admonition.warning {
-  border-left-color: var(--accent-orange);
-}
-
-.md-typeset .admonition.danger {
-  border-left-color: #EF4444;
-}
-
-/* =============================================================================
- * Tables
- * ============================================================================= */
+/* -----------------------------------------------------------------------------
+ * Tables - scroll inside their wrapper instead of widening the page
+ * --------------------------------------------------------------------------- */
 .md-typeset table:not([class]) {
-  border-radius: 8px;
-  overflow: hidden;
-  box-shadow: var(--shadow-sm);
-  border: 1px solid var(--border-color);
-}
-
-.md-typeset table:not([class]) thead {
-  background: var(--nvidia-green);
-  color: white;
+  border-radius: 0.4em;
+  box-shadow: var(--brand-shadow);
 }
 
 .md-typeset table:not([class]) th {
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  font-size: 0.85rem;
-}
-
-.md-typeset table:not([class]) tr:hover {
-  background: rgba(118, 185, 0, 0.05);
-}
-
-/* =============================================================================
- * Buttons & Links
- * ============================================================================= */
-.md-typeset a {
-  color: var(--nvidia-green);
-  text-decoration: none;
-  font-weight: 500;
-  transition: all 0.2s ease;
-  border-bottom: 1px solid transparent;
-}
-
-.md-typeset a:hover {
-  color: var(--nvidia-dark-green);
-  border-bottom-color: var(--nvidia-green);
-}
-
-.md-button {
   background: var(--nvidia-green);
-  color: white;
-  padding: 0.75rem 2rem;
-  border-radius: 8px;
+  color: #fff;
   font-weight: 700;
-  transition: all 0.3s ease;
-  box-shadow: var(--shadow-sm);
 }
 
-.md-button:hover {
-  background: var(--nvidia-dark-green);
+.md-typeset table:not([class]) tbody tr:hover {
+  background: rgba(118, 185, 0, 0.06);
+}
+
+/* -----------------------------------------------------------------------------
+ * Buttons
+ * --------------------------------------------------------------------------- */
+.md-typeset .md-button {
+  border-radius: 0.4em;
+  font-weight: 700;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, background-color 0.15s ease;
+}
+
+.md-typeset .md-button:hover {
+  transform: translateY(-1px);
+  box-shadow: var(--brand-shadow-hover);
+}
+
+.md-typeset .md-button--primary {
+  background-color: var(--nvidia-dark-green);
+  border-color: var(--nvidia-dark-green);
+  color: #fff;
+}
+
+.md-typeset .md-button--primary:hover {
+  background-color: var(--nvidia-green);
+  border-color: var(--nvidia-green);
+  color: #fff;
+}
+
+/* -----------------------------------------------------------------------------
+ * Hero (home page)
+ * --------------------------------------------------------------------------- */
+.md-typeset .hero-section {
+  position: relative;
+  clear: both;                 /* sit below the floated edit / view buttons */
+  padding: 3em 1.5em;
+  margin: 0 0 2em;
+  background: linear-gradient(135deg, #0f1419 0%, #2c4400 100%);
+  border-radius: var(--brand-radius);
+  overflow: hidden;
+  color: #fff;
+  text-align: center;
+}
+
+.md-typeset .hero-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%2376B900' fill-opacity='0.08'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/svg%3E");
+  pointer-events: none;
+}
+
+.md-typeset .hero-content {
+  position: relative;
+}
+
+.md-typeset .hero-title {
+  margin: 0 0 0.5em;
+  font-size: 2.4em;
+  line-height: 1.15;
+  font-weight: 900;
+  color: #fff;
+}
+
+.md-typeset .hero-subtitle {
+  margin: 0 auto 0.8em;
+  max-width: 38em;
+  font-size: 1.15em;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.md-typeset .hero-tagline {
+  font-size: 0.95em;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.md-typeset .hero-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75em;
+  justify-content: center;
+  margin-top: 1.5em;
+}
+
+.md-typeset .hero-button {
+  display: inline-block;
+  padding: 0.7em 1.6em;
+  border-radius: 0.4em;
+  font-weight: 700;
+  border: 2px solid #fff;
+  transition: transform 0.15s ease, background-color 0.15s ease, color 0.15s ease;
+}
+
+.md-typeset .hero-button-primary {
+  background: #fff;
+  color: var(--nvidia-dark-green);
+}
+
+.md-typeset .hero-button-secondary {
+  background: transparent;
+  color: #fff;
+}
+
+.md-typeset .hero-button:hover {
   transform: translateY(-2px);
-  box-shadow: var(--shadow-md);
+  background: var(--nvidia-green);
+  border-color: var(--nvidia-green);
+  color: #fff;
 }
 
-.md-button--primary {
-  background: linear-gradient(90deg, var(--nvidia-green), var(--nvidia-dark-green));
+/* -----------------------------------------------------------------------------
+ * Card grid
+ * minmax(min(100%, 14em), 1fr) keeps a single column on phones instead of
+ * forcing a 280 px track wider than the viewport.
+ * --------------------------------------------------------------------------- */
+.md-typeset .card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 14em), 1fr));
+  gap: 1em;
+  margin: 1.5em 0;
 }
 
-/* =============================================================================
+.md-typeset .feature-card,
+.md-typeset .module-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  padding: 1.2em 1.2em 1em;
+  background: var(--brand-card);
+  border: 1px solid var(--brand-border);
+  border-radius: var(--brand-radius);
+  box-shadow: var(--brand-shadow);
+  overflow-wrap: break-word;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.md-typeset .feature-card:hover,
+.md-typeset .module-card:hover {
+  transform: translateY(-3px);
+  border-color: var(--nvidia-green);
+  box-shadow: var(--brand-shadow-hover);
+}
+
+.md-typeset .feature-card > :first-child { margin-top: 0; }
+.md-typeset .feature-card > :last-child { margin-bottom: 0; }
+
+.md-typeset .feature-card h3,
+.md-typeset .feature-card h4 {
+  margin: 0.2em 0 0.4em;
+  font-size: 1.1em;
+  line-height: 1.3;
+  color: var(--md-typeset-a-color);
+}
+
+/* Push the call to action to the bottom so buttons line up across a row */
+.md-typeset .feature-card > a:last-child,
+.md-typeset .feature-card > .md-button:last-child,
+.md-typeset .feature-card > .status-planned:last-child {
+  margin-top: auto;
+  align-self: flex-start;
+}
+
+.md-typeset .feature-card .md-button {
+  margin-top: auto;
+  padding: 0.45em 1.1em;
+  font-size: 0.85em;
+}
+
+.md-typeset .card-icon {
+  display: block;
+  margin-bottom: 0.4em;
+  font-size: 1.8em;
+  line-height: 1;
+}
+
+.md-typeset .card-title {
+  margin: 0 0 0.4em;
+  font-size: 1.1em;
+  font-weight: 700;
+  line-height: 1.3;
+  color: var(--md-typeset-a-color);
+}
+
+.md-typeset .card-description {
+  flex: 1 0 auto;
+  margin: 0 0 0.8em;
+  font-size: 0.9em;
+  line-height: 1.55;
+  color: var(--brand-muted);
+}
+
+/* "Planned" badge for tutorials that are not written yet */
+.md-typeset .status-planned {
+  display: inline-block;
+  padding: 0.15em 0.6em;
+  border-radius: 1em;
+  border: 1px dashed var(--brand-muted);
+  color: var(--brand-muted);
+  font-size: 0.8em;
+  font-weight: 600;
+}
+
+/* -----------------------------------------------------------------------------
+ * Headline numbers
+ * Values never wrap mid-number ("98." / "5%"); the font scales with the card.
+ * --------------------------------------------------------------------------- */
+.md-typeset .stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 9.5em), 1fr));
+  gap: 1em;
+  margin: 1.5em 0;
+}
+
+.md-typeset .stat-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;  /* numbers line up even when labels wrap differently */
+  min-width: 0;
+  padding: 1.2em 0.8em;
+  text-align: center;
+  color: #fff;
+  background: linear-gradient(135deg, var(--nvidia-green) 0%, var(--nvidia-dark-green) 100%);
+  border-radius: var(--brand-radius);
+  box-shadow: var(--brand-shadow);
+}
+
+.md-typeset .stat-value {
+  font-size: clamp(1.5em, 4vw, 2.1em);
+  font-weight: 900;
+  line-height: 1.1;
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+}
+
+.md-typeset .stat-label {
+  margin-top: 0.4em;
+  font-size: 0.75em;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  opacity: 0.95;
+  overflow-wrap: normal;
+  hyphens: auto;
+}
+
+/* -----------------------------------------------------------------------------
+ * Call-to-action banner
+ * --------------------------------------------------------------------------- */
+.md-typeset .cta-banner {
+  margin: 2.5em 0 1em;
+  padding: 2em 1.5em;
+  text-align: center;
+  color: #fff;
+  background: linear-gradient(135deg, var(--nvidia-green) 0%, var(--nvidia-dark-green) 100%);
+  border-radius: var(--brand-radius);
+}
+
+.md-typeset .cta-banner h2 {
+  margin: 0 0 0.4em;
+  padding: 0;
+  border: 0;
+  color: #fff;
+}
+
+.md-typeset .cta-banner p {
+  margin: 0 auto 1.2em;
+  max-width: 36em;
+  color: rgba(255, 255, 255, 0.92);
+}
+
+.md-typeset .cta-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75em;
+  justify-content: center;
+}
+
+.md-typeset .cta-banner .md-button {
+  color: #fff;
+  border-color: #fff;
+}
+
+.md-typeset .cta-banner .md-button--primary {
+  background: #fff;
+  color: var(--nvidia-dark-green);
+}
+
+.md-typeset .cta-banner .md-button:hover {
+  background: #fff;
+  color: var(--nvidia-dark-green);
+}
+
+/* -----------------------------------------------------------------------------
+ * Mermaid - let wide diagrams scroll instead of shrinking to unreadable text
+ * --------------------------------------------------------------------------- */
+.md-typeset .mermaid {
+  overflow-x: auto;
+  text-align: center;
+}
+
+/* -----------------------------------------------------------------------------
  * Footer
- * ============================================================================= */
+ * --------------------------------------------------------------------------- */
 .md-footer {
-  background: var(--dark-bg);
-  color: #9CA3AF;
+  background: #0f1419;
 }
 
 .md-footer-meta {
-  background: var(--dark-surface);
+  background: #1a1f2e;
 }
 
-.md-footer__link {
-  color: var(--nvidia-light-green);
-}
-
-.md-footer__link:hover {
-  color: white;
-}
-
-/* =============================================================================
- * Animations
- * ============================================================================= */
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
+/* -----------------------------------------------------------------------------
+ * Small screens
+ * --------------------------------------------------------------------------- */
+@media screen and (max-width: 44.9375em) {
+  .md-typeset .hero-section {
+    padding: 2em 1em;
+    margin-left: -0.8rem;
+    margin-right: -0.8rem;
+    border-radius: 0;
   }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
 
-@keyframes pulse {
-  0%, 100% {
-    opacity: 1;
+  .md-typeset .hero-title {
+    font-size: 1.7em;
   }
-  50% {
-    opacity: 0.7;
+
+  .md-typeset .hero-subtitle {
+    font-size: 1em;
+  }
+
+  .md-typeset .hero-button {
+    width: 100%;
+  }
+
+  .md-typeset .stats-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 
-.animate-pulse {
-  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
-}
-
-/* =============================================================================
- * Responsive Design
- * ============================================================================= */
-@media screen and (max-width: 768px) {
-  .hero-title {
-    font-size: 2.5rem;
-  }
-
-  .hero-subtitle {
-    font-size: 1.2rem;
-  }
-
-  .hero-buttons {
-    flex-direction: column;
-  }
-
-  .card-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .stats-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
-/* =============================================================================
- * Print Styles
- * ============================================================================= */
+/* -----------------------------------------------------------------------------
+ * Print
+ * --------------------------------------------------------------------------- */
 @media print {
-  .hero-section,
-  .md-header,
-  .md-tabs,
-  .md-sidebar,
-  .md-footer {
-    display: none;
+  .md-typeset .hero-section {
+    background: none;
+    color: inherit;
+  }
+
+  .md-typeset .hero-title,
+  .md-typeset .hero-subtitle {
+    color: inherit;
+  }
+
+  .md-typeset .feature-card,
+  .md-typeset .stat-card {
+    break-inside: avoid;
+    box-shadow: none;
   }
 }

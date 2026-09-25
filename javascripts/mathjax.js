@@ -18,31 +18,62 @@
  */
 
 /* =============================================================================
- * MathJax Configuration for Isaac ROS Jetbot NanoOWL
+ * MathJax for pymdownx.arithmatex (generic mode)
+ *
+ * MathJax (~1 MB) is loaded on demand, only when the current page contains maths,
+ * and pages reached through instant navigation are re-typeset after the swap.
+ * Configuration follows the Material for MkDocs reference setup.
  * ============================================================================= */
 
 window.MathJax = {
   tex: {
-    inlineMath: [["\\(", "\\)"]],
-    displayMath: [["\\[", "\\]"]],
+    inlineMath: [['\\(', '\\)']],
+    displayMath: [['\\[', '\\]']],
     processEscapes: true,
-    processEnvironments: true,
-    packages: {'[+]': ['ams', 'physics', 'color']}
+    processEnvironments: true
   },
   options: {
-    ignoreHtmlClass: ".*|",
-    processHtmlClass: "arithmatex"
-  },
-  svg: {
-    fontCache: 'global'
-  },
-  loader: {
-    load: ['[tex]/ams', '[tex]/physics', '[tex]/color']
+    ignoreHtmlClass: '.*|',
+    processHtmlClass: 'arithmatex'
   }
 };
 
-if (typeof document$ !== 'undefined') {
-  document$.subscribe(() => {
-    MathJax.typesetPromise();
-  });
-}
+(function () {
+  'use strict';
+
+  var MATHJAX_SRC = 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
+  var loading = null;
+
+  function load() {
+    if (!loading) {
+      loading = new Promise(function (resolve, reject) {
+        var s = document.createElement('script');
+        s.src = MATHJAX_SRC;
+        s.async = true;
+        s.onload = function () { window.MathJax.startup.promise.then(resolve, reject); };
+        s.onerror = reject;
+        document.head.appendChild(s);
+      });
+    }
+    return loading;
+  }
+
+  function typeset() {
+    if (!document.querySelector('.arithmatex')) return;
+    load().then(function () {
+      var mj = window.MathJax;
+      mj.startup.output.clearCache();
+      mj.typesetClear();
+      mj.texReset();
+      return mj.typesetPromise();
+    }).catch(function (err) {
+      console.warn('MathJax failed to load:', err);
+    });
+  }
+
+  if (typeof window.document$ !== 'undefined') {
+    window.document$.subscribe(typeset);
+  } else {
+    document.addEventListener('DOMContentLoaded', typeset);
+  }
+})();
