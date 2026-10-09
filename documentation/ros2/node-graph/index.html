@@ -1,0 +1,584 @@
+<!DOCTYPE html><html lang="en" class="no-js"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Enterprise-grade autonomous robotics platform powered by NVIDIA Jetson Orin Nano Super,
+featuring advanced AI perception, real-time SLAM, and production-ready deployment
+"><meta name="author" content="TNG Blue Robotics Team"><link href="https://tng-blue.github.io/Isaac_ROS-Jetbot_NanoOWL-Docs/documentation/ros2/node-graph/" rel="canonical"><link href="../../architecture/network/" rel="prev"><link href="../" rel="next"><link rel="icon" href="../../../images/favicon-64.png"><meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7"><title>System Node Graph - Isaac ROS Jetbot NanoOWL</title><link rel="stylesheet" href="../../../assets/stylesheets/main.ec1eaa64.min.css"><link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css"><style>:root{--md-annotation-icon:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2024%2024%22%3E%3Cpath%20d%3D%22M22%2012a10%2010%200%200%201-10%2010A10%2010%200%200%201%202%2012%2010%2010%200%200%201%2012%202a10%2010%200%200%201%2010%2010M6%2013h8l-3.5%203.5%201.42%201.42L17.84%2012l-5.92-5.92L10.5%207.5%2014%2011H6z%22/%3E%3C/svg%3E');}</style><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,300i,400,400i,700,700i%7CFira+Code:400,400i,700,700i&amp;display=fallback"><style>:root{--md-text-font:"Inter";--md-code-font:"Fira Code"}</style><link rel="stylesheet" href="../../../css/timeago.css"><link rel="stylesheet" href="../../../stylesheets/extra.css"><link rel="stylesheet" href="../../../stylesheets/animations.css"><link rel="stylesheet" href="../../../stylesheets/premium.css"><script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script><meta property="og:type" content="website"><meta property="og:title" content="System Node Graph - Isaac ROS Jetbot NanoOWL"><meta property="og:description" content="Enterprise-grade autonomous robotics platform powered by NVIDIA Jetson Orin Nano Super,
+featuring advanced AI perception, real-time SLAM, and production-ready deployment
+"><meta property="og:image" content="https://tng-blue.github.io/Isaac_ROS-Jetbot_NanoOWL-Docs/assets/images/social/documentation/ros2/node-graph.png"><meta property="og:image:type" content="image/png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta content="https://tng-blue.github.io/Isaac_ROS-Jetbot_NanoOWL-Docs/documentation/ros2/node-graph/" property="og:url"><meta property="twitter:card" content="summary_large_image"><meta property="twitter:title" content="System Node Graph - Isaac ROS Jetbot NanoOWL"><meta property="twitter:description" content="Enterprise-grade autonomous robotics platform powered by NVIDIA Jetson Orin Nano Super,
+featuring advanced AI perception, real-time SLAM, and production-ready deployment
+"><meta property="twitter:image" content="https://tng-blue.github.io/Isaac_ROS-Jetbot_NanoOWL-Docs/assets/images/social/documentation/ros2/node-graph.png"><link href="../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"><script src="../../../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
+            html.glightbox-open { overflow: initial; height: 100%; }
+            .gslide-title { margin-top: 0px; user-select: text; }
+            .gslide-desc { color: #666; user-select: text; }
+            .gslide-image img { background: white; }
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
+        </style></head> <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="green"> <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off"> <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off"> <label class="md-overlay" for="__drawer"></label> <div data-md-component="skip"> <a href="#ros-2-node-graph-jetowl_flightcontrol-jetowl_vision-isaac_ros-jetbot_nanoowl" class="md-skip"> Skip to content </a> </div> <div data-md-component="announce"> </div> <header class="md-header md-header--shadow md-header--lifted" data-md-component="header"> <nav class="md-header__inner md-grid" aria-label="Header"> <a href="../../.." title="Isaac ROS Jetbot NanoOWL" class="md-header__button md-logo" aria-label="Isaac ROS Jetbot NanoOWL" data-md-component="logo"> <img src="../../../images/logo.png" alt="logo"> </a> <label class="md-header__button md-icon" for="__drawer"> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg> </label> <div class="md-header__title" data-md-component="header-title"> <div class="md-header__ellipsis"> <div class="md-header__topic"> <span class="md-ellipsis"> Isaac ROS Jetbot NanoOWL </span> </div> <div class="md-header__topic" data-md-component="header-topic"> <span class="md-ellipsis"> System Node Graph </span> </div> </div> </div> <form class="md-header__option" data-md-component="palette"> <input class="md-option" data-md-color-media="(prefers-color-scheme)" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="green" aria-label="Switch to light mode" type="radio" name="__palette" id="__palette_0"> <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden=""> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m14.3 16-.7-2h-3.2l-.7 2H7.8L11 7h2l3.2 9zM20 8.69V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12zm-9.15 3.96h2.3L12 9z"></path></svg> </label> <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="green" aria-label="Switch to dark mode" type="radio" name="__palette" id="__palette_1"> <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden=""> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"></path></svg> </label> <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="green" aria-label="Switch to system preference" type="radio" name="__palette" id="__palette_2"> <label class="md-header__button md-icon" title="Switch to system preference" for="__palette_0" hidden=""> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"></path></svg> </label> </form> <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script> <label class="md-header__button md-icon" for="__search"> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg> </label> <div class="md-search" data-md-component="search" role="dialog"> <label class="md-search__overlay" for="__search"></label> <div class="md-search__inner" role="search"> <form class="md-search__form" name="search"> <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required=""> <label class="md-search__icon md-icon" for="__search"> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg> </label> <nav class="md-search__options" aria-label="Search"> <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard="" data-clipboard-text="" data-md-component="search-share" tabindex="-1"> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"></path></svg> </a> <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1"> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg> </button> </nav> <div class="md-search__suggest" data-md-component="search-suggest"></div> </form> <div class="md-search__output"> <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix=""> <div class="md-search-result" data-md-component="search-result"> <div class="md-search-result__meta"> Initializing search </div> <ol class="md-search-result__list" role="presentation"></ol> </div> </div> </div> </div> </div> <div class="md-header__source"> <a href="https://github.com/TNG-Blue/Isaac_ROS-Jetbot_NanoOWL" title="Go to repository" class="md-source" data-md-component="source"> <div class="md-source__icon md-icon"> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!-- Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"></path></svg> </div> <div class="md-source__repository"> TNG-Blue/Isaac_ROS-Jetbot_NanoOWL </div> </a> </div> </nav> <nav class="md-tabs" aria-label="Tabs" data-md-component="tabs"> <div class="md-grid"> <ul class="md-tabs__list"> <li class="md-tabs__item"> <a href="../../.." class="md-tabs__link"> Home </a> </li> <li class="md-tabs__item"> <a href="../../../getting-started/" class="md-tabs__link"> Getting Started </a> </li> <li class="md-tabs__item md-tabs__item--active"> <a href="../../" class="md-tabs__link"> Documentation </a> </li> <li class="md-tabs__item"> <a href="../../../server-ota/" class="md-tabs__link"> Server OTA </a> </li> <li class="md-tabs__item"> <a href="../../../tutorials/" class="md-tabs__link"> Tutorials </a> </li> <li class="md-tabs__item"> <a href="../../../api/" class="md-tabs__link"> API Reference </a> </li> <li class="md-tabs__item"> <a href="../../../development/" class="md-tabs__link"> Development </a> </li> <li class="md-tabs__item"> <a href="../../../community/" class="md-tabs__link"> Community </a> </li> <li class="md-tabs__item"> <a href="../../../about/" class="md-tabs__link"> About </a> </li> </ul> </div> </nav> </header> <div class="md-container" data-md-component="container"> <main class="md-main" data-md-component="main"> <div class="md-main__inner md-grid"> <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation"> <div class="md-sidebar__scrollwrap"> <div class="md-sidebar__inner"> <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0"> <label class="md-nav__title" for="__drawer"> <a href="../../.." title="Isaac ROS Jetbot NanoOWL" class="md-nav__button md-logo" aria-label="Isaac ROS Jetbot NanoOWL" data-md-component="logo"> <img src="../../../images/logo.png" alt="logo"> </a> Isaac ROS Jetbot NanoOWL </label> <div class="md-nav__source"> <a href="https://github.com/TNG-Blue/Isaac_ROS-Jetbot_NanoOWL" title="Go to repository" class="md-source" data-md-component="source"> <div class="md-source__icon md-icon"> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!-- Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"></path></svg> </div> <div class="md-source__repository"> TNG-Blue/Isaac_ROS-Jetbot_NanoOWL </div> </a> </div> <ul class="md-nav__list" data-md-scrollfix=""> <li class="md-nav__item md-nav__item--pruned md-nav__item--nested"> <a href="../../.." class="md-nav__link"> <span class="md-ellipsis"> Home </span> <span class="md-nav__icon md-icon"></span> </a> </li> <li class="md-nav__item md-nav__item--pruned md-nav__item--nested"> <a href="../../../getting-started/" class="md-nav__link"> <span class="md-ellipsis"> Getting Started </span> <span class="md-nav__icon md-icon"></span> </a> </li> <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested"> <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked=""> <div class="md-nav__link md-nav__container"> <a href="../../" class="md-nav__link "> <span class="md-ellipsis"> Documentation </span> </a> <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex=""> <span class="md-nav__icon md-icon"></span> </label> </div> <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true"> <label class="md-nav__title" for="__nav_3"> <span class="md-nav__icon md-icon"></span> Documentation </label> <ul class="md-nav__list" data-md-scrollfix=""> <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested"> <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" checked=""> <div class="md-nav__link md-nav__container"> <a href="../../architecture/" class="md-nav__link "> <span class="md-ellipsis"> System Architecture </span> </a> <label class="md-nav__link " for="__nav_3_2" id="__nav_3_2_label" tabindex=""> <span class="md-nav__icon md-icon"></span> </label> </div> <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="true"> <label class="md-nav__title" for="__nav_3_2"> <span class="md-nav__icon md-icon"></span> System Architecture </label> <ul class="md-nav__list" data-md-scrollfix=""> <li class="md-nav__item"> <a href="../../architecture/overview/" class="md-nav__link"> <span class="md-ellipsis"> Overview </span> </a> </li> <li class="md-nav__item"> <a href="../../architecture/ros2-integration/" class="md-nav__link"> <span class="md-ellipsis"> ROS2 Integration </span> </a> </li> <li class="md-nav__item"> <a href="../../architecture/hardware/" class="md-nav__link"> <span class="md-ellipsis"> Hardware Design </span> </a> </li> <li class="md-nav__item"> <a href="../../architecture/software/" class="md-nav__link"> <span class="md-ellipsis"> Software Stack </span> </a> </li> <li class="md-nav__item"> <a href="../../architecture/network/" class="md-nav__link"> <span class="md-ellipsis"> Network Architecture </span> </a> </li> <li class="md-nav__item md-nav__item--active"> <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc"> <label class="md-nav__link md-nav__link--active" for="__toc"> <span class="md-ellipsis"> System Node Graph </span> <span class="md-nav__icon md-icon"></span> </label> <a href="./" class="md-nav__link md-nav__link--active"> <span class="md-ellipsis"> System Node Graph </span> </a> <nav class="md-nav md-nav--secondary" aria-label="Table of contents"> <label class="md-nav__title" for="__toc"> <span class="md-nav__icon md-icon"></span> Table of contents </label> <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix=""> <li class="md-nav__item"> <a href="#1-diagram" class="md-nav__link"> <span class="md-ellipsis"> 1. Diagram </span> </a> </li> <li class="md-nav__item"> <a href="#2-closed-loops-in-the-diagram" class="md-nav__link"> <span class="md-ellipsis"> 2. Closed loops in the diagram </span> </a> </li> <li class="md-nav__item"> <a href="#3-node-inventory" class="md-nav__link"> <span class="md-ellipsis"> 3. Node inventory </span> </a> </li> <li class="md-nav__item"> <a href="#4-unconnected-topics-and-fixed-mismatches" class="md-nav__link"> <span class="md-ellipsis"> 4. Unconnected topics and fixed mismatches </span> </a> </li> <li class="md-nav__item"> <a href="#5-network-boundaries" class="md-nav__link"> <span class="md-ellipsis"> 5. Network boundaries </span> </a> </li> <li class="md-nav__item"> <a href="#6-updating-and-re-rendering-the-image" class="md-nav__link"> <span class="md-ellipsis"> 6. Updating and re-rendering the image </span> </a> </li> </ul> </nav> </li> </ul> </nav> </li> <li class="md-nav__item md-nav__item--section md-nav__item--nested"> <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3"> <div class="md-nav__link md-nav__container"> <a href="../" class="md-nav__link "> <span class="md-ellipsis"> ROS2 Modules </span> </a> <label class="md-nav__link " for="__nav_3_3" id="__nav_3_3_label" tabindex=""> <span class="md-nav__icon md-icon"></span> </label> </div> <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="false"> <label class="md-nav__title" for="__nav_3_3"> <span class="md-nav__icon md-icon"></span> ROS2 Modules </label> <ul class="md-nav__list" data-md-scrollfix=""> <li class="md-nav__item"> <a href="../sensors/" class="md-nav__link"> <span class="md-ellipsis"> Sensor Fusion &amp; Estimation </span> </a> </li> <li class="md-nav__item md-nav__item--pruned md-nav__item--nested"> <a href="../control/" class="md-nav__link"> <span class="md-ellipsis"> UAV Stack </span> <span class="md-nav__icon md-icon"></span> </a> </li> <li class="md-nav__item md-nav__item--pruned md-nav__item--nested"> <a href="../object-detection/" class="md-nav__link"> <span class="md-ellipsis"> Perception </span> <span class="md-nav__icon md-icon"></span> </a> </li> <li class="md-nav__item md-nav__item--pruned md-nav__item--nested"> <a href="../qt-dashboard/" class="md-nav__link"> <span class="md-ellipsis"> Operator Tools </span> <span class="md-nav__icon md-icon"></span> </a> </li> </ul> </nav> </li> <li class="md-nav__item md-nav__item--section md-nav__item--nested"> <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_4"> <div class="md-nav__link md-nav__container"> <a href="../../simulation/" class="md-nav__link "> <span class="md-ellipsis"> Simulation </span> </a> <label class="md-nav__link " for="__nav_3_4" id="__nav_3_4_label" tabindex=""> <span class="md-nav__icon md-icon"></span> </label> </div> <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_4_label" aria-expanded="false"> <label class="md-nav__title" for="__nav_3_4"> <span class="md-nav__icon md-icon"></span> Simulation </label> <ul class="md-nav__list" data-md-scrollfix=""> <li class="md-nav__item"> <a href="../../simulation/hexacopter-gazebo/" class="md-nav__link"> <span class="md-ellipsis"> Hexacopter in Gazebo </span> </a> </li> <li class="md-nav__item"> <a href="../../simulation/hexacopter-control/" class="md-nav__link"> <span class="md-ellipsis"> Hexacopter Control Core </span> </a> </li> <li class="md-nav__item"> <a href="../../simulation/hexacopter-description/" class="md-nav__link"> <span class="md-ellipsis"> Hexacopter Description </span> </a> </li> <li class="md-nav__item"> <a href="../../simulation/mcu-emulator/" class="md-nav__link"> <span class="md-ellipsis"> MCU Emulator </span> </a> </li> </ul> </nav> </li> <li class="md-nav__item md-nav__item--section md-nav__item--nested"> <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_5"> <div class="md-nav__link md-nav__container"> <a href="../../firmware/" class="md-nav__link "> <span class="md-ellipsis"> Firmware </span> </a> <label class="md-nav__link " for="__nav_3_5" id="__nav_3_5_label" tabindex=""> <span class="md-nav__icon md-icon"></span> </label> </div> <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_5_label" aria-expanded="false"> <label class="md-nav__title" for="__nav_3_5"> <span class="md-nav__icon md-icon"></span> Firmware </label> <ul class="md-nav__list" data-md-scrollfix=""> <li class="md-nav__item md-nav__item--pruned md-nav__item--nested"> <a href="../../firmware/flight-control/" class="md-nav__link"> <span class="md-ellipsis"> JetOwl Flight Control </span> <span class="md-nav__icon md-icon"></span> </a> </li> <li class="md-nav__item md-nav__item--pruned md-nav__item--nested"> <a href="../../firmware/vision/" class="md-nav__link"> <span class="md-ellipsis"> JetOwl Vision </span> <span class="md-nav__icon md-icon"></span> </a> </li> <li class="md-nav__item md-nav__item--pruned md-nav__item--nested"> <a href="../../firmware/remote-uav/" class="md-nav__link"> <span class="md-ellipsis"> Remote UAV (Ground RC) </span> <span class="md-nav__icon md-icon"></span> </a> </li> <li class="md-nav__item"> <a href="../../hardware/openmv-rt1062-api-audit/" class="md-nav__link"> <span class="md-ellipsis"> OpenMV RT1062 API Audit </span> </a> </li> </ul> </nav> </li> <li class="md-nav__item md-nav__item--section md-nav__item--nested"> <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_6"> <div class="md-nav__link md-nav__container"> <a href="../../cuda/" class="md-nav__link "> <span class="md-ellipsis"> CUDA Library </span> </a> <label class="md-nav__link " for="__nav_3_6" id="__nav_3_6_label" tabindex=""> <span class="md-nav__icon md-icon"></span> </label> </div> <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_6_label" aria-expanded="false"> <label class="md-nav__title" for="__nav_3_6"> <span class="md-nav__icon md-icon"></span> CUDA Library </label> <ul class="md-nav__list" data-md-scrollfix=""> <li class="md-nav__item"> <a href="../../cuda/installation/" class="md-nav__link"> <span class="md-ellipsis"> Installation </span> </a> </li> <li class="md-nav__item"> <a href="../../cuda/api-references/" class="md-nav__link"> <span class="md-ellipsis"> API Reference </span> </a> </li> </ul> </nav> </li> <li class="md-nav__item md-nav__item--section md-nav__item--nested"> <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_7"> <div class="md-nav__link md-nav__container"> <a href="../../ai/" class="md-nav__link "> <span class="md-ellipsis"> Deep Learning </span> </a> <label class="md-nav__link " for="__nav_3_7" id="__nav_3_7_label" tabindex=""> <span class="md-nav__icon md-icon"></span> </label> </div> <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_7_label" aria-expanded="false"> <label class="md-nav__title" for="__nav_3_7"> <span class="md-nav__icon md-icon"></span> Deep Learning </label> <ul class="md-nav__list" data-md-scrollfix=""> <li class="md-nav__item"> <a href="../../ai/architecture/" class="md-nav__link"> <span class="md-ellipsis"> Architecture </span> </a> </li> <li class="md-nav__item"> <a href="../../ai/math/" class="md-nav__link"> <span class="md-ellipsis"> Mathematics </span> </a> </li> <li class="md-nav__item"> <a href="../../ai/installation/" class="md-nav__link"> <span class="md-ellipsis"> Installation </span> </a> </li> <li class="md-nav__item"> <a href="../../ai/training/" class="md-nav__link"> <span class="md-ellipsis"> Model Training &amp; Notebooks </span> </a> </li> </ul> </nav> </li> <li class="md-nav__item md-nav__item--section md-nav__item--nested"> <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_8"> <div class="md-nav__link md-nav__container"> <a href="../../matlab/" class="md-nav__link "> <span class="md-ellipsis"> MATLAB &amp; Simulink </span> </a> <label class="md-nav__link " for="__nav_3_8" id="__nav_3_8_label" tabindex=""> <span class="md-nav__icon md-icon"></span> </label> </div> <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_8_label" aria-expanded="false"> <label class="md-nav__title" for="__nav_3_8"> <span class="md-nav__icon md-icon"></span> MATLAB &amp; Simulink </label> <ul class="md-nav__list" data-md-scrollfix=""> <li class="md-nav__item"> <a href="../../matlab/simulink/" class="md-nav__link"> <span class="md-ellipsis"> Simulink Blocks </span> </a> </li> </ul> </nav> </li> <li class="md-nav__item md-nav__item--section md-nav__item--nested"> <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_9"> <div class="md-nav__link md-nav__container"> <a href="../../mobile/" class="md-nav__link "> <span class="md-ellipsis"> Mobile App </span> </a> <label class="md-nav__link " for="__nav_3_9" id="__nav_3_9_label" tabindex=""> <span class="md-nav__icon md-icon"></span> </label> </div> <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_9_label" aria-expanded="false"> <label class="md-nav__title" for="__nav_3_9"> <span class="md-nav__icon md-icon"></span> Mobile App </label> <ul class="md-nav__list" data-md-scrollfix=""> <li class="md-nav__item"> <a href="../../mobile/estimation-design/" class="md-nav__link"> <span class="md-ellipsis"> Estimation Design </span> </a> </li> <li class="md-nav__item"> <a href="../../mobile/mavlink-link/" class="md-nav__link"> <span class="md-ellipsis"> MAVLink Link </span> </a> </li> <li class="md-nav__item"> <a href="../../mobile/isaac-ros-integration/" class="md-nav__link"> <span class="md-ellipsis"> Isaac ROS Integration </span> </a> </li> <li class="md-nav__item"> <a href="../../mobile/uav-3d/" class="md-nav__link"> <span class="md-ellipsis"> UAV 3-D Console </span> </a> </li> </ul> </nav> </li> <li class="md-nav__item md-nav__item--section md-nav__item--nested"> <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_10"> <div class="md-nav__link md-nav__container"> <a href="../../hardware/" class="md-nav__link "> <span class="md-ellipsis"> Hardware </span> </a> <label class="md-nav__link " for="__nav_3_10" id="__nav_3_10_label" tabindex=""> <span class="md-nav__icon md-icon"></span> </label> </div> <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_10_label" aria-expanded="false"> <label class="md-nav__title" for="__nav_3_10"> <span class="md-nav__icon md-icon"></span> Hardware </label> <ul class="md-nav__list" data-md-scrollfix=""> <li class="md-nav__item"> <a href="../../hardware/jetson/" class="md-nav__link"> <span class="md-ellipsis"> Jetson Orin Nano </span> </a> </li> <li class="md-nav__item"> <a href="../../hardware/sensors/" class="md-nav__link"> <span class="md-ellipsis"> Sensors </span> </a> </li> <li class="md-nav__item"> <a href="../../hardware/microcontrollers/" class="md-nav__link"> <span class="md-ellipsis"> Microcontrollers </span> </a> </li> <li class="md-nav__item"> <a href="../../hardware/power/" class="md-nav__link"> <span class="md-ellipsis"> Power System </span> </a> </li> <li class="md-nav__item"> <a href="../../hardware/communication/" class="md-nav__link"> <span class="md-ellipsis"> Communication </span> </a> </li> </ul> </nav> </li> <li class="md-nav__item md-nav__item--section md-nav__item--nested"> <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_11"> <div class="md-nav__link md-nav__container"> <a href="../../deployment/" class="md-nav__link "> <span class="md-ellipsis"> Deployment </span> </a> <label class="md-nav__link " for="__nav_3_11" id="__nav_3_11_label" tabindex=""> <span class="md-nav__icon md-icon"></span> </label> </div> <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_11_label" aria-expanded="false"> <label class="md-nav__title" for="__nav_3_11"> <span class="md-nav__icon md-icon"></span> Deployment </label> <ul class="md-nav__list" data-md-scrollfix=""> <li class="md-nav__item"> <a href="../../deployment/docker/" class="md-nav__link"> <span class="md-ellipsis"> Docker </span> </a> </li> <li class="md-nav__item"> <a href="../../deployment/kubernetes/" class="md-nav__link"> <span class="md-ellipsis"> Kubernetes </span> </a> </li> <li class="md-nav__item"> <a href="../../deployment/helm/" class="md-nav__link"> <span class="md-ellipsis"> Helm Charts </span> </a> </li> <li class="md-nav__item"> <a href="../../deployment/ota/" class="md-nav__link"> <span class="md-ellipsis"> OTA Updates </span> </a> </li> <li class="md-nav__item"> <a href="../../deployment/ota-web-ui/" class="md-nav__link"> <span class="md-ellipsis"> OTA Web Interface </span> </a> </li> <li class="md-nav__item"> <a href="../../deployment/mavlink-relay/" class="md-nav__link"> <span class="md-ellipsis"> MAVLink Relay Server </span> </a> </li> </ul> </nav> </li> <li class="md-nav__item md-nav__item--section md-nav__item--nested"> <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_12"> <div class="md-nav__link md-nav__container"> <a href="../../examples/" class="md-nav__link "> <span class="md-ellipsis"> Examples &amp; Utilities </span> </a> <label class="md-nav__link " for="__nav_3_12" id="__nav_3_12_label" tabindex=""> <span class="md-nav__icon md-icon"></span> </label> </div> <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_12_label" aria-expanded="false"> <label class="md-nav__title" for="__nav_3_12"> <span class="md-nav__icon md-icon"></span> Examples &amp; Utilities </label> <ul class="md-nav__list" data-md-scrollfix=""> <li class="md-nav__item"> <a href="../../examples/i2c-multiplexer/" class="md-nav__link"> <span class="md-ellipsis"> DFRobot I2C Multiplexer </span> </a> </li> </ul> </nav> </li> </ul> </nav> </li> <li class="md-nav__item md-nav__item--pruned md-nav__item--nested"> <a href="../../../server-ota/" class="md-nav__link"> <span class="md-ellipsis"> Server OTA </span> <span class="md-nav__icon md-icon"></span> </a> </li> <li class="md-nav__item md-nav__item--pruned md-nav__item--nested"> <a href="../../../tutorials/" class="md-nav__link"> <span class="md-ellipsis"> Tutorials </span> <span class="md-nav__icon md-icon"></span> </a> </li> <li class="md-nav__item md-nav__item--pruned md-nav__item--nested"> <a href="../../../api/" class="md-nav__link"> <span class="md-ellipsis"> API Reference </span> <span class="md-nav__icon md-icon"></span> </a> </li> <li class="md-nav__item md-nav__item--pruned md-nav__item--nested"> <a href="../../../development/" class="md-nav__link"> <span class="md-ellipsis"> Development </span> <span class="md-nav__icon md-icon"></span> </a> </li> <li class="md-nav__item md-nav__item--pruned md-nav__item--nested"> <a href="../../../community/" class="md-nav__link"> <span class="md-ellipsis"> Community </span> <span class="md-nav__icon md-icon"></span> </a> </li> <li class="md-nav__item md-nav__item--pruned md-nav__item--nested"> <a href="../../../about/" class="md-nav__link"> <span class="md-ellipsis"> About </span> <span class="md-nav__icon md-icon"></span> </a> </li> </ul> </nav> </div> </div> </div> <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc"> <div class="md-sidebar__scrollwrap"> <div class="md-sidebar__inner"> <nav class="md-nav md-nav--secondary" aria-label="Table of contents"> <label class="md-nav__title" for="__toc"> <span class="md-nav__icon md-icon"></span> Table of contents </label> <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix=""> <li class="md-nav__item"> <a href="#1-diagram" class="md-nav__link"> <span class="md-ellipsis"> 1. Diagram </span> </a> </li> <li class="md-nav__item"> <a href="#2-closed-loops-in-the-diagram" class="md-nav__link"> <span class="md-ellipsis"> 2. Closed loops in the diagram </span> </a> </li> <li class="md-nav__item"> <a href="#3-node-inventory" class="md-nav__link"> <span class="md-ellipsis"> 3. Node inventory </span> </a> </li> <li class="md-nav__item"> <a href="#4-unconnected-topics-and-fixed-mismatches" class="md-nav__link"> <span class="md-ellipsis"> 4. Unconnected topics and fixed mismatches </span> </a> </li> <li class="md-nav__item"> <a href="#5-network-boundaries" class="md-nav__link"> <span class="md-ellipsis"> 5. Network boundaries </span> </a> </li> <li class="md-nav__item"> <a href="#6-updating-and-re-rendering-the-image" class="md-nav__link"> <span class="md-ellipsis"> 6. Updating and re-rendering the image </span> </a> </li> </ul> </nav> </div> </div> </div> <div class="md-content" data-md-component="content"> <nav class="md-path" aria-label="Navigation"> <ol class="md-path__list"> <li class="md-path__item"> <a href="../../" class="md-path__link"> <span class="md-ellipsis"> Documentation </span> </a> </li> <li class="md-path__item"> <a href="../../architecture/" class="md-path__link"> <span class="md-ellipsis"> System Architecture </span> </a> </li> </ol> </nav> <article class="md-content__inner md-typeset"> <nav class="md-tags"> <a href="../../../tags/#tag:architecture" class="md-tag">Architecture</a> <a href="../../../tags/#tag:ros-2" class="md-tag">ROS 2</a> </nav> <a href="https://github.com/TNG-Blue/Isaac_ROS-Jetbot_NanoOWL/edit/master/Docs/flowcharts/ros2_nodes_flowchart.md" title="Edit this page" class="md-content__button md-icon" rel="edit"> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75z"></path></svg> </a> <a href="https://github.com/TNG-Blue/Isaac_ROS-Jetbot_NanoOWL/raw/master/Docs/flowcharts/ros2_nodes_flowchart.md" title="View source of this page" class="md-content__button md-icon"> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0 8a5 5 0 0 1-5-5 5 5 0 0 1 5-5 5 5 0 0 1 5 5 5 5 0 0 1-5 5m0-12.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5"></path></svg> </a> <h1 id="ros-2-node-graph-jetowl_flightcontrol-jetowl_vision-isaac_ros-jetbot_nanoowl">ROS 2 node graph — JetOwl_FlightControl · JetOwl_Vision · Isaac_ROS-Jetbot_NanoOWL<a class="headerlink" href="#ros-2-node-graph-jetowl_flightcontrol-jetowl_vision-isaac_ros-jetbot_nanoowl" title="Anchor link to this section">¶</a></h1> <div class="admonition abstract"> <p class="admonition-title">Source</p> <p>This page is rendered from <a href="https://github.com/TNG-Blue/Isaac_ROS-Jetbot_NanoOWL/blob/master/Docs/flowcharts/ros2_nodes_flowchart.md"><code>Docs/flowcharts/ros2_nodes_flowchart.md</code></a>, the authoritative description kept next to the code in <a href="https://github.com/TNG-Blue/Isaac_ROS-Jetbot_NanoOWL/tree/master/Docs/flowcharts"><code>Docs/flowcharts/</code></a>.</p> </div> <p>A single diagram of <strong>every ROS 2 node in the three repositories</strong>, connected through topics, services and transport links (UDP, TCP, HTTP).</p> <ul> <li><strong>Two micro-ROS nodes on MCUs</strong>: <code>jetowl_fc</code> (STM32N657) and <code>jetowl_vision</code> (STM32N655). The control chain inside the firmware is drawn as well, so that every closed loop is visible.</li> <li><strong>71 nodes in Isaac_ROS-Jetbot_NanoOWL</strong>: 61 in <code>Source/</code>, 3 in <code>MATLAB/</code> and 7 in <code>Examples/</code>.</li> <li><strong>9 external node blocks</strong> started by the repository's launch files, e.g. <code>micro_ros_agent</code>, <code>ros_gz_bridge</code>, the Isaac ROS DNN encoder/TensorRT.</li> </ul> <table> <thead> <tr> <th>How to view</th> <th>Notes</th> </tr> </thead> <tbody> <tr> <td>The <code>mermaid</code> block below</td> <td>Rendered directly by GitHub. The <code>flowcharts/</code> directory is in <code>exclude_docs</code>; on the MkDocs site the <em>System Node Graph</em> page renders this file through the hook <code>Scripts/mkdocs_hooks/source_pages.py</code>. The diagram has 304 edges, below Mermaid's default limit of 500</td> </tr> <tr> <td><a href="../../../_sources/Docs/flowcharts/images/ros2_nodes_flowchart.svg"><code>images/ros2_nodes_flowchart.svg</code></a></td> <td>Pre-rendered with Mermaid 12 (dagre), plain SVG labels, white background. Open this file to zoom in</td> </tr> <tr> <td><a href="https://mermaid.live">https://mermaid.live</a></td> <td>Paste the <code>mermaid</code> block to edit it and export a PNG</td> </tr> </tbody> </table> <p>The data was checked against the source code on branch <code>ccr-b2081e2f-1udgah</code>, including the fixes of section 4. Base commits at the time of drawing:</p> <table> <thead> <tr> <th>Repository</th> <th>Commit</th> </tr> </thead> <tbody> <tr> <td>JetOwl_FlightControl</td> <td><code>b1b56ef</code></td> </tr> <tr> <td>JetOwl_Vision</td> <td><code>872fe84</code></td> </tr> <tr> <td>Isaac_ROS-Jetbot_NanoOWL</td> <td><code>dabd1ad</code></td> </tr> </tbody> </table> <p>Topic names are the names <strong>after the remappings of each package's main launch file</strong>, listed in section 3. Relative names (without a leading <code>/</code>) live in the root namespace unless the subgraph states a namespace.</p> <h2 id="1-diagram">1. Diagram<a class="headerlink" href="#1-diagram" title="Anchor link to this section">¶</a></h2> <p>Pre-rendered image (more compact layout, recommended for reading):</p> <p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../../../_sources/Docs/flowcharts/images/ros2_nodes_flowchart.svg" data-desc-position="bottom"><img alt="ROS 2 node graph (pre-rendered)" src="../../../_sources/Docs/flowcharts/images/ros2_nodes_flowchart.svg"></a></p> <p>Mermaid source of the image above. Edit it here, then re-render the image as described in section 6:</p> <pre class="mermaid"><code>%%{init: {"layout": "dagre", "flowchart": {"curve": "basis", "nodeSpacing": 18, "rankSpacing": 55, "padding": 8}}}%%
+flowchart LR
+
+  %% ═══════════════════════════ LEGEND ═══════════════════════════
+  subgraph LEGEND["Legend"]
+    direction TB
+    L1["Node ROS 2 (Jetson / PC)"]:::ros
+    L2["micro-ROS node on an MCU"]:::mcu
+    L3["Firmware block (not a node)"]:::fw
+    L4["Hardware: sensor / actuator"]:::hw
+    L5["External node started by a launch file of the repository"]:::ext
+    L6[("Non-ROS system")]:::nonros
+    L7(["/topic · type · rate"]):::topic
+    L8(["Topic without a publisher in the 3 repositories"]):::orphan
+    L9{{"/service · type"}}:::srv
+    L10["📊 = node publishes /diagnostics&lt;br/&gt;(or its own …/diagnostics)"]:::note
+    L1 --&gt;|"publish → topic → subscribe"| L7
+    L9 -.-&gt;|"client ⇢ service ⇢ server"| L1
+    L2 &lt;==&gt;|"transport: UDP / TCP / HTTP"| L6
+  end
+
+  %% ═════════════ REPO JetOwl_FlightControl (STM32N657) ═════════════
+  subgraph FCREPO["JetOwl_FlightControl — STM32N657 · 192.168.10.2"]
+    direction TB
+    FC_SENS["BNO08x 200 Hz + BNO055 100 Hz&lt;br/&gt;(I2C1 · task imu_acq)"]:::hw
+    FC_FILT["imu_frontend&lt;br/&gt;calibration + filter"]:::fw
+    FC_EST["imu_fusion&lt;br/&gt;attitude estimate q̂ + bias"]:::fw
+    FC_ATTC["Attitude loop 250 Hz&lt;br/&gt;Ω = K·2·sgn(q̃w)·q̃v&lt;br/&gt;(Wie–Weiss–Arapostathis 1989)"]:::fw
+    FC_RATEC["Rate loop 1 kHz&lt;br/&gt;PID + ESO"]:::fw
+    FC_MIXR["Mixer · saturation priority&lt;br/&gt;arm latch"]:::fw
+    FC_ROT["Rotor speed loop 1 kHz/rotor&lt;br/&gt;2-DOF: inverse-model FF + PI (SIMC)"]:::fw
+    FC_ESC["DShot300 → 4 ESC + motor&lt;br/&gt;bidirectional RPM telemetry (150 Hz filter)"]:::hw
+    FC_BARO["BMP280 (module SEN0253)&lt;br/&gt;×4 / IIR 2 · read at 25 Hz"]:::hw
+    FC_UROS["jetowl_fc&lt;br/&gt;node micro-ROS (rclc · FreeRTOS)"]:::mcu
+    FC_OTA["task ota&lt;br/&gt;A/B · XSPI2 NOR · IWDG on trial boot"]:::fw
+    FC_SENS --&gt; FC_FILT --&gt; FC_EST --&gt; FC_ATTC --&gt; FC_RATEC --&gt; FC_MIXR --&gt; FC_ROT --&gt; FC_ESC
+    FC_FILT --&gt;|"filtered ω"| FC_RATEC
+    FC_ESC -.-&gt;|"RPM — rotor loop feedback"| FC_ROT
+    FC_ESC ==&gt;|"thrust → body motion&lt;br/&gt;feedback through the IMU (closed loop)"| FC_SENS
+    FC_EST --&gt;|"q̂, ω (NED/FRD → ENU/FLU)"| FC_UROS
+    FC_ESC --&gt;|"rpm"| FC_UROS
+    FC_UROS --&gt;|"q_sp, T [N]"| FC_ATTC
+    FC_UROS --&gt;|"arm / disarm"| FC_MIXR
+    FC_UROS --&gt;|"ota start / apply"| FC_OTA
+    FC_BARO --&gt;|"p [Pa], σ² = 1.44 Pa²"| FC_UROS
+  end
+
+  %% ═════════════ REPO JetOwl_Vision (STM32N655) ═════════════
+  subgraph VISREPO["JetOwl_Vision — STM32N655 · 192.168.10.3"]
+    direction TB
+    VIS_CAM["IMX335 → CSI-2 → DCMIPP/ISP&lt;br/&gt;RGB565 640×480 · 30 fps"]:::hw
+    VIS_AE["cam_isp_ctrl&lt;br/&gt;closed-loop AE/AWB (ISP statistics)"]:::fw
+    VIS_PREV["cam_preview&lt;br/&gt;D×D box anti-alias filter + decimation D = 4"]:::fw
+    VIS_UROS["jetowl_vision&lt;br/&gt;node micro-ROS (rclc · FreeRTOS)"]:::mcu
+    VIS_OTA["task ota&lt;br/&gt;A/B · XSPI2 NOR · IWDG on trial boot"]:::fw
+    VIS_CAM --&gt;|"ISP statistics"| VIS_AE
+    VIS_AE -.-&gt;|"exposure / gain — feedback"| VIS_CAM
+    VIS_CAM --&gt;|"640×480 frame"| VIS_PREV --&gt; VIS_UROS
+    VIS_UROS --&gt;|"ota start / apply"| VIS_OTA
+  end
+
+  OTASRV[("Server_OTA (Go) · 192.168.10.200:8080&lt;br/&gt;/api/ota/manifest · /download (Range) · /api/ota/report")]:::nonros
+  FC_OTA &lt;-.-&gt;|"HTTP via the Jetson gateway"| OTASRV
+  VIS_OTA &lt;-.-&gt;|"HTTP via the Jetson gateway"| OTASRV
+
+  %% ═════════════ DDS through the micro-ROS agent ═════════════
+  subgraph UROS["micro-ROS → DDS (Jetson 192.168.10.1)"]
+    direction TB
+    AGENT["micro_ros_agent&lt;br/&gt;udp4 :8888&lt;br/&gt;(jetowl_bridge.launch.py)"]:::ext
+    T_IMU(["/imu/data&lt;br/&gt;sensor_msgs/Imu · 200 Hz"]):::topic
+    T_FCSTAT(["/jetowl/status&lt;br/&gt;DiagnosticStatus · 2 Hz"]):::topic
+    T_RPM(["/jetowl/motor_rpm&lt;br/&gt;Float32MultiArray · 50 Hz"]):::topic
+    T_BARO(["/baro/pressure&lt;br/&gt;FluidPressure [Pa] · 25 Hz"]):::topic
+    T_ATTSP(["/control/attitude_setpoint&lt;br/&gt;QuaternionStamped · 50 Hz"]):::topic
+    T_THR(["/control/thrust&lt;br/&gt;Float64 [N] · 50 Hz"]):::topic
+    S_ARM{{"/jetowl/arm&lt;br/&gt;std_srvs/SetBool"}}:::srv
+    S_FCOTA{{"/jetowl/ota/start · apply&lt;br/&gt;std_srvs/Trigger"}}:::srv
+    T_VIMG(["/jetowl_vision/image_preview&lt;br/&gt;Image rgb8 160×120 · 5 Hz · reliable"]):::topic
+    T_VSTAT(["/jetowl_vision/status&lt;br/&gt;DiagnosticStatus · 1 Hz"]):::topic
+    S_VOTA{{"/jetowl_vision/ota/start · apply&lt;br/&gt;std_srvs/Trigger"}}:::srv
+    OPER["Operator&lt;br/&gt;ros2 service call"]:::ext
+  end
+  FC_UROS &lt;==&gt;|"XRCE-DDS / UDP"| AGENT
+  VIS_UROS &lt;==&gt;|"XRCE-DDS / UDP"| AGENT
+  FC_UROS --&gt; T_IMU
+  FC_UROS --&gt; T_FCSTAT
+  FC_UROS --&gt; T_RPM
+  FC_UROS --&gt; T_BARO
+  T_RPM --&gt;|"rotor monitoring"| BR_FC
+  T_ATTSP --&gt; FC_UROS
+  T_THR --&gt; FC_UROS
+  S_ARM -.-&gt; FC_UROS
+  S_FCOTA -.-&gt; FC_UROS
+  VIS_UROS --&gt; T_VIMG
+  VIS_UROS --&gt; T_VSTAT
+  S_VOTA -.-&gt; VIS_UROS
+  OPER -.-&gt; S_FCOTA
+  OPER -.-&gt; S_VOTA
+
+  %% ═════════════ ros2_jetowl_bridge ═════════════
+  subgraph BRIDGE["ros2_jetowl_bridge — one jetowl_bridge node (C++) · 📊"]
+    direction TB
+    BR_FC["link fc&lt;br/&gt;FC supervision · arm relay · rotor RPM"]:::ros
+    BR_VM["link vision_mcu&lt;br/&gt;image geometry check · lost frames · latency"]:::ros
+    BR_OMV["link vision&lt;br/&gt;OpenMV JSON lines"]:::ros
+    BR_SL["link sensor_link&lt;br/&gt;CRC-32 frames · clock sync (KF) · α-β encoder"]:::ros
+    STF["static_transform_publisher&lt;br/&gt;base_link → imu_link"]:::ext
+    T_LINKOK(["/jetowl/link_ok&lt;br/&gt;Bool · 5 Hz"]):::topic
+    T_VOUT(["jetowl_vision/image&lt;br/&gt;validated Image"]):::topic
+    T_OMVOUT(["openmv_out_topic · target · target_velocity&lt;br/&gt;String · PointStamped · Vector3Stamped"]):::topic
+    T_OMVIN(["openmv_in_topic&lt;br/&gt;String"]):::orphan
+    T_IMURAW(["/imu/data_raw&lt;br/&gt;Imu base_link · R from Allan coefficients"]):::topic
+    T_FIX(["/gps/fix&lt;br/&gt;NavSatFix"]):::topic
+    T_GVEL(["/gps/vel · /gps/vel_cov&lt;br/&gt;TwistStamped · TwistWithCovarianceStamped"]):::topic
+    T_JS(["/encoders/joint_states&lt;br/&gt;JointState"]):::topic
+    T_TF(["/tf · /tf_static"]):::topic
+  end
+  OPENMV[("OpenMV RT1062&lt;br/&gt;OpenMV_RT1062.py")]:::nonros
+  PORTENTA[("Portenta H7 sensor MCU&lt;br/&gt;(firmware not written yet)")]:::nonros
+
+  T_FCSTAT --&gt; BR_FC
+  BR_FC --&gt; T_LINKOK
+  BR_FC -.-&gt;|"call when flight/status changes"| S_ARM
+  T_VIMG --&gt; BR_VM
+  T_VSTAT --&gt; BR_VM
+  BR_VM --&gt; T_VOUT
+  OPENMV &lt;==&gt;|"JSON lines · TCP / USB CDC"| BR_OMV
+  BR_OMV --&gt; T_OMVOUT
+  T_OMVIN --&gt; BR_OMV
+  PORTENTA &lt;==&gt;|"UDP :9870 / :9871"| BR_SL
+  BR_SL --&gt;|"sim / Portenta"| T_IMU
+  BR_SL --&gt; T_IMURAW
+  BR_SL --&gt; T_FIX
+  BR_SL --&gt; T_GVEL
+  BR_SL --&gt; T_JS
+  STF --&gt; T_TF
+
+  %% ═════════════ Control &amp; guidance ═════════════
+  subgraph CTRL["Control &amp; guidance (Jetson)"]
+    direction TB
+    ESKF["uav_state_estimator · 📊&lt;br/&gt;ESKF: IMU + GNSS + baro&lt;br/&gt;(ros2_control_system)"]:::ros
+    MPC["uav_trajectory_controller · 📊&lt;br/&gt;offset-free linear MPC + disturbance observer d̂&lt;br/&gt;MPPI near obstacles&lt;br/&gt;(ros2_control_system)"]:::ros
+    FCN["flight_controller_node · 📊&lt;br/&gt;stateflow · waypoint · min-jerk · obstacle avoidance · safety&lt;br/&gt;MANUAL: v_w = R_z(ψ̂)·v_h&lt;br/&gt;(ros2_flight_controller)"]:::ros
+    TLOG["telemetry_logger_node&lt;br/&gt;CSV logging (ros2_flight_controller)"]:::ros
+    MP["mission_planner_node · 📊&lt;br/&gt;(ros2_mission_planner)"]:::ros
+    NB["network_bridge_node · 📊&lt;br/&gt;MAVLink v2 (ros2_network_bridge)"]:::ros
+    T_ODOMF(["/odometry/filtered&lt;br/&gt;Odometry"]):::topic
+    T_SETP(["flight/setpoint&lt;br/&gt;MultiDOFJointTrajectory"]):::topic
+    T_ACTIVE(["flight/active&lt;br/&gt;Bool"]):::topic
+    T_FLSTAT(["flight/status&lt;br/&gt;String"]):::topic
+    T_CTRLOUT(["control/accel_cmd · control/predicted_path&lt;br/&gt;AccelStamped · Path"]):::topic
+    T_DIST(["control/disturbance&lt;br/&gt;Vector3Stamped (d̂)"]):::topic
+    T_CMDVEL(["/cmd_vel&lt;br/&gt;Twist, heading frame (REP-103)"]):::topic
+    T_FCMD(["flight/cmd_vel&lt;br/&gt;Twist ENU (external autopilot)"]):::topic
+    T_FLOUT(["flight/planned_path · flight/markers · flight/safety_status&lt;br/&gt;Path · MarkerArray · String"]):::topic
+    T_WP(["flight/waypoints&lt;br/&gt;PoseArray"]):::topic
+    T_NAVCMD(["flight/nav_command&lt;br/&gt;String"]):::topic
+    T_MSTAT(["mission/status&lt;br/&gt;MissionStatus"]):::topic
+    T_MOUT(["mission/geofence · mission/preview&lt;br/&gt;GeofenceStatus · Path"]):::topic
+    T_GCSOK(["network/gcs_connected&lt;br/&gt;Bool"]):::topic
+    S_MISSION{{"mission/start · abort · reset · reload&lt;br/&gt;std_srvs/Trigger"}}:::srv
+    T_ODOM(["/odom&lt;br/&gt;Odometry"]):::orphan
+    T_BATT(["battery/state&lt;br/&gt;BatteryState"]):::orphan
+    T_JOY(["joy&lt;br/&gt;sensor_msgs/Joy (joy_node)"]):::orphan
+    T_MUP(["mission/upload · mission/upload_waypoints&lt;br/&gt;String · WaypointList"]):::orphan
+  end
+  GCS[("Ground control station&lt;br/&gt;MAVLink v2 · UDP / serial")]:::nonros
+
+  T_IMU --&gt; ESKF
+  T_FIX --&gt; ESKF
+  T_GVEL --&gt;|"gnss/velocity ← /gps/vel_cov"| ESKF
+  T_BARO --&gt; ESKF
+  ESKF --&gt; T_ODOMF
+  T_ODOMF --&gt; MPC
+  T_SETP --&gt; MPC
+  T_ACTIVE --&gt; MPC
+  T_TRKM --&gt;|"obstacles: CUBE → bounding sphere (tf2 → odom)"| MPC
+  MPC --&gt; T_ATTSP
+  MPC --&gt; T_THR
+  MPC --&gt; T_CTRLOUT
+  MPC --&gt; T_DIST
+  T_ODOMF --&gt;|"odom_topic (default)"| FCN
+  T_IMU --&gt; FCN
+  T_FIX --&gt; FCN
+  T_BATT --&gt; FCN
+  T_JOY --&gt; FCN
+  T_WP --&gt; FCN
+  T_NAVCMD --&gt; FCN
+  FCN --&gt; T_FLSTAT
+  FCN --&gt; T_SETP
+  FCN --&gt; T_ACTIVE
+  FCN --&gt; T_FCMD
+  T_CMDVEL -.-&gt;|"MANUAL, manual.source = cmd_vel"| FCN
+  FCN --&gt; T_FLOUT
+  T_FLSTAT --&gt; BR_FC
+  T_ODOMF --&gt; TLOG
+  T_IMU --&gt; TLOG
+  T_FIX --&gt; TLOG
+  T_BATT --&gt; TLOG
+  T_FLSTAT --&gt; TLOG
+  T_ODOMF --&gt; MP
+  T_FLSTAT --&gt; MP
+  T_BATT --&gt; MP
+  T_DIST --&gt; MP
+  T_MUP --&gt; MP
+  S_MISSION -.-&gt; MP
+  MP --&gt; T_WP
+  MP --&gt; T_NAVCMD
+  MP --&gt; T_MSTAT
+  MP --&gt; T_MOUT
+  GCS &lt;==&gt;|"MAVLink v2"| NB
+  T_ODOMF --&gt; NB
+  T_FIX --&gt; NB
+  T_BATT --&gt; NB
+  T_FLSTAT --&gt; NB
+  T_MSTAT --&gt; NB
+  NB --&gt; T_NAVCMD
+  NB --&gt; T_GCSOK
+  NB -.-&gt;|"call start / abort"| S_MISSION
+
+  %% ═════════════ Object detection: Isaac_ROS-Object_Detection ═════════════
+  subgraph DET["isaac_ros_objectdetection (Isaac_ROS-Object_Detection)"]
+    direction TB
+    T_CAMIMG(["/camera/color/image_raw · /input_image&lt;br/&gt;Image (external camera driver)"]):::orphan
+    ENC["DnnImageEncoderNode&lt;br/&gt;(Isaac ROS · NITROS)"]:::ext
+    TRT["TensorRTNode / TritonNode&lt;br/&gt;(Isaac ROS)"]:::ext
+    YDEC["yolov5_decoder_node"]:::ros
+    SDEC["ssd_mobilenet_decoder_node"]:::ros
+    ODEC["nano_owl_decoder_node"]:::ros
+    YVIS["object_detection_visualizer&lt;br/&gt;(yolov5_visualizer_node)"]:::ros
+    SSD["ssd_mobilenet_detector_node&lt;br/&gt;jetson-inference detectNet"]:::ros
+    OWL["nano_owl_detector_node&lt;br/&gt;NanoOWL TensorRT · open-vocabulary text query"]:::ros
+    T_TPUB(["tensor_pub&lt;br/&gt;TensorList"]):::topic
+    T_TSUB(["tensor_sub&lt;br/&gt;TensorList"]):::topic
+    T_ODET(["/object_detections&lt;br/&gt;Detection2DArray"]):::topic
+    T_DETIMG(["yolov5_processed_image · detection_visualization&lt;br/&gt;Image"]):::topic
+    T_QUERY(["input_query&lt;br/&gt;String"]):::orphan
+    T_OWLOUT(["output_detections · output_image&lt;br/&gt;Detection2DArray · Image"]):::topic
+  end
+  T_CAMIMG --&gt; ENC --&gt; T_TPUB --&gt; TRT --&gt; T_TSUB
+  T_TSUB --&gt; YDEC
+  T_TSUB --&gt; SDEC
+  T_TSUB --&gt; ODEC
+  YDEC --&gt; T_ODET
+  SDEC --&gt; T_ODET
+  ODEC --&gt; T_ODET
+  T_ODET --&gt; YVIS
+  T_CAMIMG --&gt; YVIS
+  YVIS --&gt; T_DETIMG
+  T_CAMIMG --&gt; SSD
+  SSD --&gt; T_ODET
+  SSD --&gt; T_DETIMG
+  SSD -.-&gt;|"publish_tensors"| T_TPUB
+  T_CAMIMG --&gt; OWL
+  T_QUERY --&gt; OWL
+  OWL --&gt; T_OWLOUT
+  T_VOUT -.-&gt;|"remap image_topic (optional)"| OWL
+
+  %% ═════════════ ros2_lidar_slam ═════════════
+  subgraph SLAM["ros2_lidar_slam (dual_lidar_slam.launch.py)"]
+    direction TB
+    LD19["ld19_node · 📊&lt;br/&gt;LD19 2-D LiDAR (UART)"]:::ros
+    LPB["lpb40b_node · 📊&lt;br/&gt;LPB40B range finder"]:::ros
+    LSLAM["lidar_slam_node · 📊&lt;br/&gt;EKF (gyro as input) + PL-ICP + pose graph"]:::ros
+    SLTB["slam_toolbox&lt;br/&gt;(alternative back end)"]:::ext
+    T_SCAN(["/scan&lt;br/&gt;LaserScan"]):::topic
+    T_RANGE(["/range&lt;br/&gt;Range"]):::topic
+    T_MAP(["/map&lt;br/&gt;OccupancyGrid"]):::topic
+    T_SLOUT(["slam/pose · slam/path · slam/debug&lt;br/&gt;PoseWithCovarianceStamped · Path · Float64MultiArray"]):::topic
+    S_SAVEMAP{{"lidar_slam_node/save_map&lt;br/&gt;Trigger"}}:::srv
+  end
+  LD19 --&gt; T_SCAN
+  LPB --&gt; T_RANGE
+  T_SCAN --&gt; LSLAM
+  T_RANGE --&gt; LSLAM
+  T_IMU --&gt; LSLAM
+  T_ODOM -.-&gt;|"use_odom (optional)"| LSLAM
+  LSLAM --&gt; T_MAP
+  LSLAM --&gt; T_SLOUT
+  S_SAVEMAP -.-&gt; LSLAM
+  T_SCAN --&gt; SLTB
+  SLTB --&gt; T_MAP
+
+  %% ═════════════ ros2_lidar_ai_solution ═════════════
+  subgraph LAI["ros2_lidar_ai_solution — full_pipeline.launch.py + cuPCL tools"]
+    direction TB
+    T_PTS(["/points&lt;br/&gt;PointCloud2 (external 3-D LiDAR)"]):::orphan
+    PRE["pointcloud_preprocessor_node"]:::ros
+    GND["ground_plane_node&lt;br/&gt;RANSAC ground plane"]:::ros
+    CFILT["cupcl_filter_node"]:::ros
+    CP["centerpoint_node · 📊"]:::ros
+    PP["pointpillars_node · 📊"]:::ros
+    BEV["bevfusion_node&lt;br/&gt;LiDAR + camera"]:::ros
+    DFUS["detection_fusion_node&lt;br/&gt;IoU association"]:::ros
+    TRK["object_tracker_node"]:::ros
+    CMAP["costmap_generator_node"]:::ros
+    SZ["safety_zone_node · 📊"]:::ros
+    ACC["pointcloud_accumulator_node"]:::ros
+    COORD["pipeline_coordinator_node"]:::ros
+    CUTIL["cupcl_cluster · cupcl_octree · cupcl_segmentation&lt;br/&gt;pointcloud_relay · pointcloud_stats 📊"]:::ros
+    CREG["cupcl_icp_node · cupcl_ndt_node"]:::ros
+    T_BEVCAM(["/camera_front/image_raw …&lt;br/&gt;Image"]):::orphan
+    T_PREP(["/preprocessed/points"]):::topic
+    T_GRM(["/ground_removed_points"]):::topic
+    T_GOUT(["/ground_points · /ground_plane/info"]):::topic
+    T_FPTS(["/filtered_points"]):::topic
+    T_DETM(["/centerpoint/markers · /pointpillars/markers&lt;br/&gt;MarkerArray (+ …/latency_ms)"]):::topic
+    T_BEVM(["/bevfusion/markers"]):::topic
+    T_FDET(["/fused/detections&lt;br/&gt;DetectionResult"]):::topic
+    T_FMK(["/fused/markers&lt;br/&gt;MarkerArray"]):::topic
+    T_TRK(["/tracked/objects&lt;br/&gt;TrackedObjectArray"]):::topic
+    T_TRKM(["/tracked/markers"]):::topic
+    T_COST(["/perception/costmap&lt;br/&gt;OccupancyGrid"]):::topic
+    T_ESTOP(["/safety/emergency_stop&lt;br/&gt;Bool"]):::topic
+    T_SZOUT(["/safety/status · /safety/markers"]):::topic
+    T_REGIN(["/points_source · /points_target"]):::orphan
+    T_ICPT(["/cupcl/icp/transform · /cupcl/ndt/transform&lt;br/&gt;TransformStamped"]):::topic
+    T_ACC(["/accumulated/points"]):::topic
+    T_CUOUT(["/cupcl/cluster/* · /cupcl/octree/* · /cupcl/segmentation/*&lt;br/&gt;/relay/points · /points/stats/*"]):::topic
+    T_PIPE(["/pipeline/status&lt;br/&gt;String"]):::topic
+    S_COORD{{"pipeline_coordinator_node/&lt;br/&gt;get_pipeline_status · enable_node · set_node_param"}}:::srv
+  end
+  T_PTS --&gt; PRE --&gt; T_PREP --&gt; GND
+  GND --&gt; T_GRM
+  GND --&gt; T_GOUT
+  T_GRM --&gt; CFILT --&gt; T_FPTS
+  T_FPTS --&gt; CP
+  T_FPTS --&gt; PP
+  CP --&gt; T_DETM
+  PP --&gt; T_DETM
+  T_PTS --&gt; BEV
+  T_BEVCAM --&gt; BEV
+  BEV --&gt; T_BEVM
+  T_DETM --&gt; DFUS
+  DFUS --&gt; T_FDET
+  DFUS --&gt; T_FMK
+  T_FMK --&gt; TRK
+  TRK --&gt; T_TRK
+  TRK --&gt; T_TRKM
+  T_TRK --&gt; CMAP
+  T_GRM --&gt; CMAP
+  CMAP --&gt; T_COST
+  T_TRK --&gt; SZ
+  SZ --&gt; T_ESTOP
+  SZ --&gt; T_SZOUT
+  T_GRM --&gt; ACC
+  T_ICPT --&gt; ACC
+  ACC --&gt; T_ACC
+  T_REGIN --&gt; CREG --&gt; T_ICPT
+  T_PTS --&gt; CUTIL --&gt; T_CUOUT
+  COORD --&gt; T_PIPE
+  S_COORD -.-&gt; COORD
+
+  subgraph ISF["ros2_lidar_ai_solution — Isaac ROS semantic fusion (isaac_ros_perception.launch.py)"]
+    direction TB
+    T_CAMINFO(["/camera_info&lt;br/&gt;CameraInfo"]):::orphan
+    T_IMGRAW(["/image_raw&lt;br/&gt;Image"]):::orphan
+    T_D3IN(["/isaac_ros/detections_3d_in&lt;br/&gt;Detection3DArray"]):::orphan
+    SFUS["isaac_ros_semantic_fusion_node&lt;br/&gt;3-D track ↔ 2-D box projection"]:::ros
+    SOVL["isaac_ros_semantic_overlay_node"]:::ros
+    DBR["isaac_ros_detection_bridge_node"]:::ros
+    TFOL["isaac_ros_target_follower_node · 📊&lt;br/&gt;filter + range/bearing estimate → following control"]:::ros
+    T_SEM(["/isaac_ros/semantic_objects&lt;br/&gt;SemanticObjectArray"]):::topic
+    T_SEMOUT(["/isaac_ros/semantic_detections_3d · semantic_markers · projected_boxes"]):::topic
+    T_OVL(["/isaac_ros/semantic_overlay&lt;br/&gt;Image"]):::topic
+    T_DBROUT(["/isaac_ros/detections_3d · detections_from_vision&lt;br/&gt;bridge_markers · vision_info"]):::topic
+    T_FOLM(["/isaac_ros/follower_markers"]):::topic
+  end
+  T_TRK --&gt; SFUS
+  T_ODET --&gt; SFUS
+  T_CAMINFO --&gt; SFUS
+  SFUS --&gt; T_SEM
+  SFUS --&gt; T_SEMOUT
+  T_SEM --&gt; SOVL
+  T_IMGRAW --&gt; SOVL
+  SOVL --&gt; T_OVL
+  T_SEM --&gt; DBR
+  T_TRK --&gt; DBR
+  T_FDET --&gt; DBR
+  T_D3IN --&gt; DBR
+  DBR --&gt; T_DBROUT
+  T_SEM --&gt; TFOL
+  T_ODOM --&gt; TFOL
+  T_ESTOP --&gt; TFOL
+  TFOL --&gt; T_CMDVEL
+  TFOL --&gt; T_FOLM
+
+  %% ═════════════ ros2_stereo ═════════════
+  subgraph STEREO["ros2_stereo (namespace /stereo)"]
+    direction TB
+    STN["stereo_node&lt;br/&gt;2× CSI → rectification → SGM/VPI → temporal filter"]:::ros
+    DSN["depth_stereo_node&lt;br/&gt;disparity → depth + σ"]:::ros
+    S3D["stereo_3d_node&lt;br/&gt;disparity → PointCloud2"]:::ros
+    T_SEN(["/stereo/enable_processing&lt;br/&gt;Bool"]):::orphan
+    T_LCI(["/stereo/left/image_rect · left/camera_info&lt;br/&gt;Image · CameraInfo"]):::topic
+    T_DISP(["/stereo/disparity&lt;br/&gt;DisparityImage"]):::topic
+    T_STOUT(["/stereo/depth · depth/uncertainty · confidence&lt;br/&gt;disparity/color · depth/image_mm — Image"]):::topic
+    T_SPTS(["/stereo/points&lt;br/&gt;PointCloud2"]):::topic
+    S_STEREO{{"/stereo/set_processing (SetBool)&lt;br/&gt;capture_calibration_pair · reset_temporal_filter"}}:::srv
+  end
+  STN --&gt; T_DISP
+  STN --&gt; T_LCI
+  STN --&gt; T_STOUT
+  STN --&gt; T_SPTS
+  T_SEN --&gt; STN
+  S_STEREO -.-&gt; STN
+  T_DISP --&gt; DSN --&gt; T_STOUT
+  T_DISP --&gt; S3D
+  T_LCI --&gt; S3D
+  S3D --&gt; T_SPTS
+
+  %% ═════════════ ros2_night_vision_owl ═════════════
+  subgraph THERM["ros2_night_vision_owl — main pipeline (namespace /thermal)"]
+    direction TB
+    TCAM["thermal_camera · 📊&lt;br/&gt;SenXor MI48 (USB) / synthetic"]:::ros
+    TDET["thermal_detector · 📊&lt;br/&gt;filter + CA-CFAR"]:::ros
+    TTRK["thermal_tracker · 📊&lt;br/&gt;Kalman (DWNA) + GNN"]:::ros
+    T_TIMG(["/thermal/image_temperature · /thermal/camera_info"]):::topic
+    T_TDET(["/thermal/detections&lt;br/&gt;Detection2DArray"]):::topic
+    T_TFIL(["/thermal/image_filtered · image_debug"]):::topic
+    T_TTRK(["/thermal/tracks&lt;br/&gt;Detection2DArray"]):::topic
+  end
+  TCAM --&gt; T_TIMG --&gt; TDET
+  TDET --&gt; T_TDET
+  TDET --&gt; T_TFIL
+  T_TDET --&gt; TTRK --&gt; T_TTRK
+
+  subgraph THLEG["ros2_night_vision_owl — legacy C++/Python modules (BUILD_CPP_NODES)"]
+    direction TB
+    IRPUB["infrared_camera_publisher (C++)&lt;br/&gt;dual_thermal_camera_publisher (py)"]:::ros
+    IRPRE["infrared_preprocessing_node&lt;br/&gt;advanced_preprocessing_node"]:::ros
+    TOWLC["thermal_owl_detection (C++)&lt;br/&gt;thermal_owl_detection_node (py)"]:::ros
+    LTRK["kalman_tracker_node · advanced_tracker_node&lt;br/&gt;simple_tracker_node"]:::ros
+    NVVIS["night_vision_visualizer&lt;br/&gt;infrared_preprocessing_tester"]:::ros
+    T_IRRAW(["/infrared/image_raw&lt;br/&gt;+ /thermal/image_primary · secondary · fused"]):::topic
+    T_IRPP(["infrared/image_denoised · infrared/image_preprocessed"]):::topic
+    T_TOWL(["thermal/raw · processed · hotspots · statistics&lt;br/&gt;owl · average_temperature"]):::topic
+    T_DOP(["detected_object/position&lt;br/&gt;Point"]):::orphan
+    T_TOP(["tracked_objects/poses · tracked_object/id&lt;br/&gt;tracked_objects/markers · tracking/quality"]):::topic
+  end
+  IRPUB --&gt; T_IRRAW --&gt; IRPRE --&gt; T_IRPP
+  TOWLC --&gt; T_TOWL
+  T_DOP --&gt; LTRK --&gt; T_TOP
+  T_IRRAW --&gt; NVVIS
+  T_IRPP --&gt; NVVIS
+  T_TOP --&gt; NVVIS
+
+  %% ═════════════ ros2_rf_spectrum ═════════════
+  subgraph RF["ros2_rf_spectrum"]
+    direction TB
+    T_IQ(["rf_monitor/raw_iq&lt;br/&gt;Float32MultiArray (external SDR)"]):::orphan
+    SPEC["spectrum_analyzer_cuda&lt;br/&gt;FFT on the GPU"]:::ros
+    JAM["jamming_detector_ml_cuda"]:::ros
+    FSC["failsafe_controller&lt;br/&gt;JAMMING → RTH · SPOOFING → LAND&lt;br/&gt;latched, escalate-only · ~/reset"]:::ros
+    T_SPEC(["rf_monitor/spectrum_data · rf_monitor/analyzer_stats&lt;br/&gt;Float32MultiArray"]):::topic
+    T_ALERT(["rf_threat_alert&lt;br/&gt;String"]):::topic
+    T_JAM(["rf_monitor/jamming_detected · jamming_confidence · detector_status"]):::topic
+    T_RFACT(["rf_failsafe/active&lt;br/&gt;Bool (transient local)"]):::topic
+  end
+  T_IQ --&gt; SPEC
+  SPEC --&gt; T_SPEC
+  SPEC --&gt; T_ALERT
+  T_SPEC --&gt; JAM --&gt; T_JAM
+  T_ALERT --&gt; FSC
+  FSC --&gt; T_RFACT
+  FSC --&gt;|"RTH / LAND"| T_NAVCMD
+
+  %% ═════════════ Gazebo simulation ═════════════
+  subgraph SIM["Gazebo Harmonic simulation — hexacopter_sim.launch.py"]
+    direction TB
+    GZ[("Gazebo · plugin HexacopterSystem&lt;br/&gt;ros2_hexacopter_control: X12 · 12 BLDC/ESC")]:::nonros
+    GZ_MCU[("plugin McuEmulatorSystem&lt;br/&gt;virtual MCU · ros2_mcu_emulator")]:::nonros
+    GZB["ros_gz_bridge&lt;br/&gt;parameter_bridge"]:::ext
+    RSP["robot_state_publisher"]:::ext
+    SPAWN["ros_gz_sim create"]:::ext
+    T_HEXIN(["/hexa/cmd · /hexa/arm · /hexa/fault/open_circuit · /hexa/fault/propeller&lt;br/&gt;Twist · Bool · Int32"]):::orphan
+    T_CLOCK(["/clock&lt;br/&gt;Clock"]):::topic
+    T_HEXOUT(["/hexa/state_estimate · /hexa/status · /hexa/ground_truth/odometry&lt;br/&gt;Pose · Float32Array · Odometry"]):::topic
+    T_RD(["robot_description&lt;br/&gt;String"]):::topic
+  end
+  GZ &lt;==&gt;|"gz-transport"| GZB
+  GZB --&gt; T_CLOCK
+  GZB --&gt; T_HEXOUT
+  T_HEXIN --&gt; GZB
+  RSP --&gt; T_RD --&gt; SPAWN
+  RSP --&gt; T_TF
+  SPAWN --&gt;|"spawn model"| GZ
+  GZ_MCU ==&gt;|"UDP :9870 · IMU 1 kHz · GNSS 10 Hz · encoder"| BR_SL
+  BR_SL -.-&gt;|"TIME_SYNC :9871"| GZ_MCU
+
+  %% ═════════════ Monitoring · GUI · MATLAB ═════════════
+  subgraph TOOLS["Monitoring · GUI · MATLAB"]
+    direction TB
+    T_DIAG(["/diagnostics&lt;br/&gt;DiagnosticArray ← every 📊 node"]):::topic
+    QT["ros2_dashboard_node (ROS2_Qt)&lt;br/&gt;topic-contract monitoring (rate · jitter · staleness)&lt;br/&gt;SLAM 3D (voxel log-odds) · images · PointCloud2 · thermal image + tracks · stereo (layers, depth probe, parameters) · acknowledged commands"]:::ros
+    MON["ros2_monitoring_py (ROS2_Monitoring)&lt;br/&gt;node-manager TUI: ROS graph · list/get_parameters&lt;br/&gt;lifecycle get_state/change_state · confirmed SIGINT"]:::ros
+    RVIZ["rviz2 · rqt_image_view"]:::ext
+    MLB1["matlab_ros2_node&lt;br/&gt;ROS2_Communication_Handler.m"]:::ros
+    MLB2["matlab_lidar_slam_node&lt;br/&gt;Connect_ROS2_Humble.m · lidarSLAM on /scan"]:::ros
+    MLB3["matlab_jetowl_viz&lt;br/&gt;JetOwlRos2Session.m · jetowl_ros2_viz.m · Simulink jetowl_blk_*&lt;br/&gt;3-D/2-D · altitude · attitude · RPM · SLAM: NIS, ICP, map"]:::ros
+    T_MLIN(["/input_topic → /output_topic&lt;br/&gt;Float64"]):::orphan
+  end
+  T_DIAG --&gt; COORD
+  T_DIAG -.-&gt;|"any topic"| MON
+  T_SPTS -.-&gt;|"selected in the GUI"| QT
+  T_ACC -.-&gt;|"selected in the GUI"| QT
+  T_ODOMF &amp; T_IMU &amp; T_FIX &amp; T_BARO &amp; T_ATTSP &amp; T_THR &amp; T_DIST &amp; T_RPM &amp; T_FCSTAT &amp; T_LINKOK --&gt; QT
+  T_FLSTAT &amp; T_FLOUT &amp; T_ACTIVE &amp; T_MSTAT &amp; T_MOUT &amp; T_GCSOK &amp; T_BATT --&gt; QT
+  T_ESTOP &amp; T_RFACT &amp; T_ALERT &amp; T_MAP &amp; T_SLOUT &amp; T_VOUT &amp; T_VSTAT &amp; T_DIAG --&gt; QT
+  T_SCAN &amp; T_RANGE &amp; T_TF --&gt;|"SLAM 3D: LD19 scan slices + LPB40B ray placed on the 6-DoF pose"| QT
+  T_TIMG &amp; T_TDET &amp; T_TTRK --&gt;|"Thermal: °C frame + detections + tracks with the same stamp, 95 % ellipses"| QT
+  T_DISP &amp; T_LCI &amp; T_STOUT --&gt;|"Stereo: displayed layer (depth · σ_Z · disparity · rectified image) + left/camera_info"| QT
+  QT -.-&gt;|"set_processing · capture · reset · parameters (read back to confirm)"| S_STEREO
+  QT -.-&gt;|"commands acknowledged through flight/status"| T_NAVCMD
+  QT -.-&gt;|"call start / abort / reset / reload"| S_MISSION
+  QT -.-&gt;|"call"| S_SAVEMAP
+  T_MAP --&gt; RVIZ
+  T_DETIMG --&gt; RVIZ
+  T_MLIN &lt;--&gt; MLB1
+  T_SCAN --&gt;|"lidarSLAM"| MLB2
+  T_RANGE --&gt; MLB2
+  T_ODOMF &amp; T_IMU &amp; T_FIX &amp; T_BARO &amp; T_ATTSP &amp; T_RPM --&gt; MLB3
+  T_SETP &amp; T_FLSTAT &amp; T_CTRLOUT &amp; T_MOUT &amp; T_HEXOUT --&gt; MLB3
+  T_SLOUT &amp; T_MAP &amp; T_SCAN &amp; T_RANGE &amp; T_TRKM --&gt; MLB3
+  MLB3 -.-&gt;|"user command"| T_NAVCMD
+  MLB3 -.-&gt;|"user command"| T_WP
+
+  %% ═════════════ Examples ═════════════
+  subgraph EX["Examples/ (COLCON_IGNORE — reference code)"]
+    direction TB
+    T_EXCAM(["camera/image_raw&lt;br/&gt;Image"]):::orphan
+    EXCAM["camera_reader"]:::ros
+    EXFB["firebase_image_uploader"]:::ros
+    EXFD["firebase_data_handler&lt;br/&gt;(5 s timer, no pub/sub)"]:::ros
+    EXJOY["joystick_controller"]:::ros
+    EXCMD["control_command_publisher"]:::ros
+    EXST["status_publisher"]:::ros
+    EXPAR["parameter_service"]:::ros
+    T_JCMD(["jetbot_cmd_vel · jetbot_status&lt;br/&gt;Twist · String"]):::topic
+    S_DBG{{"set_debug_mode&lt;br/&gt;SetBool"}}:::srv
+  end
+  FIREBASE[("Firebase")]:::nonros
+  T_EXCAM --&gt; EXCAM
+  T_EXCAM --&gt; EXFB
+  T_JOY --&gt; EXJOY
+  EXJOY --&gt; T_CMDVEL
+  EXCMD --&gt; T_JCMD
+  EXST --&gt; T_JCMD
+  S_DBG -.-&gt; EXPAR
+  EXFB -.-&gt;|"HTTPS"| FIREBASE
+  EXFD -.-&gt;|"HTTPS"| FIREBASE
+
+  %% ═════════════ Styles ═════════════
+  classDef ros fill:#dbeafe,stroke:#1d4ed8,stroke-width:1.5px,color:#0b1b3f
+  classDef mcu fill:#ffedd5,stroke:#c2410c,stroke-width:2.5px,color:#3b1503
+  classDef fw fill:#fef9c3,stroke:#a16207,stroke-width:1px,color:#3a2a00
+  classDef hw fill:#dcfce7,stroke:#15803d,stroke-width:1px,color:#052e16
+  classDef ext fill:#f1f5f9,stroke:#64748b,stroke-width:1px,stroke-dasharray:5 3,color:#0f172a
+  classDef nonros fill:#ede9fe,stroke:#6d28d9,stroke-width:1px,color:#1e1046
+  classDef topic fill:#ffffff,stroke:#334155,stroke-width:1px,color:#0f172a
+  classDef orphan fill:#fff1f2,stroke:#be123c,stroke-width:1px,stroke-dasharray:4 3,color:#4c0519
+  classDef srv fill:#fae8ff,stroke:#a21caf,stroke-width:1px,color:#3b0764
+  classDef note fill:#fffbeb,stroke:#d97706,stroke-width:1px,color:#451a03</code></pre> <h2 id="2-closed-loops-in-the-diagram">2. Closed loops in the diagram<a class="headerlink" href="#2-closed-loops-in-the-diagram" title="Anchor link to this section">¶</a></h2> <p>Under the project's control convention (<code>.claude/rules/control-systems.md</code>), every path from a sensor to an actuator must pass through filtering, estimation and control, and be closed by measured feedback. The diagram contains the following loops:</p> <table> <thead> <tr> <th>#</th> <th>Loop</th> <th>Path in the diagram</th> <th>Status</th> </tr> </thead> <tbody> <tr> <td>1</td> <td>Rotor speed, 1 kHz per rotor (FC)</td> <td><code>FC_ROT</code> → DShot → <abbr title="Electronic Speed Controller">ESC</abbr> → RPM telemetry → <code>FC_ROT</code></td> <td>Closed in firmware</td> </tr> <tr> <td>2</td> <td>Angular rate 1 kHz and attitude 250 Hz (FC)</td> <td><abbr title="Inertial Measurement Unit">IMU</abbr> → <code>imu_frontend</code> → <code>imu_fusion</code> → attitude loop → rate loop → mixer → <abbr title="Electronic Speed Controller">ESC</abbr> → body motion → <abbr title="Inertial Measurement Unit">IMU</abbr></td> <td>Closed in firmware</td> </tr> <tr> <td>3</td> <td>Position / trajectory, 50 Hz (Jetson ↔ FC)</td> <td><code>/imu/data</code> → <code>uav_state_estimator</code> (<abbr title="Error-State Kalman Filter">ESKF</abbr>) → <code>/odometry/filtered</code> → <code>uav_trajectory_controller</code> (<abbr title="Model Predictive Control">MPC</abbr>) → <code>/control/attitude_setpoint</code> + <code>/control/thrust</code> → <code>jetowl_fc</code> → loop 2 → <abbr title="Inertial Measurement Unit">IMU</abbr> → <code>/imu/data</code></td> <td>Closed, over micro-ROS/UDP</td> </tr> <tr> <td>4</td> <td>Flight commands</td> <td><code>flight_controller_node</code> → <code>flight/setpoint</code> + <code>flight/active</code> → <abbr title="Model Predictive Control">MPC</abbr> → … → <abbr title="Error-State Kalman Filter">ESKF</abbr> → <code>/odometry/filtered</code> → <code>flight_controller_node</code></td> <td>Closed. <code>odom_topic</code> defaults to <code>/odometry/filtered</code></td> </tr> <tr> <td>5</td> <td>Camera AE/<abbr title="Auto White Balance">AWB</abbr> (Vision)</td> <td><abbr title="Image Signal Processor">ISP</abbr> → <code>cam_isp_ctrl</code> → exposure/gain → IMX335 sensor</td> <td>Closed in firmware</td> </tr> <tr> <td>6</td> <td>Thermal imaging</td> <td><code>thermal_camera</code> → filter + CA-<abbr title="Constant False Alarm Rate detector">CFAR</abbr> → Kalman/<abbr title="Global Nearest Neighbour data association">GNN</abbr></td> <td>Estimation chain only, no actuator. <code>ros2_dashboard_node</code> (Vision → Thermal tab) only displays it</td> </tr> <tr> <td>6b</td> <td>Stereo depth</td> <td>2× IMX219 → rectification → <abbr title="Semi-Global Matching">SGM</abbr> → spatial filter → per-pixel Kalman → Z, σ_Z</td> <td>Estimation chain only. The Stereo tab of <code>ros2_dashboard_node</code> displays it, calls services and writes parameters; every action is confirmed by the node's response and a read-back</td> </tr> <tr> <td>7</td> <td>Target following</td> <td><code>isaac_ros_target_follower_node</code> → <code>/cmd_vel</code> (heading frame) → <code>flight_controller_node</code> (<code>MANUAL</code> mode, <code>manual.source: cmd_vel</code>, <code>v_w = R_z(ψ̂) v_h</code>) → loop 4</td> <td>Closed on the UAV when the follower reads <code>odom_topic:=/odometry/filtered</code>. On the Jetbot, the base driver (subscribes <code>/cmd_vel</code>, publishes <code>/odom</code>) is outside the three repositories</td> </tr> <tr> <td>8</td> <td>RF defence</td> <td><code>spectrum_analyzer_cuda</code> → <code>rf_threat_alert</code> → <code>failsafe_controller</code> → <code>flight/nav_command</code> (<code>JAMMING</code> → <code>RTH</code>, <code>SPOOFING</code> → <code>LAND</code>) → <code>flight_controller_node</code></td> <td>Closed through the FCN. Commands are latched, escalate-only, cleared with <code>~/reset</code></td> </tr> <tr> <td>9</td> <td>Relative altitude</td> <td>BMP280 → <code>jetowl_fc</code> → <code>/baro/pressure</code> (σ² = 1.44 Pa²) → <abbr title="Error-State Kalman Filter">ESKF</abbr> → loop 3</td> <td>Closed. Previously there was no barometer source</td> </tr> </tbody> </table> <h2 id="3-node-inventory">3. Node inventory<a class="headerlink" href="#3-node-inventory" title="Anchor link to this section">¶</a></h2> <p>Notation in the Node column:</p> <ul> <li><code>·</code> separates nodes that share one block in the diagram.</li> <li>📊 marks a node that publishes <code>/diagnostics</code> or its own <code>…/diagnostics</code> topic.</li> </ul> <table> <thead> <tr> <th>Repository / package</th> <th>Node (run-time name)</th> <th>Source · launch</th> </tr> </thead> <tbody> <tr> <td><strong>JetOwl_FlightControl</strong></td> <td><code>jetowl_fc</code> (micro-ROS)</td> <td><code>Application/Interface/Src/uros_app.c</code>, topic contract in <code>uros_app.h</code></td> </tr> <tr> <td><strong>JetOwl_Vision</strong></td> <td><code>jetowl_vision</code> (micro-ROS)</td> <td><code>Appli/Uros/Src/uros_app.c</code>, <code>uros_app.h</code></td> </tr> <tr> <td><code>ros2_jetowl_bridge</code></td> <td><code>jetowl_bridge</code> 📊 (4 links: <code>fc</code>, <code>vision_mcu</code>, <code>vision</code>, <code>sensor_link</code>)</td> <td><code>src/jetowl_bridge_node.cpp</code> · <code>launch/jetowl_bridge.launch.py</code>; this launch file also starts <code>micro_ros_agent</code> and <code>static_transform_publisher</code></td> </tr> <tr> <td><code>ros2_control_system</code></td> <td><code>uav_state_estimator</code> 📊 · <code>uav_trajectory_controller</code> 📊</td> <td><code>src/nodes/*.cpp</code> · <code>launch/control_system.launch.py</code></td> </tr> <tr> <td><code>ros2_flight_controller</code></td> <td><code>flight_controller_node</code> 📊 · <code>telemetry_logger_node</code></td> <td><code>src/core/main.cpp</code>, <code>ros2_flight_controller/telemetry_logger.py</code> · <code>launch/flight_controller.launch.py</code></td> </tr> <tr> <td><code>ros2_mission_planner</code></td> <td><code>mission_planner_node</code> 📊</td> <td><code>src/mission_planner_node.cpp</code></td> </tr> <tr> <td><code>ros2_network_bridge</code></td> <td><code>network_bridge_node</code> 📊</td> <td><code>src/network_bridge_node.cpp</code></td> </tr> <tr> <td><code>isaac_ros_objectdetection</code></td> <td><code>yolov5_decoder_node</code> · <code>object_detection_visualizer</code> · <code>ssd_mobilenet_decoder_node</code> · <code>ssd_mobilenet_detector_node</code> · <code>nano_owl_decoder_node</code> · <code>nano_owl_detector_node</code></td> <td><code>isaac_ros_objectdetection/{yolov5,ssd_mobilenet,owl}/</code> · <code>launch/*_tensor_rt.launch.py</code>, <code>*_triton.launch.py</code>, <code>nano_owl_detector.launch.py</code></td> </tr> <tr> <td><code>ros2_lidar_slam</code></td> <td><code>ld19_node</code> 📊 · <code>lpb40b_node</code> 📊 · <code>lidar_slam_node</code> 📊</td> <td><code>src/{ld19_driver,lpb40b_driver,dual_lidar_slam}.cpp</code> · <code>launch/dual_lidar_slam.launch.py</code>. <code>human_pose.cpp</code> and <code>lidar_visualizer.cpp</code> are not in <code>CMakeLists.txt</code> and are therefore not drawn</td> </tr> <tr> <td><code>ros2_lidar_ai_solution</code> (23 nodes)</td> <td><code>pointcloud_preprocessor_node</code> · <code>ground_plane_node</code> · <code>cupcl_filter_node</code> · <code>centerpoint_node</code> 📊 · <code>pointpillars_node</code> 📊 · <code>bevfusion_node</code> · <code>detection_fusion_node</code> · <code>object_tracker_node</code> · <code>costmap_generator_node</code> · <code>safety_zone_node</code> 📊 · <code>pointcloud_accumulator_node</code> · <code>pipeline_coordinator_node</code> · <code>cupcl_cluster_node</code> · <code>cupcl_octree_node</code> · <code>cupcl_segmentation_node</code> · <code>cupcl_icp_node</code> · <code>cupcl_ndt_node</code> · <code>pointcloud_relay_node</code> · <code>pointcloud_stats_node</code> 📊 · <code>isaac_ros_semantic_fusion_node</code> · <code>isaac_ros_semantic_overlay_node</code> · <code>isaac_ros_detection_bridge_node</code> · <code>isaac_ros_target_follower_node</code> 📊</td> <td><code>src/*/*_node.cpp</code> · <code>launch/full_pipeline.launch.py</code>, <code>isaac_ros_perception.launch.py</code></td> </tr> <tr> <td><code>ros2_stereo</code></td> <td><code>stereo_node</code> · <code>depth_stereo_node</code> · <code>stereo_3d_node</code> (namespace <code>/stereo</code>)</td> <td><code>src/*_node.cpp</code> · <code>launch/stereo.launch.py</code>, <code>stereo_postprocess.launch.py</code></td> </tr> <tr> <td><code>ros2_night_vision_owl</code>, main pipeline</td> <td><code>thermal_camera</code> 📊 · <code>thermal_detector</code> 📊 · <code>thermal_tracker</code> 📊 (namespace <code>/thermal</code>)</td> <td><code>ros2_night_vision_owl/nodes/*.py</code> · <code>launch/night_vision_owl_pipeline.launch.py</code></td> </tr> <tr> <td><code>ros2_night_vision_owl</code>, legacy modules (<code>BUILD_CPP_NODES</code>)</td> <td><code>infrared_camera_publisher</code> (C++) · <code>dual_thermal_camera_publisher</code> · <code>infrared_preprocessing_node</code> · <code>advanced_preprocessing_node</code> · <code>thermal_owl_detection</code> (C++) · <code>thermal_owl_detection_node</code> (py) · <code>kalman_tracker_node</code> · <code>advanced_tracker_node</code> · <code>simple_tracker_node</code> · <code>night_vision_visualizer</code> · <code>infrared_preprocessing_tester</code></td> <td><code>src/night_vison_owl_*/</code>, <code>scripts/dual_thermal_camera_publisher.py</code></td> </tr> <tr> <td><code>ros2_rf_spectrum</code></td> <td><code>spectrum_analyzer_cuda</code> · <code>jamming_detector_ml_cuda</code> · <code>failsafe_controller</code></td> <td><code>ros2_rf_spectrum/{rf_scanner,threat_detection,defense}/</code></td> </tr> <tr> <td><code>ros2_qt</code></td> <td><code>ros2_dashboard_node</code> (default name, editable in the GUI). Publishes only <code>flight/nav_command</code>; every command is acknowledged through the measured <code>flight/status</code></td> <td><code>src/ros/dashboard_node.cpp</code>, <code>src/ros/ros_bridge.cpp</code>, topic contract in <code>include/ros2_qt/core/topic_contract.hpp</code>, thermal frame in <code>include/ros2_qt/core/thermal_view.hpp</code> · <code>launch/ros2_qt.launch.py</code></td> </tr> <tr> <td><code>ros2_monitoring</code></td> <td><code>ros2_monitoring_py</code></td> <td><code>ros2_monitoring/controller/ros2_controller.py</code>, <code>core/node_manager.py</code> (lifecycle/parameter service clients), <code>core/ros2_interface.py</code></td> </tr> <tr> <td><code>MATLAB/</code></td> <td><code>matlab_ros2_node</code> · <code>matlab_lidar_slam_node</code> · <code>matlab_jetowl_viz</code></td> <td><code>scripts/ros2/ROS2_Communication_Handler.m</code>, <code>scripts/ros_interface/Connect_ROS2_Humble.m</code>, <code>scripts/ros2/JetOwlRos2Session.m</code> (publishes only <code>flight/nav_command</code>, <code>flight/waypoints</code>; actuator topics are blocked). The Simulink model <code>simulink/jetowl_build_monitor_model.m</code> (MATLAB Function blocks only) uses the same node</td> </tr> <tr> <td><code>Examples/</code> (<code>COLCON_IGNORE</code>)</td> <td><code>camera_reader</code> · <code>firebase_image_uploader</code> · <code>firebase_data_handler</code> · <code>joystick_controller</code> · <code>control_command_publisher</code> · <code>status_publisher</code> · <code>parameter_service</code></td> <td><code>Examples/*/*.cpp</code></td> </tr> <tr> <td>Gazebo, not nodes</td> <td><code>HexacopterSystem</code> plugin (<code>ros2_hexacopter_gazebo</code> + <code>ros2_hexacopter_control</code>) and <code>McuEmulatorSystem</code> plugin (<code>ros2_mcu_emulator</code>)</td> <td>Package <code>ros2_hexacopter_gazebo</code>: <code>launch/hexacopter_sim.launch.py</code>, <code>config/ros_gz_bridge.yaml</code></td> </tr> </tbody> </table> <h2 id="4-unconnected-topics-and-fixed-mismatches">4. Unconnected topics and fixed mismatches<a class="headerlink" href="#4-unconnected-topics-and-fixed-mismatches" title="Anchor link to this section">¶</a></h2> <p>In the diagram, topics with a dashed red border have <strong>no publisher</strong> in the three repositories. All of them are inputs from hardware or external drivers, which is expected:</p> <ul> <li><code>/points</code>: 3-D LiDAR.</li> <li><code>/camera/color/image_raw</code>: camera driver.</li> <li><code>joy</code>: <code>joy_node</code>.</li> <li><code>rf_monitor/raw_iq</code>: <abbr title="Software-Defined Radio">SDR</abbr>.</li> <li><code>/odom</code>: wheel odometry from the Jetbot base driver. Only the target follower (on the Jetbot) and <code>lidar_slam_node</code> (with <code>use_odom</code>) read this topic.</li> </ul> <p>Drawing the diagram exposed the following mismatches, all of which have been fixed:</p> <table> <thead> <tr> <th>#</th> <th>Mismatch</th> <th>Fix</th> </tr> </thead> <tbody> <tr> <td>1</td> <td>The launch file remapped <code>gnss/velocity → /gps/velocity</code>, while the bridge publishes <code>/gps/vel_cov</code></td> <td><code>control_system.launch.py</code> and the <abbr title="Software-in-the-Loop">SIL</abbr> now use <code>/gps/vel_cov</code></td> </tr> <tr> <td>2</td> <td>No node published <code>/baro/pressure</code></td> <td>The FC firmware reads the BMP280 (already on the SEN0253 module) and <code>jetowl_fc</code> publishes <code>FluidPressure</code>. Settings from datasheet BST-BMP280-DS001: ×4/IIR 2, 25 Hz, σ² = 1.44 Pa², timestamp minus 18 ms (<code>airframe_config.h</code> section 6.4). The <abbr title="Error-State Kalman Filter">ESKF</abbr>'s <code>baro_sigma</code> is now sourced from the BMP280</td> </tr> <tr> <td>3</td> <td><code>flight_controller_node</code> read <code>/odom</code> by default, and <code>/odom</code> has no publisher</td> <td><code>odom_topic</code> defaults to <code>/odometry/filtered</code></td> </tr> <tr> <td>4</td> <td><code>telemetry_logger_node</code> read <code>flight/state</code>, a topic without a publisher</td> <td>It reads <code>odometry/filtered</code> (remapped through <code>odom_topic</code>)</td> </tr> <tr> <td>5</td> <td>The <abbr title="Model Predictive Control">MPC</abbr> expected <code>/perception/obstacles</code>, a topic without a publisher</td> <td>Remap <code>obstacles → /tracked/markers</code>. The node now accepts CUBE markers with the tight bounding sphere <code>½‖s‖</code>, and the CYLINDER bounding sphere is corrected to <code>½√(d² + h²)</code> (the old formula did not enclose the shape). Markers are transformed to <code>odom</code> through tf2, or through the <abbr title="Error-State Kalman Filter">ESKF</abbr> pose when the frame is <code>base_link</code>, and expire with their <code>lifetime</code> (test <code>test_obstacle_geometry</code>)</td> </tr> <tr> <td>6</td> <td><code>/cmd_vel</code> carried two different meanings and had no subscriber</td> <td>The FCN publishes its world-frame command on <code>flight/cmd_vel</code> and subscribes to <code>/cmd_vel</code> (heading frame) in <code>MANUAL</code> mode. Added the nav commands <code>MANUAL</code>/<code>MANUAL_RELEASE</code>; the mode was previously unreachable. Two further bugs fixed: the joystick was not rotated by <code>ψ̂</code>, and signal loss was only detected when the next message arrived</td> </tr> <tr> <td>7</td> <td><code>/jetowl/motor_rpm</code> had no subscriber</td> <td>The bridge's <code>fc</code> link monitors rate, per-rotor rpm, valid ratio and malformed messages (<code>jetowl_bridge/fc: rotors</code>)</td> </tr> <tr> <td>8</td> <td><code>/imu/data</code> has two sources (FC and <code>sensor_link</code>)</td> <td>Kept by design: the two sources are never enabled together, and the bridge warns when both are</td> </tr> <tr> <td>9</td> <td>MATLAB read <code>/ld19_scan</code> and <code>/lpb40b_scan</code>, ran <abbr title="Simultaneous Localisation and Mapping">SLAM</abbr> on a single-point range sensor, and used a ROS 1 connection</td> <td>It reads <code>/scan</code> (lidarSLAM, rays filtered to 0.3–12 m) and <code>/range</code> (limit checks only), and uses <code>ros2node</code> with <code>ROS_DOMAIN_ID</code></td> </tr> <tr> <td>10</td> <td>The RF package had wrong executable names and remaps, entry points to missing modules, two empty launch files, no <code>setup.cfg</code> and no <code>find_packages</code> (no node could run), and a <code>failsafe_controller</code> that was only a TODO</td> <td>All fixed. <code>failsafe_controller</code> uses <code>failsafe_policy.py</code> (tested) and publishes <code>flight/nav_command</code></td> </tr> <tr> <td>11</td> <td><code>pipeline_params.yaml</code> and <code>full_pipeline.launch.py</code> set different topics</td> <td>Kept: the launch parameters win, and the diagram follows the launch file</td> </tr> <tr> <td>12</td> <td><code>thermal_detector</code> put the centre of the <code>Detection2D</code> <code>bbox</code> at the hot blob's centroid, so the box was offset from the object (vision_msgs defines <code>bbox</code> as the object's bounding box)</td> <td><code>bbox</code> is the blob's true bounding box (centre <code>u_min + (w − 1)/2</code>); the centroid and its 2×2 covariance are in <code>results[0].pose</code>. <code>read_detection</code> and <code>ros2_qt</code> read the position from the same covariance-carrying field; producers without a covariance (NanoOWL) still use the <code>bbox</code> centre</td> </tr> <tr> <td>13</td> <td>The diagram showed <code>/stereo/left/camera_info</code> as a topic without a publisher</td> <td><code>stereo_node</code> publishes <code>left/image_rect</code> + <code>left/camera_info</code> through an image_transport camera publisher: <code>stereo_node</code> → topic is now connected. The Stereo tab uses this topic as its heartbeat and takes the P matrix from it</td> </tr> </tbody> </table> <h2 id="5-network-boundaries">5. Network boundaries<a class="headerlink" href="#5-network-boundaries" title="Anchor link to this section">¶</a></h2> <table> <thead> <tr> <th>Host</th> <th>Address</th> <th>Role in the diagram</th> </tr> </thead> <tbody> <tr> <td>Jetson Orin Nano Super</td> <td><code>192.168.10.1/24</code></td> <td>Every <code>Source/</code> node, <code>micro_ros_agent</code> on UDP <code>8888</code></td> </tr> <tr> <td>JetOwl FC (STM32N657)</td> <td><code>192.168.10.2/24</code></td> <td><code>jetowl_fc</code></td> </tr> <tr> <td>JetOwl_Vision (STM32N655)</td> <td><code>192.168.10.3/24</code></td> <td><code>jetowl_vision</code></td> </tr> <tr> <td>Server_OTA</td> <td><code>192.168.10.200:8080</code></td> <td>HTTP from the <code>ota</code> task of both MCUs, straight through the switch to the MetalLB address of the <abbr title="Over-the-Air update">OTA</abbr> Service (Helm chart <code>ros2-jetson</code>)</td> </tr> <tr> <td>Virtual <abbr title="Microcontroller Unit">MCU</abbr> (Gazebo)</td> <td>UDP <code>9870</code> (data), <code>9871</code> (time synchronisation)</td> <td><code>McuEmulatorSystem</code> plugin → <code>sensor_link</code> link</td> </tr> <tr> <td>OpenMV RT1062</td> <td>TCP or USB CDC</td> <td><code>vision</code> link</td> </tr> <tr> <td><abbr title="Ground Control Station">GCS</abbr></td> <td>MAVLink v2 over UDP or serial</td> <td><code>network_bridge_node</code></td> </tr> </tbody> </table> <h2 id="6-updating-and-re-rendering-the-image">6. Updating and re-rendering the image<a class="headerlink" href="#6-updating-and-re-rendering-the-image" title="Anchor link to this section">¶</a></h2> <p>When adding or changing a node, update together:</p> <ol> <li>The <code>mermaid</code> block of section 1. Declare each topic once, in the subgraph of its main publisher.</li> <li>The table of section 3, and section 4 if a topic has no publisher or no subscriber.</li> <li>The SVG image, re-rendered with the bundled script. The script runs Mermaid 12 (dagre) in headless Chromium, converts labels to plain SVG, adds a white background and rounds the coordinates:</li> </ol> <div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>npm<span class="w"> </span>i<span class="w"> </span>--no-save<span class="w"> </span>mermaid@12<span class="w"> </span>playwright-core<span class="w">            </span><span class="c1"># at the repository root</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="nv">CHROMIUM</span><span class="o">=</span>/path/to/chromium<span class="w"> </span>node<span class="w"> </span>Docs/flowcharts/render_flowchart.mjs<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">    </span>Docs/flowcharts/ros2_nodes_flowchart.md<span class="w"> </span>Docs/flowcharts/images/ros2_nodes_flowchart.svg
+</span></code></pre></div> <p>Keep <code>"layout": "dagre"</code> in the <code>%%{init}%%</code> line. Without it, Mermaid 12 (including <code>mmdc</code>) lays this graph out about twice as wide (~17 000 px instead of ~8 400 px) with many detours.</p> <p>The diagram must stay below Mermaid's default limits (500 edges, 50 000 characters) so that GitHub can still render the <code>mermaid</code> block.</p> <aside class="md-source-file"> <span class="md-source-file__fact"> <span class="md-icon" title="Last update"> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"></path></svg> </span> <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="October 9, 2026 15:16:02 UTC"><span class="timeago" datetime="2026-10-09T15:16:02+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="October 9, 2026 15:16:02 UTC">2026-10-09</span> </span> <span class="md-source-file__fact"> <span class="md-icon" title="Created"> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3z"></path></svg> </span> <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="October 9, 2026 15:16:02 UTC"><span class="timeago" datetime="2026-10-09T15:16:02+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="October 9, 2026 15:16:02 UTC">2026-10-09</span> </span> </aside> </article> </div> <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script> <script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script> </div> <button type="button" class="md-top md-icon" data-md-component="top" hidden=""> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"></path></svg> Back to top </button> </main> <footer class="md-footer"> <nav class="md-footer__inner md-grid" aria-label="Footer"> <a href="../../architecture/network/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Network Architecture"> <div class="md-footer__button md-icon"> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg> </div> <div class="md-footer__title"> <span class="md-footer__direction"> Previous </span> <div class="md-ellipsis"> Network Architecture </div> </div> </a> <a href="../" class="md-footer__link md-footer__link--next" aria-label="Next: ROS2 Modules"> <div class="md-footer__title"> <span class="md-footer__direction"> Next </span> <div class="md-ellipsis"> ROS2 Modules </div> </div> <div class="md-footer__button md-icon"> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"></path></svg> </div> </a> </nav> <div class="md-footer-meta md-typeset"> <div class="md-footer-meta__inner md-grid"> <div class="md-copyright"> <div class="md-copyright__highlight"> Copyright © 2025 TNG-Blue · Licensed under the <a href="https://www.apache.org/licenses/LICENSE-2.0">Apache License 2.0</a> · <a href="https://github.com/TNG-Blue/Isaac_ROS-Jetbot_NanoOWL/blob/master/NOTICE.md">Third-party notices</a> </div> </div> <div class="md-social"> <a href="https://github.com/TNG-Blue/Isaac_ROS-Jetbot_NanoOWL" target="_blank" rel="noopener" title="GitHub Repository" class="md-social__link"> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!-- Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"></path></svg> </a> <a href="https://hub.docker.com/u/tngblue" target="_blank" rel="noopener" title="Docker Hub" class="md-social__link"> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!-- Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M349.9 236.3h-66.1v-59.4h66.1zm0-204.3h-66.1v60.7h66.1zm78.2 144.8H362v59.4h66.1zm-156.3-72.1h-66.1v60.1h66.1zm78.1 0h-66.1v60.1h66.1zm276.8 100c-14.4-9.7-47.6-13.2-73.1-8.4-3.3-24-16.7-44.9-41.1-63.7l-14-9.3-9.3 14c-18.4 27.8-23.4 73.6-3.7 103.8-8.7 4.7-25.8 11.1-48.4 10.7H2.4c-8.7 50.8 5.8 116.8 44 162.1 37.1 43.9 92.7 66.2 165.4 66.2 157.4 0 273.9-72.5 328.4-204.2 21.4.4 67.6.1 91.3-45.2 1.5-2.5 6.6-13.2 8.5-17.1zm-511.1-27.9h-66v59.4h66.1v-59.4zm78.1 0h-66.1v59.4h66.1zm78.1 0h-66.1v59.4h66.1zm-78.1-72.1h-66.1v60.1h66.1z"></path></svg> </a> <a href="https://youtube.com/@tngblue" target="_blank" rel="noopener" title="YouTube Channel" class="md-social__link"> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!-- Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M549.7 124.1c-6.2-23.7-24.8-42.3-48.3-48.6C458.9 64 288.1 64 288.1 64S117.3 64 74.7 75.5c-23.5 6.3-42 24.9-48.3 48.6C15 167 15 256.4 15 256.4s0 89.4 11.4 132.3c6.3 23.6 24.8 41.5 48.3 47.8C117.3 448 288.1 448 288.1 448s170.8 0 213.4-11.5c23.5-6.3 42-24.2 48.3-47.8 11.4-42.9 11.4-132.3 11.4-132.3s0-89.4-11.4-132.3zM232.2 337.6V175.2l142.7 81.2z"></path></svg> </a> <a href="mailto:contact@tngblue.com" target="_blank" rel="noopener" title="Contact Us" class="md-social__link"> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!-- Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M536.4-26.3c9.8-3.5 20.6-1 28 6.3s9.8 18.2 6.3 28l-178 496.9c-5 13.9-18.1 23.1-32.8 23.1-14.2 0-27-8.6-32.3-21.7l-64.2-158c-4.5-11-2.5-23.6 5.2-32.6l94.5-112.4c5.1-6.1 4.7-15-.9-20.6s-14.6-6-20.6-.9l-112.4 94.3c-9.1 7.6-21.6 9.6-32.6 5.2L38.1 216.8c-13.1-5.3-21.7-18.1-21.7-32.3 0-14.7 9.2-27.8 23.1-32.8z"></path></svg> </a> </div> </div> </div> </footer> </div> <div class="md-dialog" data-md-component="dialog"> <div class="md-dialog__inner md-typeset"></div> </div> <div class="md-progress" data-md-component="progress" role="progressbar"></div> <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.instant", "navigation.instant.prefetch", "navigation.instant.preview", "navigation.instant.progress", "navigation.tracking", "navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.path", "navigation.indexes", "navigation.prune", "navigation.top", "navigation.footer", "toc.follow", "search.suggest", "search.highlight", "search.share", "content.code.copy", "content.code.select", "content.code.annotate", "content.tabs.link", "content.tooltips", "content.footnote.tooltips", "content.action.edit", "content.action.view"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script> <script src="../../../assets/javascripts/bundle.d7400e89.min.js"></script> <script src="../../../js/timeago.min.js"></script> <script src="../../../js/timeago_mkdocs_material.js"></script> <script src="../../../javascripts/extra.js"></script> <script src="../../../javascripts/mathjax.js"></script>  <script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(()=>{ lightbox.reload(); });
+</script></body></html>
