@@ -110,12 +110,12 @@
             description: 'Firmware for ESP32'
         },
         {
-            name: 'arduino_portenta_h7_flight_v095.bin',
+            name: 'stm32n6_flight_v095.bin',
             size: 786432,
             mod_time: daysAgo(19),
             version: 'v095',
-            device_type: 'Arduino',
-            description: 'Firmware for Arduino'
+            device_type: 'STM32',
+            description: 'Firmware for STM32'
         }
     ];
 

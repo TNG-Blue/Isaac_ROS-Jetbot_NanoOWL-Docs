@@ -132,7 +132,7 @@ flowchart LR
     T_TF(["/tf · /tf_static"]):::topic
   end
   OPENMV[("OpenMV RT1062&lt;br/&gt;OpenMV_RT1062.py")]:::nonros
-  PORTENTA[("Portenta H7 sensor MCU&lt;br/&gt;(firmware not written yet)")]:::nonros
+  STM32N6[("STM32N6 sensor MCU&lt;br/&gt;(firmware not written yet)")]:::nonros
 
   T_FCSTAT --&gt; BR_FC
   BR_FC --&gt; T_LINKOK
@@ -143,8 +143,8 @@ flowchart LR
   OPENMV &lt;==&gt;|"JSON lines · TCP / USB CDC"| BR_OMV
   BR_OMV --&gt; T_OMVOUT
   T_OMVIN --&gt; BR_OMV
-  PORTENTA &lt;==&gt;|"UDP :9870 / :9871"| BR_SL
-  BR_SL --&gt;|"sim / Portenta"| T_IMU
+  STM32N6 &lt;==&gt;|"UDP :9870 / :9871"| BR_SL
+  BR_SL --&gt;|"sim / STM32N6"| T_IMU
   BR_SL --&gt; T_IMURAW
   BR_SL --&gt; T_FIX
   BR_SL --&gt; T_GVEL
