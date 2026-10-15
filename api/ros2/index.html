@@ -1534,29 +1534,29 @@ featuring advanced AI perception, real-time SLAM, and production-ready deploymen
 </span><span id="__span-35-3"><a id="__codelineno-35-3" name="__codelineno-35-3" href="#__codelineno-35-3"></a>Detection[] detections
 </span></code></pre></div> <h3 id="ros2_rf_spectrum"><code>ros2_rf_spectrum</code><a class="headerlink" href="#ros2_rf_spectrum" title="Anchor link to this section">¶</a></h3> <p>Source: <a href="https://github.com/TNG-Blue/Isaac_ROS-Jetbot_NanoOWL/tree/master/Source/ROS2_RF_Spectrum/msg"><code>Source/ROS2_RF_Spectrum/msg/</code></a></p> <h4 id="ros2_rf_spectrummsgfrequencyhoppingstate"><code>ros2_rf_spectrum/msg/FrequencyHoppingState</code><a class="headerlink" href="#ros2_rf_spectrummsgfrequencyhoppingstate" title="Anchor link to this section">¶</a></h4> <div class="language-text highlight"><pre><span></span><code><span id="__span-36-1"><a id="__codelineno-36-1" name="__codelineno-36-1" href="#__codelineno-36-1"></a>std_msgs/Header header
 </span><span id="__span-36-2"><a id="__codelineno-36-2" name="__codelineno-36-2" href="#__codelineno-36-2"></a>
-</span><span id="__span-36-3"><a id="__codelineno-36-3" name="__codelineno-36-3" href="#__codelineno-36-3"></a># Trạng thái
-</span><span id="__span-36-4"><a id="__codelineno-36-4" name="__codelineno-36-4" href="#__codelineno-36-4"></a>bool is_active                  # Nhảy tần có đang hoạt động
-</span><span id="__span-36-5"><a id="__codelineno-36-5" name="__codelineno-36-5" href="#__codelineno-36-5"></a>string reason                   # Lý do bật nhảy tần
+</span><span id="__span-36-3"><a id="__codelineno-36-3" name="__codelineno-36-3" href="#__codelineno-36-3"></a># Status
+</span><span id="__span-36-4"><a id="__codelineno-36-4" name="__codelineno-36-4" href="#__codelineno-36-4"></a>bool is_active                  # Whether frequency hopping is active
+</span><span id="__span-36-5"><a id="__codelineno-36-5" name="__codelineno-36-5" href="#__codelineno-36-5"></a>string reason                   # Reason frequency hopping was enabled
 </span><span id="__span-36-6"><a id="__codelineno-36-6" name="__codelineno-36-6" href="#__codelineno-36-6"></a>
-</span><span id="__span-36-7"><a id="__codelineno-36-7" name="__codelineno-36-7" href="#__codelineno-36-7"></a># Cấu hình nhảy tần
-</span><span id="__span-36-8"><a id="__codelineno-36-8" name="__codelineno-36-8" href="#__codelineno-36-8"></a>float64[] hop_sequence          # MHz - Dãy tần số nhảy
-</span><span id="__span-36-9"><a id="__codelineno-36-9" name="__codelineno-36-9" href="#__codelineno-36-9"></a>uint32 current_hop_index        # Index hiện tại trong dãy
-</span><span id="__span-36-10"><a id="__codelineno-36-10" name="__codelineno-36-10" href="#__codelineno-36-10"></a>float64 current_frequency       # MHz - Tần số hiện tại
-</span><span id="__span-36-11"><a id="__codelineno-36-11" name="__codelineno-36-11" href="#__codelineno-36-11"></a>float32 hop_interval            # ms - Khoảng thời gian mỗi lần nhảy
-</span><span id="__span-36-12"><a id="__codelineno-36-12" name="__codelineno-36-12" href="#__codelineno-36-12"></a>uint32 hops_completed           # Số lần nhảy đã thực hiện
+</span><span id="__span-36-7"><a id="__codelineno-36-7" name="__codelineno-36-7" href="#__codelineno-36-7"></a># Frequency hopping configuration
+</span><span id="__span-36-8"><a id="__codelineno-36-8" name="__codelineno-36-8" href="#__codelineno-36-8"></a>float64[] hop_sequence          # MHz - Hop frequency sequence
+</span><span id="__span-36-9"><a id="__codelineno-36-9" name="__codelineno-36-9" href="#__codelineno-36-9"></a>uint32 current_hop_index        # Current index in the sequence
+</span><span id="__span-36-10"><a id="__codelineno-36-10" name="__codelineno-36-10" href="#__codelineno-36-10"></a>float64 current_frequency       # MHz - Current frequency
+</span><span id="__span-36-11"><a id="__codelineno-36-11" name="__codelineno-36-11" href="#__codelineno-36-11"></a>float32 hop_interval            # ms - Interval between hops
+</span><span id="__span-36-12"><a id="__codelineno-36-12" name="__codelineno-36-12" href="#__codelineno-36-12"></a>uint32 hops_completed           # Number of hops completed
 </span><span id="__span-36-13"><a id="__codelineno-36-13" name="__codelineno-36-13" href="#__codelineno-36-13"></a>
-</span><span id="__span-36-14"><a id="__codelineno-36-14" name="__codelineno-36-14" href="#__codelineno-36-14"></a># Hiệu suất
-</span><span id="__span-36-15"><a id="__codelineno-36-15" name="__codelineno-36-15" href="#__codelineno-36-15"></a>float32 hop_success_rate        # % - Tỷ lệ nhảy thành công
-</span><span id="__span-36-16"><a id="__codelineno-36-16" name="__codelineno-36-16" href="#__codelineno-36-16"></a>float32 packet_loss             # % - Mất gói tin
-</span><span id="__span-36-17"><a id="__codelineno-36-17" name="__codelineno-36-17" href="#__codelineno-36-17"></a>float32 latency                 # ms - Độ trễ
-</span><span id="__span-36-18"><a id="__codelineno-36-18" name="__codelineno-36-18" href="#__codelineno-36-18"></a>bool synchronization_ok         # Đồng bộ với ground station
+</span><span id="__span-36-14"><a id="__codelineno-36-14" name="__codelineno-36-14" href="#__codelineno-36-14"></a># Performance
+</span><span id="__span-36-15"><a id="__codelineno-36-15" name="__codelineno-36-15" href="#__codelineno-36-15"></a>float32 hop_success_rate        # % - Hop success rate
+</span><span id="__span-36-16"><a id="__codelineno-36-16" name="__codelineno-36-16" href="#__codelineno-36-16"></a>float32 packet_loss             # % - Packet loss
+</span><span id="__span-36-17"><a id="__codelineno-36-17" name="__codelineno-36-17" href="#__codelineno-36-17"></a>float32 latency                 # ms - Latency
+</span><span id="__span-36-18"><a id="__codelineno-36-18" name="__codelineno-36-18" href="#__codelineno-36-18"></a>bool synchronization_ok         # Synchronised with ground station
 </span><span id="__span-36-19"><a id="__codelineno-36-19" name="__codelineno-36-19" href="#__codelineno-36-19"></a>
-</span><span id="__span-36-20"><a id="__codelineno-36-20" name="__codelineno-36-20" href="#__codelineno-36-20"></a># Tần số backup
-</span><span id="__span-36-21"><a id="__codelineno-36-21" name="__codelineno-36-21" href="#__codelineno-36-21"></a>float64[] available_frequencies # MHz - Tần số khả dụng
-</span><span id="__span-36-22"><a id="__codelineno-36-22" name="__codelineno-36-22" href="#__codelineno-36-22"></a>uint32 safe_channels_count      # Số kênh an toàn
+</span><span id="__span-36-20"><a id="__codelineno-36-20" name="__codelineno-36-20" href="#__codelineno-36-20"></a># Backup frequencies
+</span><span id="__span-36-21"><a id="__codelineno-36-21" name="__codelineno-36-21" href="#__codelineno-36-21"></a>float64[] available_frequencies # MHz - Available frequencies
+</span><span id="__span-36-22"><a id="__codelineno-36-22" name="__codelineno-36-22" href="#__codelineno-36-22"></a>uint32 safe_channels_count      # Number of safe channels
 </span></code></pre></div> <h4 id="ros2_rf_spectrummsgrfstatus"><code>ros2_rf_spectrum/msg/RFStatus</code><a class="headerlink" href="#ros2_rf_spectrummsgrfstatus" title="Anchor link to this section">¶</a></h4> <div class="language-text highlight"><pre><span></span><code><span id="__span-37-1"><a id="__codelineno-37-1" name="__codelineno-37-1" href="#__codelineno-37-1"></a>std_msgs/Header header
 </span><span id="__span-37-2"><a id="__codelineno-37-2" name="__codelineno-37-2" href="#__codelineno-37-2"></a>
-</span><span id="__span-37-3"><a id="__codelineno-37-3" name="__codelineno-37-3" href="#__codelineno-37-3"></a># Trạng thái hoạt động
+</span><span id="__span-37-3"><a id="__codelineno-37-3" name="__codelineno-37-3" href="#__codelineno-37-3"></a># Operating status
 </span><span id="__span-37-4"><a id="__codelineno-37-4" name="__codelineno-37-4" href="#__codelineno-37-4"></a>uint8 STATUS_NORMAL = 0
 </span><span id="__span-37-5"><a id="__codelineno-37-5" name="__codelineno-37-5" href="#__codelineno-37-5"></a>uint8 STATUS_WARNING = 1
 </span><span id="__span-37-6"><a id="__codelineno-37-6" name="__codelineno-37-6" href="#__codelineno-37-6"></a>uint8 STATUS_THREAT_DETECTED = 2
@@ -1564,134 +1564,134 @@ featuring advanced AI perception, real-time SLAM, and production-ready deploymen
 </span><span id="__span-37-8"><a id="__codelineno-37-8" name="__codelineno-37-8" href="#__codelineno-37-8"></a>uint8 STATUS_EMERGENCY = 4
 </span><span id="__span-37-9"><a id="__codelineno-37-9" name="__codelineno-37-9" href="#__codelineno-37-9"></a>uint8 STATUS_OFFLINE = 5
 </span><span id="__span-37-10"><a id="__codelineno-37-10" name="__codelineno-37-10" href="#__codelineno-37-10"></a>
-</span><span id="__span-37-11"><a id="__codelineno-37-11" name="__codelineno-37-11" href="#__codelineno-37-11"></a>uint8 status                    # Trạng thái hiện tại
+</span><span id="__span-37-11"><a id="__codelineno-37-11" name="__codelineno-37-11" href="#__codelineno-37-11"></a>uint8 status                    # Current status
 </span><span id="__span-37-12"><a id="__codelineno-37-12" name="__codelineno-37-12" href="#__codelineno-37-12"></a>
-</span><span id="__span-37-13"><a id="__codelineno-37-13" name="__codelineno-37-13" href="#__codelineno-37-13"></a># Thông tin SDR
-</span><span id="__span-37-14"><a id="__codelineno-37-14" name="__codelineno-37-14" href="#__codelineno-37-14"></a>bool sdr_connected              # SDR có kết nối không
-</span><span id="__span-37-15"><a id="__codelineno-37-15" name="__codelineno-37-15" href="#__codelineno-37-15"></a>string sdr_device_type          # Loại SDR đang dùng
-</span><span id="__span-37-16"><a id="__codelineno-37-16" name="__codelineno-37-16" href="#__codelineno-37-16"></a>float32 sdr_temperature         # Celsius - Nhiệt độ SDR
-</span><span id="__span-37-17"><a id="__codelineno-37-17" name="__codelineno-37-17" href="#__codelineno-37-17"></a>uint32 samples_processed        # Số lượng mẫu đã xử lý
+</span><span id="__span-37-13"><a id="__codelineno-37-13" name="__codelineno-37-13" href="#__codelineno-37-13"></a># SDR information
+</span><span id="__span-37-14"><a id="__codelineno-37-14" name="__codelineno-37-14" href="#__codelineno-37-14"></a>bool sdr_connected              # Whether the SDR is connected
+</span><span id="__span-37-15"><a id="__codelineno-37-15" name="__codelineno-37-15" href="#__codelineno-37-15"></a>string sdr_device_type          # SDR type in use
+</span><span id="__span-37-16"><a id="__codelineno-37-16" name="__codelineno-37-16" href="#__codelineno-37-16"></a>float32 sdr_temperature         # Celsius - SDR temperature
+</span><span id="__span-37-17"><a id="__codelineno-37-17" name="__codelineno-37-17" href="#__codelineno-37-17"></a>uint32 samples_processed        # Number of samples processed
 </span><span id="__span-37-18"><a id="__codelineno-37-18" name="__codelineno-37-18" href="#__codelineno-37-18"></a>float32 cpu_usage               # % - CPU usage
-</span><span id="__span-37-19"><a id="__codelineno-37-19" name="__codelineno-37-19" href="#__codelineno-37-19"></a>float32 gpu_usage               # % - GPU usage (nếu có)
+</span><span id="__span-37-19"><a id="__codelineno-37-19" name="__codelineno-37-19" href="#__codelineno-37-19"></a>float32 gpu_usage               # % - GPU usage (if available)
 </span><span id="__span-37-20"><a id="__codelineno-37-20" name="__codelineno-37-20" href="#__codelineno-37-20"></a>
-</span><span id="__span-37-21"><a id="__codelineno-37-21" name="__codelineno-37-21" href="#__codelineno-37-21"></a># Trạng thái quét
-</span><span id="__span-37-22"><a id="__codelineno-37-22" name="__codelineno-37-22" href="#__codelineno-37-22"></a>string current_band             # Băng tần đang quét
-</span><span id="__span-37-23"><a id="__codelineno-37-23" name="__codelineno-37-23" href="#__codelineno-37-23"></a>float64 current_frequency       # MHz - Tần số hiện tại
-</span><span id="__span-37-24"><a id="__codelineno-37-24" name="__codelineno-37-24" href="#__codelineno-37-24"></a>uint32 bands_scanned            # Số băng tần đã quét
-</span><span id="__span-37-25"><a id="__codelineno-37-25" name="__codelineno-37-25" href="#__codelineno-37-25"></a>float32 scan_completion         # % - Tiến độ quét chu kỳ
+</span><span id="__span-37-21"><a id="__codelineno-37-21" name="__codelineno-37-21" href="#__codelineno-37-21"></a># Scan status
+</span><span id="__span-37-22"><a id="__codelineno-37-22" name="__codelineno-37-22" href="#__codelineno-37-22"></a>string current_band             # Band currently being scanned
+</span><span id="__span-37-23"><a id="__codelineno-37-23" name="__codelineno-37-23" href="#__codelineno-37-23"></a>float64 current_frequency       # MHz - Current frequency
+</span><span id="__span-37-24"><a id="__codelineno-37-24" name="__codelineno-37-24" href="#__codelineno-37-24"></a>uint32 bands_scanned            # Number of bands scanned
+</span><span id="__span-37-25"><a id="__codelineno-37-25" name="__codelineno-37-25" href="#__codelineno-37-25"></a>float32 scan_completion         # % - Scan cycle progress
 </span><span id="__span-37-26"><a id="__codelineno-37-26" name="__codelineno-37-26" href="#__codelineno-37-26"></a>
-</span><span id="__span-37-27"><a id="__codelineno-37-27" name="__codelineno-37-27" href="#__codelineno-37-27"></a># Thống kê phát hiện
-</span><span id="__span-37-28"><a id="__codelineno-37-28" name="__codelineno-37-28" href="#__codelineno-37-28"></a>uint32 threats_detected_total   # Tổng số đe dọa phát hiện
-</span><span id="__span-37-29"><a id="__codelineno-37-29" name="__codelineno-37-29" href="#__codelineno-37-29"></a>uint32 active_threats           # Số đe dọa đang hoạt động
-</span><span id="__span-37-30"><a id="__codelineno-37-30" name="__codelineno-37-30" href="#__codelineno-37-30"></a>uint32 false_positives          # Số cảnh báo sai
-</span><span id="__span-37-31"><a id="__codelineno-37-31" name="__codelineno-37-31" href="#__codelineno-37-31"></a>float32 detection_accuracy      # % - Độ chính xác
+</span><span id="__span-37-27"><a id="__codelineno-37-27" name="__codelineno-37-27" href="#__codelineno-37-27"></a># Detection statistics
+</span><span id="__span-37-28"><a id="__codelineno-37-28" name="__codelineno-37-28" href="#__codelineno-37-28"></a>uint32 threats_detected_total   # Total threats detected
+</span><span id="__span-37-29"><a id="__codelineno-37-29" name="__codelineno-37-29" href="#__codelineno-37-29"></a>uint32 active_threats           # Number of active threats
+</span><span id="__span-37-30"><a id="__codelineno-37-30" name="__codelineno-37-30" href="#__codelineno-37-30"></a>uint32 false_positives          # Number of false alarms
+</span><span id="__span-37-31"><a id="__codelineno-37-31" name="__codelineno-37-31" href="#__codelineno-37-31"></a>float32 detection_accuracy      # % - Accuracy
 </span><span id="__span-37-32"><a id="__codelineno-37-32" name="__codelineno-37-32" href="#__codelineno-37-32"></a>
-</span><span id="__span-37-33"><a id="__codelineno-37-33" name="__codelineno-37-33" href="#__codelineno-37-33"></a># Chất lượng tín hiệu
+</span><span id="__span-37-33"><a id="__codelineno-37-33" name="__codelineno-37-33" href="#__codelineno-37-33"></a># Signal quality
 </span><span id="__span-37-34"><a id="__codelineno-37-34" name="__codelineno-37-34" href="#__codelineno-37-34"></a>float32 signal_quality_2g4      # 0.0-1.0 - WiFi 2.4GHz
 </span><span id="__span-37-35"><a id="__codelineno-37-35" name="__codelineno-37-35" href="#__codelineno-37-35"></a>float32 signal_quality_5g       # 0.0-1.0 - WiFi 5GHz
-</span><span id="__span-37-36"><a id="__codelineno-37-36" name="__codelineno-37-36" href="#__codelineno-37-36"></a>float32 gps_integrity           # 0.0-1.0 - Tính toàn vẹn GPS
-</span><span id="__span-37-37"><a id="__codelineno-37-37" name="__codelineno-37-37" href="#__codelineno-37-37"></a>bool gps_spoofing_detected      # GPS có bị giả mạo
+</span><span id="__span-37-36"><a id="__codelineno-37-36" name="__codelineno-37-36" href="#__codelineno-37-36"></a>float32 gps_integrity           # 0.0-1.0 - GPS integrity
+</span><span id="__span-37-37"><a id="__codelineno-37-37" name="__codelineno-37-37" href="#__codelineno-37-37"></a>bool gps_spoofing_detected      # Whether GPS spoofing is detected
 </span><span id="__span-37-38"><a id="__codelineno-37-38" name="__codelineno-37-38" href="#__codelineno-37-38"></a>
-</span><span id="__span-37-39"><a id="__codelineno-37-39" name="__codelineno-37-39" href="#__codelineno-37-39"></a># Cấu hình hiện tại
-</span><span id="__span-37-40"><a id="__codelineno-37-40" name="__codelineno-37-40" href="#__codelineno-37-40"></a>bool auto_response_enabled      # Phản ứng tự động có bật
-</span><span id="__span-37-41"><a id="__codelineno-37-41" name="__codelineno-37-41" href="#__codelineno-37-41"></a>bool frequency_hopping_active   # Đang nhảy tần
+</span><span id="__span-37-39"><a id="__codelineno-37-39" name="__codelineno-37-39" href="#__codelineno-37-39"></a># Current configuration
+</span><span id="__span-37-40"><a id="__codelineno-37-40" name="__codelineno-37-40" href="#__codelineno-37-40"></a>bool auto_response_enabled      # Whether automatic response is enabled
+</span><span id="__span-37-41"><a id="__codelineno-37-41" name="__codelineno-37-41" href="#__codelineno-37-41"></a>bool frequency_hopping_active   # Frequency hopping in progress
 </span><span id="__span-37-42"><a id="__codelineno-37-42" name="__codelineno-37-42" href="#__codelineno-37-42"></a>string defense_mode             # normal, defensive, stealth
 </span><span id="__span-37-43"><a id="__codelineno-37-43" name="__codelineno-37-43" href="#__codelineno-37-43"></a>
-</span><span id="__span-37-44"><a id="__codelineno-37-44" name="__codelineno-37-44" href="#__codelineno-37-44"></a># Hệ thống backup
-</span><span id="__span-37-45"><a id="__codelineno-37-45" name="__codelineno-37-45" href="#__codelineno-37-45"></a>bool backup_comm_ready          # Kênh truyền backup sẵn sàng
-</span><span id="__span-37-46"><a id="__codelineno-37-46" name="__codelineno-37-46" href="#__codelineno-37-46"></a>string[] available_frequencies  # MHz - Tần số khả dụng
-</span><span id="__span-37-47"><a id="__codelineno-37-47" name="__codelineno-37-47" href="#__codelineno-37-47"></a>uint32 safe_channels_count      # Số kênh an toàn
+</span><span id="__span-37-44"><a id="__codelineno-37-44" name="__codelineno-37-44" href="#__codelineno-37-44"></a># Backup system
+</span><span id="__span-37-45"><a id="__codelineno-37-45" name="__codelineno-37-45" href="#__codelineno-37-45"></a>bool backup_comm_ready          # Backup comm channel ready
+</span><span id="__span-37-46"><a id="__codelineno-37-46" name="__codelineno-37-46" href="#__codelineno-37-46"></a>string[] available_frequencies  # MHz - Available frequencies
+</span><span id="__span-37-47"><a id="__codelineno-37-47" name="__codelineno-37-47" href="#__codelineno-37-47"></a>uint32 safe_channels_count      # Number of safe channels
 </span></code></pre></div> <h4 id="ros2_rf_spectrummsgsignalsource"><code>ros2_rf_spectrum/msg/SignalSource</code><a class="headerlink" href="#ros2_rf_spectrummsgsignalsource" title="Anchor link to this section">¶</a></h4> <div class="language-text highlight"><pre><span></span><code><span id="__span-38-1"><a id="__codelineno-38-1" name="__codelineno-38-1" href="#__codelineno-38-1"></a>std_msgs/Header header
 </span><span id="__span-38-2"><a id="__codelineno-38-2" name="__codelineno-38-2" href="#__codelineno-38-2"></a>
-</span><span id="__span-38-3"><a id="__codelineno-38-3" name="__codelineno-38-3" href="#__codelineno-38-3"></a># Định danh
-</span><span id="__span-38-4"><a id="__codelineno-38-4" name="__codelineno-38-4" href="#__codelineno-38-4"></a>string source_id                # ID duy nhất của nguồn
+</span><span id="__span-38-3"><a id="__codelineno-38-3" name="__codelineno-38-3" href="#__codelineno-38-3"></a># Identification
+</span><span id="__span-38-4"><a id="__codelineno-38-4" name="__codelineno-38-4" href="#__codelineno-38-4"></a>string source_id                # Unique source ID
 </span><span id="__span-38-5"><a id="__codelineno-38-5" name="__codelineno-38-5" href="#__codelineno-38-5"></a>string source_type              # wifi_ap, bluetooth, rc_tx, unknown
 </span><span id="__span-38-6"><a id="__codelineno-38-6" name="__codelineno-38-6" href="#__codelineno-38-6"></a>
-</span><span id="__span-38-7"><a id="__codelineno-38-7" name="__codelineno-38-7" href="#__codelineno-38-7"></a># Vị trí (nếu phát hiện được)
-</span><span id="__span-38-8"><a id="__codelineno-38-8" name="__codelineno-38-8" href="#__codelineno-38-8"></a>bool location_available         # Có dữ liệu vị trí
-</span><span id="__span-38-9"><a id="__codelineno-38-9" name="__codelineno-38-9" href="#__codelineno-38-9"></a>geometry_msgs/Point location    # Vị trí ước tính (xyz)
-</span><span id="__span-38-10"><a id="__codelineno-38-10" name="__codelineno-38-10" href="#__codelineno-38-10"></a>float32 azimuth                 # degrees - Phương vị
-</span><span id="__span-38-11"><a id="__codelineno-38-11" name="__codelineno-38-11" href="#__codelineno-38-11"></a>float32 elevation               # degrees - Góc nâng
-</span><span id="__span-38-12"><a id="__codelineno-38-12" name="__codelineno-38-12" href="#__codelineno-38-12"></a>float32 distance                # meters - Khoảng cách
-</span><span id="__span-38-13"><a id="__codelineno-38-13" name="__codelineno-38-13" href="#__codelineno-38-13"></a>float32 location_confidence     # 0.0-1.0 - Độ tin cậy
+</span><span id="__span-38-7"><a id="__codelineno-38-7" name="__codelineno-38-7" href="#__codelineno-38-7"></a># Location (if detected)
+</span><span id="__span-38-8"><a id="__codelineno-38-8" name="__codelineno-38-8" href="#__codelineno-38-8"></a>bool location_available         # Location data available
+</span><span id="__span-38-9"><a id="__codelineno-38-9" name="__codelineno-38-9" href="#__codelineno-38-9"></a>geometry_msgs/Point location    # Estimated location (xyz)
+</span><span id="__span-38-10"><a id="__codelineno-38-10" name="__codelineno-38-10" href="#__codelineno-38-10"></a>float32 azimuth                 # degrees - Azimuth
+</span><span id="__span-38-11"><a id="__codelineno-38-11" name="__codelineno-38-11" href="#__codelineno-38-11"></a>float32 elevation               # degrees - Elevation
+</span><span id="__span-38-12"><a id="__codelineno-38-12" name="__codelineno-38-12" href="#__codelineno-38-12"></a>float32 distance                # meters - Distance
+</span><span id="__span-38-13"><a id="__codelineno-38-13" name="__codelineno-38-13" href="#__codelineno-38-13"></a>float32 location_confidence     # 0.0-1.0 - Confidence
 </span><span id="__span-38-14"><a id="__codelineno-38-14" name="__codelineno-38-14" href="#__codelineno-38-14"></a>
-</span><span id="__span-38-15"><a id="__codelineno-38-15" name="__codelineno-38-15" href="#__codelineno-38-15"></a># Đặc điểm tín hiệu
+</span><span id="__span-38-15"><a id="__codelineno-38-15" name="__codelineno-38-15" href="#__codelineno-38-15"></a># Signal characteristics
 </span><span id="__span-38-16"><a id="__codelineno-38-16" name="__codelineno-38-16" href="#__codelineno-38-16"></a>float64 frequency               # MHz
 </span><span id="__span-38-17"><a id="__codelineno-38-17" name="__codelineno-38-17" href="#__codelineno-38-17"></a>float64 bandwidth               # MHz
 </span><span id="__span-38-18"><a id="__codelineno-38-18" name="__codelineno-38-18" href="#__codelineno-38-18"></a>float32 power                   # dBm
 </span><span id="__span-38-19"><a id="__codelineno-38-19" name="__codelineno-38-19" href="#__codelineno-38-19"></a>string modulation               # FM, AM, OFDM, FSK, etc.
 </span><span id="__span-38-20"><a id="__codelineno-38-20" name="__codelineno-38-20" href="#__codelineno-38-20"></a>
-</span><span id="__span-38-21"><a id="__codelineno-38-21" name="__codelineno-38-21" href="#__codelineno-38-21"></a># Nhận dạng
-</span><span id="__span-38-22"><a id="__codelineno-38-22" name="__codelineno-38-22" href="#__codelineno-38-22"></a>string ssid                     # SSID (nếu là WiFi)
-</span><span id="__span-38-23"><a id="__codelineno-38-23" name="__codelineno-38-23" href="#__codelineno-38-23"></a>string mac_address              # MAC address (nếu có)
-</span><span id="__span-38-24"><a id="__codelineno-38-24" name="__codelineno-38-24" href="#__codelineno-38-24"></a>string device_name              # Tên thiết bị (nếu phát hiện)
-</span><span id="__span-38-25"><a id="__codelineno-38-25" name="__codelineno-38-25" href="#__codelineno-38-25"></a>bool is_known_device            # Thiết bị đã biết
-</span><span id="__span-38-26"><a id="__codelineno-38-26" name="__codelineno-38-26" href="#__codelineno-38-26"></a>bool is_authorized              # Thiết bị được phép
+</span><span id="__span-38-21"><a id="__codelineno-38-21" name="__codelineno-38-21" href="#__codelineno-38-21"></a># Recognition
+</span><span id="__span-38-22"><a id="__codelineno-38-22" name="__codelineno-38-22" href="#__codelineno-38-22"></a>string ssid                     # SSID (if WiFi)
+</span><span id="__span-38-23"><a id="__codelineno-38-23" name="__codelineno-38-23" href="#__codelineno-38-23"></a>string mac_address              # MAC address (if available)
+</span><span id="__span-38-24"><a id="__codelineno-38-24" name="__codelineno-38-24" href="#__codelineno-38-24"></a>string device_name              # Device name (if detected)
+</span><span id="__span-38-25"><a id="__codelineno-38-25" name="__codelineno-38-25" href="#__codelineno-38-25"></a>bool is_known_device            # Known device
+</span><span id="__span-38-26"><a id="__codelineno-38-26" name="__codelineno-38-26" href="#__codelineno-38-26"></a>bool is_authorized              # Authorised device
 </span><span id="__span-38-27"><a id="__codelineno-38-27" name="__codelineno-38-27" href="#__codelineno-38-27"></a>
-</span><span id="__span-38-28"><a id="__codelineno-38-28" name="__codelineno-38-28" href="#__codelineno-38-28"></a># Hành vi
-</span><span id="__span-38-29"><a id="__codelineno-38-29" name="__codelineno-38-29" href="#__codelineno-38-29"></a>float32 duty_cycle              # % - Tỷ lệ phát
-</span><span id="__span-38-30"><a id="__codelineno-38-30" name="__codelineno-38-30" href="#__codelineno-38-30"></a>bool is_continuous              # Phát liên tục hay không
-</span><span id="__span-38-31"><a id="__codelineno-38-31" name="__codelineno-38-31" href="#__codelineno-38-31"></a>uint32 packets_per_second       # Số gói tin/giây
+</span><span id="__span-38-28"><a id="__codelineno-38-28" name="__codelineno-38-28" href="#__codelineno-38-28"></a># Behaviour
+</span><span id="__span-38-29"><a id="__codelineno-38-29" name="__codelineno-38-29" href="#__codelineno-38-29"></a>float32 duty_cycle              # % - Transmit duty cycle
+</span><span id="__span-38-30"><a id="__codelineno-38-30" name="__codelineno-38-30" href="#__codelineno-38-30"></a>bool is_continuous              # Whether it transmits continuously
+</span><span id="__span-38-31"><a id="__codelineno-38-31" name="__codelineno-38-31" href="#__codelineno-38-31"></a>uint32 packets_per_second       # Packets per second
 </span><span id="__span-38-32"><a id="__codelineno-38-32" name="__codelineno-38-32" href="#__codelineno-38-32"></a>string behavior_pattern         # normal, suspicious, malicious
 </span><span id="__span-38-33"><a id="__codelineno-38-33" name="__codelineno-38-33" href="#__codelineno-38-33"></a>
-</span><span id="__span-38-34"><a id="__codelineno-38-34" name="__codelineno-38-34" href="#__codelineno-38-34"></a># Lịch sử
-</span><span id="__span-38-35"><a id="__codelineno-38-35" name="__codelineno-38-35" href="#__codelineno-38-35"></a>float64 first_seen              # Timestamp lần đầu thấy
-</span><span id="__span-38-36"><a id="__codelineno-38-36" name="__codelineno-38-36" href="#__codelineno-38-36"></a>float64 last_seen               # Timestamp lần cuối
-</span><span id="__span-38-37"><a id="__codelineno-38-37" name="__codelineno-38-37" href="#__codelineno-38-37"></a>uint32 detection_count          # Số lần phát hiện
-</span><span id="__span-38-38"><a id="__codelineno-38-38" name="__codelineno-38-38" href="#__codelineno-38-38"></a>bool is_persistent              # Tồn tại lâu dài
+</span><span id="__span-38-34"><a id="__codelineno-38-34" name="__codelineno-38-34" href="#__codelineno-38-34"></a># History
+</span><span id="__span-38-35"><a id="__codelineno-38-35" name="__codelineno-38-35" href="#__codelineno-38-35"></a>float64 first_seen              # Timestamp first seen
+</span><span id="__span-38-36"><a id="__codelineno-38-36" name="__codelineno-38-36" href="#__codelineno-38-36"></a>float64 last_seen               # Timestamp last seen
+</span><span id="__span-38-37"><a id="__codelineno-38-37" name="__codelineno-38-37" href="#__codelineno-38-37"></a>uint32 detection_count          # Number of detections
+</span><span id="__span-38-38"><a id="__codelineno-38-38" name="__codelineno-38-38" href="#__codelineno-38-38"></a>bool is_persistent              # Long-lived (persistent)
 </span></code></pre></div> <h4 id="ros2_rf_spectrummsgspectrumdata"><code>ros2_rf_spectrum/msg/SpectrumData</code><a class="headerlink" href="#ros2_rf_spectrummsgspectrumdata" title="Anchor link to this section">¶</a></h4> <div class="language-text highlight"><pre><span></span><code><span id="__span-39-1"><a id="__codelineno-39-1" name="__codelineno-39-1" href="#__codelineno-39-1"></a>std_msgs/Header header
 </span><span id="__span-39-2"><a id="__codelineno-39-2" name="__codelineno-39-2" href="#__codelineno-39-2"></a>
-</span><span id="__span-39-3"><a id="__codelineno-39-3" name="__codelineno-39-3" href="#__codelineno-39-3"></a># Thông tin tần số
-</span><span id="__span-39-4"><a id="__codelineno-39-4" name="__codelineno-39-4" href="#__codelineno-39-4"></a>float64 center_frequency        # MHz - Tần số trung tâm
-</span><span id="__span-39-5"><a id="__codelineno-39-5" name="__codelineno-39-5" href="#__codelineno-39-5"></a>float64 bandwidth               # MHz - Băng thông
-</span><span id="__span-39-6"><a id="__codelineno-39-6" name="__codelineno-39-6" href="#__codelineno-39-6"></a>float64 sample_rate             # Hz - Tốc độ lấy mẫu
+</span><span id="__span-39-3"><a id="__codelineno-39-3" name="__codelineno-39-3" href="#__codelineno-39-3"></a># Frequency information
+</span><span id="__span-39-4"><a id="__codelineno-39-4" name="__codelineno-39-4" href="#__codelineno-39-4"></a>float64 center_frequency        # MHz - Centre frequency
+</span><span id="__span-39-5"><a id="__codelineno-39-5" name="__codelineno-39-5" href="#__codelineno-39-5"></a>float64 bandwidth               # MHz - Bandwidth
+</span><span id="__span-39-6"><a id="__codelineno-39-6" name="__codelineno-39-6" href="#__codelineno-39-6"></a>float64 sample_rate             # Hz - Sample rate
 </span><span id="__span-39-7"><a id="__codelineno-39-7" name="__codelineno-39-7" href="#__codelineno-39-7"></a>
-</span><span id="__span-39-8"><a id="__codelineno-39-8" name="__codelineno-39-8" href="#__codelineno-39-8"></a># Dữ liệu phổ
-</span><span id="__span-39-9"><a id="__codelineno-39-9" name="__codelineno-39-9" href="#__codelineno-39-9"></a>float32[] power_spectrum        # dBm - Mảng công suất theo tần số
-</span><span id="__span-39-10"><a id="__codelineno-39-10" name="__codelineno-39-10" href="#__codelineno-39-10"></a>float32[] frequency_bins        # MHz - Các tần số tương ứng
-</span><span id="__span-39-11"><a id="__codelineno-39-11" name="__codelineno-39-11" href="#__codelineno-39-11"></a>uint32 fft_size                 # Kích thước FFT
+</span><span id="__span-39-8"><a id="__codelineno-39-8" name="__codelineno-39-8" href="#__codelineno-39-8"></a># Spectrum data
+</span><span id="__span-39-9"><a id="__codelineno-39-9" name="__codelineno-39-9" href="#__codelineno-39-9"></a>float32[] power_spectrum        # dBm - Power array per frequency
+</span><span id="__span-39-10"><a id="__codelineno-39-10" name="__codelineno-39-10" href="#__codelineno-39-10"></a>float32[] frequency_bins        # MHz - Corresponding frequencies
+</span><span id="__span-39-11"><a id="__codelineno-39-11" name="__codelineno-39-11" href="#__codelineno-39-11"></a>uint32 fft_size                 # FFT size
 </span><span id="__span-39-12"><a id="__codelineno-39-12" name="__codelineno-39-12" href="#__codelineno-39-12"></a>
-</span><span id="__span-39-13"><a id="__codelineno-39-13" name="__codelineno-39-13" href="#__codelineno-39-13"></a># Thống kê
-</span><span id="__span-39-14"><a id="__codelineno-39-14" name="__codelineno-39-14" href="#__codelineno-39-14"></a>float32 noise_floor             # dBm - Mức nhiễu nền
-</span><span id="__span-39-15"><a id="__codelineno-39-15" name="__codelineno-39-15" href="#__codelineno-39-15"></a>float32 peak_power              # dBm - Công suất đỉnh
-</span><span id="__span-39-16"><a id="__codelineno-39-16" name="__codelineno-39-16" href="#__codelineno-39-16"></a>float32 average_power           # dBm - Công suất trung bình
-</span><span id="__span-39-17"><a id="__codelineno-39-17" name="__codelineno-39-17" href="#__codelineno-39-17"></a>float32 frequency_occupation    # % - Tỷ lệ băng tần bị chiếm
+</span><span id="__span-39-13"><a id="__codelineno-39-13" name="__codelineno-39-13" href="#__codelineno-39-13"></a># Statistics
+</span><span id="__span-39-14"><a id="__codelineno-39-14" name="__codelineno-39-14" href="#__codelineno-39-14"></a>float32 noise_floor             # dBm - Noise floor
+</span><span id="__span-39-15"><a id="__codelineno-39-15" name="__codelineno-39-15" href="#__codelineno-39-15"></a>float32 peak_power              # dBm - Peak power
+</span><span id="__span-39-16"><a id="__codelineno-39-16" name="__codelineno-39-16" href="#__codelineno-39-16"></a>float32 average_power           # dBm - Average power
+</span><span id="__span-39-17"><a id="__codelineno-39-17" name="__codelineno-39-17" href="#__codelineno-39-17"></a>float32 frequency_occupation    # % - Band occupancy
 </span><span id="__span-39-18"><a id="__codelineno-39-18" name="__codelineno-39-18" href="#__codelineno-39-18"></a>
 </span><span id="__span-39-19"><a id="__codelineno-39-19" name="__codelineno-39-19" href="#__codelineno-39-19"></a># Metadata
-</span><span id="__span-39-20"><a id="__codelineno-39-20" name="__codelineno-39-20" href="#__codelineno-39-20"></a>string band_name                # Tên băng tần đang quét
-</span><span id="__span-39-21"><a id="__codelineno-39-21" name="__codelineno-39-21" href="#__codelineno-39-21"></a>uint8 priority                  # Mức ưu tiên (1=critical, 4=low)
+</span><span id="__span-39-20"><a id="__codelineno-39-20" name="__codelineno-39-20" href="#__codelineno-39-20"></a>string band_name                # Name of the band being scanned
+</span><span id="__span-39-21"><a id="__codelineno-39-21" name="__codelineno-39-21" href="#__codelineno-39-21"></a>uint8 priority                  # Priority level (1=critical, 4=low)
 </span></code></pre></div> <h4 id="ros2_rf_spectrummsgspectrumscanresult"><code>ros2_rf_spectrum/msg/SpectrumScanResult</code><a class="headerlink" href="#ros2_rf_spectrummsgspectrumscanresult" title="Anchor link to this section">¶</a></h4> <div class="language-text highlight"><pre><span></span><code><span id="__span-40-1"><a id="__codelineno-40-1" name="__codelineno-40-1" href="#__codelineno-40-1"></a>std_msgs/Header header
 </span><span id="__span-40-2"><a id="__codelineno-40-2" name="__codelineno-40-2" href="#__codelineno-40-2"></a>
-</span><span id="__span-40-3"><a id="__codelineno-40-3" name="__codelineno-40-3" href="#__codelineno-40-3"></a># Thông tin quét
-</span><span id="__span-40-4"><a id="__codelineno-40-4" name="__codelineno-40-4" href="#__codelineno-40-4"></a>string band_name                # Tên băng tần
-</span><span id="__span-40-5"><a id="__codelineno-40-5" name="__codelineno-40-5" href="#__codelineno-40-5"></a>float64 start_frequency         # MHz - Tần số bắt đầu
-</span><span id="__span-40-6"><a id="__codelineno-40-6" name="__codelineno-40-6" href="#__codelineno-40-6"></a>float64 end_frequency           # MHz - Tần số kết thúc
-</span><span id="__span-40-7"><a id="__codelineno-40-7" name="__codelineno-40-7" href="#__codelineno-40-7"></a>float32 scan_duration           # seconds - Thời gian quét
-</span><span id="__span-40-8"><a id="__codelineno-40-8" name="__codelineno-40-8" href="#__codelineno-40-8"></a>uint32 num_samples              # Số lượng mẫu
+</span><span id="__span-40-3"><a id="__codelineno-40-3" name="__codelineno-40-3" href="#__codelineno-40-3"></a># Scan information
+</span><span id="__span-40-4"><a id="__codelineno-40-4" name="__codelineno-40-4" href="#__codelineno-40-4"></a>string band_name                # Band name
+</span><span id="__span-40-5"><a id="__codelineno-40-5" name="__codelineno-40-5" href="#__codelineno-40-5"></a>float64 start_frequency         # MHz - Start frequency
+</span><span id="__span-40-6"><a id="__codelineno-40-6" name="__codelineno-40-6" href="#__codelineno-40-6"></a>float64 end_frequency           # MHz - End frequency
+</span><span id="__span-40-7"><a id="__codelineno-40-7" name="__codelineno-40-7" href="#__codelineno-40-7"></a>float32 scan_duration           # seconds - Scan duration
+</span><span id="__span-40-8"><a id="__codelineno-40-8" name="__codelineno-40-8" href="#__codelineno-40-8"></a>uint32 num_samples              # Number of samples
 </span><span id="__span-40-9"><a id="__codelineno-40-9" name="__codelineno-40-9" href="#__codelineno-40-9"></a>
-</span><span id="__span-40-10"><a id="__codelineno-40-10" name="__codelineno-40-10" href="#__codelineno-40-10"></a># Kết quả phân tích
-</span><span id="__span-40-11"><a id="__codelineno-40-11" name="__codelineno-40-11" href="#__codelineno-40-11"></a>SignalSource[] detected_sources # Các nguồn phát hiện được
-</span><span id="__span-40-12"><a id="__codelineno-40-12" name="__codelineno-40-12" href="#__codelineno-40-12"></a>uint32 source_count             # Số nguồn phát hiện
-</span><span id="__span-40-13"><a id="__codelineno-40-13" name="__codelineno-40-13" href="#__codelineno-40-13"></a>float32 average_occupation      # % - Tỷ lệ băng tần bị chiếm
-</span><span id="__span-40-14"><a id="__codelineno-40-14" name="__codelineno-40-14" href="#__codelineno-40-14"></a>float32 noise_floor             # dBm - Mức nhiễu
+</span><span id="__span-40-10"><a id="__codelineno-40-10" name="__codelineno-40-10" href="#__codelineno-40-10"></a># Analysis results
+</span><span id="__span-40-11"><a id="__codelineno-40-11" name="__codelineno-40-11" href="#__codelineno-40-11"></a>SignalSource[] detected_sources # Detected sources
+</span><span id="__span-40-12"><a id="__codelineno-40-12" name="__codelineno-40-12" href="#__codelineno-40-12"></a>uint32 source_count             # Number of detected sources
+</span><span id="__span-40-13"><a id="__codelineno-40-13" name="__codelineno-40-13" href="#__codelineno-40-13"></a>float32 average_occupation      # % - Band occupancy
+</span><span id="__span-40-14"><a id="__codelineno-40-14" name="__codelineno-40-14" href="#__codelineno-40-14"></a>float32 noise_floor             # dBm - Noise level
 </span><span id="__span-40-15"><a id="__codelineno-40-15" name="__codelineno-40-15" href="#__codelineno-40-15"></a>
-</span><span id="__span-40-16"><a id="__codelineno-40-16" name="__codelineno-40-16" href="#__codelineno-40-16"></a># Dị thường phát hiện
-</span><span id="__span-40-17"><a id="__codelineno-40-17" name="__codelineno-40-17" href="#__codelineno-40-17"></a>bool anomalies_detected         # Có phát hiện dị thường
-</span><span id="__span-40-18"><a id="__codelineno-40-18" name="__codelineno-40-18" href="#__codelineno-40-18"></a>string[] anomaly_types          # Loại dị thường
-</span><span id="__span-40-19"><a id="__codelineno-40-19" name="__codelineno-40-19" href="#__codelineno-40-19"></a>float32[] anomaly_scores        # Điểm dị thường
+</span><span id="__span-40-16"><a id="__codelineno-40-16" name="__codelineno-40-16" href="#__codelineno-40-16"></a># Detected anomalies
+</span><span id="__span-40-17"><a id="__codelineno-40-17" name="__codelineno-40-17" href="#__codelineno-40-17"></a>bool anomalies_detected         # Anomalies detected
+</span><span id="__span-40-18"><a id="__codelineno-40-18" name="__codelineno-40-18" href="#__codelineno-40-18"></a>string[] anomaly_types          # Anomaly types
+</span><span id="__span-40-19"><a id="__codelineno-40-19" name="__codelineno-40-19" href="#__codelineno-40-19"></a>float32[] anomaly_scores        # Anomaly scores
 </span><span id="__span-40-20"><a id="__codelineno-40-20" name="__codelineno-40-20" href="#__codelineno-40-20"></a>
-</span><span id="__span-40-21"><a id="__codelineno-40-21" name="__codelineno-40-21" href="#__codelineno-40-21"></a># Chất lượng môi trường RF
+</span><span id="__span-40-21"><a id="__codelineno-40-21" name="__codelineno-40-21" href="#__codelineno-40-21"></a># RF environment quality
 </span><span id="__span-40-22"><a id="__codelineno-40-22" name="__codelineno-40-22" href="#__codelineno-40-22"></a>uint8 QUALITY_EXCELLENT = 1
 </span><span id="__span-40-23"><a id="__codelineno-40-23" name="__codelineno-40-23" href="#__codelineno-40-23"></a>uint8 QUALITY_GOOD = 2
 </span><span id="__span-40-24"><a id="__codelineno-40-24" name="__codelineno-40-24" href="#__codelineno-40-24"></a>uint8 QUALITY_FAIR = 3
 </span><span id="__span-40-25"><a id="__codelineno-40-25" name="__codelineno-40-25" href="#__codelineno-40-25"></a>uint8 QUALITY_POOR = 4
 </span><span id="__span-40-26"><a id="__codelineno-40-26" name="__codelineno-40-26" href="#__codelineno-40-26"></a>uint8 QUALITY_UNUSABLE = 5
 </span><span id="__span-40-27"><a id="__codelineno-40-27" name="__codelineno-40-27" href="#__codelineno-40-27"></a>
-</span><span id="__span-40-28"><a id="__codelineno-40-28" name="__codelineno-40-28" href="#__codelineno-40-28"></a>uint8 rf_quality                # Chất lượng môi trường RF
-</span><span id="__span-40-29"><a id="__codelineno-40-29" name="__codelineno-40-29" href="#__codelineno-40-29"></a>string quality_assessment       # Đánh giá chi tiết
+</span><span id="__span-40-28"><a id="__codelineno-40-28" name="__codelineno-40-28" href="#__codelineno-40-28"></a>uint8 rf_quality                # RF environment quality
+</span><span id="__span-40-29"><a id="__codelineno-40-29" name="__codelineno-40-29" href="#__codelineno-40-29"></a>string quality_assessment       # Detailed assessment
 </span></code></pre></div> <h4 id="ros2_rf_spectrummsgthreatalert"><code>ros2_rf_spectrum/msg/ThreatAlert</code><a class="headerlink" href="#ros2_rf_spectrummsgthreatalert" title="Anchor link to this section">¶</a></h4> <div class="language-text highlight"><pre><span></span><code><span id="__span-41-1"><a id="__codelineno-41-1" name="__codelineno-41-1" href="#__codelineno-41-1"></a>std_msgs/Header header
 </span><span id="__span-41-2"><a id="__codelineno-41-2" name="__codelineno-41-2" href="#__codelineno-41-2"></a>
-</span><span id="__span-41-3"><a id="__codelineno-41-3" name="__codelineno-41-3" href="#__codelineno-41-3"></a># Loại mối đe dọa
+</span><span id="__span-41-3"><a id="__codelineno-41-3" name="__codelineno-41-3" href="#__codelineno-41-3"></a># Threat type
 </span><span id="__span-41-4"><a id="__codelineno-41-4" name="__codelineno-41-4" href="#__codelineno-41-4"></a>uint8 THREAT_JAMMING = 1
 </span><span id="__span-41-5"><a id="__codelineno-41-5" name="__codelineno-41-5" href="#__codelineno-41-5"></a>uint8 THREAT_SPOOFING = 2
 </span><span id="__span-41-6"><a id="__codelineno-41-6" name="__codelineno-41-6" href="#__codelineno-41-6"></a>uint8 THREAT_REPLAY = 3
@@ -1700,37 +1700,37 @@ featuring advanced AI perception, real-time SLAM, and production-ready deploymen
 </span><span id="__span-41-9"><a id="__codelineno-41-9" name="__codelineno-41-9" href="#__codelineno-41-9"></a>uint8 THREAT_ROGUE_AP = 6
 </span><span id="__span-41-10"><a id="__codelineno-41-10" name="__codelineno-41-10" href="#__codelineno-41-10"></a>uint8 THREAT_UNKNOWN = 99
 </span><span id="__span-41-11"><a id="__codelineno-41-11" name="__codelineno-41-11" href="#__codelineno-41-11"></a>
-</span><span id="__span-41-12"><a id="__codelineno-41-12" name="__codelineno-41-12" href="#__codelineno-41-12"></a>uint8 threat_type               # Loại đe dọa
+</span><span id="__span-41-12"><a id="__codelineno-41-12" name="__codelineno-41-12" href="#__codelineno-41-12"></a>uint8 threat_type               # Threat type
 </span><span id="__span-41-13"><a id="__codelineno-41-13" name="__codelineno-41-13" href="#__codelineno-41-13"></a>
-</span><span id="__span-41-14"><a id="__codelineno-41-14" name="__codelineno-41-14" href="#__codelineno-41-14"></a># Mức độ nghiêm trọng
+</span><span id="__span-41-14"><a id="__codelineno-41-14" name="__codelineno-41-14" href="#__codelineno-41-14"></a># Severity
 </span><span id="__span-41-15"><a id="__codelineno-41-15" name="__codelineno-41-15" href="#__codelineno-41-15"></a>uint8 SEVERITY_CRITICAL = 1
 </span><span id="__span-41-16"><a id="__codelineno-41-16" name="__codelineno-41-16" href="#__codelineno-41-16"></a>uint8 SEVERITY_HIGH = 2
 </span><span id="__span-41-17"><a id="__codelineno-41-17" name="__codelineno-41-17" href="#__codelineno-41-17"></a>uint8 SEVERITY_MEDIUM = 3
 </span><span id="__span-41-18"><a id="__codelineno-41-18" name="__codelineno-41-18" href="#__codelineno-41-18"></a>uint8 SEVERITY_LOW = 4
 </span><span id="__span-41-19"><a id="__codelineno-41-19" name="__codelineno-41-19" href="#__codelineno-41-19"></a>
-</span><span id="__span-41-20"><a id="__codelineno-41-20" name="__codelineno-41-20" href="#__codelineno-41-20"></a>uint8 severity                  # Mức độ nghiêm trọng
+</span><span id="__span-41-20"><a id="__codelineno-41-20" name="__codelineno-41-20" href="#__codelineno-41-20"></a>uint8 severity                  # Severity
 </span><span id="__span-41-21"><a id="__codelineno-41-21" name="__codelineno-41-21" href="#__codelineno-41-21"></a>
-</span><span id="__span-41-22"><a id="__codelineno-41-22" name="__codelineno-41-22" href="#__codelineno-41-22"></a># Chi tiết mối đe dọa
-</span><span id="__span-41-23"><a id="__codelineno-41-23" name="__codelineno-41-23" href="#__codelineno-41-23"></a>string threat_name              # Tên mối đe dọa
-</span><span id="__span-41-24"><a id="__codelineno-41-24" name="__codelineno-41-24" href="#__codelineno-41-24"></a>string description              # Mô tả chi tiết
-</span><span id="__span-41-25"><a id="__codelineno-41-25" name="__codelineno-41-25" href="#__codelineno-41-25"></a>float64 center_frequency        # MHz - Tần số bị tấn công
-</span><span id="__span-41-26"><a id="__codelineno-41-26" name="__codelineno-41-26" href="#__codelineno-41-26"></a>float64 bandwidth               # MHz - Băng thông bị ảnh hưởng
-</span><span id="__span-41-27"><a id="__codelineno-41-27" name="__codelineno-41-27" href="#__codelineno-41-27"></a>float32 power_level             # dBm - Mức công suất
-</span><span id="__span-41-28"><a id="__codelineno-41-28" name="__codelineno-41-28" href="#__codelineno-41-28"></a>float32 confidence_score        # 0.0-1.0 - Độ tin cậy phát hiện
+</span><span id="__span-41-22"><a id="__codelineno-41-22" name="__codelineno-41-22" href="#__codelineno-41-22"></a># Threat details
+</span><span id="__span-41-23"><a id="__codelineno-41-23" name="__codelineno-41-23" href="#__codelineno-41-23"></a>string threat_name              # Threat name
+</span><span id="__span-41-24"><a id="__codelineno-41-24" name="__codelineno-41-24" href="#__codelineno-41-24"></a>string description              # Detailed description
+</span><span id="__span-41-25"><a id="__codelineno-41-25" name="__codelineno-41-25" href="#__codelineno-41-25"></a>float64 center_frequency        # MHz - Attacked frequency
+</span><span id="__span-41-26"><a id="__codelineno-41-26" name="__codelineno-41-26" href="#__codelineno-41-26"></a>float64 bandwidth               # MHz - Affected bandwidth
+</span><span id="__span-41-27"><a id="__codelineno-41-27" name="__codelineno-41-27" href="#__codelineno-41-27"></a>float32 power_level             # dBm - Power level
+</span><span id="__span-41-28"><a id="__codelineno-41-28" name="__codelineno-41-28" href="#__codelineno-41-28"></a>float32 confidence_score        # 0.0-1.0 - Detection confidence
 </span><span id="__span-41-29"><a id="__codelineno-41-29" name="__codelineno-41-29" href="#__codelineno-41-29"></a>
-</span><span id="__span-41-30"><a id="__codelineno-41-30" name="__codelineno-41-30" href="#__codelineno-41-30"></a># Thông tin nguồn tấn công (nếu có)
-</span><span id="__span-41-31"><a id="__codelineno-41-31" name="__codelineno-41-31" href="#__codelineno-41-31"></a>float32 azimuth                 # degrees - Góc phương vị
-</span><span id="__span-41-32"><a id="__codelineno-41-32" name="__codelineno-41-32" href="#__codelineno-41-32"></a>float32 elevation               # degrees - Góc nâng
-</span><span id="__span-41-33"><a id="__codelineno-41-33" name="__codelineno-41-33" href="#__codelineno-41-33"></a>float32 distance_estimate       # meters - Khoảng cách ước tính
+</span><span id="__span-41-30"><a id="__codelineno-41-30" name="__codelineno-41-30" href="#__codelineno-41-30"></a># Attack source information (if available)
+</span><span id="__span-41-31"><a id="__codelineno-41-31" name="__codelineno-41-31" href="#__codelineno-41-31"></a>float32 azimuth                 # degrees - Azimuth angle
+</span><span id="__span-41-32"><a id="__codelineno-41-32" name="__codelineno-41-32" href="#__codelineno-41-32"></a>float32 elevation               # degrees - Elevation angle
+</span><span id="__span-41-33"><a id="__codelineno-41-33" name="__codelineno-41-33" href="#__codelineno-41-33"></a>float32 distance_estimate       # meters - Estimated distance
 </span><span id="__span-41-34"><a id="__codelineno-41-34" name="__codelineno-41-34" href="#__codelineno-41-34"></a>
-</span><span id="__span-41-35"><a id="__codelineno-41-35" name="__codelineno-41-35" href="#__codelineno-41-35"></a># Phản ứng tự động
-</span><span id="__span-41-36"><a id="__codelineno-41-36" name="__codelineno-41-36" href="#__codelineno-41-36"></a>bool auto_response_triggered    # Đã kích hoạt phản ứng tự động
-</span><span id="__span-41-37"><a id="__codelineno-41-37" name="__codelineno-41-37" href="#__codelineno-41-37"></a>string response_action          # Hành động đã thực hiện
-</span><span id="__span-41-38"><a id="__codelineno-41-38" name="__codelineno-41-38" href="#__codelineno-41-38"></a>float64 detection_time          # seconds - Thời gian phát hiện
+</span><span id="__span-41-35"><a id="__codelineno-41-35" name="__codelineno-41-35" href="#__codelineno-41-35"></a># Automatic response
+</span><span id="__span-41-36"><a id="__codelineno-41-36" name="__codelineno-41-36" href="#__codelineno-41-36"></a>bool auto_response_triggered    # Automatic response triggered
+</span><span id="__span-41-37"><a id="__codelineno-41-37" name="__codelineno-41-37" href="#__codelineno-41-37"></a>string response_action          # Action taken
+</span><span id="__span-41-38"><a id="__codelineno-41-38" name="__codelineno-41-38" href="#__codelineno-41-38"></a>float64 detection_time          # seconds - Detection time
 </span><span id="__span-41-39"><a id="__codelineno-41-39" name="__codelineno-41-39" href="#__codelineno-41-39"></a>
-</span><span id="__span-41-40"><a id="__codelineno-41-40" name="__codelineno-41-40" href="#__codelineno-41-40"></a># Dữ liệu bổ sung
-</span><span id="__span-41-41"><a id="__codelineno-41-41" name="__codelineno-41-41" href="#__codelineno-41-41"></a>string[] affected_systems       # Các hệ thống bị ảnh hưởng
-</span><span id="__span-41-42"><a id="__codelineno-41-42" name="__codelineno-41-42" href="#__codelineno-41-42"></a>string signature_matched        # Mẫu tấn công phù hợp (nếu có)
+</span><span id="__span-41-40"><a id="__codelineno-41-40" name="__codelineno-41-40" href="#__codelineno-41-40"></a># Additional data
+</span><span id="__span-41-41"><a id="__codelineno-41-41" name="__codelineno-41-41" href="#__codelineno-41-41"></a>string[] affected_systems       # Affected systems
+</span><span id="__span-41-42"><a id="__codelineno-41-42" name="__codelineno-41-42" href="#__codelineno-41-42"></a>string signature_matched        # Matched attack signature (if any)
 </span></code></pre></div> <h3 id="ros2_rf_spectrum_1"><code>ros2_rf_spectrum</code><a class="headerlink" href="#ros2_rf_spectrum_1" title="Anchor link to this section">¶</a></h3> <p>Source: <a href="https://github.com/TNG-Blue/Isaac_ROS-Jetbot_NanoOWL/tree/master/Source/ROS2_RF_Spectrum/srv"><code>Source/ROS2_RF_Spectrum/srv/</code></a></p> <h4 id="ros2_rf_spectrumsrvemergencyshutdown"><code>ros2_rf_spectrum/srv/EmergencyShutdown</code><a class="headerlink" href="#ros2_rf_spectrumsrvemergencyshutdown" title="Anchor link to this section">¶</a></h4> <div class="language-text highlight"><pre><span></span><code><span id="__span-42-1"><a id="__codelineno-42-1" name="__codelineno-42-1" href="#__codelineno-42-1"></a># EmergencyShutdown.srv
 </span><span id="__span-42-2"><a id="__codelineno-42-2" name="__codelineno-42-2" href="#__codelineno-42-2"></a># Request: immediate boolean (if true, immediate hard shutdown)
 </span><span id="__span-42-3"><a id="__codelineno-42-3" name="__codelineno-42-3" href="#__codelineno-42-3"></a># Response: success boolean and message
