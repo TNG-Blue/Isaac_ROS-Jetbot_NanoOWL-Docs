@@ -320,7 +320,7 @@ flowchart LR
     T_GRM(["/ground_removed_points"]):::topic
     T_GOUT(["/ground_points · /ground_plane/info"]):::topic
     T_FPTS(["/filtered_points"]):::topic
-    T_DETM(["/centerpoint/markers · /pointpillars/markers&lt;br/&gt;MarkerArray (+ …/latency_ms)"]):::topic
+    T_DETM(["/centerpoint/detections · /pointpillars/detections&lt;br/&gt;DetectionResult (+ …/markers, …/latency_ms)"]):::topic
     T_BEVM(["/bevfusion/markers"]):::topic
     T_FDET(["/fused/detections&lt;br/&gt;DetectionResult"]):::topic
     T_FMK(["/fused/markers&lt;br/&gt;MarkerArray"]):::topic
@@ -350,7 +350,7 @@ flowchart LR
   T_DETM --&gt; DFUS
   DFUS --&gt; T_FDET
   DFUS --&gt; T_FMK
-  T_FMK --&gt; TRK
+  T_FDET --&gt; TRK
   TRK --&gt; T_TRK
   TRK --&gt; T_TRKM
   T_TRK --&gt; CMAP

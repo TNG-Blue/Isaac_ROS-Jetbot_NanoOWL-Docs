@@ -1231,6 +1231,20 @@ featuring advanced AI perception, real-time SLAM, and production-ready deploymen
 </span><span id="__span-24-27"><a id="__codelineno-24-27" name="__codelineno-24-27" href="#__codelineno-24-27"></a>float64[] scores
 </span><span id="__span-24-28"><a id="__codelineno-24-28" name="__codelineno-24-28" href="#__codelineno-24-28"></a>uint8[] object_classes
 </span><span id="__span-24-29"><a id="__codelineno-24-29" name="__codelineno-24-29" href="#__codelineno-24-29"></a>string[] class_names
+</span><span id="__span-24-30"><a id="__codelineno-24-30" name="__codelineno-24-30" href="#__codelineno-24-30"></a>
+</span><span id="__span-24-31"><a id="__codelineno-24-31" name="__codelineno-24-31" href="#__codelineno-24-31"></a># Kish effective sample size n_eff = (sum w)^2 / sum w^2 of the detector boxes
+</span><span id="__span-24-32"><a id="__codelineno-24-32" name="__codelineno-24-32" href="#__codelineno-24-32"></a># averaged into each box (w = detector weight x score); 1 for a box of a single
+</span><span id="__span-24-33"><a id="__codelineno-24-33" name="__codelineno-24-33" href="#__codelineno-24-33"></a># detector. With independent detector errors of variance s^2 the averaged
+</span><span id="__span-24-34"><a id="__codelineno-24-34" name="__codelineno-24-34" href="#__codelineno-24-34"></a># centre has variance s^2 / n_eff, which object_tracker_node uses as R.
+</span><span id="__span-24-35"><a id="__codelineno-24-35" name="__codelineno-24-35" href="#__codelineno-24-35"></a># Empty means 1 for every box.
+</span><span id="__span-24-36"><a id="__codelineno-24-36" name="__codelineno-24-36" href="#__codelineno-24-36"></a>float64[] effective_detections
+</span><span id="__span-24-37"><a id="__codelineno-24-37" name="__codelineno-24-37" href="#__codelineno-24-37"></a>
+</span><span id="__span-24-38"><a id="__codelineno-24-38" name="__codelineno-24-38" href="#__codelineno-24-38"></a># Velocity of each box relative to the sensor, in the header frame (m/s), and
+</span><span id="__span-24-39"><a id="__codelineno-24-39" name="__codelineno-24-39" href="#__codelineno-24-39"></a># its per-axis variance (m^2/s^2). Filled by detectors with a velocity head
+</span><span id="__span-24-40"><a id="__codelineno-24-40" name="__codelineno-24-40" href="#__codelineno-24-40"></a># (BEVFusion); a variance &lt;= 0 or NaN marks a box without a velocity. Both
+</span><span id="__span-24-41"><a id="__codelineno-24-41" name="__codelineno-24-41" href="#__codelineno-24-41"></a># arrays empty means no velocities at all.
+</span><span id="__span-24-42"><a id="__codelineno-24-42" name="__codelineno-24-42" href="#__codelineno-24-42"></a>geometry_msgs/Vector3[] velocities
+</span><span id="__span-24-43"><a id="__codelineno-24-43" name="__codelineno-24-43" href="#__codelineno-24-43"></a>float64[] velocity_variances
 </span></code></pre></div> <h4 id="ros2_lidar_ai_msgsmsggroundplaneinfo"><code>ros2_lidar_ai_msgs/msg/GroundPlaneInfo</code><a class="headerlink" href="#ros2_lidar_ai_msgsmsggroundplaneinfo" title="Anchor link to this section">¶</a></h4> <div class="language-text highlight"><pre><span></span><code><span id="__span-25-1"><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a># ════════════════════════════════════════════════════════════════════════════
 </span><span id="__span-25-2"><a id="__codelineno-25-2" name="__codelineno-25-2" href="#__codelineno-25-2"></a># SPDX-License-Identifier: Apache-2.0
 </span><span id="__span-25-3"><a id="__codelineno-25-3" name="__codelineno-25-3" href="#__codelineno-25-3"></a># Copyright (c) 2025 TNG-Blue
