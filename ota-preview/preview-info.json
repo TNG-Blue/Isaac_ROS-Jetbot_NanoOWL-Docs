@@ -4,6 +4,6 @@
   "mode": "static-preview",
   "live_api": false,
   "demo_endpoints": ["/api/stats", "/api/health", "/api/firmware/list"],
-  "source_commit": "ebf05f9febd52fa27999963f867354e31f8b27f8",
-  "build_time": "2026-10-23T11:57:41Z"
+  "source_commit": "9b65a69021d7f7aa0e26d83c954df6e3a1ef7f49",
+  "build_time": "2026-10-24T06:07:40Z"
 }

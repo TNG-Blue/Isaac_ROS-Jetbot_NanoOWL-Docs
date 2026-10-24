@@ -1,0 +1,1251 @@
+{
+  "CUDA": {
+    "area": "GPU",
+    "cases_failed": 0,
+    "cases_passed": 2,
+    "cases_skipped": 0,
+    "details": [
+      {
+        "failed": 0,
+        "name": "cu_test_pid_utils",
+        "ok": true,
+        "passed": 1,
+        "skipped": 0
+      },
+      {
+        "failed": 0,
+        "name": "cu_test_mpc_utils",
+        "ok": true,
+        "passed": 1,
+        "skipped": 0
+      }
+    ],
+    "kind": "host",
+    "not_run": "kernels and VPI (need a Jetson)",
+    "suites": 2,
+    "suites_passed": 2
+  },
+  "DFRobot_I2C_Multiplexer": {
+    "area": "Utilities",
+    "cases_failed": 2,
+    "cases_passed": 17,
+    "cases_skipped": 2,
+    "details": [
+      {
+        "failed": 0,
+        "name": "test_cli",
+        "ok": true,
+        "passed": 6,
+        "skipped": 0
+      },
+      {
+        "failed": 2,
+        "name": "test_core",
+        "ok": false,
+        "passed": 11,
+        "skipped": 0
+      },
+      {
+        "failed": 0,
+        "name": "test_multiplexer",
+        "ok": true,
+        "passed": 0,
+        "skipped": 2
+      }
+    ],
+    "kind": "pytest",
+    "not_run": "C++ binding (needs the L4T i2c.h)",
+    "suites": 3,
+    "suites_passed": 2
+  },
+  "DeepLearning": {
+    "area": "GPU",
+    "cases_failed": 0,
+    "cases_passed": 14,
+    "cases_skipped": 0,
+    "details": [
+      {
+        "failed": 0,
+        "name": "dl_test_math_core",
+        "ok": true,
+        "passed": 11,
+        "skipped": 0
+      },
+      {
+        "failed": 0,
+        "name": "dl_test_tracking",
+        "ok": true,
+        "passed": 3,
+        "skipped": 0
+      }
+    ],
+    "kind": "host",
+    "not_run": "layers and exemplar (cuDNN/TensorRT)",
+    "suites": 2,
+    "suites_passed": 2
+  },
+  "Isaac_ROS-Object_Detection": {
+    "area": "ROS 2",
+    "cases_failed": 0,
+    "cases_passed": 102,
+    "cases_skipped": 0,
+    "details": [
+      {
+        "failed": 0,
+        "name": "test_box_ops",
+        "ok": true,
+        "passed": 21,
+        "skipped": 0
+      },
+      {
+        "failed": 0,
+        "name": "test_detection_head",
+        "ok": true,
+        "passed": 13,
+        "skipped": 0
+      },
+      {
+        "failed": 0,
+        "name": "test_detection_utils",
+        "ok": true,
+        "passed": 5,
+        "skipped": 0
+      },
+      {
+        "failed": 0,
+        "name": "test_tensor_utils",
+        "ok": true,
+        "passed": 18,
+        "skipped": 0
+      },
+      {
+        "failed": 0,
+        "name": "test_tracking",
+        "ok": true,
+        "passed": 19,
+        "skipped": 0
+      },
+      {
+        "failed": 0,
+        "name": "test_visualization",
+        "ok": true,
+        "passed": 12,
+        "skipped": 0
+      },
+      {
+        "failed": 0,
+        "name": "test_yolov5_postprocess",
+        "ok": true,
+        "passed": 14,
+        "skipped": 0
+      }
+    ],
+    "kind": "pytest",
+    "not_run": "",
+    "suites": 7,
+    "suites_passed": 7
+  },
+  "JetOwl_FlightControl": {
+    "area": "Firmware",
+    "cases_failed": 0,
+    "cases_passed": 22,
+    "cases_skipped": 0,
+    "details": [
+      {
+        "failed": 0,
+        "name": "test_pid",
+        "ok": true,
+        "passed": 1,
+        "skipped": 0
+      },
+      {
+        "failed": 0,
+        "name": "test_eso",
+        "ok": true,
+        "passed": 1,
+        "skipped": 0
+      },
+      {
+        "failed": 0,
+        "name": "test_mixer",
+        "ok": true,
+        "passed": 1,
+        "skipped": 0
+      },
+      {
+        "failed": 0,
+        "name": "test_attitude_filter",
+        "ok": true,
+        "passed": 1,
+        "skipped": 0
+      },
+      {
+        "failed": 0,
+        "name": "test_scheduler",
+        "ok": true,
+        "passed": 1,
+        "skipped": 0
+      },
+      {
+        "failed": 0,
+        "name": "test_rate_loop",
+        "ok": true,
+        "passed": 1,
+        "skipped": 0
+      },
+      {
+        "failed": 0,
+        "name": "test_esc_map",
+        "ok": true,
+        "passed": 1,
+        "skipped": 0
+      },
+      {
+        "failed": 0,
+        "name": "test_dshot",
+        "ok": true,
+        "passed": 1,
+        "skipped": 0
+      },
+      {
+        "failed": 0,
+        "name": "test_imu_fusion",
+        "ok": true,
+        "passed": 1,
+        "skipped": 0
+      },
+      {
+        "failed": 0,
+        "name": "test_foc",
+        "ok": true,
+        "passed": 1,
+        "skipped": 0
+      },
+      {
+        "failed": 0,
+        "name": "test_qp_solver",
+        "ok": true,
+        "passed": 1,
+        "skipped": 0
+      },
+      {
+        "failed": 0,
+        "name": "test_mpc",
+        "ok": true,
+        "passed": 1,
+        "skipped": 0
+      },
+      {
+        "failed": 0,
+        "name": "test_supervisor",
+        "ok": true,
+        "passed": 1,
+        "skipped": 0
+      },
+      {
+        "failed": 0,
+        "name": "test_frame_conv",
+        "ok": true,
+        "passed": 1,
+        "skipped": 0
+      },
+      {
+        "failed": 0,
+        "name": "test_attitude_ctrl",
+        "ok": true,
+        "passed": 1,
+        "skipped": 0
+      },
+      {
+        "failed": 0,
+        "name": "test_cmd_guard",
+        "ok": true,
+        "passed": 1,
+        "skipped": 0
+      },
+      {
+        "failed": 0,
+        "name": "test_imu_frontend",
+        "ok": true,
+        "passed": 1,
+        "skipped": 0
+      },
+      {
+        "failed": 0,
+        "name": "test_rotor_speed",
+        "ok": true,
+        "passed": 1,
+        "skipped": 0
+      },
+      {
+        "failed": 0,
+        "name": "test_rc_input",
+        "ok": true,
+        "passed": 1,
+        "skipped": 0
+      },
+      {
+        "failed": 0,
+        "name": "test_nav_dr",
+        "ok": true,
+        "passed": 1,
+        "skipped": 0
+      },
+      {
+        "failed": 0,
+        "name": "test_ota",
+        "ok": true,
+        "passed": 1,
+        "skipped": 0
+      },
+      {
+        "failed": 0,
+        "name": "test_rflink",
+        "ok": true,
+        "passed": 1,
+        "skipped": 0
+      }
+    ],
+    "kind": "cmake",
+    "not_run": "",
+    "suites": 22,
+    "suites_passed": 22
+  },
+  "JetOwl_Vision": {
+    "area": "Firmware",
+    "cases_failed": 0,
+    "cases_passed": 3,
+    "cases_skipped": 0,
+    "details": [
+      {
+        "failed": 0,
+        "name": "test_camera_ctrl",
+        "ok": true,
+        "passed": 1,
+        "skipped": 0
+      },
+      {
+        "failed": 0,
+        "name": "test_cam_preview",
+        "ok": true,
+        "passed": 1,
+        "skipped": 0
+      },
+      {
+        "failed": 0,
+        "name": "test_ota",
+        "ok": true,
+        "passed": 1,
+        "skipped": 0
+      }
+    ],
+    "kind": "make",
+    "not_run": "",
+    "suites": 3,
+    "suites_passed": 3
+  },
+  "Jetson_GPIO_Compat": {
+    "area": "Utilities",
+    "cases_failed": 0,
+    "cases_passed": 87,
+    "cases_skipped": 0,
+    "details": [
+      {
+        "failed": 0,
+        "name": "test_gpio",
+        "ok": true,
+        "passed": 28,
+        "skipped": 0
+      },
+      {
+        "failed": 0,
+        "name": "test_pins",
+        "ok": true,
+        "passed": 18,
+        "skipped": 0
+      },
+      {
+        "failed": 0,
+        "name": "test_smbus2",
+        "ok": true,
+        "passed": 19,
+        "skipped": 0
+      },
+      {
+        "failed": 0,
+        "name": "test_spidev",
+        "ok": true,
+        "passed": 22,
+        "skipped": 0
+      }
+    ],
+    "kind": "pytest",
+    "not_run": "",
+    "suites": 4,
+    "suites_passed": 4
+  },
+  "Jetson_Utilities": {
+    "area": "Utilities",
+    "cases_failed": 0,
+    "cases_passed": 8,
+    "cases_skipped": 0,
+    "details": [
+      {
+        "failed": 0,
+        "name": "test_board",
+        "ok": true,
+        "passed": 1,
+        "skipped": 0
+      },
+      {
+        "failed": 0,
+        "name": "test_gpio",
+        "ok": true,
+        "passed": 1,
+        "skipped": 0
+      },
+      {
+        "failed": 0,
+        "name": "test_jbot_gpio",
+        "ok": true,
+        "passed": 1,
+        "skipped": 0
+      },
+      {
+        "failed": 0,
+        "name": "test_pwm",
+        "ok": true,
+        "passed": 1,
+        "skipped": 0
+      },
+      {
+        "failed": 0,
+        "name": "test_i2c",
+        "ok": true,
+        "passed": 1,
+        "skipped": 0
+      },
+      {
+        "failed": 0,
+        "name": "test_spi",
+        "ok": true,
+        "passed": 1,
+        "skipped": 0
+      },
+      {
+        "failed": 0,
+        "name": "test_uart",
+        "ok": true,
+        "passed": 1,
+        "skipped": 0
+      },
+      {
+        "failed": 0,
+        "name": "test_can",
+        "ok": true,
+        "passed": 1,
+        "skipped": 0
+      }
+    ],
+    "kind": "cmake",
+    "not_run": "",
+    "suites": 8,
+    "suites_passed": 8
+  },
+  "ROS2_Control_System": {
+    "area": "ROS 2",
+    "cases_failed": 0,
+    "cases_passed": 23,
+    "cases_skipped": 0,
+    "details": [
+      {
+        "failed": 0,
+        "name": "cs_test_linear_mpc",
+        "ok": true,
+        "passed": 5,
+        "skipped": 0
+      },
+      {
+        "failed": 0,
+        "name": "cs_test_mppi_thrust",
+        "ok": true,
+        "passed": 5,
+        "skipped": 0
+      },
+      {
+        "failed": 0,
+        "name": "cs_test_eskf",
+        "ok": true,
+        "passed": 6,
+        "skipped": 0
+      },
+      {
+        "failed": 0,
+        "name": "cs_test_reference_buffer",
+        "ok": true,
+        "passed": 3,
+        "skipped": 0
+      },
+      {
+        "failed": 0,
+        "name": "cs_test_obstacle_geometry",
+        "ok": true,
+        "passed": 4,
+        "skipped": 0
+      }
+    ],
+    "kind": "host",
+    "not_run": "",
+    "suites": 5,
+    "suites_passed": 5
+  },
+  "ROS2_Flight_Controller": {
+    "area": "ROS 2",
+    "cases_failed": 0,
+    "cases_passed": 43,
+    "cases_skipped": 0,
+    "details": [
+      {
+        "failed": 0,
+        "name": "fc_test_flight_controller",
+        "ok": true,
+        "passed": 1,
+        "skipped": 0
+      },
+      {
+        "failed": 0,
+        "name": "fc_test_stateflow",
+        "ok": true,
+        "passed": 11,
+        "skipped": 0
+      },
+      {
+        "failed": 0,
+        "name": "fc_test_waypoint_follower",
+        "ok": true,
+        "passed": 8,
+        "skipped": 0
+      },
+      {
+        "failed": 0,
+        "name": "fc_test_path_manager",
+        "ok": true,
+        "passed": 7,
+        "skipped": 0
+      },
+      {
+        "failed": 0,
+        "name": "fc_test_orbit_follower",
+        "ok": true,
+        "passed": 7,
+        "skipped": 0
+      },
+      {
+        "failed": 0,
+        "name": "fc_test_position_control",
+        "ok": true,
+        "passed": 9,
+        "skipped": 0
+      }
+    ],
+    "kind": "host",
+    "not_run": "trajectory optimizer (CUDA kernel)",
+    "suites": 6,
+    "suites_passed": 6
+  },
+  "ROS2_Hexacopter_Control": {
+    "area": "Simulation",
+    "cases_failed": 0,
+    "cases_passed": 42,
+    "cases_skipped": 0,
+    "details": [
+      {
+        "failed": 0,
+        "name": "test_airframe",
+        "ok": true,
+        "passed": 4,
+        "skipped": 0
+      },
+      {
+        "failed": 0,
+        "name": "test_allocation",
+        "ok": true,
+        "passed": 4,
+        "skipped": 0
+      },
+      {
+        "failed": 0,
+        "name": "test_esc",
+        "ok": true,
+        "passed": 6,
+        "skipped": 0
+      },
+      {
+        "failed": 0,
+        "name": "test_design",
+        "ok": true,
+        "passed": 5,
+        "skipped": 0
+      },
+      {
+        "failed": 0,
+        "name": "test_estimators",
+        "ok": true,
+        "passed": 4,
+        "skipped": 0
+      },
+      {
+        "failed": 0,
+        "name": "test_flight_sim",
+        "ok": true,
+        "passed": 19,
+        "skipped": 0
+      }
+    ],
+    "kind": "cmake",
+    "not_run": "",
+    "suites": 6,
+    "suites_passed": 6
+  },
+  "ROS2_JetOwl_Bridge": {
+    "area": "ROS 2",
+    "cases_failed": 0,
+    "cases_passed": 29,
+    "cases_skipped": 0,
+    "details": [
+      {
+        "failed": 0,
+        "name": "test_protocol",
+        "ok": true,
+        "passed": 8,
+        "skipped": 0
+      },
+      {
+        "failed": 0,
+        "name": "test_clock_sync",
+        "ok": true,
+        "passed": 4,
+        "skipped": 0
+      },
+      {
+        "failed": 0,
+        "name": "test_encoder_estimator",
+        "ok": true,
+        "passed": 6,
+        "skipped": 0
+      },
+      {
+        "failed": 0,
+        "name": "test_sensor_convert",
+        "ok": true,
+        "passed": 7,
+        "skipped": 0
+      },
+      {
+        "failed": 0,
+        "name": "test_link_decoder",
+        "ok": true,
+        "passed": 4,
+        "skipped": 0
+      }
+    ],
+    "kind": "cmake",
+    "not_run": "node test (rclcpp)",
+    "suites": 5,
+    "suites_passed": 5
+  },
+  "ROS2_Lidar_AI_Solution": {
+    "area": "ROS 2",
+    "cases_failed": 0,
+    "cases_passed": 21,
+    "cases_skipped": 0,
+    "details": [
+      {
+        "failed": 0,
+        "name": "test_cuda_api_lint",
+        "ok": true,
+        "passed": 8,
+        "skipped": 0
+      },
+      {
+        "failed": 0,
+        "name": "test_isaac_ros_math",
+        "ok": true,
+        "passed": 3,
+        "skipped": 0
+      },
+      {
+        "failed": 0,
+        "name": "test_perception_math",
+        "ok": true,
+        "passed": 6,
+        "skipped": 0
+      },
+      {
+        "failed": 0,
+        "name": "test_pointcloud_layout",
+        "ok": true,
+        "passed": 4,
+        "skipped": 0
+      }
+    ],
+    "kind": "pytest",
+    "not_run": "GPU-marked tests, YUVToRGB (NVIDIA submodule data)",
+    "suites": 4,
+    "suites_passed": 4
+  },
+  "ROS2_Lidar_SLAM": {
+    "area": "ROS 2",
+    "cases_failed": 0,
+    "cases_passed": 70,
+    "cases_skipped": 0,
+    "details": [
+      {
+        "failed": 0,
+        "name": "test_ld19_protocol",
+        "ok": true,
+        "passed": 7,
+        "skipped": 0
+      },
+      {
+        "failed": 0,
+        "name": "test_lpb40b_protocol",
+        "ok": true,
+        "passed": 4,
+        "skipped": 0
+      },
+      {
+        "failed": 0,
+        "name": "test_scan_filters",
+        "ok": true,
+        "passed": 8,
+        "skipped": 0
+      },
+      {
+        "failed": 0,
+        "name": "test_scan_matcher",
+        "ok": true,
+        "passed": 4,
+        "skipped": 0
+      },
+      {
+        "failed": 0,
+        "name": "test_bnb_matcher",
+        "ok": true,
+        "passed": 5,
+        "skipped": 0
+      },
+      {
+        "failed": 0,
+        "name": "test_localization",
+        "ok": true,
+        "passed": 5,
+        "skipped": 0
+      },
+      {
+        "failed": 0,
+        "name": "test_costmap",
+        "ok": true,
+        "passed": 3,
+        "skipped": 0
+      },
+      {
+        "failed": 0,
+        "name": "test_tilt_compensation",
+        "ok": true,
+        "passed": 7,
+        "skipped": 0
+      },
+      {
+        "failed": 0,
+        "name": "test_frame_alignment",
+        "ok": true,
+        "passed": 4,
+        "skipped": 0
+      },
+      {
+        "failed": 0,
+        "name": "test_pose_ekf",
+        "ok": true,
+        "passed": 7,
+        "skipped": 0
+      },
+      {
+        "failed": 0,
+        "name": "test_pose_graph",
+        "ok": true,
+        "passed": 4,
+        "skipped": 0
+      },
+      {
+        "failed": 0,
+        "name": "test_occupancy_grid",
+        "ok": true,
+        "passed": 6,
+        "skipped": 0
+      },
+      {
+        "failed": 0,
+        "name": "test_slam_simulation",
+        "ok": true,
+        "passed": 5,
+        "skipped": 0
+      },
+      {
+        "failed": 0,
+        "name": "test_serial_utils",
+        "ok": true,
+        "passed": 1,
+        "skipped": 0
+      }
+    ],
+    "kind": "cmake",
+    "not_run": "",
+    "suites": 14,
+    "suites_passed": 14
+  },
+  "ROS2_Mcu_Emulator": {
+    "area": "Simulation",
+    "cases_failed": 0,
+    "cases_passed": 41,
+    "cases_skipped": 0,
+    "details": [
+      {
+        "failed": 0,
+        "name": "test_geodesy",
+        "ok": true,
+        "passed": 3,
+        "skipped": 0
+      },
+      {
+        "failed": 0,
+        "name": "test_sensor_models",
+        "ok": true,
+        "passed": 7,
+        "skipped": 0
+      },
+      {
+        "failed": 0,
+        "name": "test_virtual_mcu",
+        "ok": true,
+        "passed": 2,
+        "skipped": 0
+      },
+      {
+        "failed": 0,
+        "name": "test_protocol",
+        "ok": true,
+        "passed": 8,
+        "skipped": 0
+      },
+      {
+        "failed": 0,
+        "name": "test_clock_sync",
+        "ok": true,
+        "passed": 4,
+        "skipped": 0
+      },
+      {
+        "failed": 0,
+        "name": "test_encoder_estimator",
+        "ok": true,
+        "passed": 6,
+        "skipped": 0
+      },
+      {
+        "failed": 0,
+        "name": "test_sensor_convert",
+        "ok": true,
+        "passed": 7,
+        "skipped": 0
+      },
+      {
+        "failed": 0,
+        "name": "test_link_decoder",
+        "ok": true,
+        "passed": 4,
+        "skipped": 0
+      }
+    ],
+    "kind": "cmake",
+    "not_run": "Gazebo launch test",
+    "suites": 8,
+    "suites_passed": 8
+  },
+  "ROS2_Mission_Planner": {
+    "area": "ROS 2",
+    "cases_failed": 0,
+    "cases_passed": 62,
+    "cases_skipped": 0,
+    "details": [
+      {
+        "failed": 0,
+        "name": "mp_test_waypoint_manager",
+        "ok": true,
+        "passed": 10,
+        "skipped": 0
+      },
+      {
+        "failed": 0,
+        "name": "mp_test_geofence",
+        "ok": true,
+        "passed": 8,
+        "skipped": 0
+      },
+      {
+        "failed": 0,
+        "name": "mp_test_mission_plan",
+        "ok": true,
+        "passed": 21,
+        "skipped": 0
+      },
+      {
+        "failed": 0,
+        "name": "mp_test_mission_executive",
+        "ok": true,
+        "passed": 14,
+        "skipped": 0
+      },
+      {
+        "failed": 0,
+        "name": "mp_test_geo_mission",
+        "ok": true,
+        "passed": 9,
+        "skipped": 0
+      }
+    ],
+    "kind": "host",
+    "not_run": "",
+    "suites": 5,
+    "suites_passed": 5
+  },
+  "ROS2_Monitoring": {
+    "area": "ROS 2",
+    "cases_failed": 0,
+    "cases_passed": 35,
+    "cases_skipped": 1,
+    "details": [
+      {
+        "failed": 0,
+        "name": "",
+        "ok": true,
+        "passed": 0,
+        "skipped": 1
+      },
+      {
+        "failed": 0,
+        "name": "test_anim",
+        "ok": true,
+        "passed": 8,
+        "skipped": 0
+      },
+      {
+        "failed": 0,
+        "name": "test_node_manager",
+        "ok": true,
+        "passed": 15,
+        "skipped": 0
+      },
+      {
+        "failed": 0,
+        "name": "test_widgets",
+        "ok": true,
+        "passed": 12,
+        "skipped": 0
+      }
+    ],
+    "kind": "pytest",
+    "not_run": "",
+    "suites": 4,
+    "suites_passed": 4
+  },
+  "ROS2_Network_Bridge": {
+    "area": "ROS 2",
+    "cases_failed": 0,
+    "cases_passed": 48,
+    "cases_skipped": 0,
+    "details": [
+      {
+        "failed": 0,
+        "name": "nb_test_mavlink_codec",
+        "ok": true,
+        "passed": 9,
+        "skipped": 0
+      },
+      {
+        "failed": 0,
+        "name": "nb_test_telemetry",
+        "ok": true,
+        "passed": 15,
+        "skipped": 0
+      },
+      {
+        "failed": 0,
+        "name": "nb_test_gcs_link",
+        "ok": true,
+        "passed": 8,
+        "skipped": 0
+      },
+      {
+        "failed": 0,
+        "name": "nb_test_transport",
+        "ok": true,
+        "passed": 3,
+        "skipped": 0
+      },
+      {
+        "failed": 0,
+        "name": "nb_test_relay_transport",
+        "ok": true,
+        "passed": 7,
+        "skipped": 0
+      },
+      {
+        "failed": 0,
+        "name": "nb_test_mission_upload",
+        "ok": true,
+        "passed": 6,
+        "skipped": 0
+      }
+    ],
+    "kind": "host",
+    "not_run": "",
+    "suites": 6,
+    "suites_passed": 6
+  },
+  "ROS2_Night_Vision_OWL": {
+    "area": "ROS 2",
+    "cases_failed": 0,
+    "cases_passed": 45,
+    "cases_skipped": 1,
+    "details": [
+      {
+        "failed": 0,
+        "name": "",
+        "ok": true,
+        "passed": 0,
+        "skipped": 1
+      },
+      {
+        "failed": 0,
+        "name": "test_association",
+        "ok": true,
+        "passed": 5,
+        "skipped": 0
+      },
+      {
+        "failed": 0,
+        "name": "test_cfar",
+        "ok": true,
+        "passed": 14,
+        "skipped": 0
+      },
+      {
+        "failed": 0,
+        "name": "test_filters",
+        "ok": true,
+        "passed": 12,
+        "skipped": 0
+      },
+      {
+        "failed": 0,
+        "name": "test_kalman",
+        "ok": true,
+        "passed": 8,
+        "skipped": 0
+      },
+      {
+        "failed": 0,
+        "name": "test_tracker",
+        "ok": true,
+        "passed": 6,
+        "skipped": 0
+      }
+    ],
+    "kind": "pytest",
+    "not_run": "",
+    "suites": 6,
+    "suites_passed": 6
+  },
+  "ROS2_Qt": {
+    "area": "ROS 2",
+    "cases_failed": 0,
+    "cases_passed": 65,
+    "cases_skipped": 0,
+    "details": [
+      {
+        "failed": 0,
+        "name": "qt_test_core",
+        "ok": true,
+        "passed": 65,
+        "skipped": 0
+      }
+    ],
+    "kind": "host",
+    "not_run": "dashboard/sim node and introspection tests (rclcpp, Qt)",
+    "suites": 1,
+    "suites_passed": 1
+  },
+  "ROS2_RF_Spectrum": {
+    "area": "ROS 2",
+    "cases_failed": 0,
+    "cases_passed": 11,
+    "cases_skipped": 0,
+    "details": [
+      {
+        "failed": 0,
+        "name": "test_band_sweeper",
+        "ok": true,
+        "passed": 1,
+        "skipped": 0
+      },
+      {
+        "failed": 0,
+        "name": "test_failsafe_policy",
+        "ok": true,
+        "passed": 4,
+        "skipped": 0
+      },
+      {
+        "failed": 0,
+        "name": "test_frequency_hopping",
+        "ok": true,
+        "passed": 1,
+        "skipped": 0
+      },
+      {
+        "failed": 0,
+        "name": "test_replay_detector",
+        "ok": true,
+        "passed": 3,
+        "skipped": 0
+      },
+      {
+        "failed": 0,
+        "name": "test_signal_decoder",
+        "ok": true,
+        "passed": 2,
+        "skipped": 0
+      }
+    ],
+    "kind": "pytest",
+    "not_run": "",
+    "suites": 5,
+    "suites_passed": 5
+  },
+  "ROS2_Stereo": {
+    "area": "ROS 2",
+    "cases_failed": 0,
+    "cases_passed": 36,
+    "cases_skipped": 0,
+    "details": [
+      {
+        "failed": 0,
+        "name": "test_stereo_geometry",
+        "ok": true,
+        "passed": 7,
+        "skipped": 0
+      },
+      {
+        "failed": 0,
+        "name": "test_stereo_calibration",
+        "ok": true,
+        "passed": 9,
+        "skipped": 0
+      },
+      {
+        "failed": 0,
+        "name": "test_disparity_filter",
+        "ok": true,
+        "passed": 7,
+        "skipped": 0
+      },
+      {
+        "failed": 0,
+        "name": "test_temporal_filter",
+        "ok": true,
+        "passed": 7,
+        "skipped": 0
+      },
+      {
+        "failed": 0,
+        "name": "test_stereo_pipeline",
+        "ok": true,
+        "passed": 4,
+        "skipped": 0
+      },
+      {
+        "failed": 0,
+        "name": "test_csi_stereo_camera",
+        "ok": true,
+        "passed": 2,
+        "skipped": 0
+      }
+    ],
+    "kind": "cmake",
+    "not_run": "node and ROS conversion tests (rclcpp, cv_bridge)",
+    "suites": 6,
+    "suites_passed": 6
+  },
+  "Remote_UAV": {
+    "area": "Firmware",
+    "cases_failed": 0,
+    "cases_passed": 7,
+    "cases_skipped": 0,
+    "details": [
+      {
+        "failed": 0,
+        "name": "test_stick_dsp",
+        "ok": true,
+        "passed": 1,
+        "skipped": 0
+      },
+      {
+        "failed": 0,
+        "name": "test_stick_curve",
+        "ok": true,
+        "passed": 1,
+        "skipped": 0
+      },
+      {
+        "failed": 0,
+        "name": "test_rflink",
+        "ok": true,
+        "passed": 1,
+        "skipped": 0
+      },
+      {
+        "failed": 0,
+        "name": "test_ui_logic",
+        "ok": true,
+        "passed": 1,
+        "skipped": 0
+      },
+      {
+        "failed": 0,
+        "name": "test_rt_sched",
+        "ok": true,
+        "passed": 1,
+        "skipped": 0
+      },
+      {
+        "failed": 0,
+        "name": "test_phone_link",
+        "ok": true,
+        "passed": 1,
+        "skipped": 0
+      },
+      {
+        "failed": 0,
+        "name": "test_relay_logic",
+        "ok": true,
+        "passed": 1,
+        "skipped": 0
+      }
+    ],
+    "kind": "cmake",
+    "not_run": "",
+    "suites": 7,
+    "suites_passed": 7
+  }
+}

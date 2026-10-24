@@ -1,0 +1,27 @@
+{
+  "checks_passed": 19,
+  "frames": [
+    "01_dashboard.png",
+    "02_pulling.png",
+    "03_shade_open.png",
+    "04_wifi_on.png",
+    "05_wifi_list.png",
+    "06_password.png",
+    "07_typed.png",
+    "08_connected.png",
+    "09_bt_list.png",
+    "10_bt_connected.png",
+    "11_shade_both_on.png",
+    "12_shade_closed.png",
+    "13_joystick.png",
+    "14_joystick_applied.png",
+    "15_system.png",
+    "16_dashboard_tan.png",
+    "17_mission.png",
+    "18_mission_accept.png",
+    "19_mission_uploading.png",
+    "20_mission_start_confirm.png",
+    "21_mission_flying.png",
+    "22_dashboard_phone.png"
+  ]
+}
