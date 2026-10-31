@@ -1,0 +1,97 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1001" height="514" viewBox="0 0 1001 514" font-family="Helvetica, Arial, sans-serif" font-size="10">
+<defs><marker id="a" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="context-stroke"/></marker></defs>
+<rect width="100%" height="100%" fill="#ffffff"/>
+<text x="12" y="20" font-size="13" font-weight="bold">JetOwl Vision camera loops</text>
+<text x="12" y="35" fill="#444">plant_camera_exposure ⇄ vis_ae_awb, one step per frame; preview path</text>
+<path d="M615.0,188.5 L625.0,188.5 L625.0,268.0 L508.1,268.0" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M474.1,268.0 L357.2,268.0 L357.2,206.2 L367.2,206.2" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M826.1,171.7 L836.1,171.7 L836.1,234.0 L769.5,234.0" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M735.5,234.0 L669.0,234.0 L669.0,165.5 L679.0,165.5" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M175.6,114.0 L355.2,114.0 L355.2,111.8 L367.2,111.8" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M615.0,129.5 L667.0,129.5 L667.0,128.5 L679.0,128.5" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M826.1,122.3 L878.1,122.3 L878.1,125.0 L890.1,125.0" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M924.1,125.0 L944.1,125.0 L944.1,330.0 L219.6,330.0 L219.6,164.0 L239.6,164.0" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M924.1,125.0 L948.1,125.0 L948.1,330.0 L215.6,330.0 L215.6,209.0 L239.6,209.0" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M924.1,125.0 L952.1,125.0 L952.1,330.0 L211.6,330.0 L211.6,254.0 L239.6,254.0" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M290.8,164.0 L348.2,164.0 L348.2,135.4 L367.2,135.4" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M290.8,209.0 L341.2,209.0 L341.2,159.0 L367.2,159.0" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M303.2,254.0 L334.2,254.0 L334.2,182.6 L367.2,182.6" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M109.6,408.0 L355.2,408.0 L355.2,406.0 L367.2,406.0" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M568.3,393.0 L878.1,393.0 L878.1,393.0 L890.1,393.0" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M568.3,419.0 L878.1,419.0 L878.1,433.0 L890.1,433.0" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
+<circle cx="944.1" cy="125.0" r="2.6" fill="#d62728"/>
+<circle cx="948.1" cy="125.0" r="2.6" fill="#d62728"/>
+<rect x="79.6" y="100.0" width="96.0" height="28.0" fill="#fff" stroke="#d62728" stroke-width="1.4"/>
+<text x="127.6" y="117.5" text-anchor="middle">Signal Builder</text>
+<path d="M175.6,111.0 L180.6,114.0 L175.6,117.0 z" fill="#d62728"/>
+<text x="127.6" y="140.0" text-anchor="middle">scene radiance</text>
+<rect x="239.6" y="150.0" width="51.2" height="28.0" fill="#fff" stroke="#d62728" stroke-width="1.4"/>
+<text x="265.2" y="167.5" text-anchor="middle">act(1)</text>
+<path d="M290.8,161.0 L295.8,164.0 L290.8,167.0 z" fill="#d62728"/>
+<text x="265.2" y="190.0" text-anchor="middle">exposure µs</text>
+<rect x="239.6" y="195.0" width="51.2" height="28.0" fill="#fff" stroke="#d62728" stroke-width="1.4"/>
+<text x="265.2" y="212.5" text-anchor="middle">act(2)</text>
+<path d="M290.8,206.0 L295.8,209.0 L290.8,212.0 z" fill="#d62728"/>
+<text x="265.2" y="235.0" text-anchor="middle">gain mdB</text>
+<rect x="239.6" y="240.0" width="63.6" height="28.0" fill="#fff" stroke="#d62728" stroke-width="1.4"/>
+<text x="271.4" y="257.5" text-anchor="middle">act(3:5)</text>
+<path d="M303.2,251.0 L308.2,254.0 L303.2,257.0 z" fill="#d62728"/>
+<text x="271.4" y="280.0" text-anchor="middle">ISP gains</text>
+<rect x="367.2" y="100.0" width="247.8" height="118.0" fill="#fff" stroke="#d62728" stroke-width="1.6"/>
+<text x="491.1" y="162.5" text-anchor="middle" fill="#7a7a7a" font-size="9">plant_camera_exposure</text>
+<text x="371.2" y="115.3" text-anchor="start">scene</text>
+<text x="371.2" y="138.9" text-anchor="start">exposure_us</text>
+<text x="371.2" y="162.5" text-anchor="start">gain_mdb</text>
+<text x="371.2" y="186.1" text-anchor="start">isp_gain</text>
+<text x="371.2" y="209.7" text-anchor="start">S</text>
+<text x="611.0" y="133.0" text-anchor="end">stats</text>
+<text x="611.0" y="192.0" text-anchor="end">S</text>
+<path d="M615.0,126.5 L620.0,129.5 L615.0,132.5 z" fill="#d62728"/>
+<path d="M615.0,185.5 L620.0,188.5 L615.0,191.5 z" fill="#d62728"/>
+<text x="491.1" y="230.0" text-anchor="middle">IMX335 + ISP statistics</text>
+<text x="491.1" y="241.0" text-anchor="middle" fill="#6a6a6a" font-size="8.5">param: P</text>
+<rect x="474.1" y="253.0" width="34.0" height="30.0" fill="#fff" stroke="#d62728" stroke-width="1.4"/>
+<text x="491.1" y="271.5" text-anchor="middle">1/z</text>
+<path d="M474.1,265.0 L469.1,268.0 L474.1,271.0 z" fill="#d62728"/>
+<rect x="679.0" y="110.0" width="147.1" height="74.0" fill="#fff" stroke="#d62728" stroke-width="1.6"/>
+<text x="752.5" y="150.5" text-anchor="middle" fill="#7a7a7a" font-size="9">vis_ae_awb</text>
+<text x="683.0" y="132.0" text-anchor="start">stats</text>
+<text x="683.0" y="169.0" text-anchor="start">S</text>
+<text x="822.1" y="125.8" text-anchor="end">act</text>
+<text x="822.1" y="150.5" text-anchor="end">info</text>
+<text x="822.1" y="175.2" text-anchor="end">S</text>
+<path d="M826.1,119.3 L831.1,122.3 L826.1,125.3 z" fill="#d62728"/>
+<path d="M826.1,144.0 L831.1,147.0 L826.1,150.0 z" fill="#d62728"/>
+<path d="M826.1,168.7 L831.1,171.7 L826.1,174.7 z" fill="#d62728"/>
+<text x="752.5" y="196.0" text-anchor="middle">AE + AWB (drawn below)</text>
+<text x="752.5" y="207.0" text-anchor="middle" fill="#6a6a6a" font-size="8.5">param: P</text>
+<rect x="735.5" y="219.0" width="34.0" height="30.0" fill="#fff" stroke="#d62728" stroke-width="1.4"/>
+<text x="752.5" y="237.5" text-anchor="middle">1/z</text>
+<path d="M735.5,231.0 L730.5,234.0 L735.5,237.0 z" fill="#d62728"/>
+<rect x="890.1" y="110.0" width="34.0" height="30.0" fill="#fff" stroke="#d62728" stroke-width="1.4"/>
+<text x="907.1" y="128.5" text-anchor="middle">1/z</text>
+<path d="M924.1,122.0 L929.1,125.0 L924.1,128.0 z" fill="#d62728"/>
+<text x="907.1" y="152.0" text-anchor="middle">applied next frame</text>
+<rect x="79.6" y="400.0" width="30.0" height="16.0" rx="7" fill="#fff" stroke="#d62728" stroke-width="1.4"/>
+<text x="94.6" y="411.5" text-anchor="middle">1</text>
+<path d="M109.6,405.0 L114.6,408.0 L109.6,411.0 z" fill="#d62728"/>
+<text x="94.6" y="428.0" text-anchor="middle">RGB565 frame (DCMIPP pipe 2)</text>
+<rect x="367.2" y="380.0" width="201.1" height="52.0" fill="#fff" stroke="#d62728" stroke-width="1.6"/>
+<text x="467.8" y="409.5" text-anchor="middle" fill="#7a7a7a" font-size="9">vis_preview_decimate</text>
+<text x="371.2" y="409.5" text-anchor="start">rgb565</text>
+<text x="564.3" y="396.5" text-anchor="end">img</text>
+<text x="564.3" y="422.5" text-anchor="end">geo</text>
+<path d="M568.3,390.0 L573.3,393.0 L568.3,396.0 z" fill="#d62728"/>
+<path d="M568.3,416.0 L573.3,419.0 L568.3,422.0 z" fill="#d62728"/>
+<text x="467.8" y="444.0" text-anchor="middle">preview</text>
+<text x="467.8" y="455.0" text-anchor="middle" fill="#6a6a6a" font-size="8.5">param: factor, encoding</text>
+<rect x="890.1" y="385.0" width="30.0" height="16.0" rx="7" fill="#fff" stroke="#d62728" stroke-width="1.4"/>
+<text x="905.1" y="396.5" text-anchor="middle">1</text>
+<text x="905.1" y="413.0" text-anchor="middle">image data</text>
+<rect x="890.1" y="425.0" width="30.0" height="16.0" rx="7" fill="#fff" stroke="#d62728" stroke-width="1.4"/>
+<text x="905.1" y="436.5" text-anchor="middle">2</text>
+<text x="905.1" y="453.0" text-anchor="middle">width, height, step</text>
+<text x="12" y="498" fill="#444">Sample time colours:</text>
+<rect x="124" y="489" width="10" height="10" fill="none" stroke="#d62728" stroke-width="2"/>
+<text x="138" y="498">frame (33 ms)</text>
+</svg>

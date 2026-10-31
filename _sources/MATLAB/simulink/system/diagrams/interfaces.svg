@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1380" height="800" viewBox="0 0 1380 800" font-family="Helvetica, Arial, sans-serif" font-size="11">
+<defs><marker id="a" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="context-stroke"/></marker></defs>
+<rect width="100%" height="100%" fill="#ffffff"/>
+<text x="16" y="24" font-size="15" font-weight="bold">jetowl_system — communication interfaces</text>
+<text x="16" y="42" fill="#444">Each device is a subsystem of jetowl_system.slx; each arrow is a comm_net_link block (delay = P.net.&lt;link&gt;.total_steps ms) in a network subsystem.</text>
+<path d="M830,400 L960,400 L960,226" fill="none" stroke="#1f4fd6" stroke-width="2.2" marker-end="url(#a)" marker-start="url(#a)"/>
+<path d="M830,130 L960,130 L960,170" fill="none" stroke="#1f4fd6" stroke-width="2.2" marker-end="url(#a)" marker-start="url(#a)"/>
+<path d="M1020,198 L1320,198 L1320,330" fill="none" stroke="#1f4fd6" stroke-width="2.2" marker-end="url(#a)" marker-start="url(#a)"/>
+<path d="M300,400 L560,400" fill="none" stroke="#d62728" stroke-width="2.2" marker-end="url(#a)"/>
+<path d="M560,470 L300,470" fill="none" stroke="#d62728" stroke-width="2.2" marker-end="url(#a)"/>
+<path d="M170,640 L170,510" fill="none" stroke="#1a9e1a" stroke-width="2.2" marker-end="url(#a)"/>
+<path d="M230,510 L230,640" fill="none" stroke="#1a9e1a" stroke-width="2.2" marker-end="url(#a)"/>
+<path d="M1100,510 L1100,745 L300,745" fill="none" stroke="#e8590c" stroke-width="2.2" marker-end="url(#a)"/>
+<path d="M695,510 L695,640" fill="none" stroke="#555555" stroke-width="2.2" marker-end="url(#a)"/>
+<path d="M760,640 L760,510" fill="none" stroke="#555555" stroke-width="2.2" marker-end="url(#a)"/>
+<rect x="900" y="170" width="120" height="56" rx="6" fill="#eef3ff" stroke="#1f4fd6" stroke-width="1.6"/>
+<text x="960" y="194" text-anchor="middle" font-weight="bold">Ethernet switch</text>
+<text x="960" y="210" text-anchor="middle" fill="#444">192.168.10.0/24</text>
+<rect x="560" y="70" width="270" height="120" rx="6" fill="#fff7c8" stroke="#c9a400" stroke-width="2"/>
+<text x="570" y="89" font-size="13" font-weight="bold">JetOwl Vision</text>
+<text x="570" y="105" fill="#7a5c00">JetOwl_Vision · STM32N657 + IMX335</text>
+<text x="570" y="124" fill="#333">AE/AWB per frame, preview modes (cam_preview.c)</text>
+<text x="570" y="139" fill="#333">micro-ROS node jetowl_vision · 192.168.10.3</text>
+<rect x="560" y="330" width="270" height="180" rx="6" fill="#fff7c8" stroke="#c9a400" stroke-width="2"/>
+<text x="570" y="349" font-size="13" font-weight="bold">JetOwl FC</text>
+<text x="570" y="365" fill="#7a5c00">JetOwl_FlightControl · STM32N657</text>
+<text x="570" y="384" fill="#333">IMU ×2 + fusion, MT6835 ×4, GNSS ×2 + CI, baro</text>
+<text x="570" y="399" fill="#333">RC/Jetson authority → cmd_guard → attitude →</text>
+<text x="570" y="414" fill="#333">rate loop → rotor speed; LoRa RX / TLM; mission</text>
+<text x="570" y="429" fill="#333">micro-ROS node jetowl_fc · 192.168.10.2</text>
+<rect x="1060" y="330" width="290" height="180" rx="6" fill="#fff7c8" stroke="#c9a400" stroke-width="2"/>
+<text x="1070" y="349" font-size="13" font-weight="bold">Isaac ROS Jetson</text>
+<text x="1070" y="365" fill="#7a5c00">Isaac_ROS-Jetbot_NanoOWL · Orin Nano</text>
+<text x="1070" y="384" fill="#333">ESKF (IMU + GNSS + baro + LPB40B LiDAR)</text>
+<text x="1070" y="399" fill="#333">flight mode → MPC → thrust/attitude (50 Hz)</text>
+<text x="1070" y="414" fill="#333">vision bridge + Qt mode requests</text>
+<text x="1070" y="429" fill="#333">micro-ROS agent 192.168.10.1:8888</text>
+<rect x="40" y="330" width="260" height="180" rx="6" fill="#fff7c8" stroke="#c9a400" stroke-width="2"/>
+<text x="50" y="349" font-size="13" font-weight="bold">Remote UAV</text>
+<text x="50" y="365" fill="#7a5c00">Isaac_ROS-Jetbot_NanoOWL/Remote_UAV</text>
+<text x="50" y="384" fill="#333">Arduino GIGA R1 + LR1121</text>
+<text x="50" y="399" fill="#333">pilot sticks + ARM/KILL/MODE switches</text>
+<text x="50" y="414" fill="#333">LoRa uplink TX, telemetry RX</text>
+<text x="50" y="429" fill="#333">mission staging: Accept / Start</text>
+<text x="50" y="444" fill="#333">STATUS to the phone</text>
+<rect x="40" y="640" width="260" height="120" rx="6" fill="#fff7c8" stroke="#c9a400" stroke-width="2"/>
+<text x="50" y="659" font-size="13" font-weight="bold">JetbotNanoOWL phone</text>
+<text x="50" y="675" fill="#7a5c00">JetbotNanoOWL · Android</text>
+<text x="50" y="694" fill="#333">command arbiter REMOTE / DIRECT / NONE</text>
+<text x="50" y="709" fill="#333">mission upload, heartbeat</text>
+<rect x="560" y="640" width="270" height="90" rx="6" fill="#fff7c8" stroke="#c9a400" stroke-width="2"/>
+<text x="570" y="659" font-size="13" font-weight="bold">UAV plant</text>
+<text x="570" y="675" fill="#7a5c00">quad-X, 4 BLDC + ESC (DShot)</text>
+<text x="570" y="694" fill="#333">rigid body 6-DOF, rotor dynamics</text>
+<text x="975" y="236" fill="#1f4fd6" font-weight="bold">Ethernet 100 Mbit/s · micro-ROS / XRCE-DDS (UDP)</text>
+<text x="975" y="250" fill="#1f4fd6">FC → Jetson: /imu/data 200 Hz · /gps/fix 1 Hz · /baro 25 Hz</text>
+<text x="975" y="264" fill="#1f4fd6">  /jetowl/ctrl_feedback 50 Hz · /jetowl/mission/geo on change</text>
+<text x="975" y="278" fill="#1f4fd6">Jetson → FC: /control/attitude_setpoint 50 Hz</text>
+<text x="975" y="292" fill="#1f4fd6">  → link quality (age/order) → cmd_guard</text>
+<text x="845" y="60" fill="#1f4fd6" font-weight="bold">Vision → Jetson: /jetowl_vision/image_preview</text>
+<text x="845" y="74" fill="#1f4fd6">  reliable, fragmented (MTU 1472), period T</text>
+<text x="845" y="88" fill="#1f4fd6">Jetson → Vision: /jetowl_vision/preview_mode [ver, D, enc, T]</text>
+<text x="845" y="102" fill="#1f4fd6">  checked on board: buffer, 67…1000 ms, t_wire ≤ T/2</text>
+<text x="308" y="356" fill="#d62728" font-weight="bold">LoRa LR1121 (rflink), AS923</text>
+<text x="308" y="370" fill="#d62728">uplink 2.4 GHz SF6/BW812, 50 Hz</text>
+<text x="308" y="384" fill="#d62728">RC 21 B; RCX 37 B every 5th: mission aux</text>
+<text x="308" y="490" fill="#d62728" font-weight="bold">downlink 921.4 MHz SF7/BW250, 10 Hz</text>
+<text x="308" y="504" fill="#d62728">TLM 37 B: status, attitude, thrust,</text>
+<text x="308" y="518" fill="#d62728">uplink LQ, mission id/state</text>
+<text x="240" y="560" fill="#1a9e1a" font-weight="bold">USB-C CDC (COBS + CRC-16) or BLE</text>
+<text x="240" y="574" fill="#1a9e1a">↑ STATUS 10 Hz</text>
+<text x="240" y="588" fill="#1a9e1a">↓ HEARTBEAT 2 Hz, mission BEGIN/ITEM/END/CMD</text>
+<text x="240" y="602" fill="#1a9e1a">presence timeout 1.5 s</text>
+<text x="580" y="760" fill="#e8590c" font-weight="bold">Wi-Fi WebSocket · MAVLink HEARTBEAT 1 Hz (timeout 3 s)</text>
+<text x="770" y="590" fill="#555555" font-weight="bold">DShot u_thr ↓</text>
+<text x="770" y="604" fill="#555555">↑ IMU, encoders, GNSS, baro</text>
+<text x="16" y="788" fill="#555">Scenario: ARM 0.3 s → mission upload 2.2 s, Accept 3 s → takeoff 3 s (3 GNSS fixes) → preview mono8 5 s / rgb8 7 s (rejected) → START 7.5 s → ANGLE 10 s → LoRa uplink outage 11.5–12 s → USB unplugged 13 s.</text>
+</svg>

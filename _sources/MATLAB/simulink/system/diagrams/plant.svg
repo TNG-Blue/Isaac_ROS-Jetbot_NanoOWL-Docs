@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="824" height="310" viewBox="0 0 824 310" font-family="Helvetica, Arial, sans-serif" font-size="10">
+<defs><marker id="a" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="context-stroke"/></marker></defs>
+<rect width="100%" height="100%" fill="#ffffff"/>
+<text x="12" y="20" font-size="13" font-weight="bold">UAV plant</text>
+<text x="12" y="35" fill="#444">4 ESC + BLDC + propeller units, rigid body (NED/FRD), rotor angles for the encoders</text>
+<path d="M298.8,124.0 L308.8,124.0 L308.8,187.0 L249.4,187.0" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M215.4,187.0 L156.0,187.0 L156.0,124.0 L166.0,124.0" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M551.6,140.5 L561.6,140.5 L561.6,209.0 L474.2,209.0" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M440.2,209.0 L352.8,209.0 L352.8,146.7 L362.8,146.7" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M54.0,108.0 L154.0,108.0 L154.0,98.0 L166.0,98.0" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M298.8,98.0 L350.8,98.0 L350.8,97.3 L362.8,97.3" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M102.0,173.0 L343.8,173.0 L343.8,122.0 L362.8,122.0" fill="none" stroke="#c000c0" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M298.8,98.0 L603.6,98.0 L603.6,224.0 L615.6,224.0" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M551.6,103.5 L731.2,103.5 L731.2,108.0 L743.2,108.0" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M679.2,224.0 L731.2,224.0 L731.2,228.0 L743.2,228.0" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
+<circle cx="350.8" cy="98.0" r="2.6" fill="#d62728"/>
+<rect x="24.0" y="100.0" width="30.0" height="16.0" rx="7" fill="#fff" stroke="#d62728" stroke-width="1.4"/>
+<text x="39.0" y="111.5" text-anchor="middle">1</text>
+<path d="M54.0,105.0 L59.0,108.0 L54.0,111.0 z" fill="#d62728"/>
+<text x="39.0" y="128.0" text-anchor="middle">u_thr</text>
+<rect x="743.2" y="100.0" width="30.0" height="16.0" rx="7" fill="#fff" stroke="#d62728" stroke-width="1.4"/>
+<text x="758.2" y="111.5" text-anchor="middle">1</text>
+<text x="758.2" y="128.0" text-anchor="middle">y</text>
+<rect x="743.2" y="220.0" width="30.0" height="16.0" rx="7" fill="#fff" stroke="#d62728" stroke-width="1.4"/>
+<text x="758.2" y="231.5" text-anchor="middle">2</text>
+<text x="758.2" y="248.0" text-anchor="middle">theta_rot</text>
+<rect x="24.0" y="160.0" width="78.0" height="26.0" fill="#fff" stroke="#c000c0" stroke-width="1.4"/>
+<text x="63.0" y="176.5" text-anchor="middle">zeros(3,1)</text>
+<path d="M102.0,170.0 L107.0,173.0 L102.0,176.0 z" fill="#c000c0"/>
+<text x="63.0" y="198.0" text-anchor="middle">f_ext (wind)</text>
+<rect x="166.0" y="85.0" width="132.8" height="52.0" fill="#fff" stroke="#d62728" stroke-width="1.6"/>
+<text x="232.4" y="114.5" text-anchor="middle" fill="#7a7a7a" font-size="9">plant_rotor_esc</text>
+<text x="170.0" y="101.5" text-anchor="start">u</text>
+<text x="170.0" y="127.5" text-anchor="start">S</text>
+<text x="294.8" y="101.5" text-anchor="end">w</text>
+<text x="294.8" y="127.5" text-anchor="end">S</text>
+<path d="M298.8,95.0 L303.8,98.0 L298.8,101.0 z" fill="#d62728"/>
+<path d="M298.8,121.0 L303.8,124.0 L298.8,127.0 z" fill="#d62728"/>
+<text x="232.4" y="149.0" text-anchor="middle">ESC + rotors ×4</text>
+<text x="232.4" y="160.0" text-anchor="middle" fill="#6a6a6a" font-size="8.5">param: P</text>
+<rect x="215.4" y="172.0" width="34.0" height="30.0" fill="#fff" stroke="#d62728" stroke-width="1.4"/>
+<text x="232.4" y="190.5" text-anchor="middle">1/z</text>
+<path d="M215.4,184.0 L210.4,187.0 L215.4,190.0 z" fill="#d62728"/>
+<rect x="362.8" y="85.0" width="188.8" height="74.0" fill="#fff" stroke="#d62728" stroke-width="1.6"/>
+<text x="457.2" y="125.5" text-anchor="middle" fill="#7a7a7a" font-size="9">plant_multirotor_6dof</text>
+<text x="366.8" y="100.8" text-anchor="start">w_rot</text>
+<text x="366.8" y="125.5" text-anchor="start">f_ext</text>
+<text x="366.8" y="150.2" text-anchor="start">S</text>
+<text x="547.6" y="107.0" text-anchor="end">y</text>
+<text x="547.6" y="144.0" text-anchor="end">S</text>
+<path d="M551.6,100.5 L556.6,103.5 L551.6,106.5 z" fill="#d62728"/>
+<path d="M551.6,137.5 L556.6,140.5 L551.6,143.5 z" fill="#d62728"/>
+<text x="457.2" y="171.0" text-anchor="middle">rigid body</text>
+<text x="457.2" y="182.0" text-anchor="middle" fill="#6a6a6a" font-size="8.5">param: P</text>
+<rect x="440.2" y="194.0" width="34.0" height="30.0" fill="#fff" stroke="#d62728" stroke-width="1.4"/>
+<text x="457.2" y="212.5" text-anchor="middle">1/z</text>
+<path d="M440.2,206.0 L435.2,209.0 L440.2,212.0 z" fill="#d62728"/>
+<rect x="615.6" y="210.0" width="63.6" height="28.0" fill="#fff" stroke="#d62728" stroke-width="1.4"/>
+<text x="647.4" y="227.5" text-anchor="middle">Ts/(z−1)</text>
+<path d="M679.2,221.0 L684.2,224.0 L679.2,227.0 z" fill="#d62728"/>
+<text x="647.4" y="250.0" text-anchor="middle">rotor angle</text>
+<text x="12" y="294" fill="#444">Sample time colours:</text>
+<rect x="124" y="285" width="10" height="10" fill="none" stroke="#d62728" stroke-width="2"/>
+<text x="138" y="294">1 kHz (1 ms)</text>
+<rect x="220" y="285" width="10" height="10" fill="none" stroke="#c000c0" stroke-width="2"/>
+<text x="234" y="294">constant</text>
+</svg>

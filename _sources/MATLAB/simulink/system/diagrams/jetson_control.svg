@@ -1,0 +1,289 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="2485" height="798" viewBox="0 0 2485 798" font-family="Helvetica, Arial, sans-serif" font-size="10">
+<defs><marker id="a" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="context-stroke"/></marker></defs>
+<rect width="100%" height="100%" fill="#ffffff"/>
+<text x="12" y="20" font-size="13" font-weight="bold">Jetson Control</text>
+<text x="12" y="35" fill="#444">ros2_flight_controller: flight mode, mission-held reference clock, odometry, MPC, thrust/attitude map (50 Hz)</text>
+<path d="M864.1,516.7 L874.1,516.7 L874.1,568.0 L797.2,568.0" fill="none" stroke="#0b6e2e" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M763.2,568.0 L686.4,568.0 L686.4,510.5 L696.4,510.5" fill="none" stroke="#0b6e2e" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M540.9,203.2 L550.9,203.2 L550.9,268.0 L453.6,268.0" fill="none" stroke="#0b6e2e" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M419.6,268.0 L322.4,268.0 L322.4,206.2 L332.4,206.2" fill="none" stroke="#0b6e2e" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M1395.8,235.0 L1405.8,235.0 L1405.8,312.0 L1313.9,312.0" fill="none" stroke="#0b6e2e" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M1279.9,312.0 L1188.1,312.0 L1188.1,250.4 L1198.1,250.4" fill="none" stroke="#0b6e2e" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M148.0,415.0 L2281.7,415.0 L2281.7,101.0 L2293.7,101.0" fill="none" stroke="#0b6e2e" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M2081.3,118.0 L2274.7,118.0 L2274.7,123.0 L2293.7,123.0" fill="none" stroke="#0b6e2e" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M1868.3,233.0 L2267.7,233.0 L2267.7,145.0 L2293.7,145.0" fill="none" stroke="#0b6e2e" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M2229.7,167.0 L2260.7,167.0 L2260.7,167.0 L2293.7,167.0" fill="none" stroke="#c000c0" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M54.0,118.0 L106.0,118.0 L106.0,104.0 L118.0,104.0" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M54.0,118.0 L106.0,118.0 L106.0,154.0 L118.0,154.0" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M54.0,118.0 L106.0,118.0 L106.0,304.0 L118.0,304.0" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M54.0,118.0 L106.0,118.0 L106.0,204.0 L118.0,204.0" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M181.6,104.0 L320.4,104.0 L320.4,111.8 L332.4,111.8" fill="none" stroke="#0b6e2e" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M181.6,154.0 L313.4,154.0 L313.4,135.4 L332.4,135.4" fill="none" stroke="#0b6e2e" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M268.4,204.0 L306.4,204.0 L306.4,159.0 L332.4,159.0" fill="none" stroke="#0b6e2e" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M152.0,253.0 L299.4,253.0 L299.4,182.6 L332.4,182.6" fill="none" stroke="#c000c0" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M148.0,415.0 L320.4,415.0 L320.4,461.0 L332.4,461.0" fill="none" stroke="#0b6e2e" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M54.0,118.0 L82.0,118.0 L82.0,600.0 L304.4,600.0 L304.4,483.0 L332.4,483.0" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M54.0,478.0 L306.4,478.0 L306.4,505.0 L332.4,505.0" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M632.4,483.0 L684.4,483.0 L684.4,473.5 L696.4,473.5" fill="none" stroke="#0b6e2e" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M753.8,374.0 L773.8,374.0 L773.8,612.0 L312.4,612.0 L312.4,371.0 L332.4,371.0" fill="none" stroke="#0b6e2e" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M54.0,478.0 L313.4,478.0 L313.4,393.0 L332.4,393.0" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M462.4,382.0 L684.4,382.0 L684.4,374.0 L696.4,374.0" fill="none" stroke="#0b6e2e" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M753.8,374.0 L916.1,374.0 L916.1,378.0 L928.1,378.0" fill="none" stroke="#0b6e2e" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M540.9,114.8 L684.4,114.8 L684.4,114.0 L696.4,114.0" fill="none" stroke="#0b6e2e" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M540.9,114.8 L684.4,114.8 L684.4,164.0 L696.4,164.0" fill="none" stroke="#0b6e2e" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M753.8,114.0 L1186.1,114.0 L1186.1,111.6 L1198.1,111.6" fill="none" stroke="#0b6e2e" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M753.8,164.0 L1179.1,164.0 L1179.1,134.7 L1198.1,134.7" fill="none" stroke="#0b6e2e" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M1134.1,342.0 L1172.1,342.0 L1172.1,157.9 L1198.1,157.9" fill="none" stroke="#0b6e2e" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M1134.1,366.0 L1165.1,366.0 L1165.1,181.0 L1198.1,181.0" fill="none" stroke="#0b6e2e" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M1134.1,390.0 L1158.1,390.0 L1158.1,204.1 L1198.1,204.1" fill="none" stroke="#0b6e2e" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M2179.3,345.0 L2203.3,345.0 L2203.3,624.0 L1174.1,624.0 L1174.1,227.3 L1198.1,227.3" fill="none" stroke="#0b6e2e" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M1395.8,127.0 L1447.8,127.0 L1447.8,51.0 L1459.8,51.0" fill="none" stroke="#0b6e2e" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M54.0,118.0 L66.0,118.0 L66.0,636.0 L1186.1,636.0 L1186.1,484.0 L1198.1,484.0" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M1261.7,484.0 L1440.8,484.0 L1440.8,73.0 L1459.8,73.0" fill="none" stroke="#0b6e2e" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M1569.8,62.0 L1589.8,62.0 L1589.8,740.0 L1439.8,740.0 L1439.8,122.3 L1459.8,122.3" fill="none" stroke="#0b6e2e" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M1134.1,414.0 L1440.8,414.0 L1440.8,147.0 L1459.8,147.0" fill="none" stroke="#0b6e2e" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M187.8,304.0 L215.8,304.0 L215.8,60.0 L1431.8,60.0 L1431.8,171.7 L1459.8,171.7" fill="none" stroke="#0b6e2e" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M1694.3,171.7 L1746.3,171.7 L1746.3,344.0 L1758.3,344.0" fill="none" stroke="#0b6e2e" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M1821.9,344.0 L1920.3,344.0 L1920.3,341.0 L1932.3,341.0" fill="none" stroke="#0b6e2e" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M864.1,467.3 L1913.3,467.3 L1913.3,363.0 L1932.3,363.0" fill="none" stroke="#0b6e2e" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M2014.5,352.0 L2133.3,352.0 L2133.3,345.0 L2145.3,345.0" fill="none" stroke="#0b6e2e" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M1232.1,413.0 L1447.8,413.0 L1447.8,342.3 L1459.8,342.3" fill="none" stroke="#c000c0" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M1232.1,413.0 L1440.8,413.0 L1440.8,367.0 L1459.8,367.0" fill="none" stroke="#c000c0" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M1134.1,414.0 L1433.8,414.0 L1433.8,391.7 L1459.8,391.7" fill="none" stroke="#0b6e2e" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M1694.3,122.3 L1746.3,122.3 L1746.3,111.0 L1758.3,111.0" fill="none" stroke="#0b6e2e" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M864.1,467.3 L1739.3,467.3 L1739.3,133.0 L1758.3,133.0" fill="none" stroke="#0b6e2e" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M1643.2,367.0 L1732.3,367.0 L1732.3,155.0 L1758.3,155.0" fill="none" stroke="#0b6e2e" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M1694.3,147.0 L1746.3,147.0 L1746.3,211.0 L1758.3,211.0" fill="none" stroke="#0b6e2e" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M864.1,467.3 L1739.3,467.3 L1739.3,233.0 L1758.3,233.0" fill="none" stroke="#0b6e2e" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M1576.2,263.0 L1732.3,263.0 L1732.3,255.0 L1758.3,255.0" fill="none" stroke="#c000c0" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M1868.3,133.0 L1920.3,133.0 L1920.3,118.0 L1932.3,118.0" fill="none" stroke="#0b6e2e" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M864.1,492.0 L2281.7,492.0 L2281.7,521.0 L2293.7,521.0" fill="none" stroke="#0b6e2e" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M2227.5,534.0 L2274.7,534.0 L2274.7,543.0 L2293.7,543.0" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M2299.7,134.0 L2403.1,134.0 L2403.1,118.0 L2415.1,118.0" fill="none" stroke="#0b6e2e" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M2351.1,532.0 L2403.1,532.0 L2403.1,528.0 L2415.1,528.0" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M864.1,467.3 L2281.7,467.3 L2281.7,631.0 L2293.7,631.0" fill="none" stroke="#0b6e2e" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M753.8,374.0 L2274.7,374.0 L2274.7,653.0 L2293.7,653.0" fill="none" stroke="#0b6e2e" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M1134.1,342.0 L2267.7,342.0 L2267.7,675.0 L2293.7,675.0" fill="none" stroke="#0b6e2e" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M2299.7,134.0 L2315.7,134.0 L2315.7,752.0 L2277.7,752.0 L2277.7,697.0 L2293.7,697.0" fill="none" stroke="#0b6e2e" stroke-width="1.2" marker-end="url(#a)"/>
+<circle cx="320.4" cy="415.0" r="2.6" fill="#0b6e2e"/>
+<circle cx="66.0" cy="118.0" r="2.6" fill="#d62728"/>
+<circle cx="82.0" cy="118.0" r="2.6" fill="#d62728"/>
+<circle cx="306.4" cy="478.0" r="2.6" fill="#d62728"/>
+<circle cx="773.8" cy="374.0" r="2.6" fill="#0b6e2e"/>
+<circle cx="916.1" cy="374.0" r="2.6" fill="#0b6e2e"/>
+<circle cx="1172.1" cy="342.0" r="2.6" fill="#0b6e2e"/>
+<circle cx="1433.8" cy="414.0" r="2.6" fill="#0b6e2e"/>
+<circle cx="1739.3" cy="467.3" r="2.6" fill="#0b6e2e"/>
+<circle cx="1913.3" cy="467.3" r="2.6" fill="#0b6e2e"/>
+<circle cx="1440.8" cy="413.0" r="2.6" fill="#c000c0"/>
+<circle cx="2315.7" cy="134.0" r="2.6" fill="#0b6e2e"/>
+<rect x="24.0" y="110.0" width="30.0" height="16.0" rx="7" fill="#fff" stroke="#d62728" stroke-width="1.4"/>
+<text x="39.0" y="121.5" text-anchor="middle">1</text>
+<path d="M54.0,115.0 L59.0,118.0 L54.0,121.0 z" fill="#d62728"/>
+<text x="39.0" y="138.0" text-anchor="middle">nav</text>
+<rect x="24.0" y="470.0" width="30.0" height="16.0" rx="7" fill="#fff" stroke="#d62728" stroke-width="1.4"/>
+<text x="39.0" y="481.5" text-anchor="middle">2</text>
+<path d="M54.0,475.0 L59.0,478.0 L54.0,481.0 z" fill="#d62728"/>
+<text x="39.0" y="498.0" text-anchor="middle">mis</text>
+<rect x="2415.1" y="110.0" width="30.0" height="16.0" rx="7" fill="#fff" stroke="#d62728" stroke-width="1.4"/>
+<text x="2430.1" y="121.5" text-anchor="middle">1</text>
+<text x="2430.1" y="138.0" text-anchor="middle">sp</text>
+<rect x="2415.1" y="520.0" width="30.0" height="16.0" rx="7" fill="#fff" stroke="#d62728" stroke-width="1.4"/>
+<text x="2430.1" y="531.5" text-anchor="middle">2</text>
+<text x="2430.1" y="548.0" text-anchor="middle">sp_s</text>
+<rect x="118.0" y="400.0" width="30.0" height="30.0" fill="#fff" stroke="#0b6e2e" stroke-width="1.4"/>
+<circle cx="133.0" cy="415.0" r="9" fill="none" stroke="#000"/>
+<path d="M133.0,409.0 L133.0,415.0 L138.0,417.0" stroke="#000" fill="none"/>
+<path d="M148.0,412.0 L153.0,415.0 L148.0,418.0 z" fill="#0b6e2e"/>
+<text x="133.0" y="442.0" text-anchor="middle">t</text>
+<rect x="118.0" y="90.0" width="63.6" height="28.0" fill="#fff" stroke="#0b6e2e" stroke-width="1.4"/>
+<text x="149.8" y="107.5" text-anchor="middle">nav(1:3)</text>
+<path d="M181.6,101.0 L186.6,104.0 L181.6,107.0 z" fill="#0b6e2e"/>
+<text x="149.8" y="130.0" text-anchor="middle">p</text>
+<rect x="118.0" y="140.0" width="63.6" height="28.0" fill="#fff" stroke="#0b6e2e" stroke-width="1.4"/>
+<text x="149.8" y="157.5" text-anchor="middle">nav(4:6)</text>
+<path d="M181.6,151.0 L186.6,154.0 L181.6,157.0 z" fill="#0b6e2e"/>
+<text x="149.8" y="180.0" text-anchor="middle">v</text>
+<rect x="118.0" y="190.0" width="150.4" height="28.0" fill="#fff" stroke="#0b6e2e" stroke-width="1.4"/>
+<text x="193.2" y="207.5" text-anchor="middle">[u(17:19); u(21:23)].²</text>
+<path d="M268.4,201.0 L273.4,204.0 L268.4,207.0 z" fill="#0b6e2e"/>
+<text x="193.2" y="230.0" text-anchor="middle">σ²</text>
+<rect x="118.0" y="240.0" width="34.0" height="26.0" fill="#fff" stroke="#c000c0" stroke-width="1.4"/>
+<text x="135.0" y="256.5" text-anchor="middle">1</text>
+<path d="M152.0,250.0 L157.0,253.0 L152.0,256.0 z" fill="#c000c0"/>
+<text x="135.0" y="278.0" text-anchor="middle">meas_ok</text>
+<rect x="118.0" y="290.0" width="69.8" height="28.0" fill="#fff" stroke="#0b6e2e" stroke-width="1.4"/>
+<text x="152.9" y="307.5" text-anchor="middle">nav(7:10)</text>
+<path d="M187.8,301.0 L192.8,304.0 L187.8,307.0 z" fill="#0b6e2e"/>
+<text x="152.9" y="330.0" text-anchor="middle">q ENU</text>
+<rect x="332.4" y="450.0" width="300.0" height="66.0" fill="#fff" stroke="#0b6e2e" stroke-width="1.4"/>
+<text x="482.4" y="486.5" text-anchor="middle">ev = [arm; ok; 0; takeoff; climbed; started; 0; 0; 0; 0]</text>
+<path d="M632.4,480.0 L637.4,483.0 L632.4,486.0 z" fill="#0b6e2e"/>
+<text x="482.4" y="528.0" text-anchor="middle">mission events (operator arm at 0.2 s)</text>
+<rect x="696.4" y="455.0" width="167.7" height="74.0" fill="#fff" stroke="#0b6e2e" stroke-width="1.6"/>
+<text x="780.2" y="495.5" text-anchor="middle" fill="#7a7a7a" font-size="9">guid_flight_mode</text>
+<text x="700.4" y="477.0" text-anchor="start">ev</text>
+<text x="700.4" y="514.0" text-anchor="start">S</text>
+<text x="860.1" y="470.8" text-anchor="end">mode</text>
+<text x="860.1" y="495.5" text-anchor="end">armed</text>
+<text x="860.1" y="520.2" text-anchor="end">S</text>
+<path d="M864.1,464.3 L869.1,467.3 L864.1,470.3 z" fill="#0b6e2e"/>
+<path d="M864.1,489.0 L869.1,492.0 L864.1,495.0 z" fill="#0b6e2e"/>
+<path d="M864.1,513.7 L869.1,516.7 L864.1,519.7 z" fill="#0b6e2e"/>
+<text x="780.2" y="541.0" text-anchor="middle">flight mode (stateflow.cpp)</text>
+<rect x="763.2" y="553.0" width="34.0" height="30.0" fill="#fff" stroke="#0b6e2e" stroke-width="1.4"/>
+<text x="780.2" y="571.5" text-anchor="middle">1/z</text>
+<path d="M763.2,565.0 L758.2,568.0 L763.2,571.0 z" fill="#0b6e2e"/>
+<rect x="332.4" y="360.0" width="130.0" height="44.0" fill="#fff" stroke="#0b6e2e" stroke-width="1.4"/>
+<text x="397.4" y="385.5" text-anchor="middle">τ &lt; t_hold ∨ STARTED</text>
+<path d="M462.4,379.0 L467.4,382.0 L462.4,385.0 z" fill="#0b6e2e"/>
+<text x="397.4" y="416.0" text-anchor="middle">clock runs</text>
+<rect x="696.4" y="360.0" width="57.4" height="28.0" fill="#fff" stroke="#0b6e2e" stroke-width="1.4"/>
+<text x="725.1" y="377.5" text-anchor="middle">T/(z−1)</text>
+<path d="M753.8,371.0 L758.8,374.0 L753.8,377.0 z" fill="#0b6e2e"/>
+<text x="725.1" y="400.0" text-anchor="middle">reference clock τ</text>
+<rect x="332.4" y="100.0" width="208.5" height="118.0" fill="#fff" stroke="#0b6e2e" stroke-width="1.6"/>
+<text x="436.6" y="162.5" text-anchor="middle" fill="#7a7a7a" font-size="9">est_odometry_cwna</text>
+<text x="336.4" y="115.3" text-anchor="start">p_meas</text>
+<text x="336.4" y="138.9" text-anchor="start">v_meas</text>
+<text x="336.4" y="162.5" text-anchor="start">var_meas</text>
+<text x="336.4" y="186.1" text-anchor="start">meas_ok</text>
+<text x="336.4" y="209.7" text-anchor="start">S</text>
+<text x="536.9" y="118.2" text-anchor="end">xo</text>
+<text x="536.9" y="147.8" text-anchor="end">sig_p</text>
+<text x="536.9" y="177.2" text-anchor="end">age</text>
+<text x="536.9" y="206.8" text-anchor="end">S</text>
+<path d="M540.9,111.8 L545.9,114.8 L540.9,117.8 z" fill="#0b6e2e"/>
+<path d="M540.9,141.2 L545.9,144.2 L540.9,147.2 z" fill="#0b6e2e"/>
+<path d="M540.9,170.8 L545.9,173.8 L540.9,176.8 z" fill="#0b6e2e"/>
+<path d="M540.9,200.2 L545.9,203.2 L540.9,206.2 z" fill="#0b6e2e"/>
+<text x="436.6" y="230.0" text-anchor="middle">odometry CWNA</text>
+<text x="436.6" y="241.0" text-anchor="middle" fill="#6a6a6a" font-size="8.5">param: P.odo</text>
+<rect x="419.6" y="253.0" width="34.0" height="30.0" fill="#fff" stroke="#0b6e2e" stroke-width="1.4"/>
+<text x="436.6" y="271.5" text-anchor="middle">1/z</text>
+<path d="M419.6,265.0 L414.6,268.0 L419.6,271.0 z" fill="#0b6e2e"/>
+<rect x="928.1" y="330.0" width="206.0" height="96.0" fill="#fff" stroke="#0b6e2e" stroke-width="1.6"/>
+<text x="1031.1" y="381.5" text-anchor="middle" fill="#7a7a7a" font-size="9">guid_reference_horizon</text>
+<text x="932.1" y="381.5" text-anchor="start">t</text>
+<text x="1130.1" y="345.5" text-anchor="end">ref_p</text>
+<text x="1130.1" y="369.5" text-anchor="end">ref_v</text>
+<text x="1130.1" y="393.5" text-anchor="end">ref_a</text>
+<text x="1130.1" y="417.5" text-anchor="end">yaw_ref</text>
+<path d="M1134.1,339.0 L1139.1,342.0 L1134.1,345.0 z" fill="#0b6e2e"/>
+<path d="M1134.1,363.0 L1139.1,366.0 L1134.1,369.0 z" fill="#0b6e2e"/>
+<path d="M1134.1,387.0 L1139.1,390.0 L1134.1,393.0 z" fill="#0b6e2e"/>
+<path d="M1134.1,411.0 L1139.1,414.0 L1134.1,417.0 z" fill="#0b6e2e"/>
+<text x="1031.1" y="438.0" text-anchor="middle">reference (min-jerk)</text>
+<text x="1031.1" y="449.0" text-anchor="middle" fill="#6a6a6a" font-size="8.5">param: P</text>
+<rect x="696.4" y="100.0" width="57.4" height="28.0" fill="#fff" stroke="#0b6e2e" stroke-width="1.4"/>
+<text x="725.1" y="117.5" text-anchor="middle">xo(1:3)</text>
+<path d="M753.8,111.0 L758.8,114.0 L753.8,117.0 z" fill="#0b6e2e"/>
+<text x="725.1" y="140.0" text-anchor="middle">pos</text>
+<rect x="696.4" y="150.0" width="57.4" height="28.0" fill="#fff" stroke="#0b6e2e" stroke-width="1.4"/>
+<text x="725.1" y="167.5" text-anchor="middle">xo(4:6)</text>
+<path d="M753.8,161.0 L758.8,164.0 L753.8,167.0 z" fill="#0b6e2e"/>
+<text x="725.1" y="190.0" text-anchor="middle">vel</text>
+<rect x="1198.1" y="100.0" width="197.7" height="162.0" fill="#fff" stroke="#0b6e2e" stroke-width="1.6"/>
+<text x="1296.9" y="184.5" text-anchor="middle" fill="#7a7a7a" font-size="9">ctrl_linear_mpc</text>
+<text x="1202.1" y="115.1" text-anchor="start">pos</text>
+<text x="1202.1" y="138.2" text-anchor="start">vel</text>
+<text x="1202.1" y="161.4" text-anchor="start">ref_p</text>
+<text x="1202.1" y="184.5" text-anchor="start">ref_v</text>
+<text x="1202.1" y="207.6" text-anchor="start">ref_a</text>
+<text x="1202.1" y="230.8" text-anchor="start">u_applied</text>
+<text x="1202.1" y="253.9" text-anchor="start">S</text>
+<text x="1391.8" y="130.5" text-anchor="end">u0</text>
+<text x="1391.8" y="184.5" text-anchor="end">info</text>
+<text x="1391.8" y="238.5" text-anchor="end">S</text>
+<path d="M1395.8,124.0 L1400.8,127.0 L1395.8,130.0 z" fill="#0b6e2e"/>
+<path d="M1395.8,178.0 L1400.8,181.0 L1395.8,184.0 z" fill="#0b6e2e"/>
+<path d="M1395.8,232.0 L1400.8,235.0 L1395.8,238.0 z" fill="#0b6e2e"/>
+<text x="1296.9" y="274.0" text-anchor="middle">MPC (FISTA + DOB)</text>
+<text x="1296.9" y="285.0" text-anchor="middle" fill="#6a6a6a" font-size="8.5">param: P</text>
+<rect x="1279.9" y="297.0" width="34.0" height="30.0" fill="#fff" stroke="#0b6e2e" stroke-width="1.4"/>
+<text x="1296.9" y="315.5" text-anchor="middle">1/z</text>
+<path d="M1279.9,309.0 L1274.9,312.0 L1279.9,315.0 z" fill="#0b6e2e"/>
+<rect x="1198.1" y="470.0" width="63.6" height="28.0" fill="#fff" stroke="#0b6e2e" stroke-width="1.4"/>
+<text x="1229.9" y="487.5" text-anchor="middle">ẑ &gt; 3σ_z</text>
+<path d="M1261.7,481.0 L1266.7,484.0 L1261.7,487.0 z" fill="#0b6e2e"/>
+<text x="1229.9" y="510.0" text-anchor="middle">clear of the ground</text>
+<rect x="1459.8" y="40.0" width="110.0" height="44.0" fill="#fff" stroke="#0b6e2e" stroke-width="1.4"/>
+<text x="1514.8" y="65.5" text-anchor="middle">[a_xy·air; a_z]</text>
+<path d="M1569.8,59.0 L1574.8,62.0 L1569.8,65.0 z" fill="#0b6e2e"/>
+<text x="1514.8" y="96.0" text-anchor="middle">vertical only on the ground</text>
+<rect x="1459.8" y="110.0" width="234.5" height="74.0" fill="#fff" stroke="#0b6e2e" stroke-width="1.6"/>
+<text x="1577.0" y="150.5" text-anchor="middle" fill="#7a7a7a" font-size="9">ctrl_thrust_attitude_map</text>
+<text x="1463.8" y="125.8" text-anchor="start">a_cmd</text>
+<text x="1463.8" y="150.5" text-anchor="start">yaw</text>
+<text x="1463.8" y="175.2" text-anchor="start">q_cur</text>
+<text x="1690.3" y="125.8" text-anchor="end">q_d</text>
+<text x="1690.3" y="150.5" text-anchor="end">thrust</text>
+<text x="1690.3" y="175.2" text-anchor="end">out</text>
+<path d="M1694.3,119.3 L1699.3,122.3 L1694.3,125.3 z" fill="#0b6e2e"/>
+<path d="M1694.3,144.0 L1699.3,147.0 L1694.3,150.0 z" fill="#0b6e2e"/>
+<path d="M1694.3,168.7 L1699.3,171.7 L1694.3,174.7 z" fill="#0b6e2e"/>
+<text x="1577.0" y="196.0" text-anchor="middle">thrust / attitude</text>
+<text x="1577.0" y="207.0" text-anchor="middle" fill="#6a6a6a" font-size="8.5">param: P.jet</text>
+<rect x="1459.8" y="250.0" width="116.4" height="26.0" fill="#fff" stroke="#c000c0" stroke-width="1.4"/>
+<text x="1518.0" y="266.5" text-anchor="middle">P.jet.thrust_min</text>
+<path d="M1576.2,260.0 L1581.2,263.0 L1576.2,266.0 z" fill="#c000c0"/>
+<text x="1518.0" y="288.0" text-anchor="middle">idle thrust</text>
+<rect x="1198.1" y="400.0" width="34.0" height="26.0" fill="#fff" stroke="#c000c0" stroke-width="1.4"/>
+<text x="1215.1" y="416.5" text-anchor="middle">0</text>
+<path d="M1232.1,410.0 L1237.1,413.0 L1232.1,416.0 z" fill="#c000c0"/>
+<rect x="1459.8" y="330.0" width="183.4" height="74.0" fill="#fff" stroke="#0b6e2e" stroke-width="1.6"/>
+<text x="1551.5" y="370.5" text-anchor="middle" fill="#7a7a7a" font-size="9">math_quat_from_euler</text>
+<text x="1463.8" y="345.8" text-anchor="start">roll</text>
+<text x="1463.8" y="370.5" text-anchor="start">pitch</text>
+<text x="1463.8" y="395.2" text-anchor="start">yaw</text>
+<text x="1639.2" y="370.5" text-anchor="end">q</text>
+<path d="M1643.2,364.0 L1648.2,367.0 L1643.2,370.0 z" fill="#0b6e2e"/>
+<text x="1551.5" y="416.0" text-anchor="middle">level, ψ_ref</text>
+<rect x="1758.3" y="330.0" width="63.6" height="28.0" fill="#fff" stroke="#0b6e2e" stroke-width="1.4"/>
+<text x="1790.1" y="347.5" text-anchor="middle">out(1:3)</text>
+<path d="M1821.9,341.0 L1826.9,344.0 L1821.9,347.0 z" fill="#0b6e2e"/>
+<text x="1790.1" y="370.0" text-anchor="middle">achieved a</text>
+<rect x="1758.3" y="100.0" width="110.0" height="66.0" fill="#fff" stroke="#0b6e2e" stroke-width="1.4"/>
+<text x="1813.3" y="136.5" text-anchor="middle">Switch mode ≥ 3</text>
+<path d="M1868.3,130.0 L1873.3,133.0 L1868.3,136.0 z" fill="#0b6e2e"/>
+<rect x="1758.3" y="200.0" width="110.0" height="66.0" fill="#fff" stroke="#0b6e2e" stroke-width="1.4"/>
+<text x="1813.3" y="236.5" text-anchor="middle">Switch mode ≥ 3</text>
+<path d="M1868.3,230.0 L1873.3,233.0 L1868.3,236.0 z" fill="#0b6e2e"/>
+<rect x="1932.3" y="330.0" width="82.2" height="44.0" fill="#fff" stroke="#0b6e2e" stroke-width="1.4"/>
+<text x="1973.4" y="355.5" text-anchor="middle">u1·(u2 ≥ 3)</text>
+<path d="M2014.5,349.0 L2019.5,352.0 L2014.5,355.0 z" fill="#0b6e2e"/>
+<text x="1973.4" y="386.0" text-anchor="middle">applied (flying)</text>
+<rect x="2145.3" y="330.0" width="34.0" height="30.0" fill="#fff" stroke="#0b6e2e" stroke-width="1.4"/>
+<text x="2162.3" y="348.5" text-anchor="middle">1/z</text>
+<path d="M2179.3,342.0 L2184.3,345.0 L2179.3,348.0 z" fill="#0b6e2e"/>
+<rect x="1932.3" y="100.0" width="149.0" height="36.0" fill="#fff" stroke="#0b6e2e" stroke-width="1.6"/>
+<text x="2006.8" y="121.5" text-anchor="middle" fill="#7a7a7a" font-size="9">frame_quat_ned_enu</text>
+<text x="1936.3" y="121.5" text-anchor="start">q</text>
+<text x="2077.3" y="121.5" text-anchor="end">r</text>
+<path d="M2081.3,115.0 L2086.3,118.0 L2081.3,121.0 z" fill="#0b6e2e"/>
+<text x="2006.8" y="148.0" text-anchor="middle">frame_quat_ned_enu</text>
+<rect x="2293.7" y="90.0" width="6.0" height="88.0" fill="#000" stroke="#0b6e2e"/>
+<path d="M2299.7,131.0 L2304.7,134.0 L2299.7,137.0 z" fill="#0b6e2e"/>
+<text x="2296.7" y="190.0" text-anchor="middle">/control/attitude_setpoint</text>
+<rect x="2145.3" y="154.0" width="84.4" height="26.0" fill="#fff" stroke="#c000c0" stroke-width="1.4"/>
+<text x="2187.5" y="170.5" text-anchor="middle">zeros(26,1)</text>
+<path d="M2229.7,164.0 L2234.7,167.0 L2229.7,170.0 z" fill="#c000c0"/>
+<rect x="2145.3" y="520.0" width="82.2" height="28.0" fill="#fff" stroke="#d62728" stroke-width="1.4"/>
+<text x="2186.4" y="537.5" text-anchor="middle">Pulse 50 Hz</text>
+<path d="M2227.5,531.0 L2232.5,534.0 L2227.5,537.0 z" fill="#d62728"/>
+<rect x="2293.7" y="510.0" width="57.4" height="44.0" fill="#fff" stroke="#d62728" stroke-width="1.4"/>
+<text x="2322.4" y="535.5" text-anchor="middle">u1 ∧ u2</text>
+<path d="M2351.1,529.0 L2356.1,532.0 L2351.1,535.0 z" fill="#d62728"/>
+<text x="2322.4" y="566.0" text-anchor="middle">send when armed</text>
+<rect x="2293.7" y="620.0" width="36.0" height="88.0" fill="#fff" stroke="#0b6e2e" stroke-width="1.4"/>
+<rect x="2298.7" y="625.0" width="26.0" height="18.0" fill="#1d2b3a"/>
+<polyline points="2300.7,638.0 2307.7,630.0 2314.7,636.0 2322.7,629.0" fill="none" stroke="#f5d000"/>
+<text x="2311.7" y="720.0" text-anchor="middle">log_jet</text>
+<text x="12" y="782" fill="#444">Sample time colours:</text>
+<rect x="124" y="773" width="10" height="10" fill="none" stroke="#d62728" stroke-width="2"/>
+<text x="138" y="782">1 kHz (1 ms)</text>
+<rect x="220" y="773" width="10" height="10" fill="none" stroke="#0b6e2e" stroke-width="2"/>
+<text x="234" y="782">50 Hz (20 ms)</text>
+<rect x="323" y="773" width="10" height="10" fill="none" stroke="#c000c0" stroke-width="2"/>
+<text x="337" y="782">constant</text>
+</svg>

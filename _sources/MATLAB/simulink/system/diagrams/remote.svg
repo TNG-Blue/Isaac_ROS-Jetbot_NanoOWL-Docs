@@ -1,0 +1,214 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1511" height="902" viewBox="0 0 1511 902" font-family="Helvetica, Arial, sans-serif" font-size="10">
+<defs><marker id="a" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="context-stroke"/></marker></defs>
+<rect width="100%" height="100%" fill="#ffffff"/>
+<text x="12" y="20" font-size="13" font-weight="bold">Remote UAV</text>
+<text x="12" y="35" fill="#444">Remote_UAV: pilot sticks/switches, LoRa uplink TX / telemetry RX, mission staging, phone STATUS</text>
+<path d="M548.2,544.0 L558.2,544.0 L558.2,606.0 L467.1,606.0" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M433.1,606.0 L342.0,606.0 L342.0,544.0 L352.0,544.0" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M522.2,661.7 L532.2,661.7 L532.2,724.0 L454.1,724.0" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M420.1,724.0 L342.0,724.0 L342.0,661.7 L352.0,661.7" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M983.8,406.7 L993.8,406.7 L993.8,469.0 L885.0,469.0" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M851.0,469.0 L742.2,469.0 L742.2,418.3 L752.2,418.3" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M1277.9,188.3 L1287.9,188.3 L1287.9,247.0 L1179.9,247.0" fill="none" stroke="#0b6e2e" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M1145.9,247.0 L1037.8,247.0 L1037.8,196.2 L1047.8,196.2" fill="none" stroke="#0b6e2e" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M148.0,55.0 L1035.8,55.0 L1035.8,571.0 L1047.8,571.0" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M786.2,573.0 L1028.8,573.0 L1028.8,593.0 L1047.8,593.0" fill="none" stroke="#c000c0" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M983.8,360.0 L1021.8,360.0 L1021.8,615.0 L1047.8,615.0" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M548.2,472.0 L1014.8,472.0 L1014.8,637.0 L1047.8,637.0" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M548.2,496.0 L1007.8,496.0 L1007.8,659.0 L1047.8,659.0" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M548.2,520.0 L1000.8,520.0 L1000.8,681.0 L1047.8,681.0" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M522.2,637.0 L993.8,637.0 L993.8,703.0 L1047.8,703.0" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M836.6,725.0 L986.8,725.0 L986.8,725.0 L1047.8,725.0" fill="none" stroke="#c000c0" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M148.0,55.0 L164.0,55.0 L164.0,820.0 L102.0,820.0 L102.0,104.0 L118.0,104.0" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M148.0,55.0 L168.0,55.0 L168.0,832.0 L98.0,832.0 L98.0,154.0 L118.0,154.0" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M148.0,55.0 L172.0,55.0 L172.0,844.0 L94.0,844.0 L94.0,314.0 L118.0,314.0" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M148.0,55.0 L176.0,55.0 L176.0,856.0 L90.0,856.0 L90.0,364.0 L118.0,364.0" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M54.0,478.0 L340.0,478.0 L340.0,472.0 L352.0,472.0" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M54.0,528.0 L333.0,528.0 L333.0,496.0 L352.0,496.0" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M148.0,55.0 L168.0,55.0 L168.0,820.0 L332.0,820.0 L332.0,520.0 L352.0,520.0" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M54.0,358.0 L340.0,358.0 L340.0,612.3 L352.0,612.3" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M148.0,55.0 L176.0,55.0 L176.0,832.0 L324.0,832.0 L324.0,637.0 L352.0,637.0" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M548.2,472.0 L600.2,472.0 L600.2,474.0 L612.2,474.0" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M54.0,308.0 L740.2,308.0 L740.2,301.7 L752.2,301.7" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M54.0,358.0 L733.2,358.0 L733.2,325.0 L752.2,325.0" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M194.0,314.0 L726.2,314.0 L726.2,348.3 L752.2,348.3" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M200.2,364.0 L719.2,364.0 L719.2,371.7 L752.2,371.7" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M688.2,474.0 L712.2,474.0 L712.2,395.0 L752.2,395.0" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M288.0,104.0 L1035.8,104.0 L1035.8,101.8 L1047.8,101.8" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M288.0,154.0 L1028.8,154.0 L1028.8,125.4 L1047.8,125.4" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M983.8,313.3 L1021.8,313.3 L1021.8,149.0 L1047.8,149.0" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M148.0,255.0 L1014.8,255.0 L1014.8,172.6 L1047.8,172.6" fill="none" stroke="#0b6e2e" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M1277.9,109.7 L1429.9,109.7 L1429.9,108.0 L1441.9,108.0" fill="none" stroke="#0b6e2e" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M1130.0,244.0 L1429.9,244.0 L1429.9,168.0 L1441.9,168.0" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M1053.8,648.0 L1429.9,648.0 L1429.9,608.0 L1441.9,608.0" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M1130.0,774.0 L1429.9,774.0 L1429.9,668.0 L1441.9,668.0" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M983.8,360.0 L1329.9,360.0 L1329.9,411.0 L1341.9,411.0" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M548.2,472.0 L1322.9,472.0 L1322.9,433.0 L1341.9,433.0" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M548.2,496.0 L1315.9,496.0 L1315.9,455.0 L1341.9,455.0" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M522.2,637.0 L1308.9,637.0 L1308.9,477.0 L1341.9,477.0" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
+<circle cx="164.0" cy="55.0" r="2.6" fill="#d62728"/>
+<circle cx="168.0" cy="55.0" r="2.6" fill="#d62728"/>
+<circle cx="172.0" cy="55.0" r="2.6" fill="#d62728"/>
+<circle cx="176.0" cy="55.0" r="2.6" fill="#d62728"/>
+<circle cx="1021.8" cy="360.0" r="2.6" fill="#d62728"/>
+<circle cx="600.2" cy="472.0" r="2.6" fill="#d62728"/>
+<circle cx="1014.8" cy="472.0" r="2.6" fill="#d62728"/>
+<circle cx="1007.8" cy="496.0" r="2.6" fill="#d62728"/>
+<circle cx="993.8" cy="637.0" r="2.6" fill="#d62728"/>
+<circle cx="340.0" cy="358.0" r="2.6" fill="#d62728"/>
+<rect x="24.0" y="470.0" width="30.0" height="16.0" rx="7" fill="#fff" stroke="#d62728" stroke-width="1.4"/>
+<text x="39.0" y="481.5" text-anchor="middle">1</text>
+<path d="M54.0,475.0 L59.0,478.0 L54.0,481.0 z" fill="#d62728"/>
+<text x="39.0" y="498.0" text-anchor="middle">dl</text>
+<rect x="24.0" y="520.0" width="30.0" height="16.0" rx="7" fill="#fff" stroke="#d62728" stroke-width="1.4"/>
+<text x="39.0" y="531.5" text-anchor="middle">2</text>
+<path d="M54.0,525.0 L59.0,528.0 L54.0,531.0 z" fill="#d62728"/>
+<text x="39.0" y="548.0" text-anchor="middle">dl_new</text>
+<rect x="24.0" y="300.0" width="30.0" height="16.0" rx="7" fill="#fff" stroke="#d62728" stroke-width="1.4"/>
+<text x="39.0" y="311.5" text-anchor="middle">3</text>
+<path d="M54.0,305.0 L59.0,308.0 L54.0,311.0 z" fill="#d62728"/>
+<text x="39.0" y="328.0" text-anchor="middle">ph</text>
+<rect x="24.0" y="350.0" width="30.0" height="16.0" rx="7" fill="#fff" stroke="#d62728" stroke-width="1.4"/>
+<text x="39.0" y="361.5" text-anchor="middle">4</text>
+<path d="M54.0,355.0 L59.0,358.0 L54.0,361.0 z" fill="#d62728"/>
+<text x="39.0" y="378.0" text-anchor="middle">ph_new</text>
+<rect x="1441.9" y="100.0" width="30.0" height="16.0" rx="7" fill="#fff" stroke="#d62728" stroke-width="1.4"/>
+<text x="1456.9" y="111.5" text-anchor="middle">1</text>
+<text x="1456.9" y="128.0" text-anchor="middle">ul</text>
+<rect x="1441.9" y="160.0" width="30.0" height="16.0" rx="7" fill="#fff" stroke="#d62728" stroke-width="1.4"/>
+<text x="1456.9" y="171.5" text-anchor="middle">2</text>
+<text x="1456.9" y="188.0" text-anchor="middle">ul_s</text>
+<rect x="1441.9" y="600.0" width="30.0" height="16.0" rx="7" fill="#fff" stroke="#d62728" stroke-width="1.4"/>
+<text x="1456.9" y="611.5" text-anchor="middle">3</text>
+<text x="1456.9" y="628.0" text-anchor="middle">st</text>
+<rect x="1441.9" y="660.0" width="30.0" height="16.0" rx="7" fill="#fff" stroke="#d62728" stroke-width="1.4"/>
+<text x="1456.9" y="671.5" text-anchor="middle">4</text>
+<text x="1456.9" y="688.0" text-anchor="middle">st_s</text>
+<rect x="118.0" y="40.0" width="30.0" height="30.0" fill="#fff" stroke="#d62728" stroke-width="1.4"/>
+<circle cx="133.0" cy="55.0" r="9" fill="none" stroke="#000"/>
+<path d="M133.0,49.0 L133.0,55.0 L138.0,57.0" stroke="#000" fill="none"/>
+<path d="M148.0,52.0 L153.0,55.0 L148.0,58.0 z" fill="#d62728"/>
+<text x="133.0" y="82.0" text-anchor="middle">t</text>
+<rect x="118.0" y="240.0" width="30.0" height="30.0" fill="#fff" stroke="#0b6e2e" stroke-width="1.4"/>
+<circle cx="133.0" cy="255.0" r="9" fill="none" stroke="#000"/>
+<path d="M133.0,249.0 L133.0,255.0 L138.0,257.0" stroke="#000" fill="none"/>
+<path d="M148.0,252.0 L153.0,255.0 L148.0,258.0 z" fill="#0b6e2e"/>
+<text x="133.0" y="282.0" text-anchor="middle">t</text>
+<rect x="118.0" y="90.0" width="170.0" height="28.0" fill="#fff" stroke="#d62728" stroke-width="1.4"/>
+<text x="203.0" y="107.5" text-anchor="middle">throttle m·g/T_max from 10 s</text>
+<path d="M288.0,101.0 L293.0,104.0 L288.0,107.0 z" fill="#d62728"/>
+<text x="203.0" y="130.0" text-anchor="middle">pilot sticks</text>
+<rect x="118.0" y="140.0" width="170.0" height="28.0" fill="#fff" stroke="#d62728" stroke-width="1.4"/>
+<text x="203.0" y="157.5" text-anchor="middle">ARM 0.3 s, AUTO → ANGLE 10 s</text>
+<path d="M288.0,151.0 L293.0,154.0 L288.0,157.0 z" fill="#d62728"/>
+<text x="203.0" y="180.0" text-anchor="middle">pilot switches</text>
+<rect x="118.0" y="300.0" width="76.0" height="28.0" fill="#fff" stroke="#d62728" stroke-width="1.4"/>
+<text x="156.0" y="317.5" text-anchor="middle">Accept 3 s</text>
+<path d="M194.0,311.0 L199.0,314.0 L194.0,317.0 z" fill="#d62728"/>
+<text x="156.0" y="340.0" text-anchor="middle">pilot Accept</text>
+<rect x="118.0" y="350.0" width="82.2" height="28.0" fill="#fff" stroke="#d62728" stroke-width="1.4"/>
+<text x="159.1" y="367.5" text-anchor="middle">Start 7.5 s</text>
+<path d="M200.2,361.0 L205.2,364.0 L200.2,367.0 z" fill="#d62728"/>
+<text x="159.1" y="390.0" text-anchor="middle">pilot Start</text>
+<rect x="352.0" y="460.0" width="196.2" height="96.0" fill="#fff" stroke="#d62728" stroke-width="1.6"/>
+<text x="450.1" y="511.5" text-anchor="middle" fill="#7a7a7a" font-size="9">comm_rflink_tlm_rx</text>
+<text x="356.0" y="475.5" text-anchor="start">frame</text>
+<text x="356.0" y="499.5" text-anchor="start">fresh</text>
+<text x="356.0" y="523.5" text-anchor="start">t</text>
+<text x="356.0" y="547.5" text-anchor="start">S</text>
+<text x="544.2" y="475.5" text-anchor="end">tlm</text>
+<text x="544.2" y="499.5" text-anchor="end">age</text>
+<text x="544.2" y="523.5" text-anchor="end">dl_lq</text>
+<text x="544.2" y="547.5" text-anchor="end">S</text>
+<path d="M548.2,469.0 L553.2,472.0 L548.2,475.0 z" fill="#d62728"/>
+<path d="M548.2,493.0 L553.2,496.0 L548.2,499.0 z" fill="#d62728"/>
+<path d="M548.2,517.0 L553.2,520.0 L548.2,523.0 z" fill="#d62728"/>
+<path d="M548.2,541.0 L553.2,544.0 L548.2,547.0 z" fill="#d62728"/>
+<text x="450.1" y="568.0" text-anchor="middle">LoRa telemetry RX</text>
+<text x="450.1" y="579.0" text-anchor="middle" fill="#6a6a6a" font-size="8.5">param: P</text>
+<rect x="433.1" y="591.0" width="34.0" height="30.0" fill="#fff" stroke="#d62728" stroke-width="1.4"/>
+<text x="450.1" y="609.5" text-anchor="middle">1/z</text>
+<path d="M433.1,603.0 L428.1,606.0 L433.1,609.0 z" fill="#d62728"/>
+<rect x="352.0" y="600.0" width="170.2" height="74.0" fill="#fff" stroke="#d62728" stroke-width="1.6"/>
+<text x="437.1" y="640.5" text-anchor="middle" fill="#7a7a7a" font-size="9">comm_rx_age</text>
+<text x="356.0" y="615.8" text-anchor="start">fresh</text>
+<text x="356.0" y="640.5" text-anchor="start">t</text>
+<text x="356.0" y="665.2" text-anchor="start">S</text>
+<text x="518.2" y="615.8" text-anchor="end">age</text>
+<text x="518.2" y="640.5" text-anchor="end">present</text>
+<text x="518.2" y="665.2" text-anchor="end">S</text>
+<path d="M522.2,609.3 L527.2,612.3 L522.2,615.3 z" fill="#d62728"/>
+<path d="M522.2,634.0 L527.2,637.0 L522.2,640.0 z" fill="#d62728"/>
+<path d="M522.2,658.7 L527.2,661.7 L522.2,664.7 z" fill="#d62728"/>
+<text x="437.1" y="686.0" text-anchor="middle">phone presence</text>
+<text x="437.1" y="697.0" text-anchor="middle" fill="#6a6a6a" font-size="8.5">param: P.phone.present_timeout</text>
+<rect x="420.1" y="709.0" width="34.0" height="30.0" fill="#fff" stroke="#d62728" stroke-width="1.4"/>
+<text x="437.1" y="727.5" text-anchor="middle">1/z</text>
+<path d="M420.1,721.0 L415.1,724.0 L420.1,727.0 z" fill="#d62728"/>
+<rect x="612.2" y="460.0" width="76.0" height="28.0" fill="#fff" stroke="#d62728" stroke-width="1.4"/>
+<text x="650.2" y="477.5" text-anchor="middle">tlm(10:11)</text>
+<path d="M688.2,471.0 L693.2,474.0 L688.2,477.0 z" fill="#d62728"/>
+<text x="650.2" y="500.0" text-anchor="middle">FC mission</text>
+<rect x="752.2" y="290.0" width="231.6" height="140.0" fill="#fff" stroke="#d62728" stroke-width="1.6"/>
+<text x="868.0" y="363.5" text-anchor="middle" fill="#7a7a7a" font-size="9">guid_mission_stage</text>
+<text x="756.2" y="305.2" text-anchor="start">phone_msg</text>
+<text x="756.2" y="328.5" text-anchor="start">phone_fresh</text>
+<text x="756.2" y="351.8" text-anchor="start">accept</text>
+<text x="756.2" y="375.2" text-anchor="start">start</text>
+<text x="756.2" y="398.5" text-anchor="start">fc_mission</text>
+<text x="756.2" y="421.8" text-anchor="start">S</text>
+<text x="979.8" y="316.8" text-anchor="end">aux</text>
+<text x="979.8" y="363.5" text-anchor="end">stage</text>
+<text x="979.8" y="410.2" text-anchor="end">S</text>
+<path d="M983.8,310.3 L988.8,313.3 L983.8,316.3 z" fill="#d62728"/>
+<path d="M983.8,357.0 L988.8,360.0 L983.8,363.0 z" fill="#d62728"/>
+<path d="M983.8,403.7 L988.8,406.7 L983.8,409.7 z" fill="#d62728"/>
+<text x="868.0" y="442.0" text-anchor="middle">mission staging (mission_ctl)</text>
+<rect x="851.0" y="454.0" width="34.0" height="30.0" fill="#fff" stroke="#d62728" stroke-width="1.4"/>
+<text x="868.0" y="472.5" text-anchor="middle">1/z</text>
+<path d="M851.0,466.0 L846.0,469.0 L851.0,472.0 z" fill="#d62728"/>
+<rect x="1047.8" y="90.0" width="230.1" height="118.0" fill="#fff" stroke="#0b6e2e" stroke-width="1.6"/>
+<text x="1162.9" y="152.5" text-anchor="middle" fill="#7a7a7a" font-size="9">comm_rflink_uplink_tx</text>
+<text x="1051.8" y="105.3" text-anchor="start">sticks</text>
+<text x="1051.8" y="128.9" text-anchor="start">switches</text>
+<text x="1051.8" y="152.5" text-anchor="start">aux</text>
+<text x="1051.8" y="176.1" text-anchor="start">t</text>
+<text x="1051.8" y="199.7" text-anchor="start">S</text>
+<text x="1273.9" y="113.2" text-anchor="end">frame</text>
+<text x="1273.9" y="152.5" text-anchor="end">send</text>
+<text x="1273.9" y="191.8" text-anchor="end">S</text>
+<path d="M1277.9,106.7 L1282.9,109.7 L1277.9,112.7 z" fill="#0b6e2e"/>
+<path d="M1277.9,146.0 L1282.9,149.0 L1277.9,152.0 z" fill="#0b6e2e"/>
+<path d="M1277.9,185.3 L1282.9,188.3 L1277.9,191.3 z" fill="#0b6e2e"/>
+<text x="1162.9" y="220.0" text-anchor="middle">LoRa uplink TX (RC / RCX)</text>
+<rect x="1145.9" y="232.0" width="34.0" height="30.0" fill="#fff" stroke="#0b6e2e" stroke-width="1.4"/>
+<text x="1162.9" y="250.5" text-anchor="middle">1/z</text>
+<path d="M1145.9,244.0 L1140.9,247.0 L1145.9,250.0 z" fill="#0b6e2e"/>
+<rect x="1047.8" y="230.0" width="82.2" height="28.0" fill="#fff" stroke="#d62728" stroke-width="1.4"/>
+<text x="1088.9" y="247.5" text-anchor="middle">Pulse 50 Hz</text>
+<path d="M1130.0,241.0 L1135.0,244.0 L1130.0,247.0 z" fill="#d62728"/>
+<rect x="752.2" y="560.0" width="34.0" height="26.0" fill="#fff" stroke="#c000c0" stroke-width="1.4"/>
+<text x="769.2" y="576.5" text-anchor="middle">2</text>
+<path d="M786.2,570.0 L791.2,573.0 L786.2,576.0 z" fill="#c000c0"/>
+<text x="769.2" y="598.0" text-anchor="middle">type STATUS</text>
+<rect x="1047.8" y="560.0" width="6.0" height="176.0" fill="#000" stroke="#d62728"/>
+<path d="M1053.8,645.0 L1058.8,648.0 L1053.8,651.0 z" fill="#d62728"/>
+<text x="1050.8" y="748.0" text-anchor="middle">STATUS (USB / BLE)</text>
+<rect x="752.2" y="712.0" width="84.4" height="26.0" fill="#fff" stroke="#c000c0" stroke-width="1.4"/>
+<text x="794.4" y="728.5" text-anchor="middle">zeros(15,1)</text>
+<path d="M836.6,722.0 L841.6,725.0 L836.6,728.0 z" fill="#c000c0"/>
+<rect x="1047.8" y="760.0" width="82.2" height="28.0" fill="#fff" stroke="#d62728" stroke-width="1.4"/>
+<text x="1088.9" y="777.5" text-anchor="middle">Pulse 10 Hz</text>
+<path d="M1130.0,771.0 L1135.0,774.0 L1130.0,777.0 z" fill="#d62728"/>
+<rect x="1341.9" y="400.0" width="36.0" height="88.0" fill="#fff" stroke="#d62728" stroke-width="1.4"/>
+<rect x="1346.9" y="405.0" width="26.0" height="18.0" fill="#1d2b3a"/>
+<polyline points="1348.9,418.0 1355.9,410.0 1362.9,416.0 1370.9,409.0" fill="none" stroke="#f5d000"/>
+<text x="1359.9" y="500.0" text-anchor="middle">log_rem</text>
+<text x="12" y="886" fill="#444">Sample time colours:</text>
+<rect x="124" y="877" width="10" height="10" fill="none" stroke="#d62728" stroke-width="2"/>
+<text x="138" y="886">1 kHz (1 ms)</text>
+<rect x="220" y="877" width="10" height="10" fill="none" stroke="#0b6e2e" stroke-width="2"/>
+<text x="234" y="886">50 Hz (20 ms)</text>
+<rect x="323" y="877" width="10" height="10" fill="none" stroke="#c000c0" stroke-width="2"/>
+<text x="337" y="886">constant</text>
+</svg>

@@ -1,0 +1,228 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1573" height="706" viewBox="0 0 1573 706" font-family="Helvetica, Arial, sans-serif" font-size="10">
+<defs><marker id="a" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="context-stroke"/></marker></defs>
+<rect width="100%" height="100%" fill="#ffffff"/>
+<text x="12" y="20" font-size="13" font-weight="bold">FC Control</text>
+<text x="12" y="35" fill="#444">command guard → attitude law (250 Hz) → rate loop → rotor speed; arm latch</text>
+<path d="M496.5,211.5 L506.5,211.5 L506.5,302.0 L420.3,302.0" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M386.3,302.0 L300.1,302.0 L300.1,240.4 L310.1,240.4" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M1425.2,266.2 L1435.2,266.2 L1435.2,328.0 L1340.2,328.0" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M1306.2,328.0 L1211.1,328.0 L1211.1,266.2 L1221.1,266.2" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M1439.4,518.3 L1449.4,518.3 L1449.4,588.0 L1347.3,588.0" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M1313.3,588.0 L1211.1,588.0 L1211.1,526.2 L1221.1,526.2" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M56.5,108.0 L108.5,108.0 L108.5,104.0 L120.5,104.0" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M56.5,108.0 L108.5,108.0 L108.5,154.0 L120.5,154.0" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M177.9,104.0 L298.1,104.0 L298.1,101.6 L310.1,101.6" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M166.5,154.0 L291.1,154.0 L291.1,124.7 L310.1,124.7" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M56.5,163.0 L284.1,163.0 L284.1,147.9 L310.1,147.9" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M150.5,210.0 L277.1,210.0 L277.1,171.0 L310.1,171.0" fill="none" stroke="#000000" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M56.5,278.0 L108.5,278.0 L108.5,269.0 L120.5,269.0" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M190.3,269.0 L270.1,269.0 L270.1,194.1 L310.1,194.1" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M56.5,338.0 L108.5,338.0 L108.5,329.0 L120.5,329.0" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M246.1,329.0 L263.1,329.0 L263.1,217.3 L310.1,217.3" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M496.5,130.5 L548.5,130.5 L548.5,124.0 L560.5,124.0" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M496.5,130.5 L548.5,130.5 L548.5,394.0 L560.5,394.0" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M496.5,130.5 L548.5,130.5 L548.5,479.0 L560.5,479.0" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M496.5,130.5 L548.5,130.5 L548.5,244.0 L560.5,244.0" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M496.5,130.5 L548.5,130.5 L548.5,304.0 L560.5,304.0" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M56.5,338.0 L72.5,338.0 L72.5,60.0 L672.1,60.0 L672.1,110.0 L688.1,110.0" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M624.1,124.0 L676.1,124.0 L676.1,155.0 L688.1,155.0" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M722.1,110.0 L791.3,110.0 L791.3,110.0 L803.3,110.0" fill="none" stroke="#1a9e1a" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M722.1,155.0 L784.3,155.0 L784.3,150.0 L803.3,150.0" fill="none" stroke="#1a9e1a" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M1023.1,110.0 L1075.1,110.0 L1075.1,115.0 L1087.1,115.0" fill="none" stroke="#1a9e1a" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M1121.1,115.0 L1209.1,115.0 L1209.1,171.8 L1221.1,171.8" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M56.5,398.0 L76.5,398.0 L76.5,72.0 L1201.1,72.0 L1201.1,195.4 L1221.1,195.4" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M611.7,394.0 L1195.1,394.0 L1195.1,219.0 L1221.1,219.0" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M611.7,304.0 L676.1,304.0 L676.1,304.0 L688.1,304.0" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M739.3,304.0 L791.3,304.0 L791.3,281.0 L803.3,281.0" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M56.5,528.0 L784.3,528.0 L784.3,303.0 L803.3,303.0" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M56.5,528.0 L791.3,528.0 L791.3,341.0 L803.3,341.0" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M611.7,244.0 L784.3,244.0 L784.3,363.0 L803.3,363.0" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M843.3,292.0 L1075.1,292.0 L1075.1,296.0 L1087.1,296.0" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M866.9,352.0 L1068.1,352.0 L1068.1,318.0 L1087.1,318.0" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M1157.1,307.0 L1188.1,307.0 L1188.1,242.6 L1221.1,242.6" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M1157.1,307.0 L1188.1,307.0 L1188.1,502.6 L1221.1,502.6" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M1425.2,171.8 L1449.2,171.8 L1449.2,392.0 L1197.1,392.0 L1197.1,431.8 L1221.1,431.8" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M56.5,568.0 L1202.1,568.0 L1202.1,455.4 L1221.1,455.4" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M56.5,608.0 L1195.1,608.0 L1195.1,479.0 L1221.1,479.0" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M1439.4,439.7 L1491.4,439.7 L1491.4,448.0 L1503.4,448.0" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M611.7,479.0 L631.7,479.0 L631.7,660.0 L1483.4,660.0 L1483.4,528.0 L1503.4,528.0" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
+<circle cx="72.5" cy="338.0" r="2.6" fill="#d62728"/>
+<circle cx="784.3" cy="528.0" r="2.6" fill="#d62728"/>
+<rect x="26.5" y="100.0" width="30.0" height="16.0" rx="7" fill="#fff" stroke="#d62728" stroke-width="1.4"/>
+<text x="41.5" y="111.5" text-anchor="middle">1</text>
+<path d="M56.5,105.0 L61.5,108.0 L56.5,111.0 z" fill="#d62728"/>
+<text x="41.5" y="128.0" text-anchor="middle">rx</text>
+<rect x="26.5" y="155.0" width="30.0" height="16.0" rx="7" fill="#fff" stroke="#d62728" stroke-width="1.4"/>
+<text x="41.5" y="166.5" text-anchor="middle">2</text>
+<path d="M56.5,160.0 L61.5,163.0 L56.5,166.0 z" fill="#d62728"/>
+<text x="41.5" y="183.0" text-anchor="middle">cmd_ok</text>
+<rect x="26.5" y="330.0" width="30.0" height="16.0" rx="7" fill="#fff" stroke="#d62728" stroke-width="1.4"/>
+<text x="41.5" y="341.5" text-anchor="middle">3</text>
+<path d="M56.5,335.0 L61.5,338.0 L56.5,341.0 z" fill="#d62728"/>
+<text x="41.5" y="358.0" text-anchor="middle">q_fc</text>
+<rect x="26.5" y="390.0" width="30.0" height="16.0" rx="7" fill="#fff" stroke="#d62728" stroke-width="1.4"/>
+<text x="41.5" y="401.5" text-anchor="middle">4</text>
+<path d="M56.5,395.0 L61.5,398.0 L56.5,401.0 z" fill="#d62728"/>
+<text x="41.5" y="418.0" text-anchor="middle">g_fc</text>
+<rect x="26.5" y="270.0" width="30.0" height="16.0" rx="7" fill="#fff" stroke="#d62728" stroke-width="1.4"/>
+<text x="41.5" y="281.5" text-anchor="middle">5</text>
+<path d="M56.5,275.0 L61.5,278.0 L56.5,281.0 z" fill="#d62728"/>
+<text x="41.5" y="298.0" text-anchor="middle">fus_status</text>
+<rect x="26.5" y="560.0" width="30.0" height="16.0" rx="7" fill="#fff" stroke="#d62728" stroke-width="1.4"/>
+<text x="41.5" y="571.5" text-anchor="middle">6</text>
+<path d="M56.5,565.0 L61.5,568.0 L56.5,571.0 z" fill="#d62728"/>
+<text x="41.5" y="588.0" text-anchor="middle">w_meas</text>
+<rect x="26.5" y="600.0" width="30.0" height="16.0" rx="7" fill="#fff" stroke="#d62728" stroke-width="1.4"/>
+<text x="41.5" y="611.5" text-anchor="middle">7</text>
+<path d="M56.5,605.0 L61.5,608.0 L56.5,611.0 z" fill="#d62728"/>
+<text x="41.5" y="628.0" text-anchor="middle">w_ok</text>
+<rect x="26.5" y="520.0" width="30.0" height="16.0" rx="7" fill="#fff" stroke="#d62728" stroke-width="1.4"/>
+<text x="41.5" y="531.5" text-anchor="middle">8</text>
+<path d="M56.5,525.0 L61.5,528.0 L56.5,531.0 z" fill="#d62728"/>
+<text x="41.5" y="548.0" text-anchor="middle">arm_req</text>
+<rect x="1503.4" y="440.0" width="30.0" height="16.0" rx="7" fill="#fff" stroke="#d62728" stroke-width="1.4"/>
+<text x="1518.4" y="451.5" text-anchor="middle">1</text>
+<text x="1518.4" y="468.0" text-anchor="middle">u_thr</text>
+<rect x="1503.4" y="520.0" width="30.0" height="16.0" rx="7" fill="#fff" stroke="#d62728" stroke-width="1.4"/>
+<text x="1518.4" y="531.5" text-anchor="middle">2</text>
+<text x="1518.4" y="548.0" text-anchor="middle">mode</text>
+<rect x="120.5" y="90.0" width="57.4" height="28.0" fill="#fff" stroke="#d62728" stroke-width="1.4"/>
+<text x="149.2" y="107.5" text-anchor="middle">rx(2:5)</text>
+<path d="M177.9,101.0 L182.9,104.0 L177.9,107.0 z" fill="#d62728"/>
+<text x="149.2" y="130.0" text-anchor="middle">q_sp NED</text>
+<rect x="120.5" y="140.0" width="46.0" height="28.0" fill="#fff" stroke="#d62728" stroke-width="1.4"/>
+<text x="143.5" y="157.5" text-anchor="middle">rx(6)</text>
+<path d="M166.5,151.0 L171.5,154.0 L166.5,157.0 z" fill="#d62728"/>
+<text x="143.5" y="180.0" text-anchor="middle">thrust</text>
+<rect x="120.5" y="195.0" width="30.0" height="30.0" fill="#fff" stroke="#000000" stroke-width="1.4"/>
+<circle cx="135.5" cy="210.0" r="9" fill="none" stroke="#000"/>
+<path d="M135.5,204.0 L135.5,210.0 L140.5,212.0" stroke="#000" fill="none"/>
+<path d="M150.5,207.0 L155.5,210.0 L150.5,213.0 z" fill="#000000"/>
+<text x="135.5" y="237.0" text-anchor="middle">Clock</text>
+<rect x="120.5" y="255.0" width="69.8" height="28.0" fill="#fff" stroke="#d62728" stroke-width="1.4"/>
+<text x="155.4" y="272.5" text-anchor="middle">1 ≤ u ≤ 3</text>
+<path d="M190.3,266.0 L195.3,269.0 L190.3,272.0 z" fill="#d62728"/>
+<text x="155.4" y="295.0" text-anchor="middle">fusion valid</text>
+<rect x="120.5" y="315.0" width="125.6" height="28.0" fill="#fff" stroke="#d62728" stroke-width="1.4"/>
+<text x="183.3" y="332.5" text-anchor="middle">acos(1−2(u₃²+u₄²))</text>
+<path d="M246.1,326.0 L251.1,329.0 L246.1,332.0 z" fill="#d62728"/>
+<text x="183.3" y="355.0" text-anchor="middle">tilt</text>
+<rect x="310.1" y="90.0" width="186.4" height="162.0" fill="#fff" stroke="#d62728" stroke-width="1.6"/>
+<text x="403.3" y="174.5" text-anchor="middle" fill="#7a7a7a" font-size="9">guid_cmd_guard</text>
+<text x="314.1" y="105.1" text-anchor="start">q_in</text>
+<text x="314.1" y="128.2" text-anchor="start">thrust_in</text>
+<text x="314.1" y="151.4" text-anchor="start">new_cmd</text>
+<text x="314.1" y="174.5" text-anchor="start">t_now</text>
+<text x="314.1" y="197.6" text-anchor="start">imu_valid</text>
+<text x="314.1" y="220.8" text-anchor="start">tilt_meas</text>
+<text x="314.1" y="243.9" text-anchor="start">S</text>
+<text x="492.5" y="134.0" text-anchor="end">out</text>
+<text x="492.5" y="215.0" text-anchor="end">S</text>
+<path d="M496.5,127.5 L501.5,130.5 L496.5,133.5 z" fill="#d62728"/>
+<path d="M496.5,208.5 L501.5,211.5 L496.5,214.5 z" fill="#d62728"/>
+<text x="403.3" y="264.0" text-anchor="middle">command guard</text>
+<text x="403.3" y="275.0" text-anchor="middle" fill="#6a6a6a" font-size="8.5">param: P.guard</text>
+<rect x="386.3" y="287.0" width="34.0" height="30.0" fill="#fff" stroke="#d62728" stroke-width="1.4"/>
+<text x="403.3" y="305.5" text-anchor="middle">1/z</text>
+<path d="M386.3,299.0 L381.3,302.0 L386.3,305.0 z" fill="#d62728"/>
+<rect x="560.5" y="110.0" width="63.6" height="28.0" fill="#fff" stroke="#d62728" stroke-width="1.4"/>
+<text x="592.3" y="127.5" text-anchor="middle">out(1:4)</text>
+<path d="M624.1,121.0 L629.1,124.0 L624.1,127.0 z" fill="#d62728"/>
+<text x="592.3" y="150.0" text-anchor="middle">q_sp</text>
+<rect x="560.5" y="230.0" width="51.2" height="28.0" fill="#fff" stroke="#d62728" stroke-width="1.4"/>
+<text x="586.1" y="247.5" text-anchor="middle">out(7)</text>
+<path d="M611.7,241.0 L616.7,244.0 L611.7,247.0 z" fill="#d62728"/>
+<text x="586.1" y="270.0" text-anchor="middle">disarm req</text>
+<rect x="560.5" y="290.0" width="51.2" height="28.0" fill="#fff" stroke="#d62728" stroke-width="1.4"/>
+<text x="586.1" y="307.5" text-anchor="middle">out(8)</text>
+<path d="M611.7,301.0 L616.7,304.0 L611.7,307.0 z" fill="#d62728"/>
+<text x="586.1" y="330.0" text-anchor="middle">arm check</text>
+<rect x="560.5" y="380.0" width="51.2" height="28.0" fill="#fff" stroke="#d62728" stroke-width="1.4"/>
+<text x="586.1" y="397.5" text-anchor="middle">out(5)</text>
+<path d="M611.7,391.0 L616.7,394.0 L611.7,397.0 z" fill="#d62728"/>
+<text x="586.1" y="420.0" text-anchor="middle">thrust</text>
+<rect x="560.5" y="465.0" width="51.2" height="28.0" fill="#fff" stroke="#d62728" stroke-width="1.4"/>
+<text x="586.1" y="482.5" text-anchor="middle">out(6)</text>
+<path d="M611.7,476.0 L616.7,479.0 L611.7,482.0 z" fill="#d62728"/>
+<text x="586.1" y="505.0" text-anchor="middle">mode</text>
+<rect x="688.1" y="95.0" width="34.0" height="30.0" fill="#fff" stroke="#1a9e1a" stroke-width="1.4"/>
+<path d="M695.1,119.0 h6 v-8 h6 v-8 h6" stroke="#000" fill="none"/>
+<path d="M722.1,107.0 L727.1,110.0 L722.1,113.0 z" fill="#1a9e1a"/>
+<text x="705.1" y="137.0" text-anchor="middle">RT</text>
+<rect x="688.1" y="140.0" width="34.0" height="30.0" fill="#fff" stroke="#1a9e1a" stroke-width="1.4"/>
+<path d="M695.1,164.0 h6 v-8 h6 v-8 h6" stroke="#000" fill="none"/>
+<path d="M722.1,152.0 L727.1,155.0 L722.1,158.0 z" fill="#1a9e1a"/>
+<text x="705.1" y="182.0" text-anchor="middle">RT</text>
+<rect x="688.1" y="290.0" width="51.2" height="28.0" fill="#fff" stroke="#d62728" stroke-width="1.4"/>
+<text x="713.7" y="307.5" text-anchor="middle">u == 0</text>
+<path d="M739.3,301.0 L744.3,304.0 L739.3,307.0 z" fill="#d62728"/>
+<rect x="803.3" y="90.0" width="219.8" height="80.0" fill="#fff" stroke="#1a9e1a" stroke-width="1.6"/>
+<text x="913.2" y="133.5" text-anchor="middle" fill="#7a7a7a" font-size="9">ctrl_attitude_quat</text>
+<text x="807.3" y="113.5" text-anchor="start">q_meas</text>
+<text x="807.3" y="153.5" text-anchor="start">q_sp</text>
+<text x="1019.1" y="113.5" text-anchor="end">omega_sp</text>
+<text x="1019.1" y="153.5" text-anchor="end">V</text>
+<path d="M1023.1,107.0 L1028.1,110.0 L1023.1,113.0 z" fill="#1a9e1a"/>
+<path d="M1023.1,147.0 L1028.1,150.0 L1023.1,153.0 z" fill="#1a9e1a"/>
+<text x="913.2" y="182.0" text-anchor="middle">attitude law</text>
+<text x="913.2" y="193.0" text-anchor="middle" fill="#6a6a6a" font-size="8.5">param: P.att</text>
+<rect x="803.3" y="270.0" width="40.0" height="44.0" fill="#fff" stroke="#d62728" stroke-width="1.4"/>
+<text x="823.3" y="295.5" text-anchor="middle">AND</text>
+<path d="M843.3,289.0 L848.3,292.0 L843.3,295.0 z" fill="#d62728"/>
+<rect x="803.3" y="330.0" width="63.6" height="44.0" fill="#fff" stroke="#d62728" stroke-width="1.4"/>
+<text x="835.1" y="355.5" text-anchor="middle">¬u1 ∨ u2</text>
+<path d="M866.9,349.0 L871.9,352.0 L866.9,355.0 z" fill="#d62728"/>
+<rect x="1087.1" y="100.0" width="34.0" height="30.0" fill="#fff" stroke="#d62728" stroke-width="1.4"/>
+<path d="M1094.1,124.0 h6 v-8 h6 v-8 h6" stroke="#000" fill="none"/>
+<path d="M1121.1,112.0 L1126.1,115.0 L1121.1,118.0 z" fill="#d62728"/>
+<text x="1104.1" y="142.0" text-anchor="middle">RT</text>
+<rect x="1087.1" y="285.0" width="70.0" height="44.0" fill="#fff" stroke="#d62728" stroke-width="1.4"/>
+<text x="1122.1" y="310.5" text-anchor="middle">S-R latch</text>
+<path d="M1157.1,304.0 L1162.1,307.0 L1157.1,310.0 z" fill="#d62728"/>
+<text x="1122.1" y="341.0" text-anchor="middle">armed</text>
+<rect x="1221.1" y="160.0" width="204.1" height="118.0" fill="#fff" stroke="#d62728" stroke-width="1.6"/>
+<text x="1323.2" y="222.5" text-anchor="middle" fill="#7a7a7a" font-size="9">ctrl_rate_loop</text>
+<text x="1225.1" y="175.3" text-anchor="start">omega_sp</text>
+<text x="1225.1" y="198.9" text-anchor="start">omega_meas</text>
+<text x="1225.1" y="222.5" text-anchor="start">thrust</text>
+<text x="1225.1" y="246.1" text-anchor="start">armed</text>
+<text x="1225.1" y="269.7" text-anchor="start">S</text>
+<text x="1421.2" y="175.3" text-anchor="end">w_cmd</text>
+<text x="1421.2" y="198.9" text-anchor="end">tau</text>
+<text x="1421.2" y="222.5" text-anchor="end">f_hat</text>
+<text x="1421.2" y="246.1" text-anchor="end">sat</text>
+<text x="1421.2" y="269.7" text-anchor="end">S</text>
+<path d="M1425.2,168.8 L1430.2,171.8 L1425.2,174.8 z" fill="#d62728"/>
+<path d="M1425.2,192.4 L1430.2,195.4 L1425.2,198.4 z" fill="#d62728"/>
+<path d="M1425.2,216.0 L1430.2,219.0 L1425.2,222.0 z" fill="#d62728"/>
+<path d="M1425.2,239.6 L1430.2,242.6 L1425.2,245.6 z" fill="#d62728"/>
+<path d="M1425.2,263.2 L1430.2,266.2 L1425.2,269.2 z" fill="#d62728"/>
+<text x="1323.2" y="290.0" text-anchor="middle">rate loop (ESO + PID + mixer)</text>
+<text x="1323.2" y="301.0" text-anchor="middle" fill="#6a6a6a" font-size="8.5">param: P</text>
+<rect x="1306.2" y="313.0" width="34.0" height="30.0" fill="#fff" stroke="#d62728" stroke-width="1.4"/>
+<text x="1323.2" y="331.5" text-anchor="middle">1/z</text>
+<path d="M1306.2,325.0 L1301.2,328.0 L1306.2,331.0 z" fill="#d62728"/>
+<rect x="1221.1" y="420.0" width="218.3" height="118.0" fill="#fff" stroke="#d62728" stroke-width="1.6"/>
+<text x="1330.3" y="482.5" text-anchor="middle" fill="#7a7a7a" font-size="9">ctrl_rotor_speed_2dof</text>
+<text x="1225.1" y="435.3" text-anchor="start">w_ref</text>
+<text x="1225.1" y="458.9" text-anchor="start">w_meas</text>
+<text x="1225.1" y="482.5" text-anchor="start">meas_ok</text>
+<text x="1225.1" y="506.1" text-anchor="start">armed</text>
+<text x="1225.1" y="529.7" text-anchor="start">S</text>
+<text x="1435.4" y="443.2" text-anchor="end">u</text>
+<text x="1435.4" y="482.5" text-anchor="end">mode</text>
+<text x="1435.4" y="521.8" text-anchor="end">S</text>
+<path d="M1439.4,436.7 L1444.4,439.7 L1439.4,442.7 z" fill="#d62728"/>
+<path d="M1439.4,476.0 L1444.4,479.0 L1439.4,482.0 z" fill="#d62728"/>
+<path d="M1439.4,515.3 L1444.4,518.3 L1439.4,521.3 z" fill="#d62728"/>
+<text x="1330.3" y="550.0" text-anchor="middle">rotor speed 2-DOF</text>
+<text x="1330.3" y="561.0" text-anchor="middle" fill="#6a6a6a" font-size="8.5">param: P.rotor</text>
+<rect x="1313.3" y="573.0" width="34.0" height="30.0" fill="#fff" stroke="#d62728" stroke-width="1.4"/>
+<text x="1330.3" y="591.5" text-anchor="middle">1/z</text>
+<path d="M1313.3,585.0 L1308.3,588.0 L1313.3,591.0 z" fill="#d62728"/>
+<text x="12" y="690" fill="#444">Sample time colours:</text>
+<rect x="124" y="681" width="10" height="10" fill="none" stroke="#d62728" stroke-width="2"/>
+<text x="138" y="690">1 kHz (1 ms)</text>
+<rect x="220" y="681" width="10" height="10" fill="none" stroke="#1a9e1a" stroke-width="2"/>
+<text x="234" y="690">250 Hz (4 ms)</text>
+</svg>

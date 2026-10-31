@@ -1,0 +1,166 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1970" height="552" viewBox="0 0 1970 552" font-family="Helvetica, Arial, sans-serif" font-size="10">
+<defs><marker id="a" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="context-stroke"/></marker></defs>
+<rect width="100%" height="100%" fill="#ffffff"/>
+<text x="12" y="20" font-size="13" font-weight="bold">Camera-arm gaze loop</text>
+<text x="12" y="35" fill="#444">ROS2_Jetbot_NanoOWL_Actuator, pan + tilt, 50 Hz</text>
+<path d="M866.9,206.7 L876.9,206.7 L876.9,280.0 L793.6,280.0" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M759.6,280.0 L676.4,280.0 L676.4,218.3 L686.4,218.3" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M1252.9,150.5 L1262.9,150.5 L1262.9,219.0 L1169.6,219.0" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M1135.6,219.0 L1042.3,219.0 L1042.3,156.7 L1052.3,156.7" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M1605.7,151.7 L1615.7,151.7 L1615.7,214.0 L1527.3,214.0" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M1493.3,214.0 L1404.9,214.0 L1404.9,151.7 L1414.9,151.7" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M1831.5,134.0 L1841.5,134.0 L1841.5,197.0 L1767.6,197.0" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M1733.6,197.0 L1659.7,197.0 L1659.7,134.0 L1669.7,134.0" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M102.0,113.0 L154.0,113.0 L154.0,111.0 L166.0,111.0" fill="none" stroke="#c000c0" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M1929.5,110.0 L1957.5,110.0 L1957.5,460.0 L138.0,460.0 L138.0,133.0 L166.0,133.0" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M200.0,122.0 L252.0,122.0 L252.0,114.0 L264.0,114.0" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M304.0,114.0 L373.4,114.0 L373.4,108.0 L385.4,108.0" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M298.0,175.0 L366.4,175.0 L366.4,134.0 L385.4,134.0" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M622.4,108.0 L674.4,108.0 L674.4,101.7 L686.4,101.7" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M622.4,134.0 L667.4,134.0 L667.4,125.0 L686.4,125.0" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M1929.5,110.0 L1941.5,110.0 L1941.5,472.0 L252.0,472.0 L252.0,284.0 L264.0,284.0" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M321.4,284.0 L373.4,284.0 L373.4,314.0 L385.4,314.0" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M321.4,284.0 L660.4,284.0 L660.4,148.3 L686.4,148.3" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M517.2,314.0 L653.4,314.0 L653.4,171.7 L686.4,171.7" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M425.0,373.0 L646.4,373.0 L646.4,195.0 L686.4,195.0" fill="none" stroke="#c000c0" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M866.9,113.3 L918.9,113.3 L918.9,114.0 L930.9,114.0" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M988.3,114.0 L1040.3,114.0 L1040.3,107.3 L1052.3,107.3" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M964.9,173.0 L1033.3,173.0 L1033.3,132.0 L1052.3,132.0" fill="none" stroke="#c000c0" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M1252.9,113.5 L1304.9,113.5 L1304.9,111.0 L1316.9,111.0" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M1703.7,265.0 L1731.7,265.0 L1731.7,300.0 L1288.9,300.0 L1288.9,133.0 L1316.9,133.0" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M1350.9,122.0 L1402.9,122.0 L1402.9,102.3 L1414.9,102.3" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M1350.9,183.0 L1395.9,183.0 L1395.9,127.0 L1414.9,127.0" fill="none" stroke="#c000c0" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M1605.7,102.3 L1657.7,102.3 L1657.7,108.0 L1669.7,108.0" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M1605.7,102.3 L1657.7,102.3 L1657.7,265.0 L1669.7,265.0" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M1831.5,108.0 L1883.5,108.0 L1883.5,110.0 L1895.5,110.0" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
+<circle cx="1941.5" cy="110.0" r="2.6" fill="#d62728"/>
+<circle cx="373.4" cy="284.0" r="2.6" fill="#d62728"/>
+<rect x="24.0" y="100.0" width="78.0" height="26.0" fill="#fff" stroke="#c000c0" stroke-width="1.4"/>
+<text x="63.0" y="116.5" text-anchor="middle">[0.3; 0.1]</text>
+<path d="M102.0,110.0 L107.0,113.0 L102.0,116.0 z" fill="#c000c0"/>
+<text x="63.0" y="138.0" text-anchor="middle">target bearing</text>
+<rect x="166.0" y="100.0" width="34.0" height="44.0" fill="#fff" stroke="#d62728" stroke-width="1.4"/>
+<text x="183.0" y="125.5" text-anchor="middle">+ −</text>
+<path d="M200.0,119.0 L205.0,122.0 L200.0,125.0 z" fill="#d62728"/>
+<rect x="264.0" y="100.0" width="40.0" height="28.0" fill="#fff" stroke="#d62728" stroke-width="1.4"/>
+<text x="284.0" y="117.5" text-anchor="middle">z⁻⁴</text>
+<path d="M304.0,111.0 L309.0,114.0 L304.0,117.0 z" fill="#d62728"/>
+<text x="284.0" y="140.0" text-anchor="middle">detection delay 80 ms</text>
+<rect x="264.0" y="160.0" width="34.0" height="30.0" fill="#fff" stroke="#d62728" stroke-width="1.4"/>
+<polyline points="269.0,177.4 272.0,170.6 275.0,181.4 278.0,171.6 281.0,180.4 284.0,172.6 287.0,179.4 290.0,168.6 293.0,178.4" fill="none" stroke="#000"/>
+<path d="M298.0,172.0 L303.0,175.0 L298.0,178.0 z" fill="#d62728"/>
+<text x="281.0" y="202.0" text-anchor="middle">pixel noise</text>
+<rect x="264.0" y="270.0" width="57.4" height="28.0" fill="#fff" stroke="#d62728" stroke-width="1.4"/>
+<text x="292.7" y="287.5" text-anchor="middle">1 − z⁻¹</text>
+<path d="M321.4,281.0 L326.4,284.0 L321.4,287.0 z" fill="#d62728"/>
+<text x="292.7" y="310.0" text-anchor="middle">Δφ</text>
+<rect x="385.4" y="95.0" width="237.0" height="52.0" fill="#fff" stroke="#d62728" stroke-width="1.6"/>
+<text x="503.9" y="124.5" text-anchor="middle" fill="#7a7a7a" font-size="9">sens_camera_bearing</text>
+<text x="389.4" y="111.5" text-anchor="start">bearing_err</text>
+<text x="389.4" y="137.5" text-anchor="start">n</text>
+<text x="618.4" y="111.5" text-anchor="end">pixel</text>
+<text x="618.4" y="137.5" text-anchor="end">valid</text>
+<path d="M622.4,105.0 L627.4,108.0 L622.4,111.0 z" fill="#d62728"/>
+<path d="M622.4,131.0 L627.4,134.0 L622.4,137.0 z" fill="#d62728"/>
+<text x="503.9" y="159.0" text-anchor="middle">NanoOWL detection</text>
+<text x="503.9" y="170.0" text-anchor="middle" fill="#6a6a6a" font-size="8.5">param: P</text>
+<rect x="385.4" y="300.0" width="131.8" height="28.0" fill="#fff" stroke="#d62728" stroke-width="1.4"/>
+<text x="451.3" y="317.5" text-anchor="middle">Σ last 4 (FIR ones)</text>
+<path d="M517.2,311.0 L522.2,314.0 L517.2,317.0 z" fill="#d62728"/>
+<text x="451.3" y="340.0" text-anchor="middle">Σ Δφ since t_img</text>
+<rect x="385.4" y="360.0" width="39.6" height="26.0" fill="#fff" stroke="#c000c0" stroke-width="1.4"/>
+<text x="405.2" y="376.5" text-anchor="middle">0.08</text>
+<path d="M425.0,370.0 L430.0,373.0 L425.0,376.0 z" fill="#c000c0"/>
+<text x="405.2" y="398.0" text-anchor="middle">latency</text>
+<rect x="686.4" y="90.0" width="180.5" height="140.0" fill="#fff" stroke="#d62728" stroke-width="1.6"/>
+<text x="776.6" y="163.5" text-anchor="middle" fill="#7a7a7a" font-size="9">est_bearing_kf</text>
+<text x="690.4" y="105.2" text-anchor="start">pixel</text>
+<text x="690.4" y="128.5" text-anchor="start">det_ok</text>
+<text x="690.4" y="151.8" text-anchor="start">dphi</text>
+<text x="690.4" y="175.2" text-anchor="start">dphi_lat</text>
+<text x="690.4" y="198.5" text-anchor="start">latency</text>
+<text x="690.4" y="221.8" text-anchor="start">S</text>
+<text x="862.9" y="116.8" text-anchor="end">xb</text>
+<text x="862.9" y="163.5" text-anchor="end">nis</text>
+<text x="862.9" y="210.2" text-anchor="end">S</text>
+<path d="M866.9,110.3 L871.9,113.3 L866.9,116.3 z" fill="#d62728"/>
+<path d="M866.9,157.0 L871.9,160.0 L866.9,163.0 z" fill="#d62728"/>
+<path d="M866.9,203.7 L871.9,206.7 L866.9,209.7 z" fill="#d62728"/>
+<text x="776.6" y="242.0" text-anchor="middle">bearing KF</text>
+<text x="776.6" y="253.0" text-anchor="middle" fill="#6a6a6a" font-size="8.5">param: P</text>
+<rect x="759.6" y="265.0" width="34.0" height="30.0" fill="#fff" stroke="#d62728" stroke-width="1.4"/>
+<text x="776.6" y="283.5" text-anchor="middle">1/z</text>
+<path d="M759.6,277.0 L754.6,280.0 L759.6,283.0 z" fill="#d62728"/>
+<rect x="930.9" y="100.0" width="57.4" height="28.0" fill="#fff" stroke="#d62728" stroke-width="1.4"/>
+<text x="959.6" y="117.5" text-anchor="middle">xb(1:2)</text>
+<path d="M988.3,111.0 L993.3,114.0 L988.3,117.0 z" fill="#d62728"/>
+<text x="959.6" y="140.0" text-anchor="middle">bearing error</text>
+<rect x="930.9" y="160.0" width="34.0" height="26.0" fill="#fff" stroke="#c000c0" stroke-width="1.4"/>
+<text x="947.9" y="176.5" text-anchor="middle">1</text>
+<path d="M964.9,170.0 L969.9,173.0 L964.9,176.0 z" fill="#c000c0"/>
+<text x="947.9" y="198.0" text-anchor="middle">enable</text>
+<rect x="1052.3" y="95.0" width="200.6" height="74.0" fill="#fff" stroke="#d62728" stroke-width="1.6"/>
+<text x="1152.6" y="135.5" text-anchor="middle" fill="#7a7a7a" font-size="9">ctrl_pi_velocity_simc</text>
+<text x="1056.3" y="110.8" text-anchor="start">e</text>
+<text x="1056.3" y="135.5" text-anchor="start">enable</text>
+<text x="1056.3" y="160.2" text-anchor="start">S</text>
+<text x="1248.9" y="117.0" text-anchor="end">du</text>
+<text x="1248.9" y="154.0" text-anchor="end">S</text>
+<path d="M1252.9,110.5 L1257.9,113.5 L1252.9,116.5 z" fill="#d62728"/>
+<path d="M1252.9,147.5 L1257.9,150.5 L1252.9,153.5 z" fill="#d62728"/>
+<text x="1152.6" y="181.0" text-anchor="middle">SIMC PI (velocity form)</text>
+<text x="1152.6" y="192.0" text-anchor="middle" fill="#6a6a6a" font-size="8.5">param: P</text>
+<rect x="1135.6" y="204.0" width="34.0" height="30.0" fill="#fff" stroke="#d62728" stroke-width="1.4"/>
+<text x="1152.6" y="222.5" text-anchor="middle">1/z</text>
+<path d="M1135.6,216.0 L1130.6,219.0 L1135.6,222.0 z" fill="#d62728"/>
+<rect x="1316.9" y="100.0" width="34.0" height="44.0" fill="#fff" stroke="#d62728" stroke-width="1.4"/>
+<text x="1333.9" y="125.5" text-anchor="middle">+ +</text>
+<path d="M1350.9,119.0 L1355.9,122.0 L1350.9,125.0 z" fill="#d62728"/>
+<rect x="1316.9" y="170.0" width="34.0" height="26.0" fill="#fff" stroke="#c000c0" stroke-width="1.4"/>
+<text x="1333.9" y="186.5" text-anchor="middle">0</text>
+<path d="M1350.9,180.0 L1355.9,183.0 L1350.9,186.0 z" fill="#c000c0"/>
+<text x="1333.9" y="208.0" text-anchor="middle">estop</text>
+<rect x="1414.9" y="90.0" width="190.8" height="74.0" fill="#fff" stroke="#d62728" stroke-width="1.6"/>
+<text x="1510.3" y="130.5" text-anchor="middle" fill="#7a7a7a" font-size="9">safe_servo_limits</text>
+<text x="1418.9" y="105.8" text-anchor="start">q_cmd</text>
+<text x="1418.9" y="130.5" text-anchor="start">estop</text>
+<text x="1418.9" y="155.2" text-anchor="start">S</text>
+<text x="1601.7" y="105.8" text-anchor="end">q_out</text>
+<text x="1601.7" y="130.5" text-anchor="end">flags</text>
+<text x="1601.7" y="155.2" text-anchor="end">S</text>
+<path d="M1605.7,99.3 L1610.7,102.3 L1605.7,105.3 z" fill="#d62728"/>
+<path d="M1605.7,124.0 L1610.7,127.0 L1605.7,130.0 z" fill="#d62728"/>
+<path d="M1605.7,148.7 L1610.7,151.7 L1605.7,154.7 z" fill="#d62728"/>
+<text x="1510.3" y="176.0" text-anchor="middle">servo safety R1–R8</text>
+<text x="1510.3" y="187.0" text-anchor="middle" fill="#6a6a6a" font-size="8.5">param: P</text>
+<rect x="1493.3" y="199.0" width="34.0" height="30.0" fill="#fff" stroke="#d62728" stroke-width="1.4"/>
+<text x="1510.3" y="217.5" text-anchor="middle">1/z</text>
+<path d="M1493.3,211.0 L1488.3,214.0 L1493.3,217.0 z" fill="#d62728"/>
+<rect x="1669.7" y="95.0" width="161.8" height="52.0" fill="#fff" stroke="#d62728" stroke-width="1.6"/>
+<text x="1750.6" y="124.5" text-anchor="middle" fill="#7a7a7a" font-size="9">plant_servo_axes</text>
+<text x="1673.7" y="111.5" text-anchor="start">q_cmd</text>
+<text x="1673.7" y="137.5" text-anchor="start">S</text>
+<text x="1827.5" y="111.5" text-anchor="end">q</text>
+<text x="1827.5" y="137.5" text-anchor="end">S</text>
+<path d="M1831.5,105.0 L1836.5,108.0 L1831.5,111.0 z" fill="#d62728"/>
+<path d="M1831.5,131.0 L1836.5,134.0 L1831.5,137.0 z" fill="#d62728"/>
+<text x="1750.6" y="159.0" text-anchor="middle">pan / tilt servos</text>
+<text x="1750.6" y="170.0" text-anchor="middle" fill="#6a6a6a" font-size="8.5">param: P</text>
+<rect x="1733.6" y="182.0" width="34.0" height="30.0" fill="#fff" stroke="#d62728" stroke-width="1.4"/>
+<text x="1750.6" y="200.5" text-anchor="middle">1/z</text>
+<path d="M1733.6,194.0 L1728.6,197.0 L1733.6,200.0 z" fill="#d62728"/>
+<rect x="1669.7" y="250.0" width="34.0" height="30.0" fill="#fff" stroke="#d62728" stroke-width="1.4"/>
+<text x="1686.7" y="268.5" text-anchor="middle">1/z</text>
+<path d="M1703.7,262.0 L1708.7,265.0 L1703.7,268.0 z" fill="#d62728"/>
+<text x="1686.7" y="292.0" text-anchor="middle">applied q(k−1)</text>
+<rect x="1895.5" y="95.0" width="34.0" height="30.0" fill="#fff" stroke="#d62728" stroke-width="1.4"/>
+<text x="1912.5" y="113.5" text-anchor="middle">1/z</text>
+<path d="M1929.5,107.0 L1934.5,110.0 L1929.5,113.0 z" fill="#d62728"/>
+<text x="1912.5" y="137.0" text-anchor="middle">q(k−1)</text>
+<text x="24" y="500" fill="#555" font-style="italic">On the 6-DOF arm, ctrl_dls_decoupling (Jᵀ(JJᵀ+λ²I)⁻¹) sits between the PI and the servo safety; for the two-axis gimbal drawn here J = I.</text>
+<text x="12" y="536" fill="#444">Sample time colours:</text>
+<rect x="124" y="527" width="10" height="10" fill="none" stroke="#d62728" stroke-width="2"/>
+<text x="138" y="536">50 Hz (20 ms)</text>
+<rect x="226" y="527" width="10" height="10" fill="none" stroke="#c000c0" stroke-width="2"/>
+<text x="240" y="536">constant</text>
+</svg>

@@ -1,0 +1,128 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1114" height="682" viewBox="0 0 1114 682" font-family="Helvetica, Arial, sans-serif" font-size="10">
+<defs><marker id="a" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="context-stroke"/></marker></defs>
+<rect width="100%" height="100%" fill="#ffffff"/>
+<text x="12" y="20" font-size="13" font-weight="bold">jetowl_uav — top level</text>
+<text x="12" y="35" fill="#444">FC + Jetson + link + plant; each subsystem is drawn below</text>
+<path d="M69.0,74.0 L372.0,74.0 L372.0,81.7 L398.0,81.7" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M120.0,434.0 L165.0,434.0 L165.0,444.0 L184.0,444.0" fill="none" stroke="#0b6e2e" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M334.0,418.0 L386.0,418.0 L386.0,32.3 L398.0,32.3" fill="none" stroke="#c9a400" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M334.0,444.0 L379.0,444.0 L379.0,57.0 L398.0,57.0" fill="none" stroke="#c9a400" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M334.0,444.0 L561.0,444.0 L561.0,272.5 L622.0,272.5" fill="none" stroke="#c9a400" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M558.0,38.5 L610.0,38.5 L610.0,111.5 L622.0,111.5" fill="none" stroke="#c9a400" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M558.0,75.5 L603.0,75.5 L603.0,134.5 L622.0,134.5" fill="none" stroke="#c9a400" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M558.0,157.5 L596.0,157.5 L596.0,157.5 L622.0,157.5" fill="none" stroke="#c9a400" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M558.0,180.5 L589.0,180.5 L589.0,180.5 L622.0,180.5" fill="none" stroke="#c9a400" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M558.0,203.5 L582.0,203.5 L582.0,203.5 L622.0,203.5" fill="none" stroke="#c9a400" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M558.0,226.5 L575.0,226.5 L575.0,226.5 L622.0,226.5" fill="none" stroke="#c9a400" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M558.0,249.5 L568.0,249.5 L568.0,249.5 L622.0,249.5" fill="none" stroke="#c9a400" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M558.0,272.5 L603.0,272.5 L603.0,416.0 L622.0,416.0" fill="none" stroke="#c9a400" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M558.0,180.5 L596.0,180.5 L596.0,440.0 L622.0,440.0" fill="none" stroke="#c9a400" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M558.0,157.5 L589.0,157.5 L589.0,464.0 L622.0,464.0" fill="none" stroke="#c9a400" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M782.0,146.0 L834.0,146.0 L834.0,188.5 L846.0,188.5" fill="none" stroke="#c9a400" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M102.0,343.0 L827.0,343.0 L827.0,225.5 L846.0,225.5" fill="none" stroke="#c000c0" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M976.0,182.3 L1028.0,182.3 L1028.0,185.0 L1040.0,185.0" fill="none" stroke="#c9a400" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M976.0,231.7 L1028.0,231.7 L1028.0,260.0 L1040.0,260.0" fill="none" stroke="#c9a400" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M1074.0,185.0 L1102.0,185.0 L1102.0,560.0 L370.0,560.0 L370.0,180.5 L398.0,180.5" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M1074.0,260.0 L1086.0,260.0 L1086.0,572.0 L386.0,572.0 L386.0,249.5 L398.0,249.5" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M1074.0,185.0 L1090.0,185.0 L1090.0,584.0 L606.0,584.0 L606.0,392.0 L622.0,392.0" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M782.0,428.0 L802.0,428.0 L802.0,596.0 L164.0,596.0 L164.0,418.0 L184.0,418.0" fill="none" stroke="#c9a400" stroke-width="1.2" marker-end="url(#a)"/>
+<circle cx="379.0" cy="444.0" r="2.6" fill="#c9a400"/>
+<circle cx="589.0" cy="157.5" r="2.6" fill="#c9a400"/>
+<circle cx="589.0" cy="180.5" r="2.6" fill="#c9a400"/>
+<circle cx="1090.0" cy="185.0" r="2.6" fill="#d62728"/>
+<rect x="24.0" y="60.0" width="45.0" height="28.0" fill="#fff" stroke="#d62728" stroke-width="1.4"/>
+<text x="46.5" y="77.5" text-anchor="middle">Pulse</text>
+<path d="M69.0,71.0 L74.0,74.0 L69.0,77.0 z" fill="#d62728"/>
+<text x="46.5" y="100.0" text-anchor="middle">link outage</text>
+<rect x="24.0" y="420.0" width="96.0" height="28.0" fill="#fff" stroke="#0b6e2e" stroke-width="1.4"/>
+<text x="72.0" y="437.5" text-anchor="middle">Signal Builder</text>
+<path d="M120.0,431.0 L125.0,434.0 L120.0,437.0 z" fill="#0b6e2e"/>
+<text x="72.0" y="460.0" text-anchor="middle">mission events</text>
+<rect x="24.0" y="330.0" width="78.0" height="26.0" fill="#fff" stroke="#c000c0" stroke-width="1.4"/>
+<text x="63.0" y="346.5" text-anchor="middle">zeros(3,1)</text>
+<path d="M102.0,340.0 L107.0,343.0 L102.0,346.0 z" fill="#c000c0"/>
+<text x="63.0" y="368.0" text-anchor="middle">f_ext</text>
+<rect x="184.0" y="405.0" width="150.0" height="52.0" fill="#fff7c8" stroke="#c9a400" stroke-width="2"/>
+<text x="188.0" y="421.5" text-anchor="start">nav</text>
+<text x="188.0" y="447.5" text-anchor="start">ev</text>
+<text x="330.0" y="421.5" text-anchor="end">pkt</text>
+<text x="330.0" y="447.5" text-anchor="end">arm_req</text>
+<path d="M334.0,415.0 L339.0,418.0 L334.0,421.0 z" fill="#c9a400"/>
+<path d="M334.0,441.0 L339.0,444.0 L334.0,447.0 z" fill="#c9a400"/>
+<text x="259.0" y="469.0" text-anchor="middle">Jetson Control</text>
+<rect x="398.0" y="20.0" width="160.0" height="74.0" fill="#fff7c8" stroke="#c9a400" stroke-width="2"/>
+<text x="402.0" y="35.8" text-anchor="start">pkt</text>
+<text x="402.0" y="60.5" text-anchor="start">send</text>
+<text x="402.0" y="85.2" text-anchor="start">drop</text>
+<text x="554.0" y="42.0" text-anchor="end">rx</text>
+<text x="554.0" y="79.0" text-anchor="end">cmd_ok</text>
+<path d="M558.0,35.5 L563.0,38.5 L558.0,41.5 z" fill="#c9a400"/>
+<path d="M558.0,72.5 L563.0,75.5 L558.0,78.5 z" fill="#c9a400"/>
+<text x="478.0" y="106.0" text-anchor="middle">Link (micro-ROS)</text>
+<rect x="398.0" y="146.0" width="160.0" height="138.0" fill="#fff7c8" stroke="#c9a400" stroke-width="2"/>
+<text x="402.0" y="184.0" text-anchor="start">y</text>
+<text x="402.0" y="253.0" text-anchor="start">theta_rot</text>
+<text x="554.0" y="161.0" text-anchor="end">q_fc</text>
+<text x="554.0" y="184.0" text-anchor="end">g_fc</text>
+<text x="554.0" y="207.0" text-anchor="end">fus_status</text>
+<text x="554.0" y="230.0" text-anchor="end">w_meas</text>
+<text x="554.0" y="253.0" text-anchor="end">w_ok</text>
+<text x="554.0" y="276.0" text-anchor="end">accel</text>
+<path d="M558.0,154.5 L563.0,157.5 L558.0,160.5 z" fill="#c9a400"/>
+<path d="M558.0,177.5 L563.0,180.5 L558.0,183.5 z" fill="#c9a400"/>
+<path d="M558.0,200.5 L563.0,203.5 L558.0,206.5 z" fill="#c9a400"/>
+<path d="M558.0,223.5 L563.0,226.5 L558.0,229.5 z" fill="#c9a400"/>
+<path d="M558.0,246.5 L563.0,249.5 L558.0,252.5 z" fill="#c9a400"/>
+<path d="M558.0,269.5 L563.0,272.5 L558.0,275.5 z" fill="#c9a400"/>
+<text x="478.0" y="296.0" text-anchor="middle">FC Sensing</text>
+<rect x="622.0" y="100.0" width="160.0" height="184.0" fill="#fff7c8" stroke="#c9a400" stroke-width="2"/>
+<text x="626.0" y="115.0" text-anchor="start">rx</text>
+<text x="626.0" y="138.0" text-anchor="start">cmd_ok</text>
+<text x="626.0" y="161.0" text-anchor="start">q_fc</text>
+<text x="626.0" y="184.0" text-anchor="start">g_fc</text>
+<text x="626.0" y="207.0" text-anchor="start">fus_status</text>
+<text x="626.0" y="230.0" text-anchor="start">w_meas</text>
+<text x="626.0" y="253.0" text-anchor="start">w_ok</text>
+<text x="626.0" y="276.0" text-anchor="start">arm_req</text>
+<text x="778.0" y="149.5" text-anchor="end">u_thr</text>
+<text x="778.0" y="241.5" text-anchor="end">mode</text>
+<path d="M782.0,143.0 L787.0,146.0 L782.0,149.0 z" fill="#c9a400"/>
+<path d="M782.0,235.0 L787.0,238.0 L782.0,241.0 z" fill="#c9a400"/>
+<text x="702.0" y="296.0" text-anchor="middle">FC Control</text>
+<rect x="622.0" y="380.0" width="160.0" height="96.0" fill="#fff7c8" stroke="#c9a400" stroke-width="2"/>
+<text x="626.0" y="395.5" text-anchor="start">y</text>
+<text x="626.0" y="419.5" text-anchor="start">accel</text>
+<text x="626.0" y="443.5" text-anchor="start">gyro</text>
+<text x="626.0" y="467.5" text-anchor="start">q_fc</text>
+<text x="778.0" y="431.5" text-anchor="end">nav</text>
+<path d="M782.0,425.0 L787.0,428.0 L782.0,431.0 z" fill="#c9a400"/>
+<text x="702.0" y="488.0" text-anchor="middle">Jetson Nav</text>
+<rect x="846.0" y="170.0" width="130.0" height="74.0" fill="#fff7c8" stroke="#c9a400" stroke-width="2"/>
+<text x="850.0" y="192.0" text-anchor="start">u_thr</text>
+<text x="850.0" y="229.0" text-anchor="start">f_ext</text>
+<text x="972.0" y="185.8" text-anchor="end">y</text>
+<text x="972.0" y="210.5" text-anchor="end">w_rot</text>
+<text x="972.0" y="235.2" text-anchor="end">theta_rot</text>
+<path d="M976.0,179.3 L981.0,182.3 L976.0,185.3 z" fill="#c9a400"/>
+<path d="M976.0,204.0 L981.0,207.0 L976.0,210.0 z" fill="#c9a400"/>
+<path d="M976.0,228.7 L981.0,231.7 L976.0,234.7 z" fill="#c9a400"/>
+<text x="911.0" y="256.0" text-anchor="middle">Plant</text>
+<rect x="1040.0" y="170.0" width="34.0" height="30.0" fill="#fff" stroke="#d62728" stroke-width="1.4"/>
+<text x="1057.0" y="188.5" text-anchor="middle">1/z</text>
+<path d="M1074.0,182.0 L1079.0,185.0 L1074.0,188.0 z" fill="#d62728"/>
+<text x="1057.0" y="212.0" text-anchor="middle">y(k−1)</text>
+<rect x="1040.0" y="245.0" width="34.0" height="30.0" fill="#fff" stroke="#d62728" stroke-width="1.4"/>
+<text x="1057.0" y="263.5" text-anchor="middle">1/z</text>
+<path d="M1074.0,257.0 L1079.0,260.0 L1074.0,263.0 z" fill="#d62728"/>
+<text x="1057.0" y="287.0" text-anchor="middle">θ(k−1)</text>
+<text x="24" y="630" fill="#555" font-style="italic">Unit Delays on the plant outputs: the sensors of tick k read the state the plant reached at the end of tick k−1 (the order of jetowl_sil_uav).</text>
+<text x="12" y="666" fill="#444">Sample time colours:</text>
+<rect x="124" y="657" width="10" height="10" fill="none" stroke="#d62728" stroke-width="2"/>
+<text x="138" y="666">1 kHz (1 ms)</text>
+<rect x="220" y="657" width="10" height="10" fill="none" stroke="#0b6e2e" stroke-width="2"/>
+<text x="234" y="666">50 Hz (20 ms)</text>
+<rect x="323" y="657" width="10" height="10" fill="none" stroke="#c9a400" stroke-width="2"/>
+<text x="337" y="666">multirate</text>
+<rect x="402" y="657" width="10" height="10" fill="none" stroke="#c000c0" stroke-width="2"/>
+<text x="416" y="666">constant</text>
+</svg>

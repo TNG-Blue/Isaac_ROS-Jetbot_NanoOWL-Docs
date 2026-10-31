@@ -1,0 +1,227 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1211" height="851" viewBox="0 0 1211 851" font-family="Helvetica, Arial, sans-serif" font-size="10">
+<defs><marker id="a" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="context-stroke"/></marker></defs>
+<rect width="100%" height="100%" fill="#ffffff"/>
+<text x="12" y="20" font-size="13" font-weight="bold">FC Sensing</text>
+<text x="12" y="35" fill="#444">two IMUs → Mahony ×2 → dual fusion; 4 MT6835 encoders → rotor speed</text>
+<path d="M809.1,171.7 L819.1,171.7 L819.1,234.0 L728.3,234.0" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M694.3,234.0 L603.4,234.0 L603.4,171.7 L613.4,171.7" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M809.1,401.7 L819.1,401.7 L819.1,464.0 L728.3,464.0" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M694.3,464.0 L603.4,464.0 L603.4,401.7 L613.4,401.7" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M804.2,701.7 L814.2,701.7 L814.2,764.0 L725.8,764.0" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M691.8,764.0 L603.4,764.0 L603.4,701.7 L613.4,701.7" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M1062.9,315.8 L1072.9,315.8 L1072.9,382.0 L985.0,382.0" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M951.0,382.0 L863.1,382.0 L863.1,320.4 L873.1,320.4" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M54.0,118.0 L106.0,118.0 L106.0,114.0 L118.0,114.0" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M54.0,118.0 L106.0,118.0 L106.0,164.0 L118.0,164.0" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M181.6,114.0 L383.4,114.0 L383.4,111.8 L395.4,111.8" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M181.6,164.0 L376.4,164.0 L376.4,135.4 L395.4,135.4" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M170.4,218.0 L369.4,218.0 L369.4,159.0 L395.4,159.0" fill="none" stroke="#c000c0" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M152.0,260.0 L362.4,260.0 L362.4,182.6 L395.4,182.6" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M152.0,310.0 L355.4,310.0 L355.4,206.2 L395.4,206.2" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M181.6,114.0 L383.4,114.0 L383.4,341.8 L395.4,341.8" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M181.6,164.0 L376.4,164.0 L376.4,365.4 L395.4,365.4" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M170.4,418.0 L369.4,418.0 L369.4,389.0 L395.4,389.0" fill="none" stroke="#c000c0" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M152.0,460.0 L362.4,460.0 L362.4,412.6 L395.4,412.6" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M152.0,510.0 L355.4,510.0 L355.4,436.2 L395.4,436.2" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M549.4,119.7 L601.4,119.7 L601.4,122.3 L613.4,122.3" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M549.4,159.0 L594.4,159.0 L594.4,147.0 L613.4,147.0" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M809.1,122.3 L861.1,122.3 L861.1,181.6 L873.1,181.6" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M549.4,349.7 L601.4,349.7 L601.4,352.3 L613.4,352.3" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M549.4,389.0 L594.4,389.0 L594.4,377.0 L613.4,377.0" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M809.1,352.3 L840.1,352.3 L840.1,251.0 L873.1,251.0" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M549.4,119.7 L565.4,119.7 L565.4,62.0 L857.1,62.0 L857.1,204.7 L873.1,204.7" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M549.4,198.3 L569.4,198.3 L569.4,74.0 L853.1,74.0 L853.1,227.9 L873.1,227.9" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M549.4,349.7 L573.4,349.7 L573.4,580.0 L849.1,580.0 L849.1,274.1 L873.1,274.1" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M549.4,428.3 L577.4,428.3 L577.4,592.0 L845.1,592.0 L845.1,297.3 L873.1,297.3" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M54.0,668.0 L106.0,668.0 L106.0,658.0 L118.0,658.0" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M331.4,658.0 L601.4,658.0 L601.4,652.3 L613.4,652.3" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M148.0,725.0 L383.4,725.0 L383.4,724.0 L395.4,724.0" fill="none" stroke="#000000" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M435.4,724.0 L594.4,724.0 L594.4,677.0 L613.4,677.0" fill="none" stroke="#000000" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M1062.9,186.2 L1114.9,186.2 L1114.9,178.0 L1126.9,178.0" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M1062.9,218.6 L1114.9,218.6 L1114.9,228.0 L1126.9,228.0" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M1062.9,251.0 L1114.9,251.0 L1114.9,278.0 L1126.9,278.0" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M804.2,652.3 L1114.9,652.3 L1114.9,328.0 L1126.9,328.0" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M804.2,677.0 L1114.9,677.0 L1114.9,378.0 L1126.9,378.0" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M549.4,159.0 L577.4,159.0 L577.4,86.0 L1098.9,86.0 L1098.9,428.0 L1126.9,428.0" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
+<circle cx="565.4" cy="119.7" r="2.6" fill="#d62728"/>
+<circle cx="577.4" cy="159.0" r="2.6" fill="#d62728"/>
+<circle cx="573.4" cy="349.7" r="2.6" fill="#d62728"/>
+<rect x="24.0" y="110.0" width="30.0" height="16.0" rx="7" fill="#fff" stroke="#d62728" stroke-width="1.4"/>
+<text x="39.0" y="121.5" text-anchor="middle">1</text>
+<path d="M54.0,115.0 L59.0,118.0 L54.0,121.0 z" fill="#d62728"/>
+<text x="39.0" y="138.0" text-anchor="middle">y</text>
+<rect x="24.0" y="660.0" width="30.0" height="16.0" rx="7" fill="#fff" stroke="#d62728" stroke-width="1.4"/>
+<text x="39.0" y="671.5" text-anchor="middle">2</text>
+<path d="M54.0,665.0 L59.0,668.0 L54.0,671.0 z" fill="#d62728"/>
+<text x="39.0" y="688.0" text-anchor="middle">theta_rot</text>
+<rect x="1126.9" y="170.0" width="30.0" height="16.0" rx="7" fill="#fff" stroke="#d62728" stroke-width="1.4"/>
+<text x="1141.9" y="181.5" text-anchor="middle">1</text>
+<text x="1141.9" y="198.0" text-anchor="middle">q_fc</text>
+<rect x="1126.9" y="220.0" width="30.0" height="16.0" rx="7" fill="#fff" stroke="#d62728" stroke-width="1.4"/>
+<text x="1141.9" y="231.5" text-anchor="middle">2</text>
+<text x="1141.9" y="248.0" text-anchor="middle">g_fc</text>
+<rect x="1126.9" y="270.0" width="30.0" height="16.0" rx="7" fill="#fff" stroke="#d62728" stroke-width="1.4"/>
+<text x="1141.9" y="281.5" text-anchor="middle">3</text>
+<text x="1141.9" y="298.0" text-anchor="middle">fus_status</text>
+<rect x="1126.9" y="320.0" width="30.0" height="16.0" rx="7" fill="#fff" stroke="#d62728" stroke-width="1.4"/>
+<text x="1141.9" y="331.5" text-anchor="middle">4</text>
+<text x="1141.9" y="348.0" text-anchor="middle">w_meas</text>
+<rect x="1126.9" y="370.0" width="30.0" height="16.0" rx="7" fill="#fff" stroke="#d62728" stroke-width="1.4"/>
+<text x="1141.9" y="381.5" text-anchor="middle">5</text>
+<text x="1141.9" y="398.0" text-anchor="middle">w_ok</text>
+<rect x="1126.9" y="420.0" width="30.0" height="16.0" rx="7" fill="#fff" stroke="#d62728" stroke-width="1.4"/>
+<text x="1141.9" y="431.5" text-anchor="middle">6</text>
+<text x="1141.9" y="448.0" text-anchor="middle">accel</text>
+<rect x="118.0" y="100.0" width="63.6" height="28.0" fill="#fff" stroke="#d62728" stroke-width="1.4"/>
+<text x="149.8" y="117.5" text-anchor="middle">y(11:13)</text>
+<path d="M181.6,111.0 L186.6,114.0 L181.6,117.0 z" fill="#d62728"/>
+<text x="149.8" y="140.0" text-anchor="middle">ω body</text>
+<rect x="118.0" y="150.0" width="63.6" height="28.0" fill="#fff" stroke="#d62728" stroke-width="1.4"/>
+<text x="149.8" y="167.5" text-anchor="middle">y(14:16)</text>
+<path d="M181.6,161.0 L186.6,164.0 L181.6,167.0 z" fill="#d62728"/>
+<text x="149.8" y="190.0" text-anchor="middle">f body</text>
+<rect x="118.0" y="205.0" width="52.4" height="26.0" fill="#fff" stroke="#c000c0" stroke-width="1.4"/>
+<text x="144.2" y="221.5" text-anchor="middle">bias_a</text>
+<path d="M170.4,215.0 L175.4,218.0 L170.4,221.0 z" fill="#c000c0"/>
+<rect x="118.0" y="245.0" width="34.0" height="30.0" fill="#fff" stroke="#d62728" stroke-width="1.4"/>
+<polyline points="123.0,262.4 126.0,255.6 129.0,266.4 132.0,256.6 135.0,265.4 138.0,257.6 141.0,264.4 144.0,253.6 147.0,263.4" fill="none" stroke="#000"/>
+<path d="M152.0,257.0 L157.0,260.0 L152.0,263.0 z" fill="#d62728"/>
+<text x="135.0" y="287.0" text-anchor="middle">n_g</text>
+<rect x="118.0" y="295.0" width="34.0" height="30.0" fill="#fff" stroke="#d62728" stroke-width="1.4"/>
+<polyline points="123.0,312.4 126.0,305.6 129.0,316.4 132.0,306.6 135.0,315.4 138.0,307.6 141.0,314.4 144.0,303.6 147.0,313.4" fill="none" stroke="#000"/>
+<path d="M152.0,307.0 L157.0,310.0 L152.0,313.0 z" fill="#d62728"/>
+<text x="135.0" y="337.0" text-anchor="middle">n_a</text>
+<rect x="118.0" y="405.0" width="52.4" height="26.0" fill="#fff" stroke="#c000c0" stroke-width="1.4"/>
+<text x="144.2" y="421.5" text-anchor="middle">bias_b</text>
+<path d="M170.4,415.0 L175.4,418.0 L170.4,421.0 z" fill="#c000c0"/>
+<rect x="118.0" y="445.0" width="34.0" height="30.0" fill="#fff" stroke="#d62728" stroke-width="1.4"/>
+<polyline points="123.0,462.4 126.0,455.6 129.0,466.4 132.0,456.6 135.0,465.4 138.0,457.6 141.0,464.4 144.0,453.6 147.0,463.4" fill="none" stroke="#000"/>
+<path d="M152.0,457.0 L157.0,460.0 L152.0,463.0 z" fill="#d62728"/>
+<text x="135.0" y="487.0" text-anchor="middle">n_g</text>
+<rect x="118.0" y="495.0" width="34.0" height="30.0" fill="#fff" stroke="#d62728" stroke-width="1.4"/>
+<polyline points="123.0,512.4 126.0,505.6 129.0,516.4 132.0,506.6 135.0,515.4 138.0,507.6 141.0,514.4 144.0,503.6 147.0,513.4" fill="none" stroke="#000"/>
+<path d="M152.0,507.0 L157.0,510.0 L152.0,513.0 z" fill="#d62728"/>
+<text x="135.0" y="537.0" text-anchor="middle">n_a</text>
+<rect x="118.0" y="640.0" width="213.4" height="36.0" fill="#fff" stroke="#d62728" stroke-width="1.6"/>
+<text x="224.7" y="661.5" text-anchor="middle" fill="#7a7a7a" font-size="9">sens_mt6835_encoder</text>
+<text x="122.0" y="661.5" text-anchor="start">theta_m</text>
+<text x="327.4" y="661.5" text-anchor="end">count</text>
+<path d="M331.4,655.0 L336.4,658.0 L331.4,661.0 z" fill="#d62728"/>
+<text x="224.7" y="688.0" text-anchor="middle">MT6835 ×4</text>
+<rect x="118.0" y="710.0" width="30.0" height="30.0" fill="#fff" stroke="#000000" stroke-width="1.4"/>
+<circle cx="133.0" cy="725.0" r="9" fill="none" stroke="#000"/>
+<path d="M133.0,719.0 L133.0,725.0 L138.0,727.0" stroke="#000" fill="none"/>
+<path d="M148.0,722.0 L153.0,725.0 L148.0,728.0 z" fill="#000000"/>
+<text x="133.0" y="752.0" text-anchor="middle">Clock</text>
+<rect x="395.4" y="710.0" width="40.0" height="28.0" fill="#fff" stroke="#000000" stroke-width="1.4"/>
+<text x="415.4" y="727.5" text-anchor="middle">×1e6</text>
+<path d="M435.4,721.0 L440.4,724.0 L435.4,727.0 z" fill="#000000"/>
+<text x="415.4" y="750.0" text-anchor="middle">t [µs]</text>
+<rect x="395.4" y="100.0" width="154.0" height="118.0" fill="#fff" stroke="#d62728" stroke-width="1.6"/>
+<text x="472.4" y="162.5" text-anchor="middle" fill="#7a7a7a" font-size="9">sens_imu</text>
+<text x="399.4" y="115.3" text-anchor="start">omega_b</text>
+<text x="399.4" y="138.9" text-anchor="start">f_b</text>
+<text x="399.4" y="162.5" text-anchor="start">bias_g</text>
+<text x="399.4" y="186.1" text-anchor="start">n_g</text>
+<text x="399.4" y="209.7" text-anchor="start">n_a</text>
+<text x="545.4" y="123.2" text-anchor="end">gyro</text>
+<text x="545.4" y="162.5" text-anchor="end">accel</text>
+<text x="545.4" y="201.8" text-anchor="end">valid</text>
+<path d="M549.4,116.7 L554.4,119.7 L549.4,122.7 z" fill="#d62728"/>
+<path d="M549.4,156.0 L554.4,159.0 L549.4,162.0 z" fill="#d62728"/>
+<path d="M549.4,195.3 L554.4,198.3 L549.4,201.3 z" fill="#d62728"/>
+<text x="472.4" y="230.0" text-anchor="middle">IMU A (BNO08x)</text>
+<text x="472.4" y="241.0" text-anchor="middle" fill="#6a6a6a" font-size="8.5">param: P.imu_a</text>
+<rect x="395.4" y="330.0" width="154.0" height="118.0" fill="#fff" stroke="#d62728" stroke-width="1.6"/>
+<text x="472.4" y="392.5" text-anchor="middle" fill="#7a7a7a" font-size="9">sens_imu</text>
+<text x="399.4" y="345.3" text-anchor="start">omega_b</text>
+<text x="399.4" y="368.9" text-anchor="start">f_b</text>
+<text x="399.4" y="392.5" text-anchor="start">bias_g</text>
+<text x="399.4" y="416.1" text-anchor="start">n_g</text>
+<text x="399.4" y="439.7" text-anchor="start">n_a</text>
+<text x="545.4" y="353.2" text-anchor="end">gyro</text>
+<text x="545.4" y="392.5" text-anchor="end">accel</text>
+<text x="545.4" y="431.8" text-anchor="end">valid</text>
+<path d="M549.4,346.7 L554.4,349.7 L549.4,352.7 z" fill="#d62728"/>
+<path d="M549.4,386.0 L554.4,389.0 L549.4,392.0 z" fill="#d62728"/>
+<path d="M549.4,425.3 L554.4,428.3 L549.4,431.3 z" fill="#d62728"/>
+<text x="472.4" y="460.0" text-anchor="middle">IMU B (BNO055)</text>
+<text x="472.4" y="471.0" text-anchor="middle" fill="#6a6a6a" font-size="8.5">param: P.imu_b</text>
+<rect x="613.4" y="110.0" width="195.7" height="74.0" fill="#fff" stroke="#d62728" stroke-width="1.6"/>
+<text x="711.3" y="150.5" text-anchor="middle" fill="#7a7a7a" font-size="9">est_attitude_mahony</text>
+<text x="617.4" y="125.8" text-anchor="start">gyro</text>
+<text x="617.4" y="150.5" text-anchor="start">accel</text>
+<text x="617.4" y="175.2" text-anchor="start">S</text>
+<text x="805.1" y="125.8" text-anchor="end">q</text>
+<text x="805.1" y="150.5" text-anchor="end">bias</text>
+<text x="805.1" y="175.2" text-anchor="end">S</text>
+<path d="M809.1,119.3 L814.1,122.3 L809.1,125.3 z" fill="#d62728"/>
+<path d="M809.1,144.0 L814.1,147.0 L809.1,150.0 z" fill="#d62728"/>
+<path d="M809.1,168.7 L814.1,171.7 L809.1,174.7 z" fill="#d62728"/>
+<text x="711.3" y="196.0" text-anchor="middle">Mahony A</text>
+<text x="711.3" y="207.0" text-anchor="middle" fill="#6a6a6a" font-size="8.5">param: P.mahony</text>
+<rect x="694.3" y="219.0" width="34.0" height="30.0" fill="#fff" stroke="#d62728" stroke-width="1.4"/>
+<text x="711.3" y="237.5" text-anchor="middle">1/z</text>
+<path d="M694.3,231.0 L689.3,234.0 L694.3,237.0 z" fill="#d62728"/>
+<rect x="613.4" y="340.0" width="195.7" height="74.0" fill="#fff" stroke="#d62728" stroke-width="1.6"/>
+<text x="711.3" y="380.5" text-anchor="middle" fill="#7a7a7a" font-size="9">est_attitude_mahony</text>
+<text x="617.4" y="355.8" text-anchor="start">gyro</text>
+<text x="617.4" y="380.5" text-anchor="start">accel</text>
+<text x="617.4" y="405.2" text-anchor="start">S</text>
+<text x="805.1" y="355.8" text-anchor="end">q</text>
+<text x="805.1" y="380.5" text-anchor="end">bias</text>
+<text x="805.1" y="405.2" text-anchor="end">S</text>
+<path d="M809.1,349.3 L814.1,352.3 L809.1,355.3 z" fill="#d62728"/>
+<path d="M809.1,374.0 L814.1,377.0 L809.1,380.0 z" fill="#d62728"/>
+<path d="M809.1,398.7 L814.1,401.7 L809.1,404.7 z" fill="#d62728"/>
+<text x="711.3" y="426.0" text-anchor="middle">Mahony B</text>
+<text x="711.3" y="437.0" text-anchor="middle" fill="#6a6a6a" font-size="8.5">param: P.mahony</text>
+<rect x="694.3" y="449.0" width="34.0" height="30.0" fill="#fff" stroke="#d62728" stroke-width="1.4"/>
+<text x="711.3" y="467.5" text-anchor="middle">1/z</text>
+<path d="M694.3,461.0 L689.3,464.0 L694.3,467.0 z" fill="#d62728"/>
+<rect x="613.4" y="640.0" width="190.8" height="74.0" fill="#fff" stroke="#d62728" stroke-width="1.6"/>
+<text x="708.8" y="680.5" text-anchor="middle" fill="#7a7a7a" font-size="9">est_encoder_speed</text>
+<text x="617.4" y="655.8" text-anchor="start">count</text>
+<text x="617.4" y="680.5" text-anchor="start">t_us</text>
+<text x="617.4" y="705.2" text-anchor="start">S</text>
+<text x="800.2" y="655.8" text-anchor="end">w</text>
+<text x="800.2" y="680.5" text-anchor="end">valid</text>
+<text x="800.2" y="705.2" text-anchor="end">S</text>
+<path d="M804.2,649.3 L809.2,652.3 L804.2,655.3 z" fill="#d62728"/>
+<path d="M804.2,674.0 L809.2,677.0 L804.2,680.0 z" fill="#d62728"/>
+<path d="M804.2,698.7 L809.2,701.7 L804.2,704.7 z" fill="#d62728"/>
+<text x="708.8" y="726.0" text-anchor="middle">rotor speed</text>
+<text x="708.8" y="737.0" text-anchor="middle" fill="#6a6a6a" font-size="8.5">param: P.enc</text>
+<rect x="691.8" y="749.0" width="34.0" height="30.0" fill="#fff" stroke="#d62728" stroke-width="1.4"/>
+<text x="708.8" y="767.5" text-anchor="middle">1/z</text>
+<path d="M691.8,761.0 L686.8,764.0 L691.8,767.0 z" fill="#d62728"/>
+<rect x="873.1" y="170.0" width="189.8" height="162.0" fill="#fff" stroke="#d62728" stroke-width="1.6"/>
+<text x="968.0" y="254.5" text-anchor="middle" fill="#7a7a7a" font-size="9">est_imu_dual_fusion</text>
+<text x="877.1" y="185.1" text-anchor="start">qa</text>
+<text x="877.1" y="208.2" text-anchor="start">ga</text>
+<text x="877.1" y="231.4" text-anchor="start">va</text>
+<text x="877.1" y="254.5" text-anchor="start">qb</text>
+<text x="877.1" y="277.6" text-anchor="start">gb</text>
+<text x="877.1" y="300.8" text-anchor="start">vb</text>
+<text x="877.1" y="323.9" text-anchor="start">S</text>
+<text x="1058.9" y="189.7" text-anchor="end">q</text>
+<text x="1058.9" y="222.1" text-anchor="end">gyro</text>
+<text x="1058.9" y="254.5" text-anchor="end">status</text>
+<text x="1058.9" y="286.9" text-anchor="end">angle</text>
+<text x="1058.9" y="319.3" text-anchor="end">S</text>
+<path d="M1062.9,183.2 L1067.9,186.2 L1062.9,189.2 z" fill="#d62728"/>
+<path d="M1062.9,215.6 L1067.9,218.6 L1062.9,221.6 z" fill="#d62728"/>
+<path d="M1062.9,248.0 L1067.9,251.0 L1062.9,254.0 z" fill="#d62728"/>
+<path d="M1062.9,280.4 L1067.9,283.4 L1062.9,286.4 z" fill="#d62728"/>
+<path d="M1062.9,312.8 L1067.9,315.8 L1062.9,318.8 z" fill="#d62728"/>
+<text x="968.0" y="344.0" text-anchor="middle">dual IMU fusion</text>
+<text x="968.0" y="355.0" text-anchor="middle" fill="#6a6a6a" font-size="8.5">param: P.fusion</text>
+<rect x="951.0" y="367.0" width="34.0" height="30.0" fill="#fff" stroke="#d62728" stroke-width="1.4"/>
+<text x="968.0" y="385.5" text-anchor="middle">1/z</text>
+<path d="M951.0,379.0 L946.0,382.0 L951.0,385.0 z" fill="#d62728"/>
+<text x="12" y="835" fill="#444">Sample time colours:</text>
+<rect x="124" y="826" width="10" height="10" fill="none" stroke="#d62728" stroke-width="2"/>
+<text x="138" y="835">1 kHz (1 ms)</text>
+<rect x="220" y="826" width="10" height="10" fill="none" stroke="#c000c0" stroke-width="2"/>
+<text x="234" y="835">constant</text>
+</svg>

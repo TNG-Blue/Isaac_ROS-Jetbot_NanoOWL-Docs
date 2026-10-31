@@ -1,0 +1,244 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1098" height="1228" viewBox="0 0 1098 1228" font-family="Helvetica, Arial, sans-serif" font-size="10">
+<defs><marker id="a" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="context-stroke"/></marker></defs>
+<rect width="100%" height="100%" fill="#ffffff"/>
+<text x="12" y="20" font-size="13" font-weight="bold">jetowl_system — the four repositories in one model</text>
+<text x="12" y="35" fill="#444">devices (yellow) talk only through the network subsystems; each subsystem is drawn below</text>
+<path d="M542.0,312.3 L594.0,312.3 L594.0,550.0 L606.0,550.0" fill="none" stroke="#c9a400" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M736.0,535.0 L808.0,535.0 L808.0,535.0 L820.0,535.0" fill="none" stroke="#c9a400" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M736.0,565.0 L808.0,565.0 L808.0,595.0 L820.0,595.0" fill="none" stroke="#c9a400" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M736.0,535.0 L1002.0,535.0 L1002.0,535.0 L1014.0,535.0" fill="none" stroke="#c9a400" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M854.0,535.0 L882.0,535.0 L882.0,930.0 L384.0,930.0 L384.0,326.7 L412.0,326.7" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M854.0,595.0 L866.0,595.0 L866.0,942.0 L400.0,942.0 L400.0,380.0 L412.0,380.0" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M854.0,535.0 L870.0,535.0 L870.0,954.0 L804.0,954.0 L804.0,152.5 L820.0,152.5" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M542.0,336.9 L594.0,336.9 L594.0,71.9 L606.0,71.9" fill="none" stroke="#c9a400" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M542.0,361.5 L587.0,361.5 L587.0,95.6 L606.0,95.6" fill="none" stroke="#c9a400" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M542.0,386.2 L580.0,386.2 L580.0,119.4 L606.0,119.4" fill="none" stroke="#c9a400" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M542.0,410.8 L573.0,410.8 L573.0,143.1 L606.0,143.1" fill="none" stroke="#c9a400" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M542.0,435.4 L566.0,435.4 L566.0,166.9 L606.0,166.9" fill="none" stroke="#c9a400" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M542.0,460.0 L559.0,460.0 L559.0,190.6 L606.0,190.6" fill="none" stroke="#c9a400" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M542.0,484.6 L552.0,484.6 L552.0,214.4 L606.0,214.4" fill="none" stroke="#c9a400" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M542.0,509.2 L552.0,509.2 L552.0,238.1 L606.0,238.1" fill="none" stroke="#c9a400" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M542.0,533.8 L552.0,533.8 L552.0,261.9 L606.0,261.9" fill="none" stroke="#c9a400" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M542.0,558.5 L552.0,558.5 L552.0,285.6 L606.0,285.6" fill="none" stroke="#c9a400" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M950.0,156.7 L970.0,156.7 L970.0,966.0 L586.0,966.0 L586.0,309.4 L606.0,309.4" fill="none" stroke="#c9a400" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M950.0,190.0 L974.0,190.0 L974.0,978.0 L582.0,978.0 L582.0,333.1 L606.0,333.1" fill="none" stroke="#c9a400" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M154.0,55.0 L510.0,55.0 L510.0,356.9 L606.0,356.9" fill="none" stroke="#c9a400" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M154.0,85.0 L503.0,85.0 L503.0,380.6 L606.0,380.6" fill="none" stroke="#c9a400" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M950.0,223.3 L966.0,223.3 L966.0,990.0 L590.0,990.0 L590.0,404.4 L606.0,404.4" fill="none" stroke="#c9a400" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M950.0,256.7 L970.0,256.7 L970.0,1002.0 L586.0,1002.0 L586.0,428.1 L606.0,428.1" fill="none" stroke="#c9a400" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M756.0,79.0 L801.0,79.0 L801.0,177.5 L820.0,177.5" fill="none" stroke="#c9a400" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M756.0,117.0 L794.0,117.0 L794.0,202.5 L820.0,202.5" fill="none" stroke="#c9a400" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M756.0,155.0 L787.0,155.0 L787.0,227.5 L820.0,227.5" fill="none" stroke="#c9a400" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M756.0,193.0 L780.0,193.0 L780.0,252.5 L820.0,252.5" fill="none" stroke="#c9a400" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M756.0,231.0 L773.0,231.0 L773.0,277.5 L820.0,277.5" fill="none" stroke="#c9a400" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M756.0,345.0 L766.0,345.0 L766.0,302.5 L820.0,302.5" fill="none" stroke="#c9a400" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M756.0,383.0 L766.0,383.0 L766.0,327.5 L820.0,327.5" fill="none" stroke="#c9a400" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M756.0,269.0 L768.0,269.0 L768.0,1014.0 L400.0,1014.0 L400.0,433.3 L412.0,433.3" fill="none" stroke="#c9a400" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M756.0,307.0 L772.0,307.0 L772.0,1026.0 L396.0,1026.0 L396.0,486.7 L412.0,486.7" fill="none" stroke="#c9a400" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M756.0,421.0 L776.0,421.0 L776.0,1038.0 L4.0,1038.0 L4.0,70.0 L24.0,70.0" fill="none" stroke="#c9a400" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M154.0,533.8 L206.0,533.8 L206.0,553.8 L218.0,553.8" fill="none" stroke="#c9a400" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M154.0,561.2 L199.0,561.2 L199.0,581.2 L218.0,581.2" fill="none" stroke="#c9a400" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M542.0,583.1 L554.0,583.1 L554.0,1050.0 L206.0,1050.0 L206.0,608.8 L218.0,608.8" fill="none" stroke="#c9a400" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M542.0,607.7 L558.0,607.7 L558.0,1062.0 L202.0,1062.0 L202.0,636.2 L218.0,636.2" fill="none" stroke="#c9a400" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M348.0,553.8 L372.0,553.8 L372.0,540.0 L412.0,540.0" fill="none" stroke="#c9a400" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M348.0,581.2 L365.0,581.2 L365.0,593.3 L412.0,593.3" fill="none" stroke="#c9a400" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M348.0,608.8 L376.0,608.8 L376.0,1074.0 L-4.0,1074.0 L-4.0,533.8 L24.0,533.8" fill="none" stroke="#c9a400" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M348.0,636.2 L360.0,636.2 L360.0,1086.0 L12.0,1086.0 L12.0,561.2 L24.0,561.2" fill="none" stroke="#c9a400" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M154.0,787.5 L206.0,787.5 L206.0,752.5 L218.0,752.5" fill="none" stroke="#c9a400" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M154.0,842.5 L199.0,842.5 L199.0,777.5 L218.0,777.5" fill="none" stroke="#c9a400" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M154.0,588.8 L192.0,588.8 L192.0,802.5 L218.0,802.5" fill="none" stroke="#c9a400" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M154.0,616.2 L185.0,616.2 L185.0,827.5 L218.0,827.5" fill="none" stroke="#c9a400" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M950.0,290.0 L962.0,290.0 L962.0,1098.0 L206.0,1098.0 L206.0,852.5 L218.0,852.5" fill="none" stroke="#c9a400" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M950.0,323.3 L966.0,323.3 L966.0,1110.0 L202.0,1110.0 L202.0,877.5 L218.0,877.5" fill="none" stroke="#c9a400" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M348.0,752.5 L368.0,752.5 L368.0,1122.0 L4.0,1122.0 L4.0,588.8 L24.0,588.8" fill="none" stroke="#c9a400" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M348.0,777.5 L372.0,777.5 L372.0,1134.0 L0.0,1134.0 L0.0,616.2 L24.0,616.2" fill="none" stroke="#c9a400" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M348.0,802.5 L376.0,802.5 L376.0,1146.0 L-4.0,1146.0 L-4.0,773.8 L24.0,773.8" fill="none" stroke="#c9a400" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M348.0,827.5 L360.0,827.5 L360.0,1158.0 L12.0,1158.0 L12.0,801.2 L24.0,801.2" fill="none" stroke="#c9a400" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M348.0,852.5 L364.0,852.5 L364.0,1170.0 L8.0,1170.0 L8.0,828.8 L24.0,828.8" fill="none" stroke="#c9a400" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M348.0,877.5 L368.0,877.5 L368.0,1182.0 L4.0,1182.0 L4.0,856.2 L24.0,856.2" fill="none" stroke="#c9a400" stroke-width="1.2" marker-end="url(#a)"/>
+<circle cx="808.0" cy="535.0" r="2.6" fill="#c9a400"/>
+<circle cx="870.0" cy="535.0" r="2.6" fill="#d62728"/>
+<rect x="24.0" y="520.0" width="130.0" height="110.0" fill="#fff7c8" stroke="#c9a400" stroke-width="2"/>
+<text x="28.0" y="537.2" text-anchor="start">dl</text>
+<text x="28.0" y="564.8" text-anchor="start">dl_new</text>
+<text x="28.0" y="592.2" text-anchor="start">ph</text>
+<text x="28.0" y="619.8" text-anchor="start">ph_new</text>
+<text x="150.0" y="537.2" text-anchor="end">ul</text>
+<text x="150.0" y="564.8" text-anchor="end">ul_s</text>
+<text x="150.0" y="592.2" text-anchor="end">st</text>
+<text x="150.0" y="619.8" text-anchor="end">st_s</text>
+<path d="M154.0,530.8 L159.0,533.8 L154.0,536.8 z" fill="#c9a400"/>
+<path d="M154.0,558.2 L159.0,561.2 L154.0,564.2 z" fill="#c9a400"/>
+<path d="M154.0,585.8 L159.0,588.8 L154.0,591.8 z" fill="#c9a400"/>
+<path d="M154.0,613.2 L159.0,616.2 L154.0,619.2 z" fill="#c9a400"/>
+<text x="89.0" y="642.0" text-anchor="middle">Remote UAV</text>
+<rect x="24.0" y="760.0" width="130.0" height="110.0" fill="#fff7c8" stroke="#c9a400" stroke-width="2"/>
+<text x="28.0" y="777.2" text-anchor="start">st</text>
+<text x="28.0" y="804.8" text-anchor="start">st_new</text>
+<text x="28.0" y="832.2" text-anchor="start">hb</text>
+<text x="28.0" y="859.8" text-anchor="start">hb_new</text>
+<text x="150.0" y="791.0" text-anchor="end">ph</text>
+<text x="150.0" y="846.0" text-anchor="end">ph_s</text>
+<path d="M154.0,784.5 L159.0,787.5 L154.0,790.5 z" fill="#c9a400"/>
+<path d="M154.0,839.5 L159.0,842.5 L154.0,845.5 z" fill="#c9a400"/>
+<text x="89.0" y="882.0" text-anchor="middle">JetbotNanoOWL phone</text>
+<rect x="24.0" y="40.0" width="130.0" height="60.0" fill="#fff7c8" stroke="#c9a400" stroke-width="2"/>
+<text x="28.0" y="73.5" text-anchor="start">mode</text>
+<text x="150.0" y="58.5" text-anchor="end">img</text>
+<text x="150.0" y="88.5" text-anchor="end">img_s</text>
+<path d="M154.0,52.0 L159.0,55.0 L154.0,58.0 z" fill="#c9a400"/>
+<path d="M154.0,82.0 L159.0,85.0 L154.0,88.0 z" fill="#c9a400"/>
+<text x="89.0" y="112.0" text-anchor="middle">JetOwl Vision</text>
+<rect x="218.0" y="740.0" width="130.0" height="150.0" fill="#fff7c8" stroke="#c9a400" stroke-width="2"/>
+<text x="222.0" y="756.0" text-anchor="start">ph</text>
+<text x="222.0" y="781.0" text-anchor="start">ph_s</text>
+<text x="222.0" y="806.0" text-anchor="start">st</text>
+<text x="222.0" y="831.0" text-anchor="start">st_s</text>
+<text x="222.0" y="856.0" text-anchor="start">hb</text>
+<text x="222.0" y="881.0" text-anchor="start">hb_s</text>
+<text x="344.0" y="756.0" text-anchor="end">ph_rx</text>
+<text x="344.0" y="781.0" text-anchor="end">ph_new</text>
+<text x="344.0" y="806.0" text-anchor="end">st_rx</text>
+<text x="344.0" y="831.0" text-anchor="end">st_new</text>
+<text x="344.0" y="856.0" text-anchor="end">hb_rx</text>
+<text x="344.0" y="881.0" text-anchor="end">hb_new</text>
+<path d="M348.0,749.5 L353.0,752.5 L348.0,755.5 z" fill="#c9a400"/>
+<path d="M348.0,774.5 L353.0,777.5 L348.0,780.5 z" fill="#c9a400"/>
+<path d="M348.0,799.5 L353.0,802.5 L348.0,805.5 z" fill="#c9a400"/>
+<path d="M348.0,824.5 L353.0,827.5 L348.0,830.5 z" fill="#c9a400"/>
+<path d="M348.0,849.5 L353.0,852.5 L348.0,855.5 z" fill="#c9a400"/>
+<path d="M348.0,874.5 L353.0,877.5 L348.0,880.5 z" fill="#c9a400"/>
+<text x="283.0" y="902.0" text-anchor="middle">Phone links</text>
+<rect x="218.0" y="540.0" width="130.0" height="110.0" fill="#fff7c8" stroke="#c9a400" stroke-width="2"/>
+<text x="222.0" y="557.2" text-anchor="start">ul</text>
+<text x="222.0" y="584.8" text-anchor="start">ul_s</text>
+<text x="222.0" y="612.2" text-anchor="start">dl</text>
+<text x="222.0" y="639.8" text-anchor="start">dl_s</text>
+<text x="344.0" y="557.2" text-anchor="end">ul_rx</text>
+<text x="344.0" y="584.8" text-anchor="end">ul_new</text>
+<text x="344.0" y="612.2" text-anchor="end">dl_rx</text>
+<text x="344.0" y="639.8" text-anchor="end">dl_new</text>
+<path d="M348.0,550.8 L353.0,553.8 L348.0,556.8 z" fill="#c9a400"/>
+<path d="M348.0,578.2 L353.0,581.2 L348.0,584.2 z" fill="#c9a400"/>
+<path d="M348.0,605.8 L353.0,608.8 L348.0,611.8 z" fill="#c9a400"/>
+<path d="M348.0,633.2 L353.0,636.2 L348.0,639.2 z" fill="#c9a400"/>
+<text x="283.0" y="662.0" text-anchor="middle">LoRa LR1121</text>
+<rect x="412.0" y="300.0" width="130.0" height="320.0" fill="#fff7c8" stroke="#c9a400" stroke-width="2"/>
+<text x="416.0" y="330.2" text-anchor="start">y</text>
+<text x="416.0" y="383.5" text-anchor="start">theta_rot</text>
+<text x="416.0" y="436.8" text-anchor="start">sp</text>
+<text x="416.0" y="490.2" text-anchor="start">sp_new</text>
+<text x="416.0" y="543.5" text-anchor="start">ul</text>
+<text x="416.0" y="596.8" text-anchor="start">ul_new</text>
+<text x="538.0" y="315.8" text-anchor="end">u_thr</text>
+<text x="538.0" y="340.4" text-anchor="end">imu</text>
+<text x="538.0" y="365.0" text-anchor="end">imu_s</text>
+<text x="538.0" y="389.7" text-anchor="end">gnss</text>
+<text x="538.0" y="414.3" text-anchor="end">gnss_s</text>
+<text x="538.0" y="438.9" text-anchor="end">baro</text>
+<text x="538.0" y="463.5" text-anchor="end">baro_s</text>
+<text x="538.0" y="488.1" text-anchor="end">fb</text>
+<text x="538.0" y="512.7" text-anchor="end">fb_s</text>
+<text x="538.0" y="537.3" text-anchor="end">mis</text>
+<text x="538.0" y="562.0" text-anchor="end">mis_s</text>
+<text x="538.0" y="586.6" text-anchor="end">dl</text>
+<text x="538.0" y="611.2" text-anchor="end">dl_s</text>
+<path d="M542.0,309.3 L547.0,312.3 L542.0,315.3 z" fill="#c9a400"/>
+<path d="M542.0,333.9 L547.0,336.9 L542.0,339.9 z" fill="#c9a400"/>
+<path d="M542.0,358.5 L547.0,361.5 L542.0,364.5 z" fill="#c9a400"/>
+<path d="M542.0,383.2 L547.0,386.2 L542.0,389.2 z" fill="#c9a400"/>
+<path d="M542.0,407.8 L547.0,410.8 L542.0,413.8 z" fill="#c9a400"/>
+<path d="M542.0,432.4 L547.0,435.4 L542.0,438.4 z" fill="#c9a400"/>
+<path d="M542.0,457.0 L547.0,460.0 L542.0,463.0 z" fill="#c9a400"/>
+<path d="M542.0,481.6 L547.0,484.6 L542.0,487.6 z" fill="#c9a400"/>
+<path d="M542.0,506.2 L547.0,509.2 L542.0,512.2 z" fill="#c9a400"/>
+<path d="M542.0,530.8 L547.0,533.8 L542.0,536.8 z" fill="#c9a400"/>
+<path d="M542.0,555.5 L547.0,558.5 L542.0,561.5 z" fill="#c9a400"/>
+<path d="M542.0,580.1 L547.0,583.1 L542.0,586.1 z" fill="#c9a400"/>
+<path d="M542.0,604.7 L547.0,607.7 L542.0,610.7 z" fill="#c9a400"/>
+<text x="477.0" y="632.0" text-anchor="middle">JetOwl FC</text>
+<rect x="606.0" y="60.0" width="150.0" height="380.0" fill="#fff7c8" stroke="#c9a400" stroke-width="2"/>
+<text x="610.0" y="75.4" text-anchor="start">imu</text>
+<text x="610.0" y="99.1" text-anchor="start">imu_s</text>
+<text x="610.0" y="122.9" text-anchor="start">gnss</text>
+<text x="610.0" y="146.6" text-anchor="start">gnss_s</text>
+<text x="610.0" y="170.4" text-anchor="start">baro</text>
+<text x="610.0" y="194.1" text-anchor="start">baro_s</text>
+<text x="610.0" y="217.9" text-anchor="start">fb</text>
+<text x="610.0" y="241.6" text-anchor="start">fb_s</text>
+<text x="610.0" y="265.4" text-anchor="start">mis</text>
+<text x="610.0" y="289.1" text-anchor="start">mis_s</text>
+<text x="610.0" y="312.9" text-anchor="start">sp</text>
+<text x="610.0" y="336.6" text-anchor="start">sp_s</text>
+<text x="610.0" y="360.4" text-anchor="start">img</text>
+<text x="610.0" y="384.1" text-anchor="start">img_s</text>
+<text x="610.0" y="407.9" text-anchor="start">mode</text>
+<text x="610.0" y="431.6" text-anchor="start">mode_s</text>
+<text x="752.0" y="82.5" text-anchor="end">imu_rx</text>
+<text x="752.0" y="120.5" text-anchor="end">gnss_rx</text>
+<text x="752.0" y="158.5" text-anchor="end">baro_rx</text>
+<text x="752.0" y="196.5" text-anchor="end">fb_rx</text>
+<text x="752.0" y="234.5" text-anchor="end">mis_rx</text>
+<text x="752.0" y="272.5" text-anchor="end">sp_rx</text>
+<text x="752.0" y="310.5" text-anchor="end">sp_new</text>
+<text x="752.0" y="348.5" text-anchor="end">img_rx</text>
+<text x="752.0" y="386.5" text-anchor="end">img_new</text>
+<text x="752.0" y="424.5" text-anchor="end">mode_rx</text>
+<path d="M756.0,76.0 L761.0,79.0 L756.0,82.0 z" fill="#c9a400"/>
+<path d="M756.0,114.0 L761.0,117.0 L756.0,120.0 z" fill="#c9a400"/>
+<path d="M756.0,152.0 L761.0,155.0 L756.0,158.0 z" fill="#c9a400"/>
+<path d="M756.0,190.0 L761.0,193.0 L756.0,196.0 z" fill="#c9a400"/>
+<path d="M756.0,228.0 L761.0,231.0 L756.0,234.0 z" fill="#c9a400"/>
+<path d="M756.0,266.0 L761.0,269.0 L756.0,272.0 z" fill="#c9a400"/>
+<path d="M756.0,304.0 L761.0,307.0 L756.0,310.0 z" fill="#c9a400"/>
+<path d="M756.0,342.0 L761.0,345.0 L756.0,348.0 z" fill="#c9a400"/>
+<path d="M756.0,380.0 L761.0,383.0 L756.0,386.0 z" fill="#c9a400"/>
+<path d="M756.0,418.0 L761.0,421.0 L756.0,424.0 z" fill="#c9a400"/>
+<text x="681.0" y="452.0" text-anchor="middle">Ethernet (micro-ROS)</text>
+<rect x="820.0" y="140.0" width="130.0" height="200.0" fill="#fff7c8" stroke="#c9a400" stroke-width="2"/>
+<text x="824.0" y="156.0" text-anchor="start">y</text>
+<text x="824.0" y="181.0" text-anchor="start">imu</text>
+<text x="824.0" y="206.0" text-anchor="start">gnss</text>
+<text x="824.0" y="231.0" text-anchor="start">baro</text>
+<text x="824.0" y="256.0" text-anchor="start">fb</text>
+<text x="824.0" y="281.0" text-anchor="start">mis</text>
+<text x="824.0" y="306.0" text-anchor="start">img</text>
+<text x="824.0" y="331.0" text-anchor="start">img_new</text>
+<text x="946.0" y="160.2" text-anchor="end">sp</text>
+<text x="946.0" y="193.5" text-anchor="end">sp_s</text>
+<text x="946.0" y="226.8" text-anchor="end">mode</text>
+<text x="946.0" y="260.2" text-anchor="end">mode_s</text>
+<text x="946.0" y="293.5" text-anchor="end">hb</text>
+<text x="946.0" y="326.8" text-anchor="end">hb_s</text>
+<path d="M950.0,153.7 L955.0,156.7 L950.0,159.7 z" fill="#c9a400"/>
+<path d="M950.0,187.0 L955.0,190.0 L950.0,193.0 z" fill="#c9a400"/>
+<path d="M950.0,220.3 L955.0,223.3 L950.0,226.3 z" fill="#c9a400"/>
+<path d="M950.0,253.7 L955.0,256.7 L950.0,259.7 z" fill="#c9a400"/>
+<path d="M950.0,287.0 L955.0,290.0 L950.0,293.0 z" fill="#c9a400"/>
+<path d="M950.0,320.3 L955.0,323.3 L950.0,326.3 z" fill="#c9a400"/>
+<text x="885.0" y="352.0" text-anchor="middle">Isaac ROS Jetson</text>
+<rect x="606.0" y="520.0" width="130.0" height="60.0" fill="#fff7c8" stroke="#c9a400" stroke-width="2"/>
+<text x="610.0" y="553.5" text-anchor="start">u_thr</text>
+<text x="732.0" y="538.5" text-anchor="end">y</text>
+<text x="732.0" y="568.5" text-anchor="end">theta_rot</text>
+<path d="M736.0,532.0 L741.0,535.0 L736.0,538.0 z" fill="#c9a400"/>
+<path d="M736.0,562.0 L741.0,565.0 L736.0,568.0 z" fill="#c9a400"/>
+<text x="671.0" y="592.0" text-anchor="middle">UAV plant</text>
+<rect x="820.0" y="520.0" width="34.0" height="30.0" fill="#fff" stroke="#d62728" stroke-width="1.4"/>
+<text x="837.0" y="538.5" text-anchor="middle">1/z</text>
+<path d="M854.0,532.0 L859.0,535.0 L854.0,538.0 z" fill="#d62728"/>
+<text x="837.0" y="562.0" text-anchor="middle">y(k−1)</text>
+<rect x="820.0" y="580.0" width="34.0" height="30.0" fill="#fff" stroke="#d62728" stroke-width="1.4"/>
+<text x="837.0" y="598.5" text-anchor="middle">1/z</text>
+<path d="M854.0,592.0 L859.0,595.0 L854.0,598.0 z" fill="#d62728"/>
+<text x="837.0" y="622.0" text-anchor="middle">θ(k−1)</text>
+<rect x="1014.0" y="520.0" width="36.0" height="30.0" fill="#fff" stroke="#d62728" stroke-width="1.4"/>
+<rect x="1019.0" y="525.0" width="26.0" height="18.0" fill="#1d2b3a"/>
+<polyline points="1021.0,538.0 1028.0,530.0 1035.0,536.0 1043.0,529.0" fill="none" stroke="#f5d000"/>
+<text x="1032.0" y="562.0" text-anchor="middle">log_truth</text>
+<text x="12" y="1212" fill="#444">Sample time colours:</text>
+<rect x="124" y="1203" width="10" height="10" fill="none" stroke="#d62728" stroke-width="2"/>
+<text x="138" y="1212">1 kHz (1 ms)</text>
+<rect x="220" y="1203" width="10" height="10" fill="none" stroke="#c9a400" stroke-width="2"/>
+<text x="234" y="1212">multirate</text>
+</svg>

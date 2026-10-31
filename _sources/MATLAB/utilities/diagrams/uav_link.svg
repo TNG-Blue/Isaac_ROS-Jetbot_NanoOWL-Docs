@@ -1,0 +1,94 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="816" height="375" viewBox="0 0 816 375" font-family="Helvetica, Arial, sans-serif" font-size="10">
+<defs><marker id="a" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="context-stroke"/></marker></defs>
+<rect width="100%" height="100%" fill="#ffffff"/>
+<text x="12" y="20" font-size="13" font-weight="bold">Link (micro-ROS hop)</text>
+<text x="12" y="35" fill="#444">Jetson → FC: transport delay and loss, then the FC&#x27;s age/order check</text>
+<path d="M297.5,170.0 L307.5,170.0 L307.5,236.0 L224.8,236.0" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M190.8,236.0 L108.0,236.0 L108.0,174.0 L118.0,174.0" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M680.0,223.2 L690.0,223.2 L690.0,288.0 L592.8,288.0" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M558.8,288.0 L461.5,288.0 L461.5,226.2 L471.5,226.2" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M54.0,108.0 L106.0,108.0 L106.0,102.0 L118.0,102.0" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M54.0,148.0 L99.0,148.0 L99.0,126.0 L118.0,126.0" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M54.0,188.0 L92.0,188.0 L92.0,150.0 L118.0,150.0" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M297.5,106.0 L349.5,106.0 L349.5,104.0 L361.5,104.0" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M407.5,104.0 L459.5,104.0 L459.5,131.8 L471.5,131.8" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M391.5,155.0 L452.5,155.0 L452.5,155.4 L471.5,155.4" fill="none" stroke="#000000" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M395.5,203.0 L445.5,203.0 L445.5,179.0 L471.5,179.0" fill="none" stroke="#c000c0" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M297.5,138.0 L438.5,138.0 L438.5,202.6 L471.5,202.6" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M297.5,106.0 L317.5,106.0 L317.5,66.0 L724.0,66.0 L724.0,108.0 L744.0,108.0" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M680.0,134.8 L732.0,134.8 L732.0,208.0 L744.0,208.0" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
+<circle cx="317.5" cy="106.0" r="2.6" fill="#d62728"/>
+<rect x="24.0" y="100.0" width="30.0" height="16.0" rx="7" fill="#fff" stroke="#d62728" stroke-width="1.4"/>
+<text x="39.0" y="111.5" text-anchor="middle">1</text>
+<path d="M54.0,105.0 L59.0,108.0 L54.0,111.0 z" fill="#d62728"/>
+<text x="39.0" y="128.0" text-anchor="middle">pkt</text>
+<rect x="24.0" y="140.0" width="30.0" height="16.0" rx="7" fill="#fff" stroke="#d62728" stroke-width="1.4"/>
+<text x="39.0" y="151.5" text-anchor="middle">2</text>
+<path d="M54.0,145.0 L59.0,148.0 L54.0,151.0 z" fill="#d62728"/>
+<text x="39.0" y="168.0" text-anchor="middle">send</text>
+<rect x="24.0" y="180.0" width="30.0" height="16.0" rx="7" fill="#fff" stroke="#d62728" stroke-width="1.4"/>
+<text x="39.0" y="191.5" text-anchor="middle">3</text>
+<path d="M54.0,185.0 L59.0,188.0 L54.0,191.0 z" fill="#d62728"/>
+<text x="39.0" y="208.0" text-anchor="middle">drop</text>
+<rect x="744.0" y="100.0" width="30.0" height="16.0" rx="7" fill="#fff" stroke="#d62728" stroke-width="1.4"/>
+<text x="759.0" y="111.5" text-anchor="middle">1</text>
+<text x="759.0" y="128.0" text-anchor="middle">rx</text>
+<rect x="744.0" y="200.0" width="30.0" height="16.0" rx="7" fill="#fff" stroke="#d62728" stroke-width="1.4"/>
+<text x="759.0" y="211.5" text-anchor="middle">2</text>
+<text x="759.0" y="228.0" text-anchor="middle">cmd_ok</text>
+<rect x="118.0" y="90.0" width="179.5" height="96.0" fill="#fff" stroke="#d62728" stroke-width="1.6"/>
+<text x="207.8" y="141.5" text-anchor="middle" fill="#7a7a7a" font-size="9">comm_udp_channel</text>
+<text x="122.0" y="105.5" text-anchor="start">x</text>
+<text x="122.0" y="129.5" text-anchor="start">send</text>
+<text x="122.0" y="153.5" text-anchor="start">drop</text>
+<text x="122.0" y="177.5" text-anchor="start">S</text>
+<text x="293.5" y="109.5" text-anchor="end">y</text>
+<text x="293.5" y="141.5" text-anchor="end">fresh</text>
+<text x="293.5" y="173.5" text-anchor="end">S</text>
+<path d="M297.5,103.0 L302.5,106.0 L297.5,109.0 z" fill="#d62728"/>
+<path d="M297.5,135.0 L302.5,138.0 L297.5,141.0 z" fill="#d62728"/>
+<path d="M297.5,167.0 L302.5,170.0 L297.5,173.0 z" fill="#d62728"/>
+<text x="207.8" y="198.0" text-anchor="middle">UDP / XRCE-DDS</text>
+<text x="207.8" y="209.0" text-anchor="middle" fill="#6a6a6a" font-size="8.5">param: P.link</text>
+<rect x="190.8" y="221.0" width="34.0" height="30.0" fill="#fff" stroke="#d62728" stroke-width="1.4"/>
+<text x="207.8" y="239.5" text-anchor="middle">1/z</text>
+<path d="M190.8,233.0 L185.8,236.0 L190.8,239.0 z" fill="#d62728"/>
+<rect x="361.5" y="90.0" width="46.0" height="28.0" fill="#fff" stroke="#d62728" stroke-width="1.4"/>
+<text x="384.5" y="107.5" text-anchor="middle">y(1)</text>
+<path d="M407.5,101.0 L412.5,104.0 L407.5,107.0 z" fill="#d62728"/>
+<text x="384.5" y="130.0" text-anchor="middle">stamp</text>
+<rect x="361.5" y="140.0" width="30.0" height="30.0" fill="#fff" stroke="#000000" stroke-width="1.4"/>
+<circle cx="376.5" cy="155.0" r="9" fill="none" stroke="#000"/>
+<path d="M376.5,149.0 L376.5,155.0 L381.5,157.0" stroke="#000" fill="none"/>
+<path d="M391.5,152.0 L396.5,155.0 L391.5,158.0 z" fill="#000000"/>
+<text x="376.5" y="182.0" text-anchor="middle">Clock</text>
+<rect x="361.5" y="190.0" width="34.0" height="26.0" fill="#fff" stroke="#c000c0" stroke-width="1.4"/>
+<text x="378.5" y="206.5" text-anchor="middle">1</text>
+<path d="M395.5,200.0 L400.5,203.0 L395.5,206.0 z" fill="#c000c0"/>
+<text x="378.5" y="228.0" text-anchor="middle">synced</text>
+<rect x="471.5" y="120.0" width="208.5" height="118.0" fill="#fff" stroke="#d62728" stroke-width="1.6"/>
+<text x="575.8" y="182.5" text-anchor="middle" fill="#7a7a7a" font-size="9">comm_link_quality</text>
+<text x="475.5" y="135.3" text-anchor="start">stamp</text>
+<text x="475.5" y="158.9" text-anchor="start">now_s</text>
+<text x="475.5" y="182.5" text-anchor="start">synced</text>
+<text x="475.5" y="206.1" text-anchor="start">fresh</text>
+<text x="475.5" y="229.7" text-anchor="start">S</text>
+<text x="676.0" y="138.2" text-anchor="end">ok</text>
+<text x="676.0" y="167.8" text-anchor="end">verdict</text>
+<text x="676.0" y="197.2" text-anchor="end">stats</text>
+<text x="676.0" y="226.8" text-anchor="end">S</text>
+<path d="M680.0,131.8 L685.0,134.8 L680.0,137.8 z" fill="#d62728"/>
+<path d="M680.0,161.2 L685.0,164.2 L680.0,167.2 z" fill="#d62728"/>
+<path d="M680.0,190.8 L685.0,193.8 L680.0,196.8 z" fill="#d62728"/>
+<path d="M680.0,220.2 L685.0,223.2 L680.0,226.2 z" fill="#d62728"/>
+<text x="575.8" y="250.0" text-anchor="middle">link quality</text>
+<text x="575.8" y="261.0" text-anchor="middle" fill="#6a6a6a" font-size="8.5">param: P.lq</text>
+<rect x="558.8" y="273.0" width="34.0" height="30.0" fill="#fff" stroke="#d62728" stroke-width="1.4"/>
+<text x="575.8" y="291.5" text-anchor="middle">1/z</text>
+<path d="M558.8,285.0 L553.8,288.0 L558.8,291.0 z" fill="#d62728"/>
+<text x="12" y="359" fill="#444">Sample time colours:</text>
+<rect x="124" y="350" width="10" height="10" fill="none" stroke="#d62728" stroke-width="2"/>
+<text x="138" y="359">1 kHz (1 ms)</text>
+<rect x="220" y="350" width="10" height="10" fill="none" stroke="#c000c0" stroke-width="2"/>
+<text x="234" y="359">constant</text>
+</svg>

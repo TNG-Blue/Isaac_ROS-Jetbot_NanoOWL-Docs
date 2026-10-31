@@ -1,0 +1,91 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="928" height="470" viewBox="0 0 928 470" font-family="Helvetica, Arial, sans-serif" font-size="10">
+<defs><marker id="a" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="context-stroke"/></marker></defs>
+<rect width="100%" height="100%" fill="#ffffff"/>
+<text x="12" y="20" font-size="13" font-weight="bold">FOC inside each ESC</text>
+<text x="12" y="35" fill="#444">ctrl_foc_current ⇄ plant_pmsm_dq (20 kHz PWM)</text>
+<path d="M464.5,188.3 L474.5,188.3 L474.5,258.0 L385.9,258.0" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M351.9,258.0 L263.2,258.0 L263.2,196.2 L273.2,196.2" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M789.8,155.5 L799.8,155.5 L799.8,224.0 L725.1,224.0" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M691.1,224.0 L616.5,224.0 L616.5,161.7 L626.5,161.7" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M58.0,113.0 L146.0,113.0 L146.0,116.0 L158.0,116.0" fill="none" stroke="#c000c0" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M94.0,164.0 L139.0,164.0 L139.0,138.0 L158.0,138.0" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M164.0,127.0 L240.2,127.0 L240.2,172.6 L273.2,172.6" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M209.2,224.0 L261.2,224.0 L261.2,101.8 L273.2,101.8" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M204.0,279.0 L254.2,279.0 L254.2,125.4 L273.2,125.4" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M204.0,334.0 L247.2,334.0 L247.2,149.0 L273.2,149.0" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M464.5,109.7 L614.5,109.7 L614.5,112.3 L626.5,112.3" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M562.5,183.0 L607.5,183.0 L607.5,137.0 L626.5,137.0" fill="none" stroke="#c000c0" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M789.8,118.5 L841.8,118.5 L841.8,120.0 L853.8,120.0" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M887.8,120.0 L911.8,120.0 L911.8,400.0 L134.0,400.0 L134.0,224.0 L158.0,224.0" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M887.8,120.0 L915.8,120.0 L915.8,412.0 L130.0,412.0 L130.0,279.0 L158.0,279.0" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M887.8,120.0 L899.8,120.0 L899.8,424.0 L146.0,424.0 L146.0,334.0 L158.0,334.0" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
+<circle cx="899.8" cy="120.0" r="2.6" fill="#d62728"/>
+<circle cx="911.8" cy="120.0" r="2.6" fill="#d62728"/>
+<rect x="24.0" y="100.0" width="34.0" height="26.0" fill="#fff" stroke="#c000c0" stroke-width="1.4"/>
+<text x="41.0" y="116.5" text-anchor="middle">0</text>
+<path d="M58.0,110.0 L63.0,113.0 L58.0,116.0 z" fill="#c000c0"/>
+<text x="41.0" y="138.0" text-anchor="middle">i_d,ref</text>
+<rect x="24.0" y="150.0" width="70.0" height="28.0" fill="#fff" stroke="#d62728" stroke-width="1.4"/>
+<text x="59.0" y="167.5" text-anchor="middle">Step 2 A</text>
+<path d="M94.0,161.0 L99.0,164.0 L94.0,167.0 z" fill="#d62728"/>
+<text x="59.0" y="190.0" text-anchor="middle">i_q,ref = τ/K_t</text>
+<rect x="158.0" y="105.0" width="6.0" height="44.0" fill="#000" stroke="#d62728"/>
+<path d="M164.0,124.0 L169.0,127.0 L164.0,130.0 z" fill="#d62728"/>
+<rect x="158.0" y="210.0" width="51.2" height="28.0" fill="#fff" stroke="#d62728" stroke-width="1.4"/>
+<text x="183.6" y="227.5" text-anchor="middle">y(1:2)</text>
+<path d="M209.2,221.0 L214.2,224.0 L209.2,227.0 z" fill="#d62728"/>
+<text x="183.6" y="250.0" text-anchor="middle">i_a, i_b (ADC)</text>
+<rect x="158.0" y="265.0" width="46.0" height="28.0" fill="#fff" stroke="#d62728" stroke-width="1.4"/>
+<text x="181.0" y="282.5" text-anchor="middle">y(4)</text>
+<path d="M204.0,276.0 L209.0,279.0 L204.0,282.0 z" fill="#d62728"/>
+<text x="181.0" y="305.0" text-anchor="middle">θ_m (encoder)</text>
+<rect x="158.0" y="320.0" width="46.0" height="28.0" fill="#fff" stroke="#d62728" stroke-width="1.4"/>
+<text x="181.0" y="337.5" text-anchor="middle">y(3)</text>
+<path d="M204.0,331.0 L209.0,334.0 L204.0,337.0 z" fill="#d62728"/>
+<text x="181.0" y="360.0" text-anchor="middle">ω_m</text>
+<rect x="273.2" y="90.0" width="191.3" height="118.0" fill="#fff" stroke="#d62728" stroke-width="1.6"/>
+<text x="368.9" y="152.5" text-anchor="middle" fill="#7a7a7a" font-size="9">ctrl_foc_current</text>
+<text x="277.2" y="105.3" text-anchor="start">i_ab</text>
+<text x="277.2" y="128.9" text-anchor="start">theta_m</text>
+<text x="277.2" y="152.5" text-anchor="start">w_m</text>
+<text x="277.2" y="176.1" text-anchor="start">idq_ref</text>
+<text x="277.2" y="199.7" text-anchor="start">S</text>
+<text x="460.5" y="113.2" text-anchor="end">duty</text>
+<text x="460.5" y="152.5" text-anchor="end">info</text>
+<text x="460.5" y="191.8" text-anchor="end">S</text>
+<path d="M464.5,106.7 L469.5,109.7 L464.5,112.7 z" fill="#d62728"/>
+<path d="M464.5,146.0 L469.5,149.0 L464.5,152.0 z" fill="#d62728"/>
+<path d="M464.5,185.3 L469.5,188.3 L464.5,191.3 z" fill="#d62728"/>
+<text x="368.9" y="220.0" text-anchor="middle">FOC</text>
+<text x="368.9" y="231.0" text-anchor="middle" fill="#6a6a6a" font-size="8.5">param: P.foc</text>
+<rect x="351.9" y="243.0" width="34.0" height="30.0" fill="#fff" stroke="#d62728" stroke-width="1.4"/>
+<text x="368.9" y="261.5" text-anchor="middle">1/z</text>
+<path d="M351.9,255.0 L346.9,258.0 L351.9,261.0 z" fill="#d62728"/>
+<rect x="528.5" y="170.0" width="34.0" height="26.0" fill="#fff" stroke="#c000c0" stroke-width="1.4"/>
+<text x="545.5" y="186.5" text-anchor="middle">0</text>
+<path d="M562.5,180.0 L567.5,183.0 L562.5,186.0 z" fill="#c000c0"/>
+<text x="545.5" y="208.0" text-anchor="middle">τ_load</text>
+<rect x="626.5" y="100.0" width="163.3" height="74.0" fill="#fff" stroke="#d62728" stroke-width="1.6"/>
+<text x="708.1" y="140.5" text-anchor="middle" fill="#7a7a7a" font-size="9">plant_pmsm_dq</text>
+<text x="630.5" y="115.8" text-anchor="start">duty</text>
+<text x="630.5" y="140.5" text-anchor="start">tau_load</text>
+<text x="630.5" y="165.2" text-anchor="start">S</text>
+<text x="785.8" y="122.0" text-anchor="end">y</text>
+<text x="785.8" y="159.0" text-anchor="end">S</text>
+<path d="M789.8,115.5 L794.8,118.5 L789.8,121.5 z" fill="#d62728"/>
+<path d="M789.8,152.5 L794.8,155.5 L789.8,158.5 z" fill="#d62728"/>
+<text x="708.1" y="186.0" text-anchor="middle">PMSM + inverter</text>
+<text x="708.1" y="197.0" text-anchor="middle" fill="#6a6a6a" font-size="8.5">param: P.foc</text>
+<rect x="691.1" y="209.0" width="34.0" height="30.0" fill="#fff" stroke="#d62728" stroke-width="1.4"/>
+<text x="708.1" y="227.5" text-anchor="middle">1/z</text>
+<path d="M691.1,221.0 L686.1,224.0 L691.1,227.0 z" fill="#d62728"/>
+<rect x="853.8" y="105.0" width="34.0" height="30.0" fill="#fff" stroke="#d62728" stroke-width="1.4"/>
+<text x="870.8" y="123.5" text-anchor="middle">1/z</text>
+<path d="M887.8,117.0 L892.8,120.0 L887.8,123.0 z" fill="#d62728"/>
+<text x="870.8" y="147.0" text-anchor="middle">y(k−1)</text>
+<text x="12" y="454" fill="#444">Sample time colours:</text>
+<rect x="124" y="445" width="10" height="10" fill="none" stroke="#d62728" stroke-width="2"/>
+<text x="138" y="454">20 kHz (50 µs)</text>
+<rect x="232" y="445" width="10" height="10" fill="none" stroke="#c000c0" stroke-width="2"/>
+<text x="246" y="454">constant</text>
+</svg>
