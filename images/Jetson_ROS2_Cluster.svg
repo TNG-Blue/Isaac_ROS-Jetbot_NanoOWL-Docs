@@ -87,7 +87,7 @@
 <text x="381" y="680" font-size="12.5" fill="#1E3A10" text-anchor="start" font-weight="normal">One node, four links:</text>
 <text x="381" y="696" font-size="12.5" fill="#1E3A10" text-anchor="start" font-weight="normal">fc — JetOwl FC over micro-ROS</text>
 <text x="381" y="712" font-size="12.5" fill="#1E3A10" text-anchor="start" font-weight="normal">vision_mcu — JetOwl Vision (micro-ROS)</text>
-<text x="381" y="728" font-size="12.5" fill="#1E3A10" text-anchor="start" font-weight="normal">vision — OpenMV RT1062 (TCP / USB)</text>
+<text x="381" y="728" font-size="12.5" fill="#1E3A10" text-anchor="start" font-weight="normal">vision — OpenMV Cam, PoE TCP / USB</text>
 <text x="381" y="744" font-size="12.5" fill="#1E3A10" text-anchor="start" font-weight="normal">sensor_link — CRC-32 UDP sensor MCU</text>
 <text x="381" y="760" font-size="12.5" fill="#1E3A10" text-anchor="start" font-weight="normal">Arm relay from flight/status · rotor</text>
 <text x="381" y="776" font-size="12.5" fill="#1E3A10" text-anchor="start" font-weight="normal">rpm supervision · /diagnostics per link</text>
@@ -476,7 +476,7 @@
 <text x="841" y="2310" font-size="12" fill="#4A2C00" text-anchor="start" font-weight="normal">OTA client ⇄ Server_OTA (HTTP :8080),</text>
 <text x="841" y="2326" font-size="12" fill="#4A2C00" text-anchor="start" font-weight="normal">trial image confirmed after 30 s healthy</text>
 <rect x="1270" y="1652" width="340" height="270" rx="14" fill="#FFF3DE" fill-opacity="0.55" stroke="#C07A12" stroke-width="1.6"/>
-<text x="1286" y="1678" font-size="16" fill="#4A2C00" text-anchor="start" font-weight="bold">JetOwl Vision — STM32N655 · .3</text>
+<text x="1286" y="1678" font-size="16" fill="#4A2C00" text-anchor="start" font-weight="bold">JetOwl Vision — STM32N657 · .3</text>
 <rect x="1290" y="1692" width="300" height="210" rx="8" fill="#FFF3DE" stroke="#C07A12" stroke-width="1.4"/>
 <text x="1301" y="1712" font-size="13.5" fill="#4A2C00" text-anchor="start" font-weight="bold">Camera MCU</text>
 <text x="1301" y="1732" font-size="12" fill="#4A2C00" text-anchor="start" font-weight="normal">IMX335 over MIPI CSI-2 → ISP</text>
@@ -532,10 +532,11 @@
 <text x="2041" y="1894" font-size="12" fill="#222222" text-anchor="start" font-weight="normal">USB · radiometric</text>
 <text x="2041" y="1910" font-size="12" fill="#222222" text-anchor="start" font-weight="normal">→ ros2_night_vision_owl</text>
 <text x="2041" y="1926" font-size="12" fill="#222222" text-anchor="start" font-weight="normal">→ thermal detections, lifted to 3-D</text>
-<rect x="1650" y="2000" width="360" height="92" rx="8" fill="#F4F4F4" stroke="#6B6B6B" stroke-width="1.4"/>
-<text x="1661" y="2020" font-size="13.5" fill="#222222" text-anchor="start" font-weight="bold">OpenMV RT1062</text>
-<text x="1661" y="2040" font-size="12" fill="#222222" text-anchor="start" font-weight="normal">TCP or USB CDC, JSON lines</text>
-<text x="1661" y="2056" font-size="12" fill="#222222" text-anchor="start" font-weight="normal">→ jetowl_bridge (vision link)</text>
+<rect x="1650" y="2000" width="360" height="92" rx="8" fill="#FFF3DE" stroke="#C07A12" stroke-width="1.4"/>
+<text x="1661" y="2020" font-size="13.5" fill="#4A2C00" text-anchor="start" font-weight="bold">OpenMV Cam · on the switch, .10.5</text>
+<text x="1661" y="2040" font-size="12" fill="#4A2C00" text-anchor="start" font-weight="normal">RT1062 / N6 + Gigabit PoE Shield (802.3af)</text>
+<text x="1661" y="2056" font-size="12" fill="#4A2C00" text-anchor="start" font-weight="normal">ml detect → α-β tracker → TCP :8080 JSON</text>
+<text x="1661" y="2072" font-size="12" fill="#4A2C00" text-anchor="start" font-weight="normal">→ jetowl_bridge vision link · else USB CDC</text>
 <rect x="2030" y="2000" width="360" height="92" rx="8" fill="#F4F4F4" stroke="#6B6B6B" stroke-width="1.4"/>
 <text x="2041" y="2020" font-size="13.5" fill="#222222" text-anchor="start" font-weight="bold">SDR receiver</text>
 <text x="2041" y="2040" font-size="12" fill="#222222" text-anchor="start" font-weight="normal">external driver → rf_monitor/</text>
@@ -586,7 +587,7 @@
 <rect x="50" y="534" width="34" height="22" rx="4" fill="#FFFFFF" stroke="#4E8A2E" stroke-width="1.4"/>
 <text x="96" y="550" font-size="13" fill="#222" text-anchor="start" font-weight="normal">ROS 2 node (container)</text>
 <rect x="50" y="572" width="34" height="22" rx="4" fill="#FFF3DE" stroke="#C07A12" stroke-width="1.4"/>
-<text x="96" y="588" font-size="13" fill="#222" text-anchor="start" font-weight="normal">STM32N6 firmware</text>
+<text x="96" y="588" font-size="13" fill="#222" text-anchor="start" font-weight="normal">MCU firmware (STM32N6, OpenMV)</text>
 <rect x="50" y="610" width="34" height="22" rx="4" fill="#F4F4F4" stroke="#6B6B6B" stroke-width="1.4"/>
 <text x="96" y="626" font-size="13" fill="#222" text-anchor="start" font-weight="normal">Sensors, design notes</text>
 <rect x="50" y="648" width="34" height="22" rx="4" fill="#FFFFFF" stroke="#8A8A8A" stroke-dasharray="6 4" stroke-width="1.4"/>
@@ -716,7 +717,10 @@
 <text x="1455" y="1637" font-size="10.5" fill="#3C3C3C" text-anchor="start" font-weight="normal">micro-ROS · OTA</text>
 <path d="M 1260 2240 L 1260 1612" fill="none" stroke="#8A8A8A" stroke-width="2" stroke-linejoin="round" stroke-dasharray="7 5"/>
 <path d="M 1700 1652 L 1700 1590 L 1000 1590 L 1000 1492" fill="none" stroke="#5B6573" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#link-e)"/>
-<rect x="1260" y="1578" width="226" height="22" rx="5" fill="#FFFFFF" fill-opacity="0.95" stroke="#5B6573" stroke-width="0.8"/>
-<text x="1267" y="1591" font-size="10.5" fill="#5B6573" text-anchor="start" font-weight="normal">USB · UART · CSI-2 · TCP → Jetson #1</text>
+<rect x="1260" y="1578" width="190" height="22" rx="5" fill="#FFFFFF" fill-opacity="0.95" stroke="#5B6573" stroke-width="0.8"/>
+<text x="1267" y="1591" font-size="10.5" fill="#5B6573" text-anchor="start" font-weight="normal">USB · UART · CSI-2 → Jetson #1</text>
+<path d="M 1650 2046 L 1640 2046 L 1640 1612" fill="none" stroke="#3C3C3C" stroke-width="3" stroke-linejoin="round"/>
+<rect x="1646" y="1618" width="126" height="22" rx="5" fill="#FFFFFF" fill-opacity="0.95" stroke="#3C3C3C" stroke-width="0.8"/>
+<text x="1653" y="1631" font-size="10.5" fill="#3C3C3C" text-anchor="start" font-weight="normal">PoE 802.3af · 1 GbE</text>
 <path d="M 270 2022 L 270 2300 L 370 2300" fill="none" stroke="#2F6DB5" stroke-width="2.6" stroke-linejoin="round" marker-start="url(#link-s)" marker-end="url(#link-e)"/>
 </svg>
