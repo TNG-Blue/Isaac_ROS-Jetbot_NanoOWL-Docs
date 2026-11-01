@@ -41,7 +41,7 @@
 <text x="246.8" y="127.5" text-anchor="end">S</text>
 <path d="M250.8,95.0 L255.8,98.0 L250.8,101.0 z" fill="#d62728"/>
 <path d="M250.8,121.0 L255.8,124.0 L250.8,127.0 z" fill="#d62728"/>
-<text x="184.4" y="149.0" text-anchor="middle">ESC + rotors ×4</text>
+<text x="184.4" y="149.0" text-anchor="middle">ESC + rotors ×12</text>
 <text x="184.4" y="160.0" text-anchor="middle" fill="#6a6a6a" font-size="8.5">param: P</text>
 <rect x="167.4" y="172.0" width="34.0" height="30.0" fill="#fff" stroke="#d62728" stroke-width="1.4"/>
 <text x="184.4" y="190.5" text-anchor="middle">1/z</text>

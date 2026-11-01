@@ -2,7 +2,7 @@
 <defs><marker id="a" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="context-stroke"/></marker></defs>
 <rect width="100%" height="100%" fill="#ffffff"/>
 <text x="12" y="20" font-size="13" font-weight="bold">UAV plant</text>
-<text x="12" y="35" fill="#444">4 ESC + BLDC + propeller units, rigid body (NED/FRD), rotor angles for the encoders</text>
+<text x="12" y="35" fill="#444">coaxial X12: 12 ESC + BLDC + propeller units, rigid body (NED/FRD), rotor angles</text>
 <path d="M298.8,124.0 L308.8,124.0 L308.8,187.0 L249.4,187.0" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
 <path d="M215.4,187.0 L156.0,187.0 L156.0,124.0 L166.0,124.0" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
 <path d="M551.6,140.5 L561.6,140.5 L561.6,209.0 L474.2,209.0" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
@@ -36,7 +36,7 @@
 <text x="294.8" y="127.5" text-anchor="end">S</text>
 <path d="M298.8,95.0 L303.8,98.0 L298.8,101.0 z" fill="#d62728"/>
 <path d="M298.8,121.0 L303.8,124.0 L298.8,127.0 z" fill="#d62728"/>
-<text x="232.4" y="149.0" text-anchor="middle">ESC + rotors ×4</text>
+<text x="232.4" y="149.0" text-anchor="middle">ESC + rotors ×12</text>
 <text x="232.4" y="160.0" text-anchor="middle" fill="#6a6a6a" font-size="8.5">param: P</text>
 <rect x="215.4" y="172.0" width="34.0" height="30.0" fill="#fff" stroke="#d62728" stroke-width="1.4"/>
 <text x="232.4" y="190.5" text-anchor="middle">1/z</text>

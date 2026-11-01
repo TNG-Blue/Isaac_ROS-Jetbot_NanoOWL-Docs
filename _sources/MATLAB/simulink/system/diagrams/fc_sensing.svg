@@ -2,7 +2,7 @@
 <defs><marker id="a" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="context-stroke"/></marker></defs>
 <rect width="100%" height="100%" fill="#ffffff"/>
 <text x="12" y="20" font-size="13" font-weight="bold">FC Sensing</text>
-<text x="12" y="35" fill="#444">JetOwl_FlightControl: IMU ×2 → Mahony ×2 → fusion; MT6835 ×4 → speed; GNSS ×2 → frontend → CI; BMP388</text>
+<text x="12" y="35" fill="#444">JetOwl_FlightControl: IMU ×2 → Mahony ×2 → fusion; MT6835 ×12 → speed; GNSS ×2 → frontend → CI; BMP388</text>
 <path d="M809.1,171.7 L819.1,171.7 L819.1,234.0 L728.3,234.0" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
 <path d="M694.3,234.0 L603.4,234.0 L603.4,171.7 L613.4,171.7" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
 <path d="M809.1,401.7 L819.1,401.7 L819.1,464.0 L728.3,464.0" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
@@ -153,7 +153,7 @@
 <text x="122.0" y="661.5" text-anchor="start">theta_m</text>
 <text x="327.4" y="661.5" text-anchor="end">count</text>
 <path d="M331.4,655.0 L336.4,658.0 L331.4,661.0 z" fill="#d62728"/>
-<text x="224.7" y="688.0" text-anchor="middle">MT6835 ×4 (SPI)</text>
+<text x="224.7" y="688.0" text-anchor="middle">MT6835 ×12 (SPI)</text>
 <rect x="118.0" y="720.0" width="30.0" height="30.0" fill="#fff" stroke="#d62728" stroke-width="1.4"/>
 <circle cx="133.0" cy="735.0" r="9" fill="none" stroke="#000"/>
 <path d="M133.0,729.0 L133.0,735.0 L138.0,737.0" stroke="#000" fill="none"/>

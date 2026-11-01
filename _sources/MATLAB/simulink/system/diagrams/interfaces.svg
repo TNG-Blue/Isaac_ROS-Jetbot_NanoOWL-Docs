@@ -24,7 +24,7 @@
 <rect x="560" y="330" width="270" height="180" rx="6" fill="#fff7c8" stroke="#c9a400" stroke-width="2"/>
 <text x="570" y="349" font-size="13" font-weight="bold">JetOwl FC</text>
 <text x="570" y="365" fill="#7a5c00">JetOwl_FlightControl · STM32N657</text>
-<text x="570" y="384" fill="#333">IMU ×2 + fusion, MT6835 ×4, GNSS ×2 + CI, baro</text>
+<text x="570" y="384" fill="#333">IMU ×2 + fusion, MT6835 ×12, GNSS ×2 + CI, baro</text>
 <text x="570" y="399" fill="#333">RC/Jetson authority → cmd_guard → attitude →</text>
 <text x="570" y="414" fill="#333">rate loop → rotor speed; LoRa RX / TLM; mission</text>
 <text x="570" y="429" fill="#333">micro-ROS node jetowl_fc · 192.168.10.2</text>
@@ -50,7 +50,7 @@
 <text x="50" y="709" fill="#333">mission upload, heartbeat</text>
 <rect x="560" y="640" width="270" height="90" rx="6" fill="#fff7c8" stroke="#c9a400" stroke-width="2"/>
 <text x="570" y="659" font-size="13" font-weight="bold">UAV plant</text>
-<text x="570" y="675" fill="#7a5c00">quad-X, 4 BLDC + ESC (DShot)</text>
+<text x="570" y="675" fill="#7a5c00">coaxial X12, 12 BLDC + ESC (DShot)</text>
 <text x="570" y="694" fill="#333">rigid body 6-DOF, rotor dynamics</text>
 <text x="975" y="236" fill="#1f4fd6" font-weight="bold">Ethernet 100 Mbit/s · micro-ROS / XRCE-DDS (UDP)</text>
 <text x="975" y="250" fill="#1f4fd6">FC → Jetson: /imu/data 200 Hz · /gps/fix 1 Hz · /baro 25 Hz</text>
