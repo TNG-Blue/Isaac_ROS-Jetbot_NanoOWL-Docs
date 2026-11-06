@@ -21,6 +21,11 @@
  * file only adds the frame, the dimming of what is not selected and the flow animation. */
 
 .node-graph {
+  /* Communication colours: send = yellow, receive = green (same on every level). */
+  --ng-send: #eab308;
+  --ng-send-dark: #a16207;
+  --ng-recv: #16a34a;
+  --ng-recv-dark: #15803d;
   --ng-accent: #f97316;
   --ng-link: #2563eb;
   --ng-border: var(--md-default-fg-color--lightest);
@@ -144,6 +149,18 @@
 .ng-swatch-topic { border-radius: 0.5rem; }
 .ng-line { width: 1.6rem; border-top: 2px solid #333; }
 .ng-line-dash { border-top-style: dashed; }
+.ng-line-send { border-top: 3px solid var(--ng-send); }
+.ng-line-recv { border-top: 3px solid var(--ng-recv); }
+
+/* column headings of the node view, panel sections, notices */
+.ng-colhead { font-size: 13px; font-weight: 700; letter-spacing: 0.02em; }
+.ng-colhead-send { fill: var(--ng-send-dark); }
+.ng-colhead-recv { fill: var(--ng-recv-dark); }
+.md-typeset .ng-sec-send h4 { color: var(--ng-send-dark); border-left: 4px solid var(--ng-send); padding-left: 0.4rem; }
+.md-typeset .ng-sec-recv h4 { color: var(--ng-recv-dark); border-left: 4px solid var(--ng-recv); padding-left: 0.4rem; }
+.ng-notice { margin: -0.2rem 0 0.4rem; padding: 0.35rem 0.6rem; border-radius: 0.3rem;
+  background: #fef9c3; color: #713f12; font-size: 0.72rem; word-break: break-all; }
+.ng-nopath { font-size: 15px; font-weight: 700; fill: #be123c; }
 
 /* --- the drawing ------------------------------------------------------------ */
 .ng-crumbs { display: flex; flex-wrap: wrap; gap: 0.35rem; align-items: center;
@@ -184,16 +201,26 @@
   transition: opacity 0.2s, stroke 0.2s; }
 .ng-edge.ng-dashed { stroke-dasharray: 6 4; }
 .ng-edge.ng-bundle { stroke: #94a3b8; opacity: 0.9; }
-.ng-edge.ng-on { stroke: var(--ng-link); stroke-width: 2.4px; opacity: 1; }
-.ng-edge.ng-on:not(.ng-dashed) { stroke-dasharray: 10 6; animation: ng-flow 1s linear infinite; }
+/* direction colours */
+.ng-edge.ng-send { stroke: var(--ng-send); stroke-width: 2.6px; opacity: 1; }
+.ng-edge.ng-recv { stroke: var(--ng-recv); stroke-width: 2.6px; opacity: 1; }
+.ng-edge.ng-flow { stroke: var(--ng-send); stroke-width: 2.4px; opacity: 1; }
+.ng-edge.ng-send:not(.ng-dashed),
+.ng-edge.ng-recv:not(.ng-dashed),
+.ng-edge.ng-flow:not(.ng-dashed) { stroke-dasharray: 10 6; animation: ng-flow 1s linear infinite; }
 .ng-edge.ng-monitor { stroke: #7c3aed; stroke-dasharray: 3 5; opacity: 0; }
-.ng-edge.ng-monitor.ng-show { opacity: 0.8; }
+.ng-edge.ng-monitor.ng-show { opacity: 0.9; }
+.ng-edge.ng-monitor.ng-send { stroke: var(--ng-send); }
+.ng-edge.ng-monitor.ng-recv { stroke: var(--ng-recv); }
 .ng-hit { fill: none; stroke: transparent; stroke-width: 14px; pointer-events: stroke; cursor: pointer; }
-.ng-arrowhead { fill: #64748b; }
+.ng-arrowhead-none { fill: #64748b; }
+.ng-arrowhead-send { fill: var(--ng-send-dark); }
+.ng-arrowhead-recv { fill: var(--ng-recv-dark); }
 .ng-dim { opacity: 0.15; }
 .ng-svg .ng-particles { pointer-events: none; }
-.ng-dot { fill: var(--ng-accent); stroke: #fff; stroke-width: 1.5px; vector-effect: non-scaling-stroke; }
-.ng-dot-link { fill: #7c3aed; }
+.ng-dot { stroke: #fff; stroke-width: 1.5px; vector-effect: non-scaling-stroke; }
+.ng-dot-send { fill: var(--ng-send); stroke: var(--ng-send-dark); }
+.ng-dot-recv { fill: var(--ng-recv); stroke: #fff; }
 @keyframes ng-flow { to { stroke-dashoffset: -16; } }
 
 .node-graph.ng-still .ng-edge { animation: none !important; }
@@ -203,7 +230,20 @@
 
 /* Dark scheme: the drawing keeps the light palette of the mermaid source; invert it. */
 [data-md-color-scheme="slate"] .ng-canvas { background: #111; }
-[data-md-color-scheme="slate"] .ng-svg { filter: invert(0.9) hue-rotate(180deg); }
+/* Only the blocks are inverted, so yellow (send) and green (receive) keep their meaning. */
+[data-md-color-scheme="slate"] .ng-svg .ng-box,
+[data-md-color-scheme="slate"] .ng-svg .ng-card { filter: invert(0.9) hue-rotate(180deg); }
+[data-md-color-scheme="slate"] .node-graph {
+  --ng-send: #facc15;
+  --ng-send-dark: #fde047;
+  --ng-recv: #22c55e;
+  --ng-recv-dark: #4ade80;
+}
+[data-md-color-scheme="slate"] .ng-edge:not(.ng-send):not(.ng-recv):not(.ng-flow) { stroke: #64748b; }
+[data-md-color-scheme="slate"] .ng-arrowhead-none { fill: #94a3b8; }
+[data-md-color-scheme="slate"] .ng-row-note,
+[data-md-color-scheme="slate"] .ng-ring-label { fill: #94a3b8; }
+[data-md-color-scheme="slate"] .ng-notice { background: #422006; color: #fef08a; }
 [data-md-color-scheme="slate"] .ng-diagram img { filter: invert(0.9) hue-rotate(180deg); }
 
 
@@ -234,6 +274,9 @@
   .ng-zoom { margin-left: 0; }
   .ng-input, .ng-select { min-width: 0; flex: 1 1 10rem; }
 }
+
+/* Material's floating "Back to top" button would cover the toolbar on this page. */
+body:has(#node-graph) .md-top { display: none; }
 
 /* Full-width page: the graph needs every pixel. */
 .md-main__inner:has(#node-graph) { max-width: none; }

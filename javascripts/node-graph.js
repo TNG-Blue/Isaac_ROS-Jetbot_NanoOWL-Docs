@@ -28,6 +28,16 @@
  *             columns arranged here (no layout engine needed)
  * plus a path view for a closed loop or a traced data path.
  *
+ * Colours of communication, the same on every level: SEND = yellow (a block publishing / the
+ * sending side of a link), RECEIVE = green (a block subscribing / the receiving side). A link
+ * seen from neither end (loops, traces, the overview at rest) is yellow along its length with a
+ * green arrowhead, and its moving dot turns from yellow to green as it travels.
+ *
+ * Navigation is kept inside the page (Back button, Esc, the path above the drawing): MkDocs
+ * Material rewrites location.hash while scrolling (navigation.tracking) and re-renders the page
+ * on some hash changes, so the URL is only read once, when the page opens, and written by the
+ * Link button.
+ *
  * Every block and edge comes from assets/node-graph/graph.json, written by
  * Scripts/diagrams/node_graph_live.py from Docs/flowcharts/ros2_nodes_flowchart.md; nothing is
  * inferred here. Material's navigation.instant swaps pages without re-running scripts, so the
@@ -168,14 +178,24 @@
     });
   }
 
+  /** Best match: id, exact name, name starting with the text, name containing it, label. */
   Model.prototype.find = function (text) {
-    var q = String(text || '').trim().toLowerCase();
+    var q = String(text || '').trim().toLowerCase(), self = this;
     if (!q) return null;
-    if (this.nodes[text]) return text;
-    var exact = this.searchIndex.filter(function (s) { return s.key.toLowerCase() === q; });
-    if (exact.length) return exact[0].id;
-    var hit = this.searchIndex.filter(function (s) { return s.hay.indexOf(q) >= 0; });
-    return hit.length ? hit[0].id : null;
+    if (this.nodes[String(text).trim()]) return String(text).trim();
+    var tests = [
+      function (s) { return s.key.toLowerCase() === q; },
+      function (s) { return s.key.toLowerCase().split(' · ').some(function (k) { return k === q; }); },
+      function (s) { return s.key.toLowerCase().indexOf(q) === 0 && self.nodes[s.id].kind === 'node'; },
+      function (s) { return s.key.toLowerCase().indexOf(q) === 0; },
+      function (s) { return s.key.toLowerCase().indexOf(q) >= 0; },
+      function (s) { return s.hay.indexOf(q) >= 0; }
+    ];
+    for (var k = 0; k < tests.length; k++) {
+      var hit = this.searchIndex.filter(tests[k]);
+      if (hit.length) return hit[0].id;
+    }
+    return null;
   };
 
   /** Shortest directed path a -> b as edge indices (breadth-first), or null. */
@@ -212,14 +232,18 @@
     this.canvas = canvas;
     this.svg = sv('svg', {'class': 'ng-svg', preserveAspectRatio: 'xMidYMid meet',
                           role: 'img', 'aria-label': 'ROS 2 node graph'}, canvas);
-    var defs = sv('defs', {}, this.svg);
-    [['ng-arrow', 'ng-arrowhead'], ['ng-arrow-on', 'ng-arrowhead ng-arrowhead-on']].forEach(function (m) {
-      var mk = sv('marker', {id: m[0], viewBox: '0 0 10 10', refX: '9', refY: '5', markerWidth: '7',
-                             markerHeight: '7', orient: 'auto-start-reverse',
-                             markerUnits: 'userSpaceOnUse'}, defs);
-      sv('path', {d: 'M0,0L10,5L0,10z', 'class': m[1]}, mk);
-    });
+    var defs = sv('defs', {}, this.svg), self = this;
     this.uid = 'ng-world-' + Math.random().toString(36).slice(2, 8);
+    // Arrowheads: neutral, receive (green) and send (yellow); ids unique per mount.
+    this.markers = {};
+    ['none', 'recv', 'send'].forEach(function (dir) {
+      var id = self.uid + '-arrow-' + dir;
+      var mk = sv('marker', {id: id, viewBox: '0 0 10 10', refX: '9', refY: '5', markerWidth: '9',
+                             markerHeight: '9', orient: 'auto-start-reverse',
+                             markerUnits: 'userSpaceOnUse'}, defs);
+      sv('path', {d: 'M0,0L10,5L0,10z', 'class': 'ng-arrowhead ng-arrowhead-' + dir}, mk);
+      self.markers[dir] = 'url(#' + id + ')';
+    });
     this.world = sv('g', {id: this.uid}, this.svg);
     this.layer = sv('g', {'class': 'ng-particles'}, this.svg);
     this.buildMinimap();
@@ -399,6 +423,21 @@
     c.addEventListener('pointerleave', function () { if (self.onHover) self.onHover(null); });
   };
 
+  /**
+   * Direction colour of an edge: 'recv' (green), 'send' (yellow), 'flow' (yellow line, green
+   * head: sent at one end, received at the other) or null (plain grey).
+   */
+  Stage.prototype.setDir = function (path, dir) {
+    path.classList.remove('ng-recv', 'ng-send', 'ng-flow');
+    if (dir) path.classList.add('ng-' + dir);
+    var head = dir === 'send' ? 'send' : dir ? 'recv' : 'none';
+    path.setAttribute('marker-end', this.markers[head]);
+    if (path.hasAttribute('marker-start')) {
+      path.setAttribute('marker-start', this.markers[dir === 'recv' ? 'recv' : dir ? 'send' : 'none']);
+    }
+    path.ngDir = dir || null;
+  };
+
   Stage.prototype.setParticles = function (paths) {
     var self = this;
     while (this.layer.firstChild) this.layer.removeChild(this.layer.firstChild);
@@ -408,9 +447,10 @@
       if (!len) return;
       var n = Math.max(1, Math.min(4, Math.round(len / 500)));
       for (var k = 0; k < n; k++) {
-        var dot = sv('circle', {r: '5', 'class': 'ng-dot' + (p.classList.contains('ng-dashed') ? ' ng-dot-link' : '')},
-                     self.layer);
-        self.particles.push({el: dot, path: p, len: len, phase: k / n, dur: Math.max(1.4, len / SPEED)});
+        var dir = p.ngDir || 'flow';
+        var dot = sv('circle', {r: self.dotR || '5', 'class': 'ng-dot ng-dot-' + (dir === 'flow' ? 'send' : dir)}, self.layer);
+        self.particles.push({el: dot, path: p, len: len, phase: k / n, dur: Math.max(1.4, len / SPEED),
+                             turn: dir === 'flow', state: null});
       }
     });
     this.layer.style.display = this.flowing ? '' : 'none';
@@ -426,9 +466,13 @@
         this.particles.forEach(function (p) { p.el.setAttribute('r', r); });
       }
       this.particles.forEach(function (p) {
-        var q = p.path.getPointAtLength(((s / p.dur + p.phase) % 1) * p.len);
+        var f = (s / p.dur + p.phase) % 1, q = p.path.getPointAtLength(f * p.len);
         p.el.setAttribute('cx', q.x.toFixed(1));
         p.el.setAttribute('cy', q.y.toFixed(1));
+        if (p.turn) {   // sent (yellow) on the first half, received (green) on the second
+          var state = f < 0.5 ? 'send' : 'recv';
+          if (state !== p.state) { p.state = state; p.el.setAttribute('class', 'ng-dot ng-dot-' + state); }
+        }
       });
     }
     window.requestAnimationFrame(this.tick);
@@ -453,10 +497,17 @@
     this.stage.onClick = function (t) { self.clicked(t); };
     this.stage.onHover = function (t) { self.hovered(t); };
     root.addEventListener('keydown', function (ev) {
-      if (ev.key === 'Escape') self.back();
+      if (ev.key === 'Escape') { ev.preventDefault(); self.back(); return; }
+      if ((ev.key === 'Enter' || ev.key === ' ') && ev.target.closest) {
+        var t = ev.target.closest('[data-node],[data-group]');
+        if (t) { ev.preventDefault(); self.clicked(t); }
+      }
     });
-    window.addEventListener('hashchange', function () { if (root.isConnected) self.fromHash(); });
-    if (!this.fromHash()) this.overview();
+    canvas.addEventListener('pointerdown', function () { canvas.focus({preventScroll: true}); });
+    this.history = [];
+    this.state = null;
+    var initial = decodeURIComponent((window.location.hash || '').slice(1));
+    if (!this.show(initial)) this.show('');
   }
 
   // ---- chrome -------------------------------------------------------------
@@ -470,6 +521,7 @@
     search.addEventListener('change', function () {
       var id = m.find(search.value);
       if (id) self.go('node=' + id);
+      else if (search.value) self.notice('“' + search.value + '” matches no node or topic.');
     });
     var grp = el('select', {class: 'ng-select', 'aria-label': 'Group'},
                  [el('option', {value: '', text: 'Open a group…'})]);
@@ -483,11 +535,16 @@
                             placeholder: 'From', 'aria-label': 'Trace from'});
     var to = el('input', {type: 'search', class: 'ng-input ng-short', list: 'ng-names',
                           placeholder: 'To', 'aria-label': 'Trace to'});
-    var trace = el('button', {class: 'ng-btn ng-primary', type: 'button', text: 'Trace',
-                              onclick: function () {
-                                var a = m.find(from.value), b = m.find(to.value);
-                                if (a && b) self.go('trace=' + a + ',' + b);
-                              }});
+    function runTrace() {
+      var a = m.find(from.value), b = m.find(to.value);
+      if (a && b) { self.go('trace=' + a + ',' + b); return; }
+      self.notice((!a ? '“' + (from.value || 'From') + '”' : '“' + (to.value || 'To') + '”') +
+                  ' matches no node or topic. Pick a name from the list.');
+    }
+    var trace = el('button', {class: 'ng-btn ng-primary', type: 'button', text: 'Trace', onclick: runTrace});
+    [from, to].forEach(function (inp) {
+      inp.addEventListener('keydown', function (ev) { if (ev.key === 'Enter') runTrace(); });
+    });
     var flow = el('button', {class: 'ng-btn ng-toggle', type: 'button', title: 'Moving data dots'});
     function flowLabel() {
       var on = self.stage && self.stage.flowing;
@@ -504,6 +561,8 @@
     this.inputs = {search: search, grp: grp, loop: loop, from: from, to: to};
     return el('div', {class: 'ng-toolbar'}, [
       list,
+      el('button', {class: 'ng-btn', type: 'button', text: '← Back', title: 'Previous view (Esc goes one level up)',
+                    onclick: function () { self.back(true); }}),
       el('button', {class: 'ng-btn', type: 'button', text: '⌂ Overview', onclick: function () { self.go(''); }}),
       search, grp, loop,
       el('span', {class: 'ng-trace'}, [from, el('span', {text: '→'}), to, trace]),
@@ -521,7 +580,9 @@
         el('button', {class: 'ng-btn', type: 'button', text: '+', title: 'Zoom in',
                       onclick: function () { self.stage.zoomCenter(1 / 1.3); }}),
         el('button', {class: 'ng-btn', type: 'button', text: '⤢ Fit', title: 'Fit the view',
-                      onclick: function () { self.stage.fit(true); }})
+                      onclick: function () { self.stage.fit(true); }}),
+        el('button', {class: 'ng-btn', type: 'button', text: '🔗 Link', title: 'Copy a link to this view',
+                      onclick: function () { self.copyLink(); }})
       ])
     ]);
   };
@@ -536,6 +597,8 @@
       if (c.dash) sw.style.borderStyle = 'dashed';
       box.appendChild(el('span', {class: 'ng-legend-item'}, [sw, l.text]));
     });
+    box.appendChild(el('span', {class: 'ng-legend-item'}, [el('span', {class: 'ng-line ng-line-send'}), 'sends (publishes)']));
+    box.appendChild(el('span', {class: 'ng-legend-item'}, [el('span', {class: 'ng-line ng-line-recv'}), 'receives (subscribes)']));
     box.appendChild(el('span', {class: 'ng-legend-item'}, [el('span', {class: 'ng-line'}), 'topic / service']));
     box.appendChild(el('span', {class: 'ng-legend-item'}, [el('span', {class: 'ng-line ng-line-dash'}),
                                                           'transport (UDP, TCP, HTTP, bus)']));
@@ -558,32 +621,72 @@
 
   // ---- navigation ---------------------------------------------------------
 
-  Page.prototype.go = function (hash) {
-    var cur = decodeURIComponent((window.location.hash || '').slice(1));
-    if (cur === hash) { this.fromHash(); return; }
-    if (hash) window.location.hash = hash;
-    else {
-      try { window.history.pushState(null, '', window.location.pathname + window.location.search); } catch (e) { /* */ }
-      this.fromHash();
+  /** Render a view from its state string ('' | node=ID | group=ID | loop=N | trace=A,B). */
+  Page.prototype.show = function (state) {
+    var m = this.model, g = /^(node|group|loop|trace)=(.+)$/.exec(state || '');
+    this.notice('');
+    if (!state) { this.state = ''; this.overview(); this.syncControls(); this.refocus(); return true; }
+    if (!g) return false;
+    if (g[1] === 'node' && m.nodes[g[2]]) this.focus(g[2]);
+    else if (g[1] === 'group' && m.groups[g[2]]) this.group(g[2]);
+    else if (g[1] === 'loop' && m.data.loops.some(function (l) { return l.n === g[2]; })) this.loop(g[2]);
+    else if (g[1] === 'trace' && g[2].split(',').length === 2 &&
+             g[2].split(',').every(function (k) { return m.nodes[k]; })) this.trace.apply(this, g[2].split(','));
+    else return false;
+    this.state = state;
+    this.syncControls();
+    this.refocus();
+    return true;
+  };
+
+  /** Keep keyboard focus in the graph after a view replaced the focused block. */
+  Page.prototype.refocus = function () {
+    var a = document.activeElement;
+    if (!a || a === document.body || !a.isConnected || (this.root.contains(a) && a.closest('.ng-canvas'))) {
+      try { this.stage.canvas.focus({preventScroll: true}); } catch (e) { /* old browsers */ }
     }
   };
 
-  Page.prototype.back = function () {
+  Page.prototype.go = function (state) {
+    var prev = this.state;
+    if (this.show(state) && prev !== null && prev !== this.state) {
+      this.history.push(prev);
+      if (this.history.length > 100) this.history.shift();
+    }
+  };
+
+  /** Back: the previous view if `history`, otherwise one level up (Esc). */
+  Page.prototype.back = function (history) {
+    if (history && this.history.length) { this.show(this.history.pop()); return; }
     var v = this.view || {};
     if (v.kind === 'focus' && this.model.nodes[v.id]) this.go('group=' + this.model.nodes[v.id].group);
     else if (v.kind !== 'overview') this.go('');
   };
 
-  Page.prototype.fromHash = function () {
-    var h = decodeURIComponent((window.location.hash || '').slice(1)), m = this.model;
-    var g = /^(node|group|loop|trace)=(.+)$/.exec(h);
-    if (!g) { this.overview(); return false; }
-    if (g[1] === 'node' && m.nodes[g[2]]) this.focus(g[2]);
-    else if (g[1] === 'group' && m.groups[g[2]]) this.group(g[2]);
-    else if (g[1] === 'loop') this.loop(g[2]);
-    else if (g[1] === 'trace') this.trace.apply(this, g[2].split(','));
-    else { this.overview(); return false; }
-    return true;
+  /** Toolbar fields show the current view, never a stale one. */
+  Page.prototype.syncControls = function () {
+    var v = this.view || {}, m = this.model, inp = this.inputs;
+    inp.search.value = v.kind === 'focus' && m.nodes[v.id] ? m.nodes[v.id].display : '';
+    inp.grp.value = v.kind === 'group' ? v.id : '';
+    inp.loop.value = v.kind === 'loop' ? v.id : '';
+    if (v.kind !== 'trace') { inp.from.value = ''; inp.to.value = ''; }
+  };
+
+  Page.prototype.notice = function (text) {
+    if (!this.note) {
+      this.note = el('div', {class: 'ng-notice', role: 'status'});
+      this.crumbs.parentNode.insertBefore(this.note, this.crumbs.nextSibling);
+    }
+    this.note.textContent = text || '';
+    this.note.style.display = text ? '' : 'none';
+  };
+
+  Page.prototype.copyLink = function () {
+    var self = this, link = window.location.href.split('#')[0] + (this.state ? '#' + this.state : '');
+    function done(ok) { self.notice(ok ? 'Link copied: ' + link : 'Copy this link: ' + link); }
+    try {
+      navigator.clipboard.writeText(link).then(function () { done(true); }, function () { done(false); });
+    } catch (e) { done(false); }
   };
 
   Page.prototype.clicked = function (target) {
@@ -614,10 +717,12 @@
     var c = this.model.data.classes[n.cls] || {}, topic = n.kind !== 'node';
     var g = sv('g', {'class': 'ng-box ng-k-' + (n.cls || n.kind) + (opts.ext ? ' ng-ext' : '') +
                      (opts.main ? ' ng-main-box' : ''), 'data-node': n.id, tabindex: '0'}, parent);
-    var title = sv('title', {text: n.display + (n.package ? '  (' + n.package + ')' : '')}, g);
-    title.textContent = n.display;
+    sv('title', {text: n.display + (n.package ? '  (' + n.package + ')' : '') + ' — click to focus'}, g);
     var by = y;
-    if (opts.tag) {
+    if (opts.tag && opts.tagBelow) {           // ring view: arrows arrive from above too
+      h -= 14;
+      sv('text', {x: x + w / 2, y: y + h + 12, 'class': 'ng-tag', 'text-anchor': 'middle', text: opts.tag}, g);
+    } else if (opts.tag) {
       sv('text', {x: x + w / 2, y: y + 11, 'class': 'ng-tag', 'text-anchor': 'middle', text: opts.tag}, g);
       by = y + 14;
       h -= 14;
@@ -638,8 +743,9 @@
   Page.prototype.drawEdge = function (parent, d, e, opts) {
     opts = opts || {};
     var p = sv('path', {d: d, 'class': 'ng-edge' + (e && e.dashed ? ' ng-dashed' : '') +
-                        (opts.cls ? ' ' + opts.cls : ''), 'marker-end': 'url(#ng-arrow)'}, parent);
-    if (e && e.rev) p.setAttribute('marker-start', 'url(#ng-arrow)');
+                        (opts.cls ? ' ' + opts.cls : '')}, parent);
+    if (opts.both) p.setAttribute('marker-start', this.stage.markers.none);
+    this.stage.setDir(p, opts.dir || null);
     var hit = sv('path', {d: d, 'class': 'ng-hit'}, parent);
     if (e) hit.setAttribute('data-edge', String(e.i));
     if (opts.bundle) hit.setAttribute('data-bundle', opts.bundle);
@@ -802,7 +908,7 @@
         var s = cards[k].box, t = cards[g.id].box, inbound = peers[k] === 'in';
         var from = inbound ? s : t, to = inbound ? t : s;
         var d = 'M' + (from.x + from.w / 2) + ',' + (from.y + from.h / 2) + 'L' + (to.x + to.w / 2) + ',' + (to.y + to.h / 2);
-        return {path: self.drawEdge(monG, d, null, {cls: 'ng-monitor'}), peer: k};
+        return {path: self.drawEdge(monG, d, null, {cls: 'ng-monitor'}), peer: k, inbound: inbound};
       });
     });
     this.view.hover = function (gid) {
@@ -810,7 +916,7 @@
       Object.keys(cards).forEach(function (k) { cards[k].el.classList.toggle('ng-dim', any && k !== gid); });
       Object.keys(bundles).forEach(function (k) {
         var on = any && (bundles[k].from === gid || bundles[k].to === gid);
-        bundles[k].path.classList.toggle('ng-on', on);
+        st.setDir(bundles[k].path, on ? (bundles[k].to === gid ? 'recv' : 'send') : null);
         bundles[k].path.classList.toggle('ng-dim', any && !on);
         if (on) {
           lit.push(bundles[k].path);
@@ -822,6 +928,7 @@
         monitorLinks[mon].forEach(function (l) {
           var on = any && (gid === mon || gid === l.peer);
           l.path.classList.toggle('ng-show', on);
+          if (on) st.setDir(l.path, l.inbound === (gid === mon) ? 'recv' : 'send');
           if (on && gid === mon) { lit.push(l.path); cards[l.peer].el.classList.remove('ng-dim'); }
         });
       });
@@ -876,7 +983,6 @@
     var self = this, m = this.model, g = m.groups[gid], lay = m.layout[gid], st = this.stage;
     st.clear();
     this.view = {kind: 'group', id: gid};
-    this.inputs.grp.value = gid;
     this.setCrumbs([{text: 'Overview', hash: ''}, {text: g.name + (g.note ? ' — ' + g.note : '')}]);
     var ext = {};
     lay.external.forEach(function (k) { ext[k] = true; });
@@ -885,8 +991,9 @@
     var boxesG = sv('g', {}, st.world);
     var edgeEls = {}, boxEls = {};
     Object.keys(lay.edges).forEach(function (k) {
-      var e = m.data.edges[+k];
-      edgeEls[k] = self.drawEdge(edgesG, routePath(lay.edges[k], true), e);
+      var e = m.data.edges[+k], nxt = m.data.edges[+k + 1];
+      edgeEls[k] = self.drawEdge(edgesG, routePath(lay.edges[k], true), e,
+                                 {both: !!(nxt && nxt.rev && nxt.pair === +k)});
     });
     Object.keys(lay.nodes).forEach(function (id) {
       var n = m.nodes[id], b = lay.nodes[id];
@@ -898,7 +1005,7 @@
       if (id) near[id] = true;
       Object.keys(edgeEls).forEach(function (k) {
         var e = m.data.edges[+k], on = !!id && (e.from === id || e.to === id);
-        edgeEls[k].classList.toggle('ng-on', on);
+        st.setDir(edgeEls[k], on ? (e.to === id ? 'recv' : 'send') : null);
         edgeEls[k].classList.toggle('ng-dim', !!id && !on);
         if (on) { lit.push(edgeEls[k]); near[e.from] = near[e.to] = true; }
       });
@@ -942,7 +1049,6 @@
     var self = this, m = this.model, n = m.nodes[id], st = this.stage;
     st.clear();
     this.view = {kind: 'focus', id: id};
-    this.inputs.search.value = n.display;
     var g = m.groups[n.group] || {name: n.group, id: n.group};
     this.setCrumbs([{text: 'Overview', hash: ''}, {text: g.name, hash: 'group=' + g.id}, {text: n.display}]);
 
@@ -956,7 +1062,7 @@
       cols[col].push(item);
       return item;
     }
-    var links = [];   // [fromKey, toKey, edge]
+    var links = [];   // [fromKey, toKey, edge] — into column 2 = received, out of it = sent
     if (n.kind === 'node') {
       m.inn[id].forEach(function (i) {
         var e = m.data.edges[i], f = m.nodes[e.from];
@@ -1033,9 +1139,23 @@
     links.forEach(function (l) {
       var a = pos[l[0]], b = pos[l[1]];
       if (!a || !b) return;
-      paths.push(self.drawEdge(edgesG, curve(a.r, a.y, b.l, b.y), l[2], {cls: 'ng-on'}));
+      var received = +l[1].split(':')[0] <= 2;   // columns 0 -> 1 -> 2 carry what the block receives
+      paths.push(self.drawEdge(edgesG, curve(a.r, a.y, b.l, b.y), l[2], {dir: received ? 'recv' : 'send'}));
     });
-    this.finish({x: -10, y: -10, w: x - COLGAP + 20, h: H + 20}, false);
+    // Column headings in the colour of their direction.
+    var heads = n.kind === 'node'
+      ? [['senders', 'recv'], ['received (subscribes)', 'recv'], ['', null], ['sent (publishes)', 'send'], ['receivers', 'send']]
+      : [['', null], ['publishers', 'recv'], ['', null], ['subscribers', 'send'], ['', null]];
+    cols.forEach(function (col, c) {
+      if (!col.length || !heads[c][0]) return;
+      sv('text', {x: xs[c], y: -16, 'text-anchor': 'middle', 'class': 'ng-colhead ng-colhead-' + heads[c][1],
+                  text: (heads[c][1] === 'recv' ? '▼ ' : '▲ ') + heads[c][0]}, boxesG);
+    });
+    if (!links.length) {
+      sv('text', {x: xs[2], y: H + 30, 'text-anchor': 'middle', 'class': 'ng-row-note',
+                  text: 'No topic, service or link of this block in the graph'}, boxesG);
+    }
+    this.finish({x: -10, y: -40, w: x - COLGAP + 20, h: H + 80}, false);
     st.setParticles(paths);
     this.view.hover = null;
     this.nodePanel(id);
@@ -1045,7 +1165,8 @@
 
   /** Point where the segment from a box centre towards (tx, ty) leaves the box. */
   function exitPoint(p, tx, ty) {
-    var dx = tx - p.cx, dy = ty - p.cy, hw = p.w / 2 + 4, hh = (p.h - 14) / 2 + 4;
+    // The group name sits under the box (ring view): links leaving downwards start below it.
+    var dx = tx - p.cx, dy = ty - p.cy, hw = p.w / 2 + 4, hh = (p.h - 14) / 2 + (dy > 0 ? 18 : 4);
     var s = Math.min(Math.abs(dx) > 1e-6 ? hw / Math.abs(dx) : Infinity, Math.abs(dy) > 1e-6 ? hh / Math.abs(dy) : Infinity);
     return [p.cx + dx * s, p.cy + dy * s];
   }
@@ -1094,7 +1215,7 @@
     order.forEach(function (k, i) {
       var a = -Math.PI / 2 + 2 * Math.PI * i / n, nn = m.nodes[k], h = nn.h + 14;
       var cx = RX * Math.cos(a), cy = R * Math.sin(a);
-      pos[k] = {x: cx - nn.w / 2, y: cy - h / 2, w: nn.w, h: h, cx: cx, cy: cy + 7};
+      pos[k] = {x: cx - nn.w / 2, y: cy - h / 2, w: nn.w, h: h, cx: cx, cy: cy - 7};
     });
     var edgesG = sv('g', {'class': 'ng-edges'}, st.world);
     st.dotsHere();
@@ -1102,23 +1223,25 @@
     edgeIdx.forEach(function (i) {
       var e = m.data.edges[i], a = pos[e.from], b = pos[e.to];
       var mx = (a.cx + b.cx) / 2, my = (a.cy + b.cy) / 2, out = Math.hypot(mx / RX, my / R) || 1;
-      var ctl = [mx / out * 1.08, my / out * 1.08];        // bow outwards, along the ring
+      var ml = Math.hypot(mx, my) || 1;                    // bow outwards, clear of the boxes
+      var ctl = [mx / out * 1.08 + mx / ml * 70, my / out * 1.08 + my / ml * 70];
       var p1 = exitPoint(a, ctl[0], ctl[1]), p2 = exitPoint(b, ctl[0], ctl[1]);
       paths.push(self.drawEdge(edgesG, 'M' + p1[0] + ',' + p1[1] + 'Q' + ctl[0] + ',' + ctl[1] + ' ' + p2[0] + ',' + p2[1],
-                               e, {cls: 'ng-on'}));
+                               e, {dir: 'flow'}));
     });
     order.forEach(function (k) {
       var p = pos[k], nn = m.nodes[k];
-      self.drawBox(boxesG, nn, p.x, p.y, p.w, p.h, {tag: (m.groups[nn.group] || {}).name || ''});
+      self.drawBox(boxesG, nn, p.x, p.y, p.w, p.h, {tag: (m.groups[nn.group] || {}).name || '', tagBelow: true});
     });
     sv('text', {x: 0, y: 6, 'text-anchor': 'middle', 'class': 'ng-ring-label', text: '⟳ closed loop'}, boxesG);
-    this.finish({x: -RX - maxW / 2 - 20, y: -R - 40, w: 2 * RX + maxW + 40, h: 2 * R + 80}, false);
+    this.finish({x: -RX - maxW / 2 - 30, y: -R - 60, w: 2 * RX + maxW + 60, h: 2 * R + 150}, false);
     st.setParticles(paths);
   };
 
   Page.prototype.pathView = function (edgeIdx, crumb, cyclic) {
     var self = this, m = this.model, st = this.stage;
     st.clear();
+    this.view = this.view || {};
     var order = [];
     edgeIdx.forEach(function (i) {
       var e = m.data.edges[i];
@@ -1157,7 +1280,7 @@
         d = 'M' + a.cx + ',' + y1 + 'C' + a.cx + ',' + (y1 + (up ? -50 : 50)) + ' ' + b.cx + ',' +
             (y2 + (up ? 50 : -50)) + ' ' + b.cx + ',' + y2;
       }
-      paths.push(self.drawEdge(edgesG, d, e, {cls: 'ng-on'}));
+      paths.push(self.drawEdge(edgesG, d, e, {dir: 'flow'}));
     });
     order.forEach(function (k) {
       var p = pos[k], n = m.nodes[k];
@@ -1170,14 +1293,31 @@
     return order;
   };
 
+  /** Two blocks with no directed path between them: both drawn, the gap stated. */
+  Page.prototype.noPathView = function (a, b) {
+    var m = this.model, st = this.stage;
+    st.clear();
+    var boxesG = sv('g', {}, st.world), A = m.nodes[a], B = m.nodes[b];
+    this.drawBox(boxesG, A, 0, 0, A.w, A.h + 14, {tag: (m.groups[A.group] || {}).name || ''});
+    this.drawBox(boxesG, B, A.w + 260, 0, B.w, B.h + 14, {tag: (m.groups[B.group] || {}).name || ''});
+    sv('text', {x: A.w + 130, y: (A.h + 14) / 2 + 12, 'text-anchor': 'middle', 'class': 'ng-nopath', text: '✕ no data path'}, boxesG);
+    this.setCrumbs([{text: 'Overview', hash: ''}, {text: 'Trace ' + A.display + ' → ' + B.display}]);
+    this.view = {kind: 'trace', hover: null};
+    this.finish({x: -20, y: -20, w: A.w + B.w + 300, h: Math.max(A.h, B.h) + 60}, false);
+  };
+
   Page.prototype.loop = function (n) {
     var self = this, m = this.model;
     var l = m.data.loops.filter(function (x) { return x.n === n; })[0];
     if (!l) { this.overview(); return; }
-    this.view = {kind: 'loop', id: n};
-    this.inputs.loop.value = n;
-    if (l.edges.length) this.pathView(l.edges, 'Closed loop ' + l.n + ' — ' + l.name, true);
-    else this.focus(l.nodes[0]);
+    var crumb = 'Closed loop ' + l.n + ' — ' + l.name;
+    this.view = {kind: 'loop', id: n, hover: null};
+    if (l.edges.length) this.pathView(l.edges, crumb, true);
+    else {
+      this.focus(l.nodes[0]);
+      this.setCrumbs([{text: 'Overview', hash: ''}, {text: crumb + ' (inside ' + this.model.nodes[l.nodes[0]].display + ')'}]);
+    }
+    this.view = {kind: 'loop', id: n, hover: null};
     var p = this.panel;
     p.innerHTML = '';
     p.appendChild(el('div', {class: 'ng-kind ng-k-loop', text: 'Closed loop ' + l.n}));
@@ -1199,7 +1339,8 @@
     this.inputs.to.value = m.nodes[b].display;
     var path = m.path(a, b), p;
     if (path && path.length) this.pathView(path, 'Trace ' + m.nodes[a].display + ' → ' + m.nodes[b].display, false);
-    else this.stage.clear();
+    else this.noPathView(a, b);
+    this.view.kind = 'trace';
     p = this.panel;
     p.innerHTML = '';
     p.appendChild(el('div', {class: 'ng-kind', text: 'Trace'}));
@@ -1208,7 +1349,6 @@
       p.appendChild(el('p', {class: 'ng-warn', text: 'No directed path: data does not flow this way in the graph.'}));
       var back = m.path(b, a);
       if (back) p.appendChild(el('p', {class: 'ng-muted', text: 'There is one in the other direction (' + back.length + ' links).'}));
-      this.setCrumbs([{text: 'Overview', hash: ''}, {text: 'Trace'}]);
       return;
     }
     p.appendChild(el('ol', {class: 'ng-steps'}, path.map(function (i) { return self.edgeRow(i); })));
@@ -1230,9 +1370,10 @@
                          e.label ? el('span', {class: 'ng-edge-label', text: ' ' + e.label}) : null]);
   };
 
-  Page.prototype.section = function (title, rows) {
+  Page.prototype.section = function (title, rows, dir) {
     if (!rows.length) return null;
-    return el('section', {class: 'ng-sec'}, [el('h4', {text: title + ' (' + rows.length + ')'}), el('ul', {}, rows)]);
+    return el('section', {class: 'ng-sec' + (dir ? ' ng-sec-' + dir : '')},
+              [el('h4', {text: title + ' (' + rows.length + ')'}), el('ul', {}, rows)]);
   };
 
   Page.prototype.edgePanel = function (i) {
@@ -1280,15 +1421,16 @@
         if (from.length) row.appendChild(el('div', {class: 'ng-to'}, ['← '].concat(joinNodes(from))));
         (f.kind === 'srv' ? srv : sub).push(row);
       });
-      [['Publishes', pub], ['Subscribes', sub], ['Services', srv], ['Direct links', link]].forEach(function (s) {
-        var x = self.section(s[0], s[1]);
+      [['Publishes — sends', pub, 'send'], ['Subscribes — receives', sub, 'recv'], ['Services', srv], ['Direct links', link]].forEach(function (s) {
+        var x = self.section(s[0], s[1], s[2]);
         if (x) p.appendChild(x);
       });
     } else {
       var pubs = m.inn[id].map(function (i) { return el('li', {}, [self.nodeLink(m.data.edges[i].from), lbl(i)]); });
       var subs = m.out[id].map(function (i) { return el('li', {}, [self.nodeLink(m.data.edges[i].to), lbl(i)]); });
-      [[n.kind === 'srv' ? 'Callers / server' : 'Publishers', pubs], [n.kind === 'srv' ? 'Handled by' : 'Subscribers', subs]]
-        .forEach(function (s) { var x = self.section(s[0], s[1]); if (x) p.appendChild(x); });
+      [[n.kind === 'srv' ? 'Callers / server' : 'Publishers — send', pubs, 'send'],
+       [n.kind === 'srv' ? 'Handled by' : 'Subscribers — receive', subs, 'recv']]
+        .forEach(function (s) { var x = self.section(s[0], s[1], s[2]); if (x) p.appendChild(x); });
       if (!pubs.length && n.kind === 'topic') p.appendChild(el('p', {class: 'ng-warn', text: 'No publisher in the repositories.'}));
     }
     var loops = m.data.loops.filter(function (l) {
