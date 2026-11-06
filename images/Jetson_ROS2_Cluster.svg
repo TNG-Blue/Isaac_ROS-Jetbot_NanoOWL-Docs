@@ -89,8 +89,9 @@
 <text x="381" y="712" font-size="12.5" fill="#1E3A10" text-anchor="start" font-weight="normal">vision_mcu — JetOwl Vision (micro-ROS)</text>
 <text x="381" y="728" font-size="12.5" fill="#1E3A10" text-anchor="start" font-weight="normal">vision — OpenMV Cam, PoE TCP / USB</text>
 <text x="381" y="744" font-size="12.5" fill="#1E3A10" text-anchor="start" font-weight="normal">sensor_link — CRC-32 UDP sensor MCU</text>
-<text x="381" y="760" font-size="12.5" fill="#1E3A10" text-anchor="start" font-weight="normal">Arm relay from flight/status · rotor</text>
-<text x="381" y="776" font-size="12.5" fill="#1E3A10" text-anchor="start" font-weight="normal">rpm supervision · /diagnostics per link</text>
+<text x="381" y="760" font-size="12.5" fill="#1E3A10" text-anchor="start" font-weight="normal">Arm relay (silent under pilot authority)</text>
+<text x="381" y="776" font-size="12.5" fill="#1E3A10" text-anchor="start" font-weight="normal">Remote RTH button → nav_command (AUTO)</text>
+<text x="381" y="792" font-size="12.5" fill="#1E3A10" text-anchor="start" font-weight="normal">rotor rpm · link ping/pong · /diagnostics</text>
 <rect x="601" y="646" width="83" height="16" rx="8" fill="#F6E6F0" stroke="#9C2A6B" stroke-width="0.8"/>
 <text x="642.72" y="658" font-size="10.5" fill="#9C2A6B" text-anchor="middle" font-weight="normal">200m · 128Mi</text>
 <rect x="750" y="490" width="285" height="112" rx="8" fill="#FFFFFF" stroke="#4E8A2E" stroke-width="1.4"/>
@@ -98,6 +99,7 @@
 <text x="761" y="530" font-size="12.5" fill="#1E3A10" text-anchor="start" font-weight="normal">15-state ESKF (ros2_control_system)</text>
 <text x="761" y="546" font-size="12.5" fill="#1E3A10" text-anchor="start" font-weight="normal">IMU · /gps/fix (FC) · baro, χ²-gated</text>
 <text x="761" y="562" font-size="12.5" fill="#1E3A10" text-anchor="start" font-weight="normal">→ odometry/filtered</text>
+<text x="761" y="578" font-size="12.5" fill="#1E3A10" text-anchor="start" font-weight="normal">GNSS trust under attack → advice to FC</text>
 <rect x="909" y="496" width="118" height="16" rx="8" fill="#F6E6F0" stroke="#9C2A6B" stroke-width="0.8"/>
 <text x="968.0799999999999" y="508" font-size="10.5" fill="#9C2A6B" text-anchor="middle" font-weight="normal">pod control-system</text>
 <rect x="1065" y="490" width="285" height="112" rx="8" fill="#FFFFFF" stroke="#4E8A2E" stroke-width="1.4"/>
@@ -113,7 +115,7 @@
 <text x="761" y="700" font-size="12.5" fill="#1E3A10" text-anchor="start" font-weight="normal">Flight modes · safety monitor</text>
 <text x="761" y="716" font-size="12.5" fill="#1E3A10" text-anchor="start" font-weight="normal">Minimum-jerk guidance</text>
 <text x="761" y="732" font-size="12.5" fill="#1E3A10" text-anchor="start" font-weight="normal">2-DOF position loop · RTH / LAND</text>
-<text x="761" y="748" font-size="12.5" fill="#1E3A10" text-anchor="start" font-weight="normal">Chart: off by default</text>
+<text x="761" y="748" font-size="12.5" fill="#1E3A10" text-anchor="start" font-weight="normal">Attack response, reads rc_authority</text>
 <rect x="909" y="666" width="118" height="16" rx="8" fill="#F6E6F0" stroke="#9C2A6B" stroke-width="0.8"/>
 <text x="968.0799999999999" y="678" font-size="10.5" fill="#9C2A6B" text-anchor="middle" font-weight="normal">500m · 512Mi · GPU</text>
 <rect x="1065" y="660" width="285" height="112" rx="8" fill="#FFFFFF" stroke="#4E8A2E" stroke-width="1.4"/>
@@ -129,43 +131,51 @@
 <text x="801" y="878" font-size="12" fill="#222222" text-anchor="start" font-weight="normal">sensor → filter → estimator → controller → actuator → feedback;</text>
 <text x="801" y="894" font-size="12" fill="#222222" text-anchor="start" font-weight="normal">gains derived, GM ≥ 6 dB, PM ≥ 45°; model → SIL → HIL → bench</text>
 <text x="801" y="910" font-size="12" fill="#222222" text-anchor="start" font-weight="normal">→ vehicle (HIL and vehicle evidence still in progress)</text>
-<rect x="1390" y="490" width="340" height="64" rx="8" fill="#FFFFFF" stroke="#4E8A2E" stroke-width="1.4"/>
+<rect x="1390" y="490" width="340" height="58" rx="8" fill="#FFFFFF" stroke="#4E8A2E" stroke-width="1.4"/>
 <text x="1401" y="510" font-size="13.0" fill="#1E3A10" text-anchor="start" font-weight="bold">ros2_lidar_ai_solution</text>
 <text x="1401" y="529" font-size="11.5" fill="#1E3A10" text-anchor="start" font-weight="normal">BEVFusion (lidar + 1–2 cameras) · BEV segmentation</text>
 <text x="1401" y="544" font-size="11.5" fill="#1E3A10" text-anchor="start" font-weight="normal">2-D → 3-D lifter (lidar + stereo) · KF tracker</text>
 <rect x="1622" y="496" width="100" height="16" rx="8" fill="#FFF1D6" stroke="#8A5A00" stroke-width="0.8"/>
 <text x="1671.8999999999999" y="508" font-size="10.5" fill="#8A5A00" text-anchor="middle" font-weight="normal">1 · 1.5Gi · GPU</text>
-<rect x="1390" y="564" width="340" height="64" rx="8" fill="#FFFFFF" stroke="#4E8A2E" stroke-width="1.4"/>
-<text x="1401" y="584" font-size="13.0" fill="#1E3A10" text-anchor="start" font-weight="bold">isaac_ros_objectdetection</text>
-<text x="1401" y="603" font-size="11.5" fill="#1E3A10" text-anchor="start" font-weight="normal">NanoOWL · YOLOv5 · SSD (TensorRT) · Kalman</text>
-<text x="1401" y="618" font-size="11.5" fill="#1E3A10" text-anchor="start" font-weight="normal">→ DetectionResult, lifted to 3-D</text>
-<rect x="1622" y="570" width="100" height="16" rx="8" fill="#FFF1D6" stroke="#8A5A00" stroke-width="0.8"/>
-<text x="1671.8999999999999" y="582" font-size="10.5" fill="#8A5A00" text-anchor="middle" font-weight="normal">1 · 1.5Gi · GPU</text>
-<rect x="1390" y="638" width="340" height="64" rx="8" fill="#FFFFFF" stroke="#4E8A2E" stroke-width="1.4"/>
-<rect x="1712" y="646" width="10" height="10" fill="#4E8A2E"/>
-<text x="1401" y="658" font-size="13.0" fill="#1E3A10" text-anchor="start" font-weight="bold">ros2_stereo</text>
-<text x="1401" y="677" font-size="11.5" fill="#1E3A10" text-anchor="start" font-weight="normal">VPI SGM · per-pixel Kalman · depth + σ_Z</text>
-<text x="1401" y="692" font-size="11.5" fill="#1E3A10" text-anchor="start" font-weight="normal">→ NanoOWL images · 3-D lifter</text>
-<rect x="1586" y="644" width="118" height="16" rx="8" fill="#FFF1D6" stroke="#8A5A00" stroke-width="0.8"/>
-<text x="1645.0800000000002" y="656" font-size="10.5" fill="#8A5A00" text-anchor="middle" font-weight="normal">750m · 768Mi · GPU</text>
-<rect x="1390" y="712" width="340" height="64" rx="8" fill="#FFFFFF" stroke="#4E8A2E" stroke-width="1.4"/>
-<rect x="1712" y="720" width="10" height="10" fill="#4E8A2E"/>
-<text x="1401" y="732" font-size="13.0" fill="#1E3A10" text-anchor="start" font-weight="bold">ros2_lidar_slam</text>
-<text x="1401" y="751" font-size="11.5" fill="#1E3A10" text-anchor="start" font-weight="normal">Multirotor: levelled rays, holonomic EKF</text>
-<text x="1401" y="766" font-size="11.5" fill="#1E3A10" text-anchor="start" font-weight="normal">BnB loop closure · localisation · lpb40b_node</text>
-<rect x="1621" y="718" width="83" height="16" rx="8" fill="#FFF1D6" stroke="#8A5A00" stroke-width="0.8"/>
-<text x="1662.72" y="730" font-size="10.5" fill="#8A5A00" text-anchor="middle" font-weight="normal">750m · 512Mi</text>
-<rect x="1390" y="786" width="340" height="64" rx="8" fill="#FFFFFF" stroke="#4E8A2E" stroke-width="1.4"/>
-<rect x="1712" y="794" width="10" height="10" fill="#4E8A2E"/>
-<text x="1401" y="806" font-size="13.0" fill="#1E3A10" text-anchor="start" font-weight="bold">ros2_night_vision_owl</text>
-<text x="1401" y="825" font-size="11.5" fill="#1E3A10" text-anchor="start" font-weight="normal">MI48 thermal · CA-CFAR · Kalman tracker</text>
-<rect x="1621" y="792" width="83" height="16" rx="8" fill="#FFF1D6" stroke="#8A5A00" stroke-width="0.8"/>
-<text x="1662.72" y="804" font-size="10.5" fill="#8A5A00" text-anchor="middle" font-weight="normal">300m · 256Mi</text>
-<rect x="1390" y="860" width="340" height="64" rx="8" fill="#FFFFFF" stroke="#4E8A2E" stroke-width="1.4"/>
-<text x="1401" y="880" font-size="13.0" fill="#1E3A10" text-anchor="start" font-weight="bold">ros2_rf_spectrum</text>
-<text x="1401" y="899" font-size="11.5" fill="#1E3A10" text-anchor="start" font-weight="normal">Jamming detection → RF failsafe nav command</text>
-<rect x="1651" y="866" width="71" height="16" rx="8" fill="#EFEFEF" stroke="#555555" stroke-width="0.8"/>
-<text x="1686.6000000000001" y="878" font-size="10.5" fill="#555555" text-anchor="middle" font-weight="normal">500m · 1Gi</text>
+<rect x="1390" y="553" width="340" height="58" rx="8" fill="#FFFFFF" stroke="#4E8A2E" stroke-width="1.4"/>
+<text x="1401" y="573" font-size="13.0" fill="#1E3A10" text-anchor="start" font-weight="bold">isaac_ros_objectdetection</text>
+<text x="1401" y="592" font-size="11.5" fill="#1E3A10" text-anchor="start" font-weight="normal">NanoOWL · YOLOv5 · SSD (TensorRT) · Kalman</text>
+<text x="1401" y="607" font-size="11.5" fill="#1E3A10" text-anchor="start" font-weight="normal">→ DetectionResult, lifted to 3-D</text>
+<rect x="1622" y="559" width="100" height="16" rx="8" fill="#FFF1D6" stroke="#8A5A00" stroke-width="0.8"/>
+<text x="1671.8999999999999" y="571" font-size="10.5" fill="#8A5A00" text-anchor="middle" font-weight="normal">1 · 1.5Gi · GPU</text>
+<rect x="1390" y="616" width="340" height="58" rx="8" fill="#FFFFFF" stroke="#4E8A2E" stroke-width="1.4"/>
+<rect x="1712" y="624" width="10" height="10" fill="#4E8A2E"/>
+<text x="1401" y="636" font-size="13.0" fill="#1E3A10" text-anchor="start" font-weight="bold">ros2_stereo · ros2_panorama</text>
+<text x="1401" y="655" font-size="11.5" fill="#1E3A10" text-anchor="start" font-weight="normal">#2: 2 × IMX219 → VPI SGM · Kalman · depth + σ_Z</text>
+<text x="1401" y="670" font-size="11.5" fill="#1E3A10" text-anchor="start" font-weight="normal">#1: IMX477 Dual camera layer → one frame (CUDA)</text>
+<rect x="1657" y="622" width="47" height="16" rx="8" fill="#FFF1D6" stroke="#8A5A00" stroke-width="0.8"/>
+<text x="1680.3600000000001" y="634" font-size="10.5" fill="#8A5A00" text-anchor="middle" font-weight="normal">2 pods</text>
+<rect x="1390" y="679" width="340" height="58" rx="8" fill="#FFFFFF" stroke="#4E8A2E" stroke-width="1.4"/>
+<rect x="1712" y="687" width="10" height="10" fill="#4E8A2E"/>
+<text x="1401" y="699" font-size="13.0" fill="#1E3A10" text-anchor="start" font-weight="bold">ros2_lidar_slam</text>
+<text x="1401" y="718" font-size="11.5" fill="#1E3A10" text-anchor="start" font-weight="normal">Multirotor: levelled rays, holonomic EKF</text>
+<text x="1401" y="733" font-size="11.5" fill="#1E3A10" text-anchor="start" font-weight="normal">BnB loop closure · localisation · lpb40b_node</text>
+<rect x="1621" y="685" width="83" height="16" rx="8" fill="#FFF1D6" stroke="#8A5A00" stroke-width="0.8"/>
+<text x="1662.72" y="697" font-size="10.5" fill="#8A5A00" text-anchor="middle" font-weight="normal">750m · 512Mi</text>
+<rect x="1390" y="742" width="340" height="58" rx="8" fill="#FFFFFF" stroke="#4E8A2E" stroke-width="1.4"/>
+<rect x="1712" y="750" width="10" height="10" fill="#4E8A2E"/>
+<text x="1401" y="762" font-size="13.0" fill="#1E3A10" text-anchor="start" font-weight="bold">ros2_night_vision_owl</text>
+<text x="1401" y="781" font-size="11.5" fill="#1E3A10" text-anchor="start" font-weight="normal">MI48 thermal · CA-CFAR · Kalman tracker</text>
+<rect x="1621" y="748" width="83" height="16" rx="8" fill="#FFF1D6" stroke="#8A5A00" stroke-width="0.8"/>
+<text x="1662.72" y="760" font-size="10.5" fill="#8A5A00" text-anchor="middle" font-weight="normal">300m · 256Mi</text>
+<rect x="1390" y="805" width="340" height="58" rx="8" fill="#FFFFFF" stroke="#4E8A2E" stroke-width="1.4"/>
+<text x="1401" y="825" font-size="13.0" fill="#1E3A10" text-anchor="start" font-weight="bold">ros2_rf_spectrum</text>
+<text x="1401" y="844" font-size="11.5" fill="#1E3A10" text-anchor="start" font-weight="normal">SDR jamming → RF failsafe nav command</text>
+<text x="1401" y="859" font-size="11.5" fill="#1E3A10" text-anchor="start" font-weight="normal">link_security: 10 rules + CUDA MLP → threat</text>
+<rect x="1651" y="811" width="71" height="16" rx="8" fill="#EFEFEF" stroke="#555555" stroke-width="0.8"/>
+<text x="1686.6000000000001" y="823" font-size="10.5" fill="#555555" text-anchor="middle" font-weight="normal">500m · 1Gi</text>
+<rect x="1390" y="868" width="340" height="58" rx="8" fill="#FFFFFF" stroke="#4E8A2E" stroke-width="1.4"/>
+<rect x="1712" y="876" width="10" height="10" fill="#4E8A2E"/>
+<text x="1401" y="888" font-size="13.0" fill="#1E3A10" text-anchor="start" font-weight="bold">isaac_ros_snapshot_downlink</text>
+<text x="1401" y="907" font-size="11.5" fill="#1E3A10" text-anchor="start" font-weight="normal">camera-layer frame → CUDA JPEG, radio budget</text>
+<text x="1401" y="922" font-size="11.5" fill="#1E3A10" text-anchor="start" font-weight="normal">→ FC → 2.4 GHz photo slot → remote</text>
+<rect x="1639" y="874" width="65" height="16" rx="8" fill="#EFEFEF" stroke="#555555" stroke-width="0.8"/>
+<text x="1671.54" y="886" font-size="10.5" fill="#555555" text-anchor="middle" font-weight="normal">GPU · off</text>
 <rect x="1770" y="490" width="620" height="82" rx="8" fill="#FFFFFF" stroke="#4E8A2E" stroke-width="1.4"/>
 <rect x="2372" y="498" width="10" height="10" fill="#4E8A2E"/>
 <text x="1781" y="510" font-size="13.5" fill="#1E3A10" text-anchor="start" font-weight="bold">ros2_qt 2.8 — operator dashboard</text>
@@ -250,27 +260,27 @@
 <text x="1181" y="1018" font-size="12" fill="#1E3A10" text-anchor="start" font-weight="normal">master 6 − 0.5 − 0.5 = 5.0 CPU · 5.1 GiB</text>
 <text x="1181" y="1034" font-size="12" fill="#1E3A10" text-anchor="start" font-weight="normal">worker 6 − 0.5 − 0.25 = 5.25 CPU · 5.6 GiB</text>
 <text x="1185" y="1074" font-size="11.5" fill="#1E3A10" text-anchor="start" font-weight="bold">CPU · cluster 10.25 cores</text>
-<rect x="1185.0" y="1080" width="83.7" height="20" fill="#7FB65A" stroke="#4E8A2E" stroke-width="0.6"/>
-<text x="1226.841463414634" y="1094" font-size="10.5" fill="#1E3A10" text-anchor="middle" font-weight="normal">pinned 2.35</text>
-<rect x="1268.7" y="1080" width="114.0" height="20" fill="#CFE8BF" stroke="#4E8A2E" stroke-width="0.6"/>
-<text x="1325.658536585366" y="1094" font-size="10.5" fill="#1E3A10" text-anchor="middle" font-weight="normal">floating 3.20</text>
-<rect x="1382.6" y="1080" width="167.4" height="20" fill="#FFFFFF" stroke="#4E8A2E" stroke-width="0.6"/>
-<text x="1466.3170731707319" y="1094" font-size="10.5" fill="#1E3A10" text-anchor="middle" font-weight="normal">free</text>
+<rect x="1185.0" y="1080" width="146.0" height="20" fill="#7FB65A" stroke="#4E8A2E" stroke-width="0.6"/>
+<text x="1258.0" y="1094" font-size="10.5" fill="#1E3A10" text-anchor="middle" font-weight="normal">pinned 4.10</text>
+<rect x="1331.0" y="1080" width="78.3" height="20" fill="#CFE8BF" stroke="#4E8A2E" stroke-width="0.6"/>
+<text x="1370.1707317073171" y="1094" font-size="10.5" fill="#1E3A10" text-anchor="middle" font-weight="normal">floating 2.20</text>
+<rect x="1409.3" y="1080" width="140.7" height="20" fill="#FFFFFF" stroke="#4E8A2E" stroke-width="0.6"/>
+<text x="1479.670731707317" y="1094" font-size="10.5" fill="#1E3A10" text-anchor="middle" font-weight="normal">free</text>
 <line x1="1363.0" y1="1076" x2="1363.0" y2="1106" stroke="#9C2A6B" stroke-width="1.6" stroke-dasharray="3 2"/>
 <text x="1363.0487804878048" y="1118" font-size="10.5" fill="#9C2A6B" text-anchor="middle" font-weight="normal">one board 5.0</text>
 <text x="1185" y="1154" font-size="11.5" fill="#1E3A10" text-anchor="start" font-weight="bold">Memory · cluster 10.7 GiB</text>
-<rect x="1185.0" y="1160" width="68.2" height="20" fill="#7FB65A" stroke="#4E8A2E" stroke-width="0.6"/>
-<text x="1219.1121495327102" y="1174" font-size="10.5" fill="#1E3A10" text-anchor="middle" font-weight="normal">pinned 2.00</text>
-<rect x="1253.2" y="1160" width="162.0" height="20" fill="#CFE8BF" stroke="#4E8A2E" stroke-width="0.6"/>
-<text x="1334.2406542056076" y="1174" font-size="10.5" fill="#1E3A10" text-anchor="middle" font-weight="normal">floating 4.75</text>
-<rect x="1415.3" y="1160" width="134.7" height="20" fill="#FFFFFF" stroke="#4E8A2E" stroke-width="0.6"/>
-<text x="1482.6285046728972" y="1174" font-size="10.5" fill="#1E3A10" text-anchor="middle" font-weight="normal">free</text>
+<rect x="1185.0" y="1160" width="136.4" height="20" fill="#7FB65A" stroke="#4E8A2E" stroke-width="0.6"/>
+<text x="1253.2242990654206" y="1174" font-size="10.5" fill="#1E3A10" text-anchor="middle" font-weight="normal">pinned 4.00</text>
+<rect x="1321.4" y="1160" width="110.9" height="20" fill="#CFE8BF" stroke="#4E8A2E" stroke-width="0.6"/>
+<text x="1376.8808411214955" y="1174" font-size="10.5" fill="#1E3A10" text-anchor="middle" font-weight="normal">floating 3.25</text>
+<rect x="1432.3" y="1160" width="117.7" height="20" fill="#FFFFFF" stroke="#4E8A2E" stroke-width="0.6"/>
+<text x="1491.1565420560748" y="1174" font-size="10.5" fill="#1E3A10" text-anchor="middle" font-weight="normal">free</text>
 <line x1="1359.0" y1="1156" x2="1359.0" y2="1186" stroke="#9C2A6B" stroke-width="1.6" stroke-dasharray="3 2"/>
 <text x="1358.9719626168223" y="1198" font-size="10.5" fill="#9C2A6B" text-anchor="middle" font-weight="normal">one board 5.1</text>
-<text x="1181" y="1232" font-size="12" fill="#1E3A10" text-anchor="start" font-weight="normal">Requested 5.55 CPU (54 %) · 6.75 GiB (63 %);</text>
-<text x="1181" y="1248" font-size="12" fill="#1E3A10" text-anchor="start" font-weight="normal">pinned = master 2.15 / 1.75 + worker 0.20 /</text>
-<text x="1181" y="1264" font-size="12" fill="#1E3A10" text-anchor="start" font-weight="normal">0.25 (foxglove-bridge). Master's pinned +</text>
-<text x="1181" y="1280" font-size="12" fill="#1E3A10" text-anchor="start" font-weight="normal">floating 5.35 / 6.5 &gt; 5.0 / 5.1: failover</text>
+<text x="1181" y="1232" font-size="12" fill="#1E3A10" text-anchor="start" font-weight="normal">Requested 6.30 CPU (61 %) · 7.25 GiB (68 %);</text>
+<text x="1181" y="1248" font-size="12" fill="#1E3A10" text-anchor="start" font-weight="normal">pinned = master 3.15 / 3.0 + worker 0.95 /</text>
+<text x="1181" y="1264" font-size="12" fill="#1E3A10" text-anchor="start" font-weight="normal">1.0 (stereo, foxglove-bridge). Master's pinned</text>
+<text x="1181" y="1280" font-size="12" fill="#1E3A10" text-anchor="start" font-weight="normal">+ floating 5.35 / 6.25 &gt; 5.0 / 5.1: failover</text>
 <text x="1181" y="1296" font-size="12" fill="#1E3A10" text-anchor="start" font-weight="normal">falls back on priorities</text>
 <text x="1181" y="1312" font-size="12" fill="#1E3A10" text-anchor="start" font-weight="normal">GPU pods count their CUDA buffers in memory:</text>
 <text x="1181" y="1328" font-size="12" fill="#1E3A10" text-anchor="start" font-weight="normal">the iGPU allocates from the same 8 GB</text>
@@ -296,7 +306,7 @@
 <text x="1591" y="1076" font-size="12" fill="#1E3A10" text-anchor="start" font-weight="normal">pods tolerate it 10 s, then are recreated on</text>
 <text x="1591" y="1092" font-size="12" fill="#1E3A10" text-anchor="start" font-weight="normal">the master: ≈ 35 s + container start</text>
 <text x="1591" y="1108" font-size="12" fill="#1E3A10" text-anchor="start" font-weight="normal"></text>
-<text x="1591" y="1124" font-size="12" fill="#1E3A10" text-anchor="start" font-weight="bold">Master 5.0 CPU / 5.1 GiB &lt; 5.35 / 6.5 →</text>
+<text x="1591" y="1124" font-size="12" fill="#1E3A10" text-anchor="start" font-weight="bold">Master 5.0 CPU / 5.1 GiB &lt; 5.35 / 6.25 →</text>
 <text x="1591" y="1140" font-size="12" fill="#1E3A10" text-anchor="start" font-weight="bold">preemption by PriorityClass</text>
 <rect x="1591" y="1166" width="66" height="18" rx="9" fill="#F6E6F0" stroke="#9C2A6B" stroke-width="0.8"/>
 <text x="1624" y="1179" font-size="10.5" fill="#9C2A6B" text-anchor="middle" font-weight="normal">critical</text>
@@ -304,14 +314,14 @@
 <text x="1665" y="1194" font-size="11.5" fill="#1E3A10" text-anchor="start" font-weight="normal">flight-controller · mission-planner · GCS link</text>
 <rect x="1591" y="1210" width="66" height="18" rx="9" fill="#FFF1D6" stroke="#8A5A00" stroke-width="0.8"/>
 <text x="1624" y="1223" font-size="10.5" fill="#8A5A00" text-anchor="middle" font-weight="normal">high</text>
-<text x="1665" y="1223" font-size="11.5" fill="#1E3A10" text-anchor="start" font-weight="normal">lidar-slam · stereo · night-vision ·</text>
-<text x="1665" y="1238" font-size="11.5" fill="#1E3A10" text-anchor="start" font-weight="normal">lidar-ai · object-detection · OTA</text>
+<text x="1665" y="1223" font-size="11.5" fill="#1E3A10" text-anchor="start" font-weight="normal">lidar-slam · stereo · panorama ·</text>
+<text x="1665" y="1238" font-size="11.5" fill="#1E3A10" text-anchor="start" font-weight="normal">night-vision · lidar-ai · object-det. · OTA</text>
 <rect x="1591" y="1254" width="66" height="18" rx="9" fill="#EFEFEF" stroke="#555555" stroke-width="0.8"/>
 <text x="1624" y="1267" font-size="10.5" fill="#555555" text-anchor="middle" font-weight="normal">normal</text>
 <text x="1665" y="1267" font-size="11.5" fill="#1E3A10" text-anchor="start" font-weight="normal">rf-spectrum · monitoring · qt ·</text>
 <text x="1665" y="1282" font-size="11.5" fill="#1E3A10" text-anchor="start" font-weight="normal">foxglove-bridge (worker): wait for it</text>
-<text x="1591" y="1312" font-size="11.5" fill="#1E3A10" text-anchor="start" font-weight="normal">Result: critical and most of high run; normal</text>
-<text x="1591" y="1327" font-size="11.5" fill="#1E3A10" text-anchor="start" font-weight="normal">and one GPU perception pod stay Pending</text>
+<text x="1591" y="1312" font-size="11.5" fill="#1E3A10" text-anchor="start" font-weight="normal">Result: normal tier and lidar-ai wait;</text>
+<text x="1591" y="1327" font-size="11.5" fill="#1E3A10" text-anchor="start" font-weight="normal">stereo (IMX219 on the worker) is lost with it</text>
 <text x="1591" y="1342" font-size="11.5" fill="#1E3A10" text-anchor="start" font-weight="normal">Master lost: nothing is rescheduled (only</text>
 <text x="1591" y="1357" font-size="11.5" fill="#1E3A10" text-anchor="start" font-weight="normal">server); the MCUs lose their micro-ROS agent</text>
 <rect x="1990" y="952" width="400" height="420" rx="8" fill="#FFFFFF" stroke="#4E8A2E" stroke-width="1.4"/>
@@ -358,8 +368,8 @@
 <text x="555.0" y="1524.5" font-size="12" fill="#1E3A10" text-anchor="middle" font-weight="normal">kubelet · containerd + nvidia runtime</text>
 <text x="555.0" y="1540.5" font-size="12" fill="#1E3A10" text-anchor="middle" font-weight="normal">node label role=master</text>
 <rect x="760" y="1502" width="225" height="52" rx="6" fill="#FFFFFF" stroke="#4E8A2E" stroke-width="1.2"/>
-<text x="872.5" y="1524.5" font-size="12" fill="#1E3A10" text-anchor="middle" font-weight="normal">Pinned: agent · bridge · SLAM</text>
-<text x="872.5" y="1540.5" font-size="12" fill="#1E3A10" text-anchor="middle" font-weight="normal">stereo · night vision · OTA · qt</text>
+<text x="872.5" y="1524.5" font-size="12" fill="#1E3A10" text-anchor="middle" font-weight="normal">Pinned: agent · bridge · SLAM · IMX477</text>
+<text x="872.5" y="1540.5" font-size="12" fill="#1E3A10" text-anchor="middle" font-weight="normal">object det. · night vision · OTA · qt</text>
 <rect x="1020" y="1502" width="330" height="52" rx="6" fill="#FFFFFF" stroke="#4E8A2E" stroke-width="1.2"/>
 <text x="1185.0" y="1524.5" font-size="12" fill="#1E3A10" text-anchor="middle" font-weight="normal">Allocatable 5.0 CPU · 5.1 GiB</text>
 <text x="1185.0" y="1540.5" font-size="12" fill="#1E3A10" text-anchor="middle" font-weight="normal">reserved: system 0.5/1Gi · kube 0.5/1Gi</text>
@@ -375,8 +385,8 @@
 <text x="2205.0" y="1462.5" font-size="12" fill="#1E3A10" text-anchor="middle" font-weight="normal">Allocatable 5.25 CPU · 5.6 GiB</text>
 <text x="2205.0" y="1478.5" font-size="12" fill="#1E3A10" text-anchor="middle" font-weight="normal">reserved: system 0.5/1Gi · kube 0.25/512Mi</text>
 <rect x="1410" y="1502" width="615" height="52" rx="6" fill="#FFFFFF" stroke="#4E8A2E" stroke-width="1.2"/>
-<text x="1717.5" y="1524.5" font-size="12" fill="#1E3A10" text-anchor="middle" font-weight="normal">Floating pods (control-system, network-bridge, lidar-ai, object-detection,</text>
-<text x="1717.5" y="1540.5" font-size="12" fill="#1E3A10" text-anchor="middle" font-weight="normal">rf-spectrum, monitoring) · pinned: foxglove-bridge (host port 8765)</text>
+<text x="1717.5" y="1524.5" font-size="12" fill="#1E3A10" text-anchor="middle" font-weight="normal">Floating pods (control-system, network-bridge, lidar-ai, rf-spectrum,</text>
+<text x="1717.5" y="1540.5" font-size="12" fill="#1E3A10" text-anchor="middle" font-weight="normal">monitoring) · pinned: stereo (2 × IMX219, CSI 0/1) · foxglove-bridge :8765</text>
 <rect x="2040" y="1502" width="330" height="52" rx="6" fill="#FFFFFF" stroke="#4E8A2E" stroke-width="1.2"/>
 <text x="2205.0" y="1524.5" font-size="12" fill="#1E3A10" text-anchor="middle" font-weight="normal">Images pre-pulled by a DaemonSet:</text>
 <text x="2205.0" y="1540.5" font-size="12" fill="#1E3A10" text-anchor="middle" font-weight="normal">failover never waits for a pull</text>
@@ -389,10 +399,10 @@
 <text x="366" y="1678" font-size="16" fill="#4A2C00" text-anchor="start" font-weight="bold">JetOwl flight controller — STM32N657 (Cortex-M55, TrustZone-M) · 192.168.10.2</text>
 <rect x="370" y="1692" width="440" height="112" rx="8" fill="#FFF3DE" stroke="#C07A12" stroke-width="1.4"/>
 <text x="381" y="1712" font-size="13.5" fill="#4A2C00" text-anchor="start" font-weight="bold">micro-ROS node jetowl_fc (FreeRTOS, lwIP)</text>
-<text x="381" y="1732" font-size="12" fill="#4A2C00" text-anchor="start" font-weight="normal">pub /imu/data 200 Hz · /baro/pressure 25 Hz · /gps/fix</text>
-<text x="381" y="1748" font-size="12" fill="#4A2C00" text-anchor="start" font-weight="normal">/jetowl/dr/* 50 Hz · /motor_rpm 50 Hz · /status 2 Hz</text>
-<text x="381" y="1764" font-size="12" fill="#4A2C00" text-anchor="start" font-weight="normal">/jetowl/mission/geo · sub /control/* · /range ·</text>
-<text x="381" y="1780" font-size="12" fill="#4A2C00" text-anchor="start" font-weight="normal">/jetowl/mission/progress · srv /jetowl/arm, /ota/*</text>
+<text x="381" y="1732" font-size="12" fill="#4A2C00" text-anchor="start" font-weight="normal">pub /imu/data 200 Hz · /baro 25 Hz · /gps/fix · /dr/* · /status</text>
+<text x="381" y="1748" font-size="12" fill="#4A2C00" text-anchor="start" font-weight="normal">/security/{rf_link,gnss} · /camera/request · /mission/geo</text>
+<text x="381" y="1764" font-size="12" fill="#4A2C00" text-anchor="start" font-weight="normal">sub /control/* · /range · /security/advice · /camera/jpeg</text>
+<text x="381" y="1780" font-size="12" fill="#4A2C00" text-anchor="start" font-weight="normal">/mission/progress · srv /jetowl/arm, /ota/*</text>
 <rect x="830" y="1692" width="400" height="112" rx="8" fill="#FFF3DE" stroke="#C07A12" stroke-width="1.4"/>
 <text x="841" y="1712" font-size="13.5" fill="#4A2C00" text-anchor="start" font-weight="bold">cmd_guard · RC authority</text>
 <text x="841" y="1732" font-size="12" fill="#4A2C00" text-anchor="start" font-weight="normal">Finite, |q| ≈ 1, tilt limit, T ∈ [0, T_max]</text>
@@ -462,12 +472,12 @@
 <text x="961" y="2172" font-size="11.5" fill="#4A2C00" text-anchor="start" font-weight="normal">edges = exact mean speed at midpoint</text>
 <text x="961" y="2187" font-size="11.5" fill="#4A2C00" text-anchor="start" font-weight="normal">same chips feed the ESC FOC</text>
 <rect x="370" y="2222" width="440" height="128" rx="8" fill="#FFF3DE" stroke="#C07A12" stroke-width="1.4"/>
-<text x="381" y="2242" font-size="13.5" fill="#4A2C00" text-anchor="start" font-weight="bold">2 × LR1121 on SPI5 · rflink protocol v2</text>
-<text x="381" y="2262" font-size="12" fill="#4A2C00" text-anchor="start" font-weight="normal">UL 2.4 GHz FHSS 50 Hz, AES-CMAC: RC frames,</text>
-<text x="381" y="2278" font-size="12" fill="#4A2C00" text-anchor="start" font-weight="normal">mission chunks on the aux channel (≤ 1 in 5)</text>
-<text x="381" y="2294" font-size="12" fill="#4A2C00" text-anchor="start" font-weight="normal">DL 921.4 MHz 10 Hz: power, RPM, GNSS, NAV,</text>
-<text x="381" y="2310" font-size="12" fill="#4A2C00" text-anchor="start" font-weight="normal">MISSION pages, measured values only</text>
-<text x="381" y="2326" font-size="12" fill="#4A2C00" text-anchor="start" font-weight="normal">rc_authority, rc_fresh, LQ → /jetowl/status</text>
+<text x="381" y="2242" font-size="13.5" fill="#4A2C00" text-anchor="start" font-weight="bold">2 × LR1121 on SPI5 · rflink protocol v4</text>
+<text x="381" y="2262" font-size="12" fill="#4A2C00" text-anchor="start" font-weight="normal">UL 2.4 GHz FHSS 50 Hz, AES-CMAC: RC, missions,</text>
+<text x="381" y="2278" font-size="12" fill="#4A2C00" text-anchor="start" font-weight="normal">RTH · photo slot (SF5) after each RC frame</text>
+<text x="381" y="2294" font-size="12" fill="#4A2C00" text-anchor="start" font-weight="normal">DL 921.4 MHz 10 Hz: power, RPM, GNSS, NAV pages</text>
+<text x="381" y="2310" font-size="12" fill="#4A2C00" text-anchor="start" font-weight="normal">Photo boost: commands on 921.4, 2.4 GHz images</text>
+<text x="381" y="2326" font-size="12" fill="#4A2C00" text-anchor="start" font-weight="normal">rc_authority · LQ → /status · security window</text>
 <rect x="830" y="2222" width="400" height="128" rx="8" fill="#FFF3DE" stroke="#C07A12" stroke-width="1.4"/>
 <text x="841" y="2242" font-size="13.5" fill="#4A2C00" text-anchor="start" font-weight="bold">AppliSecure · FSBL</text>
 <text x="841" y="2262" font-size="12" fill="#4A2C00" text-anchor="start" font-weight="normal">Secure arm latch, OTA key: planned</text>
@@ -503,7 +513,7 @@
 <text x="1301" y="2180" font-size="12" fill="#555555" text-anchor="start" font-weight="normal">sensors, indoor corridor world,</text>
 <text x="1301" y="2196" font-size="12" fill="#555555" text-anchor="start" font-weight="normal">sil_pilot.py closed on SLAM pose</text>
 <rect x="1630" y="1652" width="780" height="718" rx="14" fill="#F4F4F4" fill-opacity="0.55" stroke="#6B6B6B" stroke-width="1.6"/>
-<text x="1646" y="1678" font-size="16" fill="#222222" text-anchor="start" font-weight="bold">Sensors on Jetson #1</text>
+<text x="1646" y="1678" font-size="16" fill="#222222" text-anchor="start" font-weight="bold">Sensors on the Jetsons (#1 unless marked #2)</text>
 <rect x="1650" y="1692" width="360" height="150" rx="8" fill="#F4F4F4" stroke="#6B6B6B" stroke-width="1.4"/>
 <text x="1661" y="1712" font-size="13.5" fill="#222222" text-anchor="start" font-weight="bold">LD19 360° LiDAR</text>
 <text x="1661" y="1732" font-size="12" fill="#222222" text-anchor="start" font-weight="normal">UART 230400 · 10 Hz, 450 rays</text>
@@ -521,10 +531,10 @@
 <text x="2041" y="1796" font-size="12" fill="#222222" text-anchor="start" font-weight="normal">(mount = airframe_config.h 11.5)</text>
 <text x="2041" y="1812" font-size="12" fill="#222222" text-anchor="start" font-weight="normal">→ SLAM floor / ceiling gate</text>
 <rect x="1650" y="1854" width="360" height="132" rx="8" fill="#F4F4F4" stroke="#6B6B6B" stroke-width="1.4"/>
-<text x="1661" y="1874" font-size="13.5" fill="#222222" text-anchor="start" font-weight="bold">2 × IMX219 stereo</text>
-<text x="1661" y="1894" font-size="12" fill="#222222" text-anchor="start" font-weight="normal">CSI-2 · 60 mm baseline</text>
-<text x="1661" y="1910" font-size="12" fill="#222222" text-anchor="start" font-weight="normal">→ ros2_stereo → rectified</text>
-<text x="1661" y="1926" font-size="12" fill="#222222" text-anchor="start" font-weight="normal">images for NanoOWL</text>
+<text x="1661" y="1874" font-size="13.5" fill="#222222" text-anchor="start" font-weight="bold">2 × IMX219 stereo · on Jetson #2</text>
+<text x="1661" y="1894" font-size="12" fill="#222222" text-anchor="start" font-weight="normal">CSI-2 0/1 of the worker · 60 mm</text>
+<text x="1661" y="1910" font-size="12" fill="#222222" text-anchor="start" font-weight="normal">baseline → ros2_stereo stereo_node</text>
+<text x="1661" y="1926" font-size="12" fill="#222222" text-anchor="start" font-weight="normal">→ depth + rectified images</text>
 <text x="1661" y="1942" font-size="12" fill="#222222" text-anchor="start" font-weight="normal">σ_Z = Z²·σ_d / (f·B) per pixel</text>
 <text x="1661" y="1958" font-size="12" fill="#222222" text-anchor="start" font-weight="normal">→ 2-D → 3-D detection lifter</text>
 <rect x="2030" y="1854" width="360" height="132" rx="8" fill="#F4F4F4" stroke="#6B6B6B" stroke-width="1.4"/>
@@ -538,9 +548,10 @@
 <text x="1661" y="2056" font-size="12" fill="#4A2C00" text-anchor="start" font-weight="normal">ml detect → α-β tracker → TCP :8080 JSON</text>
 <text x="1661" y="2072" font-size="12" fill="#4A2C00" text-anchor="start" font-weight="normal">→ jetowl_bridge vision link · else USB CDC</text>
 <rect x="2030" y="2000" width="360" height="92" rx="8" fill="#F4F4F4" stroke="#6B6B6B" stroke-width="1.4"/>
-<text x="2041" y="2020" font-size="13.5" fill="#222222" text-anchor="start" font-weight="bold">SDR receiver</text>
-<text x="2041" y="2040" font-size="12" fill="#222222" text-anchor="start" font-weight="normal">external driver → rf_monitor/</text>
-<text x="2041" y="2056" font-size="12" fill="#222222" text-anchor="start" font-weight="normal">raw_iq → ros2_rf_spectrum</text>
+<text x="2041" y="2020" font-size="13.5" fill="#222222" text-anchor="start" font-weight="bold">2 × IMX477 (no stereo) · SDR receiver</text>
+<text x="2041" y="2040" font-size="12" fill="#222222" text-anchor="start" font-weight="normal">CSI 0 + 1 → panorama_node → one frame</text>
+<text x="2041" y="2056" font-size="12" fill="#222222" text-anchor="start" font-weight="normal">→ detectors · snapshot_node → photo</text>
+<text x="2041" y="2072" font-size="12" fill="#222222" text-anchor="start" font-weight="normal">SDR: external driver → ros2_rf_spectrum</text>
 <rect x="1650" y="2106" width="740" height="244" rx="8" fill="#F4F4F4" stroke="#6B6B6B" stroke-width="1.4"/>
 <text x="1661" y="2126" font-size="13.5" fill="#222222" text-anchor="start" font-weight="bold">Where each state is estimated: sensor → filter → estimator → consumer</text>
 <text x="1661" y="2146" font-size="12" fill="#222222" text-anchor="start" font-weight="normal">Attitude: BNO08x + BNO055 → imu_frontend checks → Markley quaternion mean (FC,</text>
@@ -571,11 +582,14 @@
 <text x="56" y="1908" font-size="12" fill="#0B2545" text-anchor="start" font-weight="normal">RTX5 tasks, deadline-monotonic,</text>
 <text x="56" y="1924" font-size="12" fill="#0B2545" text-anchor="start" font-weight="normal">response-time analysis each 1 s</text>
 <text x="56" y="1940" font-size="12" fill="#0B2545" text-anchor="start" font-weight="normal">Shows the measured state only</text>
-<text x="56" y="1956" font-size="12" fill="#0B2545" text-anchor="start" font-weight="normal">2 × LR1121, full duplex</text>
-<rect x="45" y="2240" width="149" height="53" rx="5" fill="#FFFFFF" fill-opacity="0.95" stroke="#2F6DB5" stroke-width="0.8"/>
+<text x="56" y="1956" font-size="12" fill="#0B2545" text-anchor="start" font-weight="normal">Photo page: IMX477 over 2.4 GHz</text>
+<text x="56" y="1972" font-size="12" fill="#0B2545" text-anchor="start" font-weight="normal">RTH button → Jetson (MODE AUTO)</text>
+<text x="56" y="1988" font-size="12" fill="#0B2545" text-anchor="start" font-weight="normal">2 × LR1121, full duplex</text>
+<rect x="45" y="2240" width="156" height="68" rx="5" fill="#FFFFFF" fill-opacity="0.95" stroke="#2F6DB5" stroke-width="0.8"/>
 <text x="52" y="2254" font-size="11.5" fill="#2F6DB5" text-anchor="start" font-weight="normal">LoRa full duplex</text>
 <text x="52" y="2269" font-size="11.5" fill="#2F6DB5" text-anchor="start" font-weight="normal">UL 2.4 GHz FHSS 50 Hz</text>
 <text x="52" y="2284" font-size="11.5" fill="#2F6DB5" text-anchor="start" font-weight="normal">DL 921.4 MHz 10 Hz</text>
+<text x="52" y="2299" font-size="11.5" fill="#2F6DB5" text-anchor="start" font-weight="normal">photo slot · band swap</text>
 <rect x="30" y="375" width="280" height="650" rx="14" fill="#F4F4F4" fill-opacity="0.55" stroke="#6B6B6B" stroke-width="1.6"/>
 <text x="46" y="401" font-size="15" fill="#222222" text-anchor="start" font-weight="bold">Legend</text>
 <rect x="50" y="420" width="34" height="22" rx="4" fill="#EAF2FC" stroke="#2F6DB5" stroke-width="1.4"/>
@@ -678,11 +692,13 @@
 <rect x="832" y="800" width="336" height="23" rx="5" fill="#FFFFFF" fill-opacity="0.95" stroke="#C8364A" stroke-width="0.8"/>
 <text x="1000" y="814" font-size="11.5" fill="#C8364A" text-anchor="middle" font-weight="normal">/control/attitude_setpoint · /control/thrust 50 Hz</text>
 <path d="M 680 830 L 680 1440" fill="none" stroke="#C8364A" stroke-width="2.6" stroke-linejoin="round" marker-start="url(#loop-s)" marker-end="url(#loop-e)"/>
-<rect x="429" y="846" width="243" height="64" rx="5" fill="#FFFFFF" fill-opacity="0.95" stroke="#C8364A" stroke-width="0.8"/>
+<rect x="429" y="846" width="243" height="92" rx="5" fill="#FFFFFF" fill-opacity="0.95" stroke="#C8364A" stroke-width="0.8"/>
 <text x="435.67999999999995" y="859" font-size="10.5" fill="#C8364A" text-anchor="start" font-weight="normal">↑ /imu/data · /baro/pressure · /gps/fix</text>
 <text x="435.67999999999995" y="873" font-size="10.5" fill="#C8364A" text-anchor="start" font-weight="normal">↑ /jetowl/dr/* · /jetowl/mission/geo</text>
-<text x="435.67999999999995" y="887" font-size="10.5" fill="#C8364A" text-anchor="start" font-weight="normal">↓ attitude set-point · thrust</text>
-<text x="435.67999999999995" y="901" font-size="10.5" fill="#C8364A" text-anchor="start" font-weight="normal">↓ /range · /jetowl/mission/progress</text>
+<text x="435.67999999999995" y="887" font-size="10.5" fill="#C8364A" text-anchor="start" font-weight="normal">↑ /jetowl/security/* · /camera/request</text>
+<text x="435.67999999999995" y="901" font-size="10.5" fill="#C8364A" text-anchor="start" font-weight="normal">↓ attitude set-point · thrust</text>
+<text x="435.67999999999995" y="915" font-size="10.5" fill="#C8364A" text-anchor="start" font-weight="normal">↓ /range · /jetowl/mission/progress</text>
+<text x="435.67999999999995" y="929" font-size="10.5" fill="#C8364A" text-anchor="start" font-weight="normal">↓ /security/advice · /camera/jpeg</text>
 <path d="M 740 1492 L 740 1692" fill="none" stroke="#C8364A" stroke-width="2.6" stroke-linejoin="round" marker-start="url(#loop-s)" marker-end="url(#loop-e)"/>
 <rect x="748" y="1624" width="207" height="23" rx="5" fill="#FFFFFF" fill-opacity="0.95" stroke="#C8364A" stroke-width="0.8"/>
 <text x="755" y="1638" font-size="11.5" fill="#C8364A" text-anchor="start" font-weight="normal">micro-ROS XRCE-DDS · UDP :8888</text>
@@ -711,14 +727,14 @@
 <path d="M 1390 524 L 1350 524" fill="none" stroke="#5B6573" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#link-e)"/>
 <rect x="1352" y="470" width="108" height="22" rx="5" fill="#FFFFFF" fill-opacity="0.95" stroke="#5B6573" stroke-width="0.8"/>
 <text x="1359" y="483" font-size="10.5" fill="#5B6573" text-anchor="start" font-weight="normal">/tracked/markers</text>
-<path d="M 1560 638 L 1560 628" fill="none" stroke="#5B6573" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#link-e)"/>
+<path d="M 1560 616 L 1560 611" fill="none" stroke="#5B6573" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#link-e)"/>
 <path d="M 1440 1612 L 1440 1652" fill="none" stroke="#3C3C3C" stroke-width="3" stroke-linejoin="round"/>
 <rect x="1448" y="1624" width="102" height="22" rx="5" fill="#FFFFFF" fill-opacity="0.95" stroke="#3C3C3C" stroke-width="0.8"/>
 <text x="1455" y="1637" font-size="10.5" fill="#3C3C3C" text-anchor="start" font-weight="normal">micro-ROS · OTA</text>
 <path d="M 1260 2240 L 1260 1612" fill="none" stroke="#8A8A8A" stroke-width="2" stroke-linejoin="round" stroke-dasharray="7 5"/>
 <path d="M 1700 1652 L 1700 1590 L 1000 1590 L 1000 1492" fill="none" stroke="#5B6573" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#link-e)"/>
-<rect x="1260" y="1578" width="190" height="22" rx="5" fill="#FFFFFF" fill-opacity="0.95" stroke="#5B6573" stroke-width="0.8"/>
-<text x="1267" y="1591" font-size="10.5" fill="#5B6573" text-anchor="start" font-weight="normal">USB · UART · CSI-2 → Jetson #1</text>
+<rect x="1260" y="1578" width="302" height="22" rx="5" fill="#FFFFFF" fill-opacity="0.95" stroke="#5B6573" stroke-width="0.8"/>
+<text x="1267" y="1591" font-size="10.5" fill="#5B6573" text-anchor="start" font-weight="normal">USB · UART · CSI-2 → Jetson #1 (IMX219 pair → #2)</text>
 <path d="M 1650 2046 L 1640 2046 L 1640 1612" fill="none" stroke="#3C3C3C" stroke-width="3" stroke-linejoin="round"/>
 <rect x="1646" y="1618" width="126" height="22" rx="5" fill="#FFFFFF" fill-opacity="0.95" stroke="#3C3C3C" stroke-width="0.8"/>
 <text x="1653" y="1631" font-size="10.5" fill="#3C3C3C" text-anchor="start" font-weight="normal">PoE 802.3af · 1 GbE</text>

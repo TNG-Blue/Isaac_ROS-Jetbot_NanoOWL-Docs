@@ -1,0 +1,240 @@
+/*
+ *  ════════════════════════════════════════════════════════════════════════════
+ *  SPDX-License-Identifier: Apache-2.0
+ *  Copyright (c) 2025 TNG-Blue
+ *
+ *  Licensed under the Apache License, Version 2.0 (the "License");
+ *  you may not use this file except in compliance with the License.
+ *  You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ *  Unless required by applicable law or agreed to in writing, software
+ *  distributed under the License is distributed on an "AS IS" BASIS,
+ *  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ *  See the License for the specific language governing permissions and
+ *  limitations under the License.
+ *  ════════════════════════════════════════════════════════════════════════════
+ */
+
+/* Live node graph (javascripts/node-graph.js). The drawing keeps mermaid's own colours; this
+ * file only adds the frame, the dimming of what is not selected and the flow animation. */
+
+.node-graph {
+  --ng-accent: #f97316;
+  --ng-link: #2563eb;
+  --ng-border: var(--md-default-fg-color--lightest);
+  --ng-zoom: 1;
+  margin: 0.6rem 0 1.2rem;
+  font-size: 0.72rem;
+}
+
+/* --- toolbar --------------------------------------------------------------- */
+.ng-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+.ng-input,
+.ng-select {
+  font: inherit;
+  padding: 0.3rem 0.5rem;
+  border: 1px solid var(--ng-border);
+  border-radius: 0.3rem;
+  background: var(--md-default-bg-color);
+  color: var(--md-default-fg-color);
+  min-width: 12rem;
+  max-width: 100%;
+}
+.ng-select { max-width: 16rem; }
+.ng-short { min-width: 8rem; width: 9rem; }
+.ng-trace { display: inline-flex; gap: 0.3rem; align-items: center; flex-wrap: wrap; }
+.ng-zoom { display: inline-flex; gap: 0.2rem; margin-left: auto; }
+.ng-btn {
+  font: inherit;
+  cursor: pointer;
+  padding: 0.3rem 0.6rem;
+  border: 1px solid var(--ng-border);
+  border-radius: 0.3rem;
+  background: var(--md-default-bg-color);
+  color: var(--md-default-fg-color);
+}
+.md-typeset .ng-btn.md-button { margin: 0; padding: 0.3rem 0.8rem; font-size: inherit; }
+.ng-btn:hover,
+.ng-btn:focus-visible { border-color: var(--md-accent-fg-color); }
+.ng-toggle[aria-pressed="true"] {
+  background: var(--md-accent-fg-color--transparent);
+  border-color: var(--md-accent-fg-color);
+}
+
+/* --- canvas + panel -------------------------------------------------------- */
+.ng-main {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 19rem;
+  gap: 0.6rem;
+}
+.ng-canvas {
+  position: relative;
+  height: calc(100vh - 9rem);
+  min-height: 28rem;
+  border: 1px solid var(--ng-border);
+  border-radius: 0.4rem;
+  overflow: hidden;
+  background: #fff;
+  cursor: grab;
+  touch-action: none;
+  user-select: none;
+}
+.ng-canvas.ng-panning { cursor: grabbing; }
+.ng-canvas:focus-visible { outline: 2px solid var(--md-accent-fg-color); }
+
+.ng-panel {
+  height: calc(100vh - 9rem);
+  min-height: 28rem;
+  overflow: auto;
+  border: 1px solid var(--ng-border);
+  border-radius: 0.4rem;
+  padding: 0.6rem 0.8rem;
+  background: var(--md-code-bg-color);
+}
+.md-typeset .ng-panel h3 { margin: 0.2rem 0 0.4rem; font-size: 0.95rem; word-break: break-word; }
+.md-typeset .ng-panel h4 { margin: 0.8rem 0 0.2rem; font-size: 0.75rem; text-transform: uppercase;
+  letter-spacing: 0.04em; color: var(--md-default-fg-color--light); }
+.md-typeset .ng-panel ul,
+.md-typeset .ng-panel ol { margin: 0.2rem 0 0.2rem 1rem; }
+.md-typeset .ng-panel li { margin: 0.15rem 0; }
+.ng-kind {
+  display: inline-block;
+  font-size: 0.62rem;
+  padding: 0.05rem 0.45rem;
+  border-radius: 1rem;
+  background: var(--md-default-fg-color--lightest);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+.ng-meta div { margin: 0.1rem 0; }
+.ng-desc { margin: 0.4rem 0; }
+.ng-muted { color: var(--md-default-fg-color--light); }
+.ng-warn { color: #be123c; }
+.ng-to { margin: 0.05rem 0 0.25rem 0.6rem; color: var(--md-default-fg-color--light); }
+.ng-edge-label { color: var(--md-default-fg-color--light); font-style: italic; }
+.ng-link {
+  font: inherit;
+  cursor: pointer;
+  border: 0;
+  padding: 0;
+  background: none;
+  color: var(--md-typeset-a-color);
+  text-align: left;
+}
+.ng-link:hover { text-decoration: underline; }
+.ng-counts { display: flex; flex-wrap: wrap; gap: 0.3rem 0.9rem; margin: 0.6rem 0; }
+.ng-help { color: var(--md-default-fg-color--light); }
+.ng-diagram { display: block; margin-top: 0.3rem; }
+.ng-diagram img { width: 100%; border: 1px solid var(--ng-border); border-radius: 0.3rem;
+  background: #fff; }
+.ng-status { min-height: 1.2em; margin-top: 0.3rem; color: var(--md-default-fg-color--light); }
+
+/* --- legend ---------------------------------------------------------------- */
+.ng-legend { display: flex; flex-wrap: wrap; gap: 0.3rem 1rem; margin-top: 0.5rem; }
+.ng-legend-item { display: inline-flex; align-items: center; gap: 0.35rem; }
+.ng-swatch { width: 1.1rem; height: 0.75rem; border: 1.5px solid; border-radius: 0.15rem; }
+.ng-swatch-topic { border-radius: 0.5rem; }
+.ng-line { width: 1.6rem; border-top: 2px solid #333; }
+.ng-line-dash { border-top-style: dashed; }
+
+/* --- the drawing ------------------------------------------------------------ */
+.ng-crumbs { display: flex; flex-wrap: wrap; gap: 0.35rem; align-items: center;
+  margin: 0 0 0.4rem; font-size: 0.78rem; }
+.ng-sep { color: var(--md-default-fg-color--light); }
+.ng-primary { background: var(--md-primary-fg-color); color: var(--md-primary-bg-color);
+  border-color: var(--md-primary-fg-color); }
+.ng-svg { width: 100%; height: 100%; display: block; font-family: var(--md-text-font-family, Arial), Arial, sans-serif; }
+.ng-svg text { pointer-events: none; }
+
+/* overview cards */
+.ng-card { cursor: pointer; transition: opacity 0.2s; }
+.ng-card-bg { fill: #f8fafc; stroke: #1d4ed8; stroke-width: 1.5px; }
+.ng-card:hover .ng-card-bg,
+.ng-card:focus .ng-card-bg { fill: #eff6ff; stroke-width: 2.5px; }
+.ng-card-monitor .ng-card-bg { stroke: #6d28d9; stroke-dasharray: 6 4; fill: #faf5ff; }
+.ng-card-title { font-size: 16px; font-weight: 700; fill: #0f172a; }
+.ng-card-note { font-size: 11px; fill: #64748b; }
+.ng-card-rule { stroke: #cbd5e1; }
+.ng-card-line { font-size: 13px; fill: #1e293b; }
+.ng-badge circle { fill: #fff; stroke: #64748b; stroke-width: 1.5px; }
+.ng-badge text { font-size: 11px; font-weight: 700; fill: #334155; }
+.ng-badge { cursor: pointer; }
+
+/* blocks */
+.ng-box { cursor: pointer; transition: opacity 0.2s; }
+.ng-box .ng-shape { stroke-width: 1.5px; }
+.ng-box:hover .ng-shape,
+.ng-box:focus .ng-shape { stroke-width: 3px; }
+.ng-box.ng-ext .ng-shape { fill: #f1f5f9 !important; stroke: #94a3b8 !important; }
+.ng-box.ng-main-box .ng-shape { stroke-width: 3px; filter: drop-shadow(0 2px 6px rgba(29, 78, 216, 0.35)); }
+.ng-label { font-size: 13px; fill: #0f172a; }
+.ng-label-main { font-size: 16px; font-weight: 700; }
+.ng-tag { font-size: 10.5px; fill: #64748b; }
+
+/* edges */
+.ng-edge { fill: none; stroke: #94a3b8; stroke-width: 1.4px; vector-effect: non-scaling-stroke;
+  transition: opacity 0.2s, stroke 0.2s; }
+.ng-edge.ng-dashed { stroke-dasharray: 6 4; }
+.ng-edge.ng-bundle { stroke: #94a3b8; opacity: 0.9; }
+.ng-edge.ng-on { stroke: var(--ng-link); stroke-width: 2.4px; opacity: 1; }
+.ng-edge.ng-on:not(.ng-dashed) { stroke-dasharray: 10 6; animation: ng-flow 1s linear infinite; }
+.ng-edge.ng-monitor { stroke: #7c3aed; stroke-dasharray: 3 5; opacity: 0; }
+.ng-edge.ng-monitor.ng-show { opacity: 0.8; }
+.ng-hit { fill: none; stroke: transparent; stroke-width: 14px; pointer-events: stroke; cursor: pointer; }
+.ng-arrowhead { fill: #64748b; }
+.ng-dim { opacity: 0.15; }
+.ng-svg .ng-particles { pointer-events: none; }
+.ng-dot { fill: var(--ng-accent); stroke: #fff; stroke-width: 1.5px; vector-effect: non-scaling-stroke; }
+.ng-dot-link { fill: #7c3aed; }
+@keyframes ng-flow { to { stroke-dashoffset: -16; } }
+
+.node-graph.ng-still .ng-edge { animation: none !important; }
+@media (prefers-reduced-motion: reduce) {
+  .ng-edge { animation: none !important; }
+}
+
+/* Dark scheme: the drawing keeps the light palette of the mermaid source; invert it. */
+[data-md-color-scheme="slate"] .ng-canvas { background: #111; }
+[data-md-color-scheme="slate"] .ng-svg { filter: invert(0.9) hue-rotate(180deg); }
+[data-md-color-scheme="slate"] .ng-diagram img { filter: invert(0.9) hue-rotate(180deg); }
+
+
+/* panel hidden: the drawing takes the full width */
+.node-graph.ng-nopanel .ng-main { grid-template-columns: minmax(0, 1fr); }
+.node-graph.ng-nopanel .ng-panel { display: none; }
+
+/* map of a large drawing, bottom-right of the canvas */
+.ng-mini {
+  position: absolute; right: 10px; bottom: 10px; width: 200px; height: 130px;
+  background: rgba(255, 255, 255, 0.92); border: 1px solid var(--ng-border); border-radius: 6px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15); cursor: crosshair; touch-action: none;
+}
+.ng-mini-svg { width: 100%; height: 100%; display: block; }
+.ng-mini-view { fill: rgba(37, 99, 235, 0.12); stroke: #2563eb; stroke-width: 2px;
+  vector-effect: non-scaling-stroke; }
+[data-md-color-scheme="slate"] .ng-mini { background: rgba(20, 20, 20, 0.92); }
+[data-md-color-scheme="slate"] .ng-mini-svg { filter: invert(0.9) hue-rotate(180deg); }
+
+.ng-row-note { font-size: 13px; font-style: italic; fill: #64748b; }
+.ng-ring-label { font-size: 15px; fill: #94a3b8; }
+
+/* --- narrow screens: panel below the canvas -------------------------------- */
+@media screen and (max-width: 60em) {
+  .ng-main { grid-template-columns: minmax(0, 1fr); }
+  .ng-canvas { height: 62vh; }
+  .ng-panel { height: auto; max-height: 60vh; }
+  .ng-zoom { margin-left: 0; }
+  .ng-input, .ng-select { min-width: 0; flex: 1 1 10rem; }
+}
+
+/* Full-width page: the graph needs every pixel. */
+.md-main__inner:has(#node-graph) { max-width: none; }
+.md-content:has(#node-graph) .md-content__inner { margin-left: 1rem; margin-right: 1rem; }

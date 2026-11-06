@@ -1,0 +1,181 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="1546" viewBox="0 0 1920 1546" font-family="Helvetica, Arial, sans-serif">
+<title>matlab_jetowl_viz — ROS 2 node diagram</title>
+<defs>
+<marker id="link-e" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#5B6573"/></marker><marker id="link-s" viewBox="0 0 10 10" refX="1" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M10 0 L0 5 L10 10 z" fill="#5B6573"/></marker>
+<marker id="loop-e" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#C8364A"/></marker><marker id="loop-s" viewBox="0 0 10 10" refX="1" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M10 0 L0 5 L10 10 z" fill="#C8364A"/></marker>
+</defs>
+<rect width="1920" height="1546" fill="#FFFFFF"/>
+<text x="30" y="46" font-size="28" fill="#1B1B1B" text-anchor="start" font-weight="bold">matlab_jetowl_viz</text>
+<text x="30" y="76" font-size="15" fill="#555555" text-anchor="start" font-weight="normal">MATLAB/ · Monitoring · GUI · MATLAB</text>
+<text x="30" y="100" font-size="12.5" fill="#777777" text-anchor="start" font-weight="normal">Inputs on the left, outputs on the right · topics as chips, services in magenta, topics without a publisher dashed red · links of a closed loop in red · wiring from the System Node Graph</text>
+<text x="350" y="136" font-size="13" fill="#334155" text-anchor="start" font-weight="bold">Subscribes · serves · receives</text>
+<text x="1240" y="136" font-size="13" fill="#334155" text-anchor="start" font-weight="bold">Publishes · calls · sends</text>
+<rect x="740" y="150" width="440" height="1096" rx="12" fill="#E6F4DE" stroke="#4E8A2E" stroke-width="2.2"/>
+<text x="754" y="178" font-size="16" fill="#1E3A10" text-anchor="start" font-weight="bold">matlab_jetowl_viz</text>
+<text x="754" y="218" font-size="12.5" fill="#1E3A10" text-anchor="start" font-weight="normal">JetOwlRos2Session.m · jetowl_ros2_viz.m · Simulink</text>
+<text x="754" y="234" font-size="12.5" fill="#1E3A10" text-anchor="start" font-weight="normal">   jetowl_blk_*</text>
+<text x="754" y="250" font-size="12.5" fill="#1E3A10" text-anchor="start" font-weight="normal">3-D/2-D · altitude · attitude · RPM · SLAM: NIS, ICP, map</text>
+<text x="754" y="266" font-size="12.5" fill="#1E3A10" text-anchor="start" font-weight="normal"></text>
+<text x="754" y="282" font-size="12.5" fill="#1E3A10" text-anchor="start" font-weight="normal">Package: MATLAB/</text>
+<text x="754" y="298" font-size="12.5" fill="#1E3A10" text-anchor="start" font-weight="normal">Source: scripts/ros2/ROS2_Communication_Handler.m,</text>
+<text x="754" y="314" font-size="12.5" fill="#1E3A10" text-anchor="start" font-weight="normal">   scripts/ros_interface/Conne</text>
+<text x="754" y="330" font-size="12.5" fill="#1E3A10" text-anchor="start" font-weight="normal">Not deployed by the Helm chart (run with ros2 launch)</text>
+<rect x="350" y="150" width="330" height="54" rx="14" fill="#FFFFFF" stroke="#334155" stroke-width="1.2"/>
+<text x="362" y="169" font-size="12.5" fill="#0F172A" text-anchor="start" font-weight="bold">/baro/pressure</text>
+<text x="362" y="186" font-size="11.5" fill="#334155" text-anchor="start" font-weight="normal">FluidPressure [Pa] · 25 Hz</text>
+<rect x="30" y="150" width="290" height="54" rx="8" fill="#FFF3DE" stroke="#C07A12" stroke-width="1.4"/>
+<text x="40" y="169" font-size="12" fill="#4A2C00" text-anchor="start" font-weight="normal">jetowl_fc</text>
+<path d="M 320 177.0 L 350 177.0" fill="none" stroke="#5B6573" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#link-e)"/>
+<path d="M 680 177.0 L 740 177.0" fill="none" stroke="#5B6573" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#link-e)"/>
+<rect x="350" y="218" width="330" height="54" rx="14" fill="#FFFFFF" stroke="#334155" stroke-width="1.2"/>
+<text x="362" y="237" font-size="12.5" fill="#0F172A" text-anchor="start" font-weight="bold">/control/attitude_setpoint</text>
+<text x="362" y="254" font-size="11.5" fill="#334155" text-anchor="start" font-weight="normal">QuaternionStamped · 50 Hz</text>
+<rect x="30" y="218" width="290" height="54" rx="8" fill="#FFFFFF" stroke="#4E8A2E" stroke-width="1.4"/>
+<text x="40" y="237" font-size="12" fill="#1E3A10" text-anchor="start" font-weight="normal">uav_trajectory_controller</text>
+<path d="M 320 245.0 L 350 245.0" fill="none" stroke="#5B6573" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#link-e)"/>
+<path d="M 680 245.0 L 740 245.0" fill="none" stroke="#5B6573" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#link-e)"/>
+<rect x="350" y="286" width="330" height="54" rx="14" fill="#FFFFFF" stroke="#334155" stroke-width="1.2"/>
+<text x="362" y="305" font-size="12.5" fill="#0F172A" text-anchor="start" font-weight="bold">/gps/fix</text>
+<text x="362" y="322" font-size="11.5" fill="#334155" text-anchor="start" font-weight="normal">NavSatFix</text>
+<rect x="30" y="286" width="290" height="54" rx="8" fill="#FFF3DE" stroke="#C07A12" stroke-width="1.4"/>
+<text x="40" y="305" font-size="12" fill="#4A2C00" text-anchor="start" font-weight="normal">jetowl_fc</text>
+<text x="40" y="320" font-size="12" fill="#4A2C00" text-anchor="start" font-weight="normal">jetowl_bridge (sensor_link)</text>
+<path d="M 320 313.0 L 350 313.0" fill="none" stroke="#5B6573" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#link-e)"/>
+<path d="M 680 313.0 L 740 313.0" fill="none" stroke="#5B6573" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#link-e)"/>
+<rect x="350" y="354" width="330" height="69" rx="14" fill="#FFFFFF" stroke="#334155" stroke-width="1.2"/>
+<text x="362" y="373" font-size="12.5" fill="#0F172A" text-anchor="start" font-weight="bold">/hexa/state_estimate · /hexa/status ·</text>
+<text x="362" y="390" font-size="11.5" fill="#334155" text-anchor="start" font-weight="normal">   /hexa/ground_truth/odometry</text>
+<text x="362" y="405" font-size="11.5" fill="#334155" text-anchor="start" font-weight="normal">Pose · Float32Array · Odometry</text>
+<rect x="30" y="354" width="290" height="69" rx="8" fill="#FFFFFF" stroke="#8A8A8A" stroke-width="1.4" stroke-dasharray="6 4"/>
+<text x="40" y="373" font-size="12" fill="#555555" text-anchor="start" font-weight="normal">ros_gz_bridge</text>
+<path d="M 320 388.5 L 350 388.5" fill="none" stroke="#5B6573" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#link-e)"/>
+<path d="M 680 388.5 L 740 388.5" fill="none" stroke="#5B6573" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#link-e)"/>
+<rect x="350" y="437" width="330" height="54" rx="14" fill="#FFFFFF" stroke="#334155" stroke-width="1.2"/>
+<text x="362" y="456" font-size="12.5" fill="#0F172A" text-anchor="start" font-weight="bold">/imu/data</text>
+<text x="362" y="473" font-size="11.5" fill="#334155" text-anchor="start" font-weight="normal">sensor_msgs/Imu · 200 Hz</text>
+<rect x="30" y="437" width="290" height="54" rx="8" fill="#FFF3DE" stroke="#C07A12" stroke-width="1.4"/>
+<text x="40" y="456" font-size="12" fill="#4A2C00" text-anchor="start" font-weight="normal">jetowl_fc</text>
+<text x="40" y="471" font-size="12" fill="#4A2C00" text-anchor="start" font-weight="normal">jetowl_bridge (sensor_link)</text>
+<path d="M 320 464.0 L 350 464.0" fill="none" stroke="#5B6573" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#link-e)"/>
+<path d="M 680 464.0 L 740 464.0" fill="none" stroke="#5B6573" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#link-e)"/>
+<rect x="350" y="505" width="330" height="54" rx="14" fill="#FFFFFF" stroke="#334155" stroke-width="1.2"/>
+<text x="362" y="524" font-size="12.5" fill="#0F172A" text-anchor="start" font-weight="bold">/jetowl/motor_rpm</text>
+<text x="362" y="541" font-size="11.5" fill="#334155" text-anchor="start" font-weight="normal">Float32MultiArray · 50 Hz</text>
+<rect x="30" y="505" width="290" height="54" rx="8" fill="#FFF3DE" stroke="#C07A12" stroke-width="1.4"/>
+<text x="40" y="524" font-size="12" fill="#4A2C00" text-anchor="start" font-weight="normal">jetowl_fc</text>
+<path d="M 320 532.0 L 350 532.0" fill="none" stroke="#5B6573" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#link-e)"/>
+<path d="M 680 532.0 L 740 532.0" fill="none" stroke="#5B6573" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#link-e)"/>
+<rect x="350" y="573" width="330" height="54" rx="14" fill="#FFFFFF" stroke="#334155" stroke-width="1.2"/>
+<text x="362" y="592" font-size="12.5" fill="#0F172A" text-anchor="start" font-weight="bold">/map</text>
+<text x="362" y="609" font-size="11.5" fill="#334155" text-anchor="start" font-weight="normal">OccupancyGrid</text>
+<rect x="30" y="573" width="290" height="54" rx="8" fill="#FFFFFF" stroke="#4E8A2E" stroke-width="1.4"/>
+<text x="40" y="592" font-size="12" fill="#1E3A10" text-anchor="start" font-weight="normal">lidar_slam_node</text>
+<text x="40" y="607" font-size="12" fill="#1E3A10" text-anchor="start" font-weight="normal">slam_toolbox</text>
+<path d="M 320 600.0 L 350 600.0" fill="none" stroke="#5B6573" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#link-e)"/>
+<path d="M 680 600.0 L 740 600.0" fill="none" stroke="#5B6573" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#link-e)"/>
+<rect x="350" y="641" width="330" height="54" rx="14" fill="#FFFFFF" stroke="#334155" stroke-width="1.2"/>
+<text x="362" y="660" font-size="12.5" fill="#0F172A" text-anchor="start" font-weight="bold">/odometry/filtered</text>
+<text x="362" y="677" font-size="11.5" fill="#334155" text-anchor="start" font-weight="normal">Odometry</text>
+<rect x="30" y="641" width="290" height="54" rx="8" fill="#FFFFFF" stroke="#4E8A2E" stroke-width="1.4"/>
+<text x="40" y="660" font-size="12" fill="#1E3A10" text-anchor="start" font-weight="normal">uav_state_estimator</text>
+<path d="M 320 668.0 L 350 668.0" fill="none" stroke="#5B6573" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#link-e)"/>
+<path d="M 680 668.0 L 740 668.0" fill="none" stroke="#5B6573" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#link-e)"/>
+<rect x="350" y="709" width="330" height="54" rx="14" fill="#FFFFFF" stroke="#334155" stroke-width="1.2"/>
+<text x="362" y="728" font-size="12.5" fill="#0F172A" text-anchor="start" font-weight="bold">/range</text>
+<text x="362" y="745" font-size="11.5" fill="#334155" text-anchor="start" font-weight="normal">Range</text>
+<rect x="30" y="709" width="290" height="54" rx="8" fill="#FFFFFF" stroke="#4E8A2E" stroke-width="1.4"/>
+<text x="40" y="728" font-size="12" fill="#1E3A10" text-anchor="start" font-weight="normal">lpb40b_node</text>
+<path d="M 320 736.0 L 350 736.0" fill="none" stroke="#5B6573" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#link-e)"/>
+<path d="M 680 736.0 L 740 736.0" fill="none" stroke="#5B6573" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#link-e)"/>
+<rect x="350" y="777" width="330" height="54" rx="14" fill="#FFFFFF" stroke="#334155" stroke-width="1.2"/>
+<text x="362" y="796" font-size="12.5" fill="#0F172A" text-anchor="start" font-weight="bold">/scan</text>
+<text x="362" y="813" font-size="11.5" fill="#334155" text-anchor="start" font-weight="normal">LaserScan</text>
+<rect x="30" y="777" width="290" height="54" rx="8" fill="#FFFFFF" stroke="#4E8A2E" stroke-width="1.4"/>
+<text x="40" y="796" font-size="12" fill="#1E3A10" text-anchor="start" font-weight="normal">ld19_node</text>
+<path d="M 320 804.0 L 350 804.0" fill="none" stroke="#5B6573" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#link-e)"/>
+<path d="M 680 804.0 L 740 804.0" fill="none" stroke="#5B6573" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#link-e)"/>
+<rect x="350" y="845" width="330" height="46" rx="14" fill="#FFFFFF" stroke="#334155" stroke-width="1.2"/>
+<text x="362" y="864" font-size="12.5" fill="#0F172A" text-anchor="start" font-weight="bold">/tracked/markers</text>
+<rect x="30" y="845" width="290" height="46" rx="8" fill="#FFFFFF" stroke="#4E8A2E" stroke-width="1.4"/>
+<text x="40" y="864" font-size="12" fill="#1E3A10" text-anchor="start" font-weight="normal">object_tracker_node</text>
+<path d="M 320 868.0 L 350 868.0" fill="none" stroke="#5B6573" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#link-e)"/>
+<path d="M 680 868.0 L 740 868.0" fill="none" stroke="#5B6573" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#link-e)"/>
+<rect x="350" y="905" width="330" height="54" rx="14" fill="#FFFFFF" stroke="#334155" stroke-width="1.2"/>
+<text x="362" y="924" font-size="12.5" fill="#0F172A" text-anchor="start" font-weight="bold">control/accel_cmd · control/predicted_path</text>
+<text x="362" y="941" font-size="11.5" fill="#334155" text-anchor="start" font-weight="normal">AccelStamped · Path</text>
+<rect x="30" y="905" width="290" height="54" rx="8" fill="#FFFFFF" stroke="#4E8A2E" stroke-width="1.4"/>
+<text x="40" y="924" font-size="12" fill="#1E3A10" text-anchor="start" font-weight="normal">uav_trajectory_controller</text>
+<path d="M 320 932.0 L 350 932.0" fill="none" stroke="#5B6573" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#link-e)"/>
+<path d="M 680 932.0 L 740 932.0" fill="none" stroke="#5B6573" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#link-e)"/>
+<rect x="350" y="973" width="330" height="54" rx="14" fill="#FFFFFF" stroke="#334155" stroke-width="1.2"/>
+<text x="362" y="992" font-size="12.5" fill="#0F172A" text-anchor="start" font-weight="bold">flight/setpoint</text>
+<text x="362" y="1009" font-size="11.5" fill="#334155" text-anchor="start" font-weight="normal">MultiDOFJointTrajectory</text>
+<rect x="30" y="973" width="290" height="54" rx="8" fill="#FFFFFF" stroke="#4E8A2E" stroke-width="1.4"/>
+<text x="40" y="992" font-size="12" fill="#1E3A10" text-anchor="start" font-weight="normal">flight_controller_node</text>
+<path d="M 320 1000.0 L 350 1000.0" fill="none" stroke="#5B6573" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#link-e)"/>
+<path d="M 680 1000.0 L 740 1000.0" fill="none" stroke="#5B6573" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#link-e)"/>
+<rect x="350" y="1041" width="330" height="54" rx="14" fill="#FFFFFF" stroke="#334155" stroke-width="1.2"/>
+<text x="362" y="1060" font-size="12.5" fill="#0F172A" text-anchor="start" font-weight="bold">flight/status</text>
+<text x="362" y="1077" font-size="11.5" fill="#334155" text-anchor="start" font-weight="normal">String</text>
+<rect x="30" y="1041" width="290" height="54" rx="8" fill="#FFFFFF" stroke="#4E8A2E" stroke-width="1.4"/>
+<text x="40" y="1060" font-size="12" fill="#1E3A10" text-anchor="start" font-weight="normal">flight_controller_node</text>
+<path d="M 320 1068.0 L 350 1068.0" fill="none" stroke="#5B6573" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#link-e)"/>
+<path d="M 680 1068.0 L 740 1068.0" fill="none" stroke="#5B6573" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#link-e)"/>
+<rect x="350" y="1109" width="330" height="54" rx="14" fill="#FFFFFF" stroke="#334155" stroke-width="1.2"/>
+<text x="362" y="1128" font-size="12.5" fill="#0F172A" text-anchor="start" font-weight="bold">mission/geofence · mission/preview</text>
+<text x="362" y="1145" font-size="11.5" fill="#334155" text-anchor="start" font-weight="normal">GeofenceStatus · Path</text>
+<rect x="30" y="1109" width="290" height="54" rx="8" fill="#FFFFFF" stroke="#4E8A2E" stroke-width="1.4"/>
+<text x="40" y="1128" font-size="12" fill="#1E3A10" text-anchor="start" font-weight="normal">mission_planner_node</text>
+<path d="M 320 1136.0 L 350 1136.0" fill="none" stroke="#5B6573" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#link-e)"/>
+<path d="M 680 1136.0 L 740 1136.0" fill="none" stroke="#5B6573" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#link-e)"/>
+<rect x="350" y="1177" width="330" height="69" rx="14" fill="#FFFFFF" stroke="#334155" stroke-width="1.2"/>
+<text x="362" y="1196" font-size="12.5" fill="#0F172A" text-anchor="start" font-weight="bold">slam/pose · slam/path · slam/debug</text>
+<text x="362" y="1213" font-size="11.5" fill="#334155" text-anchor="start" font-weight="normal">PoseWithCovarianceStamped · Path ·</text>
+<text x="362" y="1228" font-size="11.5" fill="#334155" text-anchor="start" font-weight="normal">   Float64MultiArray</text>
+<rect x="30" y="1177" width="290" height="69" rx="8" fill="#FFFFFF" stroke="#4E8A2E" stroke-width="1.4"/>
+<text x="40" y="1196" font-size="12" fill="#1E3A10" text-anchor="start" font-weight="normal">lidar_slam_node</text>
+<path d="M 320 1211.5 L 350 1211.5" fill="none" stroke="#5B6573" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#link-e)"/>
+<path d="M 680 1211.5 L 740 1211.5" fill="none" stroke="#5B6573" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#link-e)"/>
+<rect x="1240" y="150" width="330" height="69" rx="14" fill="#FFFFFF" stroke="#334155" stroke-width="1.2"/>
+<text x="1252" y="169" font-size="12.5" fill="#0F172A" text-anchor="start" font-weight="bold">flight/nav_command</text>
+<text x="1252" y="186" font-size="11.5" fill="#334155" text-anchor="start" font-weight="normal">String</text>
+<text x="1252" y="201" font-size="11.5" fill="#334155" text-anchor="start" font-weight="normal">→ user command</text>
+<rect x="1600" y="150" width="290" height="69" rx="8" fill="#FFFFFF" stroke="#4E8A2E" stroke-width="1.4"/>
+<text x="1610" y="169" font-size="12" fill="#1E3A10" text-anchor="start" font-weight="normal">flight_controller_node</text>
+<path d="M 1180 184.5 L 1240 184.5" fill="none" stroke="#5B6573" stroke-width="1.6" stroke-linejoin="round" stroke-dasharray="7 5" marker-end="url(#link-e)"/>
+<path d="M 1570 184.5 L 1600 184.5" fill="none" stroke="#5B6573" stroke-width="1.6" stroke-linejoin="round" stroke-dasharray="7 5" marker-end="url(#link-e)"/>
+<rect x="1240" y="233" width="330" height="69" rx="14" fill="#FFFFFF" stroke="#334155" stroke-width="1.2"/>
+<text x="1252" y="252" font-size="12.5" fill="#0F172A" text-anchor="start" font-weight="bold">flight/waypoints</text>
+<text x="1252" y="269" font-size="11.5" fill="#334155" text-anchor="start" font-weight="normal">PoseArray</text>
+<text x="1252" y="284" font-size="11.5" fill="#334155" text-anchor="start" font-weight="normal">→ user command</text>
+<rect x="1600" y="233" width="290" height="69" rx="8" fill="#FFFFFF" stroke="#4E8A2E" stroke-width="1.4"/>
+<text x="1610" y="252" font-size="12" fill="#1E3A10" text-anchor="start" font-weight="normal">flight_controller_node</text>
+<path d="M 1180 267.5 L 1240 267.5" fill="none" stroke="#5B6573" stroke-width="1.6" stroke-linejoin="round" stroke-dasharray="7 5" marker-end="url(#link-e)"/>
+<path d="M 1570 267.5 L 1600 267.5" fill="none" stroke="#5B6573" stroke-width="1.6" stroke-linejoin="round" stroke-dasharray="7 5" marker-end="url(#link-e)"/>
+<text x="30" y="1276" font-size="14" fill="#C8364A" text-anchor="start" font-weight="bold">Closed loops through this node (System Node Graph, section 2)</text>
+<text x="30" y="1300" font-size="12.5" fill="#555555" text-anchor="start" font-weight="normal">None: the node is part of an estimation or data path only.</text>
+<rect x="960" y="1266" width="930" height="220" rx="14" fill="#F4F4F4" fill-opacity="0.55" stroke="#6B6B6B" stroke-width="1.6"/>
+<text x="976" y="1292" font-size="14" fill="#222222" text-anchor="start" font-weight="bold">Legend</text>
+<rect x="980" y="1306" width="30" height="18" rx="4" fill="#FFFFFF" stroke="#4E8A2E" stroke-width="1.4"/>
+<text x="1020" y="1320" font-size="12.5" fill="#222" text-anchor="start" font-weight="normal">ROS 2 node</text>
+<rect x="980" y="1336" width="30" height="18" rx="4" fill="#FFF3DE" stroke="#C07A12" stroke-width="1.4"/>
+<text x="1020" y="1350" font-size="12.5" fill="#222" text-anchor="start" font-weight="normal">MCU firmware (micro-ROS)</text>
+<rect x="980" y="1366" width="30" height="18" rx="4" fill="#F3EEFB" stroke="#6B4FA0" stroke-width="1.4"/>
+<text x="1020" y="1380" font-size="12.5" fill="#222" text-anchor="start" font-weight="normal">Non-ROS process</text>
+<rect x="980" y="1396" width="30" height="18" rx="4" fill="#FFFFFF" stroke="#8A8A8A" stroke-width="1.4" stroke-dasharray="6 4"/>
+<text x="1020" y="1410" font-size="12.5" fill="#222" text-anchor="start" font-weight="normal">External / planned (dashed)</text>
+<rect x="980" y="1426" width="30" height="18" rx="4" fill="#F4F4F4" stroke="#6B6B6B" stroke-width="1.4"/>
+<text x="1020" y="1440" font-size="12.5" fill="#222" text-anchor="start" font-weight="normal">Hardware, topic as neighbour</text>
+<rect x="1390" y="1306" width="30" height="18" rx="9" fill="#FFFFFF" stroke="#334155" stroke-width="1.4"/>
+<text x="1430" y="1320" font-size="12.5" fill="#222" text-anchor="start" font-weight="normal">Topic</text>
+<rect x="1390" y="1336" width="30" height="18" rx="9" fill="#FFFFFF" stroke="#BE123C" stroke-width="1.4" stroke-dasharray="5 3"/>
+<text x="1430" y="1350" font-size="12.5" fill="#222" text-anchor="start" font-weight="normal">Topic without publisher</text>
+<rect x="1390" y="1366" width="30" height="18" rx="3" fill="#FFFFFF" stroke="#A21CAF" stroke-width="1.4"/>
+<text x="1430" y="1380" font-size="12.5" fill="#222" text-anchor="start" font-weight="normal">Service</text>
+<path d="M 1390 1404 L 1420 1404" fill="none" stroke="#5B6573" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#link-e)"/>
+<text x="1430" y="1408" font-size="12.5" fill="#222" text-anchor="start" font-weight="normal">Data / command link (dashed: service, optional)</text>
+<path d="M 1390 1434 L 1420 1434" fill="none" stroke="#C8364A" stroke-width="2.4" stroke-linejoin="round" marker-end="url(#loop-e)"/>
+<text x="1430" y="1438" font-size="12.5" fill="#222" text-anchor="start" font-weight="normal">Link of a closed loop</text>
+<rect x="1399" y="1454" width="12" height="12" fill="#4E8A2E"/>
+<text x="1430" y="1465" font-size="12.5" fill="#222" text-anchor="start" font-weight="normal">Pod pinned to Jetson #1 (master)</text>
+</svg>

@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="612" viewBox="0 0 1920 612" font-family="Helvetica, Arial, sans-serif">
+<title>safety_zone_node — ROS 2 node diagram</title>
+<defs>
+<marker id="link-e" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#5B6573"/></marker><marker id="link-s" viewBox="0 0 10 10" refX="1" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M10 0 L0 5 L10 10 z" fill="#5B6573"/></marker>
+<marker id="loop-e" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#C8364A"/></marker><marker id="loop-s" viewBox="0 0 10 10" refX="1" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M10 0 L0 5 L10 10 z" fill="#C8364A"/></marker>
+</defs>
+<rect width="1920" height="612" fill="#FFFFFF"/>
+<text x="30" y="46" font-size="28" fill="#1B1B1B" text-anchor="start" font-weight="bold">safety_zone_node</text>
+<text x="30" y="76" font-size="15" fill="#555555" text-anchor="start" font-weight="normal">ros2_lidar_ai_solution · full_pipeline.launch.py + cuPCL tools</text>
+<text x="30" y="100" font-size="12.5" fill="#777777" text-anchor="start" font-weight="normal">Inputs on the left, outputs on the right · topics as chips, services in magenta, topics without a publisher dashed red · links of a closed loop in red · wiring from the System Node Graph</text>
+<text x="350" y="136" font-size="13" fill="#334155" text-anchor="start" font-weight="bold">Subscribes · serves · receives</text>
+<text x="1240" y="136" font-size="13" fill="#334155" text-anchor="start" font-weight="bold">Publishes · calls · sends</text>
+<rect x="740" y="150" width="440" height="162" rx="12" fill="#E6F4DE" stroke="#4E8A2E" stroke-width="2.2"/>
+<text x="754" y="178" font-size="16" fill="#1E3A10" text-anchor="start" font-weight="bold">safety_zone_node</text>
+<rect x="754" y="192" width="102" height="17" rx="8" fill="#FFF1D6" stroke="#8A5A00" stroke-width="0.8"/>
+<text x="805.1" y="205" font-size="10.5" fill="#8A5A00" text-anchor="middle" font-weight="normal">high · 1 · 1536Mi</text>
+<text x="754" y="234" font-size="12.5" fill="#1E3A10" text-anchor="start" font-weight="normal">clearance · TTC · zones → stop latch + watchdog</text>
+<text x="754" y="250" font-size="12.5" fill="#1E3A10" text-anchor="start" font-weight="normal"></text>
+<text x="754" y="266" font-size="12.5" fill="#1E3A10" text-anchor="start" font-weight="normal">Package: ros2_lidar_ai_solution</text>
+<text x="754" y="282" font-size="12.5" fill="#1E3A10" text-anchor="start" font-weight="normal">Directory: Source/ROS2_Lidar_AI_Solution</text>
+<text x="754" y="298" font-size="12.5" fill="#1E3A10" text-anchor="start" font-weight="normal">Pod lidar-ai: high · 1 / 1536Mi · GPU · any</text>
+<rect x="350" y="150" width="330" height="54" rx="14" fill="#FFFFFF" stroke="#334155" stroke-width="1.2"/>
+<text x="362" y="169" font-size="12.5" fill="#0F172A" text-anchor="start" font-weight="bold">/tracked/objects</text>
+<text x="362" y="186" font-size="11.5" fill="#334155" text-anchor="start" font-weight="normal">TrackedObjectArray</text>
+<rect x="30" y="150" width="290" height="54" rx="8" fill="#FFFFFF" stroke="#4E8A2E" stroke-width="1.4"/>
+<text x="40" y="169" font-size="12" fill="#1E3A10" text-anchor="start" font-weight="normal">object_tracker_node</text>
+<path d="M 320 177.0 L 350 177.0" fill="none" stroke="#5B6573" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#link-e)"/>
+<path d="M 680 177.0 L 740 177.0" fill="none" stroke="#5B6573" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#link-e)"/>
+<rect x="1240" y="150" width="330" height="54" rx="14" fill="#FFFFFF" stroke="#334155" stroke-width="1.2"/>
+<text x="1252" y="169" font-size="12.5" fill="#0F172A" text-anchor="start" font-weight="bold">/safety/emergency_stop</text>
+<text x="1252" y="186" font-size="11.5" fill="#334155" text-anchor="start" font-weight="normal">Bool</text>
+<rect x="1600" y="150" width="290" height="54" rx="8" fill="#FFFFFF" stroke="#4E8A2E" stroke-width="1.4"/>
+<text x="1610" y="169" font-size="12" fill="#1E3A10" text-anchor="start" font-weight="normal">isaac_ros_target_follower_node</text>
+<text x="1610" y="184" font-size="12" fill="#1E3A10" text-anchor="start" font-weight="normal">ros2_dashboard_node</text>
+<path d="M 1180 177.0 L 1240 177.0" fill="none" stroke="#5B6573" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#link-e)"/>
+<path d="M 1570 177.0 L 1600 177.0" fill="none" stroke="#5B6573" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#link-e)"/>
+<rect x="1240" y="218" width="330" height="46" rx="14" fill="#FFFFFF" stroke="#334155" stroke-width="1.2"/>
+<text x="1252" y="237" font-size="12.5" fill="#0F172A" text-anchor="start" font-weight="bold">/safety/status · /safety/markers</text>
+<path d="M 1180 241.0 L 1240 241.0" fill="none" stroke="#5B6573" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#link-e)"/>
+<text x="30" y="342" font-size="14" fill="#C8364A" text-anchor="start" font-weight="bold">Closed loops through this node (System Node Graph, section 2)</text>
+<text x="30" y="366" font-size="12.5" fill="#555555" text-anchor="start" font-weight="normal">None: the node is part of an estimation or data path only.</text>
+<rect x="960" y="332" width="930" height="220" rx="14" fill="#F4F4F4" fill-opacity="0.55" stroke="#6B6B6B" stroke-width="1.6"/>
+<text x="976" y="358" font-size="14" fill="#222222" text-anchor="start" font-weight="bold">Legend</text>
+<rect x="980" y="372" width="30" height="18" rx="4" fill="#FFFFFF" stroke="#4E8A2E" stroke-width="1.4"/>
+<text x="1020" y="386" font-size="12.5" fill="#222" text-anchor="start" font-weight="normal">ROS 2 node</text>
+<rect x="980" y="402" width="30" height="18" rx="4" fill="#FFF3DE" stroke="#C07A12" stroke-width="1.4"/>
+<text x="1020" y="416" font-size="12.5" fill="#222" text-anchor="start" font-weight="normal">MCU firmware (micro-ROS)</text>
+<rect x="980" y="432" width="30" height="18" rx="4" fill="#F3EEFB" stroke="#6B4FA0" stroke-width="1.4"/>
+<text x="1020" y="446" font-size="12.5" fill="#222" text-anchor="start" font-weight="normal">Non-ROS process</text>
+<rect x="980" y="462" width="30" height="18" rx="4" fill="#FFFFFF" stroke="#8A8A8A" stroke-width="1.4" stroke-dasharray="6 4"/>
+<text x="1020" y="476" font-size="12.5" fill="#222" text-anchor="start" font-weight="normal">External / planned (dashed)</text>
+<rect x="980" y="492" width="30" height="18" rx="4" fill="#F4F4F4" stroke="#6B6B6B" stroke-width="1.4"/>
+<text x="1020" y="506" font-size="12.5" fill="#222" text-anchor="start" font-weight="normal">Hardware, topic as neighbour</text>
+<rect x="1390" y="372" width="30" height="18" rx="9" fill="#FFFFFF" stroke="#334155" stroke-width="1.4"/>
+<text x="1430" y="386" font-size="12.5" fill="#222" text-anchor="start" font-weight="normal">Topic</text>
+<rect x="1390" y="402" width="30" height="18" rx="9" fill="#FFFFFF" stroke="#BE123C" stroke-width="1.4" stroke-dasharray="5 3"/>
+<text x="1430" y="416" font-size="12.5" fill="#222" text-anchor="start" font-weight="normal">Topic without publisher</text>
+<rect x="1390" y="432" width="30" height="18" rx="3" fill="#FFFFFF" stroke="#A21CAF" stroke-width="1.4"/>
+<text x="1430" y="446" font-size="12.5" fill="#222" text-anchor="start" font-weight="normal">Service</text>
+<path d="M 1390 470 L 1420 470" fill="none" stroke="#5B6573" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#link-e)"/>
+<text x="1430" y="474" font-size="12.5" fill="#222" text-anchor="start" font-weight="normal">Data / command link (dashed: service, optional)</text>
+<path d="M 1390 500 L 1420 500" fill="none" stroke="#C8364A" stroke-width="2.4" stroke-linejoin="round" marker-end="url(#loop-e)"/>
+<text x="1430" y="504" font-size="12.5" fill="#222" text-anchor="start" font-weight="normal">Link of a closed loop</text>
+<rect x="1399" y="520" width="12" height="12" fill="#4E8A2E"/>
+<text x="1430" y="531" font-size="12.5" fill="#222" text-anchor="start" font-weight="normal">Pod pinned to Jetson #1 (master)</text>
+</svg>
