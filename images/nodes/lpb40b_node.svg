@@ -20,16 +20,17 @@
 <text x="754" y="266" font-size="12.5" fill="#1E3A10" text-anchor="start" font-weight="normal">Package: ros2_lidar_slam</text>
 <text x="754" y="282" font-size="12.5" fill="#1E3A10" text-anchor="start" font-weight="normal">Directory: Source/ROS2_Lidar_SLAM</text>
 <text x="754" y="298" font-size="12.5" fill="#1E3A10" text-anchor="start" font-weight="normal">Pod lidar-slam: high · 750m / 512Mi · master</text>
-<rect x="1240" y="150" width="330" height="76" rx="14" fill="#FFFFFF" stroke="#334155" stroke-width="1.2"/>
+<rect x="1240" y="150" width="330" height="91" rx="14" fill="#FFFFFF" stroke="#334155" stroke-width="1.2"/>
 <text x="1252" y="169" font-size="12.5" fill="#0F172A" text-anchor="start" font-weight="bold">/range</text>
 <text x="1252" y="186" font-size="11.5" fill="#334155" text-anchor="start" font-weight="normal">Range</text>
-<rect x="1600" y="150" width="290" height="76" rx="8" fill="#FFFFFF" stroke="#4E8A2E" stroke-width="1.4"/>
+<rect x="1600" y="150" width="290" height="91" rx="8" fill="#FFFFFF" stroke="#4E8A2E" stroke-width="1.4"/>
 <text x="1610" y="169" font-size="12" fill="#1E3A10" text-anchor="start" font-weight="normal">lidar_slam_node</text>
-<text x="1610" y="184" font-size="12" fill="#1E3A10" text-anchor="start" font-weight="normal">ros2_dashboard_node</text>
-<text x="1610" y="199" font-size="12" fill="#1E3A10" text-anchor="start" font-weight="normal">matlab_lidar_slam_node</text>
-<text x="1610" y="214" font-size="12" fill="#1E3A10" text-anchor="start" font-weight="normal">matlab_jetowl_viz</text>
-<path d="M 1180 188.0 L 1240 188.0" fill="none" stroke="#5B6573" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#link-e)"/>
-<path d="M 1570 188.0 L 1600 188.0" fill="none" stroke="#5B6573" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#link-e)"/>
+<text x="1610" y="184" font-size="12" fill="#1E3A10" text-anchor="start" font-weight="normal">ground_vo_node</text>
+<text x="1610" y="199" font-size="12" fill="#1E3A10" text-anchor="start" font-weight="normal">ros2_dashboard_node</text>
+<text x="1610" y="214" font-size="12" fill="#1E3A10" text-anchor="start" font-weight="normal">matlab_lidar_slam_node</text>
+<text x="1610" y="229" font-size="12" fill="#1E3A10" text-anchor="start" font-weight="normal">+ 1 more</text>
+<path d="M 1180 195.5 L 1240 195.5" fill="none" stroke="#5B6573" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#link-e)"/>
+<path d="M 1570 195.5 L 1600 195.5" fill="none" stroke="#5B6573" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#link-e)"/>
 <text x="350" y="180" font-size="12" fill="#888888" text-anchor="start" font-weight="normal">(no inputs in the graph)</text>
 <text x="30" y="342" font-size="14" fill="#C8364A" text-anchor="start" font-weight="bold">Closed loops through this node (System Node Graph, section 2)</text>
 <text x="30" y="366" font-size="12.5" fill="#555555" text-anchor="start" font-weight="normal">None: the node is part of an estimation or data path only.</text>

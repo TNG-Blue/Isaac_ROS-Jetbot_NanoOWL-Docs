@@ -1,25 +1,26 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="896" viewBox="0 0 1920 896" font-family="Helvetica, Arial, sans-serif">
+<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="1219" viewBox="0 0 1920 1219" font-family="Helvetica, Arial, sans-serif">
 <title>uav_state_estimator — ROS 2 node diagram</title>
 <defs>
 <marker id="link-e" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#5B6573"/></marker><marker id="link-s" viewBox="0 0 10 10" refX="1" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M10 0 L0 5 L10 10 z" fill="#5B6573"/></marker>
 <marker id="loop-e" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#C8364A"/></marker><marker id="loop-s" viewBox="0 0 10 10" refX="1" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M10 0 L0 5 L10 10 z" fill="#C8364A"/></marker>
 </defs>
-<rect width="1920" height="896" fill="#FFFFFF"/>
+<rect width="1920" height="1219" fill="#FFFFFF"/>
 <text x="30" y="46" font-size="28" fill="#1B1B1B" text-anchor="start" font-weight="bold">uav_state_estimator</text>
 <text x="30" y="76" font-size="15" fill="#555555" text-anchor="start" font-weight="normal">ros2_control_system · Control &amp; guidance (Jetson)</text>
 <text x="30" y="100" font-size="12.5" fill="#777777" text-anchor="start" font-weight="normal">Inputs on the left, outputs on the right · topics as chips, services in magenta, topics without a publisher dashed red · links of a closed loop in red · wiring from the System Node Graph</text>
 <text x="350" y="136" font-size="13" fill="#334155" text-anchor="start" font-weight="bold">Subscribes · serves · receives</text>
 <text x="1240" y="136" font-size="13" fill="#334155" text-anchor="start" font-weight="bold">Publishes · calls · sends</text>
-<rect x="740" y="150" width="440" height="424" rx="12" fill="#E6F4DE" stroke="#4E8A2E" stroke-width="2.2"/>
+<rect x="740" y="150" width="440" height="605" rx="12" fill="#E6F4DE" stroke="#4E8A2E" stroke-width="2.2"/>
 <text x="754" y="178" font-size="16" fill="#1E3A10" text-anchor="start" font-weight="bold">uav_state_estimator</text>
 <rect x="754" y="192" width="137" height="17" rx="8" fill="#F6E6F0" stroke="#9C2A6B" stroke-width="0.8"/>
 <text x="822.74" y="205" font-size="10.5" fill="#9C2A6B" text-anchor="middle" font-weight="normal">critical · 500m · 512Mi</text>
-<text x="754" y="234" font-size="12.5" fill="#1E3A10" text-anchor="start" font-weight="normal">ESKF: IMU + GNSS + baro</text>
-<text x="754" y="250" font-size="12.5" fill="#1E3A10" text-anchor="start" font-weight="normal">(ros2_control_system)</text>
-<text x="754" y="266" font-size="12.5" fill="#1E3A10" text-anchor="start" font-weight="normal"></text>
-<text x="754" y="282" font-size="12.5" fill="#1E3A10" text-anchor="start" font-weight="normal">Package: ros2_control_system</text>
-<text x="754" y="298" font-size="12.5" fill="#1E3A10" text-anchor="start" font-weight="normal">Directory: Source/ROS2_Control_System</text>
-<text x="754" y="314" font-size="12.5" fill="#1E3A10" text-anchor="start" font-weight="normal">Pod control-system: critical · 500m / 512Mi · GPU · any</text>
+<text x="754" y="234" font-size="12.5" fill="#1E3A10" text-anchor="start" font-weight="normal">ESKF: IMU + GNSS + baro + ground-VO body velocity</text>
+<text x="754" y="250" font-size="12.5" fill="#1E3A10" text-anchor="start" font-weight="normal">FC dead reckoning: consistency check only</text>
+<text x="754" y="266" font-size="12.5" fill="#1E3A10" text-anchor="start" font-weight="normal">(ros2_control_system)</text>
+<text x="754" y="282" font-size="12.5" fill="#1E3A10" text-anchor="start" font-weight="normal"></text>
+<text x="754" y="298" font-size="12.5" fill="#1E3A10" text-anchor="start" font-weight="normal">Package: ros2_control_system</text>
+<text x="754" y="314" font-size="12.5" fill="#1E3A10" text-anchor="start" font-weight="normal">Directory: Source/ROS2_Control_System</text>
+<text x="754" y="330" font-size="12.5" fill="#1E3A10" text-anchor="start" font-weight="normal">Pod control-system: critical · 500m / 512Mi · GPU · any</text>
 <rect x="350" y="150" width="330" height="54" rx="14" fill="#FFFFFF" stroke="#334155" stroke-width="1.2"/>
 <text x="362" y="169" font-size="12.5" fill="#0F172A" text-anchor="start" font-weight="bold">/baro/pressure</text>
 <text x="362" y="186" font-size="11.5" fill="#334155" text-anchor="start" font-weight="normal">FluidPressure [Pa] · 25 Hz</text>
@@ -51,79 +52,120 @@
 <text x="40" y="403" font-size="12" fill="#4A2C00" text-anchor="start" font-weight="normal">jetowl_bridge (sensor_link)</text>
 <path d="M 320 396.0 L 350 396.0" fill="none" stroke="#C8364A" stroke-width="2.4" stroke-linejoin="round" marker-end="url(#loop-e)"/>
 <path d="M 680 396.0 L 740 396.0" fill="none" stroke="#C8364A" stroke-width="2.4" stroke-linejoin="round" marker-end="url(#loop-e)"/>
-<rect x="350" y="437" width="330" height="54" rx="14" fill="#FFFFFF" stroke="#C8364A" stroke-width="1.8"/>
-<text x="362" y="456" font-size="12.5" fill="#0F172A" text-anchor="start" font-weight="bold">/jetowl/security/response</text>
-<text x="362" y="473" font-size="11.5" fill="#334155" text-anchor="start" font-weight="normal">UInt8MultiArray (4)</text>
-<rect x="30" y="437" width="290" height="54" rx="8" fill="#FFFFFF" stroke="#4E8A2E" stroke-width="1.4"/>
-<text x="40" y="456" font-size="12" fill="#1E3A10" text-anchor="start" font-weight="normal">flight_controller_node</text>
-<path d="M 320 464.0 L 350 464.0" fill="none" stroke="#C8364A" stroke-width="2.4" stroke-linejoin="round" marker-end="url(#loop-e)"/>
-<path d="M 680 464.0 L 740 464.0" fill="none" stroke="#C8364A" stroke-width="2.4" stroke-linejoin="round" marker-end="url(#loop-e)"/>
-<rect x="350" y="505" width="330" height="69" rx="14" fill="#FFFFFF" stroke="#C8364A" stroke-width="1.8"/>
-<text x="362" y="524" font-size="12.5" fill="#0F172A" text-anchor="start" font-weight="bold">/jetowl/security/threat</text>
-<text x="362" y="541" font-size="11.5" fill="#334155" text-anchor="start" font-weight="normal">Float32MultiArray (19)</text>
-<text x="362" y="556" font-size="11.5" fill="#334155" text-anchor="start" font-weight="normal">→ GNSS trust</text>
-<rect x="30" y="505" width="290" height="69" rx="8" fill="#FFFFFF" stroke="#4E8A2E" stroke-width="1.4"/>
-<text x="40" y="524" font-size="12" fill="#1E3A10" text-anchor="start" font-weight="normal">link_security</text>
-<path d="M 320 539.5 L 350 539.5" fill="none" stroke="#C8364A" stroke-width="2.4" stroke-linejoin="round" marker-end="url(#loop-e)"/>
-<path d="M 680 539.5 L 740 539.5" fill="none" stroke="#C8364A" stroke-width="2.4" stroke-linejoin="round" marker-end="url(#loop-e)"/>
-<rect x="1240" y="150" width="330" height="69" rx="14" fill="#FFFFFF" stroke="#C8364A" stroke-width="1.8"/>
-<text x="1252" y="169" font-size="12.5" fill="#0F172A" text-anchor="start" font-weight="bold">/jetowl/security/advice</text>
-<text x="1252" y="186" font-size="11.5" fill="#334155" text-anchor="start" font-weight="normal">UInt8MultiArray (8, CRC-8) · 2 Hz</text>
-<text x="1252" y="201" font-size="11.5" fill="#334155" text-anchor="start" font-weight="normal">→ advice</text>
-<rect x="1600" y="150" width="290" height="69" rx="8" fill="#FFF3DE" stroke="#C07A12" stroke-width="1.4"/>
-<text x="1610" y="169" font-size="12" fill="#4A2C00" text-anchor="start" font-weight="normal">jetowl_fc</text>
-<path d="M 1180 184.5 L 1240 184.5" fill="none" stroke="#C8364A" stroke-width="2.4" stroke-linejoin="round" marker-end="url(#loop-e)"/>
-<path d="M 1570 184.5 L 1600 184.5" fill="none" stroke="#C8364A" stroke-width="2.4" stroke-linejoin="round" marker-end="url(#loop-e)"/>
-<rect x="1240" y="233" width="330" height="91" rx="14" fill="#FFFFFF" stroke="#C8364A" stroke-width="1.8"/>
-<text x="1252" y="252" font-size="12.5" fill="#0F172A" text-anchor="start" font-weight="bold">/odometry/filtered</text>
-<text x="1252" y="269" font-size="11.5" fill="#334155" text-anchor="start" font-weight="normal">Odometry</text>
-<rect x="1600" y="233" width="290" height="91" rx="8" fill="#FFFFFF" stroke="#4E8A2E" stroke-width="1.4"/>
-<text x="1610" y="252" font-size="12" fill="#1E3A10" text-anchor="start" font-weight="normal">uav_trajectory_controller</text>
-<text x="1610" y="267" font-size="12" fill="#1E3A10" text-anchor="start" font-weight="normal">flight_controller_node</text>
-<text x="1610" y="282" font-size="12" fill="#1E3A10" text-anchor="start" font-weight="normal">telemetry_logger_node</text>
-<text x="1610" y="297" font-size="12" fill="#1E3A10" text-anchor="start" font-weight="normal">mission_planner_node</text>
-<text x="1610" y="312" font-size="12" fill="#1E3A10" text-anchor="start" font-weight="normal">+ 3 more</text>
-<path d="M 1180 278.5 L 1240 278.5" fill="none" stroke="#C8364A" stroke-width="2.4" stroke-linejoin="round" marker-end="url(#loop-e)"/>
-<path d="M 1570 278.5 L 1600 278.5" fill="none" stroke="#C8364A" stroke-width="2.4" stroke-linejoin="round" marker-end="url(#loop-e)"/>
-<text x="30" y="604" font-size="14" fill="#C8364A" text-anchor="start" font-weight="bold">Closed loops through this node (System Node Graph, section 2)</text>
-<rect x="30" y="614" width="880" height="98" rx="8" fill="#FFFFFF" stroke="#C8364A" stroke-width="1.4"/>
-<rect x="30" y="614" width="880" height="30" rx="8" fill="#F9E0E4"/>
-<rect x="30" y="636" width="880" height="8" fill="#F9E0E4"/>
-<text x="41" y="634" font-size="13.5" fill="#5A0F1A" text-anchor="start" font-weight="bold">Loop 3 · Position / trajectory, 50 Hz (Jetson ↔ FC)</text>
-<text x="41" y="664" font-size="12" fill="#5A0F1A" text-anchor="start" font-weight="normal">/imu/data → uav_state_estimator (ESKF) → /odometry/filtered → uav_trajectory_controller (MPC) → /control/attitude_setpoint +</text>
-<text x="41" y="680" font-size="12" fill="#5A0F1A" text-anchor="start" font-weight="normal">   /control/thrust → jetowl_fc → loop 2 → IMU → /imu/data</text>
-<text x="41" y="696" font-size="12" fill="#5A0F1A" text-anchor="start" font-weight="normal">Status: Closed, over micro-ROS/UDP</text>
-<rect x="30" y="724" width="880" height="130" rx="8" fill="#FFFFFF" stroke="#C8364A" stroke-width="1.4"/>
-<rect x="30" y="724" width="880" height="30" rx="8" fill="#F9E0E4"/>
-<rect x="30" y="746" width="880" height="8" fill="#F9E0E4"/>
-<text x="41" y="744" font-size="13.5" fill="#5A0F1A" text-anchor="start" font-weight="bold">Loop 8b · RF / GNSS link security (JetOwl)</text>
-<text x="41" y="774" font-size="12" fill="#5A0F1A" text-anchor="start" font-weight="normal">jetowl_fc → /jetowl/security/{rf_link,gnss} → link_security (detection only) → /jetowl/security/threat → flight_controller_node</text>
-<text x="41" y="790" font-size="12" fill="#5A0F1A" text-anchor="start" font-weight="normal">   (GNSS attack → LAND, command link jammed and lost → RTH) → /jetowl/security/response → uav_state_estimator (stops fusing a</text>
-<text x="41" y="806" font-size="12" fill="#5A0F1A" text-anchor="start" font-weight="normal">   distrusted receiver) → /jetowl/security/advice → jetowl_fc (/gps/fix NO_FIX for that receiver) → next epochs measured again</text>
-<text x="41" y="822" font-size="12" fill="#5A0F1A" text-anchor="start" font-weight="normal">Status: Closed. The FC only lowers GNSS trust; every flight decision stays on the Jetson (JetOwl_FlightControl</text>
-<text x="41" y="838" font-size="12" fill="#5A0F1A" text-anchor="start" font-weight="normal">   docs/ARCHITECTURE.md §9, docs/SECURITY.md)</text>
-<rect x="960" y="594" width="930" height="220" rx="14" fill="#F4F4F4" fill-opacity="0.55" stroke="#6B6B6B" stroke-width="1.6"/>
-<text x="976" y="620" font-size="14" fill="#222222" text-anchor="start" font-weight="bold">Legend</text>
-<rect x="980" y="634" width="30" height="18" rx="4" fill="#FFFFFF" stroke="#4E8A2E" stroke-width="1.4"/>
-<text x="1020" y="648" font-size="12.5" fill="#222" text-anchor="start" font-weight="normal">ROS 2 node</text>
-<rect x="980" y="664" width="30" height="18" rx="4" fill="#FFF3DE" stroke="#C07A12" stroke-width="1.4"/>
-<text x="1020" y="678" font-size="12.5" fill="#222" text-anchor="start" font-weight="normal">MCU firmware (micro-ROS)</text>
-<rect x="980" y="694" width="30" height="18" rx="4" fill="#F3EEFB" stroke="#6B4FA0" stroke-width="1.4"/>
-<text x="1020" y="708" font-size="12.5" fill="#222" text-anchor="start" font-weight="normal">Non-ROS process</text>
-<rect x="980" y="724" width="30" height="18" rx="4" fill="#FFFFFF" stroke="#8A8A8A" stroke-width="1.4" stroke-dasharray="6 4"/>
-<text x="1020" y="738" font-size="12.5" fill="#222" text-anchor="start" font-weight="normal">External / planned (dashed)</text>
-<rect x="980" y="754" width="30" height="18" rx="4" fill="#F4F4F4" stroke="#6B6B6B" stroke-width="1.4"/>
-<text x="1020" y="768" font-size="12.5" fill="#222" text-anchor="start" font-weight="normal">Hardware, topic as neighbour</text>
-<rect x="1390" y="634" width="30" height="18" rx="9" fill="#FFFFFF" stroke="#334155" stroke-width="1.4"/>
-<text x="1430" y="648" font-size="12.5" fill="#222" text-anchor="start" font-weight="normal">Topic</text>
-<rect x="1390" y="664" width="30" height="18" rx="9" fill="#FFFFFF" stroke="#BE123C" stroke-width="1.4" stroke-dasharray="5 3"/>
-<text x="1430" y="678" font-size="12.5" fill="#222" text-anchor="start" font-weight="normal">Topic without publisher</text>
-<rect x="1390" y="694" width="30" height="18" rx="3" fill="#FFFFFF" stroke="#A21CAF" stroke-width="1.4"/>
-<text x="1430" y="708" font-size="12.5" fill="#222" text-anchor="start" font-weight="normal">Service</text>
-<path d="M 1390 732 L 1420 732" fill="none" stroke="#5B6573" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#link-e)"/>
-<text x="1430" y="736" font-size="12.5" fill="#222" text-anchor="start" font-weight="normal">Data / command link (dashed: service, optional)</text>
-<path d="M 1390 762 L 1420 762" fill="none" stroke="#C8364A" stroke-width="2.4" stroke-linejoin="round" marker-end="url(#loop-e)"/>
-<text x="1430" y="766" font-size="12.5" fill="#222" text-anchor="start" font-weight="normal">Link of a closed loop</text>
-<rect x="1399" y="782" width="12" height="12" fill="#4E8A2E"/>
-<text x="1430" y="793" font-size="12.5" fill="#222" text-anchor="start" font-weight="normal">Pod pinned to Jetson #1 (master)</text>
+<rect x="350" y="437" width="330" height="84" rx="14" fill="#FFFFFF" stroke="#334155" stroke-width="1.2"/>
+<text x="362" y="456" font-size="12.5" fill="#0F172A" text-anchor="start" font-weight="bold">/jetowl/dr/pose · twist · status</text>
+<text x="362" y="473" font-size="11.5" fill="#334155" text-anchor="start" font-weight="normal">GNSS-free dead reckoning · 50 Hz</text>
+<text x="362" y="488" font-size="11.5" fill="#334155" text-anchor="start" font-weight="normal">→ dr/twist + dr/pose: consistency check, never</text>
+<text x="362" y="503" font-size="11.5" fill="#334155" text-anchor="start" font-weight="normal">   fused</text>
+<rect x="30" y="437" width="290" height="84" rx="8" fill="#FFF3DE" stroke="#C07A12" stroke-width="1.4"/>
+<text x="40" y="456" font-size="12" fill="#4A2C00" text-anchor="start" font-weight="normal">jetowl_fc</text>
+<path d="M 320 479.0 L 350 479.0" fill="none" stroke="#5B6573" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#link-e)"/>
+<path d="M 680 479.0 L 740 479.0" fill="none" stroke="#5B6573" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#link-e)"/>
+<rect x="350" y="535" width="330" height="54" rx="14" fill="#FFFFFF" stroke="#C8364A" stroke-width="1.8"/>
+<text x="362" y="554" font-size="12.5" fill="#0F172A" text-anchor="start" font-weight="bold">/jetowl/security/response</text>
+<text x="362" y="571" font-size="11.5" fill="#334155" text-anchor="start" font-weight="normal">UInt8MultiArray (4)</text>
+<rect x="30" y="535" width="290" height="54" rx="8" fill="#FFFFFF" stroke="#4E8A2E" stroke-width="1.4"/>
+<text x="40" y="554" font-size="12" fill="#1E3A10" text-anchor="start" font-weight="normal">flight_controller_node</text>
+<path d="M 320 562.0 L 350 562.0" fill="none" stroke="#C8364A" stroke-width="2.4" stroke-linejoin="round" marker-end="url(#loop-e)"/>
+<path d="M 680 562.0 L 740 562.0" fill="none" stroke="#C8364A" stroke-width="2.4" stroke-linejoin="round" marker-end="url(#loop-e)"/>
+<rect x="350" y="603" width="330" height="69" rx="14" fill="#FFFFFF" stroke="#C8364A" stroke-width="1.8"/>
+<text x="362" y="622" font-size="12.5" fill="#0F172A" text-anchor="start" font-weight="bold">/jetowl/security/threat</text>
+<text x="362" y="639" font-size="11.5" fill="#334155" text-anchor="start" font-weight="normal">Float32MultiArray (19)</text>
+<text x="362" y="654" font-size="11.5" fill="#334155" text-anchor="start" font-weight="normal">→ GNSS trust</text>
+<rect x="30" y="603" width="290" height="69" rx="8" fill="#FFFFFF" stroke="#4E8A2E" stroke-width="1.4"/>
+<text x="40" y="622" font-size="12" fill="#1E3A10" text-anchor="start" font-weight="normal">link_security</text>
+<path d="M 320 637.5 L 350 637.5" fill="none" stroke="#C8364A" stroke-width="2.4" stroke-linejoin="round" marker-end="url(#loop-e)"/>
+<path d="M 680 637.5 L 740 637.5" fill="none" stroke="#C8364A" stroke-width="2.4" stroke-linejoin="round" marker-end="url(#loop-e)"/>
+<rect x="350" y="686" width="330" height="69" rx="14" fill="#FFFFFF" stroke="#C8364A" stroke-width="1.8"/>
+<text x="362" y="705" font-size="12.5" fill="#0F172A" text-anchor="start" font-weight="bold">/vo/twist</text>
+<text x="362" y="722" font-size="11.5" fill="#334155" text-anchor="start" font-weight="normal">TwistWithCovarianceStamped (body)</text>
+<text x="362" y="737" font-size="11.5" fill="#334155" text-anchor="start" font-weight="normal">→ body-velocity update</text>
+<rect x="30" y="686" width="290" height="69" rx="8" fill="#FFFFFF" stroke="#4E8A2E" stroke-width="1.4"/>
+<text x="40" y="705" font-size="12" fill="#1E3A10" text-anchor="start" font-weight="normal">ground_vo_node</text>
+<path d="M 320 720.5 L 350 720.5" fill="none" stroke="#C8364A" stroke-width="2.4" stroke-linejoin="round" marker-end="url(#loop-e)"/>
+<path d="M 680 720.5 L 740 720.5" fill="none" stroke="#C8364A" stroke-width="2.4" stroke-linejoin="round" marker-end="url(#loop-e)"/>
+<rect x="1240" y="150" width="330" height="54" rx="14" fill="#FFFFFF" stroke="#334155" stroke-width="1.2"/>
+<text x="1252" y="169" font-size="12.5" fill="#0F172A" text-anchor="start" font-weight="bold">/estimator/enu_origin</text>
+<text x="1252" y="186" font-size="11.5" fill="#334155" text-anchor="start" font-weight="normal">NavSatFix (latched)</text>
+<rect x="1600" y="150" width="290" height="54" rx="8" fill="#FFFFFF" stroke="#4E8A2E" stroke-width="1.4"/>
+<text x="1610" y="169" font-size="12" fill="#1E3A10" text-anchor="start" font-weight="normal">nav_map_node</text>
+<path d="M 1180 177.0 L 1240 177.0" fill="none" stroke="#5B6573" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#link-e)"/>
+<path d="M 1570 177.0 L 1600 177.0" fill="none" stroke="#5B6573" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#link-e)"/>
+<rect x="1240" y="218" width="330" height="54" rx="14" fill="#FFFFFF" stroke="#C8364A" stroke-width="1.8"/>
+<text x="1252" y="237" font-size="12.5" fill="#0F172A" text-anchor="start" font-weight="bold">/estimator/nav_health</text>
+<text x="1252" y="254" font-size="11.5" fill="#334155" text-anchor="start" font-weight="normal">Float32MultiArray (8): aiding · σ_h · ages</text>
+<rect x="1600" y="218" width="290" height="54" rx="8" fill="#FFFFFF" stroke="#4E8A2E" stroke-width="1.4"/>
+<text x="1610" y="237" font-size="12" fill="#1E3A10" text-anchor="start" font-weight="normal">flight_controller_node</text>
+<text x="1610" y="252" font-size="12" fill="#1E3A10" text-anchor="start" font-weight="normal">nav_map_node</text>
+<path d="M 1180 245.0 L 1240 245.0" fill="none" stroke="#C8364A" stroke-width="2.4" stroke-linejoin="round" marker-end="url(#loop-e)"/>
+<path d="M 1570 245.0 L 1600 245.0" fill="none" stroke="#C8364A" stroke-width="2.4" stroke-linejoin="round" marker-end="url(#loop-e)"/>
+<rect x="1240" y="286" width="330" height="69" rx="14" fill="#FFFFFF" stroke="#C8364A" stroke-width="1.8"/>
+<text x="1252" y="305" font-size="12.5" fill="#0F172A" text-anchor="start" font-weight="bold">/jetowl/security/advice</text>
+<text x="1252" y="322" font-size="11.5" fill="#334155" text-anchor="start" font-weight="normal">UInt8MultiArray (8, CRC-8) · 2 Hz</text>
+<text x="1252" y="337" font-size="11.5" fill="#334155" text-anchor="start" font-weight="normal">→ advice</text>
+<rect x="1600" y="286" width="290" height="69" rx="8" fill="#FFF3DE" stroke="#C07A12" stroke-width="1.4"/>
+<text x="1610" y="305" font-size="12" fill="#4A2C00" text-anchor="start" font-weight="normal">jetowl_fc</text>
+<path d="M 1180 320.5 L 1240 320.5" fill="none" stroke="#C8364A" stroke-width="2.4" stroke-linejoin="round" marker-end="url(#loop-e)"/>
+<path d="M 1570 320.5 L 1600 320.5" fill="none" stroke="#C8364A" stroke-width="2.4" stroke-linejoin="round" marker-end="url(#loop-e)"/>
+<rect x="1240" y="369" width="330" height="91" rx="14" fill="#FFFFFF" stroke="#C8364A" stroke-width="1.8"/>
+<text x="1252" y="388" font-size="12.5" fill="#0F172A" text-anchor="start" font-weight="bold">/odometry/filtered</text>
+<text x="1252" y="405" font-size="11.5" fill="#334155" text-anchor="start" font-weight="normal">Odometry</text>
+<rect x="1600" y="369" width="290" height="91" rx="8" fill="#FFFFFF" stroke="#4E8A2E" stroke-width="1.4"/>
+<text x="1610" y="388" font-size="12" fill="#1E3A10" text-anchor="start" font-weight="normal">uav_trajectory_controller</text>
+<text x="1610" y="403" font-size="12" fill="#1E3A10" text-anchor="start" font-weight="normal">flight_controller_node</text>
+<text x="1610" y="418" font-size="12" fill="#1E3A10" text-anchor="start" font-weight="normal">telemetry_logger_node</text>
+<text x="1610" y="433" font-size="12" fill="#1E3A10" text-anchor="start" font-weight="normal">mission_planner_node</text>
+<text x="1610" y="448" font-size="12" fill="#1E3A10" text-anchor="start" font-weight="normal">+ 5 more</text>
+<path d="M 1180 414.5 L 1240 414.5" fill="none" stroke="#C8364A" stroke-width="2.4" stroke-linejoin="round" marker-end="url(#loop-e)"/>
+<path d="M 1570 414.5 L 1600 414.5" fill="none" stroke="#C8364A" stroke-width="2.4" stroke-linejoin="round" marker-end="url(#loop-e)"/>
+<text x="30" y="785" font-size="14" fill="#C8364A" text-anchor="start" font-weight="bold">Closed loops through this node (System Node Graph, section 2)</text>
+<rect x="30" y="795" width="880" height="98" rx="8" fill="#FFFFFF" stroke="#C8364A" stroke-width="1.4"/>
+<rect x="30" y="795" width="880" height="30" rx="8" fill="#F9E0E4"/>
+<rect x="30" y="817" width="880" height="8" fill="#F9E0E4"/>
+<text x="41" y="815" font-size="13.5" fill="#5A0F1A" text-anchor="start" font-weight="bold">Loop 3 · Position / trajectory, 50 Hz (Jetson ↔ FC)</text>
+<text x="41" y="845" font-size="12" fill="#5A0F1A" text-anchor="start" font-weight="normal">/imu/data → uav_state_estimator (ESKF) → /odometry/filtered → uav_trajectory_controller (MPC) → /control/attitude_setpoint +</text>
+<text x="41" y="861" font-size="12" fill="#5A0F1A" text-anchor="start" font-weight="normal">   /control/thrust → jetowl_fc → loop 2 → IMU → /imu/data</text>
+<text x="41" y="877" font-size="12" fill="#5A0F1A" text-anchor="start" font-weight="normal">Status: Closed, over micro-ROS/UDP</text>
+<rect x="30" y="905" width="880" height="130" rx="8" fill="#FFFFFF" stroke="#C8364A" stroke-width="1.4"/>
+<rect x="30" y="905" width="880" height="30" rx="8" fill="#F9E0E4"/>
+<rect x="30" y="927" width="880" height="8" fill="#F9E0E4"/>
+<text x="41" y="925" font-size="13.5" fill="#5A0F1A" text-anchor="start" font-weight="bold">Loop 8b · RF / GNSS link security (JetOwl)</text>
+<text x="41" y="955" font-size="12" fill="#5A0F1A" text-anchor="start" font-weight="normal">jetowl_fc → /jetowl/security/{rf_link,gnss} → link_security (detection only) → /jetowl/security/threat → flight_controller_node</text>
+<text x="41" y="971" font-size="12" fill="#5A0F1A" text-anchor="start" font-weight="normal">   (GNSS attack → LAND, command link jammed and lost → RTH) → /jetowl/security/response → uav_state_estimator (stops fusing a</text>
+<text x="41" y="987" font-size="12" fill="#5A0F1A" text-anchor="start" font-weight="normal">   distrusted receiver) → /jetowl/security/advice → jetowl_fc (/gps/fix NO_FIX for that receiver) → next epochs measured again</text>
+<text x="41" y="1003" font-size="12" fill="#5A0F1A" text-anchor="start" font-weight="normal">Status: Closed. The FC only lowers GNSS trust; every flight decision stays on the Jetson (JetOwl_FlightControl</text>
+<text x="41" y="1019" font-size="12" fill="#5A0F1A" text-anchor="start" font-weight="normal">   docs/ARCHITECTURE.md §9, docs/SECURITY.md)</text>
+<rect x="30" y="1047" width="880" height="130" rx="8" fill="#FFFFFF" stroke="#C8364A" stroke-width="1.4"/>
+<rect x="30" y="1047" width="880" height="30" rx="8" fill="#F9E0E4"/>
+<rect x="30" y="1069" width="880" height="8" fill="#F9E0E4"/>
+<text x="41" y="1067" font-size="13.5" fill="#5A0F1A" text-anchor="start" font-weight="bold">Loop 8e · GNSS-free navigation and return to home</text>
+<text x="41" y="1097" font-size="12" fill="#5A0F1A" text-anchor="start" font-weight="normal">ground_vo_node → /vo/twist → uav_state_estimator → /estimator/nav_health → flight_controller_node → flight/setpoint →</text>
+<text x="41" y="1113" font-size="12" fill="#5A0F1A" text-anchor="start" font-weight="normal">   uav_trajectory_controller → /control/attitude_setpoint → jetowl_fc → … → /imu/data → uav_state_estimator →</text>
+<text x="41" y="1129" font-size="12" fill="#5A0F1A" text-anchor="start" font-weight="normal">   /odometry/filtered → nav_map_node → /nav/return_path → flight_controller_node</text>
+<text x="41" y="1145" font-size="12" fill="#5A0F1A" text-anchor="start" font-weight="normal">Status: Closed. With GNSS distrusted, the camera + LPB40B velocity keeps the ENU estimate (and home) valid; a GNSS attack or</text>
+<text x="41" y="1161" font-size="12" fill="#5A0F1A" text-anchor="start" font-weight="normal">   lost fix with healthy navigation → RTH along the flown path, σ_h above its bound → LAND (ros2_gnss_denied_nav README)</text>
+<rect x="960" y="775" width="930" height="220" rx="14" fill="#F4F4F4" fill-opacity="0.55" stroke="#6B6B6B" stroke-width="1.6"/>
+<text x="976" y="801" font-size="14" fill="#222222" text-anchor="start" font-weight="bold">Legend</text>
+<rect x="980" y="815" width="30" height="18" rx="4" fill="#FFFFFF" stroke="#4E8A2E" stroke-width="1.4"/>
+<text x="1020" y="829" font-size="12.5" fill="#222" text-anchor="start" font-weight="normal">ROS 2 node</text>
+<rect x="980" y="845" width="30" height="18" rx="4" fill="#FFF3DE" stroke="#C07A12" stroke-width="1.4"/>
+<text x="1020" y="859" font-size="12.5" fill="#222" text-anchor="start" font-weight="normal">MCU firmware (micro-ROS)</text>
+<rect x="980" y="875" width="30" height="18" rx="4" fill="#F3EEFB" stroke="#6B4FA0" stroke-width="1.4"/>
+<text x="1020" y="889" font-size="12.5" fill="#222" text-anchor="start" font-weight="normal">Non-ROS process</text>
+<rect x="980" y="905" width="30" height="18" rx="4" fill="#FFFFFF" stroke="#8A8A8A" stroke-width="1.4" stroke-dasharray="6 4"/>
+<text x="1020" y="919" font-size="12.5" fill="#222" text-anchor="start" font-weight="normal">External / planned (dashed)</text>
+<rect x="980" y="935" width="30" height="18" rx="4" fill="#F4F4F4" stroke="#6B6B6B" stroke-width="1.4"/>
+<text x="1020" y="949" font-size="12.5" fill="#222" text-anchor="start" font-weight="normal">Hardware, topic as neighbour</text>
+<rect x="1390" y="815" width="30" height="18" rx="9" fill="#FFFFFF" stroke="#334155" stroke-width="1.4"/>
+<text x="1430" y="829" font-size="12.5" fill="#222" text-anchor="start" font-weight="normal">Topic</text>
+<rect x="1390" y="845" width="30" height="18" rx="9" fill="#FFFFFF" stroke="#BE123C" stroke-width="1.4" stroke-dasharray="5 3"/>
+<text x="1430" y="859" font-size="12.5" fill="#222" text-anchor="start" font-weight="normal">Topic without publisher</text>
+<rect x="1390" y="875" width="30" height="18" rx="3" fill="#FFFFFF" stroke="#A21CAF" stroke-width="1.4"/>
+<text x="1430" y="889" font-size="12.5" fill="#222" text-anchor="start" font-weight="normal">Service</text>
+<path d="M 1390 913 L 1420 913" fill="none" stroke="#5B6573" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#link-e)"/>
+<text x="1430" y="917" font-size="12.5" fill="#222" text-anchor="start" font-weight="normal">Data / command link (dashed: service, optional)</text>
+<path d="M 1390 943 L 1420 943" fill="none" stroke="#C8364A" stroke-width="2.4" stroke-linejoin="round" marker-end="url(#loop-e)"/>
+<text x="1430" y="947" font-size="12.5" fill="#222" text-anchor="start" font-weight="normal">Link of a closed loop</text>
+<rect x="1399" y="963" width="12" height="12" fill="#4E8A2E"/>
+<text x="1430" y="974" font-size="12.5" fill="#222" text-anchor="start" font-weight="normal">Pod pinned to Jetson #1 (master)</text>
 </svg>

@@ -1,0 +1,101 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="783" viewBox="0 0 1920 783" font-family="Helvetica, Arial, sans-serif">
+<title>ground_vo_node — ROS 2 node diagram</title>
+<defs>
+<marker id="link-e" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#5B6573"/></marker><marker id="link-s" viewBox="0 0 10 10" refX="1" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M10 0 L0 5 L10 10 z" fill="#5B6573"/></marker>
+<marker id="loop-e" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#C8364A"/></marker><marker id="loop-s" viewBox="0 0 10 10" refX="1" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M10 0 L0 5 L10 10 z" fill="#C8364A"/></marker>
+</defs>
+<rect width="1920" height="783" fill="#FFFFFF"/>
+<text x="30" y="46" font-size="28" fill="#1B1B1B" text-anchor="start" font-weight="bold">ground_vo_node</text>
+<text x="30" y="76" font-size="15" fill="#555555" text-anchor="start" font-weight="normal">ros2_gnss_denied_nav · navigation without GNSS and the way back home (gnss_denied_nav.launch.py)</text>
+<text x="30" y="100" font-size="12.5" fill="#777777" text-anchor="start" font-weight="normal">Inputs on the left, outputs on the right · topics as chips, services in magenta, topics without a publisher dashed red · links of a closed loop in red · wiring from the System Node Graph</text>
+<text x="350" y="136" font-size="13" fill="#334155" text-anchor="start" font-weight="bold">Subscribes · serves · receives</text>
+<text x="1240" y="136" font-size="13" fill="#334155" text-anchor="start" font-weight="bold">Publishes · calls · sends</text>
+<rect x="740" y="150" width="440" height="333" rx="12" fill="#E6F4DE" stroke="#4E8A2E" stroke-width="2.2"/>
+<rect x="1158" y="160" width="12" height="12" fill="#4E8A2E"/>
+<text x="754" y="178" font-size="16" fill="#1E3A10" text-anchor="start" font-weight="bold">ground_vo_node</text>
+<rect x="754" y="192" width="114" height="17" rx="8" fill="#FFF1D6" stroke="#8A5A00" stroke-width="0.8"/>
+<text x="810.98" y="205" font-size="10.5" fill="#8A5A00" text-anchor="middle" font-weight="normal">high · 400m · 384Mi</text>
+<text x="754" y="234" font-size="12.5" fill="#1E3A10" text-anchor="start" font-weight="normal">Shi–Tomasi + pyramidal KLT (CUDA sm_87 · CPU) · ground</text>
+<text x="754" y="250" font-size="12.5" fill="#1E3A10" text-anchor="start" font-weight="normal">   plane from the LPB40B</text>
+<text x="754" y="266" font-size="12.5" fill="#1E3A10" text-anchor="start" font-weight="normal">2-point RANSAC + Gauss–Newton → body velocity with</text>
+<text x="754" y="282" font-size="12.5" fill="#1E3A10" text-anchor="start" font-weight="normal">   covariance</text>
+<text x="754" y="298" font-size="12.5" fill="#1E3A10" text-anchor="start" font-weight="normal"></text>
+<text x="754" y="314" font-size="12.5" fill="#1E3A10" text-anchor="start" font-weight="normal">Package: ros2_gnss_denied_nav</text>
+<text x="754" y="330" font-size="12.5" fill="#1E3A10" text-anchor="start" font-weight="normal">Directory: Source/ROS2_Gnss_Denied_Nav</text>
+<text x="754" y="346" font-size="12.5" fill="#1E3A10" text-anchor="start" font-weight="normal">Pod gnss-denied-nav: high · 400m / 384Mi · GPU · master ·</text>
+<text x="754" y="362" font-size="12.5" fill="#1E3A10" text-anchor="start" font-weight="normal">   off by default</text>
+<rect x="350" y="150" width="330" height="84" rx="14" fill="#FFFFFF" stroke="#334155" stroke-width="1.2"/>
+<text x="362" y="169" font-size="12.5" fill="#0F172A" text-anchor="start" font-weight="bold">/camera/color/camera_info</text>
+<text x="362" y="186" font-size="11.5" fill="#334155" text-anchor="start" font-weight="normal">CameraInfo every frame: size · K (0 =</text>
+<text x="362" y="201" font-size="11.5" fill="#334155" text-anchor="start" font-weight="normal">   uncalibrated)</text>
+<text x="362" y="216" font-size="11.5" fill="#334155" text-anchor="start" font-weight="normal">→ K, D</text>
+<rect x="30" y="150" width="290" height="84" rx="8" fill="#FFFFFF" stroke="#4E8A2E" stroke-width="1.4"/>
+<text x="40" y="169" font-size="12" fill="#1E3A10" text-anchor="start" font-weight="normal">panorama_node</text>
+<path d="M 320 192.0 L 350 192.0" fill="none" stroke="#5B6573" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#link-e)"/>
+<path d="M 680 192.0 L 740 192.0" fill="none" stroke="#5B6573" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#link-e)"/>
+<rect x="350" y="248" width="330" height="69" rx="14" fill="#FFFFFF" stroke="#334155" stroke-width="1.2"/>
+<text x="362" y="267" font-size="12.5" fill="#0F172A" text-anchor="start" font-weight="bold">/camera/color/image_raw</text>
+<text x="362" y="284" font-size="11.5" fill="#334155" text-anchor="start" font-weight="normal">Image (camera layer: panorama_node)</text>
+<text x="362" y="299" font-size="11.5" fill="#334155" text-anchor="start" font-weight="normal">→ rays below the horizon</text>
+<rect x="30" y="248" width="290" height="69" rx="8" fill="#FFFFFF" stroke="#4E8A2E" stroke-width="1.4"/>
+<text x="40" y="267" font-size="12" fill="#1E3A10" text-anchor="start" font-weight="normal">panorama_node</text>
+<path d="M 320 282.5 L 350 282.5" fill="none" stroke="#5B6573" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#link-e)"/>
+<path d="M 680 282.5 L 740 282.5" fill="none" stroke="#5B6573" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#link-e)"/>
+<rect x="350" y="331" width="330" height="69" rx="14" fill="#FFFFFF" stroke="#C8364A" stroke-width="1.8"/>
+<text x="362" y="350" font-size="12.5" fill="#0F172A" text-anchor="start" font-weight="bold">/odometry/filtered</text>
+<text x="362" y="367" font-size="11.5" fill="#334155" text-anchor="start" font-weight="normal">Odometry</text>
+<text x="362" y="382" font-size="11.5" fill="#334155" text-anchor="start" font-weight="normal">→ attitude only</text>
+<rect x="30" y="331" width="290" height="69" rx="8" fill="#FFFFFF" stroke="#4E8A2E" stroke-width="1.4"/>
+<text x="40" y="350" font-size="12" fill="#1E3A10" text-anchor="start" font-weight="normal">uav_state_estimator</text>
+<path d="M 320 365.5 L 350 365.5" fill="none" stroke="#C8364A" stroke-width="2.4" stroke-linejoin="round" marker-end="url(#loop-e)"/>
+<path d="M 680 365.5 L 740 365.5" fill="none" stroke="#C8364A" stroke-width="2.4" stroke-linejoin="round" marker-end="url(#loop-e)"/>
+<rect x="350" y="414" width="330" height="69" rx="14" fill="#FFFFFF" stroke="#334155" stroke-width="1.2"/>
+<text x="362" y="433" font-size="12.5" fill="#0F172A" text-anchor="start" font-weight="bold">/range</text>
+<text x="362" y="450" font-size="11.5" fill="#334155" text-anchor="start" font-weight="normal">Range</text>
+<text x="362" y="465" font-size="11.5" fill="#334155" text-anchor="start" font-weight="normal">→ plane height d</text>
+<rect x="30" y="414" width="290" height="69" rx="8" fill="#FFFFFF" stroke="#4E8A2E" stroke-width="1.4"/>
+<text x="40" y="433" font-size="12" fill="#1E3A10" text-anchor="start" font-weight="normal">lpb40b_node</text>
+<path d="M 320 448.5 L 350 448.5" fill="none" stroke="#5B6573" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#link-e)"/>
+<path d="M 680 448.5 L 740 448.5" fill="none" stroke="#5B6573" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#link-e)"/>
+<rect x="1240" y="150" width="330" height="54" rx="14" fill="#FFFFFF" stroke="#C8364A" stroke-width="1.8"/>
+<text x="1252" y="169" font-size="12.5" fill="#0F172A" text-anchor="start" font-weight="bold">/vo/twist</text>
+<text x="1252" y="186" font-size="11.5" fill="#334155" text-anchor="start" font-weight="normal">TwistWithCovarianceStamped (body)</text>
+<rect x="1600" y="150" width="290" height="54" rx="8" fill="#FFFFFF" stroke="#4E8A2E" stroke-width="1.4"/>
+<text x="1610" y="169" font-size="12" fill="#1E3A10" text-anchor="start" font-weight="normal">uav_state_estimator</text>
+<path d="M 1180 177.0 L 1240 177.0" fill="none" stroke="#C8364A" stroke-width="2.4" stroke-linejoin="round" marker-end="url(#loop-e)"/>
+<path d="M 1570 177.0 L 1600 177.0" fill="none" stroke="#C8364A" stroke-width="2.4" stroke-linejoin="round" marker-end="url(#loop-e)"/>
+<text x="30" y="513" font-size="14" fill="#C8364A" text-anchor="start" font-weight="bold">Closed loops through this node (System Node Graph, section 2)</text>
+<rect x="30" y="523" width="880" height="130" rx="8" fill="#FFFFFF" stroke="#C8364A" stroke-width="1.4"/>
+<rect x="30" y="523" width="880" height="30" rx="8" fill="#F9E0E4"/>
+<rect x="30" y="545" width="880" height="8" fill="#F9E0E4"/>
+<text x="41" y="543" font-size="13.5" fill="#5A0F1A" text-anchor="start" font-weight="bold">Loop 8e · GNSS-free navigation and return to home</text>
+<text x="41" y="573" font-size="12" fill="#5A0F1A" text-anchor="start" font-weight="normal">ground_vo_node → /vo/twist → uav_state_estimator → /estimator/nav_health → flight_controller_node → flight/setpoint →</text>
+<text x="41" y="589" font-size="12" fill="#5A0F1A" text-anchor="start" font-weight="normal">   uav_trajectory_controller → /control/attitude_setpoint → jetowl_fc → … → /imu/data → uav_state_estimator →</text>
+<text x="41" y="605" font-size="12" fill="#5A0F1A" text-anchor="start" font-weight="normal">   /odometry/filtered → nav_map_node → /nav/return_path → flight_controller_node</text>
+<text x="41" y="621" font-size="12" fill="#5A0F1A" text-anchor="start" font-weight="normal">Status: Closed. With GNSS distrusted, the camera + LPB40B velocity keeps the ENU estimate (and home) valid; a GNSS attack or</text>
+<text x="41" y="637" font-size="12" fill="#5A0F1A" text-anchor="start" font-weight="normal">   lost fix with healthy navigation → RTH along the flown path, σ_h above its bound → LAND (ros2_gnss_denied_nav README)</text>
+<rect x="960" y="503" width="930" height="220" rx="14" fill="#F4F4F4" fill-opacity="0.55" stroke="#6B6B6B" stroke-width="1.6"/>
+<text x="976" y="529" font-size="14" fill="#222222" text-anchor="start" font-weight="bold">Legend</text>
+<rect x="980" y="543" width="30" height="18" rx="4" fill="#FFFFFF" stroke="#4E8A2E" stroke-width="1.4"/>
+<text x="1020" y="557" font-size="12.5" fill="#222" text-anchor="start" font-weight="normal">ROS 2 node</text>
+<rect x="980" y="573" width="30" height="18" rx="4" fill="#FFF3DE" stroke="#C07A12" stroke-width="1.4"/>
+<text x="1020" y="587" font-size="12.5" fill="#222" text-anchor="start" font-weight="normal">MCU firmware (micro-ROS)</text>
+<rect x="980" y="603" width="30" height="18" rx="4" fill="#F3EEFB" stroke="#6B4FA0" stroke-width="1.4"/>
+<text x="1020" y="617" font-size="12.5" fill="#222" text-anchor="start" font-weight="normal">Non-ROS process</text>
+<rect x="980" y="633" width="30" height="18" rx="4" fill="#FFFFFF" stroke="#8A8A8A" stroke-width="1.4" stroke-dasharray="6 4"/>
+<text x="1020" y="647" font-size="12.5" fill="#222" text-anchor="start" font-weight="normal">External / planned (dashed)</text>
+<rect x="980" y="663" width="30" height="18" rx="4" fill="#F4F4F4" stroke="#6B6B6B" stroke-width="1.4"/>
+<text x="1020" y="677" font-size="12.5" fill="#222" text-anchor="start" font-weight="normal">Hardware, topic as neighbour</text>
+<rect x="1390" y="543" width="30" height="18" rx="9" fill="#FFFFFF" stroke="#334155" stroke-width="1.4"/>
+<text x="1430" y="557" font-size="12.5" fill="#222" text-anchor="start" font-weight="normal">Topic</text>
+<rect x="1390" y="573" width="30" height="18" rx="9" fill="#FFFFFF" stroke="#BE123C" stroke-width="1.4" stroke-dasharray="5 3"/>
+<text x="1430" y="587" font-size="12.5" fill="#222" text-anchor="start" font-weight="normal">Topic without publisher</text>
+<rect x="1390" y="603" width="30" height="18" rx="3" fill="#FFFFFF" stroke="#A21CAF" stroke-width="1.4"/>
+<text x="1430" y="617" font-size="12.5" fill="#222" text-anchor="start" font-weight="normal">Service</text>
+<path d="M 1390 641 L 1420 641" fill="none" stroke="#5B6573" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#link-e)"/>
+<text x="1430" y="645" font-size="12.5" fill="#222" text-anchor="start" font-weight="normal">Data / command link (dashed: service, optional)</text>
+<path d="M 1390 671 L 1420 671" fill="none" stroke="#C8364A" stroke-width="2.4" stroke-linejoin="round" marker-end="url(#loop-e)"/>
+<text x="1430" y="675" font-size="12.5" fill="#222" text-anchor="start" font-weight="normal">Link of a closed loop</text>
+<rect x="1399" y="691" width="12" height="12" fill="#4E8A2E"/>
+<text x="1430" y="702" font-size="12.5" fill="#222" text-anchor="start" font-weight="normal">Pod pinned to Jetson #1 (master)</text>
+</svg>

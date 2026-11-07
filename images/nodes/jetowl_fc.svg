@@ -1,10 +1,10 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="2015" viewBox="0 0 1920 2015" font-family="Helvetica, Arial, sans-serif">
+<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="2157" viewBox="0 0 1920 2157" font-family="Helvetica, Arial, sans-serif">
 <title>jetowl_fc — ROS 2 node diagram</title>
 <defs>
 <marker id="link-e" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#5B6573"/></marker><marker id="link-s" viewBox="0 0 10 10" refX="1" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M10 0 L0 5 L10 10 z" fill="#5B6573"/></marker>
 <marker id="loop-e" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#C8364A"/></marker><marker id="loop-s" viewBox="0 0 10 10" refX="1" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M10 0 L0 5 L10 10 z" fill="#C8364A"/></marker>
 </defs>
-<rect width="1920" height="2015" fill="#FFFFFF"/>
+<rect width="1920" height="2157" fill="#FFFFFF"/>
 <text x="30" y="46" font-size="28" fill="#1B1B1B" text-anchor="start" font-weight="bold">jetowl_fc</text>
 <text x="30" y="76" font-size="15" fill="#555555" text-anchor="start" font-weight="normal">JetOwl_FlightControl · STM32N657 · 192.168.10.2</text>
 <text x="30" y="100" font-size="12.5" fill="#777777" text-anchor="start" font-weight="normal">Inputs on the left, outputs on the right · topics as chips, services in magenta, topics without a publisher dashed red · links of a closed loop in red · wiring from the System Node Graph</text>
@@ -148,7 +148,8 @@
 <text x="1252" y="605" font-size="12.5" fill="#0F172A" text-anchor="start" font-weight="bold">/jetowl/dr/pose · twist · status</text>
 <text x="1252" y="622" font-size="11.5" fill="#334155" text-anchor="start" font-weight="normal">GNSS-free dead reckoning · 50 Hz</text>
 <rect x="1600" y="586" width="290" height="54" rx="8" fill="#FFFFFF" stroke="#4E8A2E" stroke-width="1.4"/>
-<text x="1610" y="605" font-size="12" fill="#1E3A10" text-anchor="start" font-weight="normal">link_security</text>
+<text x="1610" y="605" font-size="12" fill="#1E3A10" text-anchor="start" font-weight="normal">uav_state_estimator</text>
+<text x="1610" y="620" font-size="12" fill="#1E3A10" text-anchor="start" font-weight="normal">link_security</text>
 <path d="M 1180 613.0 L 1240 613.0" fill="none" stroke="#5B6573" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#link-e)"/>
 <path d="M 1570 613.0 L 1600 613.0" fill="none" stroke="#5B6573" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#link-e)"/>
 <rect x="1240" y="654" width="330" height="69" rx="14" fill="#FFFFFF" stroke="#334155" stroke-width="1.2"/>
@@ -249,12 +250,21 @@
 <text x="41" y="1831" font-size="12" fill="#5A0F1A" text-anchor="start" font-weight="normal">jetowl_fc → /jetowl/camera/request → snapshot_node → /jetowl/camera/jpeg → jetowl_fc → 2.4 GHz image slot → remote;</text>
 <text x="41" y="1847" font-size="12" fill="#5A0F1A" text-anchor="start" font-weight="normal">   /jetowl/camera/fc_status (bitmap of chunks held) → snapshot_node resends the missing ones</text>
 <text x="41" y="1863" font-size="12" fill="#5A0F1A" text-anchor="start" font-weight="normal">Status: Closed by acknowledgement (selective repeat, CRC-32)</text>
-<rect x="30" y="1891" width="880" height="82" rx="8" fill="#FFFFFF" stroke="#C8364A" stroke-width="1.4"/>
+<rect x="30" y="1891" width="880" height="130" rx="8" fill="#FFFFFF" stroke="#C8364A" stroke-width="1.4"/>
 <rect x="30" y="1891" width="880" height="30" rx="8" fill="#F9E0E4"/>
 <rect x="30" y="1913" width="880" height="8" fill="#F9E0E4"/>
-<text x="41" y="1911" font-size="13.5" fill="#5A0F1A" text-anchor="start" font-weight="bold">Loop 9 · Relative altitude</text>
-<text x="41" y="1941" font-size="12" fill="#5A0F1A" text-anchor="start" font-weight="normal">BMP280 → jetowl_fc → /baro/pressure (σ² = 1.44 Pa²) → ESKF → loop 3</text>
-<text x="41" y="1957" font-size="12" fill="#5A0F1A" text-anchor="start" font-weight="normal">Status: Closed. Previously there was no barometer source</text>
+<text x="41" y="1911" font-size="13.5" fill="#5A0F1A" text-anchor="start" font-weight="bold">Loop 8e · GNSS-free navigation and return to home</text>
+<text x="41" y="1941" font-size="12" fill="#5A0F1A" text-anchor="start" font-weight="normal">ground_vo_node → /vo/twist → uav_state_estimator → /estimator/nav_health → flight_controller_node → flight/setpoint →</text>
+<text x="41" y="1957" font-size="12" fill="#5A0F1A" text-anchor="start" font-weight="normal">   uav_trajectory_controller → /control/attitude_setpoint → jetowl_fc → … → /imu/data → uav_state_estimator →</text>
+<text x="41" y="1973" font-size="12" fill="#5A0F1A" text-anchor="start" font-weight="normal">   /odometry/filtered → nav_map_node → /nav/return_path → flight_controller_node</text>
+<text x="41" y="1989" font-size="12" fill="#5A0F1A" text-anchor="start" font-weight="normal">Status: Closed. With GNSS distrusted, the camera + LPB40B velocity keeps the ENU estimate (and home) valid; a GNSS attack or</text>
+<text x="41" y="2005" font-size="12" fill="#5A0F1A" text-anchor="start" font-weight="normal">   lost fix with healthy navigation → RTH along the flown path, σ_h above its bound → LAND (ros2_gnss_denied_nav README)</text>
+<rect x="30" y="2033" width="880" height="82" rx="8" fill="#FFFFFF" stroke="#C8364A" stroke-width="1.4"/>
+<rect x="30" y="2033" width="880" height="30" rx="8" fill="#F9E0E4"/>
+<rect x="30" y="2055" width="880" height="8" fill="#F9E0E4"/>
+<text x="41" y="2053" font-size="13.5" fill="#5A0F1A" text-anchor="start" font-weight="bold">Loop 9 · Relative altitude</text>
+<text x="41" y="2083" font-size="12" fill="#5A0F1A" text-anchor="start" font-weight="normal">BMP280 → jetowl_fc → /baro/pressure (σ² = 1.44 Pa²) → ESKF → loop 3</text>
+<text x="41" y="2099" font-size="12" fill="#5A0F1A" text-anchor="start" font-weight="normal">Status: Closed. Previously there was no barometer source</text>
 <rect x="960" y="1367" width="930" height="220" rx="14" fill="#F4F4F4" fill-opacity="0.55" stroke="#6B6B6B" stroke-width="1.6"/>
 <text x="976" y="1393" font-size="14" fill="#222222" text-anchor="start" font-weight="bold">Legend</text>
 <rect x="980" y="1407" width="30" height="18" rx="4" fill="#FFFFFF" stroke="#4E8A2E" stroke-width="1.4"/>
