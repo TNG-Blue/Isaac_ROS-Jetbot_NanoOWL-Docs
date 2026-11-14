@@ -1,16 +1,16 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="676" viewBox="0 0 1920 676" font-family="Helvetica, Arial, sans-serif">
+<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="752" viewBox="0 0 1920 752" font-family="Helvetica, Arial, sans-serif">
 <title>panorama_node — ROS 2 node diagram</title>
 <defs>
 <marker id="link-e" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#5B6573"/></marker><marker id="link-s" viewBox="0 0 10 10" refX="1" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M10 0 L0 5 L10 10 z" fill="#5B6573"/></marker>
 <marker id="loop-e" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#C8364A"/></marker><marker id="loop-s" viewBox="0 0 10 10" refX="1" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M10 0 L0 5 L10 10 z" fill="#C8364A"/></marker>
 </defs>
-<rect width="1920" height="676" fill="#FFFFFF"/>
+<rect width="1920" height="752" fill="#FFFFFF"/>
 <text x="30" y="46" font-size="28" fill="#1B1B1B" text-anchor="start" font-weight="bold">panorama_node</text>
 <text x="30" y="76" font-size="15" fill="#555555" text-anchor="start" font-weight="normal">ros2_panorama · camera layer of the master's IMX477 Dual (panorama.launch.py, namespace /camera/color)</text>
 <text x="30" y="100" font-size="12.5" fill="#777777" text-anchor="start" font-weight="normal">Inputs on the left, outputs on the right · topics as chips, services in magenta, topics without a publisher dashed red · links of a closed loop in red · wiring from the System Node Graph</text>
 <text x="350" y="136" font-size="13" fill="#334155" text-anchor="start" font-weight="bold">Subscribes · serves · receives</text>
 <text x="1240" y="136" font-size="13" fill="#334155" text-anchor="start" font-weight="bold">Publishes · calls · sends</text>
-<rect x="740" y="150" width="440" height="226" rx="12" fill="#E6F4DE" stroke="#4E8A2E" stroke-width="2.2"/>
+<rect x="740" y="150" width="440" height="264" rx="12" fill="#E6F4DE" stroke="#4E8A2E" stroke-width="2.2"/>
 <rect x="1158" y="160" width="12" height="12" fill="#4E8A2E"/>
 <text x="754" y="178" font-size="16" fill="#1E3A10" text-anchor="start" font-weight="bold">panorama_node</text>
 <rect x="754" y="192" width="114" height="17" rx="8" fill="#FFF1D6" stroke="#8A5A00" stroke-width="0.8"/>
@@ -19,11 +19,13 @@
 <text x="754" y="250" font-size="12.5" fill="#1E3A10" text-anchor="start" font-weight="normal">   seam region) | single</text>
 <text x="754" y="266" font-size="12.5" fill="#1E3A10" text-anchor="start" font-weight="normal">image_raw + camera_info with every frame · camN/image_raw</text>
 <text x="754" y="282" font-size="12.5" fill="#1E3A10" text-anchor="start" font-weight="normal">   (publish_raw)</text>
-<text x="754" y="298" font-size="12.5" fill="#1E3A10" text-anchor="start" font-weight="normal">CUDA kernels (exact) · CPU fallback · no OpenCV</text>
-<text x="754" y="314" font-size="12.5" fill="#1E3A10" text-anchor="start" font-weight="normal"></text>
-<text x="754" y="330" font-size="12.5" fill="#1E3A10" text-anchor="start" font-weight="normal">Package: ros2_panorama</text>
-<text x="754" y="346" font-size="12.5" fill="#1E3A10" text-anchor="start" font-weight="normal">Directory: Source/ROS2_Panorama</text>
-<text x="754" y="362" font-size="12.5" fill="#1E3A10" text-anchor="start" font-weight="normal">Pod panorama: high · 750m / 512Mi · GPU · master</text>
+<text x="754" y="298" font-size="12.5" fill="#1E3A10" text-anchor="start" font-weight="normal">image stabiliser (stabilizer.enabled, off by default):</text>
+<text x="754" y="314" font-size="12.5" fill="#1E3A10" text-anchor="start" font-weight="normal">   registration → EKF → 2-DOF crop</text>
+<text x="754" y="330" font-size="12.5" fill="#1E3A10" text-anchor="start" font-weight="normal">CUDA kernels (exact) · CPU fallback · no OpenCV</text>
+<text x="754" y="346" font-size="12.5" fill="#1E3A10" text-anchor="start" font-weight="normal"></text>
+<text x="754" y="362" font-size="12.5" fill="#1E3A10" text-anchor="start" font-weight="normal">Package: ros2_panorama</text>
+<text x="754" y="378" font-size="12.5" fill="#1E3A10" text-anchor="start" font-weight="normal">Directory: Source/ROS2_Panorama</text>
+<text x="754" y="394" font-size="12.5" fill="#1E3A10" text-anchor="start" font-weight="normal">Pod panorama: high · 750m / 512Mi · GPU · master</text>
 <rect x="30" y="150" width="290" height="46" rx="8" fill="#F4F4F4" stroke="#6B6B6B" stroke-width="1.4"/>
 <text x="40" y="169" font-size="12" fill="#222222" text-anchor="start" font-weight="normal">2 × IMX477 · CSI 0 + 1</text>
 <path d="M 320 173.0 L 740 173.0" fill="none" stroke="#5B6573" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#link-e)"/>
@@ -58,36 +60,50 @@
 <text x="1610" y="334" font-size="12" fill="#555555" text-anchor="start" font-weight="normal">+ 4 more</text>
 <path d="M 1180 300.5 L 1240 300.5" fill="none" stroke="#5B6573" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#link-e)"/>
 <path d="M 1570 300.5 L 1600 300.5" fill="none" stroke="#5B6573" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#link-e)"/>
-<text x="30" y="406" font-size="14" fill="#C8364A" text-anchor="start" font-weight="bold">Closed loops through this node (System Node Graph, section 2)</text>
-<rect x="30" y="416" width="880" height="98" rx="8" fill="#FFFFFF" stroke="#C8364A" stroke-width="1.4"/>
-<rect x="30" y="416" width="880" height="30" rx="8" fill="#F9E0E4"/>
-<rect x="30" y="438" width="880" height="8" fill="#F9E0E4"/>
-<text x="41" y="436" font-size="13.5" fill="#5A0F1A" text-anchor="start" font-weight="bold">Loop 6a · Camera arm gaze</text>
-<text x="41" y="466" font-size="12" fill="#5A0F1A" text-anchor="start" font-weight="normal">2 × IMX477 → panorama_node → detector → object_detections → arm_look_at_node → /camera_arm/look_at → camera_arm_node (IK, SIMC</text>
-<text x="41" y="482" font-size="12" fill="#5A0F1A" text-anchor="start" font-weight="normal">   PI on the detection offset) → PCA9685 servos → camera moves → detection moves; MPU-6050 → horizon hold</text>
-<text x="41" y="498" font-size="12" fill="#5A0F1A" text-anchor="start" font-weight="normal">Status: Closed on the image and on the plate IMU</text>
-<rect x="960" y="396" width="930" height="220" rx="14" fill="#F4F4F4" fill-opacity="0.55" stroke="#6B6B6B" stroke-width="1.6"/>
-<text x="976" y="422" font-size="14" fill="#222222" text-anchor="start" font-weight="bold">Legend</text>
-<rect x="980" y="436" width="30" height="18" rx="4" fill="#FFFFFF" stroke="#4E8A2E" stroke-width="1.4"/>
-<text x="1020" y="450" font-size="12.5" fill="#222" text-anchor="start" font-weight="normal">ROS 2 node</text>
-<rect x="980" y="466" width="30" height="18" rx="4" fill="#FFF3DE" stroke="#C07A12" stroke-width="1.4"/>
-<text x="1020" y="480" font-size="12.5" fill="#222" text-anchor="start" font-weight="normal">MCU firmware (micro-ROS)</text>
-<rect x="980" y="496" width="30" height="18" rx="4" fill="#F3EEFB" stroke="#6B4FA0" stroke-width="1.4"/>
-<text x="1020" y="510" font-size="12.5" fill="#222" text-anchor="start" font-weight="normal">Non-ROS process</text>
-<rect x="980" y="526" width="30" height="18" rx="4" fill="#FFFFFF" stroke="#8A8A8A" stroke-width="1.4" stroke-dasharray="6 4"/>
-<text x="1020" y="540" font-size="12.5" fill="#222" text-anchor="start" font-weight="normal">External / planned (dashed)</text>
-<rect x="980" y="556" width="30" height="18" rx="4" fill="#F4F4F4" stroke="#6B6B6B" stroke-width="1.4"/>
-<text x="1020" y="570" font-size="12.5" fill="#222" text-anchor="start" font-weight="normal">Hardware, topic as neighbour</text>
-<rect x="1390" y="436" width="30" height="18" rx="9" fill="#FFFFFF" stroke="#334155" stroke-width="1.4"/>
-<text x="1430" y="450" font-size="12.5" fill="#222" text-anchor="start" font-weight="normal">Topic</text>
-<rect x="1390" y="466" width="30" height="18" rx="9" fill="#FFFFFF" stroke="#BE123C" stroke-width="1.4" stroke-dasharray="5 3"/>
-<text x="1430" y="480" font-size="12.5" fill="#222" text-anchor="start" font-weight="normal">Topic without publisher</text>
-<rect x="1390" y="496" width="30" height="18" rx="3" fill="#FFFFFF" stroke="#A21CAF" stroke-width="1.4"/>
-<text x="1430" y="510" font-size="12.5" fill="#222" text-anchor="start" font-weight="normal">Service</text>
-<path d="M 1390 534 L 1420 534" fill="none" stroke="#5B6573" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#link-e)"/>
-<text x="1430" y="538" font-size="12.5" fill="#222" text-anchor="start" font-weight="normal">Data / command link (dashed: service, optional)</text>
-<path d="M 1390 564 L 1420 564" fill="none" stroke="#C8364A" stroke-width="2.4" stroke-linejoin="round" marker-end="url(#loop-e)"/>
-<text x="1430" y="568" font-size="12.5" fill="#222" text-anchor="start" font-weight="normal">Link of a closed loop</text>
-<rect x="1399" y="584" width="12" height="12" fill="#4E8A2E"/>
-<text x="1430" y="595" font-size="12.5" fill="#222" text-anchor="start" font-weight="normal">Pod pinned to Jetson #1 (master)</text>
+<rect x="1240" y="360" width="330" height="54" rx="14" fill="#FFFFFF" stroke="#C8364A" stroke-width="1.8"/>
+<text x="1252" y="379" font-size="12.5" fill="#0F172A" text-anchor="start" font-weight="bold">/camera/color/stabilizer/correction</text>
+<text x="1252" y="396" font-size="11.5" fill="#334155" text-anchor="start" font-weight="normal">QuaternionStamped (stabiliser on)</text>
+<path d="M 1180 387.0 L 1240 387.0" fill="none" stroke="#C8364A" stroke-width="2.4" stroke-linejoin="round" marker-end="url(#loop-e)"/>
+<text x="30" y="444" font-size="14" fill="#C8364A" text-anchor="start" font-weight="bold">Closed loops through this node (System Node Graph, section 2)</text>
+<rect x="30" y="454" width="880" height="98" rx="8" fill="#FFFFFF" stroke="#C8364A" stroke-width="1.4"/>
+<rect x="30" y="454" width="880" height="30" rx="8" fill="#F9E0E4"/>
+<rect x="30" y="476" width="880" height="8" fill="#F9E0E4"/>
+<text x="41" y="474" font-size="13.5" fill="#5A0F1A" text-anchor="start" font-weight="bold">Loop 6a · Camera arm gaze</text>
+<text x="41" y="504" font-size="12" fill="#5A0F1A" text-anchor="start" font-weight="normal">2 × IMX477 → panorama_node → detector → object_detections → arm_look_at_node → /camera_arm/look_at → camera_arm_node (IK, SIMC</text>
+<text x="41" y="520" font-size="12" fill="#5A0F1A" text-anchor="start" font-weight="normal">   PI on the detection offset) → PCA9685 servos → camera moves → detection moves; MPU-6050 → horizon hold</text>
+<text x="41" y="536" font-size="12" fill="#5A0F1A" text-anchor="start" font-weight="normal">Status: Closed on the image and on the plate IMU</text>
+<rect x="30" y="564" width="880" height="146" rx="8" fill="#FFFFFF" stroke="#C8364A" stroke-width="1.4"/>
+<rect x="30" y="564" width="880" height="30" rx="8" fill="#F9E0E4"/>
+<rect x="30" y="586" width="880" height="8" fill="#F9E0E4"/>
+<text x="41" y="584" font-size="13.5" fill="#5A0F1A" text-anchor="start" font-weight="bold">Loop 6c · Image stabiliser (stabilizer.enabled, off by default)</text>
+<text x="41" y="614" font-size="12" fill="#5A0F1A" text-anchor="start" font-weight="normal">panorama_node: stitched frame → registration to the previous stabilised output (inverse compositional Gauss–Newton, Huber IRLS)</text>
+<text x="41" y="630" font-size="12" fill="#5A0F1A" text-anchor="start" font-weight="normal">   → multiplicative EKF of the intentional orientation → 2-DOF controller (crop box, anti-windup) → rotation K·R·K⁻¹ with</text>
+<text x="41" y="646" font-size="12" fill="#5A0F1A" text-anchor="start" font-weight="normal">   derived zoom → stabilised image_raw + zoomed camera_info → /camera/color/stabilizer/correction; the stabilised output is the</text>
+<text x="41" y="662" font-size="12" fill="#5A0F1A" text-anchor="start" font-weight="normal">   next registration template</text>
+<text x="41" y="678" font-size="12" fill="#5A0F1A" text-anchor="start" font-weight="normal">Status: Closed on the image inside the node; failsafe to pass-through (coasting); verified on a synthetic shaking camera only,</text>
+<text x="41" y="694" font-size="12" fill="#5A0F1A" text-anchor="start" font-weight="normal">   not yet on the GPU or a real rig (ros2_panorama README §9)</text>
+<rect x="960" y="434" width="930" height="220" rx="14" fill="#F4F4F4" fill-opacity="0.55" stroke="#6B6B6B" stroke-width="1.6"/>
+<text x="976" y="460" font-size="14" fill="#222222" text-anchor="start" font-weight="bold">Legend</text>
+<rect x="980" y="474" width="30" height="18" rx="4" fill="#FFFFFF" stroke="#4E8A2E" stroke-width="1.4"/>
+<text x="1020" y="488" font-size="12.5" fill="#222" text-anchor="start" font-weight="normal">ROS 2 node</text>
+<rect x="980" y="504" width="30" height="18" rx="4" fill="#FFF3DE" stroke="#C07A12" stroke-width="1.4"/>
+<text x="1020" y="518" font-size="12.5" fill="#222" text-anchor="start" font-weight="normal">MCU firmware (micro-ROS)</text>
+<rect x="980" y="534" width="30" height="18" rx="4" fill="#F3EEFB" stroke="#6B4FA0" stroke-width="1.4"/>
+<text x="1020" y="548" font-size="12.5" fill="#222" text-anchor="start" font-weight="normal">Non-ROS process</text>
+<rect x="980" y="564" width="30" height="18" rx="4" fill="#FFFFFF" stroke="#8A8A8A" stroke-width="1.4" stroke-dasharray="6 4"/>
+<text x="1020" y="578" font-size="12.5" fill="#222" text-anchor="start" font-weight="normal">External / planned (dashed)</text>
+<rect x="980" y="594" width="30" height="18" rx="4" fill="#F4F4F4" stroke="#6B6B6B" stroke-width="1.4"/>
+<text x="1020" y="608" font-size="12.5" fill="#222" text-anchor="start" font-weight="normal">Hardware, topic as neighbour</text>
+<rect x="1390" y="474" width="30" height="18" rx="9" fill="#FFFFFF" stroke="#334155" stroke-width="1.4"/>
+<text x="1430" y="488" font-size="12.5" fill="#222" text-anchor="start" font-weight="normal">Topic</text>
+<rect x="1390" y="504" width="30" height="18" rx="9" fill="#FFFFFF" stroke="#BE123C" stroke-width="1.4" stroke-dasharray="5 3"/>
+<text x="1430" y="518" font-size="12.5" fill="#222" text-anchor="start" font-weight="normal">Topic without publisher</text>
+<rect x="1390" y="534" width="30" height="18" rx="3" fill="#FFFFFF" stroke="#A21CAF" stroke-width="1.4"/>
+<text x="1430" y="548" font-size="12.5" fill="#222" text-anchor="start" font-weight="normal">Service</text>
+<path d="M 1390 572 L 1420 572" fill="none" stroke="#5B6573" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#link-e)"/>
+<text x="1430" y="576" font-size="12.5" fill="#222" text-anchor="start" font-weight="normal">Data / command link (dashed: service, optional)</text>
+<path d="M 1390 602 L 1420 602" fill="none" stroke="#C8364A" stroke-width="2.4" stroke-linejoin="round" marker-end="url(#loop-e)"/>
+<text x="1430" y="606" font-size="12.5" fill="#222" text-anchor="start" font-weight="normal">Link of a closed loop</text>
+<rect x="1399" y="622" width="12" height="12" fill="#4E8A2E"/>
+<text x="1430" y="633" font-size="12.5" fill="#222" text-anchor="start" font-weight="normal">Pod pinned to Jetson #1 (master)</text>
 </svg>
