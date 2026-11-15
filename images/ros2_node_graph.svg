@@ -8,7 +8,7 @@
 <rect x="0" y="0" width="7678" height="8266" fill="#FFFFFF"/>
 <text x="40.0" y="58.0" font-size="36" fill="#111" text-anchor="start" font-weight="bold">Isaac ROS Jetbot NanoOWL — ROS 2 node graph</text>
 <text x="40.0" y="94.0" font-size="17" fill="#555555" text-anchor="start" font-weight="normal">73 ROS 2 nodes · 127 topics · 396 links in 22 panels of JetOwl_FlightControl, JetOwl_Vision and Isaac_ROS-Jetbot_NanoOWL · data flows left → right · closed loops in red</text>
-<text x="40.0" y="118.0" font-size="17" fill="#555555" text-anchor="start" font-weight="normal">A block of another panel is a dashed chip with that panel's number · wiring checked against the code: Docs/flowcharts/ros2_nodes_flowchart.md · drawn by Scripts/diagrams/node_graph_map.py</text>
+<text x="40.0" y="118.0" font-size="17" fill="#555555" text-anchor="start" font-weight="normal">A block of another panel is a dashed chip with that panel's number · each panel is also drawn alone in Docs/images/node_graph/ · drawn by Scripts/diagrams/node_graph_map.py</text>
 <rect x="40.0" y="180.0" width="340.0" height="560.0" rx="14" fill="#FFFFFF" fill-opacity="0.55" stroke="#6B6B6B" stroke-width="1.6"/>
 <text x="56.0" y="206.0" font-size="16" fill="#222222" text-anchor="start" font-weight="bold">Legend</text>
 <rect x="56.0" y="219.0" width="30.0" height="18.0" rx="4" fill="#FFFFFF" stroke="#4E8A2E" stroke-width="1.4"/>
