@@ -27,16 +27,17 @@
 <text x="40" y="169" font-size="12" fill="#555555" text-anchor="start" font-weight="normal">TensorRTNode / TritonNode</text>
 <path d="M 320 177.0 L 350 177.0" fill="none" stroke="#5B6573" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#link-e)"/>
 <path d="M 680 177.0 L 740 177.0" fill="none" stroke="#5B6573" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#link-e)"/>
-<rect x="1240" y="150" width="330" height="76" rx="14" fill="#FFFFFF" stroke="#334155" stroke-width="1.2"/>
+<rect x="1240" y="150" width="330" height="91" rx="14" fill="#FFFFFF" stroke="#334155" stroke-width="1.2"/>
 <text x="1252" y="169" font-size="12.5" fill="#0F172A" text-anchor="start" font-weight="bold">/object_detections</text>
 <text x="1252" y="186" font-size="11.5" fill="#334155" text-anchor="start" font-weight="normal">Detection2DArray</text>
-<rect x="1600" y="150" width="290" height="76" rx="8" fill="#FFFFFF" stroke="#4E8A2E" stroke-width="1.4"/>
+<rect x="1600" y="150" width="290" height="91" rx="8" fill="#FFFFFF" stroke="#4E8A2E" stroke-width="1.4"/>
 <text x="1610" y="169" font-size="12" fill="#1E3A10" text-anchor="start" font-weight="normal">arm_look_at_node</text>
 <text x="1610" y="184" font-size="12" fill="#1E3A10" text-anchor="start" font-weight="normal">camera_arm_node</text>
 <text x="1610" y="199" font-size="12" fill="#1E3A10" text-anchor="start" font-weight="normal">object_detection_visualizer</text>
 <text x="1610" y="214" font-size="12" fill="#1E3A10" text-anchor="start" font-weight="normal">isaac_ros_semantic_fusion_node</text>
-<path d="M 1180 188.0 L 1240 188.0" fill="none" stroke="#5B6573" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#link-e)"/>
-<path d="M 1570 188.0 L 1600 188.0" fill="none" stroke="#5B6573" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#link-e)"/>
+<text x="1610" y="229" font-size="12" fill="#1E3A10" text-anchor="start" font-weight="normal">+ 1 more</text>
+<path d="M 1180 195.5 L 1240 195.5" fill="none" stroke="#5B6573" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#link-e)"/>
+<path d="M 1570 195.5 L 1600 195.5" fill="none" stroke="#5B6573" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#link-e)"/>
 <text x="30" y="342" font-size="14" fill="#C8364A" text-anchor="start" font-weight="bold">Closed loops through this node (System Node Graph, section 2)</text>
 <text x="30" y="366" font-size="12.5" fill="#555555" text-anchor="start" font-weight="normal">None: the node is part of an estimation or data path only.</text>
 <rect x="960" y="332" width="930" height="220" rx="14" fill="#F4F4F4" fill-opacity="0.55" stroke="#6B6B6B" stroke-width="1.6"/>
