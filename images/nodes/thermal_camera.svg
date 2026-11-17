@@ -20,14 +20,23 @@
 <text x="754" y="266" font-size="12.5" fill="#1E3A10" text-anchor="start" font-weight="normal">Package: ros2_night_vision_owl</text>
 <text x="754" y="282" font-size="12.5" fill="#1E3A10" text-anchor="start" font-weight="normal">Directory: Source/ROS2_Night_Vision_OWL</text>
 <text x="754" y="298" font-size="12.5" fill="#1E3A10" text-anchor="start" font-weight="normal">Pod night-vision: high · 300m / 256Mi · master</text>
-<rect x="1240" y="150" width="330" height="54" rx="14" fill="#FFFFFF" stroke="#334155" stroke-width="1.2"/>
-<text x="1252" y="169" font-size="12.5" fill="#0F172A" text-anchor="start" font-weight="bold">/thermal/image_temperature ·</text>
-<text x="1252" y="186" font-size="11.5" fill="#334155" text-anchor="start" font-weight="normal">   /thermal/camera_info</text>
-<rect x="1600" y="150" width="290" height="54" rx="8" fill="#FFFFFF" stroke="#4E8A2E" stroke-width="1.4"/>
-<text x="1610" y="169" font-size="12" fill="#1E3A10" text-anchor="start" font-weight="normal">thermal_detector</text>
-<text x="1610" y="184" font-size="12" fill="#1E3A10" text-anchor="start" font-weight="normal">ros2_dashboard_node</text>
-<path d="M 1180 177.0 L 1240 177.0" fill="none" stroke="#5B6573" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#link-e)"/>
-<path d="M 1570 177.0 L 1600 177.0" fill="none" stroke="#5B6573" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#link-e)"/>
+<rect x="1240" y="150" width="330" height="61" rx="14" fill="#FFFFFF" stroke="#334155" stroke-width="1.2"/>
+<text x="1252" y="169" font-size="12.5" fill="#0F172A" text-anchor="start" font-weight="bold">/diagnostics</text>
+<text x="1252" y="186" font-size="11.5" fill="#334155" text-anchor="start" font-weight="normal">DiagnosticArray ← every 📊 node</text>
+<rect x="1600" y="150" width="290" height="61" rx="8" fill="#FFFFFF" stroke="#4E8A2E" stroke-width="1.4"/>
+<text x="1610" y="169" font-size="12" fill="#1E3A10" text-anchor="start" font-weight="normal">pipeline_coordinator_node</text>
+<text x="1610" y="184" font-size="12" fill="#1E3A10" text-anchor="start" font-weight="normal">ros2_monitoring_py</text>
+<text x="1610" y="199" font-size="12" fill="#1E3A10" text-anchor="start" font-weight="normal">ros2_dashboard_node</text>
+<path d="M 1180 180.5 L 1240 180.5" fill="none" stroke="#5B6573" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#link-e)"/>
+<path d="M 1570 180.5 L 1600 180.5" fill="none" stroke="#5B6573" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#link-e)"/>
+<rect x="1240" y="225" width="330" height="54" rx="14" fill="#FFFFFF" stroke="#334155" stroke-width="1.2"/>
+<text x="1252" y="244" font-size="12.5" fill="#0F172A" text-anchor="start" font-weight="bold">/thermal/image_temperature ·</text>
+<text x="1252" y="261" font-size="11.5" fill="#334155" text-anchor="start" font-weight="normal">   /thermal/camera_info</text>
+<rect x="1600" y="225" width="290" height="54" rx="8" fill="#FFFFFF" stroke="#4E8A2E" stroke-width="1.4"/>
+<text x="1610" y="244" font-size="12" fill="#1E3A10" text-anchor="start" font-weight="normal">thermal_detector</text>
+<text x="1610" y="259" font-size="12" fill="#1E3A10" text-anchor="start" font-weight="normal">ros2_dashboard_node</text>
+<path d="M 1180 252.0 L 1240 252.0" fill="none" stroke="#5B6573" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#link-e)"/>
+<path d="M 1570 252.0 L 1600 252.0" fill="none" stroke="#5B6573" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#link-e)"/>
 <text x="350" y="180" font-size="12" fill="#888888" text-anchor="start" font-weight="normal">(no inputs in the graph)</text>
 <text x="30" y="342" font-size="14" fill="#C8364A" text-anchor="start" font-weight="bold">Closed loops through this node (System Node Graph, section 2)</text>
 <rect x="30" y="352" width="880" height="82" rx="8" fill="#FFFFFF" stroke="#C8364A" stroke-width="1.4"/>

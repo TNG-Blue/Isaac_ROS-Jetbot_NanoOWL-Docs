@@ -51,17 +51,26 @@
 <text x="40" y="373" font-size="12" fill="#1E3A10" text-anchor="start" font-weight="normal">uav_state_estimator</text>
 <path d="M 320 381.0 L 350 381.0" fill="none" stroke="#C8364A" stroke-width="2.4" stroke-linejoin="round" marker-end="url(#loop-e)"/>
 <path d="M 680 381.0 L 740 381.0" fill="none" stroke="#C8364A" stroke-width="2.4" stroke-linejoin="round" marker-end="url(#loop-e)"/>
-<rect x="1240" y="150" width="330" height="54" rx="14" fill="#FFFFFF" stroke="#334155" stroke-width="1.2"/>
-<text x="1252" y="169" font-size="12.5" fill="#0F172A" text-anchor="start" font-weight="bold">/nav/breadcrumbs · /nav/map_markers</text>
-<text x="1252" y="186" font-size="11.5" fill="#334155" text-anchor="start" font-weight="normal">Path · MarkerArray</text>
-<path d="M 1180 177.0 L 1240 177.0" fill="none" stroke="#5B6573" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#link-e)"/>
-<rect x="1240" y="218" width="330" height="54" rx="14" fill="#FFFFFF" stroke="#C8364A" stroke-width="1.8"/>
-<text x="1252" y="237" font-size="12.5" fill="#0F172A" text-anchor="start" font-weight="bold">/nav/return_path</text>
-<text x="1252" y="254" font-size="11.5" fill="#334155" text-anchor="start" font-weight="normal">Path (latched): here → flown path → home</text>
-<rect x="1600" y="218" width="290" height="54" rx="8" fill="#FFFFFF" stroke="#4E8A2E" stroke-width="1.4"/>
-<text x="1610" y="237" font-size="12" fill="#1E3A10" text-anchor="start" font-weight="normal">flight_controller_node</text>
-<path d="M 1180 245.0 L 1240 245.0" fill="none" stroke="#C8364A" stroke-width="2.4" stroke-linejoin="round" marker-end="url(#loop-e)"/>
-<path d="M 1570 245.0 L 1600 245.0" fill="none" stroke="#C8364A" stroke-width="2.4" stroke-linejoin="round" marker-end="url(#loop-e)"/>
+<rect x="1240" y="150" width="330" height="61" rx="14" fill="#FFFFFF" stroke="#334155" stroke-width="1.2"/>
+<text x="1252" y="169" font-size="12.5" fill="#0F172A" text-anchor="start" font-weight="bold">/diagnostics</text>
+<text x="1252" y="186" font-size="11.5" fill="#334155" text-anchor="start" font-weight="normal">DiagnosticArray ← every 📊 node</text>
+<rect x="1600" y="150" width="290" height="61" rx="8" fill="#FFFFFF" stroke="#4E8A2E" stroke-width="1.4"/>
+<text x="1610" y="169" font-size="12" fill="#1E3A10" text-anchor="start" font-weight="normal">pipeline_coordinator_node</text>
+<text x="1610" y="184" font-size="12" fill="#1E3A10" text-anchor="start" font-weight="normal">ros2_monitoring_py</text>
+<text x="1610" y="199" font-size="12" fill="#1E3A10" text-anchor="start" font-weight="normal">ros2_dashboard_node</text>
+<path d="M 1180 180.5 L 1240 180.5" fill="none" stroke="#5B6573" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#link-e)"/>
+<path d="M 1570 180.5 L 1600 180.5" fill="none" stroke="#5B6573" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#link-e)"/>
+<rect x="1240" y="225" width="330" height="54" rx="14" fill="#FFFFFF" stroke="#334155" stroke-width="1.2"/>
+<text x="1252" y="244" font-size="12.5" fill="#0F172A" text-anchor="start" font-weight="bold">/nav/breadcrumbs · /nav/map_markers</text>
+<text x="1252" y="261" font-size="11.5" fill="#334155" text-anchor="start" font-weight="normal">Path · MarkerArray</text>
+<path d="M 1180 252.0 L 1240 252.0" fill="none" stroke="#5B6573" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#link-e)"/>
+<rect x="1240" y="293" width="330" height="54" rx="14" fill="#FFFFFF" stroke="#C8364A" stroke-width="1.8"/>
+<text x="1252" y="312" font-size="12.5" fill="#0F172A" text-anchor="start" font-weight="bold">/nav/return_path</text>
+<text x="1252" y="329" font-size="11.5" fill="#334155" text-anchor="start" font-weight="normal">Path (latched): here → flown path → home</text>
+<rect x="1600" y="293" width="290" height="54" rx="8" fill="#FFFFFF" stroke="#4E8A2E" stroke-width="1.4"/>
+<text x="1610" y="312" font-size="12" fill="#1E3A10" text-anchor="start" font-weight="normal">flight_controller_node</text>
+<path d="M 1180 320.0 L 1240 320.0" fill="none" stroke="#C8364A" stroke-width="2.4" stroke-linejoin="round" marker-end="url(#loop-e)"/>
+<path d="M 1570 320.0 L 1600 320.0" fill="none" stroke="#C8364A" stroke-width="2.4" stroke-linejoin="round" marker-end="url(#loop-e)"/>
 <text x="30" y="438" font-size="14" fill="#C8364A" text-anchor="start" font-weight="bold">Closed loops through this node (System Node Graph, section 2)</text>
 <rect x="30" y="448" width="880" height="130" rx="8" fill="#FFFFFF" stroke="#C8364A" stroke-width="1.4"/>
 <rect x="30" y="448" width="880" height="30" rx="8" fill="#F9E0E4"/>

@@ -64,6 +64,7 @@
 <text x="362" y="586" font-size="11.5" fill="#334155" text-anchor="start" font-weight="normal">→ OBSTACLE_DISTANCE (obstacle.enabled)</text>
 <rect x="30" y="535" width="290" height="69" rx="8" fill="#FFFFFF" stroke="#4E8A2E" stroke-width="1.4"/>
 <text x="40" y="554" font-size="12" fill="#1E3A10" text-anchor="start" font-weight="normal">ld19_node</text>
+<text x="40" y="569" font-size="12" fill="#1E3A10" text-anchor="start" font-weight="normal">ros_gz_bridge</text>
 <path d="M 320 569.5 L 350 569.5" fill="none" stroke="#5B6573" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#link-e)"/>
 <path d="M 680 569.5 L 740 569.5" fill="none" stroke="#5B6573" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#link-e)"/>
 <rect x="350" y="618" width="330" height="54" rx="14" fill="#FFFFFF" stroke="#BE123C" stroke-width="1.2" stroke-dasharray="5 3"/>
@@ -107,24 +108,31 @@
 <path d="M 1180 252.5 L 1240 252.5" fill="none" stroke="#5B6573" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#link-e)"/>
 <path d="M 1570 252.5 L 1600 252.5" fill="none" stroke="#5B6573" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#link-e)"/>
 <rect x="1240" y="301" width="330" height="54" rx="14" fill="#FFFFFF" stroke="#334155" stroke-width="1.2"/>
-<text x="1252" y="320" font-size="12.5" fill="#0F172A" text-anchor="start" font-weight="bold">network/gcs_connected</text>
-<text x="1252" y="337" font-size="11.5" fill="#334155" text-anchor="start" font-weight="normal">Bool</text>
+<text x="1252" y="320" font-size="12.5" fill="#0F172A" text-anchor="start" font-weight="bold">network/diagnostics</text>
+<text x="1252" y="337" font-size="11.5" fill="#334155" text-anchor="start" font-weight="normal">DiagnosticArray · topic of this node</text>
 <rect x="1600" y="301" width="290" height="54" rx="8" fill="#FFFFFF" stroke="#4E8A2E" stroke-width="1.4"/>
 <text x="1610" y="320" font-size="12" fill="#1E3A10" text-anchor="start" font-weight="normal">ros2_dashboard_node</text>
 <path d="M 1180 328.0 L 1240 328.0" fill="none" stroke="#5B6573" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#link-e)"/>
 <path d="M 1570 328.0 L 1600 328.0" fill="none" stroke="#5B6573" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#link-e)"/>
-<rect x="1600" y="369" width="290" height="46" rx="8" fill="#F3EEFB" stroke="#6B4FA0" stroke-width="1.4"/>
-<text x="1610" y="388" font-size="12" fill="#2A1A4A" text-anchor="start" font-weight="normal">Ground control station</text>
-<path d="M 1180 392.0 L 1600 392.0" fill="none" stroke="#5B6573" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#link-e)"/>
-<text x="1405.0" y="385.0" font-size="11" fill="#555555" text-anchor="middle" font-weight="normal">MAVLink v2</text>
-<rect x="1240" y="429" width="330" height="69" rx="4" fill="#FFFFFF" stroke="#A21CAF" stroke-width="1.2"/>
-<text x="1252" y="448" font-size="12.5" fill="#0F172A" text-anchor="start" font-weight="bold">mission/start · abort · reset · reload</text>
-<text x="1252" y="465" font-size="11.5" fill="#334155" text-anchor="start" font-weight="normal">std_srvs/Trigger</text>
-<text x="1252" y="480" font-size="11.5" fill="#334155" text-anchor="start" font-weight="normal">→ call start / abort</text>
-<rect x="1600" y="429" width="290" height="69" rx="8" fill="#FFFFFF" stroke="#4E8A2E" stroke-width="1.4"/>
-<text x="1610" y="448" font-size="12" fill="#1E3A10" text-anchor="start" font-weight="normal">mission_planner_node</text>
-<path d="M 1180 463.5 L 1240 463.5" fill="none" stroke="#5B6573" stroke-width="1.6" stroke-linejoin="round" stroke-dasharray="7 5" marker-end="url(#link-e)"/>
-<path d="M 1570 463.5 L 1600 463.5" fill="none" stroke="#5B6573" stroke-width="1.6" stroke-linejoin="round" stroke-dasharray="7 5" marker-end="url(#link-e)"/>
+<rect x="1240" y="369" width="330" height="54" rx="14" fill="#FFFFFF" stroke="#334155" stroke-width="1.2"/>
+<text x="1252" y="388" font-size="12.5" fill="#0F172A" text-anchor="start" font-weight="bold">network/gcs_connected</text>
+<text x="1252" y="405" font-size="11.5" fill="#334155" text-anchor="start" font-weight="normal">Bool</text>
+<rect x="1600" y="369" width="290" height="54" rx="8" fill="#FFFFFF" stroke="#4E8A2E" stroke-width="1.4"/>
+<text x="1610" y="388" font-size="12" fill="#1E3A10" text-anchor="start" font-weight="normal">ros2_dashboard_node</text>
+<path d="M 1180 396.0 L 1240 396.0" fill="none" stroke="#5B6573" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#link-e)"/>
+<path d="M 1570 396.0 L 1600 396.0" fill="none" stroke="#5B6573" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#link-e)"/>
+<rect x="1600" y="437" width="290" height="46" rx="8" fill="#F3EEFB" stroke="#6B4FA0" stroke-width="1.4"/>
+<text x="1610" y="456" font-size="12" fill="#2A1A4A" text-anchor="start" font-weight="normal">Ground control station</text>
+<path d="M 1180 460.0 L 1600 460.0" fill="none" stroke="#5B6573" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#link-e)"/>
+<text x="1405.0" y="453.0" font-size="11" fill="#555555" text-anchor="middle" font-weight="normal">MAVLink v2</text>
+<rect x="1240" y="497" width="330" height="69" rx="4" fill="#FFFFFF" stroke="#A21CAF" stroke-width="1.2"/>
+<text x="1252" y="516" font-size="12.5" fill="#0F172A" text-anchor="start" font-weight="bold">mission/start · abort · reset · reload</text>
+<text x="1252" y="533" font-size="11.5" fill="#334155" text-anchor="start" font-weight="normal">std_srvs/Trigger</text>
+<text x="1252" y="548" font-size="11.5" fill="#334155" text-anchor="start" font-weight="normal">→ call start / abort</text>
+<rect x="1600" y="497" width="290" height="69" rx="8" fill="#FFFFFF" stroke="#4E8A2E" stroke-width="1.4"/>
+<text x="1610" y="516" font-size="12" fill="#1E3A10" text-anchor="start" font-weight="normal">mission_planner_node</text>
+<path d="M 1180 531.5 L 1240 531.5" fill="none" stroke="#5B6573" stroke-width="1.6" stroke-linejoin="round" stroke-dasharray="7 5" marker-end="url(#link-e)"/>
+<path d="M 1570 531.5 L 1600 531.5" fill="none" stroke="#5B6573" stroke-width="1.6" stroke-linejoin="round" stroke-dasharray="7 5" marker-end="url(#link-e)"/>
 <text x="30" y="898" font-size="14" fill="#C8364A" text-anchor="start" font-weight="bold">Closed loops through this node (System Node Graph, section 2)</text>
 <text x="30" y="922" font-size="12.5" fill="#555555" text-anchor="start" font-weight="normal">None: the node is part of an estimation or data path only.</text>
 <rect x="960" y="888" width="930" height="220" rx="14" fill="#F4F4F4" fill-opacity="0.55" stroke="#6B6B6B" stroke-width="1.6"/>

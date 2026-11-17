@@ -20,11 +20,18 @@
 <text x="754" y="282" font-size="12.5" fill="#1E3A10" text-anchor="start" font-weight="normal">Package: ros2_monitoring</text>
 <text x="754" y="298" font-size="12.5" fill="#1E3A10" text-anchor="start" font-weight="normal">Directory: Source/ROS2_Monitoring</text>
 <text x="754" y="314" font-size="12.5" fill="#1E3A10" text-anchor="start" font-weight="normal">Pod monitoring: normal · 100m / 128Mi · any</text>
-<rect x="350" y="150" width="330" height="69" rx="14" fill="#FFFFFF" stroke="#334155" stroke-width="1.2"/>
+<rect x="350" y="150" width="330" height="91" rx="14" fill="#FFFFFF" stroke="#334155" stroke-width="1.2"/>
 <text x="362" y="169" font-size="12.5" fill="#0F172A" text-anchor="start" font-weight="bold">/diagnostics</text>
-<text x="362" y="186" font-size="11.5" fill="#334155" text-anchor="start" font-weight="normal">DiagnosticArray ← every  node</text>
+<text x="362" y="186" font-size="11.5" fill="#334155" text-anchor="start" font-weight="normal">DiagnosticArray ← every 📊 node</text>
 <text x="362" y="201" font-size="11.5" fill="#334155" text-anchor="start" font-weight="normal">→ any topic</text>
-<path d="M 680 184.5 L 740 184.5" fill="none" stroke="#5B6573" stroke-width="1.6" stroke-linejoin="round" stroke-dasharray="7 5" marker-end="url(#link-e)"/>
+<rect x="30" y="150" width="290" height="91" rx="8" fill="#FFFFFF" stroke="#4E8A2E" stroke-width="1.4"/>
+<text x="40" y="169" font-size="12" fill="#1E3A10" text-anchor="start" font-weight="normal">camera_arm_node</text>
+<text x="40" y="184" font-size="12" fill="#1E3A10" text-anchor="start" font-weight="normal">ld19_node</text>
+<text x="40" y="199" font-size="12" fill="#1E3A10" text-anchor="start" font-weight="normal">lpb40b_node</text>
+<text x="40" y="214" font-size="12" fill="#1E3A10" text-anchor="start" font-weight="normal">lidar_slam_node</text>
+<text x="40" y="229" font-size="12" fill="#1E3A10" text-anchor="start" font-weight="normal">+ 22 more</text>
+<path d="M 320 195.5 L 350 195.5" fill="none" stroke="#5B6573" stroke-width="1.6" stroke-linejoin="round" stroke-dasharray="7 5" marker-end="url(#link-e)"/>
+<path d="M 680 195.5 L 740 195.5" fill="none" stroke="#5B6573" stroke-width="1.6" stroke-linejoin="round" stroke-dasharray="7 5" marker-end="url(#link-e)"/>
 <text x="1240" y="180" font-size="12" fill="#888888" text-anchor="start" font-weight="normal">(no outputs in the graph)</text>
 <text x="30" y="358" font-size="14" fill="#C8364A" text-anchor="start" font-weight="bold">Closed loops through this node (System Node Graph, section 2)</text>
 <text x="30" y="382" font-size="12.5" fill="#555555" text-anchor="start" font-weight="normal">None: the node is part of an estimation or data path only.</text>

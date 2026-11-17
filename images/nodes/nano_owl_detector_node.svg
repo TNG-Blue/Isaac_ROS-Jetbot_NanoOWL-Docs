@@ -11,15 +11,12 @@
 <text x="350" y="136" font-size="13" fill="#334155" text-anchor="start" font-weight="bold">Subscribes · serves · receives</text>
 <text x="1240" y="136" font-size="13" fill="#334155" text-anchor="start" font-weight="bold">Publishes · calls · sends</text>
 <rect x="740" y="150" width="440" height="205" rx="12" fill="#E6F4DE" stroke="#4E8A2E" stroke-width="2.2"/>
-<rect x="1158" y="160" width="12" height="12" fill="#4E8A2E"/>
 <text x="754" y="178" font-size="16" fill="#1E3A10" text-anchor="start" font-weight="bold">nano_owl_detector_node</text>
-<rect x="754" y="192" width="102" height="17" rx="8" fill="#FFF1D6" stroke="#8A5A00" stroke-width="0.8"/>
-<text x="805.1" y="205" font-size="10.5" fill="#8A5A00" text-anchor="middle" font-weight="normal">high · 1 · 1536Mi</text>
-<text x="754" y="234" font-size="12.5" fill="#1E3A10" text-anchor="start" font-weight="normal">NanoOWL TensorRT · open-vocabulary text query</text>
-<text x="754" y="250" font-size="12.5" fill="#1E3A10" text-anchor="start" font-weight="normal"></text>
-<text x="754" y="266" font-size="12.5" fill="#1E3A10" text-anchor="start" font-weight="normal">Package: isaac_ros_objectdetection</text>
-<text x="754" y="282" font-size="12.5" fill="#1E3A10" text-anchor="start" font-weight="normal">Directory: Source/Isaac_ROS-Object_Detection</text>
-<text x="754" y="298" font-size="12.5" fill="#1E3A10" text-anchor="start" font-weight="normal">Pod object-detection: high · 1 / 1536Mi · GPU · master</text>
+<text x="754" y="218" font-size="12.5" fill="#1E3A10" text-anchor="start" font-weight="normal">NanoOWL TensorRT · open-vocabulary text query</text>
+<text x="754" y="234" font-size="12.5" fill="#1E3A10" text-anchor="start" font-weight="normal"></text>
+<text x="754" y="250" font-size="12.5" fill="#1E3A10" text-anchor="start" font-weight="normal">Package: isaac_ros_objectdetection</text>
+<text x="754" y="266" font-size="12.5" fill="#1E3A10" text-anchor="start" font-weight="normal">Directory: Source/Isaac_ROS-Object_Detection</text>
+<text x="754" y="282" font-size="12.5" fill="#1E3A10" text-anchor="start" font-weight="normal">Not deployed by the Helm chart (run with ros2 launch)</text>
 <rect x="350" y="150" width="330" height="54" rx="14" fill="#FFFFFF" stroke="#334155" stroke-width="1.2"/>
 <text x="362" y="169" font-size="12.5" fill="#0F172A" text-anchor="start" font-weight="bold">/camera/color/image_raw</text>
 <text x="362" y="186" font-size="11.5" fill="#334155" text-anchor="start" font-weight="normal">Image (camera layer: panorama_node)</text>

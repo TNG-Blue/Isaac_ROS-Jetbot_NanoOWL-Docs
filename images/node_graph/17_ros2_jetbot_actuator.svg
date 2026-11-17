@@ -19,7 +19,7 @@
 <text x="938.0" y="253.0" font-size="11" fill="#5B6573" text-anchor="middle">I²C: servo PWM · IMU</text>
 <path d="M370.0,303.0 L383.0,303.0 Q390.0,303.0 390.0,296.0 L390.0,251.0 Q390.0,244.0 397.0,244.0 L426.0,244.0" fill="none" stroke="#C8364A" stroke-width="2.6" stroke-linejoin="round" marker-end="url(#loop-e)"/>
 <rect x="426.0" y="172.0" width="300.0" height="96.0" rx="8" fill="#FFFFFF" stroke="#4E8A2E" stroke-width="1.4"/>
-<text x="437.0" y="192.0" font-size="14" fill="#1E3A10" text-anchor="start" font-weight="bold">camera_arm_node · (name camera_arm)</text>
+<text x="437.0" y="192.0" font-size="14" fill="#1E3A10" text-anchor="start" font-weight="bold">camera_arm_node (name camera_arm)</text>
 <text x="437.0" y="212.0" font-size="12.5" fill="#1E3A10" text-anchor="start" font-weight="normal">CUDA multi-start IK · IMU horizon hold · gaze</text>
 <text x="437.0" y="228.5" font-size="12.5" fill="#1E3A10" text-anchor="start" font-weight="normal">tracking (SIMC PI)</text>
 <text x="437.0" y="245.0" font-size="12.5" fill="#1E3A10" text-anchor="start" font-weight="normal">servo safety rules</text>

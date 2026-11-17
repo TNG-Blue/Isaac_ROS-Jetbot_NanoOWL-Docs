@@ -48,15 +48,9 @@
 <rect x="1574.0" y="143.0" width="300.0" height="62.0" rx="8" fill="#FFFFFF" stroke="#4E8A2E" stroke-width="1.4"/>
 <text x="1585.0" y="163.0" font-size="14" fill="#1E3A10" text-anchor="start" font-weight="bold">depth_stereo_node</text>
 <text x="1585.0" y="183.0" font-size="12.5" fill="#1E3A10" text-anchor="start" font-weight="normal">disparity → depth + σ</text>
-<rect x="1856.0" y="151.0" width="10" height="10" fill="#4E8A2E"/>
-<rect x="1733.6" y="149.0" width="114.4" height="16.0" rx="8" fill="#FFF1D6" stroke="#8A5A00" stroke-width="0.8"/>
-<text x="1790.8" y="161.0" font-size="10.5" fill="#8A5A00" text-anchor="middle" font-weight="normal">750m · 768Mi · GPU</text>
 <rect x="1574.0" y="268.0" width="300.0" height="62.0" rx="8" fill="#FFFFFF" stroke="#4E8A2E" stroke-width="1.4"/>
 <text x="1585.0" y="288.0" font-size="14" fill="#1E3A10" text-anchor="start" font-weight="bold">stereo_3d_node</text>
 <text x="1585.0" y="308.0" font-size="12.5" fill="#1E3A10" text-anchor="start" font-weight="normal">disparity → PointCloud2</text>
-<rect x="1856.0" y="276.0" width="10" height="10" fill="#4E8A2E"/>
-<rect x="1733.6" y="274.0" width="114.4" height="16.0" rx="8" fill="#FFF1D6" stroke="#8A5A00" stroke-width="0.8"/>
-<text x="1790.8" y="286.0" font-size="10.5" fill="#8A5A00" text-anchor="middle" font-weight="normal">750m · 768Mi · GPU</text>
 <rect x="652.0" y="154.0" width="183.0" height="48.0" rx="6" fill="#FFFFFF" stroke="#8A8A8A" stroke-width="1.1" stroke-dasharray="6 4"/>
 <text x="743.5" y="175.0" font-size="12.5" fill="#555555" text-anchor="middle" font-weight="bold">/stereo/enable_processing</text>
 <text x="743.5" y="189.0" font-size="11" fill="#5B6573" text-anchor="middle" font-weight="normal">Bool</text>

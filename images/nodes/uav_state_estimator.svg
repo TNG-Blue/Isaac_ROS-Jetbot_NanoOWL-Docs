@@ -1,10 +1,10 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="1219" viewBox="0 0 1920 1219" font-family="Helvetica, Arial, sans-serif">
+<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="1361" viewBox="0 0 1920 1361" font-family="Helvetica, Arial, sans-serif">
 <title>uav_state_estimator — ROS 2 node diagram</title>
 <defs>
 <marker id="link-e" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#5B6573"/></marker><marker id="link-s" viewBox="0 0 10 10" refX="1" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M10 0 L0 5 L10 10 z" fill="#5B6573"/></marker>
 <marker id="loop-e" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#C8364A"/></marker><marker id="loop-s" viewBox="0 0 10 10" refX="1" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M10 0 L0 5 L10 10 z" fill="#C8364A"/></marker>
 </defs>
-<rect width="1920" height="1219" fill="#FFFFFF"/>
+<rect width="1920" height="1361" fill="#FFFFFF"/>
 <text x="30" y="46" font-size="28" fill="#1B1B1B" text-anchor="start" font-weight="bold">uav_state_estimator</text>
 <text x="30" y="76" font-size="15" fill="#555555" text-anchor="start" font-weight="normal">ros2_control_system · Control &amp; guidance (Jetson)</text>
 <text x="30" y="100" font-size="12.5" fill="#777777" text-anchor="start" font-weight="normal">Inputs on the left, outputs on the right · topics as chips, services in magenta, topics without a publisher dashed red · links of a closed loop in red · wiring from the System Node Graph</text>
@@ -116,9 +116,16 @@
 <text x="1610" y="403" font-size="12" fill="#1E3A10" text-anchor="start" font-weight="normal">flight_controller_node</text>
 <text x="1610" y="418" font-size="12" fill="#1E3A10" text-anchor="start" font-weight="normal">telemetry_logger_node</text>
 <text x="1610" y="433" font-size="12" fill="#1E3A10" text-anchor="start" font-weight="normal">mission_planner_node</text>
-<text x="1610" y="448" font-size="12" fill="#1E3A10" text-anchor="start" font-weight="normal">+ 5 more</text>
+<text x="1610" y="448" font-size="12" fill="#1E3A10" text-anchor="start" font-weight="normal">+ 6 more</text>
 <path d="M 1180 414.5 L 1240 414.5" fill="none" stroke="#C8364A" stroke-width="2.4" stroke-linejoin="round" marker-end="url(#loop-e)"/>
 <path d="M 1570 414.5 L 1600 414.5" fill="none" stroke="#C8364A" stroke-width="2.4" stroke-linejoin="round" marker-end="url(#loop-e)"/>
+<rect x="1240" y="474" width="330" height="54" rx="14" fill="#FFFFFF" stroke="#334155" stroke-width="1.2"/>
+<text x="1252" y="493" font-size="12.5" fill="#0F172A" text-anchor="start" font-weight="bold">estimator/diagnostics</text>
+<text x="1252" y="510" font-size="11.5" fill="#334155" text-anchor="start" font-weight="normal">DiagnosticArray · topic of this node</text>
+<rect x="1600" y="474" width="290" height="54" rx="8" fill="#FFFFFF" stroke="#4E8A2E" stroke-width="1.4"/>
+<text x="1610" y="493" font-size="12" fill="#1E3A10" text-anchor="start" font-weight="normal">ros2_dashboard_node</text>
+<path d="M 1180 501.0 L 1240 501.0" fill="none" stroke="#5B6573" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#link-e)"/>
+<path d="M 1570 501.0 L 1600 501.0" fill="none" stroke="#5B6573" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#link-e)"/>
 <text x="30" y="785" font-size="14" fill="#C8364A" text-anchor="start" font-weight="bold">Closed loops through this node (System Node Graph, section 2)</text>
 <rect x="30" y="795" width="880" height="98" rx="8" fill="#FFFFFF" stroke="#C8364A" stroke-width="1.4"/>
 <rect x="30" y="795" width="880" height="30" rx="8" fill="#F9E0E4"/>
@@ -145,6 +152,15 @@
 <text x="41" y="1129" font-size="12" fill="#5A0F1A" text-anchor="start" font-weight="normal">   /odometry/filtered → nav_map_node → /nav/return_path → flight_controller_node</text>
 <text x="41" y="1145" font-size="12" fill="#5A0F1A" text-anchor="start" font-weight="normal">Status: Closed. With GNSS distrusted, the camera + LPB40B velocity keeps the ENU estimate (and home) valid; a GNSS attack or</text>
 <text x="41" y="1161" font-size="12" fill="#5A0F1A" text-anchor="start" font-weight="normal">   lost fix with healthy navigation → RTH along the flown path, σ_h above its bound → LAND (ros2_gnss_denied_nav README)</text>
+<rect x="30" y="1189" width="880" height="130" rx="8" fill="#FFFFFF" stroke="#C8364A" stroke-width="1.4"/>
+<rect x="30" y="1189" width="880" height="30" rx="8" fill="#F9E0E4"/>
+<rect x="30" y="1211" width="880" height="8" fill="#F9E0E4"/>
+<text x="41" y="1209" font-size="13.5" fill="#5A0F1A" text-anchor="start" font-weight="bold">Loop 10 · SIL flight in Gazebo (simulation only)</text>
+<text x="41" y="1239" font-size="12" fill="#5A0F1A" text-anchor="start" font-weight="normal">Gazebo HexacopterSystem → /scan, /lpb40b/scan → lidar_range_adapter → /range, /imu/data → lidar_slam_node (slam/pose) +</text>
+<text x="41" y="1255" font-size="12" fill="#5A0F1A" text-anchor="start" font-weight="normal">   uav_state_estimator (/odometry/filtered) → sil_pilot (per-axis position/velocity loop) → /hexa/cmd → plugin attitude and</text>
+<text x="41" y="1271" font-size="12" fill="#5A0F1A" text-anchor="start" font-weight="normal">   climb-rate loops → 12 rotors → body motion → sensors</text>
+<text x="41" y="1287" font-size="12" fill="#5A0F1A" text-anchor="start" font-weight="normal">Status: Closed in simulation on the vehicle's own estimates, never on ground truth (slam_gazebo.launch.py, flight:=pilot);</text>
+<text x="41" y="1303" font-size="12" fill="#5A0F1A" text-anchor="start" font-weight="normal">   design and margins in the header of sil_pilot.py</text>
 <rect x="960" y="775" width="930" height="220" rx="14" fill="#F4F4F4" fill-opacity="0.55" stroke="#6B6B6B" stroke-width="1.6"/>
 <text x="976" y="801" font-size="14" fill="#222222" text-anchor="start" font-weight="bold">Legend</text>
 <rect x="980" y="815" width="30" height="18" rx="4" fill="#FFFFFF" stroke="#4E8A2E" stroke-width="1.4"/>

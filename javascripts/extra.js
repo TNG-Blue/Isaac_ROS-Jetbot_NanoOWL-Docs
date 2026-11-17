@@ -87,7 +87,7 @@
       if (a.hostname === window.location.hostname) return;
       a.setAttribute('target', '_blank');
       a.setAttribute('rel', 'noopener noreferrer');
-      if (!a.matches('.md-button, .md-content__button, .hero-button, .btn-premium') &&
+      if (!a.matches('.md-button, .md-content__button, .hero-button, .module-link') &&
           !a.querySelector('img, svg')) {
         a.classList.add('external-link');
       }

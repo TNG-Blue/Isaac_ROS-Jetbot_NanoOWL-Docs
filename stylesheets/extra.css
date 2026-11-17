@@ -18,125 +18,324 @@
  */
 
 /* =============================================================================
- * Isaac ROS Jetbot NanoOWL - Base theme
+ * Isaac ROS Jetbot NanoOWL - Theme (design tokens and Material overrides)
+ *
+ * Page components (hero, cards, figures, timeline, dialogs) are in
+ * components.css; the test dashboard has test-dashboard.css.
  *
  * Sizing rule: Material sets the root font size to 20-24 px depending on the
  * viewport (html { font-size: 125% | 137.5% | 150% }) and the article text to
- * 0.8rem. Component sizes below are therefore given in `em` relative to the
- * article text, never in `rem` - a `3rem` headline is 60-72 px and overflows the
- * cards it lives in.
+ * 0.8rem. Sizes inside the article are therefore given in `em` of the article
+ * text; `rem` is used only for chrome that Material itself sizes in `rem`
+ * (header, sidebars, radii).
+ *
+ * Colour rule: NVIDIA green #76B900 has a contrast of 2.4:1 on white, so it is
+ * used for fills, borders and focus rings, never for text on a light surface.
+ * Text on green is ink (#0b0f14, 7.9:1); green text on white is --brand-text
+ * (#4a7a00, 5.2:1). Every pair below meets WCAG 2.2 AA (4.5:1 for body text).
  * ============================================================================= */
 
 /* -----------------------------------------------------------------------------
  * Design tokens
- * `theme.palette.primary: custom` means Material ships no primary colour at all,
- * so the full set of --md-primary-* variables has to be defined here.
+ * `theme.palette.primary: custom` means Material ships no primary colour, so the
+ * --md-primary-* set is defined here. Primary is the ink of the header and tabs;
+ * the green is an accent, not the chrome.
  * --------------------------------------------------------------------------- */
 :root {
-  --nvidia-green: #76B900;
+  --brand: #76b900;               /* fills, borders, focus */
+  --brand-hover: #86cc12;
+  --brand-text: #4a7a00;          /* green text on white: 5.2:1 */
+  --brand-tint: rgba(118, 185, 0, 0.1);
+  --brand-tint-strong: rgba(118, 185, 0, 0.18);
+  --signal-blue: #00aed9;
+
+  --ink: #0b0f14;                 /* header, tabs, footer, hero */
+  --ink-raised: #121821;
+  --ink-line: rgba(255, 255, 255, 0.08);
+  --ink-text: #e6edf3;
+  --ink-muted: #aab4c0;           /* 8.9:1 on --ink */
+
+  --surface: #f6f7f9;
+  --card: #ffffff;
+  --line: #e3e6eb;
+  --line-strong: #cdd2d9;
+  --muted: #5b6472;               /* 5.9:1 on white */
+  --radius: 0.4rem;
+  --radius-lg: 0.6rem;
+  --shadow-sm: 0 1px 2px rgba(16, 24, 40, 0.05);
+  --shadow-md: 0 1px 3px rgba(16, 24, 40, 0.06), 0 8px 24px rgba(16, 24, 40, 0.08);
+
+  --md-primary-fg-color: var(--ink);
+  --md-primary-fg-color--light: #1c2430;
+  --md-primary-fg-color--dark: #000000;
+  --md-primary-bg-color: #ffffff;
+  --md-primary-bg-color--light: rgba(255, 255, 255, 0.72);
+
+  /* Names kept for inline styles and older pages */
+  --nvidia-green: var(--brand);
   --nvidia-dark-green: #5a8f00;
   --nvidia-light-green: #8fd817;
-  --accent-blue: #00AED9;
-
-  --md-primary-fg-color: #76B900;
-  --md-primary-fg-color--light: #8fd817;
-  --md-primary-fg-color--dark: #5a8f00;
-  --md-primary-bg-color: #ffffff;
-  --md-primary-bg-color--light: rgba(255, 255, 255, 0.7);
-
-  --brand-surface: #f6f8f4;
-  --brand-card: #ffffff;
-  --brand-border: rgba(0, 0, 0, 0.09);
-  --brand-muted: #5b6472;
-  --brand-link: #4a7a00;          /* 4.9:1 on white - #76B900 alone is 2.3:1 */
-  --brand-shadow: 0 1px 2px rgba(0, 0, 0, 0.06), 0 4px 12px rgba(0, 0, 0, 0.05);
-  --brand-shadow-hover: 0 6px 24px rgba(90, 143, 0, 0.18);
-  --brand-radius: 0.6rem;
-
-  /* Legacy names still referenced by inline styles in a few pages */
-  --text-secondary: var(--brand-muted);
+  --accent-blue: var(--signal-blue);
+  --brand-border: var(--line);
+  --brand-card: var(--card);
+  --brand-muted: var(--muted);
+  --brand-link: var(--brand-text);
+  --brand-radius: var(--radius-lg);
+  --brand-shadow: var(--shadow-sm);
+  --text-secondary: var(--muted);
 }
 
 [data-md-color-scheme="default"] {
-  --md-accent-fg-color: #5a8f00;
-  --md-typeset-a-color: var(--brand-link);
+  --md-typeset-a-color: var(--brand-text);
+  --md-accent-fg-color: #3a6000;          /* hover text 7.3:1, white on it 7.3:1 */
+  --md-accent-fg-color--transparent: rgba(118, 185, 0, 0.12);
+  --md-code-bg-color: #f5f7f9;
+  --md-typeset-table-color: var(--line);
 }
 
 [data-md-color-scheme="slate"] {
   --md-hue: 215;
-  --md-accent-fg-color: #8fd817;
-  --md-typeset-a-color: #9bdc2a;
-  --md-default-bg-color: #11151c;
-  --md-code-bg-color: #1a1f29;
+  --md-default-bg-color: #0e1217;
+  --md-code-bg-color: #151a21;
+  --md-typeset-a-color: #9bdc2a;          /* 11:1 on the page */
+  --md-accent-fg-color: #b6ea5a;
+  --md-accent-fg-color--transparent: rgba(155, 220, 42, 0.12);
+  --md-accent-bg-color: var(--ink);
+  --md-typeset-table-color: rgba(255, 255, 255, 0.09);
+  --md-footer-bg-color: var(--ink);
 
-  --brand-surface: #171c25;
-  --brand-card: #1a1f29;
-  --brand-border: rgba(255, 255, 255, 0.09);
-  --brand-muted: #a3acb9;
-  --brand-link: #9bdc2a;
-  --brand-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
-  --brand-shadow-hover: 0 6px 24px rgba(118, 185, 0, 0.18);
+  --ink: #080b0f;
+  --brand-text: #9bdc2a;
+  --brand-tint: rgba(155, 220, 42, 0.1);
+  --brand-tint-strong: rgba(155, 220, 42, 0.18);
+  --surface: #131820;
+  --card: #141920;
+  --line: rgba(255, 255, 255, 0.09);
+  --line-strong: rgba(255, 255, 255, 0.18);
+  --muted: #9aa4b2;                       /* 7.4:1 on the page */
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.4);
+  --shadow-md: 0 1px 3px rgba(0, 0, 0, 0.45), 0 10px 28px rgba(0, 0, 0, 0.35);
 }
 
 /* -----------------------------------------------------------------------------
- * Header and tabs
+ * Layout width
+ * Material's 61rem grid leaves a third of a 1440 px screen empty; 68rem keeps
+ * the article column at ~38em (a comfortable 75-90 characters) with both
+ * sidebars shown.
+ * --------------------------------------------------------------------------- */
+.md-grid {
+  max-width: 68rem;
+}
+
+/* -----------------------------------------------------------------------------
+ * Header and tabs: one continuous ink surface, green marks the active tab
  * --------------------------------------------------------------------------- */
 .md-header {
-  background: linear-gradient(90deg, #0f1419 0%, #1a1f2e 100%);
-  color: #fff;
+  background-color: var(--ink);
+  box-shadow: none;
+}
+
+.md-header--shadow,
+.md-header--lifted {
+  box-shadow: 0 1px 0 var(--ink-line), 0 6px 18px rgba(0, 0, 0, 0.18);
+}
+
+.md-header__title {
+  font-weight: 600;
+  letter-spacing: -0.005em;
+}
+
+.md-header__button.md-logo img,
+.md-header__button.md-logo svg {
+  height: 1.4rem;
 }
 
 .md-tabs {
-  background: linear-gradient(90deg, var(--nvidia-green) 0%, var(--nvidia-dark-green) 100%);
-  color: #fff;
+  background-color: var(--ink);
+  border-top: 1px solid var(--ink-line);
+}
+
+.md-tabs__item {
+  height: 2.2rem;
 }
 
 .md-tabs__link {
-  font-weight: 600;
-  opacity: 0.85;
+  margin-top: 0.7rem;
+  font-size: 0.68rem;
+  font-weight: 500;
+  color: var(--ink-muted);
+  opacity: 1;
+  transition: color 125ms;
 }
 
-.md-tabs__link--active,
-.md-tabs__link:hover {
-  opacity: 1;
+.md-tabs__link:hover,
+.md-tabs__link:focus {
+  color: #ffffff;
+}
+
+.md-tabs__item--active .md-tabs__link {
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.md-tabs__item--active {
+  box-shadow: inset 0 -2px 0 var(--brand);
+}
+
+/* Search field on the ink header (desktop); the open overlay keeps Material's
+ * light field, whose selector is more specific. */
+@media screen and (min-width: 60em) {
+  .md-search__form {
+    background-color: rgba(255, 255, 255, 0.07);
+    border-radius: var(--radius);
+    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.08);
+  }
+
+  .md-search__form:hover {
+    background-color: rgba(255, 255, 255, 0.12);
+  }
+}
+
+.md-source__repository {
+  font-weight: 500;
+}
+
+/* -----------------------------------------------------------------------------
+ * Sidebars
+ * --------------------------------------------------------------------------- */
+@media screen and (min-width: 76.25em) {
+  /* Section labels read as group headings, not as links */
+  .md-nav--primary .md-nav__item--section > .md-nav__link {
+    font-size: 0.6rem;
+    font-weight: 700;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+
+  /* Current page: tinted pill, the text stays aligned with its siblings. Only
+   * the link gets it: a section index page also marks its expand toggle
+   * (<label class="md-nav__link--active">) active. */
+  .md-sidebar--primary a.md-nav__link--active {
+    margin-left: -0.45rem;
+    margin-right: -0.45rem;
+    padding: 0.18rem 0.45rem;
+    margin-top: calc(0.625em - 0.18rem);
+    font-weight: 600;
+    background-color: var(--brand-tint);
+    border-radius: var(--radius);
+  }
+
+  /* Inside the link + toggle container the pill must not move the row */
+  .md-sidebar--primary .md-nav__container > a.md-nav__link--active {
+    margin-top: -0.18rem;
+    margin-bottom: -0.18rem;
+    margin-right: 0;
+  }
+}
+
+.md-nav__link--active,
+.md-nav__item .md-nav__link--active {
+  color: var(--md-typeset-a-color);
+}
+
+.md-nav--secondary > .md-nav__title {
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.md-nav--secondary .md-nav__link--active {
+  font-weight: 600;
 }
 
 /* -----------------------------------------------------------------------------
  * Typography
  * --------------------------------------------------------------------------- */
+.md-typeset {
+  font-feature-settings: "kern", "liga", "calt";
+}
+
 .md-typeset h1 {
-  font-weight: 800;
-  letter-spacing: -0.02em;
+  margin-bottom: 0.9em;
+  font-size: 2em;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.025em;
   color: var(--md-default-fg-color);
 }
 
 .md-typeset h2 {
+  margin-top: 2em;
+  padding-bottom: 0.35em;
+  font-size: 1.45em;
   font-weight: 700;
-  padding-bottom: 0.3em;
-  border-bottom: 2px solid var(--nvidia-green);
+  line-height: 1.3;
+  letter-spacing: -0.015em;
+  border-bottom: 1px solid var(--line);
 }
 
 .md-typeset h3 {
+  font-size: 1.15em;
   font-weight: 650;
-  color: var(--md-typeset-a-color);
+  letter-spacing: -0.01em;
 }
 
-/* Inline code only - styling `code` globally also hit code blocks and pushed
+.md-typeset h4 {
+  font-weight: 650;
+}
+
+.md-typeset .headerlink {
+  color: var(--md-default-fg-color--lighter);
+}
+
+/* Inline code only: styling `code` globally also hit code blocks and pushed
  * their text out of line with the line numbers. */
 .md-typeset :not(pre) > code {
-  border: 1px solid var(--brand-border);
-  border-radius: 0.25em;
+  padding: 0.05em 0.35em;
+  border: 1px solid var(--line);
+  border-radius: 0.3em;
 }
 
-.md-typeset .highlight pre,
-.md-typeset pre {
-  border-radius: 0.4em;
+.md-typeset a > code {
+  color: inherit;
 }
 
-/* Links - no underline shift, visible focus */
+/* Code blocks: a hairline frame instead of a flat grey slab */
+.md-typeset .highlight > pre > code {
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+}
+
+.md-typeset .highlighttable {
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+.md-typeset .highlight span.filename {
+  font-weight: 600;
+  border: 1px solid var(--line);
+  border-bottom: 0;
+  border-radius: var(--radius) var(--radius) 0 0;
+}
+
+.md-typeset .highlight span.filename + pre > code {
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+/* Keyboard keys (pymdownx.keys) */
+.md-typeset kbd {
+  border-radius: 0.3em;
+}
+
+/* Links: visible focus, no layout shift */
 .md-typeset a:focus-visible,
 .md-typeset .md-button:focus-visible {
-  outline: 2px solid var(--md-accent-fg-color);
+  outline: 2px solid var(--brand);
   outline-offset: 2px;
 }
 
@@ -149,316 +348,126 @@
 }
 
 /* -----------------------------------------------------------------------------
- * Tables - scroll inside their wrapper instead of widening the page
+ * Tables: quiet header with a green rule, rows scroll inside their wrapper
  * --------------------------------------------------------------------------- */
 .md-typeset table:not([class]) {
-  border-radius: 0.4em;
-  box-shadow: var(--brand-shadow);
+  font-size: 0.68rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
 }
 
 .md-typeset table:not([class]) th {
-  background: var(--nvidia-green);
-  color: #fff;
-  font-weight: 700;
+  font-weight: 650;
+  color: var(--md-default-fg-color);
+  background-color: var(--surface);
+  border-bottom: 2px solid var(--brand);
+}
+
+.md-typeset table:not([class]) td {
+  border-top-color: var(--line);
 }
 
 .md-typeset table:not([class]) tbody tr:hover {
-  background: rgba(118, 185, 0, 0.06);
+  background-color: var(--brand-tint);
+  box-shadow: none;
 }
 
 /* -----------------------------------------------------------------------------
- * Buttons
+ * Admonitions and collapsible blocks
  * --------------------------------------------------------------------------- */
-.md-typeset .md-button {
-  border-radius: 0.4em;
-  font-weight: 700;
-  transition: transform 0.15s ease, box-shadow 0.15s ease, background-color 0.15s ease;
+.md-typeset .admonition,
+.md-typeset details {
+  font-size: 0.68rem;
+  border-width: 1px;
+  border-left-width: 0.2rem;
+  border-radius: var(--radius);
+  box-shadow: none;
 }
 
+.md-typeset .admonition-title,
+.md-typeset summary {
+  font-weight: 650;
+  border-top-right-radius: calc(var(--radius) - 1px);
+}
+
+.md-typeset details:not([open]) > summary {
+  border-bottom-right-radius: calc(var(--radius) - 1px);
+}
+
+/* -----------------------------------------------------------------------------
+ * Buttons: neutral outline by default, green with ink text for the primary
+ * --------------------------------------------------------------------------- */
+.md-typeset .md-button {
+  padding: 0.55em 1.35em;
+  font-weight: 600;
+  color: var(--md-default-fg-color);
+  background-color: var(--card);
+  border: 1px solid var(--line-strong);
+  border-radius: var(--radius);
+  transition: background-color 125ms, border-color 125ms, color 125ms;
+}
+
+.md-typeset .md-button:focus,
 .md-typeset .md-button:hover {
-  transform: translateY(-1px);
-  box-shadow: var(--brand-shadow-hover);
+  color: var(--md-default-fg-color);
+  background-color: var(--brand-tint);
+  border-color: var(--brand);
 }
 
 .md-typeset .md-button--primary {
-  background-color: var(--nvidia-dark-green);
-  border-color: var(--nvidia-dark-green);
-  color: #fff;
+  color: var(--ink);
+  background-color: var(--brand);
+  border-color: var(--brand);
 }
 
+.md-typeset .md-button--primary:focus,
 .md-typeset .md-button--primary:hover {
-  background-color: var(--nvidia-green);
-  border-color: var(--nvidia-green);
-  color: #fff;
+  color: var(--ink);
+  background-color: var(--brand-hover);
+  border-color: var(--brand-hover);
 }
 
 /* -----------------------------------------------------------------------------
- * Hero (home page)
+ * Material content cards (<div class="grid cards" markdown>)
  * --------------------------------------------------------------------------- */
-.md-typeset .hero-section {
-  position: relative;
-  clear: both;                 /* sit below the floated edit / view buttons */
-  padding: 3em 1.5em;
-  margin: 0 0 2em;
-  background: linear-gradient(135deg, #0f1419 0%, #2c4400 100%);
-  border-radius: var(--brand-radius);
-  overflow: hidden;
-  color: #fff;
-  text-align: center;
+.md-typeset .grid.cards > ul > li,
+.md-typeset .grid.cards > ol > li,
+.md-typeset .grid > .card {
+  padding: 1rem 1.05rem;
+  background-color: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  transition: border-color 150ms, box-shadow 150ms;
 }
 
-.md-typeset .hero-section::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%2376B900' fill-opacity='0.08'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/svg%3E");
-  pointer-events: none;
+.md-typeset .grid.cards > ul > li:hover,
+.md-typeset .grid.cards > ol > li:hover,
+.md-typeset .grid > .card:hover {
+  border-color: var(--brand);
+  box-shadow: var(--shadow-md);
 }
 
-.md-typeset .hero-content {
-  position: relative;
+.md-typeset .grid.cards > ul > li > hr,
+.md-typeset .grid.cards > ol > li > hr {
+  margin: 0.7em 0;
+  border-bottom-color: var(--line);
 }
 
-.md-typeset .hero-title {
-  margin: 0 0 0.5em;
-  font-size: 2.4em;
-  line-height: 1.15;
-  font-weight: 900;
-  color: #fff;
-}
-
-.md-typeset .hero-subtitle {
-  margin: 0 auto 0.8em;
-  max-width: 38em;
-  font-size: 1.15em;
-  line-height: 1.5;
-  color: rgba(255, 255, 255, 0.9);
-}
-
-.md-typeset .hero-tagline {
-  font-size: 0.95em;
-  color: rgba(255, 255, 255, 0.75);
-}
-
-.md-typeset .hero-buttons {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.75em;
-  justify-content: center;
-  margin-top: 1.5em;
-}
-
-.md-typeset .hero-button {
-  display: inline-block;
-  padding: 0.7em 1.6em;
-  border-radius: 0.4em;
-  font-weight: 700;
-  border: 2px solid #fff;
-  transition: transform 0.15s ease, background-color 0.15s ease, color 0.15s ease;
-}
-
-.md-typeset .hero-button-primary {
-  background: #fff;
-  color: var(--nvidia-dark-green);
-}
-
-.md-typeset .hero-button-secondary {
-  background: transparent;
-  color: #fff;
-}
-
-.md-typeset .hero-button:hover {
-  transform: translateY(-2px);
-  background: var(--nvidia-green);
-  border-color: var(--nvidia-green);
-  color: #fff;
+.md-typeset .grid.cards .twemoji.lg {
+  color: var(--brand-text);
 }
 
 /* -----------------------------------------------------------------------------
- * Card grid
- * minmax(min(100%, 14em), 1fr) keeps a single column on phones instead of
- * forcing a 280 px track wider than the viewport.
+ * Tags and page status
  * --------------------------------------------------------------------------- */
-.md-typeset .card-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(min(100%, 14em), 1fr));
-  gap: 1em;
-  margin: 1.5em 0;
-}
-
-.md-typeset .feature-card,
-.md-typeset .module-card {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  min-width: 0;
-  padding: 1.2em 1.2em 1em;
-  background: var(--brand-card);
-  border: 1px solid var(--brand-border);
-  border-radius: var(--brand-radius);
-  box-shadow: var(--brand-shadow);
-  overflow-wrap: break-word;
-  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
-}
-
-.md-typeset .feature-card:hover,
-.md-typeset .module-card:hover {
-  transform: translateY(-3px);
-  border-color: var(--nvidia-green);
-  box-shadow: var(--brand-shadow-hover);
-}
-
-.md-typeset .feature-card > :first-child { margin-top: 0; }
-.md-typeset .feature-card > :last-child { margin-bottom: 0; }
-
-.md-typeset .feature-card h3,
-.md-typeset .feature-card h4 {
-  margin: 0.2em 0 0.4em;
-  font-size: 1.1em;
-  line-height: 1.3;
-  color: var(--md-typeset-a-color);
-}
-
-/* Push the call to action to the bottom so buttons line up across a row */
-.md-typeset .feature-card > a:last-child,
-.md-typeset .feature-card > .md-button:last-child,
-.md-typeset .feature-card > .status-planned:last-child {
-  margin-top: auto;
-  align-self: flex-start;
-}
-
-.md-typeset .feature-card .md-button {
-  margin-top: auto;
-  padding: 0.45em 1.1em;
-  font-size: 0.85em;
-}
-
-.md-typeset .card-icon {
-  display: block;
-  margin-bottom: 0.4em;
-  font-size: 1.8em;
-  line-height: 1;
-}
-
-.md-typeset .card-title {
-  margin: 0 0 0.4em;
-  font-size: 1.1em;
-  font-weight: 700;
-  line-height: 1.3;
-  color: var(--md-typeset-a-color);
-}
-
-.md-typeset .card-description {
-  flex: 1 0 auto;
-  margin: 0 0 0.8em;
-  font-size: 0.9em;
-  line-height: 1.55;
-  color: var(--brand-muted);
-}
-
-/* "Planned" badge for tutorials that are not written yet */
-.md-typeset .status-planned {
-  display: inline-block;
-  padding: 0.15em 0.6em;
-  border-radius: 1em;
-  border: 1px dashed var(--brand-muted);
-  color: var(--brand-muted);
-  font-size: 0.8em;
+.md-typeset .md-tag {
   font-weight: 600;
+  border-radius: 999px;
 }
 
 /* -----------------------------------------------------------------------------
- * Headline numbers
- * Values never wrap mid-number ("98." / "5%"); the font scales with the card.
- * --------------------------------------------------------------------------- */
-.md-typeset .stats-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(100%, 9.5em), 1fr));
-  gap: 1em;
-  margin: 1.5em 0;
-}
-
-.md-typeset .stat-card {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;  /* numbers line up even when labels wrap differently */
-  min-width: 0;
-  padding: 1.2em 0.8em;
-  text-align: center;
-  color: #fff;
-  background: linear-gradient(135deg, var(--nvidia-green) 0%, var(--nvidia-dark-green) 100%);
-  border-radius: var(--brand-radius);
-  box-shadow: var(--brand-shadow);
-}
-
-.md-typeset .stat-value {
-  font-size: clamp(1.5em, 4vw, 2.1em);
-  font-weight: 900;
-  line-height: 1.1;
-  white-space: nowrap;
-  font-variant-numeric: tabular-nums;
-}
-
-.md-typeset .stat-label {
-  margin-top: 0.4em;
-  font-size: 0.75em;
-  font-weight: 700;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  opacity: 0.95;
-  overflow-wrap: normal;
-  hyphens: auto;
-}
-
-/* -----------------------------------------------------------------------------
- * Call-to-action banner
- * --------------------------------------------------------------------------- */
-.md-typeset .cta-banner {
-  margin: 2.5em 0 1em;
-  padding: 2em 1.5em;
-  text-align: center;
-  color: #fff;
-  background: linear-gradient(135deg, var(--nvidia-green) 0%, var(--nvidia-dark-green) 100%);
-  border-radius: var(--brand-radius);
-}
-
-.md-typeset .cta-banner h2 {
-  margin: 0 0 0.4em;
-  padding: 0;
-  border: 0;
-  color: #fff;
-}
-
-.md-typeset .cta-banner p {
-  margin: 0 auto 1.2em;
-  max-width: 36em;
-  color: rgba(255, 255, 255, 0.92);
-}
-
-.md-typeset .cta-actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.75em;
-  justify-content: center;
-}
-
-.md-typeset .cta-banner .md-button {
-  color: #fff;
-  border-color: #fff;
-}
-
-.md-typeset .cta-banner .md-button--primary {
-  background: #fff;
-  color: var(--nvidia-dark-green);
-}
-
-.md-typeset .cta-banner .md-button:hover {
-  background: #fff;
-  color: var(--nvidia-dark-green);
-}
-
-/* -----------------------------------------------------------------------------
- * Mermaid - let wide diagrams scroll instead of shrinking to unreadable text
+ * Mermaid: wide diagrams scroll instead of shrinking to unreadable text
  * --------------------------------------------------------------------------- */
 .md-typeset .mermaid {
   overflow-x: auto;
@@ -469,58 +478,49 @@
  * Footer
  * --------------------------------------------------------------------------- */
 .md-footer {
-  background: #0f1419;
+  background-color: var(--ink);
+  border-top: 1px solid var(--ink-line);
+}
+
+.md-footer__link:hover {
+  opacity: 1;
+  color: var(--brand);
+}
+
+.md-footer__title {
+  font-weight: 600;
 }
 
 .md-footer-meta {
-  background: #1a1f2e;
+  background-color: #06080b;
+}
+
+.md-footer-meta__inner {
+  padding: 0.6rem 0.4rem;
+}
+
+.md-footer-copyright {
+  color: var(--ink-muted);
+}
+
+.html .md-footer-meta.md-typeset a,
+.md-footer-meta.md-typeset a {
+  color: var(--ink-text);
+}
+
+.md-footer-meta.md-typeset a:hover {
+  color: var(--brand);
 }
 
 /* -----------------------------------------------------------------------------
- * Small screens
- * --------------------------------------------------------------------------- */
-@media screen and (max-width: 44.9375em) {
-  .md-typeset .hero-section {
-    padding: 2em 1em;
-    margin-left: -0.8rem;
-    margin-right: -0.8rem;
-    border-radius: 0;
-  }
-
-  .md-typeset .hero-title {
-    font-size: 1.7em;
-  }
-
-  .md-typeset .hero-subtitle {
-    font-size: 1em;
-  }
-
-  .md-typeset .hero-button {
-    width: 100%;
-  }
-
-  .md-typeset .stats-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-}
-
-/* -----------------------------------------------------------------------------
- * Print
+ * Print: drop the ink chrome, keep the frames that carry meaning
  * --------------------------------------------------------------------------- */
 @media print {
-  .md-typeset .hero-section {
-    background: none;
-    color: inherit;
-  }
-
-  .md-typeset .hero-title,
-  .md-typeset .hero-subtitle {
-    color: inherit;
-  }
-
-  .md-typeset .feature-card,
-  .md-typeset .stat-card {
-    break-inside: avoid;
+  .md-typeset table:not([class]) {
     box-shadow: none;
+  }
+
+  .md-typeset table:not([class]) th {
+    background: none;
   }
 }

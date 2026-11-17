@@ -1,180 +1,180 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="618" height="1128" viewBox="0 0 618 1128" font-family="Helvetica, Arial, sans-serif" font-size="10">
+<svg xmlns="http://www.w3.org/2000/svg" width="618" height="1730" viewBox="0 0 618 1730" font-family="Helvetica, Arial, sans-serif" font-size="10">
 <defs><marker id="a" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="context-stroke"/></marker></defs>
 <rect width="100%" height="100%" fill="#ffffff"/>
 <text x="12" y="20" font-size="13" font-weight="bold">Ethernet (micro-ROS / XRCE-DDS)</text>
 <text x="12" y="35" fill="#444">100 Mbit/s: FC 192.168.10.2, Vision 192.168.10.3 ↔ agent on the Jetson 192.168.10.1:8888</text>
 <path d="M379.3,158.0 L389.3,158.0 L389.3,220.0 L314.6,220.0" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
 <path d="M280.6,220.0 L206.0,220.0 L206.0,158.0 L216.0,158.0" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
-<path d="M54.0,88.0 L106.0,88.0 L106.0,95.0 L118.0,95.0" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
-<path d="M54.0,118.0 L106.0,118.0 L106.0,139.0 L118.0,139.0" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M54.0,95.0 L106.0,95.0 L106.0,95.0 L118.0,95.0" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M54.0,139.0 L106.0,139.0 L106.0,139.0 L118.0,139.0" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
 <path d="M152.0,95.0 L204.0,95.0 L204.0,86.0 L216.0,86.0" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
 <path d="M152.0,139.0 L197.0,139.0 L197.0,110.0 L216.0,110.0" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
-<path d="M152.0,883.0 L190.0,883.0 L190.0,134.0 L216.0,134.0" fill="none" stroke="#c000c0" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M152.0,1455.0 L190.0,1455.0 L190.0,134.0 L216.0,134.0" fill="none" stroke="#c000c0" stroke-width="1.2" marker-end="url(#a)"/>
 <path d="M379.3,86.0 L531.3,86.0 L531.3,88.0 L543.3,88.0" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
-<path d="M379.3,258.0 L389.3,258.0 L389.3,320.0 L314.6,320.0" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
-<path d="M280.6,320.0 L206.0,320.0 L206.0,258.0 L216.0,258.0" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
-<path d="M54.0,188.0 L106.0,188.0 L106.0,195.0 L118.0,195.0" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
-<path d="M54.0,218.0 L106.0,218.0 L106.0,239.0 L118.0,239.0" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
-<path d="M152.0,195.0 L204.0,195.0 L204.0,186.0 L216.0,186.0" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
-<path d="M152.0,239.0 L197.0,239.0 L197.0,210.0 L216.0,210.0" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
-<path d="M152.0,883.0 L190.0,883.0 L190.0,234.0 L216.0,234.0" fill="none" stroke="#c000c0" stroke-width="1.2" marker-end="url(#a)"/>
-<path d="M379.3,186.0 L531.3,186.0 L531.3,188.0 L543.3,188.0" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
-<path d="M379.3,358.0 L389.3,358.0 L389.3,420.0 L314.6,420.0" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
-<path d="M280.6,420.0 L206.0,420.0 L206.0,358.0 L216.0,358.0" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
-<path d="M54.0,288.0 L106.0,288.0 L106.0,295.0 L118.0,295.0" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
-<path d="M54.0,318.0 L106.0,318.0 L106.0,339.0 L118.0,339.0" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
-<path d="M152.0,295.0 L204.0,295.0 L204.0,286.0 L216.0,286.0" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
-<path d="M152.0,339.0 L197.0,339.0 L197.0,310.0 L216.0,310.0" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
-<path d="M152.0,883.0 L190.0,883.0 L190.0,334.0 L216.0,334.0" fill="none" stroke="#c000c0" stroke-width="1.2" marker-end="url(#a)"/>
-<path d="M379.3,286.0 L531.3,286.0 L531.3,288.0 L543.3,288.0" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
-<path d="M379.3,458.0 L389.3,458.0 L389.3,520.0 L314.6,520.0" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
-<path d="M280.6,520.0 L206.0,520.0 L206.0,458.0 L216.0,458.0" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
-<path d="M54.0,388.0 L106.0,388.0 L106.0,395.0 L118.0,395.0" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
-<path d="M54.0,418.0 L106.0,418.0 L106.0,439.0 L118.0,439.0" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
-<path d="M152.0,395.0 L204.0,395.0 L204.0,386.0 L216.0,386.0" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
-<path d="M152.0,439.0 L197.0,439.0 L197.0,410.0 L216.0,410.0" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
-<path d="M152.0,883.0 L190.0,883.0 L190.0,434.0 L216.0,434.0" fill="none" stroke="#c000c0" stroke-width="1.2" marker-end="url(#a)"/>
-<path d="M379.3,386.0 L531.3,386.0 L531.3,388.0 L543.3,388.0" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
-<path d="M379.3,558.0 L389.3,558.0 L389.3,620.0 L314.6,620.0" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
-<path d="M280.6,620.0 L206.0,620.0 L206.0,558.0 L216.0,558.0" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
-<path d="M54.0,488.0 L106.0,488.0 L106.0,495.0 L118.0,495.0" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
-<path d="M54.0,518.0 L106.0,518.0 L106.0,539.0 L118.0,539.0" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
-<path d="M152.0,495.0 L204.0,495.0 L204.0,486.0 L216.0,486.0" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
-<path d="M152.0,539.0 L197.0,539.0 L197.0,510.0 L216.0,510.0" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
-<path d="M152.0,883.0 L190.0,883.0 L190.0,534.0 L216.0,534.0" fill="none" stroke="#c000c0" stroke-width="1.2" marker-end="url(#a)"/>
-<path d="M379.3,486.0 L531.3,486.0 L531.3,488.0 L543.3,488.0" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
-<path d="M379.3,658.0 L389.3,658.0 L389.3,720.0 L314.6,720.0" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
-<path d="M280.6,720.0 L206.0,720.0 L206.0,658.0 L216.0,658.0" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
-<path d="M54.0,588.0 L106.0,588.0 L106.0,595.0 L118.0,595.0" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
-<path d="M54.0,618.0 L106.0,618.0 L106.0,639.0 L118.0,639.0" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
-<path d="M152.0,595.0 L204.0,595.0 L204.0,586.0 L216.0,586.0" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
-<path d="M152.0,639.0 L197.0,639.0 L197.0,610.0 L216.0,610.0" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
-<path d="M152.0,883.0 L190.0,883.0 L190.0,634.0 L216.0,634.0" fill="none" stroke="#c000c0" stroke-width="1.2" marker-end="url(#a)"/>
-<path d="M379.3,586.0 L531.3,586.0 L531.3,588.0 L543.3,588.0" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
-<path d="M379.3,758.0 L389.3,758.0 L389.3,820.0 L314.6,820.0" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
-<path d="M280.6,820.0 L206.0,820.0 L206.0,758.0 L216.0,758.0" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
-<path d="M54.0,688.0 L106.0,688.0 L106.0,695.0 L118.0,695.0" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
-<path d="M54.0,718.0 L106.0,718.0 L106.0,739.0 L118.0,739.0" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
-<path d="M152.0,695.0 L204.0,695.0 L204.0,686.0 L216.0,686.0" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
-<path d="M152.0,739.0 L197.0,739.0 L197.0,710.0 L216.0,710.0" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
-<path d="M152.0,883.0 L190.0,883.0 L190.0,734.0 L216.0,734.0" fill="none" stroke="#c000c0" stroke-width="1.2" marker-end="url(#a)"/>
-<path d="M379.3,686.0 L531.3,686.0 L531.3,688.0 L543.3,688.0" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
-<path d="M379.3,858.0 L389.3,858.0 L389.3,920.0 L314.6,920.0" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
-<path d="M280.6,920.0 L206.0,920.0 L206.0,858.0 L216.0,858.0" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
-<path d="M54.0,788.0 L106.0,788.0 L106.0,795.0 L118.0,795.0" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
-<path d="M54.0,818.0 L106.0,818.0 L106.0,839.0 L118.0,839.0" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
-<path d="M152.0,795.0 L204.0,795.0 L204.0,786.0 L216.0,786.0" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
-<path d="M152.0,839.0 L197.0,839.0 L197.0,810.0 L216.0,810.0" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
-<path d="M152.0,883.0 L190.0,883.0 L190.0,834.0 L216.0,834.0" fill="none" stroke="#c000c0" stroke-width="1.2" marker-end="url(#a)"/>
-<path d="M379.3,786.0 L531.3,786.0 L531.3,788.0 L543.3,788.0" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
-<path d="M379.3,610.0 L531.3,610.0 L531.3,618.0 L543.3,618.0" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
-<path d="M379.3,710.0 L531.3,710.0 L531.3,718.0 L543.3,718.0" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
-<path d="M379.3,134.0 L431.3,134.0 L431.3,891.0 L443.3,891.0" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
-<path d="M379.3,234.0 L424.3,234.0 L424.3,913.0 L443.3,913.0" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
-<path d="M379.3,334.0 L417.3,334.0 L417.3,935.0 L443.3,935.0" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
-<path d="M379.3,434.0 L410.3,434.0 L410.3,957.0 L443.3,957.0" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
-<path d="M379.3,534.0 L403.3,534.0 L403.3,979.0 L443.3,979.0" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
-<path d="M379.3,634.0 L396.3,634.0 L396.3,1001.0 L443.3,1001.0" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
-<path d="M379.3,734.0 L389.3,734.0 L389.3,1023.0 L443.3,1023.0" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
-<path d="M379.3,834.0 L389.3,834.0 L389.3,1045.0 L443.3,1045.0" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
-<rect x="24.0" y="80.0" width="30.0" height="16.0" rx="7" fill="#fff" stroke="#d62728" stroke-width="1.4"/>
-<text x="39.0" y="91.5" text-anchor="middle">1</text>
-<path d="M54.0,85.0 L59.0,88.0 L54.0,91.0 z" fill="#d62728"/>
-<text x="39.0" y="108.0" text-anchor="middle">imu</text>
-<rect x="24.0" y="110.0" width="30.0" height="16.0" rx="7" fill="#fff" stroke="#d62728" stroke-width="1.4"/>
-<text x="39.0" y="121.5" text-anchor="middle">2</text>
-<path d="M54.0,115.0 L59.0,118.0 L54.0,121.0 z" fill="#d62728"/>
-<text x="39.0" y="138.0" text-anchor="middle">imu_s</text>
-<rect x="24.0" y="180.0" width="30.0" height="16.0" rx="7" fill="#fff" stroke="#d62728" stroke-width="1.4"/>
-<text x="39.0" y="191.5" text-anchor="middle">3</text>
-<path d="M54.0,185.0 L59.0,188.0 L54.0,191.0 z" fill="#d62728"/>
-<text x="39.0" y="208.0" text-anchor="middle">gnss</text>
-<rect x="24.0" y="210.0" width="30.0" height="16.0" rx="7" fill="#fff" stroke="#d62728" stroke-width="1.4"/>
-<text x="39.0" y="221.5" text-anchor="middle">4</text>
-<path d="M54.0,215.0 L59.0,218.0 L54.0,221.0 z" fill="#d62728"/>
-<text x="39.0" y="238.0" text-anchor="middle">gnss_s</text>
-<rect x="24.0" y="280.0" width="30.0" height="16.0" rx="7" fill="#fff" stroke="#d62728" stroke-width="1.4"/>
-<text x="39.0" y="291.5" text-anchor="middle">5</text>
-<path d="M54.0,285.0 L59.0,288.0 L54.0,291.0 z" fill="#d62728"/>
-<text x="39.0" y="308.0" text-anchor="middle">baro</text>
-<rect x="24.0" y="310.0" width="30.0" height="16.0" rx="7" fill="#fff" stroke="#d62728" stroke-width="1.4"/>
-<text x="39.0" y="321.5" text-anchor="middle">6</text>
-<path d="M54.0,315.0 L59.0,318.0 L54.0,321.0 z" fill="#d62728"/>
-<text x="39.0" y="338.0" text-anchor="middle">baro_s</text>
-<rect x="24.0" y="380.0" width="30.0" height="16.0" rx="7" fill="#fff" stroke="#d62728" stroke-width="1.4"/>
-<text x="39.0" y="391.5" text-anchor="middle">7</text>
-<path d="M54.0,385.0 L59.0,388.0 L54.0,391.0 z" fill="#d62728"/>
-<text x="39.0" y="408.0" text-anchor="middle">fb</text>
-<rect x="24.0" y="410.0" width="30.0" height="16.0" rx="7" fill="#fff" stroke="#d62728" stroke-width="1.4"/>
-<text x="39.0" y="421.5" text-anchor="middle">8</text>
-<path d="M54.0,415.0 L59.0,418.0 L54.0,421.0 z" fill="#d62728"/>
-<text x="39.0" y="438.0" text-anchor="middle">fb_s</text>
-<rect x="24.0" y="480.0" width="30.0" height="16.0" rx="7" fill="#fff" stroke="#d62728" stroke-width="1.4"/>
-<text x="39.0" y="491.5" text-anchor="middle">9</text>
-<path d="M54.0,485.0 L59.0,488.0 L54.0,491.0 z" fill="#d62728"/>
-<text x="39.0" y="508.0" text-anchor="middle">mis</text>
-<rect x="24.0" y="510.0" width="30.0" height="16.0" rx="7" fill="#fff" stroke="#d62728" stroke-width="1.4"/>
-<text x="39.0" y="521.5" text-anchor="middle">10</text>
-<path d="M54.0,515.0 L59.0,518.0 L54.0,521.0 z" fill="#d62728"/>
-<text x="39.0" y="538.0" text-anchor="middle">mis_s</text>
-<rect x="24.0" y="580.0" width="30.0" height="16.0" rx="7" fill="#fff" stroke="#d62728" stroke-width="1.4"/>
-<text x="39.0" y="591.5" text-anchor="middle">11</text>
-<path d="M54.0,585.0 L59.0,588.0 L54.0,591.0 z" fill="#d62728"/>
-<text x="39.0" y="608.0" text-anchor="middle">sp</text>
-<rect x="24.0" y="610.0" width="30.0" height="16.0" rx="7" fill="#fff" stroke="#d62728" stroke-width="1.4"/>
-<text x="39.0" y="621.5" text-anchor="middle">12</text>
-<path d="M54.0,615.0 L59.0,618.0 L54.0,621.0 z" fill="#d62728"/>
-<text x="39.0" y="638.0" text-anchor="middle">sp_s</text>
-<rect x="24.0" y="680.0" width="30.0" height="16.0" rx="7" fill="#fff" stroke="#d62728" stroke-width="1.4"/>
-<text x="39.0" y="691.5" text-anchor="middle">13</text>
-<path d="M54.0,685.0 L59.0,688.0 L54.0,691.0 z" fill="#d62728"/>
-<text x="39.0" y="708.0" text-anchor="middle">img</text>
-<rect x="24.0" y="710.0" width="30.0" height="16.0" rx="7" fill="#fff" stroke="#d62728" stroke-width="1.4"/>
-<text x="39.0" y="721.5" text-anchor="middle">14</text>
-<path d="M54.0,715.0 L59.0,718.0 L54.0,721.0 z" fill="#d62728"/>
-<text x="39.0" y="738.0" text-anchor="middle">img_s</text>
-<rect x="24.0" y="780.0" width="30.0" height="16.0" rx="7" fill="#fff" stroke="#d62728" stroke-width="1.4"/>
-<text x="39.0" y="791.5" text-anchor="middle">15</text>
-<path d="M54.0,785.0 L59.0,788.0 L54.0,791.0 z" fill="#d62728"/>
-<text x="39.0" y="808.0" text-anchor="middle">mode</text>
-<rect x="24.0" y="810.0" width="30.0" height="16.0" rx="7" fill="#fff" stroke="#d62728" stroke-width="1.4"/>
-<text x="39.0" y="821.5" text-anchor="middle">16</text>
-<path d="M54.0,815.0 L59.0,818.0 L54.0,821.0 z" fill="#d62728"/>
-<text x="39.0" y="838.0" text-anchor="middle">mode_s</text>
+<path d="M379.3,334.0 L389.3,334.0 L389.3,396.0 L314.6,396.0" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M280.6,396.0 L206.0,396.0 L206.0,334.0 L216.0,334.0" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M54.0,271.0 L106.0,271.0 L106.0,271.0 L118.0,271.0" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M54.0,315.0 L106.0,315.0 L106.0,315.0 L118.0,315.0" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M152.0,271.0 L204.0,271.0 L204.0,262.0 L216.0,262.0" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M152.0,315.0 L197.0,315.0 L197.0,286.0 L216.0,286.0" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M152.0,1455.0 L190.0,1455.0 L190.0,310.0 L216.0,310.0" fill="none" stroke="#c000c0" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M379.3,262.0 L531.3,262.0 L531.3,264.0 L543.3,264.0" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M379.3,510.0 L389.3,510.0 L389.3,572.0 L314.6,572.0" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M280.6,572.0 L206.0,572.0 L206.0,510.0 L216.0,510.0" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M54.0,447.0 L106.0,447.0 L106.0,447.0 L118.0,447.0" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M54.0,491.0 L106.0,491.0 L106.0,491.0 L118.0,491.0" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M152.0,447.0 L204.0,447.0 L204.0,438.0 L216.0,438.0" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M152.0,491.0 L197.0,491.0 L197.0,462.0 L216.0,462.0" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M152.0,1455.0 L190.0,1455.0 L190.0,486.0 L216.0,486.0" fill="none" stroke="#c000c0" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M379.3,438.0 L531.3,438.0 L531.3,440.0 L543.3,440.0" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M379.3,686.0 L389.3,686.0 L389.3,748.0 L314.6,748.0" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M280.6,748.0 L206.0,748.0 L206.0,686.0 L216.0,686.0" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M54.0,623.0 L106.0,623.0 L106.0,623.0 L118.0,623.0" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M54.0,667.0 L106.0,667.0 L106.0,667.0 L118.0,667.0" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M152.0,623.0 L204.0,623.0 L204.0,614.0 L216.0,614.0" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M152.0,667.0 L197.0,667.0 L197.0,638.0 L216.0,638.0" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M152.0,1455.0 L190.0,1455.0 L190.0,662.0 L216.0,662.0" fill="none" stroke="#c000c0" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M379.3,614.0 L531.3,614.0 L531.3,616.0 L543.3,616.0" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M379.3,862.0 L389.3,862.0 L389.3,924.0 L314.6,924.0" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M280.6,924.0 L206.0,924.0 L206.0,862.0 L216.0,862.0" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M54.0,799.0 L106.0,799.0 L106.0,799.0 L118.0,799.0" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M54.0,843.0 L106.0,843.0 L106.0,843.0 L118.0,843.0" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M152.0,799.0 L204.0,799.0 L204.0,790.0 L216.0,790.0" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M152.0,843.0 L197.0,843.0 L197.0,814.0 L216.0,814.0" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M152.0,1455.0 L190.0,1455.0 L190.0,838.0 L216.0,838.0" fill="none" stroke="#c000c0" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M379.3,790.0 L531.3,790.0 L531.3,792.0 L543.3,792.0" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M379.3,1038.0 L389.3,1038.0 L389.3,1100.0 L314.6,1100.0" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M280.6,1100.0 L206.0,1100.0 L206.0,1038.0 L216.0,1038.0" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M54.0,975.0 L106.0,975.0 L106.0,975.0 L118.0,975.0" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M54.0,1019.0 L106.0,1019.0 L106.0,1019.0 L118.0,1019.0" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M152.0,975.0 L204.0,975.0 L204.0,966.0 L216.0,966.0" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M152.0,1019.0 L197.0,1019.0 L197.0,990.0 L216.0,990.0" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M152.0,1455.0 L190.0,1455.0 L190.0,1014.0 L216.0,1014.0" fill="none" stroke="#c000c0" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M379.3,966.0 L531.3,966.0 L531.3,968.0 L543.3,968.0" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M379.3,1214.0 L389.3,1214.0 L389.3,1276.0 L314.6,1276.0" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M280.6,1276.0 L206.0,1276.0 L206.0,1214.0 L216.0,1214.0" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M54.0,1151.0 L106.0,1151.0 L106.0,1151.0 L118.0,1151.0" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M54.0,1195.0 L106.0,1195.0 L106.0,1195.0 L118.0,1195.0" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M152.0,1151.0 L204.0,1151.0 L204.0,1142.0 L216.0,1142.0" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M152.0,1195.0 L197.0,1195.0 L197.0,1166.0 L216.0,1166.0" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M152.0,1455.0 L190.0,1455.0 L190.0,1190.0 L216.0,1190.0" fill="none" stroke="#c000c0" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M379.3,1142.0 L531.3,1142.0 L531.3,1144.0 L543.3,1144.0" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M379.3,1390.0 L389.3,1390.0 L389.3,1452.0 L314.6,1452.0" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M280.6,1452.0 L206.0,1452.0 L206.0,1390.0 L216.0,1390.0" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M54.0,1327.0 L106.0,1327.0 L106.0,1327.0 L118.0,1327.0" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M54.0,1371.0 L106.0,1371.0 L106.0,1371.0 L118.0,1371.0" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M152.0,1327.0 L204.0,1327.0 L204.0,1318.0 L216.0,1318.0" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M152.0,1371.0 L197.0,1371.0 L197.0,1342.0 L216.0,1342.0" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M152.0,1455.0 L190.0,1455.0 L190.0,1366.0 L216.0,1366.0" fill="none" stroke="#c000c0" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M379.3,1318.0 L531.3,1318.0 L531.3,1320.0 L543.3,1320.0" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M379.3,990.0 L531.3,990.0 L531.3,1004.0 L543.3,1004.0" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M379.3,1166.0 L531.3,1166.0 L531.3,1180.0 L543.3,1180.0" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M379.3,134.0 L431.3,134.0 L431.3,1493.0 L443.3,1493.0" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M379.3,310.0 L424.3,310.0 L424.3,1515.0 L443.3,1515.0" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M379.3,486.0 L417.3,486.0 L417.3,1537.0 L443.3,1537.0" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M379.3,662.0 L410.3,662.0 L410.3,1559.0 L443.3,1559.0" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M379.3,838.0 L403.3,838.0 L403.3,1581.0 L443.3,1581.0" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M379.3,1014.0 L396.3,1014.0 L396.3,1603.0 L443.3,1603.0" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M379.3,1190.0 L389.3,1190.0 L389.3,1625.0 L443.3,1625.0" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M379.3,1366.0 L389.3,1366.0 L389.3,1647.0 L443.3,1647.0" fill="none" stroke="#d62728" stroke-width="1.2" marker-end="url(#a)"/>
+<rect x="24.0" y="87.0" width="30.0" height="16.0" rx="7" fill="#fff" stroke="#d62728" stroke-width="1.4"/>
+<text x="39.0" y="98.5" text-anchor="middle">1</text>
+<path d="M54.0,92.0 L59.0,95.0 L54.0,98.0 z" fill="#d62728"/>
+<text x="39.0" y="115.0" text-anchor="middle">imu</text>
+<rect x="24.0" y="131.0" width="30.0" height="16.0" rx="7" fill="#fff" stroke="#d62728" stroke-width="1.4"/>
+<text x="39.0" y="142.5" text-anchor="middle">2</text>
+<path d="M54.0,136.0 L59.0,139.0 L54.0,142.0 z" fill="#d62728"/>
+<text x="39.0" y="159.0" text-anchor="middle">imu_s</text>
+<rect x="24.0" y="263.0" width="30.0" height="16.0" rx="7" fill="#fff" stroke="#d62728" stroke-width="1.4"/>
+<text x="39.0" y="274.5" text-anchor="middle">3</text>
+<path d="M54.0,268.0 L59.0,271.0 L54.0,274.0 z" fill="#d62728"/>
+<text x="39.0" y="291.0" text-anchor="middle">gnss</text>
+<rect x="24.0" y="307.0" width="30.0" height="16.0" rx="7" fill="#fff" stroke="#d62728" stroke-width="1.4"/>
+<text x="39.0" y="318.5" text-anchor="middle">4</text>
+<path d="M54.0,312.0 L59.0,315.0 L54.0,318.0 z" fill="#d62728"/>
+<text x="39.0" y="335.0" text-anchor="middle">gnss_s</text>
+<rect x="24.0" y="439.0" width="30.0" height="16.0" rx="7" fill="#fff" stroke="#d62728" stroke-width="1.4"/>
+<text x="39.0" y="450.5" text-anchor="middle">5</text>
+<path d="M54.0,444.0 L59.0,447.0 L54.0,450.0 z" fill="#d62728"/>
+<text x="39.0" y="467.0" text-anchor="middle">baro</text>
+<rect x="24.0" y="483.0" width="30.0" height="16.0" rx="7" fill="#fff" stroke="#d62728" stroke-width="1.4"/>
+<text x="39.0" y="494.5" text-anchor="middle">6</text>
+<path d="M54.0,488.0 L59.0,491.0 L54.0,494.0 z" fill="#d62728"/>
+<text x="39.0" y="511.0" text-anchor="middle">baro_s</text>
+<rect x="24.0" y="615.0" width="30.0" height="16.0" rx="7" fill="#fff" stroke="#d62728" stroke-width="1.4"/>
+<text x="39.0" y="626.5" text-anchor="middle">7</text>
+<path d="M54.0,620.0 L59.0,623.0 L54.0,626.0 z" fill="#d62728"/>
+<text x="39.0" y="643.0" text-anchor="middle">fb</text>
+<rect x="24.0" y="659.0" width="30.0" height="16.0" rx="7" fill="#fff" stroke="#d62728" stroke-width="1.4"/>
+<text x="39.0" y="670.5" text-anchor="middle">8</text>
+<path d="M54.0,664.0 L59.0,667.0 L54.0,670.0 z" fill="#d62728"/>
+<text x="39.0" y="687.0" text-anchor="middle">fb_s</text>
+<rect x="24.0" y="791.0" width="30.0" height="16.0" rx="7" fill="#fff" stroke="#d62728" stroke-width="1.4"/>
+<text x="39.0" y="802.5" text-anchor="middle">9</text>
+<path d="M54.0,796.0 L59.0,799.0 L54.0,802.0 z" fill="#d62728"/>
+<text x="39.0" y="819.0" text-anchor="middle">mis</text>
+<rect x="24.0" y="835.0" width="30.0" height="16.0" rx="7" fill="#fff" stroke="#d62728" stroke-width="1.4"/>
+<text x="39.0" y="846.5" text-anchor="middle">10</text>
+<path d="M54.0,840.0 L59.0,843.0 L54.0,846.0 z" fill="#d62728"/>
+<text x="39.0" y="863.0" text-anchor="middle">mis_s</text>
+<rect x="24.0" y="967.0" width="30.0" height="16.0" rx="7" fill="#fff" stroke="#d62728" stroke-width="1.4"/>
+<text x="39.0" y="978.5" text-anchor="middle">11</text>
+<path d="M54.0,972.0 L59.0,975.0 L54.0,978.0 z" fill="#d62728"/>
+<text x="39.0" y="995.0" text-anchor="middle">sp</text>
+<rect x="24.0" y="1011.0" width="30.0" height="16.0" rx="7" fill="#fff" stroke="#d62728" stroke-width="1.4"/>
+<text x="39.0" y="1022.5" text-anchor="middle">12</text>
+<path d="M54.0,1016.0 L59.0,1019.0 L54.0,1022.0 z" fill="#d62728"/>
+<text x="39.0" y="1039.0" text-anchor="middle">sp_s</text>
+<rect x="24.0" y="1143.0" width="30.0" height="16.0" rx="7" fill="#fff" stroke="#d62728" stroke-width="1.4"/>
+<text x="39.0" y="1154.5" text-anchor="middle">13</text>
+<path d="M54.0,1148.0 L59.0,1151.0 L54.0,1154.0 z" fill="#d62728"/>
+<text x="39.0" y="1171.0" text-anchor="middle">img</text>
+<rect x="24.0" y="1187.0" width="30.0" height="16.0" rx="7" fill="#fff" stroke="#d62728" stroke-width="1.4"/>
+<text x="39.0" y="1198.5" text-anchor="middle">14</text>
+<path d="M54.0,1192.0 L59.0,1195.0 L54.0,1198.0 z" fill="#d62728"/>
+<text x="39.0" y="1215.0" text-anchor="middle">img_s</text>
+<rect x="24.0" y="1319.0" width="30.0" height="16.0" rx="7" fill="#fff" stroke="#d62728" stroke-width="1.4"/>
+<text x="39.0" y="1330.5" text-anchor="middle">15</text>
+<path d="M54.0,1324.0 L59.0,1327.0 L54.0,1330.0 z" fill="#d62728"/>
+<text x="39.0" y="1347.0" text-anchor="middle">mode</text>
+<rect x="24.0" y="1363.0" width="30.0" height="16.0" rx="7" fill="#fff" stroke="#d62728" stroke-width="1.4"/>
+<text x="39.0" y="1374.5" text-anchor="middle">16</text>
+<path d="M54.0,1368.0 L59.0,1371.0 L54.0,1374.0 z" fill="#d62728"/>
+<text x="39.0" y="1391.0" text-anchor="middle">mode_s</text>
 <rect x="543.3" y="80.0" width="30.0" height="16.0" rx="7" fill="#fff" stroke="#d62728" stroke-width="1.4"/>
 <text x="558.3" y="91.5" text-anchor="middle">1</text>
 <text x="558.3" y="108.0" text-anchor="middle">imu_rx</text>
-<rect x="543.3" y="180.0" width="30.0" height="16.0" rx="7" fill="#fff" stroke="#d62728" stroke-width="1.4"/>
-<text x="558.3" y="191.5" text-anchor="middle">2</text>
-<text x="558.3" y="208.0" text-anchor="middle">gnss_rx</text>
-<rect x="543.3" y="280.0" width="30.0" height="16.0" rx="7" fill="#fff" stroke="#d62728" stroke-width="1.4"/>
-<text x="558.3" y="291.5" text-anchor="middle">3</text>
-<text x="558.3" y="308.0" text-anchor="middle">baro_rx</text>
-<rect x="543.3" y="380.0" width="30.0" height="16.0" rx="7" fill="#fff" stroke="#d62728" stroke-width="1.4"/>
-<text x="558.3" y="391.5" text-anchor="middle">4</text>
-<text x="558.3" y="408.0" text-anchor="middle">fb_rx</text>
-<rect x="543.3" y="480.0" width="30.0" height="16.0" rx="7" fill="#fff" stroke="#d62728" stroke-width="1.4"/>
-<text x="558.3" y="491.5" text-anchor="middle">5</text>
-<text x="558.3" y="508.0" text-anchor="middle">mis_rx</text>
-<rect x="543.3" y="580.0" width="30.0" height="16.0" rx="7" fill="#fff" stroke="#d62728" stroke-width="1.4"/>
-<text x="558.3" y="591.5" text-anchor="middle">6</text>
-<text x="558.3" y="608.0" text-anchor="middle">sp_rx</text>
-<rect x="543.3" y="610.0" width="30.0" height="16.0" rx="7" fill="#fff" stroke="#d62728" stroke-width="1.4"/>
-<text x="558.3" y="621.5" text-anchor="middle">7</text>
-<text x="558.3" y="638.0" text-anchor="middle">sp_new</text>
-<rect x="543.3" y="680.0" width="30.0" height="16.0" rx="7" fill="#fff" stroke="#d62728" stroke-width="1.4"/>
-<text x="558.3" y="691.5" text-anchor="middle">8</text>
-<text x="558.3" y="708.0" text-anchor="middle">img_rx</text>
-<rect x="543.3" y="710.0" width="30.0" height="16.0" rx="7" fill="#fff" stroke="#d62728" stroke-width="1.4"/>
-<text x="558.3" y="721.5" text-anchor="middle">9</text>
-<text x="558.3" y="738.0" text-anchor="middle">img_new</text>
-<rect x="543.3" y="780.0" width="30.0" height="16.0" rx="7" fill="#fff" stroke="#d62728" stroke-width="1.4"/>
-<text x="558.3" y="791.5" text-anchor="middle">10</text>
-<text x="558.3" y="808.0" text-anchor="middle">mode_rx</text>
-<rect x="118.0" y="870.0" width="34.0" height="26.0" fill="#fff" stroke="#c000c0" stroke-width="1.4"/>
-<text x="135.0" y="886.5" text-anchor="middle">0</text>
-<path d="M152.0,880.0 L157.0,883.0 L152.0,886.0 z" fill="#c000c0"/>
-<text x="135.0" y="908.0" text-anchor="middle">no loss</text>
+<rect x="543.3" y="256.0" width="30.0" height="16.0" rx="7" fill="#fff" stroke="#d62728" stroke-width="1.4"/>
+<text x="558.3" y="267.5" text-anchor="middle">2</text>
+<text x="558.3" y="284.0" text-anchor="middle">gnss_rx</text>
+<rect x="543.3" y="432.0" width="30.0" height="16.0" rx="7" fill="#fff" stroke="#d62728" stroke-width="1.4"/>
+<text x="558.3" y="443.5" text-anchor="middle">3</text>
+<text x="558.3" y="460.0" text-anchor="middle">baro_rx</text>
+<rect x="543.3" y="608.0" width="30.0" height="16.0" rx="7" fill="#fff" stroke="#d62728" stroke-width="1.4"/>
+<text x="558.3" y="619.5" text-anchor="middle">4</text>
+<text x="558.3" y="636.0" text-anchor="middle">fb_rx</text>
+<rect x="543.3" y="784.0" width="30.0" height="16.0" rx="7" fill="#fff" stroke="#d62728" stroke-width="1.4"/>
+<text x="558.3" y="795.5" text-anchor="middle">5</text>
+<text x="558.3" y="812.0" text-anchor="middle">mis_rx</text>
+<rect x="543.3" y="960.0" width="30.0" height="16.0" rx="7" fill="#fff" stroke="#d62728" stroke-width="1.4"/>
+<text x="558.3" y="971.5" text-anchor="middle">6</text>
+<text x="558.3" y="988.0" text-anchor="middle">sp_rx</text>
+<rect x="543.3" y="996.0" width="30.0" height="16.0" rx="7" fill="#fff" stroke="#d62728" stroke-width="1.4"/>
+<text x="558.3" y="1007.5" text-anchor="middle">7</text>
+<text x="558.3" y="1024.0" text-anchor="middle">sp_new</text>
+<rect x="543.3" y="1136.0" width="30.0" height="16.0" rx="7" fill="#fff" stroke="#d62728" stroke-width="1.4"/>
+<text x="558.3" y="1147.5" text-anchor="middle">8</text>
+<text x="558.3" y="1164.0" text-anchor="middle">img_rx</text>
+<rect x="543.3" y="1172.0" width="30.0" height="16.0" rx="7" fill="#fff" stroke="#d62728" stroke-width="1.4"/>
+<text x="558.3" y="1183.5" text-anchor="middle">9</text>
+<text x="558.3" y="1200.0" text-anchor="middle">img_new</text>
+<rect x="543.3" y="1312.0" width="30.0" height="16.0" rx="7" fill="#fff" stroke="#d62728" stroke-width="1.4"/>
+<text x="558.3" y="1323.5" text-anchor="middle">10</text>
+<text x="558.3" y="1340.0" text-anchor="middle">mode_rx</text>
+<rect x="118.0" y="1442.0" width="34.0" height="26.0" fill="#fff" stroke="#c000c0" stroke-width="1.4"/>
+<text x="135.0" y="1458.5" text-anchor="middle">0</text>
+<path d="M152.0,1452.0 L157.0,1455.0 L152.0,1458.0 z" fill="#c000c0"/>
+<text x="135.0" y="1480.0" text-anchor="middle">no loss</text>
 <rect x="118.0" y="80.0" width="34.0" height="30.0" fill="#fff" stroke="#d62728" stroke-width="1.4"/>
 <text x="135.0" y="98.5" text-anchor="middle">1/z</text>
 <path d="M152.0,92.0 L157.0,95.0 L152.0,98.0 z" fill="#d62728"/>
@@ -201,195 +201,195 @@
 <rect x="280.6" y="205.0" width="34.0" height="30.0" fill="#fff" stroke="#d62728" stroke-width="1.4"/>
 <text x="297.6" y="223.5" text-anchor="middle">1/z</text>
 <path d="M280.6,217.0 L275.6,220.0 L280.6,223.0 z" fill="#d62728"/>
-<rect x="118.0" y="180.0" width="34.0" height="30.0" fill="#fff" stroke="#d62728" stroke-width="1.4"/>
-<text x="135.0" y="198.5" text-anchor="middle">1/z</text>
-<path d="M152.0,192.0 L157.0,195.0 L152.0,198.0 z" fill="#d62728"/>
-<rect x="118.0" y="224.0" width="34.0" height="30.0" fill="#fff" stroke="#d62728" stroke-width="1.4"/>
-<text x="135.0" y="242.5" text-anchor="middle">1/z</text>
-<path d="M152.0,236.0 L157.0,239.0 L152.0,242.0 z" fill="#d62728"/>
-<text x="135.0" y="266.0" text-anchor="middle">tx buffer</text>
-<rect x="216.0" y="174.0" width="163.3" height="96.0" fill="#fff" stroke="#d62728" stroke-width="1.6"/>
-<text x="297.6" y="225.5" text-anchor="middle" fill="#7a7a7a" font-size="9">comm_net_link</text>
-<text x="220.0" y="189.5" text-anchor="start">x</text>
-<text x="220.0" y="213.5" text-anchor="start">send</text>
-<text x="220.0" y="237.5" text-anchor="start">drop</text>
-<text x="220.0" y="261.5" text-anchor="start">S</text>
-<text x="375.3" y="189.5" text-anchor="end">y</text>
-<text x="375.3" y="213.5" text-anchor="end">fresh</text>
-<text x="375.3" y="237.5" text-anchor="end">stats</text>
-<text x="375.3" y="261.5" text-anchor="end">S</text>
-<path d="M379.3,183.0 L384.3,186.0 L379.3,189.0 z" fill="#d62728"/>
-<path d="M379.3,207.0 L384.3,210.0 L379.3,213.0 z" fill="#d62728"/>
-<path d="M379.3,231.0 L384.3,234.0 L379.3,237.0 z" fill="#d62728"/>
-<path d="M379.3,255.0 L384.3,258.0 L379.3,261.0 z" fill="#d62728"/>
-<text x="297.6" y="282.0" text-anchor="middle">/gps/fix</text>
-<text x="297.6" y="293.0" text-anchor="middle" fill="#6a6a6a" font-size="8.5">param: P.net.fc_gnss</text>
-<rect x="280.6" y="305.0" width="34.0" height="30.0" fill="#fff" stroke="#d62728" stroke-width="1.4"/>
-<text x="297.6" y="323.5" text-anchor="middle">1/z</text>
-<path d="M280.6,317.0 L275.6,320.0 L280.6,323.0 z" fill="#d62728"/>
-<rect x="118.0" y="280.0" width="34.0" height="30.0" fill="#fff" stroke="#d62728" stroke-width="1.4"/>
-<text x="135.0" y="298.5" text-anchor="middle">1/z</text>
-<path d="M152.0,292.0 L157.0,295.0 L152.0,298.0 z" fill="#d62728"/>
-<rect x="118.0" y="324.0" width="34.0" height="30.0" fill="#fff" stroke="#d62728" stroke-width="1.4"/>
-<text x="135.0" y="342.5" text-anchor="middle">1/z</text>
-<path d="M152.0,336.0 L157.0,339.0 L152.0,342.0 z" fill="#d62728"/>
-<text x="135.0" y="366.0" text-anchor="middle">tx buffer</text>
-<rect x="216.0" y="274.0" width="163.3" height="96.0" fill="#fff" stroke="#d62728" stroke-width="1.6"/>
-<text x="297.6" y="325.5" text-anchor="middle" fill="#7a7a7a" font-size="9">comm_net_link</text>
-<text x="220.0" y="289.5" text-anchor="start">x</text>
-<text x="220.0" y="313.5" text-anchor="start">send</text>
-<text x="220.0" y="337.5" text-anchor="start">drop</text>
-<text x="220.0" y="361.5" text-anchor="start">S</text>
-<text x="375.3" y="289.5" text-anchor="end">y</text>
-<text x="375.3" y="313.5" text-anchor="end">fresh</text>
-<text x="375.3" y="337.5" text-anchor="end">stats</text>
-<text x="375.3" y="361.5" text-anchor="end">S</text>
+<rect x="118.0" y="256.0" width="34.0" height="30.0" fill="#fff" stroke="#d62728" stroke-width="1.4"/>
+<text x="135.0" y="274.5" text-anchor="middle">1/z</text>
+<path d="M152.0,268.0 L157.0,271.0 L152.0,274.0 z" fill="#d62728"/>
+<rect x="118.0" y="300.0" width="34.0" height="30.0" fill="#fff" stroke="#d62728" stroke-width="1.4"/>
+<text x="135.0" y="318.5" text-anchor="middle">1/z</text>
+<path d="M152.0,312.0 L157.0,315.0 L152.0,318.0 z" fill="#d62728"/>
+<text x="135.0" y="342.0" text-anchor="middle">tx buffer</text>
+<rect x="216.0" y="250.0" width="163.3" height="96.0" fill="#fff" stroke="#d62728" stroke-width="1.6"/>
+<text x="297.6" y="301.5" text-anchor="middle" fill="#7a7a7a" font-size="9">comm_net_link</text>
+<text x="220.0" y="265.5" text-anchor="start">x</text>
+<text x="220.0" y="289.5" text-anchor="start">send</text>
+<text x="220.0" y="313.5" text-anchor="start">drop</text>
+<text x="220.0" y="337.5" text-anchor="start">S</text>
+<text x="375.3" y="265.5" text-anchor="end">y</text>
+<text x="375.3" y="289.5" text-anchor="end">fresh</text>
+<text x="375.3" y="313.5" text-anchor="end">stats</text>
+<text x="375.3" y="337.5" text-anchor="end">S</text>
+<path d="M379.3,259.0 L384.3,262.0 L379.3,265.0 z" fill="#d62728"/>
 <path d="M379.3,283.0 L384.3,286.0 L379.3,289.0 z" fill="#d62728"/>
 <path d="M379.3,307.0 L384.3,310.0 L379.3,313.0 z" fill="#d62728"/>
 <path d="M379.3,331.0 L384.3,334.0 L379.3,337.0 z" fill="#d62728"/>
-<path d="M379.3,355.0 L384.3,358.0 L379.3,361.0 z" fill="#d62728"/>
-<text x="297.6" y="382.0" text-anchor="middle">/baro/pressure</text>
-<text x="297.6" y="393.0" text-anchor="middle" fill="#6a6a6a" font-size="8.5">param: P.net.fc_baro</text>
-<rect x="280.6" y="405.0" width="34.0" height="30.0" fill="#fff" stroke="#d62728" stroke-width="1.4"/>
-<text x="297.6" y="423.5" text-anchor="middle">1/z</text>
-<path d="M280.6,417.0 L275.6,420.0 L280.6,423.0 z" fill="#d62728"/>
-<rect x="118.0" y="380.0" width="34.0" height="30.0" fill="#fff" stroke="#d62728" stroke-width="1.4"/>
-<text x="135.0" y="398.5" text-anchor="middle">1/z</text>
-<path d="M152.0,392.0 L157.0,395.0 L152.0,398.0 z" fill="#d62728"/>
-<rect x="118.0" y="424.0" width="34.0" height="30.0" fill="#fff" stroke="#d62728" stroke-width="1.4"/>
-<text x="135.0" y="442.5" text-anchor="middle">1/z</text>
-<path d="M152.0,436.0 L157.0,439.0 L152.0,442.0 z" fill="#d62728"/>
-<text x="135.0" y="466.0" text-anchor="middle">tx buffer</text>
-<rect x="216.0" y="374.0" width="163.3" height="96.0" fill="#fff" stroke="#d62728" stroke-width="1.6"/>
-<text x="297.6" y="425.5" text-anchor="middle" fill="#7a7a7a" font-size="9">comm_net_link</text>
-<text x="220.0" y="389.5" text-anchor="start">x</text>
-<text x="220.0" y="413.5" text-anchor="start">send</text>
-<text x="220.0" y="437.5" text-anchor="start">drop</text>
-<text x="220.0" y="461.5" text-anchor="start">S</text>
-<text x="375.3" y="389.5" text-anchor="end">y</text>
-<text x="375.3" y="413.5" text-anchor="end">fresh</text>
-<text x="375.3" y="437.5" text-anchor="end">stats</text>
-<text x="375.3" y="461.5" text-anchor="end">S</text>
-<path d="M379.3,383.0 L384.3,386.0 L379.3,389.0 z" fill="#d62728"/>
-<path d="M379.3,407.0 L384.3,410.0 L379.3,413.0 z" fill="#d62728"/>
-<path d="M379.3,431.0 L384.3,434.0 L379.3,437.0 z" fill="#d62728"/>
-<path d="M379.3,455.0 L384.3,458.0 L379.3,461.0 z" fill="#d62728"/>
-<text x="297.6" y="482.0" text-anchor="middle">/jetowl/ctrl_feedback</text>
-<text x="297.6" y="493.0" text-anchor="middle" fill="#6a6a6a" font-size="8.5">param: P.net.fc_fb</text>
-<rect x="280.6" y="505.0" width="34.0" height="30.0" fill="#fff" stroke="#d62728" stroke-width="1.4"/>
-<text x="297.6" y="523.5" text-anchor="middle">1/z</text>
-<path d="M280.6,517.0 L275.6,520.0 L280.6,523.0 z" fill="#d62728"/>
-<rect x="118.0" y="480.0" width="34.0" height="30.0" fill="#fff" stroke="#d62728" stroke-width="1.4"/>
-<text x="135.0" y="498.5" text-anchor="middle">1/z</text>
-<path d="M152.0,492.0 L157.0,495.0 L152.0,498.0 z" fill="#d62728"/>
-<rect x="118.0" y="524.0" width="34.0" height="30.0" fill="#fff" stroke="#d62728" stroke-width="1.4"/>
-<text x="135.0" y="542.5" text-anchor="middle">1/z</text>
-<path d="M152.0,536.0 L157.0,539.0 L152.0,542.0 z" fill="#d62728"/>
-<text x="135.0" y="566.0" text-anchor="middle">tx buffer</text>
-<rect x="216.0" y="474.0" width="163.3" height="96.0" fill="#fff" stroke="#d62728" stroke-width="1.6"/>
-<text x="297.6" y="525.5" text-anchor="middle" fill="#7a7a7a" font-size="9">comm_net_link</text>
-<text x="220.0" y="489.5" text-anchor="start">x</text>
-<text x="220.0" y="513.5" text-anchor="start">send</text>
-<text x="220.0" y="537.5" text-anchor="start">drop</text>
-<text x="220.0" y="561.5" text-anchor="start">S</text>
-<text x="375.3" y="489.5" text-anchor="end">y</text>
-<text x="375.3" y="513.5" text-anchor="end">fresh</text>
-<text x="375.3" y="537.5" text-anchor="end">stats</text>
-<text x="375.3" y="561.5" text-anchor="end">S</text>
+<text x="297.6" y="358.0" text-anchor="middle">/gps/fix</text>
+<text x="297.6" y="369.0" text-anchor="middle" fill="#6a6a6a" font-size="8.5">param: P.net.fc_gnss</text>
+<rect x="280.6" y="381.0" width="34.0" height="30.0" fill="#fff" stroke="#d62728" stroke-width="1.4"/>
+<text x="297.6" y="399.5" text-anchor="middle">1/z</text>
+<path d="M280.6,393.0 L275.6,396.0 L280.6,399.0 z" fill="#d62728"/>
+<rect x="118.0" y="432.0" width="34.0" height="30.0" fill="#fff" stroke="#d62728" stroke-width="1.4"/>
+<text x="135.0" y="450.5" text-anchor="middle">1/z</text>
+<path d="M152.0,444.0 L157.0,447.0 L152.0,450.0 z" fill="#d62728"/>
+<rect x="118.0" y="476.0" width="34.0" height="30.0" fill="#fff" stroke="#d62728" stroke-width="1.4"/>
+<text x="135.0" y="494.5" text-anchor="middle">1/z</text>
+<path d="M152.0,488.0 L157.0,491.0 L152.0,494.0 z" fill="#d62728"/>
+<text x="135.0" y="518.0" text-anchor="middle">tx buffer</text>
+<rect x="216.0" y="426.0" width="163.3" height="96.0" fill="#fff" stroke="#d62728" stroke-width="1.6"/>
+<text x="297.6" y="477.5" text-anchor="middle" fill="#7a7a7a" font-size="9">comm_net_link</text>
+<text x="220.0" y="441.5" text-anchor="start">x</text>
+<text x="220.0" y="465.5" text-anchor="start">send</text>
+<text x="220.0" y="489.5" text-anchor="start">drop</text>
+<text x="220.0" y="513.5" text-anchor="start">S</text>
+<text x="375.3" y="441.5" text-anchor="end">y</text>
+<text x="375.3" y="465.5" text-anchor="end">fresh</text>
+<text x="375.3" y="489.5" text-anchor="end">stats</text>
+<text x="375.3" y="513.5" text-anchor="end">S</text>
+<path d="M379.3,435.0 L384.3,438.0 L379.3,441.0 z" fill="#d62728"/>
+<path d="M379.3,459.0 L384.3,462.0 L379.3,465.0 z" fill="#d62728"/>
 <path d="M379.3,483.0 L384.3,486.0 L379.3,489.0 z" fill="#d62728"/>
 <path d="M379.3,507.0 L384.3,510.0 L379.3,513.0 z" fill="#d62728"/>
-<path d="M379.3,531.0 L384.3,534.0 L379.3,537.0 z" fill="#d62728"/>
-<path d="M379.3,555.0 L384.3,558.0 L379.3,561.0 z" fill="#d62728"/>
-<text x="297.6" y="582.0" text-anchor="middle">/jetowl/mission/geo</text>
-<text x="297.6" y="593.0" text-anchor="middle" fill="#6a6a6a" font-size="8.5">param: P.net.fc_mission</text>
-<rect x="280.6" y="605.0" width="34.0" height="30.0" fill="#fff" stroke="#d62728" stroke-width="1.4"/>
-<text x="297.6" y="623.5" text-anchor="middle">1/z</text>
-<path d="M280.6,617.0 L275.6,620.0 L280.6,623.0 z" fill="#d62728"/>
-<rect x="118.0" y="580.0" width="34.0" height="30.0" fill="#fff" stroke="#d62728" stroke-width="1.4"/>
-<text x="135.0" y="598.5" text-anchor="middle">1/z</text>
-<path d="M152.0,592.0 L157.0,595.0 L152.0,598.0 z" fill="#d62728"/>
-<rect x="118.0" y="624.0" width="34.0" height="30.0" fill="#fff" stroke="#d62728" stroke-width="1.4"/>
-<text x="135.0" y="642.5" text-anchor="middle">1/z</text>
-<path d="M152.0,636.0 L157.0,639.0 L152.0,642.0 z" fill="#d62728"/>
-<text x="135.0" y="666.0" text-anchor="middle">tx buffer</text>
-<rect x="216.0" y="574.0" width="163.3" height="96.0" fill="#fff" stroke="#d62728" stroke-width="1.6"/>
-<text x="297.6" y="625.5" text-anchor="middle" fill="#7a7a7a" font-size="9">comm_net_link</text>
-<text x="220.0" y="589.5" text-anchor="start">x</text>
-<text x="220.0" y="613.5" text-anchor="start">send</text>
-<text x="220.0" y="637.5" text-anchor="start">drop</text>
-<text x="220.0" y="661.5" text-anchor="start">S</text>
-<text x="375.3" y="589.5" text-anchor="end">y</text>
-<text x="375.3" y="613.5" text-anchor="end">fresh</text>
-<text x="375.3" y="637.5" text-anchor="end">stats</text>
-<text x="375.3" y="661.5" text-anchor="end">S</text>
-<path d="M379.3,583.0 L384.3,586.0 L379.3,589.0 z" fill="#d62728"/>
-<path d="M379.3,607.0 L384.3,610.0 L379.3,613.0 z" fill="#d62728"/>
-<path d="M379.3,631.0 L384.3,634.0 L379.3,637.0 z" fill="#d62728"/>
-<path d="M379.3,655.0 L384.3,658.0 L379.3,661.0 z" fill="#d62728"/>
-<text x="297.6" y="682.0" text-anchor="middle">/control/attitude_setpoint</text>
-<text x="297.6" y="693.0" text-anchor="middle" fill="#6a6a6a" font-size="8.5">param: P.net.j_sp</text>
-<rect x="280.6" y="705.0" width="34.0" height="30.0" fill="#fff" stroke="#d62728" stroke-width="1.4"/>
-<text x="297.6" y="723.5" text-anchor="middle">1/z</text>
-<path d="M280.6,717.0 L275.6,720.0 L280.6,723.0 z" fill="#d62728"/>
-<rect x="118.0" y="680.0" width="34.0" height="30.0" fill="#fff" stroke="#d62728" stroke-width="1.4"/>
-<text x="135.0" y="698.5" text-anchor="middle">1/z</text>
-<path d="M152.0,692.0 L157.0,695.0 L152.0,698.0 z" fill="#d62728"/>
-<rect x="118.0" y="724.0" width="34.0" height="30.0" fill="#fff" stroke="#d62728" stroke-width="1.4"/>
-<text x="135.0" y="742.5" text-anchor="middle">1/z</text>
-<path d="M152.0,736.0 L157.0,739.0 L152.0,742.0 z" fill="#d62728"/>
-<text x="135.0" y="766.0" text-anchor="middle">tx buffer</text>
-<rect x="216.0" y="674.0" width="163.3" height="96.0" fill="#fff" stroke="#d62728" stroke-width="1.6"/>
-<text x="297.6" y="725.5" text-anchor="middle" fill="#7a7a7a" font-size="9">comm_net_link</text>
-<text x="220.0" y="689.5" text-anchor="start">x</text>
-<text x="220.0" y="713.5" text-anchor="start">send</text>
-<text x="220.0" y="737.5" text-anchor="start">drop</text>
-<text x="220.0" y="761.5" text-anchor="start">S</text>
-<text x="375.3" y="689.5" text-anchor="end">y</text>
-<text x="375.3" y="713.5" text-anchor="end">fresh</text>
-<text x="375.3" y="737.5" text-anchor="end">stats</text>
-<text x="375.3" y="761.5" text-anchor="end">S</text>
+<text x="297.6" y="534.0" text-anchor="middle">/baro/pressure</text>
+<text x="297.6" y="545.0" text-anchor="middle" fill="#6a6a6a" font-size="8.5">param: P.net.fc_baro</text>
+<rect x="280.6" y="557.0" width="34.0" height="30.0" fill="#fff" stroke="#d62728" stroke-width="1.4"/>
+<text x="297.6" y="575.5" text-anchor="middle">1/z</text>
+<path d="M280.6,569.0 L275.6,572.0 L280.6,575.0 z" fill="#d62728"/>
+<rect x="118.0" y="608.0" width="34.0" height="30.0" fill="#fff" stroke="#d62728" stroke-width="1.4"/>
+<text x="135.0" y="626.5" text-anchor="middle">1/z</text>
+<path d="M152.0,620.0 L157.0,623.0 L152.0,626.0 z" fill="#d62728"/>
+<rect x="118.0" y="652.0" width="34.0" height="30.0" fill="#fff" stroke="#d62728" stroke-width="1.4"/>
+<text x="135.0" y="670.5" text-anchor="middle">1/z</text>
+<path d="M152.0,664.0 L157.0,667.0 L152.0,670.0 z" fill="#d62728"/>
+<text x="135.0" y="694.0" text-anchor="middle">tx buffer</text>
+<rect x="216.0" y="602.0" width="163.3" height="96.0" fill="#fff" stroke="#d62728" stroke-width="1.6"/>
+<text x="297.6" y="653.5" text-anchor="middle" fill="#7a7a7a" font-size="9">comm_net_link</text>
+<text x="220.0" y="617.5" text-anchor="start">x</text>
+<text x="220.0" y="641.5" text-anchor="start">send</text>
+<text x="220.0" y="665.5" text-anchor="start">drop</text>
+<text x="220.0" y="689.5" text-anchor="start">S</text>
+<text x="375.3" y="617.5" text-anchor="end">y</text>
+<text x="375.3" y="641.5" text-anchor="end">fresh</text>
+<text x="375.3" y="665.5" text-anchor="end">stats</text>
+<text x="375.3" y="689.5" text-anchor="end">S</text>
+<path d="M379.3,611.0 L384.3,614.0 L379.3,617.0 z" fill="#d62728"/>
+<path d="M379.3,635.0 L384.3,638.0 L379.3,641.0 z" fill="#d62728"/>
+<path d="M379.3,659.0 L384.3,662.0 L379.3,665.0 z" fill="#d62728"/>
 <path d="M379.3,683.0 L384.3,686.0 L379.3,689.0 z" fill="#d62728"/>
-<path d="M379.3,707.0 L384.3,710.0 L379.3,713.0 z" fill="#d62728"/>
-<path d="M379.3,731.0 L384.3,734.0 L379.3,737.0 z" fill="#d62728"/>
-<path d="M379.3,755.0 L384.3,758.0 L379.3,761.0 z" fill="#d62728"/>
-<text x="297.6" y="782.0" text-anchor="middle">/jetowl_vision/image_preview</text>
-<text x="297.6" y="793.0" text-anchor="middle" fill="#6a6a6a" font-size="8.5">param: P.net.vis_img</text>
-<rect x="280.6" y="805.0" width="34.0" height="30.0" fill="#fff" stroke="#d62728" stroke-width="1.4"/>
-<text x="297.6" y="823.5" text-anchor="middle">1/z</text>
-<path d="M280.6,817.0 L275.6,820.0 L280.6,823.0 z" fill="#d62728"/>
-<rect x="118.0" y="780.0" width="34.0" height="30.0" fill="#fff" stroke="#d62728" stroke-width="1.4"/>
-<text x="135.0" y="798.5" text-anchor="middle">1/z</text>
-<path d="M152.0,792.0 L157.0,795.0 L152.0,798.0 z" fill="#d62728"/>
-<rect x="118.0" y="824.0" width="34.0" height="30.0" fill="#fff" stroke="#d62728" stroke-width="1.4"/>
-<text x="135.0" y="842.5" text-anchor="middle">1/z</text>
-<path d="M152.0,836.0 L157.0,839.0 L152.0,842.0 z" fill="#d62728"/>
-<text x="135.0" y="866.0" text-anchor="middle">tx buffer</text>
-<rect x="216.0" y="774.0" width="163.3" height="96.0" fill="#fff" stroke="#d62728" stroke-width="1.6"/>
-<text x="297.6" y="825.5" text-anchor="middle" fill="#7a7a7a" font-size="9">comm_net_link</text>
-<text x="220.0" y="789.5" text-anchor="start">x</text>
-<text x="220.0" y="813.5" text-anchor="start">send</text>
-<text x="220.0" y="837.5" text-anchor="start">drop</text>
-<text x="220.0" y="861.5" text-anchor="start">S</text>
-<text x="375.3" y="789.5" text-anchor="end">y</text>
-<text x="375.3" y="813.5" text-anchor="end">fresh</text>
-<text x="375.3" y="837.5" text-anchor="end">stats</text>
-<text x="375.3" y="861.5" text-anchor="end">S</text>
-<path d="M379.3,783.0 L384.3,786.0 L379.3,789.0 z" fill="#d62728"/>
-<path d="M379.3,807.0 L384.3,810.0 L379.3,813.0 z" fill="#d62728"/>
-<path d="M379.3,831.0 L384.3,834.0 L379.3,837.0 z" fill="#d62728"/>
-<path d="M379.3,855.0 L384.3,858.0 L379.3,861.0 z" fill="#d62728"/>
-<text x="297.6" y="882.0" text-anchor="middle">/jetowl_vision/preview_mode</text>
-<text x="297.6" y="893.0" text-anchor="middle" fill="#6a6a6a" font-size="8.5">param: P.net.j_vis</text>
-<rect x="280.6" y="905.0" width="34.0" height="30.0" fill="#fff" stroke="#d62728" stroke-width="1.4"/>
-<text x="297.6" y="923.5" text-anchor="middle">1/z</text>
-<path d="M280.6,917.0 L275.6,920.0 L280.6,923.0 z" fill="#d62728"/>
-<rect x="443.3" y="880.0" width="36.0" height="176.0" fill="#fff" stroke="#d62728" stroke-width="1.4"/>
-<rect x="448.3" y="885.0" width="26.0" height="18.0" fill="#1d2b3a"/>
-<polyline points="450.3,898.0 457.3,890.0 464.3,896.0 472.3,889.0" fill="none" stroke="#f5d000"/>
-<text x="461.3" y="1068.0" text-anchor="middle">log_eth</text>
-<text x="12" y="1112" fill="#444">Sample time colours:</text>
-<rect x="124" y="1103" width="10" height="10" fill="none" stroke="#d62728" stroke-width="2"/>
-<text x="138" y="1112">1 kHz (1 ms)</text>
-<rect x="220" y="1103" width="10" height="10" fill="none" stroke="#c000c0" stroke-width="2"/>
-<text x="234" y="1112">constant</text>
+<text x="297.6" y="710.0" text-anchor="middle">/jetowl/ctrl_feedback</text>
+<text x="297.6" y="721.0" text-anchor="middle" fill="#6a6a6a" font-size="8.5">param: P.net.fc_fb</text>
+<rect x="280.6" y="733.0" width="34.0" height="30.0" fill="#fff" stroke="#d62728" stroke-width="1.4"/>
+<text x="297.6" y="751.5" text-anchor="middle">1/z</text>
+<path d="M280.6,745.0 L275.6,748.0 L280.6,751.0 z" fill="#d62728"/>
+<rect x="118.0" y="784.0" width="34.0" height="30.0" fill="#fff" stroke="#d62728" stroke-width="1.4"/>
+<text x="135.0" y="802.5" text-anchor="middle">1/z</text>
+<path d="M152.0,796.0 L157.0,799.0 L152.0,802.0 z" fill="#d62728"/>
+<rect x="118.0" y="828.0" width="34.0" height="30.0" fill="#fff" stroke="#d62728" stroke-width="1.4"/>
+<text x="135.0" y="846.5" text-anchor="middle">1/z</text>
+<path d="M152.0,840.0 L157.0,843.0 L152.0,846.0 z" fill="#d62728"/>
+<text x="135.0" y="870.0" text-anchor="middle">tx buffer</text>
+<rect x="216.0" y="778.0" width="163.3" height="96.0" fill="#fff" stroke="#d62728" stroke-width="1.6"/>
+<text x="297.6" y="829.5" text-anchor="middle" fill="#7a7a7a" font-size="9">comm_net_link</text>
+<text x="220.0" y="793.5" text-anchor="start">x</text>
+<text x="220.0" y="817.5" text-anchor="start">send</text>
+<text x="220.0" y="841.5" text-anchor="start">drop</text>
+<text x="220.0" y="865.5" text-anchor="start">S</text>
+<text x="375.3" y="793.5" text-anchor="end">y</text>
+<text x="375.3" y="817.5" text-anchor="end">fresh</text>
+<text x="375.3" y="841.5" text-anchor="end">stats</text>
+<text x="375.3" y="865.5" text-anchor="end">S</text>
+<path d="M379.3,787.0 L384.3,790.0 L379.3,793.0 z" fill="#d62728"/>
+<path d="M379.3,811.0 L384.3,814.0 L379.3,817.0 z" fill="#d62728"/>
+<path d="M379.3,835.0 L384.3,838.0 L379.3,841.0 z" fill="#d62728"/>
+<path d="M379.3,859.0 L384.3,862.0 L379.3,865.0 z" fill="#d62728"/>
+<text x="297.6" y="886.0" text-anchor="middle">/jetowl/mission/geo</text>
+<text x="297.6" y="897.0" text-anchor="middle" fill="#6a6a6a" font-size="8.5">param: P.net.fc_mission</text>
+<rect x="280.6" y="909.0" width="34.0" height="30.0" fill="#fff" stroke="#d62728" stroke-width="1.4"/>
+<text x="297.6" y="927.5" text-anchor="middle">1/z</text>
+<path d="M280.6,921.0 L275.6,924.0 L280.6,927.0 z" fill="#d62728"/>
+<rect x="118.0" y="960.0" width="34.0" height="30.0" fill="#fff" stroke="#d62728" stroke-width="1.4"/>
+<text x="135.0" y="978.5" text-anchor="middle">1/z</text>
+<path d="M152.0,972.0 L157.0,975.0 L152.0,978.0 z" fill="#d62728"/>
+<rect x="118.0" y="1004.0" width="34.0" height="30.0" fill="#fff" stroke="#d62728" stroke-width="1.4"/>
+<text x="135.0" y="1022.5" text-anchor="middle">1/z</text>
+<path d="M152.0,1016.0 L157.0,1019.0 L152.0,1022.0 z" fill="#d62728"/>
+<text x="135.0" y="1046.0" text-anchor="middle">tx buffer</text>
+<rect x="216.0" y="954.0" width="163.3" height="96.0" fill="#fff" stroke="#d62728" stroke-width="1.6"/>
+<text x="297.6" y="1005.5" text-anchor="middle" fill="#7a7a7a" font-size="9">comm_net_link</text>
+<text x="220.0" y="969.5" text-anchor="start">x</text>
+<text x="220.0" y="993.5" text-anchor="start">send</text>
+<text x="220.0" y="1017.5" text-anchor="start">drop</text>
+<text x="220.0" y="1041.5" text-anchor="start">S</text>
+<text x="375.3" y="969.5" text-anchor="end">y</text>
+<text x="375.3" y="993.5" text-anchor="end">fresh</text>
+<text x="375.3" y="1017.5" text-anchor="end">stats</text>
+<text x="375.3" y="1041.5" text-anchor="end">S</text>
+<path d="M379.3,963.0 L384.3,966.0 L379.3,969.0 z" fill="#d62728"/>
+<path d="M379.3,987.0 L384.3,990.0 L379.3,993.0 z" fill="#d62728"/>
+<path d="M379.3,1011.0 L384.3,1014.0 L379.3,1017.0 z" fill="#d62728"/>
+<path d="M379.3,1035.0 L384.3,1038.0 L379.3,1041.0 z" fill="#d62728"/>
+<text x="297.6" y="1062.0" text-anchor="middle">/control/attitude_setpoint</text>
+<text x="297.6" y="1073.0" text-anchor="middle" fill="#6a6a6a" font-size="8.5">param: P.net.j_sp</text>
+<rect x="280.6" y="1085.0" width="34.0" height="30.0" fill="#fff" stroke="#d62728" stroke-width="1.4"/>
+<text x="297.6" y="1103.5" text-anchor="middle">1/z</text>
+<path d="M280.6,1097.0 L275.6,1100.0 L280.6,1103.0 z" fill="#d62728"/>
+<rect x="118.0" y="1136.0" width="34.0" height="30.0" fill="#fff" stroke="#d62728" stroke-width="1.4"/>
+<text x="135.0" y="1154.5" text-anchor="middle">1/z</text>
+<path d="M152.0,1148.0 L157.0,1151.0 L152.0,1154.0 z" fill="#d62728"/>
+<rect x="118.0" y="1180.0" width="34.0" height="30.0" fill="#fff" stroke="#d62728" stroke-width="1.4"/>
+<text x="135.0" y="1198.5" text-anchor="middle">1/z</text>
+<path d="M152.0,1192.0 L157.0,1195.0 L152.0,1198.0 z" fill="#d62728"/>
+<text x="135.0" y="1222.0" text-anchor="middle">tx buffer</text>
+<rect x="216.0" y="1130.0" width="163.3" height="96.0" fill="#fff" stroke="#d62728" stroke-width="1.6"/>
+<text x="297.6" y="1181.5" text-anchor="middle" fill="#7a7a7a" font-size="9">comm_net_link</text>
+<text x="220.0" y="1145.5" text-anchor="start">x</text>
+<text x="220.0" y="1169.5" text-anchor="start">send</text>
+<text x="220.0" y="1193.5" text-anchor="start">drop</text>
+<text x="220.0" y="1217.5" text-anchor="start">S</text>
+<text x="375.3" y="1145.5" text-anchor="end">y</text>
+<text x="375.3" y="1169.5" text-anchor="end">fresh</text>
+<text x="375.3" y="1193.5" text-anchor="end">stats</text>
+<text x="375.3" y="1217.5" text-anchor="end">S</text>
+<path d="M379.3,1139.0 L384.3,1142.0 L379.3,1145.0 z" fill="#d62728"/>
+<path d="M379.3,1163.0 L384.3,1166.0 L379.3,1169.0 z" fill="#d62728"/>
+<path d="M379.3,1187.0 L384.3,1190.0 L379.3,1193.0 z" fill="#d62728"/>
+<path d="M379.3,1211.0 L384.3,1214.0 L379.3,1217.0 z" fill="#d62728"/>
+<text x="297.6" y="1238.0" text-anchor="middle">/jetowl_vision/image_preview</text>
+<text x="297.6" y="1249.0" text-anchor="middle" fill="#6a6a6a" font-size="8.5">param: P.net.vis_img</text>
+<rect x="280.6" y="1261.0" width="34.0" height="30.0" fill="#fff" stroke="#d62728" stroke-width="1.4"/>
+<text x="297.6" y="1279.5" text-anchor="middle">1/z</text>
+<path d="M280.6,1273.0 L275.6,1276.0 L280.6,1279.0 z" fill="#d62728"/>
+<rect x="118.0" y="1312.0" width="34.0" height="30.0" fill="#fff" stroke="#d62728" stroke-width="1.4"/>
+<text x="135.0" y="1330.5" text-anchor="middle">1/z</text>
+<path d="M152.0,1324.0 L157.0,1327.0 L152.0,1330.0 z" fill="#d62728"/>
+<rect x="118.0" y="1356.0" width="34.0" height="30.0" fill="#fff" stroke="#d62728" stroke-width="1.4"/>
+<text x="135.0" y="1374.5" text-anchor="middle">1/z</text>
+<path d="M152.0,1368.0 L157.0,1371.0 L152.0,1374.0 z" fill="#d62728"/>
+<text x="135.0" y="1398.0" text-anchor="middle">tx buffer</text>
+<rect x="216.0" y="1306.0" width="163.3" height="96.0" fill="#fff" stroke="#d62728" stroke-width="1.6"/>
+<text x="297.6" y="1357.5" text-anchor="middle" fill="#7a7a7a" font-size="9">comm_net_link</text>
+<text x="220.0" y="1321.5" text-anchor="start">x</text>
+<text x="220.0" y="1345.5" text-anchor="start">send</text>
+<text x="220.0" y="1369.5" text-anchor="start">drop</text>
+<text x="220.0" y="1393.5" text-anchor="start">S</text>
+<text x="375.3" y="1321.5" text-anchor="end">y</text>
+<text x="375.3" y="1345.5" text-anchor="end">fresh</text>
+<text x="375.3" y="1369.5" text-anchor="end">stats</text>
+<text x="375.3" y="1393.5" text-anchor="end">S</text>
+<path d="M379.3,1315.0 L384.3,1318.0 L379.3,1321.0 z" fill="#d62728"/>
+<path d="M379.3,1339.0 L384.3,1342.0 L379.3,1345.0 z" fill="#d62728"/>
+<path d="M379.3,1363.0 L384.3,1366.0 L379.3,1369.0 z" fill="#d62728"/>
+<path d="M379.3,1387.0 L384.3,1390.0 L379.3,1393.0 z" fill="#d62728"/>
+<text x="297.6" y="1414.0" text-anchor="middle">/jetowl_vision/preview_mode</text>
+<text x="297.6" y="1425.0" text-anchor="middle" fill="#6a6a6a" font-size="8.5">param: P.net.j_vis</text>
+<rect x="280.6" y="1437.0" width="34.0" height="30.0" fill="#fff" stroke="#d62728" stroke-width="1.4"/>
+<text x="297.6" y="1455.5" text-anchor="middle">1/z</text>
+<path d="M280.6,1449.0 L275.6,1452.0 L280.6,1455.0 z" fill="#d62728"/>
+<rect x="443.3" y="1482.0" width="36.0" height="176.0" fill="#fff" stroke="#d62728" stroke-width="1.4"/>
+<rect x="448.3" y="1487.0" width="26.0" height="18.0" fill="#1d2b3a"/>
+<polyline points="450.3,1500.0 457.3,1492.0 464.3,1498.0 472.3,1491.0" fill="none" stroke="#f5d000"/>
+<text x="461.3" y="1670.0" text-anchor="middle">log_eth</text>
+<text x="12" y="1714" fill="#444">Sample time colours:</text>
+<rect x="124" y="1705" width="10" height="10" fill="none" stroke="#d62728" stroke-width="2"/>
+<text x="138" y="1714">1 kHz (1 ms)</text>
+<rect x="220" y="1705" width="10" height="10" fill="none" stroke="#c000c0" stroke-width="2"/>
+<text x="234" y="1714">constant</text>
 </svg>

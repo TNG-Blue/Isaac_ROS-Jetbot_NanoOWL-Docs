@@ -663,9 +663,9 @@
 <text x="41" y="1603" font-size="11.5" fill="#0B2545" text-anchor="start" font-weight="normal">are DENIED while rc_fresh</text>
 <path d="M 50 300 L 16 300 L 16 1760 L 45 1760" fill="none" stroke="#2F6DB5" stroke-width="2.6" stroke-linejoin="round" marker-start="url(#link-s)" marker-end="url(#link-e)"/>
 <path d="M 440 320 L 440 490" fill="none" stroke="#5B6573" stroke-width="1.6" stroke-linejoin="round" marker-start="url(#link-s)" marker-end="url(#link-e)"/>
-<rect x="160" y="338" width="272" height="38" rx="5" fill="#FFFFFF" fill-opacity="0.95" stroke="#5B6573" stroke-width="0.8"/>
-<text x="167.39999999999998" y="352" font-size="11.5" fill="#5B6573" text-anchor="start" font-weight="normal">MAVLink v2 · UDP / relay / WS</text>
-<text x="167.39999999999998" y="367" font-size="11.5" fill="#5B6573" text-anchor="start" font-weight="normal">ODOMETRY · OBSTACLE_DIST. · ADSB_VEHICLE</text>
+<rect x="156" y="338" width="276" height="38" rx="5" fill="#FFFFFF" fill-opacity="0.95" stroke="#5B6573" stroke-width="0.8"/>
+<text x="163.37499999999983" y="352" font-size="11.5" fill="#5B6573" text-anchor="start" font-weight="normal">MAVLink v2 · UDP / relay / WS</text>
+<text x="163.37499999999983" y="367" font-size="11.5" fill="#5B6573" text-anchor="start" font-weight="normal">ODOMETRY · OBSTACLE_DIST. · ADSB_VEHICLE</text>
 <path d="M 640 320 L 640 490" fill="none" stroke="#5B6573" stroke-width="1.6" stroke-linejoin="round" marker-start="url(#link-s)" marker-end="url(#link-e)"/>
 <rect x="648" y="338" width="156" height="38" rx="5" fill="#FFFFFF" fill-opacity="0.95" stroke="#5B6573" stroke-width="0.8"/>
 <text x="655" y="352" font-size="11.5" fill="#5B6573" text-anchor="start" font-weight="normal">MAVLink v2 · UDP 14550</text>
@@ -713,7 +713,7 @@
 <path d="M 620 2006 L 600 2006" fill="none" stroke="#C8364A" stroke-width="2.6" stroke-linejoin="round" marker-end="url(#loop-e)"/>
 <path d="M 485 1958 L 485 1930" fill="none" stroke="#C8364A" stroke-width="2.6" stroke-linejoin="round" stroke-dasharray="7 5" marker-end="url(#loop-e)"/>
 <path d="M 715 2054 L 715 2068 L 925 2068 L 925 2054" fill="none" stroke="#C8364A" stroke-width="1.8" stroke-linejoin="round" stroke-dasharray="7 5" marker-end="url(#loop-e)"/>
-<rect x="735" y="2060" width="38" height="22" rx="5" fill="#FFFFFF" fill-opacity="0.95" stroke="#C8364A" stroke-width="0.8"/>
+<rect x="735" y="2060" width="42" height="22" rx="5" fill="#FFFFFF" fill-opacity="0.95" stroke="#C8364A" stroke-width="0.8"/>
 <text x="742" y="2073" font-size="10.5" fill="#C8364A" text-anchor="start" font-weight="normal">eRPM</text>
 <path d="M 710 560 L 738 560 L 738 716 L 750 716" fill="none" stroke="#5B6573" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#link-e)"/>
 <path d="M 892 602 L 892 660" fill="none" stroke="#5B6573" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#link-e)"/>
