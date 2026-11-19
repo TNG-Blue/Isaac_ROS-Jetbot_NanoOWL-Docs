@@ -24,7 +24,7 @@ featuring advanced AI perception, real-time SLAM, and production-ready deploymen
     LAYER --&gt; CI[/"/camera/color/camera_info&lt;br/&gt;size · K (0 = uncalibrated)"/]
     CI --&gt;|"image size"| DEC
     CI --&gt;|"intrinsics"| ARM["arm_look_at_node&lt;br/&gt;(use_arm:=true)"]
-    CAM --&gt; ENC["DnnImageEncoderNode&lt;br/&gt;(isaac_ros_dnn_encoders)"]
+    CAM --&gt; ENC["DnnImageEncoderNode&lt;br/&gt;(isaac_ros_dnn_image_encoder)"]
     ENC --&gt; TP[/"tensor_pub&lt;br/&gt;TensorList"/]
     TP --&gt; INF["TensorRTNode / TritonNode&lt;br/&gt;(component_container_mt)"]
     INF --&gt; TS[/"tensor_sub&lt;br/&gt;TensorList"/]
